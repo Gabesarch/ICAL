@@ -1,0 +1,7 @@
+1. Go to the bowl and pick it up.
+2. Bring the bowl to the sink and place it in the sink.
+3. Turn on the faucet to fill up the bowl. Change the state of the bowl to filled with water.
+4. Turn off the faucet and pick up the bowl. 
+5. Go to the house plant.
+6. Pour the bowl of water on the house plant. 
+7. Change the state of the bowl to be empty and plant to be filled with water.

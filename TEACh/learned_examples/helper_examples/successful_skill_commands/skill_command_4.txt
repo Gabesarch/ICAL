@@ -1,0 +1,1 @@
+<Driver> how can I help? <Commander> please serve 4 slices of tomato on a plate. <Driver> sure. <Driver> where can i find the tomato? <Driver> an knife. <Commander> Tomato on countertop and knife in fridge. <Commander> there should be a plate on the right cupboard by the sink. <Driver> completed. <Commander> great work thanks.

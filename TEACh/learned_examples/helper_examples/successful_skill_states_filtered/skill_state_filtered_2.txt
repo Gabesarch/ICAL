@@ -1,0 +1,7 @@
+"Tomato_5": {"label": "Tomato", "holding": False, "sliced": False, "dirty": False, "cooked": False}
+"Lettuce_7": {"label": "Lettuce", "holding": False, "sliced": False, "dirty": False}
+"Knife_54": {"label": "Knife", "holding": False, "dirty": False}
+"Plate_55": {"label": "Plate", "holding": False, "dirty": True, "cooked": False}
+"Plate_68": {"label": "Plate", "holding": False, "dirty": True, "cooked": False}
+"SinkBasin_60": {"label": "SinkBasin"}
+"Faucet_73": {"label": "Faucet", "toggled": True}

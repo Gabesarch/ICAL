@@ -1,0 +1,40 @@
+bowl = InteractionObject("Bowl", object_instance = "Bowl_78")
+sink = InteractionObject("SinkBasin", object_instance = "SinkBasin_54")
+faucet = InteractionObject("Faucet", object_instance = "Faucet_72")
+houseplant = InteractionObject("HousePlant", object_instance = "HousePlant_69")
+countertop = InteractionObject("CounterTop", object_instance = "CounterTop_20")
+
+# Go to the bowl and pick it up
+bowl.go_to()
+bowl.pickup()
+bowl.change_state("holding", True)
+
+# Go to the sink and place the bowl in the sink
+sink.go_to()
+bowl.place(sink)
+bowl.change_state("holding", False)
+
+# Turn on the faucet to fill the bowl with water
+faucet.go_to()
+faucet.toggle_on()
+faucet.change_state("toggled", True)
+bowl.change_state("filled", True)
+bowl.change_state("fillLiquid", "water")
+
+# Turn off the faucet
+faucet.toggle_off()
+faucet.change_state("toggled", False)
+
+# Pick up the bowl filled with water
+bowl.pickup()
+bowl.change_state("holding", True)
+
+# Go to the houseplant
+houseplant.go_to()
+
+# Pour the water from the bowl onto the houseplant
+bowl.pour(houseplant)
+bowl.change_state("filled", False)
+bowl.change_state("fillLiquid", None)
+houseplant.change_state("filled", True)
+houseplant.change_state("fillLiquid", "water")

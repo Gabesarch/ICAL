@@ -1,0 +1,6 @@
+1. Pick up the knife and slice the bread. Put down the knife.
+2. The toaster is already on. Go to the toaster and toggle it off first.
+3. Pick up a slice of bread and place it in the toaster.
+4. Toggle on the toaster to toast/cook the bread slice.
+5. Toggle off the toaster.
+6. Pick and place the bread slice in the clean bowl.

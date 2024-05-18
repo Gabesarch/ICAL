@@ -1,0 +1,12 @@
+1. The plate is dirty so clean it in the sink.
+2. First go to the faucet and turn off the faucet, which is on.
+3. Pick up the plate and place it in the sink. 
+4. Toggle on the faucet to clean the plate. Change the state of the plate to clean.
+5. Pick up the plate out of the sink and put it down in a good location.
+6. Pick up a knife and slice the tomato. Put down the knife.
+7. Pick up a tomato slice and place it on the clean plate.
+8. Go to the uncooked potato and pick it up.
+9. To cook potato: go to the microwave, open the microwave, and put the potato in the microwave, close the microwave, toggle it on, change the state of potato to cooked, toggle off the microwave, open the microwave, pick up the cooked potato, and put it down in a good location.
+10. Pick up the knife, slice the potato, put down the knife.
+11. Pick and place the first cooked potato slice on the clean plate.
+12. Pick and place the second cooked potato slice on the clean plate.

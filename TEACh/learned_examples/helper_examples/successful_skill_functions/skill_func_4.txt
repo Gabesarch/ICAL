@@ -1,0 +1,20 @@
+# Slice tomato and put all the slices on the plate
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato_24")
+target_knife = InteractionObject("Knife", object_instance = "Knife_32") # need knife to slice tomato
+target_knife.go_to() # first get knife
+target_knife.pickup()
+target_knife.change_state("holding", True)
+target_tomato.go_to()
+target_tomato.slice()
+target_tomato.change_state("sliced", True)
+target_knife.put_down() # put down knife to free up the agent's hand
+target_knife.change_state("holding", False)
+target_plate = InteractionObject("Plate", object_instance = "Plate_18") # plate to put all slices on
+target_tomato_slice1 = InteractionObject("TomatoSliced", object_instance=None, parent_object="Tomato_24") # instantiate a first tomato slice object after slicing tomato from parent Tomato_61
+target_tomato_slice1.pickup_and_place(target_plate)
+target_tomato_slice2 = InteractionObject("TomatoSliced", object_instance=None, parent_object="Tomato_24") # instantiate a second tomato slice object after slicing tomato from parent Tomato_61
+target_tomato_slice2.pickup_and_place(target_plate)
+target_tomato_slice3 = InteractionObject("TomatoSliced", object_instance=None, parent_object="Tomato_24") # instantiate a third tomato slice object after slicing tomato from parent Tomato_61
+target_tomato_slice3.pickup_and_place(target_plate)
+target_tomato_slice4 = InteractionObject("TomatoSliced", object_instance=None, parent_object="Tomato_24") # instantiate a fourth tomato slice object after slicing tomato from parent Tomato_61
+target_tomato_slice4.pickup_and_place(target_plate)

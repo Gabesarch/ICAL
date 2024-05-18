@@ -1,0 +1,49 @@
+mug = InteractionObject("Mug", object_instance = "Mug_82")
+coffee_machine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine_64")
+sink = InteractionObject("SinkBasin", object_instance = "SinkBasin_92")
+faucet = InteractionObject("Faucet", object_instance = "Faucet_94")
+
+# faucet is on so first toggle it off before placing anything in the sink
+faucet.go_to()
+faucet.toggle_off()
+
+# Go to the mug and pick it up
+mug.go_to()
+mug.pickup()
+mug.change_state("holding", True)
+
+# mug is dirty, clean the mug in the sink
+# Go to the sink and place the mug in the sink
+sink.go_to()
+mug.place(sink)
+mug.change_state("holding", False)
+
+# Turn on the faucet to clean the mug
+faucet.go_to()
+faucet.toggle_on()
+faucet.change_state("toggled", True)
+mug.change_state("filled", True) # cleaning fills the mug with water
+mug.change_state("fillLiquid", "water") # cleaning fills the mug with water
+
+# Turn off the faucet
+faucet.toggle_off()
+faucet.change_state("toggled", False)
+
+# Go to the sink and pour out the water from the mug
+sink.go_to()
+mug.pour(sink)
+mug.change_state("filled", False)
+mug.change_state("fillLiquid", None)
+
+# Go to the coffee machine and place the mug
+coffee_machine.go_to()
+mug.place(coffee_machine)
+mug.change_state("holding", False)
+
+# only if coffee machine is off, turn it on
+# CoffeeMachine_64 is toggled off
+# Toggle on the coffee machine to fill the mug with coffee
+coffee_machine.toggle_on()
+coffee_machine.change_state("toggled", True)
+mug.change_state("filled", True)
+mug.change_state("fillLiquid", "coffee")

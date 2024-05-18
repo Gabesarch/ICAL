@@ -1,0 +1,5 @@
+"Bowl_2": {"label": "Bowl", "holding": False, "dirty": True, "cooked": False, "filled": True, "fillLiquid": "water"}
+"Bowl_14": {"label": "Bowl", "holding": False, "dirty": True, "cooked": False, "filled": False, "fillLiquid": None}
+"Bowl_22": {"label": "Bowl", "holding": False, "dirty": False, "cooked": False, "filled": False, "fillLiquid": None}
+"Faucet_84": {"label": "Faucet", "toggled": False}
+"SinkBasin_72": {"label": "SinkBasin"}

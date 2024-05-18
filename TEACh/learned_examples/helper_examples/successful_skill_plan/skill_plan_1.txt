@@ -1,0 +1,7 @@
+1. There are three bowls in the current state, but only two are dirty. Go to the first dirty bowl.
+2. Pick up the first bowl and place it in the sink basin.
+3. Turn on the faucet to clean the first bowl. This will also fill it with water. Turn off the faucet.
+4. Pour out any water in the sink and put the first bowl down to free up the agent's hand.
+5. Pick up the second bowl and place it in the sink basin.
+6. Turn on the faucet to clean the second bowl. This will also fill it with water. Turn off the faucet.
+7. Pour out any water in the sink and put the second bowl down to free up the agent's hand.

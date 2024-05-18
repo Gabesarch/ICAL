@@ -1,0 +1,7 @@
+"Knife_51": {"label": "Knife", "holding": False, "dirty": False}
+"Tomato_61": {"label": "Tomato", "holding": False, "sliced": False, "dirty": False, "cooked": False}
+"Potato_59": {"label": "Potato", "holding": False, "sliced": False, "dirty": False, "cooked": False}
+"Plate_42": {"label": "Plate", "holding": False, "dirty": True, "cooked": False}
+"Faucet_66": {"label": "Faucet", "toggled": True}
+"SinkBasin_58": {"label": "SinkBasin"}
+"Microwave_33": {"label": "Microwave", "toggled": True, "open": False}

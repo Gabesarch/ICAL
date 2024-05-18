@@ -1,0 +1,4 @@
+"Bread_34": {"label": "Bread", "holding": False, "sliced": False, "cooked": False}
+"Knife_32": {"label": "Knife", "holding": False, "dirty": False}
+"Toaster_39": {"label": "Toaster", "toggled": True}
+"Bowl_42": {"label": "Bowl", "holding": False, "dirty": False, "cooked": False}

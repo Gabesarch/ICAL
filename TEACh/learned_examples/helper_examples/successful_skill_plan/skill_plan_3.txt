@@ -1,0 +1,8 @@
+1. Faucet to sink is toggled on, so first toggle it off.
+2. Use mug Mug_82 for the coffee and bring it to the sink to clean it.
+3. Place the mug in the sink and turn on the faucet to clean it.
+4. turn off the faucet and pick up the mug.
+5. Pour out any liquid left in the mug in the sink.
+6. Go to the coffee machine and place the mug in the coffee machine.
+7. Toggle on the coffee machine if it not already on.
+8. Change state of coffee mug to have coffee.

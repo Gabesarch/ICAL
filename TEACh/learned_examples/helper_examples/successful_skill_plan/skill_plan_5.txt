@@ -1,0 +1,3 @@
+1. There are two scrub brushes in the scene. Initialize them.
+2. Pick and place the first scrub brush on the countertop.
+3. Pick and place the second scrub brush on the countertop.

@@ -1,0 +1,28 @@
+# first slice the bread
+target_bread1 = InteractionObject("Bread", object_instance = "Bread_34")
+target_knife1 = InteractionObject("Knife", object_instance = "Knife_32", grounding_phrase = "knife in the fridge")
+target_knife1.go_to()
+target_knife1.pickup()
+target_knife1.change_state("holding", True)
+target_bread1.go_to()
+target_bread1.slice()
+target_bread1.change_state("sliced", True)
+target_knife.put_down() # put down the knife to free up the agent's hand
+target_knife1.change_state("holding", False)
+target_bread_slice1 = InteractionObject("BreadSliced", object_instance=None, parent_object="Bread_34") # instantiate a bread slice object after slicing bread from parent Bread_34
+
+# next toast the bread
+target_toaster1 = InteractionObject("Toaster", object_instance = "Toaster_39")
+target_toaster1.go_to()
+target_toaster1.toggle_off() # Toaster_39 is on so first we need to toggle it off
+target_toaster1.change_state("toggled", False)
+target_bread_slice1.pickup_and_place(target_toaster1) # put bread slice in the toaster
+target_toaster1.toggle_on() # toggle on toaster to toast the bread
+target_toaster1.change_state("toggled", True)
+target_bread_slice1.change_state("cooked", True) # now toasted (cooked)
+target_toaster1.toggle_off() # toggle off toaster to finish toasting and be able to take out bread
+target_toaster1.change_state("toggled", False)
+
+# put toast on the bread
+target_bowl1 = InteractionObject("Bowl", object_instance = "Bowl_42") # Bowl_42 is already clean so need to clean it
+target_bread_slice1.pickup_and_place(target_bowl1) # put toasted bread slice in the bowl

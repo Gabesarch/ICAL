@@ -1,0 +1,4 @@
+"CoffeeMachine_64": {"label": "CoffeeMachine", "toggled": False}
+"Mug_82": {"label": "Mug", "holding": False, "dirty": True, "cooked": False, "filled": True, "fillLiquid": "water"}
+"SinkBasin_92": {"label": "SinkBasin", "filled": False, "fillLiquid": None}
+"Faucet_94": {"label": "Faucet", "toggled": True}

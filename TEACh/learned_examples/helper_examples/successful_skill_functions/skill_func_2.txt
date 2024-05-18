@@ -1,0 +1,51 @@
+target_plate1 = InteractionObject("Plate", object_instance = "Plate_68")
+# Plate is dirty so let's clean it
+# initialized faucet and sink to clean bowls with
+target_faucet1 = InteractionObject("Faucet", object_instance = "Faucet_73")
+# faucet is toggled on so first toggle it off before placing anything in the sink
+target_faucet1.go_to()
+target_faucet1.toggle_off()
+target_sink1 = InteractionObject("Sink", object_instance = "SinkBasin_60")
+target_plate.go_to()
+target_plate.pickup()
+target_plate.change_state("holding", True)
+target_sink1.go_to()
+target_plate.place(target_sink1) # put in sink
+target_plate.change_state("holding", False)
+target_faucet1.go_to()
+target_faucet1.toggle_on() # turn on faucet to clean
+target_faucet1.change_state("toggled", True)
+target_plate.change_state("dirty", False) # plate now clean!
+target_faucet1.toggle_off() # turn off faucet
+target_faucet1.change_state("toggled", False)
+target_plate.pickup() # move out of the sink
+target_plate.change_state("holding", True)
+target_plate.put_down() # put down plate on any good location to free up agent's hand
+target_plate.change_state("holding", False)
+
+# Slice tomato and put slice on the plate
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato_5")
+target_knife = InteractionObject("Knife", object_instance = "Knife_54") # need knife to slice tomato and lettuce
+target_knife.go_to() # first get knife
+target_knife.pickup()
+target_knife.change_state("holding", True)
+target_tomato.go_to()
+target_tomato.slice()
+target_tomato.change_state("sliced", True)
+target_tomato_slice1 = InteractionObject("TomatoSliced", object_instance=None, parent_object="Tomato_61") # instantiate a tomato slice object after slicing tomato from parent Tomato_61
+target_knife.put_down() # put down knife to free up the agent's hand
+target_knife.change_state("holding", False)
+target_tomato_slice1.pickup_and_place(target_plate)
+
+# Slice lettuce and put slice on plate
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce_7")
+target_knife.go_to() # first get knife
+target_knife.pickup()
+target_knife.change_state("holding", True)
+target_lettuce.go_to()
+target_lettuce.slice()
+target_lettuce.change_state("sliced", True)
+target_lettuce_slice1 = InteractionObject("LettuceSliced", object_instance=None, parent_object="Lettuce_7") # instantiate a lettuce slice object after slicing lettuce from parent Lettuce_7
+target_knife.put_down() # put down knife to free up the agent's hand
+target_knife.change_state("holding", False)
+target_lettuce_slice1.pickup_and_place(target_plate)

@@ -1,0 +1,8 @@
+# Two scrub brushes in the current state. Put all on the counter.
+# put first scrub brush on the counter
+target_counter_top = InteractionObject("CounterTop", object_instance = "CounterTop_26")
+target_scrub_brush1 = InteractionObject("ScrubBrush", object_instance = "ScrubBrush_12")
+target_scrub_brush1.pickup_and_place(target_counter_top) # pick up the first ScrubBrush and place it on the CounterTop
+# put second scrub brush on the counter
+target_scrub_brush2 = InteractionObject("ScrubBrush", object_instance = "ScrubBrush_34")
+target_scrub_brush2.pickup_and_place(target_counter_top) # pick up the second ScrubBrush and place it on the CounterTop

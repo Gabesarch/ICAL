@@ -1,0 +1,8 @@
+1. Pick up the mug Mug_82 that has water in it.
+2. Go to the pot.
+3. Pour out the water in the pot. This will remove water from the mug and fill up the pot with water.
+4. Put down the mug to free up the agent's hand.
+5. Put the pot with water on the stove burner.
+6. Go to the potato and pick it up. 
+7. Place the potato in the pot. 
+8. Turn on the stove knob to heat the pot of water with the potato to boil it.

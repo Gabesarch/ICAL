@@ -1,0 +1,5 @@
+"Mug_82": {"label": "Mug", "holding": False, "dirty": False, "cooked": False, "filled": True, "fillLiquid": "water"}
+"Potato_94": {"label": "Potato", "holding": False, "cooked": False}
+"StoveKnob_0": {"label": "StoveKnob", "toggled": False}
+"StoveBurner_0": {"label": "StoveBurner"}
+"Pot_22": {"label": "Pot", "holding": False, "dirty": False, "filled": False, "fillLiquid": None}

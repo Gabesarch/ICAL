@@ -1,0 +1,8 @@
+1. Faucet is on so first toggle it off.
+2. Take plate Plate_68 to the sink to clean it.
+3. Place the plate in the sink and turn on the faucet to clean it.
+4. turn off the faucet and pick up the plate. Put it down in a good location.
+5. Go to the tomato and slice it with a knife. Put down the knife.
+6. Place a slice of the tomato on the clean plate.
+7. Go to the lettuce and slice it with a knife. Put down the knife.
+8. Place a slice of the lettuce on the clean plate.

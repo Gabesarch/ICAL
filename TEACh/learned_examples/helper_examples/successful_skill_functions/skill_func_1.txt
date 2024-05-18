@@ -1,0 +1,53 @@
+# initialized faucet and sink to clean bowls with
+target_faucet1 = InteractionObject("Faucet", object_instance = "Faucet_84")
+target_sink1 = InteractionObject("Sink", object_instance = "SinkBasin_72")
+
+# only two bowls are dirty, so we clean those!
+# Clean the first bowl in the sink
+target_bowl1 = InteractionObject("Bowl", object_instance = "Bowl_2", grounding_phrase = "bowl by the stove")
+target_bowl1.go_to()
+target_bowl1.pickup()
+target_bowl1.change_state("holding", True)
+target_sink1.go_to()
+target_bowl1.place(target_sink1) # put in sink
+target_bowl1.change_state("holding", False)
+target_faucet1.go_to()
+target_faucet1.toggle_on() # turn on faucet to clean
+target_faucet1.change_state("toggled", True)
+target_bowl1.change_state("dirty", False) # bowl now clean!
+target_bowl1.change_state("filled", True) # faucet on with fillable container in sink also fills it with water
+target_bowl1.change_state("fillLiquid", "water") 
+target_faucet1.toggle_off() # turn off faucet
+target_faucet1.change_state("toggled", False)
+target_bowl1.pickup()
+target_bowl1.change_state("holding", True)
+target_bowl1.pour(target_sink1) # pour out any water in the bowl in the sink
+target_bowl1.change_state("filled", False) # update mug state to no longer be filled with water
+target_bowl1.change_state("fillLiquid", None) 
+target_bowl1.put_down() # put down mug on any good location to free up agent's hand
+target_bowl1.change_state("holding", False)
+
+# Clean the second bowl in the sink
+target_bowl2 = InteractionObject("Bowl", object_instance = "Bowl_14")
+target_bowl2.go_to()
+target_bowl2.pickup()
+target_bowl2.change_state("holding", True)
+# Clean the first bowl in the sink
+target_sink1.go_to()
+target_bowl2.place(target_sink1) # put in sink
+target_bowl2.change_state("holding", False)
+target_faucet1.go_to()
+target_faucet1.toggle_on() # turn on faucet to clean
+target_faucet1.change_state("toggled", True)
+target_bowl2.change_state("dirty", False) # bowl now clean!
+target_bowl2.change_state("filled", True) # faucet on with fillable container in sink also fills it with water
+target_bowl2.change_state("fillLiquid", "water") 
+target_faucet1.toggle_off() # turn off faucet
+target_faucet1.change_state("toggled", False)
+target_bowl2.pickup()
+target_bowl2.change_state("holding", True)
+target_bowl2.pour(target_sink1) # pour out any water in the bowl in the sink
+target_bowl2.change_state("filled", False) # update mug state to no longer be filled with water
+target_bowl2.change_state("fillLiquid", None) 
+target_bowl2.put_down() # put down mug on any good location to free up agent's hand
+target_bowl2.change_state("holding", False)

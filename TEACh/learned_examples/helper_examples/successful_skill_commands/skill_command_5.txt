@@ -1,0 +1,1 @@
+<Driver> How can I help? <Commander> put all the scrub brushes on the counter top. <Driver> where can I find them? <Commander> one is on top of the toilet. <Driver> there is only a cloth. <Driver> I put it on the counter top. <Driver> are there more? <Commander> can you try with the brush to the side of the toilet please? <Driver> okay.

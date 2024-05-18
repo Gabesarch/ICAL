@@ -1,0 +1,1 @@
+<Driver> what shall I do today? <Commander> clean all the bowls. <Driver> where are the bowls? <Commander> start with the one by the stove. <Commander> left. <Commander> rinse it with water. <Commander> great. <Driver> what next? <Commander> the next one is in the fridge. <Commander> you need to rinse it with water also. <Commander> great job. we are finished. <Driver> thanks.

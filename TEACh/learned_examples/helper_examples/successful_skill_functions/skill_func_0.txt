@@ -1,0 +1,34 @@
+# initialize pot and mug instances
+target_pot = InteractionObject("Pot", object_instance = "Pot_22")
+target_mug = InteractionObject("Mug", object_instance = "Mug_82") 
+
+# Fill pot with mug that is filled with water
+target_mug.go_to()
+target_mug.pickup()
+target_mug.change_state("holding", True)
+target_mug.pour(target_pot) # take mug filled with water and pour it into the pot
+target_mug.change_state("filled", False) # update mug state to no longer be filled with water
+target_mug.change_state("fillLiquid", None) 
+target_pot.change_state("filled", True) # update pot state to be filled with water
+target_pot.change_state("fillLiquid", "water") 
+target_mug.put_down() # put down mug on any location to free up agent's hand
+target_mug.change_state("holding", False)
+
+# put pot on the stoveburner
+target_pot.go_to()
+target_pot.pickup()
+target_pot.change_state("holding", True)
+target_stoveburner = InteractionObject("StoveBurner", object_instance = "StoveBurner_0") 
+target_stoveburner.go_to()
+target_pot.place(target_stoveburner)
+target_pot.change_state("holding", False)
+
+# place potato in the pot
+target_potato = InteractionObject("Potato", object_instance = "Potato_94")
+target_potato.pickup_and_place(target_pot) # pick up the potato and place it in the pot
+
+# Turn on the stove
+target_stove_knob = InteractionObject("StoveKnob", object_instance = "StoveKnob_0") # turn on the stove to boil potato
+target_stove_knob.go_to()
+target_stove_knob.toggle_on() # boil water to boil potato
+target_stove_knob.change_state("toggled", True)

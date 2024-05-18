@@ -1,0 +1,3 @@
+"Knife_32": {"label": "Knife", "holding": False, "dirty": False}
+"Tomato_24": {"label": "Tomato", "holding": False, "sliced": False, "dirty": False, "cooked": False}
+"Plate_18": {"label": "Plate", "holding": False, "dirty": False, "cooked": False}
