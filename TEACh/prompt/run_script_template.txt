@@ -1,0 +1,4 @@
+from models.agent.api_primitives_executable import InteractionObject
+from models.agent.api_primitives_corrective import AgentCorrective
+def python_script(agent):
+    {SCRIPT}

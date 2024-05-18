@@ -1,0 +1,6 @@
+Object is already toggled on. You cannot toggle on an object that is already on.
+Object is already toggled off. You cannot toggle off an object that is already off.
+Object failed to open/close successfully. Something is blocking the object from opening or closing. Move farther away or remove obstruction.
+An object is blocking you from interacting with the selected object.
+That object is too far away to interact with.
+No valid positions to place object found. The receptacle is too full or too small to contain the held item.

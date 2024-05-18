@@ -1,0 +1,14 @@
+You will be given a word or phrase and your task is to output the closest category word from the following list based on its object category from the following: ShowerDoor, Cabinet, CounterTop, Sink, Towel, HandTowel, TowelHolder, SoapBar, ToiletPaper, ToiletPaperHanger, HandTowelHolder, SoapBottle, GarbageCan, Candle, ScrubBrush, Plunger, SinkBasin, Cloth, SprayBottle, Toilet, Faucet, ShowerHead, Box, Bed, Book, DeskLamp, BasketBall, Pen, Pillow, Pencil, CellPhone, KeyChain, Painting, CreditCard, AlarmClock, CD, Laptop, Drawer, SideTable, Chair, Blinds, Desk, Curtains, Dresser, Watch, Television, WateringCan, Newspaper, FloorLamp, RemoteControl, HousePlant, Statue, Ottoman, ArmChair, Sofa, DogBed, BaseballBat, TennisRacket, VacuumCleaner, Mug, ShelvingUnit, Shelf, StoveBurner, Apple, Lettuce, Bottle, Egg, Microwave, CoffeeMachine, Fork, Fridge, WineBottle, Spatula, Bread, Tomato, Pan, Cup, Pot, SaltShaker, Potato, PepperShaker, ButterKnife, StoveKnob, Toaster, DishSponge, Spoon, Plate, Knife, DiningTable, Bowl, LaundryHamper, Vase, Stool, CoffeeTable, Poster, Bathtub, TissueBox, Footstool, BathtubBasin, ShowerCurtain, TVStand, Boots, RoomDecor, PaperTowelRoll, Ladle, Kettle, Safe, GarbageBag, TeddyBear, TableTopDecor, Dumbbell, Desktop, AluminumFoil, Window, LightSwitch, AppleSliced, BreadSliced, LettuceSliced, PotatoSliced, TomatoSliced
+You will also be given a grounding phrase to help you make a decision.
+
+Here is some additional information about the affordances of object categories to help you make your decision:
+1. The following objects can be filled with liquid: "Bottle", "Bowl", "Cup", "HousePlant", "Kettle", "Mug", "Pot", "WateringCan", "WineBottle"
+2. The following objects can be sliced: 'Apple', 'Bread', 'Lettuce', 'Potato', 'Tomato'
+3. The following objects can be toasted: "BreadSliced"
+4. The following objects can be toggled: 'DeskLamp', 'FloorLamp', 'StoveKnob', 'Microwave', 'Toaster', 'Faucet', 'CoffeeMachine'
+5. The following objects can be dirtied: 'Apple', 'AppleSliced', 'Bowl', 'ButterKnife', 'Cloth', 'Cup', 'DishSponge', 'Egg', 'Fork', 'Kettle', 'Knife', 'Ladle', 'Lettuce', 'LettuceSliced', 'Mug', 'Pan', 'Plate', 'Pot', 'Potato', 'PotatoSliced', 'SoapBar', 'Spatula', 'Spoon', 'Tomato', 'TomatoSliced'
+6. The following objects can be cooked: 'Apple', 'AppleSliced', 'Bread', 'BreadSliced', 'Cup', 'Egg', 'Mug', 'Plate', 'Potato', 'PotatoSliced', 'Tomato', 'TomatoSliced'
+
+For example, if given "CoffeeMug" and grounding phrase "Coffee mug to make coffee in" you should output "Mug". Important: Your output should ONLY be a single word from the list above.
+
+What is the closest category to "{word}", given the grounding phrase "{grounding_phrase}"?

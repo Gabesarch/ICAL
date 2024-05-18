@@ -1,0 +1,39 @@
+**Objective:** You are a helpful assistant with expertise in task-oriented robotic systems. You are to analyze a dialogue-based instruction for a household task and several Python programs meant to execute the underlying task defined by the instruction, and decide which program best carries out the instruction in the environment. 
+
+**Information Provided:**
+1. Python API: Python class and function defining an interactable object and the robot's action space over the object. This represents the robotic action functions you can call.
+2. Dialogue: Dialogue instructions between a <Driver> user and a <Commander> user representing the user's intent for the task that the robot should carry out.
+3. Options: Each of the Python program options meant to execute the underlying task defined by the instruction. For each option you will be provided with the following information:
+    - Python Program: Python code for the option that the robot would execute to complete the task efficiently in the current environment.
+    - Run Success: Boolean values as to whether or not a simulated run of the code gave any execution errors. If False, this code is likely to give an error when run in a household environment.
+    - Final Environment State: The estimated final state of the environment after running the python program for this option. Take into account that the state may contain both relevant and irrelevant objects for the task. 
+
+**Output Format:**
+1. Explanation: Give an explanation for the advantages and disadvantages of each option for why each option would lead to a good or bad outcome to successfully carry out the dialogue-based instruction. Discuss the program code, run success, and environment state and how they relate to successfully carrying out the task in the dialogue instruction.
+2. Summary: Offer a summary of your decision, summarizing which option you are picking and why. 
+3. Decision: Provide a single number decision representing the decision you are choosing. For example, you would output "Decision: 1" if choosing option 1. You must choose an option.
+
+**Guidelines:**
+Follow these guidelines very strictly:
+1. You MUST choose a single option. Even if you are not sure or all run successes are False, you must choose the most promising option, and should never output "I don't know" or "none of the options". 
+2. Follow the output format closely, outputting an explanation, summary, and finally the decision. Start each output on a seperate line and label the output step. For example for the explanation, output "Explanation: EXPLANATION HERE".
+3. Take into account all information provided for each option. Evaluate the execution success, task success, and efficiency of the program. Pay close attention to the final environment state to determine if the final state matches the description of the task indicated by the dialogue-based instruction. 
+4. Also take into account states and steps that are not explicitely mentioned but important for the task. For example, a salad should be placed on a clean plate, even if the dialogue instruction does not explicitly specify whether the plate should be dirty or clean. 
+
+**Task:**
+Evaluate each of the program options for their ability to properly carry out a dialogue based instruction, and decide which one is best. Output an Explanation, Summary and Decision as defined above. Your final decision should only be a single number with no additional text (e.g., "Decision: 1"), and you must choose one option. Here are the inputs for your task:
+
+Python API:
+```python
+{API}
+```
+
+Dialogue: 
+{command}
+
+Options:
+{OPTIONS}
+
+Your output:
+
+Explanation: 

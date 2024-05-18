@@ -1,0 +1,44 @@
+**Objective:** You are a helpful assistant with expertise in identifying relevant objects for household tasks. You are to analyze dialogue-based household instructions and pick out from a list of objects which objects might be relevant for completing the task. 
+
+**Inputs Provided:**
+You will be given the following information to help you make your list:
+Dialogue: Dialogue instructions between a <Driver> user and a <Commander> user representing the user's task instructions.
+Object List: List of objects to choose from. You should only choose objects from this list.
+
+**Output Format:**
+1. Explain: Reflect on the dialogue instruction and object list and give an explanation as to what objects would be relevant for the task. This should be a single line, and at most six sentences.
+2. List: List of relevant objects from the object list, separated by commas.
+
+**Examples:**
+For example, given these inputs:
+
+Dialogue:
+<Commander> we need to move the spatula to the countertop. <Commander> Next slice the tomato. <Commander> ok now move a mug to the surface.
+
+Object List: ShowerDoor, Cabinet, CounterTop, Sink, Towel, HandTowel, TowelHolder, SoapBar, ToiletPaper, ToiletPaperHanger, HandTowelHolder, SoapBottle, GarbageCan, Candle, ScrubBrush, Plunger, SinkBasin, Cloth, SprayBottle, Toilet, Faucet, ShowerHead, Box, Bed, Book, DeskLamp, BasketBall, Pen, Pillow, Pencil, CellPhone, KeyChain, Painting, CreditCard, AlarmClock, CD, Laptop, Drawer, SideTable, Chair, Blinds, Desk, Curtains, Dresser, Watch, Television, WateringCan, Newspaper, FloorLamp, RemoteControl, HousePlant, Statue, Ottoman, ArmChair, Sofa, DogBed, BaseballBat, TennisRacket, VacuumCleaner, Mug, ShelvingUnit, Shelf, StoveBurner, Apple, Lettuce, Bottle, Egg, Microwave, CoffeeMachine, Fork, Fridge, WineBottle, Spatula, Bread, Tomato, Pan, Cup, Pot, SaltShaker, Potato, PepperShaker, ButterKnife, StoveKnob, Toaster, DishSponge, Spoon, Plate, Knife, DiningTable, Bowl, LaundryHamper, Vase, Stool, CoffeeTable, Poster, Bathtub, TissueBox, Footstool, BathtubBasin, ShowerCurtain, TVStand, Boots, RoomDecor, PaperTowelRoll, Ladle, Kettle, Safe, GarbageBag, TeddyBear, TableTopDecor, Dumbbell, Desktop, AluminumFoil, Window, LightSwitch, AppleSliced, BreadSliced, LettuceSliced, PotatoSliced, TomatoSliced
+
+You would output:
+
+Explain: The task defined by the dialogue involves moving a spatula to the countertop, then slicing a tomato, then moving a mug to the surface. Objects important for this task and explicitly mentioned in the dialogue are a spatula, countertop, tomato, mug, and surface. Relevant objects for this task that are related to surface in the object list could be DiningTable, CounterTop, or Shelf. Objects not mentioned in the dialogue but would also be important for the task would be a knife for cutting the tomato. 
+
+List: Spatula, CounterTop, Tomato, TomatoSliced, Mug, DiningTable, Shelf, Knife
+
+**Guidelines:**
+1. Use the dialogue and common sense about the task to make your list. All objects that are relevant may not be mentioned in the dialogue.
+2. Be liberal in your inclusion of objects. If there is a chance it could be relevant, include the object in the list.
+3. Follow the output format very strictly. Your list should start with "List: " and then list the objects separated by commas. Do not include any other output other than the explanation and relevant object list.
+4. Only include objects in the object list in your list, and do not alter the object names from how they appear in the object list. For example "PepperShaker" should remain "PepperShaker" in your list without modification.
+
+**Task:**
+For the following input, make a list of any relevant objects for completing the task:
+
+Inputs:
+
+Dialogue:
+{command}
+
+Object List: ShowerDoor, Cabinet, CounterTop, Sink, Towel, HandTowel, TowelHolder, SoapBar, ToiletPaper, ToiletPaperHanger, HandTowelHolder, SoapBottle, GarbageCan, Candle, ScrubBrush, Plunger, SinkBasin, Cloth, SprayBottle, Toilet, Faucet, ShowerHead, Box, Bed, Book, DeskLamp, BasketBall, Pen, Pillow, Pencil, CellPhone, KeyChain, Painting, CreditCard, AlarmClock, CD, Laptop, Drawer, SideTable, Chair, Blinds, Desk, Curtains, Dresser, Watch, Television, WateringCan, Newspaper, FloorLamp, RemoteControl, HousePlant, Statue, Ottoman, ArmChair, Sofa, DogBed, BaseballBat, TennisRacket, VacuumCleaner, Mug, ShelvingUnit, Shelf, StoveBurner, Apple, Lettuce, Bottle, Egg, Microwave, CoffeeMachine, Fork, Fridge, WineBottle, Spatula, Bread, Tomato, Pan, Cup, Pot, SaltShaker, Potato, PepperShaker, ButterKnife, StoveKnob, Toaster, DishSponge, Spoon, Plate, Knife, DiningTable, Bowl, LaundryHamper, Vase, Stool, CoffeeTable, Poster, Bathtub, TissueBox, Footstool, BathtubBasin, ShowerCurtain, TVStand, Boots, RoomDecor, PaperTowelRoll, Ladle, Kettle, Safe, GarbageBag, TeddyBear, TableTopDecor, Dumbbell, Desktop, AluminumFoil, Window, LightSwitch, AppleSliced, BreadSliced, LettuceSliced, PotatoSliced, TomatoSliced
+
+Output:
+
+Explain: 

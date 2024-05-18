@@ -1,0 +1,51 @@
+**Objective:** You are a helpful assistant with expertise in task-oriented robotic systems. You are to analyze a dialogue-based household instruction and an robot-executable Python program, and your primary goal is to clean up the Python program so that the code executes the underlying task defined by the instruction with maximal efficiency. The actions in the Python program was inferred by an imperfect inverse dynamics model, and thus may contain mistakes.
+
+**Information Provided:**
+1. Python API: Given below, the Python class and functions defining an interactable object and the robot's action space over the object. This represents the robotic action functions you can call.
+2. Dialogue: Dialogue instructions between a <Driver> user and a <Commander> user representing the user's intent for the task that the robot should carry out.
+3. Initial Object State: Object instances viewed by the robotic agent in the current scenario and their respective state attributes at the start of the task execution. Each entry is a different object instance and their attributes.
+4. Demonstration Script: This is an executable Python script of a noisy human demonstration performing the household task indicated in the Dialogue instruction in the current environment. This program was inferred from a video using a learned inverse dynamics model that may have made mistakes, such as innacurate action and object prediction, missed actions, or predicted actions when no action occured. You will be revising this program to generate an accurate, efficient, and easily-readable program to carry out the Dialogue instruction. Along with the revised code, add causal abstraction about agent’s actions in the form of Python comments to highlight important parts of the code for completing the overall task (see #11 in Guidelines below).
+
+Python API:
+```python
+{API}
+```
+
+**Output Format:**
+1. Explanation: Give a detailed account of the script and what is needed (if anything) to revise the program into an accurate, efficient, and readable program to complete the dialogue instruction. Refer to specific details in the instruction, demonstration scripts, and current object state. Are any actions missing to successfully complete the task? Are any actions in the code or object specifications wrong? Are there any object_instance inputs in the InteractionObject that you can fill in? Can comments be added for readability and understanding causal abstractions?
+2. Summary: Offer a concise one-sentence summary explaining the functionality of the script.
+3. Plan: List the steps of the task step by step.
+4. Revised Demonstration Script: Present the code for completing the task efficiently in the current environment.
+
+**Guidelines:**
+Follow these guidelines very strictly:
+1. The Python script should use conditionals, loops, and other Python constructs when relevant.
+2. You should only make use of the following state attributes: "label", "holding", "sliced", "toasted", "dirty", "cooked", "filled", "fillLiquid", "toggled", "open".
+3. VERY IMPORTANT: You should always define an object instance as a Python variable via the InteractionObject class. 
+4. You should only use functions defined in the Python API above. You should not define additional functions.
+5. Leverage the associated Dialogue Instructions as markers or hints to correctly generate a program.
+6. If an object is sliced, this will create individual slices of the object (e.g., whole potato -> many slices of potato). A new InteractionObject with parent_object argument set to the whole object instance should be instantiate to interact with a single slice of the sliced object. The sliced object InteractionObject class should only be initialized after the parent object has been sliced.
+7. It is possible that the provided demonstration script is already optimally efficient and no revisions are needed.
+8. Take into account the attributes of objects when generating the revised demonstration script. For example, cleaning a receptacle in the sink is likely important if the receptacle is dirty and the food items are to be placed in/on the receptacle.
+9. Even if no revisions are necessary, you should still use the output format defined above.
+10. You should not output placeholder code to be filled in later. All code should be fully written out.
+11. Adding Causal Abstraction Comments: Alongside your code revisions, incorporate explanatory comments in Python. These comments should provide causal abstractions of the agent’s actions. Highlight the key parts of the code that are crucial for understanding how the task is accomplished. Specifically, they should: 1) Highlight the key parts of the code that are crucial for understanding how the task is accomplished, 2) Explain the cause-and-effect relationships in the agent's actions, clarifying why certain steps or sequences are essential for the successful completion of the task, 3) Offer insights into the decision-making process of the script, helping future agents or programmers understand the logic and purpose behind each segment of code.
+
+**In-Context Example:**
+{EXAMPLES}
+
+**Task:**
+Revise the Python program that will carry out the following instruction accurately and efficiently as defined above, and give an explanation, summary, plan, and a revised demonstration script as defined above. Do not forget to redefine all InteractionObject instances before using them in the revised script. Here are the inputs for your task:
+
+Current State:
+{STATE}
+
+Dialogue: 
+{command}
+
+Demonstration Script:
+{SCRIPTS}
+
+Your output:
+
+Explanation: 
