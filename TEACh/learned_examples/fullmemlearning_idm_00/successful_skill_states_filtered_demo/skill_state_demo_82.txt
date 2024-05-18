@@ -1,0 +1,34 @@
+"Cup_1": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink", "Plate"]}
+"Cup_10": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"CounterTop_12": {"label": "CounterTop"}
+"Drawer_13": {"label": "Drawer", "open": False}
+"Drawer_15": {"label": "Drawer", "open": False}
+"CounterTop_17": {"label": "CounterTop"}
+"Cabinet_18": {"label": "Cabinet", "open": False}
+"Cabinet_19": {"label": "Cabinet", "open": False}
+"Cabinet_20": {"label": "Cabinet", "open": False}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Drawer_35": {"label": "Drawer", "open": False}
+"CounterTop_37": {"label": "CounterTop"}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Drawer_41": {"label": "Drawer", "open": False}
+"Cabinet_42": {"label": "Cabinet", "open": False}
+"SinkBasin_62": {"label": "SinkBasin"}
+"Plate_68": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"DishSponge_69": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Cup_71": {"label": "Cup", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Mug_75": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Faucet_76": {"label": "Faucet", "toggled": False}

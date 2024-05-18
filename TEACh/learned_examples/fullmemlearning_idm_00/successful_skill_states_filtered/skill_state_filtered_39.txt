@@ -1,0 +1,9 @@
+"Watch_0": {"label": "Watch", "holding": False, "supported_by": ["Box", "CoffeeTable"]}
+"Box_2": {"label": "Box", "holding": False, "open": True, "supported_by": ["CoffeeTable"]}
+"Watch_4": {"label": "Watch", "holding": False, "supported_by": ["Sofa"]}
+"Box_6": {"label": "Box", "holding": False, "open": True, "supported_by": ["Chair"]}
+"Laptop_18": {"label": "Laptop", "holding": False, "supported_by": ["Sofa"]}
+"Watch_20": {"label": "Watch", "holding": False, "supported_by": ["Sofa"]}
+"Drawer_25": {"label": "Drawer", "open": False}
+"CoffeeTable_37": {"label": "CoffeeTable"}
+"Sofa_45": {"label": "Sofa"}

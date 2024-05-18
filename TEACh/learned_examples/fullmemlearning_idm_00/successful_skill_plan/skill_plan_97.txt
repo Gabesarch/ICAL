@@ -1,0 +1,6 @@
+1. Pick up a knife.
+2. Slice the lettuce twice and create instances for the sliced lettuce.
+3. Pick up a potato from the fridge.
+4. Slice the potato once and create an instance for the sliced potato.
+5. Cook the sliced potato in the microwave and update its state to cooked.
+6. Find a clean plate and place the lettuce slices and cooked potato slice on it.

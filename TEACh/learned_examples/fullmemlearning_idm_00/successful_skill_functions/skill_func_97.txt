@@ -1,0 +1,49 @@
+# Define InteractionObject instances for the knife, lettuce, potato, microwave, and plate
+knife = InteractionObject("Knife", object_instance="Knife_67")  # Knife is on the countertop
+lettuce = InteractionObject("Lettuce", object_instance="Lettuce_4")  # Lettuce is on the countertop
+potato = InteractionObject("Potato", object_instance="Potato_5")  # Potato is in the fridge
+microwave = InteractionObject("Microwave", object_instance="Microwave_74")  # Microwave is off
+plate = InteractionObject("Plate", object_instance="Plate_6")  # Plate is on the countertop and clean
+
+# Slice the lettuce twice
+knife.go_to()
+knife.pickup()
+lettuce.go_to()
+lettuce.slice()
+lettuce_sliced_1 = InteractionObject("LettuceSliced", parent_object=lettuce.object_instance)  # Initialize new sliced object from sliced parent
+lettuce_sliced_2 = InteractionObject("LettuceSliced", parent_object=lettuce.object_instance)  # Initialize new sliced object from sliced parent
+
+# Pick up a potato from the fridge, slice it once, and cook it
+fridge = InteractionObject("Fridge", object_instance="Fridge_45")
+fridge.go_to()
+fridge.open()
+potato.go_to()
+potato.pickup()
+fridge.close()
+potato.slice()
+potato_sliced = InteractionObject("PotatoSliced", parent_object=potato.object_instance)  # Initialize new sliced object from sliced parent
+microwave.go_to()
+microwave.open()
+potato_sliced.pickup()
+potato_sliced.place(microwave)
+microwave.close()
+microwave.toggle_on()
+microwave.toggle_off()
+microwave.open()
+potato_sliced.pickup()  # Retrieve the now cooked potato slice
+potato_sliced.change_state("cooked", True)  # Update the potato slice's state to cooked
+
+# Place the lettuce slices and cooked potato slice on the clean plate
+plate.go_to()
+lettuce_sliced_1.pickup()
+lettuce_sliced_1.place(plate)
+lettuce_sliced_2.pickup()
+lettuce_sliced_2.place(plate)
+potato_sliced.place(plate)
+
+# Causal abstraction comments:
+# The knife is picked up to slice the lettuce, which is necessary to create slices for the salad.
+# The lettuce is sliced twice, as per the dialogue instructions, to provide enough components for the salad.
+# The potato is sliced and then cooked in the microwave, fulfilling the requirement to have a cooked potato slice in the salad.
+# The clean plate is used to assemble the salad components, ensuring a presentable and hygienic meal.
+# The task is completed by placing the lettuce and potato slices on the plate, as instructed in the dialogue.

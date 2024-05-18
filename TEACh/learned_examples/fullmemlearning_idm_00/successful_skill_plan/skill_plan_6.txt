@@ -1,0 +1,4 @@
+1. Identify all newspapers in the current state.
+2. Select a single piece of furniture to place all newspapers on.
+3. For each newspaper, pick it up and place it on the selected furniture.
+4. Ensure that the script is efficient and well-commented.

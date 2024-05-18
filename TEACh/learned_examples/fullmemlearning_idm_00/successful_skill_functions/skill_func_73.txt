@@ -1,0 +1,33 @@
+# Define InteractionObject instances for the knife, bread, toaster, and plate
+knife = InteractionObject("Knife", object_instance="Knife_70")  # Knife is on the chair
+bread = InteractionObject("Bread", object_instance="Bread_76")  # Bread is on the countertop to the left of the fridge
+toaster = InteractionObject("Toaster", object_instance="Toaster_80")  # Toaster for toasting bread
+clean_plate = InteractionObject("Plate", object_instance="Plate_13")  # Clean plate is to the right of the sink
+
+# Pick up the knife
+knife.go_to()
+knife.pickup()
+
+# Go to the bread and slice it
+bread.go_to()
+bread.slice()
+bread_sliced = InteractionObject("BreadSliced", parent_object=bread.object_instance)  # Initialize new sliced object from sliced parent
+
+# Toast one slice of bread
+toaster.go_to()
+bread_sliced.pickup()
+bread_sliced.place(toaster)
+toaster.toggle_on()  # Start toasting the bread slice
+# Wait for the bread to toast (this step is abstracted in the script)
+toaster.toggle_off()  # Stop toasting after it's done
+bread_sliced.change_state("cooked", True)  # Update the bread slice's state to toasted
+
+# Place the toasted bread slice on the clean plate
+clean_plate.go_to()
+bread_sliced.pickup()
+bread_sliced.place(clean_plate)
+
+# Causal abstraction comments:
+# The knife is picked up to slice the bread, which is necessary to create slices for toasting.
+# The toaster is used to toast a slice of bread, fulfilling the requirement to make toast.
+# The clean plate is identified and used to place the toasted bread slice, as instructed by the Commander.

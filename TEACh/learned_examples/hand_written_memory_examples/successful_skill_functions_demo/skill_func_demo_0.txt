@@ -1,0 +1,17 @@
+target_knife_20 = InteractionObject("Knife", object_instance = "Knife_20")
+target_knife_20.go_to()
+target_knife_20.pickup()
+target_knife_20.change_state("holding", True)
+target_lettuce_10 = InteractionObject("Lettuce", object_instance = "Lettuce_10")
+target_lettuce_10.go_to()
+target_lettuce_10.slice()
+target_lettuce_10.change_state("sliced", True)
+target_tomato_11 = InteractionObject("Tomato", object_instance = "Tomato_11")
+target_tomato_11.go_to()
+target_tomato_11.pickup()
+target_tomato_11.put_down()
+target_plate_21 = InteractionObject("Lettuce", object_instance = "Plate_21")
+target_lettucesliced_95 = InteractionObject("LettuceSliced", object_instance = None, parent_object = "Lettuce_10") # Initialize new sliced object from sliced parent
+target_lettucesliced_95.pickup_and_place(target_plate_21)
+target_lettucesliced_96 = InteractionObject("LettuceSliced", object_instance = None, parent_object = "Lettuce_10") # Initialize new sliced object from sliced parent
+target_lettucesliced_96.pickup_and_place(target_plate_21)

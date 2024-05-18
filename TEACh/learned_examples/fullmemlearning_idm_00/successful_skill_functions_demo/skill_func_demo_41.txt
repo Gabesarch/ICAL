@@ -1,0 +1,15 @@
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_cabinet.go_to()
+target_mug.place(target_cabinet)
+target_cabinet.pickup_and_place(target_cabinet)
+target_mug.pickup()
+target_cabinet.go_to()
+target_mug.place(target_cabinet)
+target_mug.pickup_and_place(target_cabinet)
+```

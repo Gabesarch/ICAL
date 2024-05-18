@@ -1,0 +1,7 @@
+"Apple_9": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Apple_10": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["CounterTop", "Microwave"]}
+"CounterTop_38": {"label": "CounterTop"}
+"CounterTop_44": {"label": "CounterTop"}
+"Apple_47": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Fridge"]}
+"Fridge_71": {"label": "Fridge", "open": False}
+"Microwave_73": {"label": "Microwave", "toggled": False, "open": False}

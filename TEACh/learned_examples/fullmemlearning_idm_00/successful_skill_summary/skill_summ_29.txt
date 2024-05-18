@@ -1,0 +1,1 @@
+The script is supposed to slice a potato, cook one slice, clean a dirty plate, and serve the cooked potato slice on the clean plate.

@@ -1,0 +1,1 @@
+The script is intended to clean a mug by rinsing it in the sink, which involves turning off the faucet if it's on, emptying the mug if filled, rinsing it if dirty, and placing it back in the sink basin.

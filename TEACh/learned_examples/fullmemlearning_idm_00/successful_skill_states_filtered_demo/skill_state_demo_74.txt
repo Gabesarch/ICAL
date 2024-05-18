@@ -1,0 +1,26 @@
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Potato_2": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Egg_12": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"Ladle_14": {"label": "Ladle", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Fork_15": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Cup_16": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"SoapBottle_17": {"label": "SoapBottle", "holding": False, "supported_by": ["Sink"]}
+"Egg_22": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"Fork_23": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Ladle_24": {"label": "Ladle", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Potato_26": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_42": {"label": "Cabinet", "open": False}
+"CounterTop_49": {"label": "CounterTop"}
+"CounterTop_56": {"label": "CounterTop"}
+"SoapBottle_61": {"label": "SoapBottle", "holding": False, "supported_by": ["Cabinet"]}
+"Cup_62": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop", "Microwave"]}
+"Pot_64": {"label": "Pot", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Fork_72": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Ladle_73": {"label": "Ladle", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"Egg_76": {"label": "Egg", "holding": False, "supported_by": ["Cabinet"]}
+"CoffeeMachine_81": {"label": "CoffeeMachine", "toggled": False}
+"SinkBasin_85": {"label": "SinkBasin"}
+"Potato_92": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Pan", "StoveBurner"]}
+"Mug_96": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop", "CoffeeMachine"]}
+"Faucet_98": {"label": "Faucet", "toggled": True}

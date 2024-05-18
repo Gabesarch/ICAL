@@ -1,0 +1,16 @@
+# Define InteractionObject instances for the box, credit card, and desk
+box_next_to_chair = InteractionObject("Box", object_instance="Box_8")  # The box that is open and next to the chair
+credit_card_in_box = InteractionObject("CreditCard", object_instance="CreditCard_0")  # The credit card inside the box
+desk_to_place_card = InteractionObject("Desk", object_instance="Desk_33")  # The desk where the credit card should be placed
+
+# (causal abstraction) Navigate to the box next to the chair to retrieve the credit card
+box_next_to_chair.go_to()
+
+# (causal abstraction) Pick up the credit card from inside the box
+credit_card_in_box.pickup()
+
+# (causal abstraction) Navigate to the desk to place the credit card
+desk_to_place_card.go_to()
+
+# (causal abstraction) Place the credit card on the desk as instructed
+credit_card_in_box.place(desk_to_place_card)

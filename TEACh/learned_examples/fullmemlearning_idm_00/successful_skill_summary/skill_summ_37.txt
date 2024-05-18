@@ -1,0 +1,1 @@
+The script slices a piece of bread, toasts it, and then places the toasted slice on a clean plate.

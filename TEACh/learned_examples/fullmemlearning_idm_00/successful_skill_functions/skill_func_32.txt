@@ -1,0 +1,34 @@
+# Define InteractionObject instances for the fridge, eggs, and dining table
+fridge = InteractionObject("Fridge", object_instance="Fridge_71")
+egg_fridge_1 = InteractionObject("Egg", object_instance="Egg_19")  # Egg inside the fridge
+egg_fridge_2 = InteractionObject("Egg", object_instance="Egg_52")  # Egg inside the fridge
+egg_stove = InteractionObject("Egg", object_instance="Egg_21")  # Egg on the stove opposite the fridge
+egg_sink = InteractionObject("Egg", object_instance="Egg_17")  # Egg in the sink
+dining_table = InteractionObject("DiningTable", object_instance="DiningTable_84")
+
+# Go to the fridge, open it, and collect all the eggs inside
+fridge.go_to()
+fridge.open()
+egg_fridge_1.go_to()
+egg_fridge_1.pickup()
+egg_fridge_1.place(dining_table)
+egg_fridge_2.go_to()
+egg_fridge_2.pickup()
+egg_fridge_2.place(dining_table)
+fridge.close()
+
+# Go to the stove, collect the egg opposite the fridge
+egg_stove.go_to()
+egg_stove.pickup()
+egg_stove.place(dining_table)
+
+# Go to the sink, collect the egg inside
+egg_sink.go_to()
+egg_sink.pickup()
+egg_sink.place(dining_table)
+
+# Causal abstraction comments:
+# The fridge is opened to access the eggs inside, as indicated by the Commander.
+# Each egg is picked up from its location and placed on the dining table, centralizing all eggs as requested.
+# The script ensures that all eggs mentioned by the Commander are collected from the fridge, stove, and sink.
+# The dining table is the designated location for the eggs, making it easier for the Commander to find them.

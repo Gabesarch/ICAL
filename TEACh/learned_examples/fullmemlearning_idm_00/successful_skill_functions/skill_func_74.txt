@@ -1,0 +1,53 @@
+# Define InteractionObject instances for the faucet and sink basin
+faucet = InteractionObject("Faucet", object_instance="Faucet_98")
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_85")
+
+# Turn off the faucet if it is currently on to conserve water
+if faucet.check_attribute("toggled", True):
+    faucet.go_to()
+    faucet.toggle_off()
+
+# Define InteractionObject instances for the mugs that need to be cleaned
+mug_in_coffeemaker = InteractionObject("Mug", object_instance="Mug_96")  # Mug is in the coffee maker
+mug_in_cabinet = InteractionObject("Mug", object_instance="Mug_0")  # Mug is in the cabinet under the coffee maker
+
+# List of all mugs that need to be cleaned
+dirty_mugs = [mug_in_coffeemaker, mug_in_cabinet]
+
+# Clean all dirty mugs
+for mug in dirty_mugs:
+    # Go to the dirty mug
+    mug.go_to()
+    
+    # If the mug is filled with liquid, pour it out into the sink basin
+    if mug.check_attribute("filled", True):
+        mug.pickup()
+        sink_basin.go_to()
+        mug.pour(sink_basin)
+    
+    # Place the mug in the sink basin to clean it
+    mug.pickup()
+    sink_basin.go_to()
+    mug.place(sink_basin)
+    
+    # Turn on the faucet to rinse the mug with water
+    faucet.go_to()
+    faucet.toggle_on()
+    
+    # Assume the mug is now clean, update its state
+    mug.change_state("dirty", False)
+    
+    # Turn off the faucet after cleaning
+    faucet.toggle_off()
+    
+    # Pick up the clean mug and place it back on the countertop
+    mug.pickup()
+    countertop = InteractionObject("CounterTop", object_instance="CounterTop_49")  # Assuming this is an appropriate place to put clean mugs
+    countertop.go_to()
+    mug.place(countertop)
+
+# Causal abstraction comments:
+# The faucet is turned off initially to prevent wasting water before cleaning begins.
+# Each mug is identified and cleaned individually to ensure all mugs mentioned by the Commander are addressed.
+# The faucet is turned on to rinse the mugs, and then turned off to conserve water after cleaning.
+# Clean mugs are placed back on the countertop, completing the task as instructed.

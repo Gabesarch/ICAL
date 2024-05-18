@@ -1,0 +1,49 @@
+# Define InteractionObject instances for the bread, toaster, plate, sink, faucet, and knife
+bread = InteractionObject("Bread", object_instance="Bread_48")  # Bread is on the countertop
+toaster = InteractionObject("Toaster", object_instance="Toaster_68")  # Toaster for toasting bread
+plate = InteractionObject("Plate", object_instance="Plate_59")  # Plate is on the countertop and dirty
+sink = InteractionObject("SinkBasin", object_instance="SinkBasin_77")  # Sink for cleaning the plate
+faucet = InteractionObject("Faucet", object_instance="Faucet_86")  # Faucet for cleaning the plate
+knife = InteractionObject("Knife", object_instance="Knife_5")  # Knife for slicing bread
+
+# Pick up the knife to slice the bread
+knife.go_to()
+knife.pickup()
+
+# Find the bread on the countertop and slice it to create a bread slice
+bread.go_to()
+bread.slice()
+bread_sliced = InteractionObject("BreadSliced", parent_object=bread.object_instance)  # Initialize new sliced object from sliced parent
+
+# Toast the bread slice in the toaster
+toaster.go_to()
+bread_sliced.pickup()
+bread_sliced.place(toaster)
+toaster.toggle_on()  # Start toasting the bread slice
+# Wait for the bread to toast (this step is abstracted in the script)
+toaster.toggle_off()  # Stop toasting after it's done
+bread_sliced.change_state("cooked", True)  # Update the bread slice's state to toasted
+
+# Check if the plate on the countertop is dirty and clean it if necessary
+if plate.check_attribute("dirty", True):
+    plate.go_to()
+    plate.pickup()
+    sink.go_to()
+    plate.place(sink)
+    faucet.go_to()
+    faucet.toggle_on()  # Turn on the faucet to clean the plate
+    faucet.toggle_off()  # Turn off the faucet after cleaning
+    plate.pickup()  # Pick up the clean plate
+    plate.change_state("dirty", False)  # Update the plate's state to clean
+
+# Serve the toasted bread on the clean plate
+bread_sliced.pickup()
+plate.go_to()
+bread_sliced.place(plate)
+
+# Causal abstraction comments:
+# The knife is picked up before slicing the bread, as slicing requires the agent to hold a knife.
+# The bread is sliced to create individual pieces that can be toasted, which is necessary for making toast.
+# The toaster is used to toast a slice of bread, fulfilling the Commander's request for a slice of toast.
+# The plate's cleanliness is checked, and it is cleaned if dirty, ensuring a hygienic surface for serving the toast.
+# The toasted bread is placed on the clean plate, completing the task as per the dialogue instructions.

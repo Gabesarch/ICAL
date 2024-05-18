@@ -1,0 +1,12 @@
+"DishSponge_3": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"SaltShaker_11": {"label": "SaltShaker", "holding": False, "supported_by": ["Sink"]}
+"DishSponge_19": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"CounterTop_28": {"label": "CounterTop"}
+"CounterTop_39": {"label": "CounterTop"}
+"Fridge_52": {"label": "Fridge", "open": False}
+"SinkBasin_66": {"label": "SinkBasin"}
+"DishSponge_72": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Chair"]}
+"Mug_76": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"DiningTable_78": {"label": "DiningTable"}
+"Faucet_79": {"label": "Faucet", "toggled": True}
+"Chair_81": {"label": "Chair"}

@@ -24,6 +24,8 @@ TEACh evaluation script: `models/teach_eval_embodied_llm.py`
 
 This repo uses [HELPER](https://github.com/Gabesarch/HELPER) for navigation and manipulation modules.
 
+View the learned ICAL examples here: [HELPER](https://github.com/Gabesarch/HELPER)
+
 ## Installation 
 
 **(1)** Start by cloning the repository:

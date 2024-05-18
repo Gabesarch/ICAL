@@ -1,0 +1,21 @@
+"Pot_5": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Lettuce_12": {"label": "Lettuce", "holding": False, "sliced": True, "supported_by": ["Fridge"]}
+"Plate_13": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Tomato_14": {"label": "Tomato", "holding": False, "sliced": True, "cooked": False, "supported_by": ["CounterTop", "Plate"]}
+"Pot_18": {"label": "Pot", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"CounterTop_46": {"label": "CounterTop"}
+"CounterTop_50": {"label": "CounterTop"}
+"Tomato_56": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Knife_63": {"label": "Knife", "holding": True, "supported_by": ["Microwave"]}
+"Plate_64": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"GarbageCan_67": {"label": "GarbageCan"}
+"Potato_68": {"label": "Potato", "holding": False, "sliced": True, "cooked": False, "supported_by": ["GarbageCan"]}
+"Lettuce_69": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Fridge"]}
+"Fridge_72": {"label": "Fridge", "open": False}
+"Pot_84": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Knife_85": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Microwave_86": {"label": "Microwave", "toggled": False, "open": False}
+"LettuceSliced_96": {"label": "LettuceSliced", "holding": False, "supported_by": ["CounterTop"]}
+"LettuceSliced_97": {"label": "LettuceSliced", "holding": False, "supported_by": ["CounterTop"]}
+"TomatoSliced_98": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop", "Plate"]}
+"PotatoSliced_99": {"label": "PotatoSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}

@@ -1,0 +1,1 @@
+The script waters a houseplant using a pot filled with water and ensures the faucet is turned off if it was left on.

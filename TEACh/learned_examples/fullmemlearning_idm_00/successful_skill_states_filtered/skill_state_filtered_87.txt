@@ -1,0 +1,26 @@
+"DishSponge_3": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Plate", "Cabinet"]}
+"Knife_5": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Plate_8": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Plate_17": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Knife_19": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"CounterTop_26": {"label": "CounterTop"}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Cabinet_39": {"label": "Cabinet", "open": False}
+"Cabinet_40": {"label": "Cabinet", "open": False}
+"Cabinet_41": {"label": "Cabinet", "open": False}
+"Cabinet_42": {"label": "Cabinet", "open": False}
+"Cabinet_43": {"label": "Cabinet", "open": False}
+"Fridge_45": {"label": "Fridge", "open": False}
+"Plate_60": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Floor", "GarbageCan"]}
+"Knife_64": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Knife_68": {"label": "Knife", "holding": True, "supported_by": ["Fridge"]}
+"Lettuce_70": {"label": "Lettuce", "holding": False, "sliced": True, "supported_by": ["CounterTop"]}
+"LettuceSliced_80": {"label": "LettuceSliced", "holding": False, "supported_by": ["CounterTop"]}
+"LettuceSliced_81": {"label": "LettuceSliced", "holding": False, "supported_by": ["CounterTop"]}

@@ -1,0 +1,8 @@
+1. Define the InteractionObject instance for the pot filled with water.
+2. Navigate to the pot.
+3. Pick up the pot.
+4. Navigate to the houseplant.
+5. Pour water from the pot into the houseplant.
+6. Update the pot's state to reflect that it is no longer filled with water.
+7. Update the houseplant's state to reflect that it has been watered.
+8. Check if the faucet is toggled on; if so, go to the faucet and toggle it off.

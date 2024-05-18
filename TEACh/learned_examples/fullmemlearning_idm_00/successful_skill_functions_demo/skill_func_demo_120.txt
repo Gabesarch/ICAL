@@ -1,0 +1,11 @@
+```python
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_plate.pickup()
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.go_to()
+target_bowl.pickup()
+target_cellphone = InteractionObject("CellPhone", object_instance = "CellPhone")
+target_cellphone.go_to()
+target_bowl.pour(target_cellphone)
+```

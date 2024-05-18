@@ -1,0 +1,41 @@
+"Statue_0": {"label": "Statue", "holding": False, "supported_by": ["DiningTable"]}
+"Pillow_1": {"label": "Pillow", "holding": False, "supported_by": ["Chair"]}
+"Plate_2": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Sofa"]}
+"Newspaper_4": {"label": "Newspaper", "holding": False, "supported_by": ["DiningTable"]}
+"KeyChain_5": {"label": "KeyChain", "holding": False, "supported_by": ["DiningTable"]}
+"KeyChain_6": {"label": "KeyChain", "holding": False, "supported_by": ["Box", "CoffeeTable"]}
+"Statue_7": {"label": "Statue", "holding": False, "supported_by": ["SideTable"]}
+"Plate_8": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CoffeeTable"]}
+"Box_9": {"label": "Box", "holding": False, "open": True, "supported_by": ["CoffeeTable"]}
+"KeyChain_10": {"label": "KeyChain", "holding": False, "supported_by": ["Sofa"]}
+"Television_11": {"label": "Television"}
+"Newspaper_12": {"label": "Newspaper", "holding": False, "supported_by": ["CoffeeTable"]}
+"GarbageCan_13": {"label": "GarbageCan"}
+"CreditCard_14": {"label": "CreditCard", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"RemoteControl_15": {"label": "RemoteControl", "holding": False, "supported_by": ["CoffeeTable"]}
+"FloorLamp_16": {"label": "FloorLamp", "toggled": True}
+"HousePlant_17": {"label": "HousePlant", "filled": False, "fillLiquid": None}
+"Laptop_18": {"label": "Laptop", "holding": False, "supported_by": ["Sofa"]}
+"Plate_19": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"LightSwitch_20": {"label": "LightSwitch"}
+"Pillow_21": {"label": "Pillow", "holding": False, "supported_by": ["SideTable"]}
+"Painting_22": {"label": "Painting"}
+"Painting_23": {"label": "Painting"}
+"Vase_24": {"label": "Vase", "holding": False, "supported_by": ["Sofa"]}
+"Watch_25": {"label": "Watch", "holding": False, "supported_by": ["CoffeeTable"]}
+"Window_26": {"label": "Window"}
+"Window_27": {"label": "Window"}
+"Window_28": {"label": "Window"}
+"Chair_30": {"label": "Chair"}
+"SideTable_31": {"label": "SideTable"}
+"SideTable_32": {"label": "SideTable"}
+"Drawer_33": {"label": "Drawer", "open": False}
+"SideTable_34": {"label": "SideTable"}
+"Statue_35": {"label": "Statue", "holding": False, "supported_by": ["DiningTable"]}
+"SideTable_36": {"label": "SideTable"}
+"Sofa_37": {"label": "Sofa"}
+"Chair_38": {"label": "Chair"}
+"Chair_39": {"label": "Chair"}
+"CoffeeTable_40": {"label": "CoffeeTable"}
+"DiningTable_41": {"label": "DiningTable"}
+"Sofa_42": {"label": "Sofa"}

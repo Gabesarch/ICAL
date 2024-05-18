@@ -1,0 +1,42 @@
+# Initialize InteractionObject instances for the potato, knife, tomato, safe, bowl, and sink basin
+potato = InteractionObject("Potato", object_instance="Potato_69")  # Potato in the sink
+knife = InteractionObject("Knife", object_instance="Knife_72")  # Knife on the countertop
+tomato = InteractionObject("Tomato", object_instance="Tomato_17")  # Tomato in the sink
+safe = InteractionObject("Safe", object_instance="Safe_88")  # Safe near the fridge
+bowl = InteractionObject("Bowl", object_instance="Bowl_14")  # Bowl in the safe
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_70")  # Sink basin
+faucet = InteractionObject("Faucet", object_instance="Faucet_89")  # Faucet
+
+# Slice the potato in the sink
+potato.go_to()
+knife.go_to()
+knife.pickup()
+potato.slice()
+potato_sliced = InteractionObject("PotatoSliced", parent_object=potato.object_instance)  # Initialize new sliced object from sliced parent
+
+# Slice the tomato
+tomato.go_to()
+tomato.slice()
+tomato_sliced = InteractionObject("TomatoSliced", parent_object=tomato.object_instance)  # Initialize new sliced object from sliced parent
+
+# Retrieve the bowl from the safe
+safe.go_to()
+safe.open()
+bowl.go_to()
+bowl.pickup()
+
+# Check if the bowl is dirty and clean it if necessary
+if bowl.check_attribute("dirty", True):
+    sink_basin.go_to()
+    bowl.place(sink_basin)
+    faucet.go_to()
+    faucet.toggle_on()  # Turn on the faucet to clean the bowl
+    faucet.toggle_off()  # Turn off the faucet after cleaning
+    bowl.pickup()  # Pick up the clean bowl
+    bowl.change_state("dirty", False)  # Update the bowl's state to clean
+
+# Place one slice of tomato in the clean bowl
+tomato_sliced.go_to()
+tomato_sliced.pickup()
+bowl.go_to()
+tomato_sliced.place(bowl)

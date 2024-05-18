@@ -1,0 +1,7 @@
+1. Go to the knife's location and pick it up.
+2. Go to the bread's location and slice it.
+3. Create a new InteractionObject instance for a slice of bread.
+4. Go to the toaster and place the bread slice in it.
+5. Toggle the toaster on and off to toast the bread.
+6. Update the bread slice's state to toasted.
+7. Pick up the toasted bread slice and place it on the clean plate.

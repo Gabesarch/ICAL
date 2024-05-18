@@ -1,0 +1,28 @@
+"Plate_20": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Tomato_21": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Bread_25": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"SaltShaker_30": {"label": "SaltShaker", "holding": False, "supported_by": ["CounterTop", "Plate"]}
+"Plate_40": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Floor", "Shelf"]}
+"Bread_42": {"label": "Bread", "holding": False, "sliced": True, "cooked": False, "supported_by": ["Fridge"]}
+"Tomato_48": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Stool"]}
+"Tomato_56": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Bread_59": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Plate_63": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Tomato_65": {"label": "Tomato", "holding": False, "sliced": True, "cooked": False, "supported_by": ["Fridge"]}
+"Tomato_77": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"CounterTop_102": {"label": "CounterTop"}
+"CounterTop_108": {"label": "CounterTop"}
+"StoveBurner_111": {"label": "StoveBurner"}
+"Bread_116": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Shelf"]}
+"Fridge_124": {"label": "Fridge", "open": False}
+"Tomato_126": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Plate_127": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Toaster_136": {"label": "Toaster", "toggled": False}
+"Knife_142": {"label": "Knife", "holding": True, "supported_by": ["CounterTop"]}
+"SinkBasin_145": {"label": "SinkBasin"}
+"Shelf_155": {"label": "Shelf"}
+"Shelf_158": {"label": "Shelf"}
+"BreadSliced_160": {"label": "BreadSliced", "holding": False, "cooked": True, "supported_by": ["CounterTop"]}
+"BreadSliced_161": {"label": "BreadSliced", "holding": False, "cooked": True, "supported_by": ["CounterTop"]}
+"TomatoSliced_162": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}
+"TomatoSliced_163": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}

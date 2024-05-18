@@ -1,0 +1,6 @@
+1. Go to the knife and pick it up.
+2. Go to the bread and slice it.
+3. Toast the bread slices in the toaster.
+4. If the plate is dirty, clean it at the sink using the faucet.
+5. Go to the lettuce (which is actually "Lettuce_90" on the sink), pick it up, and slice it on the countertop.
+6. Place the toasted bread slices and lettuce slices on the clean plate.

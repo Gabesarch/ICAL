@@ -1,0 +1,32 @@
+# Define InteractionObject instances for the laptop and the floor (coffee table used as a placeholder for the floor)
+laptop = InteractionObject("Laptop", object_instance="Laptop_18")
+floor = InteractionObject("CoffeeTable", object_instance="CoffeeTable_37")  # Using the coffee table instance to represent the floor
+
+# Place the laptop on the floor to clear space
+laptop.go_to()
+laptop.pickup()
+floor.go_to()
+laptop.place(floor)
+
+# Define InteractionObject instances for the watches and the box
+watch_4 = InteractionObject("Watch", object_instance="Watch_4")  # Corrected instance ID for the watch
+watch_20 = InteractionObject("Watch", object_instance="Watch_20")  # Corrected instance ID for the watch
+box_2 = InteractionObject("Box", object_instance="Box_2")  # The box specified by the Commander
+
+# Collect all watches and place them into the specified box
+# Move watch_4 to the box
+watch_4.go_to()
+watch_4.pickup()
+box_2.go_to()
+watch_4.place(box_2)
+
+# Move watch_20 to the box
+watch_20.go_to()
+watch_20.pickup()
+box_2.go_to()
+watch_20.place(box_2)
+
+# Causal abstraction comments:
+# The laptop is placed on the floor to clear the way for collecting watches, as per the dialogue instruction.
+# Each watch is picked up from its location and placed into the specified box, fulfilling the Commander's order to put all watches in one box.
+# The box is already open, so there is no need to close it after placing the watches inside, completing the task neatly and as instructed.

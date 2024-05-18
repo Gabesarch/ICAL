@@ -1,0 +1,10 @@
+1. Navigate to the pot and pick it up.
+2. Navigate to the sink basin and place the pot in it.
+3. Toggle on the faucet to clean the pot.
+4. Toggle off the faucet once the pot is clean.
+5. Change the state of the pot to "dirty" being False.
+6. Pick up the clean pot.
+7. Navigate to the houseplant.
+8. Pour water from the pot into the houseplant.
+9. Change the state of the houseplant to reflect that it has been watered.
+10. Place the now-empty pot back on the countertop.

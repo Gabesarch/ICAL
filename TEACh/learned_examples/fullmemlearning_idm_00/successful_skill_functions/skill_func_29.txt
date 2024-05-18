@@ -1,0 +1,49 @@
+# Initialize InteractionObject instances for the potato, knife, stove burner, plate, sink basin, and pan
+potato = InteractionObject("Potato", object_instance="Potato_11")  # Potato on the dining table
+knife = InteractionObject("Knife", object_instance="Knife_2")  # Knife on the dining table
+stove_burner = InteractionObject("StoveBurner", object_instance="StoveBurner_19")  # One of the stove burners
+plate = InteractionObject("Plate", object_instance="Plate_45")  # Dirty plate on the dining table
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_55")  # Sink basin
+faucet = InteractionObject("Faucet", object_instance="Faucet_70")  # Faucet
+pan = InteractionObject("Pan", object_instance="Pan_53")  # Clean pan on the countertop
+
+# Slice the potato
+knife.go_to()
+knife.pickup()
+potato.go_to()
+potato.slice()
+potato_sliced = InteractionObject("PotatoSliced", parent_object=potato.object_instance)  # Initialize new sliced object from sliced parent
+
+# Cook the potato slice
+# First, place a clean pan on the stove burner
+pan.go_to()
+pan.pickup()
+stove_burner.go_to()
+pan.place(stove_burner)
+# Then, place the potato slice in the pan
+potato_sliced.pickup()
+pan.go_to()  # Go to the pan, not the stove burner
+potato_sliced.place(pan)
+# Simulate waiting for the potato slice to cook (this would be simulated in a real scenario)
+# After the potato slice is cooked, update the state to reflect that it is cooked
+potato_sliced.change_state("cooked", True)  # Update the potato slice's state to cooked
+
+# Clean the plate
+if plate.check_attribute("dirty", True):
+    plate.go_to()
+    plate.pickup()
+    sink_basin.go_to()
+    plate.place(sink_basin)
+    if not faucet.check_attribute("toggled", True):  # Check if the faucet is off before turning it on
+        faucet.go_to()
+        faucet.toggle_on()  # Turn on the faucet to clean the plate
+    # Simulate waiting for the plate to be cleaned (this would be simulated in a real scenario)
+    faucet.toggle_off()  # Turn off the faucet after cleaning
+    plate.pickup()  # Pick up the clean plate
+    plate.change_state("dirty", False)  # Update the plate's state to clean
+
+# Serve the cooked potato slice on the clean plate
+potato_sliced.go_to()
+potato_sliced.pickup()
+plate.go_to()
+potato_sliced.place(plate)

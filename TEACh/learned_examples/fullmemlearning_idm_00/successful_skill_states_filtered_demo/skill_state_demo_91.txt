@@ -1,0 +1,20 @@
+"Plate_7": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Fridge"]}
+"Bread_12": {"label": "Bread", "holding": False, "sliced": True, "cooked": False, "supported_by": ["CounterTop"]}
+"Bread_13": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"SoapBottle_16": {"label": "SoapBottle", "holding": False, "supported_by": ["Sink"]}
+"Plate_17": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"CounterTop_25": {"label": "CounterTop"}
+"CounterTop_26": {"label": "CounterTop"}
+"CounterTop_41": {"label": "CounterTop"}
+"Bread_44": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Knife_45": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Toaster_46": {"label": "Toaster", "toggled": False}
+"Plate_53": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Microwave_60": {"label": "Microwave", "toggled": False, "open": False}
+"SinkBasin_63": {"label": "SinkBasin"}
+"Knife_68": {"label": "Knife", "holding": True, "supported_by": ["Fridge"]}
+"Fridge_78": {"label": "Fridge", "open": False}
+"Faucet_80": {"label": "Faucet", "toggled": False}
+"Stool_81": {"label": "Stool"}
+"DiningTable_82": {"label": "DiningTable"}
+"BreadSliced_83": {"label": "BreadSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}

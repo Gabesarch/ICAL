@@ -28,7 +28,7 @@ python main.py \
  --server_port 0 \
  --check_success_change_state \
  --do_state_abstraction \
- --skill_folder ./output/fullmemlearning_idm_00 \
+ --skill_folder ./learned_examples/fullmemlearning_idm_00 \
  --precompute_map_path ./data/precomputed_maps_LEARNEDMEM \
  --gpt_model gpt-3.5-turbo-1106 \
  --skip_if_exists \

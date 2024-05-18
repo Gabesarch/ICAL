@@ -1,0 +1,22 @@
+"Plate_2": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+"Spatula_3": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Lettuce_4": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Knife_8": {"label": "Knife", "holding": False, "supported_by": ["Stool"]}
+"Lettuce_11": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Knife_12": {"label": "Knife", "holding": False, "supported_by": ["SideTable"]}
+"Cabinet_16": {"label": "Cabinet", "open": False}
+"CounterTop_20": {"label": "CounterTop"}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"Faucet_22": {"label": "Faucet", "toggled": False}
+"Knife_30": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Lettuce_49": {"label": "Lettuce", "holding": False, "sliced": True, "supported_by": ["CounterTop"]}
+"Spatula_51": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Tomato_53": {"label": "Tomato", "holding": False, "sliced": True, "cooked": False, "supported_by": ["SideTable"]}
+"SinkBasin_54": {"label": "SinkBasin"}
+"Knife_55": {"label": "Knife", "holding": True, "supported_by": ["CounterTop"]}
+"Plate_56": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["SideTable"]}
+"SideTable_67": {"label": "SideTable"}
+"Stool_71": {"label": "Stool"}
+"LettuceSliced_72": {"label": "LettuceSliced", "holding": False, "supported_by": ["Plate", "SideTable"]}
+"LettuceSliced_73": {"label": "LettuceSliced", "holding": False, "supported_by": ["Plate", "SideTable"]}
+"TomatoSliced_74": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}

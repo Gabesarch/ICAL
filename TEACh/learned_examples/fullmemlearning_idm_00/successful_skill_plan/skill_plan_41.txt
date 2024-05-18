@@ -1,0 +1,10 @@
+1. Identify the mugs by their unique object instances.
+2. Go to the first mug.
+3. Pick up the first mug.
+4. Go to the cabinet.
+5. Open the cabinet.
+6. Place the first mug into the cabinet.
+7. Go to the second mug.
+8. Pick up the second mug.
+9. Place the second mug into the same cabinet.
+10. Close the cabinet.

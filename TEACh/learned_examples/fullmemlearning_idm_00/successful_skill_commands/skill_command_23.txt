@@ -1,0 +1,1 @@
+<Commander> hi. <Driver> first task? <Commander> let's find the newspaper and put on one piece of furniture. <Driver> where is the newspaper. <Commander> there is one on the chair. <Commander> there is another on the coffee table. <Commander> finished. <Commander> thank you for the great job. <Driver> cool. 

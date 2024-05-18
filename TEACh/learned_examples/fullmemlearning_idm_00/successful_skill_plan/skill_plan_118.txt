@@ -1,0 +1,8 @@
+1. Check if the faucet is on and turn it off to conserve water.
+2. Go to the mug and pick it up.
+3. If the mug is filled with liquid, pour it out into the sink basin (do not change the "filled" and "fillLiquid" attributes as the mug remains filled).
+4. Place the mug in the sink basin.
+5. Turn on the faucet to rinse the mug with water.
+6. Update the mug's "dirty" attribute to False to indicate it has been cleaned.
+7. Turn off the faucet after rinsing.
+8. Place the clean mug back on the dining table.

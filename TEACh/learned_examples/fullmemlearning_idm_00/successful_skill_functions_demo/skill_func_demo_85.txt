@@ -1,0 +1,19 @@
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_bread.go_to()
+target_bread.slice()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = None, parent_object = "Bread") # Initialize new sliced object from sliced parent
+target_toaster = InteractionObject("Toaster", object_instance = "Toaster")
+target_breadsliced.pickup_and_place(target_toaster)
+target_breadsliced.pickup()
+target_diningtable.go_to()
+target_breadsliced.place(target_diningtable)
+target_diningtable.go_to()
+target_breadsliced.place(target_diningtable)
+```

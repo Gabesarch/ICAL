@@ -1,0 +1,1 @@
+The script is intended to make a salad by slicing lettuce and tomato, cleaning a dirty plate, and assembling the salad on the plate.

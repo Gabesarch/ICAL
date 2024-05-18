@@ -1,0 +1,10 @@
+```python
+target_creditcard = InteractionObject("CreditCard", object_instance = "CreditCard")
+target_dresser = InteractionObject("Dresser", object_instance = "Dresser")
+target_creditcard.pickup_and_place(target_dresser)
+target_newspaper = InteractionObject("Newspaper", object_instance = "Newspaper")
+target_newspaper.pickup()
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_coffeetable.go_to()
+target_newspaper.place(target_coffeetable)
+```

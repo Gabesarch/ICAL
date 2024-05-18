@@ -1,0 +1,1 @@
+The script cleans a dirty mug by turning off the tap, removing extra items from the basin, rinsing the mug, and placing it beside the basin.

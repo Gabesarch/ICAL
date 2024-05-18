@@ -1,0 +1,34 @@
+"Knife_2": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Knife_9": {"label": "Knife", "holding": False, "supported_by": ["Stool"]}
+"Bread_10": {"label": "Bread", "holding": False, "sliced": True, "cooked": False, "supported_by": ["CounterTop"]}
+"Knife_11": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Cabinet_13": {"label": "Cabinet", "open": False}
+"Cabinet_16": {"label": "Cabinet", "open": False}
+"CounterTop_17": {"label": "CounterTop"}
+"CounterTop_18": {"label": "CounterTop"}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"CounterTop_33": {"label": "CounterTop"}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Bread_36": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Knife_37": {"label": "Knife", "holding": True, "supported_by": ["DiningTable"]}
+"Toaster_38": {"label": "Toaster", "toggled": True}
+"Bowl_40": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Tomato_43": {"label": "Tomato", "holding": False, "sliced": True, "cooked": False, "supported_by": ["Stool"]}
+"Plate_45": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"SinkBasin_55": {"label": "SinkBasin"}
+"SaltShaker_56": {"label": "SaltShaker", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"PepperShaker_58": {"label": "PepperShaker", "holding": False, "supported_by": ["CounterTop", "Plate"]}
+"Knife_60": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Fridge_70": {"label": "Fridge", "open": False}
+"Faucet_72": {"label": "Faucet", "toggled": True}
+"Stool_73": {"label": "Stool"}
+"DiningTable_74": {"label": "DiningTable"}
+"BreadSliced_75": {"label": "BreadSliced", "holding": False, "cooked": True, "supported_by": ["CounterTop"]}
+"BreadSliced_76": {"label": "BreadSliced", "holding": False, "cooked": True, "supported_by": ["CounterTop"]}
+"TomatoSliced_77": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}

@@ -1,0 +1,39 @@
+"Pot_6": {"label": "Pot", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner", "Pan"]}
+"Potato_9": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet", "Plate"]}
+"PaperTowelRoll_16": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["Pot", "StoveBurner"]}
+"Potato_17": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Pot_19": {"label": "Pot", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner"]}
+"Pot_25": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Potato_27": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Stool"]}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"StoveBurner_33": {"label": "StoveBurner"}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Cabinet_40": {"label": "Cabinet", "open": False}
+"Cabinet_41": {"label": "Cabinet", "open": False}
+"Cabinet_42": {"label": "Cabinet", "open": False}
+"Cabinet_43": {"label": "Cabinet", "open": False}
+"Cabinet_46": {"label": "Cabinet", "open": False}
+"Cabinet_47": {"label": "Cabinet", "open": False}
+"Cabinet_48": {"label": "Cabinet", "open": False}
+"Cabinet_49": {"label": "Cabinet", "open": False}
+"StoveBurner_50": {"label": "StoveBurner"}
+"Cabinet_51": {"label": "Cabinet", "open": False}
+"Cabinet_52": {"label": "Cabinet", "open": False}
+"Cabinet_53": {"label": "Cabinet", "open": False}
+"StoveBurner_54": {"label": "StoveBurner"}
+"Cabinet_55": {"label": "Cabinet", "open": False}
+"CounterTop_56": {"label": "CounterTop"}
+"Cabinet_57": {"label": "Cabinet", "open": False}
+"Cabinet_58": {"label": "Cabinet", "open": False}
+"Cabinet_59": {"label": "Cabinet", "open": False}
+"StoveBurner_60": {"label": "StoveBurner"}
+"Cabinet_61": {"label": "Cabinet", "open": False}
+"Fridge_68": {"label": "Fridge", "open": False}
+"Potato_72": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Pot_78": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner"]}
+"DiningTable_95": {"label": "DiningTable"}

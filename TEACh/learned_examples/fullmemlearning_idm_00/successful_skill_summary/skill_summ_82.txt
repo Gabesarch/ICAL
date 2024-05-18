@@ -1,0 +1,1 @@
+The script cleans all dirty mugs found in the cabinet above the coffee machine and places them back after cleaning.

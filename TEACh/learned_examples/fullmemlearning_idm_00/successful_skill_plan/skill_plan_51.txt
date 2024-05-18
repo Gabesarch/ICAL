@@ -1,0 +1,5 @@
+1. Identify the remote controls and their current locations from the current state.
+2. Select tables to place the remote controls on.
+3. Pick up the first remote control from the chair and place it on a table.
+4. Pick up the second remote control from the TV stand and place it on a table.
+5. Ensure that the script is efficient and well-commented.

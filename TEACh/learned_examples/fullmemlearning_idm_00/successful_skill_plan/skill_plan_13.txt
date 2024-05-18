@@ -1,0 +1,3 @@
+1. Define InteractionObject instances for all remote controls and the chair near the dining table.
+2. Pick up each remote control and place it on the specified chair.
+3. Check each drawer under the TV.

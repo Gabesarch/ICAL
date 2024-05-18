@@ -1,0 +1,6 @@
+1. Retrieve the knife from the shelf.
+2. Retrieve the lettuce from the dining table, slice it, and create instances for the sliced lettuce.
+3. Retrieve the potato from the microwave, slice it, and create instances for the sliced potatoes.
+4. Cook two slices of potato in the microwave.
+5. Check if the plate on the chair is dirty and clean it if necessary.
+6. Assemble the salad on the clean plate with lettuce and two cooked potato slices.

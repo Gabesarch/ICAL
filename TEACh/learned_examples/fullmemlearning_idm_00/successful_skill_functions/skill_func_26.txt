@@ -1,0 +1,38 @@
+# Define InteractionObject instances for the mug, sink basin, and faucet
+mug_to_clean = InteractionObject("Mug", object_instance="Mug_79")  # Dirty mug next to the tomato on the center island
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_68")
+faucet = InteractionObject("Faucet", object_instance="Faucet_81")
+
+# Go to the dirty mug and pick it up
+mug_to_clean.go_to()
+mug_to_clean.pickup()
+
+# Go to the sink basin
+sink_basin.go_to()
+
+# Turn off the faucet if it is on
+if faucet.check_attribute("toggled", True):
+    faucet.toggle_off()
+
+# Pour out the contents of the mug into the sink basin
+mug_to_clean.pour(sink_basin)
+
+# Place the mug under the faucet to rinse it
+mug_to_clean.place(sink_basin)
+
+# Rinse the mug by turning on the faucet
+faucet.toggle_on()
+
+# Wait for the mug to be rinsed (this step simulates the rinsing process)
+# In a real-world scenario, this would be a time delay or a sensor-based check to ensure the mug is rinsed
+# For the purpose of this script, we assume the mug is being rinsed while the faucet is on
+
+# Turn off the faucet after rinsing the mug
+faucet.toggle_off()
+
+# Update the mug's state to reflect that it is no longer dirty
+mug_to_clean.change_state("dirty", False)
+
+# Place the clean mug on the countertop
+countertop = InteractionObject("CounterTop", object_instance="CounterTop_39")  # Assuming the center island is the last countertop instance
+mug_to_clean.place(countertop)

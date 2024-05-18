@@ -1,0 +1,26 @@
+"Tomato_3": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Plate_11": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Drawer_18": {"label": "Drawer", "open": False}
+"Drawer_20": {"label": "Drawer", "open": False}
+"Drawer_21": {"label": "Drawer", "open": False}
+"Drawer_22": {"label": "Drawer", "open": False}
+"Drawer_28": {"label": "Drawer", "open": False}
+"Drawer_29": {"label": "Drawer", "open": False}
+"Drawer_31": {"label": "Drawer", "open": False}
+"Drawer_33": {"label": "Drawer", "open": False}
+"Drawer_35": {"label": "Drawer", "open": False}
+"CounterTop_37": {"label": "CounterTop"}
+"Drawer_38": {"label": "Drawer", "open": False}
+"Drawer_41": {"label": "Drawer", "open": False}
+"Drawer_42": {"label": "Drawer", "open": False}
+"CounterTop_44": {"label": "CounterTop"}
+"Drawer_45": {"label": "Drawer", "open": False}
+"Cabinet_48": {"label": "Cabinet", "open": False}
+"Plate_65": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Knife_72": {"label": "Knife", "holding": True, "supported_by": ["CounterTop"]}
+"SinkBasin_73": {"label": "SinkBasin"}
+"Knife_77": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Tomato_79": {"label": "Tomato", "holding": False, "sliced": True, "cooked": False, "supported_by": ["CounterTop"]}
+"Bowl_85": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Drawer"]}
+"TomatoSliced_88": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}
+"TomatoSliced_89": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}

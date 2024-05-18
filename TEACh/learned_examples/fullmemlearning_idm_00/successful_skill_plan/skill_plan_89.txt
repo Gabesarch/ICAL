@@ -1,0 +1,5 @@
+1. Identify and pick up the mug from the dust bin (GarbageCan).
+2. Check if the mug is clean; if not, clean it.
+3. Go to the coffee machine by the window.
+4. Prepare coffee in the clean mug.
+5. Place the mug with coffee on the countertop.

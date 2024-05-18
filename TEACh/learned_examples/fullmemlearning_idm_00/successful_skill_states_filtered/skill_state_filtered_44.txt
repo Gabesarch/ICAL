@@ -1,0 +1,14 @@
+"Candle_4": {"label": "Candle", "holding": False, "supported_by": ["Floor", "ArmChair"]}
+"Candle_6": {"label": "Candle", "holding": False, "supported_by": ["CoffeeTable"]}
+"Candle_8": {"label": "Candle", "holding": False, "supported_by": ["DiningTable"]}
+"Chair_28": {"label": "Chair"}
+"Chair_29": {"label": "Chair"}
+"Chair_30": {"label": "Chair"}
+"Sofa_31": {"label": "Sofa"}
+"DiningTable_32": {"label": "DiningTable"}
+"DiningTable_37": {"label": "DiningTable"}
+"CoffeeTable_38": {"label": "CoffeeTable"}
+"Chair_39": {"label": "Chair"}
+"Chair_40": {"label": "Chair"}
+"Chair_41": {"label": "Chair"}
+"Chair_42": {"label": "Chair"}

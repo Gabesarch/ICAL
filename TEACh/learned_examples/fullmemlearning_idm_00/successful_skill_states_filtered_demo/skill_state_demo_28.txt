@@ -1,0 +1,20 @@
+"Knife_1": {"label": "Knife", "holding": False, "supported_by": ["Shelf"]}
+"Lettuce_2": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Drawer"]}
+"Plate_10": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Knife_12": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Lettuce_13": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Floor", "GarbageCan"]}
+"Plate_16": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"CounterTop_22": {"label": "CounterTop"}
+"CounterTop_24": {"label": "CounterTop"}
+"CounterTop_47": {"label": "CounterTop"}
+"Knife_49": {"label": "Knife", "holding": True, "supported_by": ["Sink"]}
+"Bread_51": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"Potato_54": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"Plate_61": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Stool"]}
+"WineBottle_67": {"label": "WineBottle", "holding": False, "filled": True, "fillLiquid": None, "supported_by": ["Sink"]}
+"SinkBasin_77": {"label": "SinkBasin"}
+"Lettuce_80": {"label": "Lettuce", "holding": False, "sliced": True, "supported_by": ["CounterTop"]}
+"Knife_81": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Faucet_91": {"label": "Faucet", "toggled": False}
+"LettuceSliced_92": {"label": "LettuceSliced", "holding": False, "supported_by": ["Plate", "CounterTop"]}
+"LettuceSliced_93": {"label": "LettuceSliced", "holding": False, "supported_by": ["CounterTop"]}

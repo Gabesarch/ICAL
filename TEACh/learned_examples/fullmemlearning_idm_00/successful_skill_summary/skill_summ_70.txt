@@ -1,0 +1,1 @@
+The script is intended to wash a dirty mug, remove a dirty cup from the coffee maker, place the clean mug on the coffee maker, start the coffee-making process, and update the mug's state to reflect that it is filled with coffee.

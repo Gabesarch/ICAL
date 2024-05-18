@@ -1,0 +1,11 @@
+```python
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.go_to()
+target_pot.pickup()
+target_houseplant = InteractionObject("HousePlant", object_instance = "HousePlant")
+target_houseplant.go_to()
+target_pot.pour(target_houseplant)
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_pot.place(target_diningtable)
+```

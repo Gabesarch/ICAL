@@ -1,0 +1,6 @@
+1. Define InteractionObject instances for each pen and the bed using the correct object IDs.
+2. Go to the location of the first pen.
+3. Pick up the first pen.
+4. Go to the bed.
+5. Place the first pen on the bed.
+6. Repeat steps 2-5 for the second pen.

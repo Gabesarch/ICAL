@@ -1,0 +1,24 @@
+"Pot_3": {"label": "Pot", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner"]}
+"Apple_4": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Microwave"]}
+"Knife_5": {"label": "Knife", "holding": True, "supported_by": ["DiningTable"]}
+"Potato_8": {"label": "Potato", "holding": False, "sliced": True, "cooked": False, "supported_by": ["Chair"]}
+"Knife_16": {"label": "Knife", "holding": False, "supported_by": ["Chair"]}
+"CounterTop_24": {"label": "CounterTop"}
+"CounterTop_35": {"label": "CounterTop"}
+"Fridge_48": {"label": "Fridge", "open": False}
+"Potato_54": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"WineBottle_57": {"label": "WineBottle", "holding": False, "filled": True, "fillLiquid": None, "supported_by": ["Plate", "DiningTable"]}
+"Knife_59": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"SinkBasin_62": {"label": "SinkBasin"}
+"Knife_63": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Pot_64": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Floor", "Fridge"]}
+"Microwave_66": {"label": "Microwave", "toggled": False, "open": False}
+"Plate_69": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Mug_72": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Plate", "DiningTable"]}
+"Bowl_73": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Microwave"]}
+"DiningTable_74": {"label": "DiningTable"}
+"Faucet_75": {"label": "Faucet", "toggled": False}
+"Faucet_76": {"label": "Faucet", "toggled": True}
+"Chair_77": {"label": "Chair"}
+"PotatoSliced_78": {"label": "PotatoSliced", "holding": False, "cooked": False, "supported_by": ["Chair"]}
+"PotatoSliced_79": {"label": "PotatoSliced", "holding": False, "cooked": False, "supported_by": ["Chair"]}

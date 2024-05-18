@@ -1,0 +1,1 @@
+{"0": {"id": 9, "label": "Apple", "attribute": "0", "before": "CounterTop", "after": "Fridge"}, "1": {"id": 10, "label": "Apple", "attribute": "0", "before": "CounterTop", "after": "Fridge"}, "2": {"id": 73, "label": "Microwave", "attribute": "open", "before": false, "after": true}, "3": {"id": 71, "label": "Fridge", "attribute": "3", "before": "Plate", "after": "Plate"}}

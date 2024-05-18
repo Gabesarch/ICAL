@@ -1,0 +1,6 @@
+1. Retrieve the bread from the black side table.
+2. Retrieve a knife from the countertop.
+3. Slice the bread and create an instance for the sliced bread.
+4. Toast a slice of bread in the toaster.
+5. Retrieve a clean plate from the side table.
+6. Place the toasted bread on the clean plate.

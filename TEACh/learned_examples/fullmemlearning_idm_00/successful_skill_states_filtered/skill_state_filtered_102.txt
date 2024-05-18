@@ -1,0 +1,7 @@
+"SaltShaker_15": {"label": "SaltShaker", "holding": False, "supported_by": ["Sink", "Plate"]}
+"CounterTop_23": {"label": "CounterTop"}
+"CounterTop_43": {"label": "CounterTop"}
+"WineBottle_57": {"label": "WineBottle", "holding": False, "filled": True, "fillLiquid": None, "supported_by": ["Sink"]}
+"Plate_58": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"SinkBasin_64": {"label": "SinkBasin"}
+"Faucet_86": {"label": "Faucet", "toggled": True}

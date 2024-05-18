@@ -1,0 +1,38 @@
+# Define InteractionObject instances for the fridge, knife, bread, toaster, and plate
+fridge = InteractionObject("Fridge", object_instance="Fridge_130")
+knife = InteractionObject("Knife", object_instance="Knife_152")  # Knife is in the fridge
+bread = InteractionObject("Bread", object_instance="Bread_17")  # Bread is on the countertop
+toaster = InteractionObject("Toaster", object_instance="Toaster_138")  # Toaster for toasting bread
+plate = InteractionObject("Plate", object_instance="Plate_137")  # Plate is on the countertop
+
+# Retrieve the knife from the fridge
+fridge.go_to()
+fridge.open()
+knife.go_to()
+knife.pickup()
+fridge.close()
+
+# Slice the bread to create a slice
+bread.go_to()
+bread.slice()
+bread_sliced = InteractionObject("BreadSliced", parent_object=bread.object_instance)  # Initialize new sliced object from sliced parent
+
+# Toast the slice of bread
+toaster.go_to()
+bread_sliced.pickup()
+bread_sliced.place(toaster)
+toaster.toggle_on()  # Start toasting the bread slice
+# Wait for the bread to toast (this step is abstracted in the script)
+toaster.toggle_off()  # Stop toasting after it's done
+bread_sliced.change_state("cooked", True)  # Update the bread slice's state to toasted
+
+# Place the toasted bread on the plate
+plate.go_to()
+bread_sliced.pickup()
+bread_sliced.place(plate)
+
+# Causal abstraction comments:
+# The knife is retrieved from the fridge to slice the bread, which is necessary for making toast.
+# The bread is sliced to create individual pieces that can be toasted.
+# The toaster is used to toast a slice of bread, which is the main task of making a slice of toast.
+# The clean plate is used to serve the toasted bread, completing the task as requested by the Commander.

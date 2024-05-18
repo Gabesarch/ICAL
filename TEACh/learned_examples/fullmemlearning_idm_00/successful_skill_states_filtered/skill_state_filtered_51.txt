@@ -1,0 +1,7 @@
+"RemoteControl_1": {"label": "RemoteControl", "holding": False, "supported_by": ["TVStand"]}
+"Chair_5": {"label": "Chair"}
+"RemoteControl_19": {"label": "RemoteControl", "holding": False, "supported_by": ["ArmChair", "Floor"]}
+"SideTable_25": {"label": "SideTable"}
+"Sofa_32": {"label": "Sofa"}
+"TVStand_35": {"label": "TVStand"}
+"CoffeeTable_38": {"label": "CoffeeTable"}

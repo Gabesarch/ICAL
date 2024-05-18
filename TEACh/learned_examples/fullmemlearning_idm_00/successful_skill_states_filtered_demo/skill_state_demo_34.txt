@@ -1,0 +1,8 @@
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Mug_28": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Stool"]}
+"CounterTop_34": {"label": "CounterTop"}
+"CoffeeMachine_75": {"label": "CoffeeMachine", "toggled": False}
+"SinkBasin_80": {"label": "SinkBasin"}
+"Mug_88": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Stool_90": {"label": "Stool"}
+"Faucet_91": {"label": "Faucet", "toggled": True}

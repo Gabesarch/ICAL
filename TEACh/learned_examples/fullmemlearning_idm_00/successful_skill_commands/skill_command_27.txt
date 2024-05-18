@@ -1,0 +1,1 @@
+<Driver> What should I do today? <Commander> place all the newspapers onto a single chair. <Commander> there is one inside that box. <Commander> another one on the table. <Driver> I have placed two. <Driver> What next? <Commander> get the one inside the box too. <Commander> done. 

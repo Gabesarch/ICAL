@@ -1,0 +1,39 @@
+# Define InteractionObject instances for the mug, sink basin, coffee machine, and countertop
+mug_on_counter = InteractionObject("Mug", object_instance="Mug_1")  # Mug to the left of the fridge on the counter
+mug_under_table = InteractionObject("Mug", object_instance="Mug_33")  # Mug under the table
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_136")
+coffee_machine = InteractionObject("CoffeeMachine", object_instance="CoffeeMachine_132")
+countertop = InteractionObject("CounterTop", object_instance="CounterTop_107")  # Assuming this is an appropriate place to put the coffee mug
+
+# Go to the mug to the left of the fridge on the counter
+mug_on_counter.go_to()
+
+# Check if the mug is filled; if so, empty it
+if mug_on_counter.check_attribute("filled", True):
+    mug_on_counter.pickup()
+    sink_basin.go_to()
+    mug_on_counter.pour(sink_basin)
+    mug_on_counter.change_state("filled", False)  # Update the mug's state to not filled
+
+# Use the coffee machine to prepare coffee in the mug
+coffee_machine.go_to()
+mug_on_counter.place(coffee_machine)
+coffee_machine.toggle_on()  # Start the coffee machine to prepare coffee
+# Wait for coffee to be prepared (this step is abstracted in the script)
+coffee_machine.toggle_off()  # Turn off the coffee machine after coffee is prepared
+mug_on_counter.change_state("filled", True)  # Update the mug's state to filled with coffee
+mug_on_counter.change_state("fillLiquid", "coffee")  # Update the liquid in the mug to coffee
+
+# Place the mug with coffee on the countertop
+mug_on_counter.pickup()
+mug_on_counter.place(countertop)  # Correctly place the mug on the countertop
+
+# If unable to use the first mug, find the mug under the table and repeat steps
+# This part of the script is not executed as it is a fallback option
+# and the first mug was successfully used to make coffee
+
+# Causal abstraction comments:
+# The robot selects the specified mug to the left of the fridge on the counter as instructed by the Commander.
+# The mug's filled state is checked, and if necessary, it is emptied in the sink basin before using it to prepare coffee.
+# The coffee machine is used to prepare coffee, which is the main task assigned by the Commander.
+# The mug is placed on the countertop after coffee preparation, completing the task as requested.

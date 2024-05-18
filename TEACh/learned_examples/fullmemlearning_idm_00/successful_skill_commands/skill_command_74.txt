@@ -1,0 +1,1 @@
+<Driver> what shall I do today? <Commander> clean all mugs. <Commander> one in the coffee maker. <Driver> another one? <Commander> clean. <Driver> next? <Commander> in the cabinet under the coffee maker. <Commander> clean. <Commander> good job. 

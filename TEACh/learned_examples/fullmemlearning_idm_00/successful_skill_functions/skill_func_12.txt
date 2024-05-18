@@ -1,0 +1,26 @@
+# Define InteractionObject instances for the pot, faucet, and houseplant
+pot = InteractionObject("Pot", object_instance="Pot_79")  # Selecting the pot that is already filled with water
+faucet = InteractionObject("Faucet", object_instance="Faucet_104")
+houseplant = InteractionObject("HousePlant", object_instance="HousePlant_101")
+
+# (causal abstraction) Check if the faucet is on; if it is, toggle it off to prevent water wastage
+if faucet.check_attribute("toggled", True):
+    faucet.go_to()
+    faucet.toggle_off()
+
+# (causal abstraction) Since the selected pot is already filled with water, we can directly use it to water the plant
+# Go to the pot and pick it up
+pot.go_to()
+pot.pickup()
+
+# (causal abstraction) Navigate to the houseplant and pour water from the pot to water it
+houseplant.go_to()
+pot.pour(houseplant)
+
+# (causal abstraction) After pouring, the pot is no longer filled with water, so update its state
+pot.change_state("filled", False)
+pot.change_state("fillLiquid", None)
+
+# (causal abstraction) Update the houseplant's state to reflect that it has been watered
+houseplant.change_state("filled", True)
+houseplant.change_state("fillLiquid", "water")

@@ -1,0 +1,13 @@
+1. Go to the knife and pick it up.
+2. Go to the bread and slice it.
+3. Initialize two slices of bread as new InteractionObjects.
+4. Go to the toaster and place the first slice of bread in it.
+5. Wait for the bread to toast and then update its state to toasted.
+6. Pick up the toasted bread and put it down on the countertop.
+7. Place the second slice of bread in the toaster.
+8. Wait for the second slice to toast and then update its state to toasted.
+9. Pick up the toasted bread and put it down on the countertop.
+10. Go to the tomato, pick it up, and slice it.
+11. Initialize a slice of tomato as a new InteractionObject.
+12. Check if the plate is clean, if not, clean it at the sink.
+13. Assemble the sandwich on the clean plate with the toasted bread and tomato slice.

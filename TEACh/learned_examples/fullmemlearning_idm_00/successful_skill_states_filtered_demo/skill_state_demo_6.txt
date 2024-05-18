@@ -1,0 +1,5 @@
+"Newspaper_4": {"label": "Newspaper", "holding": False, "supported_by": ["DiningTable"]}
+"Newspaper_12": {"label": "Newspaper", "holding": False, "supported_by": ["CoffeeTable"]}
+"CreditCard_14": {"label": "CreditCard", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"CoffeeTable_40": {"label": "CoffeeTable"}
+"DiningTable_41": {"label": "DiningTable"}

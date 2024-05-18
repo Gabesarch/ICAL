@@ -1,0 +1,13 @@
+"Knife_5": {"label": "Knife", "holding": True, "supported_by": ["DiningTable"]}
+"SoapBottle_9": {"label": "SoapBottle", "holding": False, "supported_by": ["Sink"]}
+"DiningTable_15": {"label": "DiningTable"}
+"CounterTop_34": {"label": "CounterTop"}
+"CounterTop_40": {"label": "CounterTop"}
+"Bread_48": {"label": "Bread", "holding": False, "sliced": True, "cooked": False, "supported_by": ["CounterTop"]}
+"Plate_59": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"SoapBottle_63": {"label": "SoapBottle", "holding": False, "supported_by": ["Sink"]}
+"Toaster_68": {"label": "Toaster", "toggled": True}
+"SinkBasin_77": {"label": "SinkBasin"}
+"Faucet_86": {"label": "Faucet", "toggled": True}
+"DiningTable_91": {"label": "DiningTable"}
+"BreadSliced_92": {"label": "BreadSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}

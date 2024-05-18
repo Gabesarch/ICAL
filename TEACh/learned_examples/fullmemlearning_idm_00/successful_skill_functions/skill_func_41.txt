@@ -1,0 +1,30 @@
+# Define InteractionObject instances for the mugs and the cabinet
+mug_0 = InteractionObject("Mug", object_instance="Mug_0")  # First mug to be placed in the cabinet
+mug_97 = InteractionObject("Mug", object_instance="Mug_97")  # Second mug to be placed in the cabinet
+cabinet_to_use = InteractionObject("Cabinet", object_instance="Cabinet_25")  # Cabinet chosen to place the mugs in
+
+# Go to the first mug and pick it up
+mug_0.go_to()
+mug_0.pickup()
+
+# Go to the cabinet, open it, and place the first mug inside
+cabinet_to_use.go_to()
+if not cabinet_to_use.check_attribute("open", True):  # Check if the cabinet is already open
+    cabinet_to_use.open()  # Open the cabinet if it is not open
+mug_0.place(cabinet_to_use)
+
+# Go to the second mug and pick it up
+mug_97.go_to()
+mug_97.pickup()
+
+# Place the second mug into the same cabinet
+mug_97.place(cabinet_to_use)
+
+# Close the cabinet after placing both mugs inside
+cabinet_to_use.close()
+
+# Causal abstraction comments:
+# The mugs are identified by their unique object instances to ensure the correct objects are being interacted with.
+# The cabinet is opened only if it is not already open to avoid unnecessary actions.
+# Each mug is placed into the cabinet, fulfilling the Commander's instruction to place them into a single cabinet.
+# The cabinet is closed after placing the mugs inside, completing the task neatly.

@@ -1,0 +1,30 @@
+# cleaning plate
+target_plate1 = InteractionObject("Plate", object_instance = "Plate_68")
+# Plate is dirty so let's clean it
+# initialized faucet and sink to clean bowls with
+target_faucet1 = InteractionObject("Faucet", object_instance = "Faucet_73")
+
+# (causal abstraction) faucet is currenlty toggled on so first the faucet must be toggled off before placing anything in the sink
+target_faucet1.go_to()
+target_faucet1.toggle_off()
+target_sink1 = InteractionObject("Sink", object_instance = "SinkBasin_60")
+target_plate.go_to()
+target_plate.pickup()
+target_plate.change_state("holding", True)
+target_sink1.go_to()
+target_plate.place(target_sink1) # put in sink
+target_plate.change_state("holding", False)
+target_faucet1.go_to()
+target_faucet1.toggle_on() # turn on faucet to clean
+target_faucet1.change_state("toggled", True)
+
+# (causal abstraction) after placing the item in the sink and turning the faucet on and off, the plate becomes clean
+target_plate.change_state("dirty", False) 
+target_faucet1.toggle_off() # turn off faucet
+target_faucet1.change_state("toggled", False)
+target_plate.pickup() # move out of the sink
+target_plate.change_state("holding", True)
+
+# (causal abstraction) The plate should be put down on any good location to free up agent's hand
+target_plate.put_down() 
+target_plate.change_state("holding", False)

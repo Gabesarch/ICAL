@@ -1,0 +1,5 @@
+"CounterTop_22": {"label": "CounterTop"}
+"Faucet_24": {"label": "Faucet", "toggled": True}
+"SinkBasin_56": {"label": "SinkBasin"}
+"DishSponge_62": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Mug_65": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}

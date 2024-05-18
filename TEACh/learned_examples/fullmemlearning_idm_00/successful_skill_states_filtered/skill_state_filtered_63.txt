@@ -1,0 +1,4 @@
+"Newspaper_2": {"label": "Newspaper", "holding": False, "supported_by": ["ArmChair"]}
+"Newspaper_18": {"label": "Newspaper", "holding": False, "supported_by": ["ArmChair"]}
+"Ottoman_33": {"label": "Ottoman"}
+"Chair_36": {"label": "Chair"}

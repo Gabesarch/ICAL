@@ -1,0 +1,50 @@
+# Retrieve the potato from the cabinet above the microwave
+cabinet = InteractionObject("Cabinet", object_instance="Cabinet_23")  # Cabinet above the microwave
+cabinet.go_to()
+cabinet.open()
+potato = InteractionObject("Potato", object_instance="Potato_45")  # Potato in the cabinet above the microwave
+potato.go_to()
+potato.pickup()
+
+# Cook the potato in the microwave
+microwave = InteractionObject("Microwave", object_instance="Microwave_67")  # Microwave in the kitchen
+microwave.go_to()
+potato.place(microwave)
+microwave.toggle_on()  # Start cooking the potato
+# Wait for the potato to cook (this step is abstracted in the script)
+microwave.toggle_off()  # Stop cooking after it's done
+microwave.open()
+potato.pickup()  # Retrieve the cooked potato
+potato.change_state("cooked", True)  # Update the potato's state to cooked
+
+# Retrieve a bowl from the fridge
+fridge = InteractionObject("Fridge", object_instance="Fridge_50")  # Fridge in the kitchen
+fridge.go_to()
+fridge.open()
+bowl = InteractionObject("Bowl", object_instance="Bowl_54")  # Bowl in the fridge
+bowl.go_to()
+bowl.pickup()
+fridge.close()
+
+# Slice the cooked potato
+knife = InteractionObject("Knife", object_instance="Knife_1")  # Knife on the countertop
+knife.go_to()
+knife.pickup()
+potato.slice()
+potato_sliced_1 = InteractionObject("PotatoSliced", parent_object=potato.object_instance)  # Initialize new sliced object from sliced parent
+potato_sliced_2 = InteractionObject("PotatoSliced", parent_object=potato.object_instance)  # Initialize new sliced object from sliced parent
+potato_sliced_3 = InteractionObject("PotatoSliced", parent_object=potato.object_instance)  # Initialize new sliced object from sliced parent
+
+# Place three slices of the potato into the bowl
+bowl.go_to()
+potato_sliced_1.pickup()
+potato_sliced_1.place(bowl)
+potato_sliced_2.pickup()
+potato_sliced_2.place(bowl)
+potato_sliced_3.pickup()
+potato_sliced_3.place(bowl)
+
+# Causal abstraction comments:
+# The potato is cooked in the microwave to fulfill the requirement of being cooked before slicing.
+# The knife is used to slice the cooked potato into pieces, as instructed by the Commander.
+# The bowl is retrieved from the fridge to hold the potato slices, completing the task of placing three slices in the bowl.

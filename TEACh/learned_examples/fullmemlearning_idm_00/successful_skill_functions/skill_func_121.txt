@@ -1,0 +1,43 @@
+# Define InteractionObject instances for the potato, knife, microwave, and plate
+potato = InteractionObject("Potato", object_instance="Potato_49")  # Potato next to the microwave
+knife = InteractionObject("Knife", object_instance="Knife_67")  # Knife on the countertop
+microwave = InteractionObject("Microwave", object_instance="Microwave_66")  # Microwave in the kitchen
+plate = InteractionObject("Plate", object_instance="Plate_10")  # Plate on the dining table
+
+# Slice the potato
+knife.go_to()
+knife.pickup()
+potato.go_to()
+potato.slice()
+potato_sliced = InteractionObject("PotatoSliced", parent_object=potato.object_instance)  # Initialize new sliced object from sliced parent
+
+# Cook one slice of potato in the microwave
+microwave.go_to()
+if not microwave.check_attribute("open", True):
+    microwave.open()
+potato_sliced.pickup()
+potato_sliced.place(microwave)
+microwave.toggle_on()  # Start cooking the potato slice
+# Wait for the potato slice to cook (this step is abstracted in the script)
+microwave.toggle_off()  # Stop cooking after it's done
+microwave.open()
+potato_sliced.pickup()  # Retrieve the cooked potato slice
+potato_sliced.change_state("cooked", True)  # Update the potato slice's state to cooked
+
+# Check if the plate is clean and serve the cooked potato slice
+plate.go_to()
+if plate.check_attribute("dirty", True):
+    sink = InteractionObject("SinkBasin", object_instance="SinkBasin_60")
+    faucet = InteractionObject("Faucet", object_instance="Faucet_75")
+    plate.pickup()
+    plate.place(sink)
+    faucet.toggle_on()
+    faucet.toggle_off()
+    plate.pickup()  # Pick up the clean plate
+potato_sliced.place(plate)
+
+# Causal abstraction comments:
+# The knife is used to slice the potato, preparing it for cooking as per the Commander's request.
+# The microwave is used to cook the potato slice, ensuring it is ready to be served.
+# The plate's cleanliness is checked, and the plate is cleaned if necessary, to provide a clean surface for serving the food.
+# The cooked potato slice is placed on the clean plate, completing the task of serving the cooked potato slice as requested.

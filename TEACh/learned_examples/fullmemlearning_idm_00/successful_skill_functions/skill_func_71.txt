@@ -1,0 +1,41 @@
+# Define InteractionObject instances for the bowl, sink basin, dish sponge, soap bottle, and faucet
+bowl = InteractionObject("Bowl", object_instance="Bowl_34")  # Dirty bowl on the countertop
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_57")  # Sink basin for washing
+dish_sponge = InteractionObject("DishSponge", object_instance="DishSponge_63")  # Dish sponge for cleaning
+soap_bottle = InteractionObject("SoapBottle", object_instance="SoapBottle_36")  # Soap bottle for cleaning
+faucet = InteractionObject("Faucet", object_instance="Faucet_25")  # Faucet for water
+target_countertop = InteractionObject("CounterTop", object_instance="CounterTop_23")  # Countertop for placing clean items
+
+# Pick up the dirty bowl and place it in the sink basin
+bowl.go_to()
+bowl.pickup()
+sink_basin.go_to()
+bowl.place(sink_basin)
+
+# Use the dish sponge and soap to clean the bowl
+dish_sponge.go_to()
+dish_sponge.pickup()
+soap_bottle.go_to()
+# Assume applying soap to the sponge
+dish_sponge.place(bowl)  # Scrub the bowl with the soapy sponge
+bowl.change_state("dirty", False)  # Update the bowl's state to clean
+
+# Rinse the bowl with water from the faucet
+faucet.go_to()
+faucet.toggle_on()
+# Assume rinsing is done, update the bowl's state to filled with water
+bowl.change_state("filled", True)
+bowl.change_state("fillLiquid", "water")
+faucet.toggle_off()
+
+# Place the clean bowl back on the countertop
+bowl.pickup()
+target_countertop.go_to()
+bowl.place(target_countertop)
+
+# Causal abstraction comments:
+# The bowl is identified and picked up from the countertop where it is located next to the plant and to the right of the sink.
+# The bowl is placed in the sink basin to be cleaned with the dish sponge and soap, ensuring it is thoroughly scrubbed.
+# The faucet is turned on to rinse the bowl, and the bowl's state is updated to reflect that it is now filled with water.
+# The faucet is then turned off to conserve water after the bowl is clean.
+# The clean bowl is placed back on the countertop, completing the task as instructed by the Commander.

@@ -1,0 +1,1 @@
+The revised script will find a knife, slice a piece of bread, toast it, and place the toasted bread on a clean plate.

@@ -24,8 +24,8 @@ python main.py \
  --shuffle \
  --num_online_learning_iterations 50 \
  --num_environments_skills 1 \
- --demo_folder ./output/expert_programs_idm/task_demos \
- --skill_folder2 ./output/hand_written_memory_examples \
+ --demo_folder ./learned_examples/expert_programs_idm/task_demos \
+ --skill_folder2 ./learned_examples/hand_written_memory_examples \
  --use_gt_metadata \
  --force_actions \
  --use_task_to_instance_programs \

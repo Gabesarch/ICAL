@@ -1,0 +1,8 @@
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Apple_2": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["DiningTable"]}
+"CounterTop_21": {"label": "CounterTop"}
+"CounterTop_41": {"label": "CounterTop"}
+"SinkBasin_62": {"label": "SinkBasin"}
+"Apple_76": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Sink"]}
+"Mug_83": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop", "CoffeeMachine"]}
+"Faucet_84": {"label": "Faucet", "toggled": True}

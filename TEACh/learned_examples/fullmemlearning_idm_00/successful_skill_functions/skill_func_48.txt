@@ -1,0 +1,53 @@
+# Define InteractionObject instances for the fridge, knife, bread, toaster, and plate
+fridge = InteractionObject("Fridge", object_instance="Fridge_73")
+knife = InteractionObject("Knife", object_instance="Knife_79")  # Knife is in the fridge
+bread = InteractionObject("Bread", object_instance="Bread_8")  # Bread is on the countertop by the lettuce
+toaster = InteractionObject("Toaster", object_instance="Toaster_65")  # Toaster is by the fridge
+plate = InteractionObject("Plate", object_instance="Plate_60")  # Plate is in the fridge
+
+# Retrieve the knife from the fridge
+fridge.go_to()
+fridge.open()
+knife.go_to()
+knife.pickup()
+fridge.close()
+
+# Slice the bread
+bread.go_to()
+bread.slice()
+bread_sliced = InteractionObject("BreadSliced", parent_object=bread.object_instance)  # Initialize new sliced object from sliced parent
+
+# Toast a slice of bread
+toaster.go_to()
+bread_sliced.pickup()
+bread_sliced.place(toaster)
+toaster.toggle_on()  # Start toasting the bread slice
+# Wait for the bread to toast (this step is abstracted in the script)
+toaster.toggle_off()  # Stop toasting after it's done
+bread_sliced.change_state("cooked", True)  # Update the bread slice's state to toasted
+
+# Retrieve and clean the plate from the fridge
+plate.go_to()
+plate.pickup()
+if plate.check_attribute("dirty", True):
+    sink = InteractionObject("SinkBasin", object_instance="SinkBasin_66")
+    faucet = InteractionObject("Faucet", object_instance="Faucet_84")
+    sink.go_to()
+    plate.place(sink)
+    faucet.go_to()
+    faucet.toggle_on()  # Turn on the faucet to clean the plate
+    faucet.toggle_off()  # Turn off the faucet after cleaning
+    plate.pickup()  # Pick up the clean plate
+    plate.change_state("dirty", False)  # Update the plate's state to clean
+
+# Place the toasted bread on the clean plate
+plate.go_to()
+bread_sliced.pickup()
+bread_sliced.place(plate)
+
+# Causal abstraction comments:
+# The knife is retrieved from the fridge to slice the bread, which is necessary for making toast.
+# The bread is sliced to create individual pieces that can be toasted.
+# The toaster is used to toast a slice of bread, which is the main task of making a plate of toast.
+# The plate is retrieved from the fridge and cleaned if dirty to provide a clean surface for the food.
+# The toasted bread is placed on the clean plate to complete the task of making a plate of toast.

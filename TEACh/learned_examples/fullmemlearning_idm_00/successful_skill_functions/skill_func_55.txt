@@ -1,0 +1,25 @@
+# Define InteractionObject instances for each tissue box and the selected coffee table
+tissuebox_dining_table = InteractionObject("TissueBox", object_instance="TissueBox_2")
+tissuebox_coffee_table = InteractionObject("TissueBox", object_instance="TissueBox_6")
+tissuebox_on_plate = InteractionObject("TissueBox", object_instance="TissueBox_17")
+selected_coffee_table = InteractionObject("CoffeeTable", object_instance="CoffeeTable_47")  # Choosing this coffee table as the destination
+
+# (causal abstraction) Pick up the first tissue box from the dining table and place it on the selected coffee table
+tissuebox_dining_table.go_to()
+tissuebox_dining_table.pickup()
+selected_coffee_table.go_to()
+tissuebox_dining_table.place(selected_coffee_table)
+
+# (causal abstraction) Pick up the second tissue box from the other coffee table and place it on the selected coffee table
+tissuebox_coffee_table.go_to()
+tissuebox_coffee_table.pickup()
+selected_coffee_table.go_to()
+tissuebox_coffee_table.place(selected_coffee_table)
+
+# (causal abstraction) Pick up the third tissue box that is on the plate and place it on the selected coffee table
+tissuebox_on_plate.go_to()
+tissuebox_on_plate.pickup()
+selected_coffee_table.go_to()
+tissuebox_on_plate.place(selected_coffee_table)
+
+# All tissue boxes are now consolidated on the selected coffee table as per the Commander's instruction

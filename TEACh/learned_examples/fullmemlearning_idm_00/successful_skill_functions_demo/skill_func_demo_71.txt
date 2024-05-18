@@ -1,0 +1,17 @@
+```python
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_bowl.pickup_and_place(target_sinkbasin)
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_lettuce.place(target_countertop)
+target_bowl.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_bowl.go_to()
+target_bowl.pickup()
+```

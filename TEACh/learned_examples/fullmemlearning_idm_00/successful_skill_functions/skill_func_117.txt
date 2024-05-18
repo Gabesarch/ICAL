@@ -1,0 +1,29 @@
+# Define InteractionObject instances for the clean mug next to the stove top and the coffee machine
+clean_mug = InteractionObject("Mug", object_instance="Mug_82")  # Clean mug next to the stove top
+coffee_machine = InteractionObject("CoffeeMachine", object_instance="CoffeeMachine_52")  # Coffee machine to prepare coffee
+
+# Pick up the clean mug next to the stove top
+clean_mug.go_to()
+clean_mug.pickup()
+
+# Check if the mug is already filled; if so, empty it
+if clean_mug.check_attribute("filled", True):
+    sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_65")  # Sink basin to empty the mug
+    sink_basin.go_to()
+    clean_mug.pour(sink_basin)
+    clean_mug.change_state("filled", False)  # Update the mug's state to not filled
+
+# Place the mug in the coffee machine and start the coffee-making process
+coffee_machine.go_to()
+clean_mug.place(coffee_machine)
+coffee_machine.toggle_on()  # Start the coffee machine to fill the mug with coffee
+# Wait for coffee to be prepared (this step is abstracted in the script)
+coffee_machine.toggle_off()  # Turn off the coffee machine after coffee is prepared
+clean_mug.change_state("filled", True)  # Update the mug's state to filled with coffee
+clean_mug.change_state("fillLiquid", "coffee")  # Update the liquid in the mug to coffee
+
+# Causal abstraction comments:
+# The clean mug next to the stove top is identified and picked up as per the Commander's instructions.
+# The mug's state is checked to ensure it is not already filled before using it to prepare coffee.
+# The coffee machine is used to fill the mug with coffee, which is the main task assigned by the Commander.
+# After the coffee is prepared, the mug's state is updated to reflect that it is filled with coffee, completing the task as requested.

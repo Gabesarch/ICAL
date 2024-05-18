@@ -1,0 +1,28 @@
+# Define InteractionObject instances for the dish sponges and the sink basin
+dish_sponge_chair = InteractionObject("DishSponge", object_instance="DishSponge_72")  # Dish sponge on the chair
+dish_sponge_fridge = InteractionObject("DishSponge", object_instance="DishSponge_19")  # Dish sponge in the fridge
+dish_sponge_countertop = InteractionObject("DishSponge", object_instance="DishSponge_3")  # Dish sponge on the countertop
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_66")  # Sink basin
+
+# Move the dish sponge from the chair to the sink basin
+dish_sponge_chair.go_to()
+dish_sponge_chair.pickup()
+sink_basin.go_to()
+dish_sponge_chair.place(sink_basin)
+
+# Move the dish sponge from the fridge to the sink basin
+dish_sponge_fridge.go_to()
+dish_sponge_fridge.pickup()
+sink_basin.go_to()
+dish_sponge_fridge.place(sink_basin)
+
+# Move any additional dish sponges to the sink basin if they are found on the countertop
+dish_sponge_countertop.go_to()
+dish_sponge_countertop.pickup()
+sink_basin.go_to()
+dish_sponge_countertop.place(sink_basin)
+
+# Causal abstraction comments:
+# The dish sponges are identified based on their locations as mentioned by the Commander: one on the chair and one in the fridge.
+# Each sponge is picked up from its respective location and placed in the sink basin, fulfilling the task of gathering all dish sponges in the sink.
+# The script ensures that all known dish sponges are moved to the sink, as per the Commander's instructions, completing the task for the day.

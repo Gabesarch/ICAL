@@ -1,0 +1,4 @@
+1. Identify the tissue box on the shelf to the left.
+2. Identify the dining table to the extreme right corner.
+3. Pick up the tissue box.
+4. Place the tissue box on the identified dining table.

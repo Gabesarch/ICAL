@@ -1,0 +1,6 @@
+1. Navigate to the cup filled with water.
+2. Pick up the cup.
+3. Navigate to the houseplant.
+4. Pour water into the houseplant.
+5. Update the cup's state to reflect that it is now empty.
+6. Place the empty cup back in the sink.

@@ -1,0 +1,30 @@
+# Define InteractionObject instances for the microwave, lettuce, knife, and plate
+microwave = InteractionObject("Microwave", object_instance="Microwave_67")
+lettuce_from_microwave = InteractionObject("Lettuce", object_instance="Lettuce_12")
+knife_from_counter = InteractionObject("Knife", object_instance="Knife_10")
+cabinet_next_to_stove = InteractionObject("Cabinet", object_instance="Cabinet_22")
+plate_from_cabinet = InteractionObject("Plate", object_instance="Plate_46")  # Assuming this is the plate in the cupboard next to the stove
+
+# Open the microwave and retrieve the lettuce
+microwave.go_to()
+microwave.open()
+lettuce_from_microwave.pickup_and_place(knife_from_counter)  # Place lettuce on the countertop
+
+# Slice the lettuce with the knife from the countertop
+knife_from_counter.go_to()
+knife_from_counter.pickup()
+lettuce_from_microwave.go_to()
+lettuce_from_microwave.slice()
+lettuce_sliced = InteractionObject("LettuceSliced", parent_object=lettuce_from_microwave.object_instance)  # Initialize new sliced object from sliced parent
+
+# Place the lettuce slice on a clean plate from the cupboard next to the stove
+cabinet_next_to_stove.go_to()
+cabinet_next_to_stove.open()
+plate_from_cabinet.pickup()
+lettuce_sliced.pickup()
+lettuce_sliced.place(plate_from_cabinet)  # Place the lettuce slice on the plate
+
+# Causal abstraction comments:
+# The microwave is opened to retrieve the lettuce, which is necessary for slicing.
+# The knife is picked up from the countertop to slice the lettuce, as instructed by the Commander.
+# A clean plate is retrieved from the cupboard next to the stove to place the lettuce slice on it, following the Commander's instructions for cleanliness and location.

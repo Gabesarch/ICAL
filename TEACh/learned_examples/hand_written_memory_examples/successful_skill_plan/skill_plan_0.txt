@@ -1,0 +1,6 @@
+1. Pick up a knife
+2. Slice the lettuce.
+3. Instantiate a new lettuce slice instance.
+4. pick up the slice and place it on a plate.
+5. Instantiate a second lettuce slice instance.
+6. pick up the second slice and place it on the same plate.

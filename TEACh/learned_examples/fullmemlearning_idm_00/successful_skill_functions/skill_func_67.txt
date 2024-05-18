@@ -1,0 +1,25 @@
+# Define InteractionObject instances for the microwave, dish sponge, and sink basin
+microwave = InteractionObject("Microwave", object_instance="Microwave_50")  # Microwave in the kitchen
+dish_sponge = InteractionObject("DishSponge", object_instance="DishSponge_83")  # Dish sponge in the microwave
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_77")  # Sink basin in the kitchen
+
+# Go to the microwave and open it
+microwave.go_to()
+microwave.open()
+
+# Pick up the dish sponge from the microwave
+dish_sponge.go_to()
+dish_sponge.pickup()
+
+# Go to the sink basin and place the dish sponge in it
+sink_basin.go_to()
+dish_sponge.place(sink_basin)
+
+# Close the microwave after taking out the sponge
+microwave.close()
+
+# Causal abstraction comments:
+# The microwave is opened to access the dish sponge, which is the object of interest as per the Commander's instruction.
+# The dish sponge is picked up from the microwave, indicating that the robot has located the correct object to interact with.
+# The dish sponge is placed in the sink basin, fulfilling the Commander's request to put the sponge in the sink.
+# The microwave is closed as a final step to maintain the environment's order and complete the task.

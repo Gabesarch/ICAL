@@ -1,0 +1,1 @@
+The script is supposed to collect all watches and place them into a specified open box, then place a laptop on the floor.

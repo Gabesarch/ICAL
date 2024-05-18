@@ -1,0 +1,27 @@
+"Knife_2": {"label": "Knife", "holding": True, "supported_by": ["DiningTable"]}
+"Knife_5": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Pan_7": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"Bread_10": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Potato_11": {"label": "Potato", "holding": False, "sliced": True, "cooked": False, "supported_by": ["Pan", "DiningTable"]}
+"Knife_14": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"StoveBurner_19": {"label": "StoveBurner"}
+"StoveBurner_20": {"label": "StoveBurner"}
+"DiningTable_22": {"label": "DiningTable"}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"StoveBurner_27": {"label": "StoveBurner"}
+"CounterTop_29": {"label": "CounterTop"}
+"CounterTop_32": {"label": "CounterTop"}
+"CounterTop_34": {"label": "CounterTop"}
+"StoveBurner_36": {"label": "StoveBurner"}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Pot_42": {"label": "Pot", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["DiningTable"]}
+"Potato_44": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Plate_45": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"Bread_46": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"Pan_53": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["StoveBurner", "CounterTop"]}
+"SinkBasin_55": {"label": "SinkBasin"}
+"Cup_56": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"Knife_58": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Knife_62": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Faucet_70": {"label": "Faucet", "toggled": True}
+"PotatoSliced_71": {"label": "PotatoSliced", "holding": False, "cooked": False, "supported_by": ["Pan", "DiningTable"]}

@@ -1,0 +1,1 @@
+The script slices a potato and a tomato, retrieves and cleans a bowl from a safe, and places one tomato slice in the bowl.

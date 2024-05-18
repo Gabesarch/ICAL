@@ -1,0 +1,14 @@
+```python
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_chair.go_to()
+None.place(target_chair)
+target_candle = InteractionObject("Candle", object_instance = "Candle")
+target_candle.go_to()
+target_candle.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_countertop.toggle_off()
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_coffeetable.go_to()
+target_candle.place(target_coffeetable)
+```

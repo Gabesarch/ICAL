@@ -1,0 +1,6 @@
+1. Retrieve a knife from the dining table.
+2. Retrieve unsliced bread from the cabinet.
+3. Slice the bread to create bread slices.
+4. Toast the bread slices in the toaster.
+5. Retrieve a clean plate from the dining table.
+6. Place the toasted bread slices on the clean plate.

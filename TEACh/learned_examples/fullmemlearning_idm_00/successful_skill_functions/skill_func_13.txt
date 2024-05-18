@@ -1,0 +1,49 @@
+# Define InteractionObject instances for remote controls and the chair near the dining table
+remote_control_0 = InteractionObject("RemoteControl", object_instance="RemoteControl_0")
+remote_control_4 = InteractionObject("RemoteControl", object_instance="RemoteControl_4")
+remote_control_20 = InteractionObject("RemoteControl", object_instance="RemoteControl_20")
+chair_near_dining_table = InteractionObject("Chair", object_instance="Chair_38")  # Assuming this is the chair near the dining table
+
+# (causal abstraction) Pick up each remote control and place it on the chair near the dining table
+# Move remote_control_0 to the chair
+remote_control_0.go_to()
+remote_control_0.pickup()
+chair_near_dining_table.go_to()
+remote_control_0.place(chair_near_dining_table)
+
+# Move remote_control_4 to the chair
+remote_control_4.go_to()
+remote_control_4.pickup()
+chair_near_dining_table.go_to()
+remote_control_4.place(chair_near_dining_table)
+
+# Move remote_control_20 to the chair
+remote_control_20.go_to()
+remote_control_20.pickup()
+chair_near_dining_table.go_to()
+remote_control_20.place(chair_near_dining_table)
+
+# Define InteractionObject instances for the drawers under the TV
+drawer_24 = InteractionObject("Drawer", object_instance="Drawer_24")
+drawer_25 = InteractionObject("Drawer", object_instance="Drawer_25")
+drawer_27 = InteractionObject("Drawer", object_instance="Drawer_27")
+drawer_28 = InteractionObject("Drawer", object_instance="Drawer_28")
+
+# (causal abstraction) Check each drawer under the TV
+drawer_24.go_to()
+drawer_24.open()
+drawer_24.close()
+
+drawer_25.go_to()
+drawer_25.open()
+drawer_25.close()
+
+drawer_27.go_to()
+drawer_27.open()
+drawer_27.close()
+
+drawer_28.go_to()
+drawer_28.open()
+drawer_28.close()
+
+# The task of placing all remote controls on one chair and checking the drawers is now complete

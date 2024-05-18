@@ -1,0 +1,35 @@
+"DishSponge_3": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Plate_4": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Cup_11": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Chair"]}
+"Plate_16": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Cup_17": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"CounterTop_18": {"label": "CounterTop"}
+"Cabinet_19": {"label": "Cabinet", "open": False}
+"Cabinet_20": {"label": "Cabinet", "open": False}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Cabinet_39": {"label": "Cabinet", "open": False}
+"Drawer_40": {"label": "Drawer", "open": False}
+"CounterTop_44": {"label": "CounterTop"}
+"Cup_52": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"SinkBasin_71": {"label": "SinkBasin"}
+"Plate_77": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+"DishSponge_78": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"DiningTable_81": {"label": "DiningTable"}
+"Chair_82": {"label": "Chair"}
+"Faucet_83": {"label": "Faucet", "toggled": True}

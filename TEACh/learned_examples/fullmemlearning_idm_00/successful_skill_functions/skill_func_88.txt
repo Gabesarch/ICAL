@@ -1,0 +1,39 @@
+# Define InteractionObject instances for the fridge, potato, pot, and stove burner
+fridge = InteractionObject("Fridge", object_instance="Fridge_61")
+potato = InteractionObject("Potato", object_instance="Potato_54")  # The potato inside the fridge
+clean_pot_with_water = InteractionObject("Pot", object_instance="Pot_16")  # A clean pot filled with water
+stove_burner = InteractionObject("StoveBurner", object_instance="StoveBurner_37")  # A stove burner to boil the potato
+
+# Open the fridge to retrieve the potato
+fridge.go_to()
+fridge.open()
+
+# Retrieve the potato from the fridge
+potato.go_to()
+potato.pickup()
+
+# Close the fridge after taking out the potato
+fridge.close()
+
+# Navigate to the clean pot filled with water
+clean_pot_with_water.go_to()
+
+# Place the potato in the pot
+potato.place(clean_pot_with_water)
+
+# Navigate to the stove burner and place the pot on it
+stove_burner.go_to()
+clean_pot_with_water.pickup_and_place(stove_burner)
+
+# Turn on the stove burner to boil the potato
+stove_burner.toggle_on()
+
+# Wait for the potato to boil (this step is abstracted in the script)
+# After boiling, update the potato's state to 'cooked'
+potato.change_state("cooked", True)
+
+# Causal abstraction comments:
+# The fridge is opened to access the potato, which is necessary for the task.
+# The potato is placed in a clean pot with water, as boiling requires water.
+# The stove burner is turned on to heat the pot, which cooks the potato.
+# The potato's state is updated to 'cooked' to reflect the completion of the boiling process.

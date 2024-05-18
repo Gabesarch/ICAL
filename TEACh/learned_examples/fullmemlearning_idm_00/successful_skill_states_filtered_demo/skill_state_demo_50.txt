@@ -1,0 +1,14 @@
+"Watch_1": {"label": "Watch", "holding": False, "supported_by": ["Plate", "Chair", "DiningTable"]}
+"Watch_35": {"label": "Watch", "holding": False, "supported_by": ["Ottoman"]}
+"Plate_37": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Chair", "DiningTable"]}
+"CoffeeTable_41": {"label": "CoffeeTable"}
+"Ottoman_48": {"label": "Ottoman"}
+"Chair_49": {"label": "Chair"}
+"Chair_50": {"label": "Chair"}
+"Chair_51": {"label": "Chair"}
+"Chair_52": {"label": "Chair"}
+"Chair_53": {"label": "Chair"}
+"Chair_54": {"label": "Chair"}
+"Chair_55": {"label": "Chair"}
+"DiningTable_56": {"label": "DiningTable"}
+"Sofa_57": {"label": "Sofa"}

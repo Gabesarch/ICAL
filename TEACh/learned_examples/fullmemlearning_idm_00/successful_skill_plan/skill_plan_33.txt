@@ -1,0 +1,7 @@
+1. Go to the fridge and open it.
+2. Retrieve two lettuces from the fridge.
+3. Slice the two lettuces and create instances for the sliced lettuce.
+4. Go to the tomato on the table.
+5. Slice the tomato and create an instance for the sliced tomato.
+6. Check if the plate is dirty and clean it if necessary.
+7. Place two slices of lettuce and one slice of tomato on the clean plate.

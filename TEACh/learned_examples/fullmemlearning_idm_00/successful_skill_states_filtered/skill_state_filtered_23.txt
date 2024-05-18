@@ -1,0 +1,5 @@
+"Newspaper_2": {"label": "Newspaper", "holding": False, "supported_by": ["Floor", "ArmChair"]}
+"Newspaper_20": {"label": "Newspaper", "holding": False, "supported_by": ["CoffeeTable"]}
+"CoffeeTable_47": {"label": "CoffeeTable"}
+"Chair_48": {"label": "Chair"}
+"CoffeeTable_56": {"label": "CoffeeTable"}

@@ -1,0 +1,5 @@
+1. Identify the two newspapers from the current state.
+2. Identify the ottoman mentioned in the dialogue.
+3. Pick up the first newspaper and place it on the ottoman.
+4. Pick up the second newspaper and place it on the same ottoman.
+5. Ensure that the script is efficient, accurate, and well-commented.

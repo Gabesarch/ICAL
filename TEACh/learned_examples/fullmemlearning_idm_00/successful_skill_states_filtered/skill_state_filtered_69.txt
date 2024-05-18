@@ -1,0 +1,25 @@
+"Lettuce_10": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Plate_15": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Bread_16": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Plate_23": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Bread_42": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Bread_48": {"label": "Bread", "holding": False, "sliced": True, "cooked": False, "supported_by": ["Fridge"]}
+"Bread_53": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Bread_62": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"SoapBottle_64": {"label": "SoapBottle", "holding": False, "supported_by": ["CounterTop", "Plate"]}
+"CounterTop_67": {"label": "CounterTop"}
+"Cabinet_71": {"label": "Cabinet", "open": False}
+"CounterTop_77": {"label": "CounterTop"}
+"Cabinet_80": {"label": "Cabinet", "open": False}
+"CounterTop_94": {"label": "CounterTop"}
+"Fridge_99": {"label": "Fridge", "open": False}
+"Knife_100": {"label": "Knife", "holding": True, "supported_by": ["Cabinet"]}
+"Bread_105": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Plate_106": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Toaster_107": {"label": "Toaster", "toggled": False}
+"Lettuce_113": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Fridge"]}
+"Tomato_127": {"label": "Tomato", "holding": False, "sliced": True, "cooked": False, "supported_by": ["Cabinet"]}
+"Microwave_128": {"label": "Microwave", "toggled": True, "open": False}
+"BreadSliced_133": {"label": "BreadSliced", "holding": False, "cooked": True, "supported_by": ["CounterTop"]}
+"BreadSliced_134": {"label": "BreadSliced", "holding": False, "cooked": True, "supported_by": ["CounterTop", "Toaster"]}
+"TomatoSliced_135": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}

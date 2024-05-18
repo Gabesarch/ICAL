@@ -1,0 +1,7 @@
+1. Go to the knife and pick it up.
+2. Go to the potato and slice it.
+3. Initialize a new sliced potato object.
+4. Find a clean pan and place it on the stove burner.
+5. Pick up a potato slice and place it in the pan to cook.
+6. Check if the plate is dirty and clean it if necessary.
+7. Serve the cooked potato slice on the clean plate.

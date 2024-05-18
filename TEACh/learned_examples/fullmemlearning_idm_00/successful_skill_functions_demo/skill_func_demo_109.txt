@@ -1,0 +1,5 @@
+```python
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_pot.pickup_and_place(target_sinkbasin)
+```

@@ -1,0 +1,11 @@
+"Bowl_0": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"SaltShaker_15": {"label": "SaltShaker", "holding": False, "supported_by": ["Sink", "Plate"]}
+"Bowl_16": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"CounterTop_23": {"label": "CounterTop"}
+"CounterTop_43": {"label": "CounterTop"}
+"Fridge_52": {"label": "Fridge", "open": False}
+"WineBottle_57": {"label": "WineBottle", "holding": False, "filled": True, "fillLiquid": None, "supported_by": ["Sink"]}
+"Plate_58": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"SinkBasin_64": {"label": "SinkBasin"}
+"Faucet_86": {"label": "Faucet", "toggled": True}
+"Bowl_92": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}

@@ -1,0 +1,6 @@
+"Cup_1": {"label": "Cup", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Fridge"]}
+"CounterTop_30": {"label": "CounterTop"}
+"HousePlant_53": {"label": "HousePlant", "filled": False, "fillLiquid": None}
+"SinkBasin_66": {"label": "SinkBasin"}
+"Cup_77": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"DiningTable_87": {"label": "DiningTable"}

@@ -1,0 +1,7 @@
+1. Retrieve the bread from the fridge.
+2. Retrieve the knife from the same location as the bread.
+3. Slice the bread and create instances for the sliced bread.
+4. Clean the dirty plate found on the shelf.
+5. Retrieve the lettuce and slice it, creating an instance for the sliced lettuce.
+6. Toast two slices of bread in the toaster.
+7. Assemble the toasted bread and a slice of lettuce on the clean plate.

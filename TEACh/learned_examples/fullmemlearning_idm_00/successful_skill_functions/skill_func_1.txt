@@ -1,0 +1,45 @@
+# Define InteractionObject instances for the bowl, knife, and tomato
+bowl_to_clean = InteractionObject("Bowl", object_instance="Bowl_82")  # Bowl to the left of the stove
+knife_from_fridge = InteractionObject("Knife", object_instance="Knife_55")  # Knife in the fridge
+tomato_to_slice = InteractionObject("Tomato", object_instance="Tomato_8")  # Correctly reference the tomato instance
+
+# Clean the bowl
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_83")
+faucet = InteractionObject("Faucet", object_instance="Faucet_97")
+bowl_to_clean.go_to()
+bowl_to_clean.pickup()
+sink_basin.go_to()
+bowl_to_clean.place(sink_basin)
+faucet.go_to()
+faucet.toggle_on()  # Turn on the faucet to clean the bowl
+faucet.toggle_off()  # Turn off the faucet after cleaning
+# Update the bowl's state to reflect that it is clean and filled with water
+bowl_to_clean.change_state("dirty", False)
+bowl_to_clean.change_state("filled", True)
+bowl_to_clean.change_state("fillLiquid", "water")
+bowl_to_clean.pickup()  # Pick up the clean bowl
+bowl_to_clean.place(InteractionObject("CounterTop", object_instance="CounterTop_53"))  # Place the bowl on the countertop
+
+# Retrieve the knife from the fridge
+fridge = InteractionObject("Fridge", object_instance="Fridge_80")
+fridge.go_to()
+fridge.open()
+knife_from_fridge.go_to()
+knife_from_fridge.pickup()
+fridge.close()
+
+# Ensure the agent is holding the knife before slicing the tomato
+knife_from_fridge.go_to()  # Go to the knife's location
+knife_from_fridge.pickup()  # Pick up the knife
+
+# Slice the tomato into pieces
+tomato_to_slice.go_to()
+tomato_to_slice.slice()  # Slice the tomato with the knife in hand
+
+# Serve five slices of tomato in the clean bowl
+# Instantiate new sliced objects from the sliced tomato parent
+for i in range(5):
+    tomato_sliced = InteractionObject("TomatoSliced", parent_object=tomato_to_slice.object_instance)
+    tomato_sliced.pickup()
+    bowl_to_clean.go_to()
+    tomato_sliced.place(bowl_to_clean)  # Place a slice in the bowl

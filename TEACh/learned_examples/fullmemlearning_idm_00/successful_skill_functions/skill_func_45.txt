@@ -1,0 +1,21 @@
+# Define InteractionObject instances for the sponges and the sink basin
+dish_sponge_microwave = InteractionObject("DishSponge", object_instance="DishSponge_3")  # Sponge in the microwave
+dish_sponge_countertop = InteractionObject("DishSponge", object_instance="DishSponge_98")  # Sponge on the countertop
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_88")  # Sink basin
+
+# Pick up the first sponge from the microwave and place it in the sink basin
+dish_sponge_microwave.go_to()
+dish_sponge_microwave.pickup()
+sink_basin.go_to()
+dish_sponge_microwave.place(sink_basin)
+
+# Pick up the second sponge from the countertop and place it in the sink basin
+dish_sponge_countertop.go_to()
+dish_sponge_countertop.pickup()
+sink_basin.go_to()
+dish_sponge_countertop.place(sink_basin)
+
+# Causal abstraction comments:
+# The first sponge is picked up from the microwave because the Commander specified to start with that one.
+# Both sponges are placed in the sink basin as per the Commander's instructions to put the two sponges into the sink.
+# The sink basin is the designated location for the sponges, completing the task as requested.

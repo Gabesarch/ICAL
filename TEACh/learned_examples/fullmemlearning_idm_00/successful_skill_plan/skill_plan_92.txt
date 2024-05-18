@@ -1,0 +1,4 @@
+1. Define InteractionObject instances for the dish sponges on the chair, in the fridge, and on the countertop.
+2. Move the dish sponge from the chair to the sink basin.
+3. Move the dish sponge from the fridge to the sink basin.
+4. Move any additional dish sponges to the sink basin if they are found on the countertop.

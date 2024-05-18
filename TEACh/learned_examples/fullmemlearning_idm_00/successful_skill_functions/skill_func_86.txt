@@ -1,0 +1,18 @@
+# Define InteractionObject instances for the remote controls and the selected chair
+remote_control_tv_stand = InteractionObject("RemoteControl", object_instance="RemoteControl_15")  # Remote control on the TV stand
+remote_control_coffee_table = InteractionObject("RemoteControl", object_instance="RemoteControl_2")  # Remote control on the coffee table
+selected_chair = InteractionObject("Chair", object_instance="Chair_29")  # Choosing one of the chairs to place remote controls on
+
+# (causal abstraction) Pick up the remote control from the TV stand and place it on the selected chair
+remote_control_tv_stand.go_to()  # Navigate to the remote control on the TV stand
+remote_control_tv_stand.pickup()  # Pick up the remote control
+selected_chair.go_to()  # Navigate to the selected chair
+remote_control_tv_stand.place(selected_chair)  # Place the remote control on the chair
+
+# (causal abstraction) Pick up the remote control from the coffee table and place it on the selected chair
+remote_control_coffee_table.go_to()  # Navigate to the remote control on the coffee table
+remote_control_coffee_table.pickup()  # Pick up the remote control
+# Since we are already at the chair, we do not need to navigate to it again
+remote_control_coffee_table.place(selected_chair)  # Place the remote control on the chair
+
+# All remote controls are now placed on the chair as per the Commander's instruction

@@ -1,0 +1,17 @@
+"Tomato_2": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Knife_4": {"label": "Knife", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"Lettuce_6": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Chair"]}
+"Egg_7": {"label": "Egg", "holding": False, "supported_by": ["CounterTop", "Plate"]}
+"Lettuce_11": {"label": "Lettuce", "holding": False, "sliced": True, "supported_by": ["Fridge"]}
+"CounterTop_45": {"label": "CounterTop"}
+"Plate_66": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Lettuce_68": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Fridge_71": {"label": "Fridge", "open": True}
+"Knife_73": {"label": "Knife", "holding": True, "supported_by": ["CounterTop"]}
+"SinkBasin_74": {"label": "SinkBasin"}
+"Knife_78": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Tomato_80": {"label": "Tomato", "holding": False, "sliced": True, "cooked": False, "supported_by": ["Fridge"]}
+"Faucet_87": {"label": "Faucet", "toggled": False}
+"LettuceSliced_89": {"label": "LettuceSliced", "holding": False, "supported_by": ["CounterTop"]}
+"LettuceSliced_90": {"label": "LettuceSliced", "holding": False, "supported_by": ["CounterTop"]}
+"TomatoSliced_91": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["Fridge"]}

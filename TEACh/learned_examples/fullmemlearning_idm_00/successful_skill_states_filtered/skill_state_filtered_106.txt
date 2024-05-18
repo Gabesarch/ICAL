@@ -1,0 +1,17 @@
+"Tomato_5": {"label": "Tomato", "holding": False, "sliced": True, "cooked": False, "supported_by": ["Stool"]}
+"Knife_7": {"label": "Knife", "holding": True, "supported_by": ["CounterTop"]}
+"Knife_11": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"CounterTop_18": {"label": "CounterTop"}
+"CounterTop_19": {"label": "CounterTop"}
+"Knife_38": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Fork_40": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Cup_43": {"label": "Cup", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Tomato_44": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Plate_46": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"SinkBasin_56": {"label": "SinkBasin"}
+"Knife_61": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Faucet_73": {"label": "Faucet", "toggled": False}
+"Stool_74": {"label": "Stool"}
+"DiningTable_75": {"label": "DiningTable"}
+"TomatoSliced_76": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["Stool"]}
+"TomatoSliced_77": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["Stool"]}

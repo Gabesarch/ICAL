@@ -1,0 +1,7 @@
+1. Go to the pot that is filled with water.
+2. Pick up the pot.
+3. Go to the houseplant.
+4. Pour water from the pot into the houseplant.
+5. Update the pot's state to reflect that it is no longer filled with water and the fillLiquid is None.
+6. Update the houseplant's state to reflect that it has been watered.
+7. Check if the faucet is toggled on; if so, go to the faucet and toggle it off.

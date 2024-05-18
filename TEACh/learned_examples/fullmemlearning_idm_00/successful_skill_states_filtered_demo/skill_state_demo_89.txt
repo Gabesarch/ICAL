@@ -1,0 +1,11 @@
+"Mug_0": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Fridge"]}
+"Mug_15": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Floor", "GarbageCan"]}
+"DiningTable_24": {"label": "DiningTable"}
+"CounterTop_43": {"label": "CounterTop"}
+"CounterTop_49": {"label": "CounterTop"}
+"CoffeeMachine_64": {"label": "CoffeeMachine", "toggled": True}
+"Fridge_65": {"label": "Fridge", "open": False}
+"GarbageCan_73": {"label": "GarbageCan"}
+"Microwave_84": {"label": "Microwave", "toggled": False, "open": False}
+"Mug_97": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Fridge"]}
+"Shelf_99": {"label": "Shelf"}

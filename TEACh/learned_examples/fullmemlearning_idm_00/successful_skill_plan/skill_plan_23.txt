@@ -1,0 +1,4 @@
+1. Identify the newspapers mentioned in the dialogue.
+2. Select a single piece of furniture to place all newspapers on.
+3. Pick up each identified newspaper and place it on the selected furniture.
+4. Ensure that the script is efficient and well-commented.

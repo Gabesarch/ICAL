@@ -1,0 +1,36 @@
+# Define InteractionObject instances for the plate, faucet, and sink basin
+plate = InteractionObject("Plate", object_instance="Plate_61")  # The dirty plate on the countertop
+faucet = InteractionObject("Faucet", object_instance="Faucet_91")  # The faucet, initially toggled on
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_77")  # The sink basin
+
+# Go to the countertop and pick up the dirty plate
+plate.go_to()
+plate.pickup()
+
+# Check if the plate is dirty before attempting to rinse it
+if plate.check_attribute("dirty", True):
+    # Go to the sink basin and place the dirty plate in it
+    sink_basin.go_to()
+    plate.place(sink_basin)
+    
+    # Rinse the plate by ensuring the faucet is on
+    if not faucet.check_attribute("toggled", True):
+        faucet.toggle_on()
+    
+    # Assume the plate is now clean, update its state
+    plate.change_state("dirty", False)
+
+# Turn off the faucet after rinsing the plate to conserve water
+faucet.toggle_off()
+
+# Place the clean plate back on an available countertop
+plate.place(InteractionObject("CounterTop", object_instance="CounterTop_22"))
+
+# Causal abstraction comments:
+# The agent goes to the dirty plate and picks it up, preparing it for cleaning.
+# The plate's dirtiness is checked to confirm that rinsing is required.
+# The agent places the dirty plate in the sink basin, a necessary step for rinsing.
+# The faucet is checked and toggled on if not already, to rinse the plate with water.
+# After rinsing, the plate's state is updated to reflect that it is no longer dirty.
+# The faucet is turned off to conserve water, showing responsible resource usage.
+# The clean plate is placed back on the countertop, completing the cleaning task.

@@ -1,0 +1,1 @@
+<Driver> what's the first task? <Commander> we are going to clean dishware. <Driver> ok which dish first? <Commander> dish on counter next to plant. <Commander> right of sink. <Commander> that is all good job. 

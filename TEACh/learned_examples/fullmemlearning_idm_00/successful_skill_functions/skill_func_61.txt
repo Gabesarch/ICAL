@@ -1,0 +1,66 @@
+# Retrieve and slice the lettuce
+fridge = InteractionObject("Fridge", object_instance="Fridge_58")
+fridge.go_to()
+fridge.open()
+lettuce = InteractionObject("Lettuce", object_instance="Lettuce_5")
+lettuce.go_to()
+lettuce.pickup()
+fridge.close()
+knife = InteractionObject("Knife", object_instance="Knife_4")
+knife.go_to()
+knife.pickup()
+lettuce.slice()
+lettuce_sliced = InteractionObject("LettuceSliced", parent_object=lettuce.object_instance)  # Initialize new sliced object from sliced parent
+
+# Retrieve and slice the tomato
+tomato = InteractionObject("Tomato", object_instance="Tomato_14")
+tomato.go_to()
+tomato.pickup()
+tomato.slice()
+tomato_sliced = InteractionObject("TomatoSliced", parent_object=tomato.object_instance)  # Initialize new sliced object from sliced parent
+
+# Retrieve, slice, and cook the potatoes
+potato1 = InteractionObject("Potato", object_instance="Potato_9")
+potato2 = InteractionObject("Potato", object_instance="Potato_24")
+potato1.go_to()
+potato1.pickup()
+potato2.go_to()
+potato2.pickup()
+potato1.slice()
+potato2.slice()
+potato_sliced1 = InteractionObject("PotatoSliced", parent_object=potato1.object_instance)  # Initialize new sliced object from sliced parent
+potato_sliced2 = InteractionObject("PotatoSliced", parent_object=potato2.object_instance)  # Initialize new sliced object from sliced parent
+microwave = InteractionObject("Microwave", object_instance="Microwave_57")
+microwave.go_to()
+microwave.open()
+potato_sliced1.pickup()
+potato_sliced2.pickup()
+potato_sliced1.place(microwave)
+potato_sliced2.place(microwave)
+microwave.toggle_on()
+microwave.toggle_off()
+microwave.open()
+potato_sliced1.pickup()  # Retrieve the now cooked potato slice
+potato_sliced2.pickup()  # Retrieve the now cooked potato slice
+potato_sliced1.change_state("cooked", True)  # Update the potato slice's state to cooked
+potato_sliced2.change_state("cooked", True)  # Update the potato slice's state to cooked
+
+# Check if the plate is clean and assemble the salad
+plate = InteractionObject("Plate", object_instance="Plate_64")
+plate.go_to()
+if plate.check_attribute("dirty", True):
+    sink = InteractionObject("SinkBasin", object_instance="SinkBasin_70")
+    faucet = InteractionObject("Faucet", object_instance="Faucet_92")
+    plate.pickup()
+    sink.go_to()
+    plate.place(sink)
+    faucet.go_to()
+    faucet.toggle_on()
+    faucet.toggle_off()
+    plate.pickup()  # Pick up the clean plate
+lettuce_sliced.pickup()
+lettuce_sliced.place(plate)
+tomato_sliced.pickup()
+tomato_sliced.place(plate)
+potato_sliced1.place(plate)
+potato_sliced2.place(plate)

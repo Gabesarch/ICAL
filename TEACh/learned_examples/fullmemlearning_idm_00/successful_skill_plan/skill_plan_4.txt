@@ -1,0 +1,9 @@
+1. Go to the toaster and ensure it is on.
+2. Go to the knife, pick it up.
+3. Go to the bread, slice it, and put down the knife.
+4. Initialize a new InteractionObject for a slice of bread.
+5. Pick up a slice of bread and place it in the toaster.
+6. Simulate waiting for the bread to toast.
+7. Update the state of the bread slice to indicate it is toasted.
+8. Check if the plate is dirty; if so, clean it.
+9. Serve the toasted bread slice on the clean plate.

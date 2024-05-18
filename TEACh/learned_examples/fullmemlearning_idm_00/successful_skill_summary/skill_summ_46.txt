@@ -1,0 +1,1 @@
+The script is supposed to boil a potato by taking it from beside the fridge, placing it in a pot with water, and boiling it on the stove burner.

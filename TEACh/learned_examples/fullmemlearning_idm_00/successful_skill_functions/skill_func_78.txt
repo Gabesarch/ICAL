@@ -1,0 +1,57 @@
+# Define InteractionObject instances for the fridge, bread, toaster, tomato, and plate
+fridge = InteractionObject("Fridge", object_instance="Fridge_124")
+bread = InteractionObject("Bread", object_instance="Bread_42")  # Bread is in the fridge
+toaster = InteractionObject("Toaster", object_instance="Toaster_136")  # Toaster for toasting bread
+tomato = InteractionObject("Tomato", object_instance="Tomato_65")  # Tomato is next to the bread in the fridge
+shelf = InteractionObject("Shelf", object_instance="Shelf_155")  # Lower shelf where the plate is
+
+# Retrieve the bread from the fridge and toast two slices
+fridge.go_to()
+bread.pickup()
+bread.slice()
+bread_sliced_1 = InteractionObject("BreadSliced", parent_object=bread.object_instance)  # Initialize new sliced object from sliced parent
+bread_sliced_2 = InteractionObject("BreadSliced", parent_object=bread.object_instance)  # Initialize new sliced object from sliced parent
+
+toaster.go_to()
+bread_sliced_1.pickup()
+bread_sliced_1.place(toaster)
+toaster.toggle_on()  # Start toasting the first bread slice
+# Wait for the bread to toast (this step is abstracted in the script)
+toaster.toggle_off()  # Stop toasting after it's done
+bread_sliced_1.change_state("cooked", True)  # Update the bread slice's state to toasted
+bread_sliced_1.pickup()  # Remove the first toasted slice from the toaster
+
+bread_sliced_2.pickup()
+bread_sliced_2.place(toaster)
+toaster.toggle_on()  # Start toasting the second bread slice
+# Wait for the bread to toast (this step is abstracted in the script)
+toaster.toggle_off()  # Stop toasting after it's done
+bread_sliced_2.change_state("cooked", True)  # Update the bread slice's state to toasted
+bread_sliced_2.pickup()  # Remove the second toasted slice from the toaster
+
+# Retrieve the tomato from the fridge and slice it
+tomato.pickup()
+tomato.slice()
+tomato_sliced_1 = InteractionObject("TomatoSliced", parent_object=tomato.object_instance)  # Initialize new sliced object from sliced parent
+tomato_sliced_2 = InteractionObject("TomatoSliced", parent_object=tomato.object_instance)  # Initialize new sliced object from sliced parent
+
+# Retrieve a clean plate from the lower shelf
+shelf.go_to()
+plate = InteractionObject("Plate", object_instance="Plate_127")  # Assuming this is the clean plate on the lower shelf
+plate.pickup()
+
+# Assemble the sandwich on the plate with the toasted bread and tomato slices
+plate.go_to()
+bread_sliced_1.place(plate)
+tomato_sliced_1.pickup()
+tomato_sliced_1.place(plate)
+bread_sliced_2.place(plate)
+tomato_sliced_2.pickup()
+tomato_sliced_2.place(plate)
+
+# Causal abstraction comments:
+# The bread is retrieved from the fridge and sliced to create individual pieces that can be toasted.
+# The toaster is used to toast the bread slices, which is necessary for making toast.
+# The tomato is retrieved from the fridge and sliced to add a fresh component to the sandwich.
+# A clean plate is retrieved from the lower shelf to assemble the sandwich in a hygienic manner.
+# The toasted bread and tomato slices are placed on the plate to complete the sandwich assembly.

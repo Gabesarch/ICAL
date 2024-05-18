@@ -1,0 +1,21 @@
+# Define InteractionObject instances for the spoons and a drawer
+spoon_in_bin = InteractionObject("Spoon", object_instance="Spoon_94")  # Spoon in the garbage can
+spoon_on_chair = InteractionObject("Spoon", object_instance="Spoon_1")  # Spoon on the chair at the head of the table
+drawer = InteractionObject("Drawer", object_instance="Drawer_29")  # A drawer to place the spoons in
+
+# Pick up the spoon from the garbage can and place it in the drawer
+spoon_in_bin.go_to()
+spoon_in_bin.pickup()
+drawer.go_to()
+spoon_in_bin.place(drawer)
+
+# Pick up the spoon from the chair and place it in the drawer
+spoon_on_chair.go_to()
+spoon_on_chair.pickup()
+drawer.go_to()
+spoon_on_chair.place(drawer)
+
+# Causal abstraction comments:
+# The spoons are identified based on the Commander's instructions and their known locations.
+# Each spoon is picked up from its location and placed in the drawer, fulfilling the task of organizing the spoons.
+# The drawer is chosen as the destination for the spoons to keep them neatly stored as per the household norm.

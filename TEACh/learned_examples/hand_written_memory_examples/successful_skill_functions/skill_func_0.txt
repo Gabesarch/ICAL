@@ -1,0 +1,17 @@
+# (causal abstraction) A knife must be picked up first to be able to cut a lettuce
+target_knife_20 = InteractionObject("Knife", object_instance = "Knife_20")
+target_knife_20.go_to()
+target_knife_20.pickup()
+target_knife_20.change_state("holding", True)
+# Cut the lettuce with the knife
+target_lettuce_10 = InteractionObject("Lettuce", object_instance = "Lettuce_10")
+target_lettuce_10.go_to()
+target_lettuce_10.slice()
+target_lettuce_10.change_state("sliced", True)
+# (causal abstraction) the plate is already not dirty so we do not need to clean it before putting the lettuce slices on it
+target_plate_21 = InteractionObject("Lettuce", object_instance = "Plate_21")
+# Instantiate sliced objects from sliced lettuce Lettuce_10 parent, and place two slices on a plate
+target_lettucesliced_95 = InteractionObject("LettuceSliced", object_instance = None, parent_object = "Lettuce_10") # Initialize new sliced object from sliced parent
+target_lettucesliced_95.pickup_and_place(target_plate_21)
+target_lettucesliced_96 = InteractionObject("LettuceSliced", object_instance = None, parent_object = "Lettuce_10") # Initialize new sliced object from sliced parent
+target_lettucesliced_96.pickup_and_place(target_plate_21)

@@ -1,0 +1,1 @@
+The script waters a houseplant using a cup of water from the sink and then places the empty cup back in the sink.

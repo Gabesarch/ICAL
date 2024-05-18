@@ -1,0 +1,18 @@
+# Define InteractionObject instances for the candles and the selected coffee table
+candle_on_armchair = InteractionObject("Candle", object_instance="Candle_4")  # Candle supported by ArmChair
+candle_on_diningtable = InteractionObject("Candle", object_instance="Candle_8")  # Candle supported by DiningTable
+selected_coffeetable = InteractionObject("CoffeeTable", object_instance="CoffeeTable_38")  # Choosing the coffee table as the destination for candles
+
+# (causal abstraction) Pick up the first candle from the armchair and place it on the coffee table
+candle_on_armchair.go_to()
+candle_on_armchair.pickup()
+selected_coffeetable.go_to()
+candle_on_armchair.place(selected_coffeetable)
+
+# (causal abstraction) Pick up the second candle from the dining table and place it on the coffee table
+candle_on_diningtable.go_to()
+candle_on_diningtable.pickup()
+selected_coffeetable.go_to()
+candle_on_diningtable.place(selected_coffeetable)
+
+# The candles are now consolidated on the coffee table as per the Commander's instruction

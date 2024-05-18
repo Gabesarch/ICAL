@@ -1,0 +1,45 @@
+# Define InteractionObject instances for the fridge, bread, microwave, knife, toaster, and plate
+fridge = InteractionObject("Fridge", object_instance="Fridge_67")
+bread = InteractionObject("Bread", object_instance="Bread_66")  # Bread is in the fridge
+microwave = InteractionObject("Microwave", object_instance="Microwave_57")
+knife = InteractionObject("Knife", object_instance="Knife_53")  # Knife is in the microwave
+toaster = InteractionObject("Toaster", object_instance="Toaster_85")  # Toaster for toasting bread
+plate = InteractionObject("Plate", object_instance="Plate_68")  # Plate next to the stove
+
+# Retrieve the bread from the fridge
+fridge.go_to()
+fridge.open()
+bread.go_to()
+bread.pickup()
+fridge.close()
+
+# Retrieve the knife from the microwave
+microwave.go_to()
+microwave.open()
+knife.go_to()
+knife.pickup()
+microwave.close()
+
+# Slice the bread and create an instance for the sliced bread
+bread.slice()
+bread_sliced = InteractionObject("BreadSliced", parent_object=bread.object_instance)  # Initialize new sliced object from sliced parent
+
+# Toast a slice of bread
+toaster.go_to()
+bread_sliced.pickup()
+bread_sliced.place(toaster)
+toaster.toggle_on()  # Start toasting the bread slice
+# Wait for the bread to toast (this step is abstracted in the script)
+toaster.toggle_off()  # Stop toasting after it's done
+bread_sliced.change_state("cooked", True)  # Update the bread slice's state to toasted
+
+# Place the toasted bread on the clean plate next to the stove
+plate.go_to()
+bread_sliced.pickup()
+bread_sliced.place(plate)
+
+# Causal abstraction comments:
+# The bread is retrieved from the fridge and sliced to create individual pieces that can be toasted.
+# The knife is retrieved from the microwave, which is necessary for slicing the bread.
+# The toaster is used to toast a slice of bread, which is the main task of making toast.
+# The plate is specified to be next to the stove, as per the Commander's instructions, to place the toast upon completion.

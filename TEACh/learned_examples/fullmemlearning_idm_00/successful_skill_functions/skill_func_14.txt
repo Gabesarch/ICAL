@@ -1,0 +1,45 @@
+# Define InteractionObject instances for the knife, bowl, and tomato
+knife = InteractionObject("Knife", object_instance="Knife_55")  # Knife is in the fridge
+bowl = InteractionObject("Bowl", object_instance="Bowl_82")  # Bowl is to the left of the stove
+tomato = InteractionObject("Tomato", object_instance="Tomato_8")  # Selecting a tomato to slice
+
+# Clean the bowl before using it
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_83")  # Sink to clean the bowl
+faucet = InteractionObject("Faucet", object_instance="Faucet_97")  # Faucet to wash the bowl
+
+bowl.go_to()
+bowl.pickup()
+sink_basin.go_to()
+bowl.place(sink_basin)
+faucet.go_to()
+faucet.toggle_on()  # Turn on the faucet to clean and fill the bowl with water
+bowl.change_state("dirty", False)  # Update the bowl's state to clean
+bowl.change_state("filled", True)  # Update the bowl's state to filled with water
+bowl.change_state("fillLiquid", "water")  # Update the bowl's fillLiquid to water
+faucet.toggle_off()  # Turn off the faucet after cleaning
+
+# Pour out the water from the bowl
+bowl.pickup()  # Pick up the bowl again after washing
+sink_basin.go_to()
+if bowl.check_attribute("filled", True):  # Check if the bowl is filled before pouring
+    bowl.pour(sink_basin)  # Pour out the water
+    bowl.change_state("filled", False)  # Update the bowl's state to not filled
+    bowl.change_state("fillLiquid", None)  # Update the bowl's fillLiquid to none
+
+# Slice the tomato into five pieces
+knife.go_to()
+knife.pickup()
+tomato.go_to()
+for _ in range(5):  # Slice tomato into five pieces
+    tomato.slice()
+    tomato_sliced = InteractionObject("TomatoSliced", parent_object=tomato.object_instance)  # Initialize new sliced object from sliced parent
+    tomato_sliced.pickup()
+    bowl.go_to()
+    tomato_sliced.place(bowl)  # Place each slice in the bowl
+
+# Causal abstraction comments:
+# The knife is picked up from the fridge to slice the tomato.
+# The bowl is cleaned in the sink to ensure hygiene before placing food in it. The state of the bowl is updated to reflect it is clean and filled with water.
+# The water is poured out from the bowl to make space for the tomato slices, after checking that the bowl is indeed filled.
+# The tomato is sliced into five pieces, as per the instruction.
+# Each tomato slice is placed in the clean bowl, fulfilling the task of serving five slices of tomato.

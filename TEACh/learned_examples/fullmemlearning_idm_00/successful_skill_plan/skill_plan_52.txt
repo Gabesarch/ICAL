@@ -1,0 +1,7 @@
+1. Identify the correct potato instance on the dining table.
+2. Pick up the potato and place it in the microwave.
+3. Turn on the microwave to cook the potato.
+4. Open the microwave and retrieve the cooked potato.
+5. Identify the correct knife instance and use it to slice the potato.
+6. Identify the correct plate instance on the stool.
+7. Place three slices of the cooked potato on the plate.

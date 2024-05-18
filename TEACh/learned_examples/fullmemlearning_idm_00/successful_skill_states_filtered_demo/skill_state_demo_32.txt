@@ -1,0 +1,20 @@
+"Spoon_0": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Floor", "Fridge"]}
+"Pan_3": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["StoveBurner", "StoveBurner"]}
+"Egg_17": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"Spoon_18": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Egg_19": {"label": "Egg", "holding": False, "supported_by": ["Fridge"]}
+"Egg_21": {"label": "Egg", "holding": False, "supported_by": ["Pan", "StoveBurner"]}
+"Spoon_25": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["CounterTop", "Microwave"]}
+"Egg_31": {"label": "Egg", "holding": False, "supported_by": ["Pot", "DiningTable"]}
+"Drawer_33": {"label": "Drawer", "open": False}
+"CounterTop_44": {"label": "CounterTop"}
+"StoveBurner_45": {"label": "StoveBurner"}
+"Drawer_46": {"label": "Drawer", "open": False}
+"CounterTop_50": {"label": "CounterTop"}
+"Drawer_51": {"label": "Drawer", "open": False}
+"Egg_52": {"label": "Egg", "holding": False, "supported_by": ["Floor", "Fridge"]}
+"Fridge_71": {"label": "Fridge", "open": False}
+"SinkBasin_72": {"label": "SinkBasin"}
+"Spoon_82": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"DiningTable_84": {"label": "DiningTable"}
+"DiningTable_86": {"label": "DiningTable"}

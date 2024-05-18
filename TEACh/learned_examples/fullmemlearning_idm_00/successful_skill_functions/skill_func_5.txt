@@ -1,0 +1,32 @@
+# Define InteractionObject instances for the mug, sink basin, and faucet
+mug_to_clean = InteractionObject("Mug", object_instance="Mug_0")  # Dirty mug beside the stove on the left side
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_62")
+faucet = InteractionObject("Faucet", object_instance="Faucet_84")
+
+# Turn off the faucet before rinsing the mug
+faucet.go_to()
+faucet.toggle_off()  # Turn off the tap as instructed
+
+# Remove extra items from the sink basin
+apple_in_sink = InteractionObject("Apple", object_instance="Apple_76")  # Extra item in the sink basin
+apple_in_sink.pickup()
+apple_in_sink.place(InteractionObject("CounterTop", object_instance="CounterTop_21"))  # Place the apple on the countertop
+
+# Rinse the mug in the sink basin
+mug_to_clean.go_to()
+mug_to_clean.pickup()
+sink_basin.go_to()
+mug_to_clean.place(sink_basin)  # Place the mug in the sink basin
+faucet.go_to()
+faucet.toggle_on()  # Turn on the faucet to rinse the mug
+
+# Update the mug's state to reflect that it is no longer dirty and is filled with water
+mug_to_clean.change_state("dirty", False)
+mug_to_clean.change_state("filled", True)
+mug_to_clean.change_state("fillLiquid", "water")
+
+faucet.toggle_off()  # Turn off the faucet after rinsing
+
+# Place the mug beside the basin as instructed
+mug_to_clean.pickup()
+mug_to_clean.place(InteractionObject("CounterTop", object_instance="CounterTop_21"))  # Place the mug on the countertop beside the basin

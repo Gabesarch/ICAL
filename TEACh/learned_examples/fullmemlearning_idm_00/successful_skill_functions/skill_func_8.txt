@@ -1,0 +1,65 @@
+# Turn off the microwave and retrieve the knife
+microwave = InteractionObject("Microwave", object_instance="Microwave_86")
+microwave.go_to()
+microwave.toggle_off()
+knife = InteractionObject("Knife", object_instance="Knife_63")
+knife.go_to()
+knife.pickup()
+
+# Retrieve the lettuce from the fridge, slice it, and create an instance for the sliced lettuce
+fridge = InteractionObject("Fridge", object_instance="Fridge_72")
+fridge.go_to()
+fridge.open()
+lettuce = InteractionObject("Lettuce", object_instance="Lettuce_12")
+lettuce.go_to()
+lettuce.pickup()
+fridge.close()
+lettuce.slice()
+lettuce_sliced_1 = InteractionObject("LettuceSliced", parent_object=lettuce.object_instance)  # Initialize new sliced object from sliced parent
+lettuce_sliced_2 = InteractionObject("LettuceSliced", parent_object=lettuce.object_instance)  # Initialize new sliced object from sliced parent
+
+# Retrieve the tomato from the countertop, slice it, and create an instance for the sliced tomato
+tomato = InteractionObject("Tomato", object_instance="Tomato_14")
+tomato.go_to()
+tomato.slice()
+tomato_sliced = InteractionObject("TomatoSliced", parent_object=tomato.object_instance)  # Initialize new sliced object from sliced parent
+
+# Retrieve the potato from the garbage can, slice it, and create an instance for the sliced potato
+garbage_can = InteractionObject("GarbageCan", object_instance="GarbageCan_67")
+potato = InteractionObject("Potato", object_instance="Potato_68")
+potato.go_to()
+potato.pickup()
+potato.slice()
+potato_sliced = InteractionObject("PotatoSliced", parent_object=potato.object_instance)  # Initialize new sliced object from sliced parent
+
+# Cook one slice of potato by placing it in the microwave
+microwave.go_to()
+potato_sliced.pickup()
+microwave.open()
+potato_sliced.place(microwave)
+microwave.toggle_on()
+microwave.toggle_off()
+microwave.open()
+potato_sliced.pickup()  # Retrieve the now cooked potato slice
+potato_sliced.change_state("cooked", True)  # Update the potato slice's state to cooked
+
+# Check if the plate is dirty and clean it if necessary
+plate = InteractionObject("Plate", object_instance="Plate_64")
+plate.go_to()
+if plate.check_attribute("dirty", True):
+    sink = InteractionObject("SinkBasin", object_instance="SinkBasin_83")
+    faucet = InteractionObject("Faucet", object_instance="Faucet_95")
+    plate.pickup()
+    sink.go_to()
+    plate.place(sink)
+    faucet.go_to()
+    faucet.toggle_on()
+    faucet.toggle_off()
+    plate.pickup()  # Pick up the clean plate
+
+# Arrange two slices of lettuce and one cooked slice of potato on the clean plate
+lettuce_sliced_1.pickup()
+lettuce_sliced_1.place(plate)
+lettuce_sliced_2.pickup()
+lettuce_sliced_2.place(plate)
+potato_sliced.place(plate)  # Place the cooked potato slice on the plate

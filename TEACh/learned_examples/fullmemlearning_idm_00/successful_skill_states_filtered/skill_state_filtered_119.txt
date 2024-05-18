@@ -1,0 +1,31 @@
+"Lettuce_5": {"label": "Lettuce", "holding": False, "sliced": True, "supported_by": ["DiningTable"]}
+"Plate_6": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Fridge"]}
+"Tomato_7": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"Egg_11": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"Tomato_16": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"DiningTable_22": {"label": "DiningTable"}
+"Drawer_23": {"label": "Drawer", "open": False}
+"CounterTop_24": {"label": "CounterTop"}
+"Drawer_26": {"label": "Drawer", "open": False}
+"Drawer_27": {"label": "Drawer", "open": False}
+"Drawer_28": {"label": "Drawer", "open": False}
+"Drawer_29": {"label": "Drawer", "open": False}
+"Drawer_30": {"label": "Drawer", "open": False}
+"Drawer_31": {"label": "Drawer", "open": False}
+"Drawer_32": {"label": "Drawer", "open": False}
+"Drawer_33": {"label": "Drawer", "open": False}
+"Drawer_34": {"label": "Drawer", "open": False}
+"Drawer_35": {"label": "Drawer", "open": False}
+"Drawer_36": {"label": "Drawer", "open": False}
+"Knife_67": {"label": "Knife", "holding": True, "supported_by": ["Fridge"]}
+"Fridge_68": {"label": "Fridge", "open": False}
+"Tomato_80": {"label": "Tomato", "holding": False, "sliced": True, "cooked": False, "supported_by": ["CounterTop"]}
+"Plate_86": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Lettuce_91": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Drawer"]}
+"SinkBasin_93": {"label": "SinkBasin"}
+"Knife_97": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Spoon_102": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Faucet_105": {"label": "Faucet", "toggled": False}
+"LettuceSliced_107": {"label": "LettuceSliced", "holding": False, "supported_by": ["CounterTop"]}
+"LettuceSliced_108": {"label": "LettuceSliced", "holding": False, "supported_by": ["CounterTop"]}
+"TomatoSliced_109": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}

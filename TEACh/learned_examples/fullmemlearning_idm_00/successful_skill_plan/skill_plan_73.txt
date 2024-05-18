@@ -1,0 +1,7 @@
+1. Identify and pick up the knife from the chair at the kitchen table.
+2. Identify and go to the bread on the counter to the left of the fridge.
+3. Slice the bread to create a slice.
+4. Identify and go to the toaster.
+5. Toast one slice of bread.
+6. Identify and pick up a clean plate to the right of the sink.
+7. Place the toasted bread slice on the clean plate.

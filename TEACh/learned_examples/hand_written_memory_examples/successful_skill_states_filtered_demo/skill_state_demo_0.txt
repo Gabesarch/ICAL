@@ -1,0 +1,4 @@
+"Lettuce_10": {"label": "Lettuce", "holding": False, "sliced": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Tomato_11": {"label": "Tomato", "holding": False, "sliced": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_20": {"label": "Knife", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Plate_21": {"label": "Plate", "holding": False, "dirty": False, "cooked": False, "supported_by": ["CounterTop"]}

@@ -1,0 +1,5 @@
+1. Retrieve the knife from the fridge and close the fridge.
+2. Retrieve the lettuce from the back of the table, slice it twice, and create instances for the sliced lettuce.
+3. Retrieve the tomato from the drawer, slice it, and create an instance for the sliced tomato, ensuring to update the state to sliced.
+4. Check if the plate is dirty and clean it if necessary, updating the state to clean.
+5. Place two slices of lettuce and one slice of tomato on the clean plate.

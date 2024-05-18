@@ -1,0 +1,1 @@
+<Driver> Hello, what is my task today? <Commander> Clean all the plates. <Commander> The plate is dirty. Rinse with water. <Driver> I have cleaned 1 plate. <Driver> are there more? <Commander> There is still another plate for the task. <Driver> I have cleaned 2 plates. 

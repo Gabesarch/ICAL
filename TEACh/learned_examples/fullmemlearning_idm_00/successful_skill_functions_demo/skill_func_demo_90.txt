@@ -1,0 +1,14 @@
+```python
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_cup.pickup_and_place(target_countertop)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_cup.go_to()
+target_cup.pickup()
+target_houseplant = InteractionObject("HousePlant", object_instance = "HousePlant")
+target_houseplant.go_to()
+target_cup.pour(target_houseplant)
+```

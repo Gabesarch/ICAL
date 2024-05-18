@@ -1,0 +1,10 @@
+1. Go to the knife next to the sink and pick it up.
+2. Go to the bread on the dining table and slice it.
+3. Initialize a new sliced bread object.
+4. Go to the toaster next to the coffee maker and place a slice of bread in it.
+5. Toggle the toaster on, wait for the bread to toast, then toggle the toaster off.
+6. Remove the toasted bread slice and place it on the dining table.
+7. Repeat steps 4-6 for another slice of bread.
+8. Go to the lettuce next to the bread and slice it.
+9. Initialize a new sliced lettuce object.
+10. Place the toasted bread slices and sliced lettuce on a plate to assemble the sandwich components.

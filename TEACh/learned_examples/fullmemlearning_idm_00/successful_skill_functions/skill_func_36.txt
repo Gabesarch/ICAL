@@ -1,0 +1,23 @@
+# Define InteractionObject instances for the cup filled with water and the houseplant
+cup_with_water = InteractionObject("Cup", object_instance="Cup_6")  # Selecting the cup that is already filled with water in the sink
+houseplant = InteractionObject("HousePlant", object_instance="HousePlant_53")
+
+# (causal abstraction) Navigate to the cup filled with water to prepare for watering the plant
+cup_with_water.go_to()
+cup_with_water.pickup()
+
+# (causal abstraction) Navigate to the houseplant with the cup of water to perform the watering action
+houseplant.go_to()
+cup_with_water.pour(houseplant)
+
+# (causal abstraction) After pouring, update the houseplant's state to reflect that it has been watered
+houseplant.change_state("filled", True)
+houseplant.change_state("fillLiquid", "water")
+
+# (causal abstraction) Update the cup's state to reflect that it is now empty after pouring the water
+cup_with_water.change_state("filled", False)
+cup_with_water.change_state("fillLiquid", None)
+
+# (causal abstraction) Place the empty cup back in the sink as it was found, maintaining the environment's order
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_57")
+cup_with_water.place(sink_basin)

@@ -1,0 +1,1 @@
+The script waters a houseplant on the table using a pot filled with water and updates the state of the objects accordingly.

@@ -1,0 +1,8 @@
+1. Go to the fridge and pick up the bread.
+2. Slice the bread to create two slices.
+3. Go to the toaster and place the first bread slice in it.
+4. Toast the first slice and then remove it from the toaster.
+5. Place the second bread slice in the toaster and toast it.
+6. Go to the microwave, pick up the tomato, and slice it.
+7. Go to the fridge, pick up the lettuce.
+8. Go to the plate's location, assemble the toasted bread slices, tomato slices, and lettuce on the plate.

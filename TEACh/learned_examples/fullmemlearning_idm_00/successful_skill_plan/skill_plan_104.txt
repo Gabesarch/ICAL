@@ -1,0 +1,8 @@
+1. Identify and go to the knife on the countertop.
+2. Pick up the knife.
+3. Identify and go to the lettuce on the countertop.
+4. Slice the lettuce into slices.
+5. Identify and go to the clean plate on the side table.
+6. Check if the plate is clean; if not, clean it.
+7. Place two slices of lettuce onto the clean plate.
+8. Slice the tomato and place one slice onto the plate with the lettuce.

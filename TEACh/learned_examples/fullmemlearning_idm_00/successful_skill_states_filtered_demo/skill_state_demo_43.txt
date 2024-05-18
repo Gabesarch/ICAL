@@ -1,0 +1,6 @@
+"Mug_1": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Microwave"]}
+"CounterTop_27": {"label": "CounterTop"}
+"HousePlant_60": {"label": "HousePlant", "filled": False, "fillLiquid": None}
+"SinkBasin_82": {"label": "SinkBasin"}
+"Mug_91": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Faucet_96": {"label": "Faucet", "toggled": True}

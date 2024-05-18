@@ -1,0 +1,4 @@
+"Newspaper_4": {"label": "Newspaper", "holding": False, "supported_by": ["DiningTable"]}
+"Newspaper_12": {"label": "Newspaper", "holding": False, "supported_by": ["CoffeeTable"]}
+"CoffeeTable_40": {"label": "CoffeeTable"}
+"DiningTable_41": {"label": "DiningTable"}

@@ -1,0 +1,7 @@
+1. Go to the bowl and pick it up.
+2. Wash the bowl in the sink and turn on the faucet to fill it with water.
+3. Turn off the faucet and update the bowl's state to clean and filled with water.
+4. Pour out the water from the bowl and update the bowl's state to not filled.
+5. Go to the knife in the fridge and pick it up.
+6. Go to the tomato and slice it into five pieces.
+7. Place each tomato slice into the clean bowl.

@@ -1,0 +1,16 @@
+"Lettuce_4": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Bread_10": {"label": "Bread", "holding": False, "sliced": True, "cooked": False, "supported_by": ["DiningTable"]}
+"Bread_11": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"CounterTop_22": {"label": "CounterTop"}
+"CounterTop_37": {"label": "CounterTop"}
+"Bread_40": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Knife_41": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Toaster_42": {"label": "Toaster", "toggled": False}
+"Plate_49": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Microwave_56": {"label": "Microwave", "toggled": False, "open": False}
+"Lettuce_58": {"label": "Lettuce", "holding": False, "sliced": True, "supported_by": ["CounterTop"]}
+"Knife_64": {"label": "Knife", "holding": True, "supported_by": ["CounterTop"]}
+"DiningTable_78": {"label": "DiningTable"}
+"BreadSliced_79": {"label": "BreadSliced", "holding": False, "cooked": True, "supported_by": ["Plate", "DiningTable"]}
+"BreadSliced_80": {"label": "BreadSliced", "holding": False, "cooked": True, "supported_by": ["Plate", "DiningTable"]}
+"LettuceSliced_81": {"label": "LettuceSliced", "holding": False, "supported_by": ["CounterTop"]}

@@ -1,0 +1,9 @@
+"Lettuce_4": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Lettuce_11": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Microwave"]}
+"Cabinet_17": {"label": "Cabinet", "open": False}
+"Cabinet_19": {"label": "Cabinet", "open": False}
+"Cabinet_20": {"label": "Cabinet", "open": False}
+"CounterTop_21": {"label": "CounterTop"}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Microwave_43": {"label": "Microwave", "toggled": True, "open": False}
+"Lettuce_50": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}

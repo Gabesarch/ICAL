@@ -1,0 +1,18 @@
+# Define InteractionObject instances for the remote controls and the sofa
+remote_on_table = InteractionObject("RemoteControl", object_instance="RemoteControl_18")  # Remote control on the dining table
+remote_in_bin = InteractionObject("RemoteControl", object_instance="RemoteControl_0")  # Remote control in the garbage can
+sofa = InteractionObject("Sofa", object_instance="Sofa_28")  # Sofa as the destination for the remote controls
+
+# (causal abstraction) Pick up the first remote control from the dining table and place it on the sofa
+remote_on_table.go_to()  # Navigate to the remote control on the dining table
+remote_on_table.pickup()  # Pick up the remote control
+sofa.go_to()  # Navigate to the sofa
+remote_on_table.place(sofa)  # Place the remote control on the sofa
+
+# (causal abstraction) Pick up the second remote control from the garbage can and place it on the sofa
+remote_in_bin.go_to()  # Navigate to the remote control in the garbage can
+remote_in_bin.pickup()  # Pick up the remote control
+sofa.go_to()  # Navigate to the sofa
+remote_in_bin.place(sofa)  # Place the remote control on the sofa
+
+# Both remote controls are now placed on the sofa as per the Commander's instruction

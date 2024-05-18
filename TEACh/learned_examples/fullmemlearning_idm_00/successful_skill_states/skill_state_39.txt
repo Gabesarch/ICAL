@@ -1,0 +1,50 @@
+"Watch_0": {"label": "Watch", "holding": False, "supported_by": ["Box", "CoffeeTable"]}
+"Pillow_1": {"label": "Pillow", "holding": False, "supported_by": ["Drawer"]}
+"Box_2": {"label": "Box", "holding": False, "open": True, "supported_by": ["CoffeeTable"]}
+"Book_3": {"label": "Book", "holding": False, "supported_by": ["SideTable"]}
+"Watch_4": {"label": "Watch", "holding": False, "supported_by": ["Sofa"]}
+"Book_5": {"label": "Book", "holding": False, "supported_by": ["CoffeeTable"]}
+"Box_6": {"label": "Box", "holding": False, "open": True, "supported_by": ["Chair"]}
+"FloorLamp_7": {"label": "FloorLamp", "toggled": False}
+"GarbageCan_8": {"label": "GarbageCan"}
+"CreditCard_9": {"label": "CreditCard", "holding": False, "supported_by": ["CoffeeTable"]}
+"KeyChain_10": {"label": "KeyChain", "holding": False, "supported_by": ["Drawer"]}
+"Painting_11": {"label": "Painting"}
+"Painting_12": {"label": "Painting"}
+"Television_13": {"label": "Television"}
+"Pillow_14": {"label": "Pillow", "holding": False, "supported_by": ["Floor", "Shelf"]}
+"LightSwitch_15": {"label": "LightSwitch"}
+"Painting_16": {"label": "Painting"}
+"Painting_17": {"label": "Painting"}
+"Laptop_18": {"label": "Laptop", "holding": False, "supported_by": ["Sofa"]}
+"RemoteControl_19": {"label": "RemoteControl", "holding": False, "supported_by": ["SideTable"]}
+"Watch_20": {"label": "Watch", "holding": False, "supported_by": ["Sofa"]}
+"HousePlant_21": {"label": "HousePlant", "filled": True, "fillLiquid": "water"}
+"Window_22": {"label": "Window"}
+"Window_23": {"label": "Window"}
+"Drawer_24": {"label": "Drawer", "open": False}
+"Drawer_25": {"label": "Drawer", "open": False}
+"Drawer_26": {"label": "Drawer", "open": False}
+"Drawer_27": {"label": "Drawer", "open": False}
+"Drawer_28": {"label": "Drawer", "open": False}
+"Drawer_29": {"label": "Drawer", "open": False}
+"Dresser_30": {"label": "Dresser"}
+"Drawer_31": {"label": "Drawer", "open": False}
+"Drawer_32": {"label": "Drawer", "open": False}
+"Drawer_33": {"label": "Drawer", "open": False}
+"Drawer_34": {"label": "Drawer", "open": False}
+"Drawer_35": {"label": "Drawer", "open": False}
+"Drawer_36": {"label": "Drawer", "open": False}
+"CoffeeTable_37": {"label": "CoffeeTable"}
+"Chair_38": {"label": "Chair"}
+"SideTable_39": {"label": "SideTable"}
+"SideTable_40": {"label": "SideTable"}
+"SideTable_41": {"label": "SideTable"}
+"SideTable_42": {"label": "SideTable"}
+"SideTable_43": {"label": "SideTable"}
+"Chair_44": {"label": "Chair"}
+"Sofa_45": {"label": "Sofa"}
+"Shelf_46": {"label": "Shelf"}
+"Chair_47": {"label": "Chair"}
+"Chair_48": {"label": "Chair"}
+"Statue_49": {"label": "Statue", "holding": False, "supported_by": ["Floor", "GarbageCan"]}

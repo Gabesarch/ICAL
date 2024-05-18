@@ -1,0 +1,6 @@
+1. Go to the microwave and open it.
+2. Retrieve the lettuce from the microwave and place it on the countertop.
+3. Go to the knife on the countertop and pick it up.
+4. Slice the lettuce.
+5. Initialize a new lettuce slice object.
+6. Find a clean plate in the cupboard next to the stove and place the lettuce slice on it.

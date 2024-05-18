@@ -1,0 +1,26 @@
+"Bread_6": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"Plate_14": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Egg_15": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"Cup_20": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"Bread_26": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Plate_38": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Bread_44": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Plate_47": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Lettuce_63": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Sink"]}
+"Plate_70": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Plate_75": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Fork_76": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"DishSponge_86": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Cabinet_94": {"label": "Cabinet", "open": False}
+"CounterTop_115": {"label": "CounterTop"}
+"Cabinet_117": {"label": "Cabinet", "open": False}
+"CounterTop_122": {"label": "CounterTop"}
+"Plate_143": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Fridge_148": {"label": "Fridge", "open": False}
+"Knife_150": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"SinkBasin_151": {"label": "SinkBasin"}
+"PepperShaker_153": {"label": "PepperShaker", "holding": False, "supported_by": ["Sink"]}
+"Bread_156": {"label": "Bread", "holding": False, "sliced": True, "cooked": False, "supported_by": ["CounterTop"]}
+"Toaster_160": {"label": "Toaster", "toggled": True}
+"Faucet_164": {"label": "Faucet", "toggled": True}
+"BreadSliced_166": {"label": "BreadSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}

@@ -1,0 +1,1 @@
+The script prepares coffee in a clean mug by picking the correct mug from the dust bin, ensuring it's clean, using the coffee machine, and placing the prepared coffee on a countertop.

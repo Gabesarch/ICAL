@@ -1,0 +1,1 @@
+<Commander> clean all mugs. <Driver> Ok. <Driver> How many? <Commander> there is one next to the tomato on the center island. <Driver> That was the one I washed. <Commander> it's not completed yet. <Commander> . <Commander> there is no other. <Driver> how many am I supposed to wash. <Commander> only that one. <Driver> washed twice already. <Commander> done. 

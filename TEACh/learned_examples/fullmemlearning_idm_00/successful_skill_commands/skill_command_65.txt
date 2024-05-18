@@ -1,0 +1,1 @@
+<Commander> hello, please cook a potato in the microwave. <Driver> where is potato? <Commander> above microwave. <Commander> left side cabinet. <Commander> Great, now slice it and put 3 in a bowl. <Commander> bowl in fridge. <Commander> awesome sauce! <Driver> done. 

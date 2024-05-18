@@ -1,0 +1,5 @@
+1. Identify the correct potato instance next to the microwave.
+2. Slice the potato and create an instance for the sliced potato.
+3. Cook one slice of potato in the microwave and update its state to cooked.
+4. Identify the correct plate instance and check if it is clean.
+5. Serve the cooked potato slice on the clean plate.

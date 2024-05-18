@@ -1,0 +1,15 @@
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Egg_12": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"Ladle_14": {"label": "Ladle", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"SoapBottle_17": {"label": "SoapBottle", "holding": False, "supported_by": ["Sink"]}
+"Egg_22": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"Fork_23": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Potato_26": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_42": {"label": "Cabinet", "open": False}
+"CounterTop_49": {"label": "CounterTop"}
+"CounterTop_56": {"label": "CounterTop"}
+"CoffeeMachine_81": {"label": "CoffeeMachine", "toggled": False}
+"SinkBasin_85": {"label": "SinkBasin"}
+"Mug_96": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop", "CoffeeMachine"]}
+"Faucet_98": {"label": "Faucet", "toggled": True}

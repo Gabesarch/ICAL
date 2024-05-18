@@ -1,0 +1,45 @@
+# Define InteractionObject instances for the mug, faucet, and sink basin
+mug = InteractionObject("Mug", object_instance="Mug_72")  # The dirty mug filled with water on the dining table
+faucet = InteractionObject("Faucet", object_instance="Faucet_75")  # The faucet in the sink
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_64")  # The sink basin for rinsing
+
+# Turn off the faucet if it is currently on to conserve water
+if faucet.check_attribute("toggled", True):
+    faucet.toggle_off()
+
+# Go to the mug and pick it up
+mug.go_to()
+mug.pickup()
+
+# If the mug is filled with liquid, pour it out into the sink basin
+# Note: The mug remains filled with water, so we do not change the "filled" and "fillLiquid" attributes
+if mug.check_attribute("filled", True):
+    sink_basin.go_to()
+    mug.pour(sink_basin)
+
+# Place the mug in the sink basin to clean it
+sink_basin.go_to()
+mug.place(sink_basin)
+
+# Turn on the faucet to rinse the mug with water
+faucet.go_to()
+faucet.toggle_on()
+
+# Assume the mug is now clean, update its state
+mug.change_state("dirty", False)
+
+# Turn off the faucet after rinsing to conserve water
+faucet.toggle_off()
+
+# Place the clean mug back on the dining table
+dining_table = InteractionObject("DiningTable", object_instance="DiningTable_76")  # The dining table where the mug was originally found
+dining_table.go_to()
+mug.pickup()
+mug.place(dining_table)
+
+# Causal abstraction comments:
+# The faucet is turned off initially to prevent wasting water before cleaning begins.
+# The mug is identified on the dining table and picked up to ensure we are using the correct object as per the Commander's instructions.
+# The mug is emptied into the sink basin, but the "filled" and "fillLiquid" attributes are not changed as the mug remains filled with water.
+# The mug is rinsed by placing it in the sink basin and turning on the faucet, then the faucet is turned off to conserve water after cleaning.
+# The clean mug is placed back on the dining table, completing the task as instructed.

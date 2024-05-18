@@ -1,0 +1,35 @@
+# Define InteractionObject instances for each tissue box and the coffee table
+tissuebox_coffeetable = InteractionObject("TissueBox", object_instance="TissueBox_8")  # Tissue box on the coffee table
+tissuebox_ottoman = InteractionObject("TissueBox", object_instance="TissueBox_12")  # Tissue box on the ottoman
+tissuebox_diningtable_chair = InteractionObject("TissueBox", object_instance="TissueBox_15")  # Tissue box on the chair at the dining table
+tissuebox_sidetable = InteractionObject("TissueBox", object_instance="TissueBox_23")  # Tissue box on the side table
+tissuebox_diningtable = InteractionObject("TissueBox", object_instance="TissueBox_37")  # Tissue box on the dining table
+selected_coffeetable = InteractionObject("CoffeeTable", object_instance="CoffeeTable_56")  # The coffee table to place all tissue boxes on
+
+# (causal abstraction) Move each tissue box to the selected coffee table
+tissuebox_coffeetable.go_to()
+tissuebox_coffeetable.pickup()
+selected_coffeetable.go_to()
+tissuebox_coffeetable.place(selected_coffeetable)
+
+tissuebox_ottoman.go_to()
+tissuebox_ottoman.pickup()
+selected_coffeetable.go_to()
+tissuebox_ottoman.place(selected_coffeetable)
+
+tissuebox_diningtable_chair.go_to()
+tissuebox_diningtable_chair.pickup()
+selected_coffeetable.go_to()
+tissuebox_diningtable_chair.place(selected_coffeetable)
+
+tissuebox_sidetable.go_to()
+tissuebox_sidetable.pickup()
+selected_coffeetable.go_to()
+tissuebox_sidetable.place(selected_coffeetable)
+
+tissuebox_diningtable.go_to()
+tissuebox_diningtable.pickup()
+selected_coffeetable.go_to()
+tissuebox_diningtable.place(selected_coffeetable)
+
+# All tissue boxes are now on the selected coffee table as per the Commander's instruction

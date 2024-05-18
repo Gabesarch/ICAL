@@ -1,0 +1,1 @@
+The script is supposed to prepare coffee in a clean mug that is initially located on a chair and then place the mug back on a valid receptacle.

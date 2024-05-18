@@ -1,0 +1,6 @@
+1. Go to the fridge and retrieve a knife from the freezer.
+2. Choose a loaf of bread from the countertop and slice it.
+3. Create an instance for the sliced bread.
+4. Toast a slice of bread in the toaster.
+5. Retrieve a plate from the fridge and place it on the countertop.
+6. Place the toasted bread on the clean plate.

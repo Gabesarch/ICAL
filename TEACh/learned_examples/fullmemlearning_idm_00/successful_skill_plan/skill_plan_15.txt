@@ -1,0 +1,6 @@
+1. Navigate to the specified cabinet above the microwave.
+2. Open the cabinet to access the potato.
+3. Pick up the potato from the cabinet.
+4. Place the potato in the pot filled with water.
+5. Turn on the stove burner to start boiling the potato.
+6. Update the potato's state to "cooked" after it has been placed in the pot on the stove burner and the burner is turned on.

@@ -1,0 +1,18 @@
+# Define InteractionObject instances for the newspapers and the ottoman
+newspaper_2 = InteractionObject("Newspaper", object_instance="Newspaper_2")  # First newspaper on the armchair
+newspaper_18 = InteractionObject("Newspaper", object_instance="Newspaper_18")  # Second newspaper on the armchair
+target_ottoman = InteractionObject("Ottoman", object_instance="Ottoman_33")  # The ottoman to place newspapers on
+
+# (causal abstraction) Pick up the first newspaper and place it on the ottoman
+newspaper_2.go_to()  # Navigate to the first newspaper
+newspaper_2.pickup()  # Pick up the first newspaper
+target_ottoman.go_to()  # Navigate to the ottoman
+newspaper_2.place(target_ottoman)  # Place the first newspaper on the ottoman
+
+# (causal abstraction) Pick up the second newspaper and place it on the same ottoman
+newspaper_18.go_to()  # Navigate to the second newspaper
+newspaper_18.pickup()  # Pick up the second newspaper
+# Since we are already at the ottoman, we do not need to navigate to it again
+newspaper_18.place(target_ottoman)  # Place the second newspaper on the ottoman
+
+# Both newspapers are now placed on the ottoman as per the Commander's instruction

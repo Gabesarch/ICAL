@@ -1,0 +1,14 @@
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet", "Pan"]}
+"Egg_1": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"Mug_14": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop", "CoffeeMachine"]}
+"SaltShaker_17": {"label": "SaltShaker", "holding": False, "supported_by": ["Sink"]}
+"Stool_28": {"label": "Stool"}
+"CounterTop_29": {"label": "CounterTop"}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"CounterTop_49": {"label": "CounterTop"}
+"CoffeeMachine_72": {"label": "CoffeeMachine", "toggled": False}
+"SinkBasin_74": {"label": "SinkBasin"}
+"SaltShaker_75": {"label": "SaltShaker", "holding": False, "supported_by": ["CounterTop"]}
+"Egg_82": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"Mug_87": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Stool"]}
+"Faucet_88": {"label": "Faucet", "toggled": True}

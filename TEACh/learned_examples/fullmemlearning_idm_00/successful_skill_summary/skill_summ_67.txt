@@ -1,0 +1,1 @@
+The script moves the dish sponge from the microwave to the sink basin as instructed by the Commander.

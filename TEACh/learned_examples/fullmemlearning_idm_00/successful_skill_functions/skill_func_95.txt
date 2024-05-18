@@ -1,0 +1,46 @@
+# Define InteractionObject instances for the pot, egg, sink basin, faucet, and houseplant
+pot = InteractionObject("Pot", object_instance="Pot_32")  # Selecting the pot that is on the countertop
+egg = InteractionObject("Egg", object_instance="Egg_47")  # Selecting the egg that is in the pot
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_57")
+faucet = InteractionObject("Faucet", object_instance="Faucet_25")
+houseplant = InteractionObject("HousePlant", object_instance="HousePlant_53")
+countertop = InteractionObject("CounterTop", object_instance="CounterTop_23")
+
+# Navigate to the pot to check its contents and cleanliness
+pot.go_to()
+
+# If the pot contains an egg, remove the egg from the pot
+if egg.check_attribute("supported_by", "Pot"):
+    # Assuming a function to remove the egg from the pot exists
+    egg.remove_from_pot()
+
+# If the pot is dirty, clean it before using it to water the plant
+if pot.check_attribute("dirty", True):
+    pot.pickup()
+    sink_basin.go_to()
+    pot.place(sink_basin)
+    faucet.go_to()
+    faucet.toggle_on()
+    faucet.toggle_off()
+    pot.change_state("dirty", False)
+    pot.pickup()
+
+# Navigate to the houseplant with the clean pot of water to perform the watering action
+houseplant.go_to()
+pot.pour(houseplant)
+
+# After pouring, update the houseplant's state to reflect that it has been watered
+houseplant.change_state("filled", True)
+houseplant.change_state("fillLiquid", "water")
+
+# Update the pot's state to reflect that it is now empty after watering the plant
+pot.change_state("filled", False)
+pot.change_state("fillLiquid", None)
+
+# Place the now-empty pot back on the countertop, maintaining the environment's order
+pot.place(countertop)
+
+# Check if the faucet is on; if it is, toggle it off to prevent water wastage
+if faucet.check_attribute("toggled", True):
+    faucet.go_to()
+    faucet.toggle_off()

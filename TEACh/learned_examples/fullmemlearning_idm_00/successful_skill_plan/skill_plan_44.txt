@@ -1,0 +1,5 @@
+1. Identify the two candles mentioned in the dialogue and their current locations.
+2. Select a single coffee table to place both candles on.
+3. Pick up the first candle from its current location and place it on the selected coffee table.
+4. Pick up the second candle from its current location and place it on the same coffee table.
+5. Ensure that the script is efficient and well-commented.

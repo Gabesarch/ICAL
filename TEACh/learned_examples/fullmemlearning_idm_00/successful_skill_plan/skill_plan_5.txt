@@ -1,0 +1,6 @@
+1. Go to the faucet and turn it off.
+2. Go to the apple in the sink, pick it up, and place it on the countertop.
+3. Go to the mug, pick it up, and place it in the sink basin.
+4. Go to the faucet, turn it on to rinse the mug, and then turn it off.
+5. Update the mug's state to reflect that it is no longer dirty and is filled with water.
+6. Pick up the mug and place it on the countertop beside the basin.

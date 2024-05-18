@@ -1,0 +1,1 @@
+<Commander> hello how are you today. <Commander> our task is to clean all plates. <Driver> ok. <Driver> where are the plates? <Commander> the plate is next to the toaster. <Commander> rinse with water and we're done. <Commander> thank you. 

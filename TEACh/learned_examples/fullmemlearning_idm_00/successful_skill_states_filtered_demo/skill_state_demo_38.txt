@@ -1,0 +1,10 @@
+"Plate_6": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"DiningTable_18": {"label": "DiningTable"}
+"CounterTop_25": {"label": "CounterTop"}
+"CounterTop_28": {"label": "CounterTop"}
+"CounterTop_30": {"label": "CounterTop"}
+"Plate_41": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"SinkBasin_51": {"label": "SinkBasin"}
+"Knife_54": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"PepperShaker_56": {"label": "PepperShaker", "holding": False, "supported_by": ["Sink"]}
+"Faucet_66": {"label": "Faucet", "toggled": True}

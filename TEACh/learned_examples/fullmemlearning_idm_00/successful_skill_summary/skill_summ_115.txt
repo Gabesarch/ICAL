@@ -1,0 +1,1 @@
+The script slices a tomato into two slices and places them onto a clean plate.

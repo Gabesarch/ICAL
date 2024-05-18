@@ -1,0 +1,24 @@
+"Knife_4": {"label": "Knife", "holding": False, "supported_by": ["Floor", "Drawer"]}
+"Tomato_5": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["StoveBurner", "Pan"]}
+"Lettuce_6": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Potato_9": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Microwave"]}
+"Pot_10": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Knife_12": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Tomato_13": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"CounterTop_21": {"label": "CounterTop"}
+"Faucet_23": {"label": "Faucet", "toggled": False}
+"Pot_30": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Knife_31": {"label": "Knife", "holding": True, "supported_by": ["CounterTop"]}
+"Potato_33": {"label": "Potato", "holding": False, "sliced": True, "cooked": False, "supported_by": ["CounterTop"]}
+"SoapBottle_34": {"label": "SoapBottle", "holding": False, "supported_by": ["Plate", "SideTable"]}
+"Microwave_43": {"label": "Microwave", "toggled": False, "open": False}
+"Lettuce_50": {"label": "Lettuce", "holding": False, "sliced": True, "supported_by": ["CounterTop"]}
+"Tomato_54": {"label": "Tomato", "holding": False, "sliced": True, "cooked": False, "supported_by": ["CounterTop"]}
+"SinkBasin_55": {"label": "SinkBasin"}
+"Knife_56": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Plate_57": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["SideTable"]}
+"SideTable_68": {"label": "SideTable"}
+"LettuceSliced_73": {"label": "LettuceSliced", "holding": False, "supported_by": ["CounterTop"]}
+"TomatoSliced_74": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}
+"PotatoSliced_75": {"label": "PotatoSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}
+"PotatoSliced_76": {"label": "PotatoSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}

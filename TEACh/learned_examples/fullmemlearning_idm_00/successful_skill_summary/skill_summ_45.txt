@@ -1,0 +1,1 @@
+The script places two sponges into the sink as per the Commander's instructions.

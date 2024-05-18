@@ -1,0 +1,13 @@
+"Knife_12": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"CounterTop_41": {"label": "CounterTop"}
+"CounterTop_44": {"label": "CounterTop"}
+"CounterTop_48": {"label": "CounterTop"}
+"Knife_53": {"label": "Knife", "holding": True, "supported_by": ["Microwave"]}
+"Microwave_57": {"label": "Microwave", "toggled": False, "open": False}
+"Shelf_62": {"label": "Shelf"}
+"Bread_66": {"label": "Bread", "holding": False, "sliced": True, "cooked": False, "supported_by": ["Fridge"]}
+"Fridge_67": {"label": "Fridge", "open": False}
+"Plate_68": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_80": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Toaster_85": {"label": "Toaster", "toggled": True}
+"BreadSliced_96": {"label": "BreadSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}

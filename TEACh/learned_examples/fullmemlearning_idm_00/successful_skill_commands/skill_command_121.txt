@@ -1,0 +1,1 @@
+<Driver> hi, what can i do for you? <Commander> can you cook a potato slice for me and serve it on a plate. <Driver> sure. <Driver> where can i find a potato? <Commander> next to the microwave. <Driver> ok. <Commander> thanks. <Driver> potato is ready. 

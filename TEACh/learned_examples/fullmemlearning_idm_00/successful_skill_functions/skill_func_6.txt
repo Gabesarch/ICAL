@@ -1,0 +1,19 @@
+# Define InteractionObject instances for newspapers and the selected furniture
+newspaper_4 = InteractionObject("Newspaper", object_instance="Newspaper_4")
+newspaper_12 = InteractionObject("Newspaper", object_instance="Newspaper_12")
+selected_furniture = InteractionObject("DiningTable", object_instance="DiningTable_41")  # Choosing the dining table as the furniture to consolidate newspapers
+
+# (causal abstraction) Pick up each newspaper and place it on the selected furniture
+# Move newspaper_4 to the dining table
+newspaper_4.go_to()
+newspaper_4.pickup()
+selected_furniture.go_to()
+newspaper_4.place(selected_furniture)
+
+# Move newspaper_12 to the dining table
+newspaper_12.go_to()
+newspaper_12.pickup()
+selected_furniture.go_to()
+newspaper_12.place(selected_furniture)
+
+# The newspapers are now consolidated on the dining table as per the Commander's instruction

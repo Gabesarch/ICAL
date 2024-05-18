@@ -1,0 +1,46 @@
+# Define InteractionObject instances for the cabinet, mug, sink basin, faucet, and coffee machine
+right_cabinet = InteractionObject("Cabinet", object_instance="Cabinet_60")  # Right cabinet under the sink
+mug = InteractionObject("Mug", object_instance="Mug_97")  # Mug in the right cabinet under the sink
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_84")  # Sink basin for cleaning the mug if necessary
+faucet = InteractionObject("Faucet", object_instance="Faucet_98")  # Faucet to use water for cleaning
+coffee_machine = InteractionObject("CoffeeMachine", object_instance="CoffeeMachine_82")  # Coffee machine to prepare coffee
+countertop = InteractionObject("CounterTop", object_instance="CounterTop_34")  # Define a countertop instance to place the mug on
+
+# Open the right cabinet under the sink and retrieve the mug
+right_cabinet.go_to()
+right_cabinet.open()
+mug.go_to()
+mug.pickup()
+
+# Check if the mug is clean; if not, clean the mug
+if mug.check_attribute("dirty", True):
+    sink_basin.go_to()
+    mug.place(sink_basin)
+    faucet.toggle_on()  # Rinse the mug with water
+    faucet.toggle_off()  # Turn off the faucet after rinsing
+    mug.change_state("dirty", False)  # Update the mug's state to clean
+
+# Check if the mug is filled; if so, empty it
+if mug.check_attribute("filled", True):
+    mug.pour(sink_basin)  # Pour out the existing liquid
+    mug.change_state("filled", False)  # Update the mug's state to not filled
+
+# Use the coffee machine to prepare coffee in the clean mug
+coffee_machine.go_to()
+mug.place(coffee_machine)
+coffee_machine.toggle_on()  # Start the coffee machine to prepare coffee
+# Wait for coffee to be prepared (this step is abstracted in the script)
+coffee_machine.toggle_off()  # Turn off the coffee machine after coffee is prepared
+mug.change_state("filled", True)  # Update the mug's state to filled with coffee
+mug.change_state("fillLiquid", "coffee")  # Update the liquid in the mug to coffee
+
+# Place the mug with coffee on the countertop
+mug.pickup()
+mug.place(countertop)  # Correctly place the mug on the countertop
+
+# Causal abstraction comments:
+# The robot opens the specified cabinet under the sink to retrieve the mug as instructed by the Commander.
+# The mug's cleanliness is checked, and if necessary, it is cleaned in the sink basin to meet the requirement of using a clean mug for coffee.
+# If the mug is already filled with another liquid, it is emptied in the sink basin before using it to prepare coffee.
+# The coffee machine is used to prepare coffee, which is the main task assigned by the Commander.
+# The mug is placed on the countertop after coffee preparation, completing the task as requested.

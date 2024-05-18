@@ -1,0 +1,10 @@
+```python
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.go_to()
+target_microwave.toggle_off()
+target_microwave.go_to()
+target_microwave.open()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_lettuce.pickup_and_place(target_countertop)
+```

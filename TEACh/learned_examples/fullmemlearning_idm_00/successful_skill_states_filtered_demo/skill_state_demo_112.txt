@@ -1,0 +1,16 @@
+"Lettuce_1": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Plate_7": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"SoapBottle_8": {"label": "SoapBottle", "holding": False, "supported_by": ["Sink"]}
+"Bottle_10": {"label": "Bottle", "holding": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Bottle_12": {"label": "Bottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["Shelf"]}
+"Lettuce_14": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Fridge"]}
+"SoapBottle_15": {"label": "SoapBottle", "holding": False, "supported_by": ["Shelf"]}
+"CounterTop_22": {"label": "CounterTop"}
+"CounterTop_24": {"label": "CounterTop"}
+"CounterTop_47": {"label": "CounterTop"}
+"Bottle_48": {"label": "Bottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"SoapBottle_57": {"label": "SoapBottle", "holding": False, "supported_by": ["Shelf"]}
+"Plate_61": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"SinkBasin_77": {"label": "SinkBasin"}
+"Lettuce_80": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Sink"]}
+"Faucet_91": {"label": "Faucet", "toggled": True}

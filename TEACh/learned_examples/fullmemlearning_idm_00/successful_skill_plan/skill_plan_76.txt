@@ -1,0 +1,9 @@
+1. Initialize the InteractionObject for the knife on the countertop.
+2. Go to the knife and pick it up.
+3. Initialize the InteractionObject for the bread on the dining table.
+4. Go to the bread and slice it.
+5. Initialize the InteractionObject for the toaster.
+6. Go to the toaster, place the bread slice in it, and toggle it on.
+7. Wait for the bread to toast, then toggle the toaster off.
+8. Initialize the InteractionObject for the clean plate on the chair.
+9. Go to the plate, pick it up, and place the toasted bread on it.

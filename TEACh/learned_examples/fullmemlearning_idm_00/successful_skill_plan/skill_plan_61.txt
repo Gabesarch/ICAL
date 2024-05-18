@@ -1,0 +1,6 @@
+1. Retrieve a knife and lettuce from the fridge, slice the lettuce, and create instances for the sliced lettuce.
+2. Retrieve a tomato from the dining table, slice it, and create an instance for the sliced tomato.
+3. Retrieve two potatoes from the fridge, slice them, and create instances for the sliced potatoes.
+4. Cook two slices of potato in the microwave and update their state to cooked.
+5. Check if the plate on the dining table is clean and clean it if necessary.
+6. Place one slice of lettuce, one slice of tomato, and two slices of cooked potato on the clean plate.

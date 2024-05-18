@@ -1,0 +1,28 @@
+# Define InteractionObject instances for the plate and the faucet
+plate = InteractionObject("Plate", object_instance="Plate_58")  # Plate is on the sink
+faucet = InteractionObject("Faucet", object_instance="Faucet_86")  # Faucet is already on
+
+# Go to the sink and pick up the plate
+plate.go_to()
+plate.pickup()
+
+# Check if the plate is dirty before attempting to rinse it
+if plate.check_attribute("dirty", True):
+    # Rinse the plate by ensuring the faucet is on
+    if not faucet.check_attribute("toggled", True):
+        faucet.toggle_on()
+    # Assume the plate is now clean, update its state
+    plate.change_state("dirty", False)
+
+# Turn off the faucet after rinsing the plate to conserve water
+faucet.toggle_off()
+
+# Place the clean plate back on the sink or an appropriate location
+# Assuming the sink is an appropriate location to place the clean plate
+plate.place(InteractionObject("SinkBasin", object_instance="SinkBasin_64"))
+
+# Causal abstraction comments:
+# The plate is checked for dirtiness before rinsing to avoid unnecessary actions.
+# The faucet's state is checked, and it is toggled on if needed to rinse the plate.
+# The faucet is turned off after rinsing to conserve water, demonstrating efficient use of resources.
+# The clean plate is placed back on the sink, completing the task of rinsing the plate as instructed.

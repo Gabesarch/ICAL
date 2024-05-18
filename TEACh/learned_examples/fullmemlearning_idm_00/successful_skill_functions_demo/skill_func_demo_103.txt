@@ -1,0 +1,9 @@
+```python
+target_remotecontrol = InteractionObject("RemoteControl", object_instance = "RemoteControl")
+target_sofa = InteractionObject("Sofa", object_instance = "Sofa")
+target_remotecontrol.pickup_and_place(target_sofa)
+target_remotecontrol.pickup()
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_chair.go_to()
+target_remotecontrol.place(target_chair)
+```

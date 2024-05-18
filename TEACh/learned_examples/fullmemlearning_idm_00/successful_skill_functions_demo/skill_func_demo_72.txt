@@ -1,0 +1,14 @@
+```python
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_plate.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_plate.pour(target_sinkbasin)
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_coffeemachine.go_to()
+target_plate.place(target_coffeemachine)
+```

@@ -1,0 +1,1 @@
+<Commander> hi. <Driver> hi. <Commander> please slice bread and toast 1 slice. <Driver> done. <Commander> did you toast a slice? <Commander> after toasted, please place toast on the clean plate. <Driver> plate. <Driver> . <Commander> table. <Commander> under salt. 

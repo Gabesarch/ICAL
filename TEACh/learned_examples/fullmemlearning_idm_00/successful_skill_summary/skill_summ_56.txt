@@ -1,0 +1,1 @@
+The script is supposed to pick up all pens from their locations and place them on the bed.

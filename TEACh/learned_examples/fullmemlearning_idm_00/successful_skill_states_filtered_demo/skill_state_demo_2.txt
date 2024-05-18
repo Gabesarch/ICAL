@@ -1,0 +1,26 @@
+"Pan_1": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Lettuce_5": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Chair"]}
+"Pot_7": {"label": "Pot", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner"]}
+"Tomato_10": {"label": "Tomato", "holding": False, "sliced": True, "cooked": False, "supported_by": ["Chair"]}
+"Lettuce_15": {"label": "Lettuce", "holding": False, "sliced": True, "supported_by": ["DiningTable"]}
+"CounterTop_20": {"label": "CounterTop"}
+"DiningTable_22": {"label": "DiningTable"}
+"CounterTop_40": {"label": "CounterTop"}
+"Tomato_42": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Chair"]}
+"Microwave_48": {"label": "Microwave", "toggled": False, "open": True}
+"Fridge_49": {"label": "Fridge", "open": False}
+"Plate_55": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Potato_57": {"label": "Potato", "holding": False, "sliced": True, "cooked": True, "supported_by": ["Microwave_48"]}
+"Pot_58": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Knife_60": {"label": "Knife", "holding": True, "supported_by": ["Stool"]}
+"Lettuce_65": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Knife_66": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Pan_76": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Chair_77": {"label": "Chair"}
+"CoffeeMachine_79": {"label": "CoffeeMachine", "toggled": False}
+"Stool_87": {"label": "Stool"}
+"Stool_88": {"label": "Stool"}
+"LettuceSliced_92": {"label": "LettuceSliced", "holding": False, "supported_by": ["DiningTable"]}
+"LettuceSliced_93": {"label": "LettuceSliced", "holding": False, "supported_by": ["DiningTable"]}
+"TomatoSliced_94": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["Chair"]}
+"PotatoSliced_95": {"label": "PotatoSliced", "holding": False, "cooked": True, "supported_by": ["CounterTop"]}

@@ -1,0 +1,10 @@
+"RemoteControl_3": {"label": "RemoteControl", "holding": False, "supported_by": ["Dresser"]}
+"Box_10": {"label": "Box", "holding": False, "open": True, "supported_by": ["Sofa"]}
+"RemoteControl_19": {"label": "RemoteControl", "holding": False, "supported_by": ["Chair"]}
+"Sofa_35": {"label": "Sofa"}
+"SideTable_36": {"label": "SideTable"}
+"Dresser_39": {"label": "Dresser"}
+"Chair_46": {"label": "Chair"}
+"Chair_47": {"label": "Chair"}
+"Chair_48": {"label": "Chair"}
+"Chair_50": {"label": "Chair"}

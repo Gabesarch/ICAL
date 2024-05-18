@@ -1,0 +1,1 @@
+{"0": {"id": 5, "label": "Pot", "attribute": "emptied", "before": false, "after": true}, "1": {"id": 34, "label": "StoveBurner", "attribute": "emptied", "before": false, "after": true}, "2": {"id": 75, "label": "Potato", "attribute": "cooked", "before": false, "after": true}, "3": {"id": 75, "label": "Potato", "attribute": "supported_by", "before": ["CounterTop"], "after": null}}

@@ -1,0 +1,50 @@
+# Define InteractionObject instances for the knife, bread, toaster, lettuce, and plate
+knife = InteractionObject("Knife", object_instance="Knife_64")  # Knife is next to the sink
+bread_dining_table = InteractionObject("Bread", object_instance="Bread_10")  # Bread is on the dining table
+toaster = InteractionObject("Toaster", object_instance="Toaster_42")  # Toaster is next to the coffee maker
+lettuce_counter_top = InteractionObject("Lettuce", object_instance="Lettuce_58")  # Lettuce is next to the bread
+plate_dining_table = InteractionObject("Plate", object_instance="Plate_49")  # Plate is on the dining table
+
+# Slice the bread
+knife.go_to()
+knife.pickup()
+bread_dining_table.go_to()
+bread_dining_table.slice()
+bread_sliced_1 = InteractionObject("BreadSliced", parent_object=bread_dining_table.object_instance)  # Initialize new sliced object from sliced parent
+
+# Toast the first slice of bread
+toaster.go_to()
+bread_sliced_1.pickup()
+bread_sliced_1.place(toaster)
+toaster.toggle_on()  # Start toasting the bread slice
+# Wait for the bread to toast (this step is abstracted in the script)
+toaster.toggle_off()  # Stop toasting after it's done
+bread_sliced_1.change_state("cooked", True)  # Update the bread slice's state to toasted
+bread_sliced_1.pickup()  # Remove the toasted bread slice from the toaster
+bread_sliced_1.place(plate_dining_table)  # Place the toasted bread slice on the plate
+
+# Toast the second slice of bread
+bread_sliced_2 = InteractionObject("BreadSliced", parent_object=bread_dining_table.object_instance)  # Initialize new sliced object from sliced parent
+bread_sliced_2.pickup()
+bread_sliced_2.place(toaster)
+toaster.toggle_on()  # Start toasting the second bread slice
+# Wait for the bread to toast (this step is abstracted in the script)
+toaster.toggle_off()  # Stop toasting after it's done
+bread_sliced_2.change_state("cooked", True)  # Update the bread slice's state to toasted
+bread_sliced_2.pickup()  # Remove the toasted bread slice from the toaster
+bread_sliced_2.place(plate_dining_table)  # Place the toasted bread slice on the plate
+
+# Slice the lettuce
+lettuce_counter_top.go_to()
+lettuce_counter_top.slice()
+lettuce_sliced = InteractionObject("LettuceSliced", parent_object=lettuce_counter_top.object_instance)  # Initialize new sliced object from sliced parent
+
+# Assemble the sandwich components on the plate
+lettuce_sliced.pickup()
+lettuce_sliced.place(plate_dining_table)  # Place the sliced lettuce on the plate with the toasted bread slices
+
+# Causal abstraction comments:
+# The knife is picked up to slice the bread, which is necessary to create slices for toasting.
+# The toaster is used to toast two slices of bread, fulfilling the requirement to toast slices for the sandwich.
+# The lettuce is sliced to provide fresh ingredients for the sandwich.
+# The plate is used to assemble the sandwich components, ensuring a clean and organized presentation.

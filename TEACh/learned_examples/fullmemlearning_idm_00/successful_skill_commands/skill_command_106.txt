@@ -1,0 +1,1 @@
+<Driver> What shall I do today? <Commander> make 2 slice tomato. <Commander> clean plate. <Commander> tomato slice need to be on clean plate. <Commander> finish. <Driver> Done. 

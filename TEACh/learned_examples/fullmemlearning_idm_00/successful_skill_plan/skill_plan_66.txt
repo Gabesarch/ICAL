@@ -1,0 +1,8 @@
+1. Identify and go to the knife on the dining table.
+2. Pick up the knife.
+3. Identify and go to the tomato in the fridge.
+4. Pick up the tomato.
+5. Slice the tomato into slices.
+6. Identify and go to the plate on the chair.
+7. Check if the plate is clean; if not, clean it.
+8. Place two slices of tomato onto the clean plate.

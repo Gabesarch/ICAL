@@ -1,0 +1,9 @@
+1. Go to the left bottom cabinet and open it.
+2. Retrieve the dirty plate and cup from the cabinet.
+3. Go to the next left cabinet and open it.
+4. Retrieve the dirty plate from the countertop and the dirty cup from the chair.
+5. Clean each dirty dishware item in the sink using the faucet and dish sponge.
+6. After cleaning each item, update its state to not dirty and filled with water if applicable.
+7. Place the cleaned dishware on the countertop.
+8. Turn off the faucet if it's on.
+9. Close the cabinets.

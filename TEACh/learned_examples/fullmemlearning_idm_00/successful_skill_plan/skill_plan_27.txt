@@ -1,0 +1,6 @@
+1. Identify the newspapers mentioned in the dialogue and their current locations.
+2. Select a single chair to place all newspapers on.
+3. Pick up the newspaper from the coffee table and place it on the selected chair.
+4. Pick up the newspaper from the shelf and place it on the selected chair.
+5. Open the box on the TV stand, pick up the newspaper inside, and place it on the selected chair.
+6. Ensure that the script is efficient and well-commented.

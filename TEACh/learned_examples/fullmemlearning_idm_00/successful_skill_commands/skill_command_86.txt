@@ -1,0 +1,1 @@
+<Commander> Today could you place all the remote controls onto any of the chairs. <Commander> there is one on the tv stand. <Commander> and another on the coffee table. <Driver> I can't drop this box. <Commander> are you able to place it on a chair? <Commander> that's great thank you. <Driver> Is there another remote? 

@@ -1,0 +1,5 @@
+```python
+target_pen = InteractionObject("Pen", object_instance = "Pen")
+target_pen.go_to()
+target_pen.pickup()
+```

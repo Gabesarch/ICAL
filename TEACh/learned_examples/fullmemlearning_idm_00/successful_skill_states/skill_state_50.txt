@@ -1,0 +1,59 @@
+"CellPhone_0": {"label": "CellPhone", "holding": False, "supported_by": ["CoffeeTable"]}
+"Watch_1": {"label": "Watch", "holding": False, "supported_by": ["Plate", "Chair", "DiningTable"]}
+"RemoteControl_2": {"label": "RemoteControl", "holding": False, "supported_by": ["CoffeeTable"]}
+"Vase_3": {"label": "Vase", "holding": False, "supported_by": ["Box", "Sofa"]}
+"Pencil_4": {"label": "Pencil", "holding": False, "supported_by": ["CoffeeTable"]}
+"KeyChain_5": {"label": "KeyChain", "holding": False, "supported_by": ["Box", "Sofa"]}
+"CreditCard_6": {"label": "CreditCard", "holding": False, "supported_by": ["CoffeeTable"]}
+"Newspaper_7": {"label": "Newspaper", "holding": False, "supported_by": ["Chair", "DiningTable"]}
+"Bowl_8": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Chair", "DiningTable"]}
+"Book_9": {"label": "Book", "holding": False, "supported_by": ["Sofa"]}
+"RemoteControl_10": {"label": "RemoteControl", "holding": False, "supported_by": ["DiningTable"]}
+"CreditCard_11": {"label": "CreditCard", "holding": False, "supported_by": ["Chair"]}
+"CellPhone_12": {"label": "CellPhone", "holding": False, "supported_by": ["Floor", "Drawer"]}
+"Vase_13": {"label": "Vase", "holding": False, "supported_by": ["DiningTable"]}
+"Bowl_14": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CoffeeTable"]}
+"Book_15": {"label": "Book", "holding": False, "supported_by": ["Chair", "Chair", "DiningTable"]}
+"Painting_16": {"label": "Painting"}
+"Box_17": {"label": "Box", "holding": False, "open": True, "supported_by": ["Sofa"]}
+"Painting_18": {"label": "Painting"}
+"Pillow_19": {"label": "Pillow", "holding": False, "supported_by": ["ArmChair"]}
+"Bowl_20": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Drawer"]}
+"WateringCan_21": {"label": "WateringCan", "holding": False, "filled": True, "fillLiquid": "water", "supported_by": ["Floor"]}
+"TissueBox_22": {"label": "TissueBox", "holding": False, "supported_by": ["ArmChair"]}
+"Television_23": {"label": "Television"}
+"Newspaper_24": {"label": "Newspaper", "holding": False, "supported_by": ["Sofa"]}
+"CreditCard_25": {"label": "CreditCard", "holding": False, "supported_by": ["ArmChair"]}
+"FloorLamp_26": {"label": "FloorLamp", "toggled": True}
+"KeyChain_27": {"label": "KeyChain", "holding": False, "supported_by": ["SideTable"]}
+"GarbageCan_28": {"label": "GarbageCan"}
+"LightSwitch_29": {"label": "LightSwitch"}
+"Boots_30": {"label": "Boots", "holding": False, "supported_by": ["Floor"]}
+"Pencil_31": {"label": "Pencil", "holding": False, "supported_by": ["Ottoman"]}
+"Laptop_32": {"label": "Laptop", "holding": False, "supported_by": ["CoffeeTable"]}
+"Vase_33": {"label": "Vase", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"RemoteControl_34": {"label": "RemoteControl", "holding": False, "supported_by": ["Floor", "Drawer"]}
+"Watch_35": {"label": "Watch", "holding": False, "supported_by": ["Ottoman"]}
+"CellPhone_36": {"label": "CellPhone", "holding": False, "supported_by": ["Chair", "DiningTable"]}
+"Plate_37": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Chair", "DiningTable"]}
+"HousePlant_38": {"label": "HousePlant", "filled": True, "fillLiquid": "water"}
+"Window_39": {"label": "Window"}
+"CoffeeTable_41": {"label": "CoffeeTable"}
+"Drawer_42": {"label": "Drawer", "open": False}
+"Drawer_43": {"label": "Drawer", "open": False}
+"Drawer_44": {"label": "Drawer", "open": False}
+"Drawer_45": {"label": "Drawer", "open": False}
+"Drawer_46": {"label": "Drawer", "open": False}
+"Drawer_47": {"label": "Drawer", "open": False}
+"Ottoman_48": {"label": "Ottoman"}
+"Chair_49": {"label": "Chair"}
+"Chair_50": {"label": "Chair"}
+"Chair_51": {"label": "Chair"}
+"Chair_52": {"label": "Chair"}
+"Chair_53": {"label": "Chair"}
+"Chair_54": {"label": "Chair"}
+"Chair_55": {"label": "Chair"}
+"DiningTable_56": {"label": "DiningTable"}
+"Sofa_57": {"label": "Sofa"}
+"SideTable_58": {"label": "SideTable"}
+"Drawer_59": {"label": "Drawer", "open": False}

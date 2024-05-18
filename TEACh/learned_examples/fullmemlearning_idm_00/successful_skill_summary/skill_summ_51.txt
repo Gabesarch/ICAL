@@ -1,0 +1,1 @@
+The revised script will identify and place both remote controls onto tables as instructed by the dialogue.

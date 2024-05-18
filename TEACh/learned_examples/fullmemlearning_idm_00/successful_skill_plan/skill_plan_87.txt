@@ -1,0 +1,7 @@
+1. Identify and go to the knife in the fridge.
+2. Pick up the knife.
+3. Identify and go to the lettuce on the countertop.
+4. Slice the lettuce into slices.
+5. Identify and go to the cabinet shelf below the stove.
+6. Open the cabinet and take out a plate.
+7. Place the lettuce slices onto the plate.

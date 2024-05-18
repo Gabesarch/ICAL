@@ -1,0 +1,14 @@
+"RemoteControl_0": {"label": "RemoteControl", "holding": False, "supported_by": ["Chair"]}
+"RemoteControl_4": {"label": "RemoteControl", "holding": False, "supported_by": ["Box", "Floor"]}
+"Box_6": {"label": "Box", "holding": False, "open": True, "supported_by": ["Floor"]}
+"RemoteControl_20": {"label": "RemoteControl", "holding": False, "supported_by": ["Box", "Floor"]}
+"Drawer_24": {"label": "Drawer", "open": False}
+"Drawer_25": {"label": "Drawer", "open": False}
+"Drawer_27": {"label": "Drawer", "open": False}
+"Drawer_28": {"label": "Drawer", "open": False}
+"Chair_29": {"label": "Chair"}
+"Chair_32": {"label": "Chair"}
+"Chair_33": {"label": "Chair"}
+"Chair_34": {"label": "Chair"}
+"Chair_35": {"label": "Chair"}
+"Chair_38": {"label": "Chair"}

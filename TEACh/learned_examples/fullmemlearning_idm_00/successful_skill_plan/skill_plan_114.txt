@@ -1,0 +1,4 @@
+1. Identify all tissue boxes from the current state.
+2. Identify the coffee table where the tissue boxes should be placed.
+3. Pick up each tissue box and place it on the coffee table.
+4. Ensure that the script is efficient and well-commented.

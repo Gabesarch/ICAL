@@ -1,0 +1,17 @@
+"Apple_1": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Sink"]}
+"Vase_2": {"label": "Vase", "holding": False, "supported_by": ["Sink"]}
+"Potato_15": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"CounterTop_22": {"label": "CounterTop"}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"CounterTop_24": {"label": "CounterTop"}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"CounterTop_47": {"label": "CounterTop"}
+"Microwave_50": {"label": "Microwave", "toggled": False, "open": False}
+"Fork_52": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Vase_63": {"label": "Vase", "holding": False, "supported_by": ["Shelf"]}
+"Vase_72": {"label": "Vase", "holding": False, "supported_by": ["Microwave"]}
+"SinkBasin_77": {"label": "SinkBasin"}
+"Apple_82": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Sink"]}
+"DishSponge_83": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Microwave"]}
+"Spoon_84": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Faucet_91": {"label": "Faucet", "toggled": True}

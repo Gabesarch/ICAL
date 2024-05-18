@@ -1,0 +1,18 @@
+"Knife_1": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Plate_7": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Stool"]}
+"Bread_8": {"label": "Bread", "holding": False, "sliced": True, "cooked": False, "supported_by": ["CounterTop"]}
+"Bread_11": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Plate_15": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"CounterTop_46": {"label": "CounterTop"}
+"Pan_48": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Bread_59": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Plate_60": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Toaster_65": {"label": "Toaster", "toggled": True}
+"SinkBasin_66": {"label": "SinkBasin"}
+"GarbageCan_69": {"label": "GarbageCan"}
+"Knife_71": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Fridge_73": {"label": "Fridge", "open": False}
+"Microwave_75": {"label": "Microwave", "toggled": False, "open": False}
+"Knife_79": {"label": "Knife", "holding": True, "supported_by": ["Fridge"]}
+"Faucet_84": {"label": "Faucet", "toggled": False}
+"BreadSliced_86": {"label": "BreadSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}

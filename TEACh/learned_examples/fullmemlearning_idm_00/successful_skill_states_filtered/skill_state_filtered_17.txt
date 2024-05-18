@@ -1,0 +1,16 @@
+"SaltShaker_3": {"label": "SaltShaker", "holding": False, "supported_by": ["Cabinet", "Pan"]}
+"SaltShaker_11": {"label": "SaltShaker", "holding": False, "supported_by": ["Sink"]}
+"CounterTop_17": {"label": "CounterTop"}
+"DiningTable_18": {"label": "DiningTable"}
+"CounterTop_20": {"label": "CounterTop"}
+"Knife_63": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Fridge_64": {"label": "Fridge", "open": False}
+"Plate_82": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Toaster_88": {"label": "Toaster", "toggled": False}
+"SinkBasin_89": {"label": "SinkBasin"}
+"SaltShaker_91": {"label": "SaltShaker", "holding": False, "supported_by": ["CounterTop"]}
+"PepperShaker_92": {"label": "PepperShaker", "holding": False, "supported_by": ["DiningTable", "Plate"]}
+"Knife_93": {"label": "Knife", "holding": True, "supported_by": ["CounterTop"]}
+"Bread_94": {"label": "Bread", "holding": False, "sliced": True, "cooked": False, "supported_by": ["DiningTable"]}
+"Faucet_101": {"label": "Faucet", "toggled": True}
+"BreadSliced_103": {"label": "BreadSliced", "holding": False, "cooked": False, "supported_by": ["DiningTable"]}

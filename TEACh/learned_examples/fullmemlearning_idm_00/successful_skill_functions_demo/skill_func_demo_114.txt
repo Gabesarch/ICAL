@@ -1,0 +1,16 @@
+```python
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_coffeetable.go_to()
+None.place(target_coffeetable)
+target_statue = InteractionObject("Statue", object_instance = "Statue")
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_statue.pickup_and_place(target_chair)
+target_statue.place(target_coffeetable)
+target_tissuebox = InteractionObject("TissueBox", object_instance = "TissueBox")
+target_tissuebox.pickup_and_place(target_coffeetable)
+target_tissuebox.place(target_coffeetable)
+target_coffeetable.go_to()
+target_tissuebox.place(target_coffeetable)
+target_coffeetable.go_to()
+target_tissuebox.place(target_coffeetable)
+```

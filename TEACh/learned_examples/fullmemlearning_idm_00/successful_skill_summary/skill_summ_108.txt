@@ -1,0 +1,1 @@
+The revised script will find a knife and a tomato, slice the tomato, find a clean plate from the specified drawer, and serve two slices of tomato on the plate.

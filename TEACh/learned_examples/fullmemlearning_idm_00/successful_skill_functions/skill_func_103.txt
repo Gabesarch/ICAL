@@ -1,0 +1,20 @@
+# Define InteractionObject instances for the remote controls based on their initial locations
+remote_under_tv = InteractionObject("RemoteControl", object_instance="RemoteControl_3")  # Remote under the TV
+remote_on_chair = InteractionObject("RemoteControl", object_instance="RemoteControl_19")  # Remote on the chair
+
+# Define InteractionObject instance for the open box on the sofa
+open_box = InteractionObject("Box", object_instance="Box_10")  # Open box on the sofa
+
+# (causal abstraction) Pick up the first remote control from under the TV and place it in the open box
+remote_under_tv.go_to()  # Navigate to the remote control under the TV
+remote_under_tv.pickup()  # Pick up the remote control
+open_box.go_to()  # Navigate to the open box on the sofa
+remote_under_tv.place(open_box)  # Place the remote control in the open box
+
+# (causal abstraction) Pick up the second remote control from the chair and place it in the open box
+remote_on_chair.go_to()  # Navigate to the remote control on the chair
+remote_on_chair.pickup()  # Pick up the remote control
+# Assuming the robot is still near the open box, no need to navigate again
+remote_on_chair.place(open_box)  # Place the remote control in the open box
+
+# Both remote controls are now placed in the open box as per the Commander's instruction

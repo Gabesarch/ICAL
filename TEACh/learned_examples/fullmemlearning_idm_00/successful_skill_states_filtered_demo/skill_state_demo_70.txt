@@ -1,0 +1,38 @@
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet", "Pan"]}
+"Egg_1": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"PepperShaker_6": {"label": "PepperShaker", "holding": False, "supported_by": ["Plate", "Cabinet"]}
+"Mug_14": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop", "CoffeeMachine"]}
+"PepperShaker_16": {"label": "PepperShaker", "holding": False, "supported_by": ["Fridge"]}
+"SaltShaker_17": {"label": "SaltShaker", "holding": False, "supported_by": ["Sink"]}
+"PepperShaker_20": {"label": "PepperShaker", "holding": False, "supported_by": ["Sink"]}
+"Egg_23": {"label": "Egg", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"CounterTop_24": {"label": "CounterTop"}
+"Stool_28": {"label": "Stool"}
+"CounterTop_29": {"label": "CounterTop"}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Cabinet_39": {"label": "Cabinet", "open": False}
+"Cabinet_40": {"label": "Cabinet", "open": False}
+"Cabinet_41": {"label": "Cabinet", "open": False}
+"Cabinet_42": {"label": "Cabinet", "open": False}
+"Cabinet_43": {"label": "Cabinet", "open": False}
+"Cabinet_44": {"label": "Cabinet", "open": False}
+"Cabinet_45": {"label": "Cabinet", "open": False}
+"Cabinet_46": {"label": "Cabinet", "open": False}
+"CounterTop_49": {"label": "CounterTop"}
+"Cabinet_50": {"label": "Cabinet", "open": False}
+"Cabinet_54": {"label": "Cabinet", "open": False}
+"CoffeeMachine_72": {"label": "CoffeeMachine", "toggled": False}
+"SinkBasin_74": {"label": "SinkBasin"}
+"SaltShaker_75": {"label": "SaltShaker", "holding": False, "supported_by": ["CounterTop"]}
+"PepperShaker_77": {"label": "PepperShaker", "holding": False, "supported_by": ["Bowl", "Fridge"]}
+"Egg_82": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"Mug_87": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Stool"]}
+"Faucet_88": {"label": "Faucet", "toggled": True}

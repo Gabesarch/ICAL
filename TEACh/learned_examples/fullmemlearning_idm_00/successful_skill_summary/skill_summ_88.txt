@@ -1,0 +1,1 @@
+The script should boil a potato by retrieving it from the fridge, placing it in a pot with water, boiling it on the stove burner, and updating the potato's state to 'cooked'.

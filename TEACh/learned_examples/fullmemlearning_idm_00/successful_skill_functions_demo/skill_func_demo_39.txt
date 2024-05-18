@@ -1,0 +1,13 @@
+```python
+target_desk = InteractionObject("Desk", object_instance = "Desk")
+target_desk.go_to()
+None.place(target_desk)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_watch = InteractionObject("Watch", object_instance = "Watch")
+target_watch.go_to()
+target_watch.pickup()
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_watch.pickup_and_place(target_coffeetable)
+```

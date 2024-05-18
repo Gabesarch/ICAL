@@ -1,0 +1,32 @@
+# Define InteractionObject instances for the knife, lettuce, and plate
+knife_fridge = InteractionObject("Knife", object_instance="Knife_68")  # Knife is in the fridge
+lettuce_counter_top = InteractionObject("Lettuce", object_instance="Lettuce_70")  # Lettuce is on the countertop
+cabinet_shelf = InteractionObject("Cabinet", object_instance="Cabinet_21")  # Cabinet shelf below the stove
+
+# Go to the knife and pick it up
+knife_fridge.go_to()
+knife_fridge.pickup()
+
+# Go to the lettuce, pick it up, and slice it
+lettuce_counter_top.go_to()
+lettuce_counter_top.pickup()
+lettuce_counter_top.slice()
+
+# Initialize new sliced objects from the sliced parent lettuce
+lettuce_sliced_1 = InteractionObject("LettuceSliced", parent_object=lettuce_counter_top.object_instance)  # Initialize new sliced object from sliced parent
+lettuce_sliced_2 = InteractionObject("LettuceSliced", parent_object=lettuce_counter_top.object_instance)  # Initialize new sliced object from sliced parent
+
+# Go to the cabinet shelf below the stove, open it, and take out a plate
+cabinet_shelf.go_to()
+cabinet_shelf.open()
+plate_cabinet = InteractionObject("Plate", object_instance="Plate_8")  # Plate is in the specified cabinet
+plate_cabinet.go_to()
+plate_cabinet.pickup()
+
+# Place the lettuce slices onto the plate
+lettuce_sliced_1.pickup()
+lettuce_sliced_1.place(plate_cabinet)
+lettuce_sliced_2.pickup()
+lettuce_sliced_2.place(plate_cabinet)
+
+# The task is complete, and the lettuce slices are now on the plate

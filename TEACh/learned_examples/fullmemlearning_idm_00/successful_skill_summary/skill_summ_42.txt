@@ -1,0 +1,1 @@
+The script will efficiently place all apples found in the microwave and on the countertop into the fridge as instructed by the dialogue.

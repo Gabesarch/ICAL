@@ -1,0 +1,11 @@
+"SoapBottle_9": {"label": "SoapBottle", "holding": False, "supported_by": ["Cabinet"]}
+"Lettuce_12": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Sink"]}
+"CounterTop_23": {"label": "CounterTop"}
+"Faucet_25": {"label": "Faucet", "toggled": False}
+"Bowl_34": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"SoapBottle_36": {"label": "SoapBottle", "holding": False, "supported_by": ["CounterTop"]}
+"Microwave_45": {"label": "Microwave", "toggled": True, "open": False}
+"Tomato_56": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"SinkBasin_57": {"label": "SinkBasin"}
+"DishSponge_63": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Stool_74": {"label": "Stool"}

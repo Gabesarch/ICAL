@@ -1,0 +1,47 @@
+# Define InteractionObject instances for the bread, toaster, knife, and plate
+bread_to_toast = InteractionObject("Bread", object_instance="Bread_156")  # Assuming Bread_156 is the bread to be toasted
+toaster = InteractionObject("Toaster", object_instance="Toaster_160")  # Toaster to toast the bread
+knife_to_slice = InteractionObject("Knife", object_instance="Knife_150")  # Knife to slice the bread
+plate_for_serving = InteractionObject("Plate", object_instance="Plate_143")  # Plate to serve the toast on
+
+# Ensure the toaster is on
+toaster.go_to()
+if not toaster.check_attribute("toggled", True):
+    toaster.toggle_on()
+
+# Slice the bread before toasting
+knife_to_slice.go_to()  # Go to the knife
+knife_to_slice.pickup()  # Pick up the knife
+bread_to_toast.go_to()  # Go to the bread
+bread_to_toast.slice()  # Slice the bread
+knife_to_slice.put_down()  # Put down the knife
+
+# Initialize a new InteractionObject for a slice of bread
+bread_slice = InteractionObject("BreadSliced", object_instance=None, parent_object="Bread_156")  # Initialize new sliced object from sliced parent
+
+# Toast the bread slice
+bread_slice.pickup()  # Pick up a slice of bread
+bread_slice.place(toaster)  # Place the bread slice in the toaster
+
+# Simulate waiting for the bread to be toasted (this would be simulated in a real scenario)
+# After the bread is toasted, update the state to reflect that it is cooked
+bread_slice.change_state("cooked", True)  # Update the bread slice's state to toasted
+
+# Check if the plate is clean, if not, clean it
+if plate_for_serving.check_attribute("dirty", True):
+    sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_151")
+    faucet = InteractionObject("Faucet", object_instance="Faucet_164")
+    plate_for_serving.go_to()
+    plate_for_serving.pickup()
+    sink_basin.go_to()
+    plate_for_serving.place(sink_basin)
+    faucet.go_to()
+    faucet.toggle_on()  # Turn on the faucet to clean the plate
+    faucet.toggle_off()  # Turn off the faucet after cleaning
+    plate_for_serving.change_state("dirty", False)  # Update the plate's state to clean
+
+# Serve the toast on the plate
+bread_slice.go_to()  # Assuming the bread slice is now toasted
+bread_slice.pickup()  # Pick up the toasted bread slice
+plate_for_serving.go_to()
+bread_slice.place(plate_for_serving)  # Place the toast on the clean plate

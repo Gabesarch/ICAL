@@ -1,0 +1,5 @@
+1. Identify and pick up the clean mug next to the stove top.
+2. Check if the mug is already filled; if so, empty it.
+3. Place the mug in the coffee machine.
+4. Start the coffee machine to fill the mug with coffee.
+5. Update the mug's state to indicate it is filled with coffee.

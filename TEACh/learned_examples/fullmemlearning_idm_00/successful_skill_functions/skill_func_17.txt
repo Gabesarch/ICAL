@@ -1,0 +1,50 @@
+# Define InteractionObject instances for the knife, bread, toaster, and plate
+knife = InteractionObject("Knife", object_instance="Knife_93")
+bread = InteractionObject("Bread", object_instance="Bread_94")
+toaster = InteractionObject("Toaster", object_instance="Toaster_88")
+plate = InteractionObject("Plate", object_instance="Plate_82")
+salt_shaker = InteractionObject("SaltShaker", object_instance="SaltShaker_91")
+dining_table = InteractionObject("DiningTable", object_instance="DiningTable_18")
+
+# Pick up the knife and slice the bread
+knife.go_to()
+knife.pickup()
+bread.go_to()
+bread.slice()
+bread_sliced = InteractionObject("BreadSliced", parent_object=bread.object_instance)  # Initialize new sliced object from sliced parent
+
+# Toast one slice of bread
+toaster.go_to()
+bread_sliced.pickup()
+bread_sliced.place(toaster)  # Place the bread slice in the toaster
+toaster.toggle_on()  # Start toasting the bread slice
+# Wait for the bread to toast (this step is abstracted in the script)
+toaster.toggle_off()  # Stop toasting after it's done
+bread_sliced.change_state("cooked", True)  # Update the bread slice's state to cooked (toasted)
+
+# Check if the plate is clean and clean it if necessary
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_89")
+faucet = InteractionObject("Faucet", object_instance="Faucet_101")
+if plate.check_attribute("dirty", True):
+    plate.go_to()
+    plate.pickup()
+    sink_basin.go_to()
+    plate.place(sink_basin)
+    faucet.go_to()
+    if faucet.check_attribute("toggled", False):  # Ensure the faucet is on before cleaning
+        faucet.toggle_on()
+    faucet.toggle_off()  # Turn off the faucet after cleaning
+    plate.pickup()  # Pick up the clean plate
+    plate.change_state("dirty", False)  # Update the plate's state to clean
+
+# Place the toasted bread slice on the clean plate under the salt shaker on the dining table
+dining_table.go_to()
+salt_shaker.go_to()  # Locate the salt shaker to place the plate under it
+bread_sliced.place(plate)
+
+# Causal abstraction comments:
+# The knife is picked up to slice the bread, which is necessary to create slices for toasting.
+# The toaster is used to toast a slice of bread, fulfilling the requirement to toast one slice.
+# The "toasted" attribute is not valid, so "cooked" is used to represent the toasted state of the bread.
+# The plate's cleanliness is checked, and it is cleaned if dirty, to ensure hygiene before placing food on it.
+# The toasted bread slice is placed on the clean plate under the salt shaker on the dining table, as instructed by the Commander.

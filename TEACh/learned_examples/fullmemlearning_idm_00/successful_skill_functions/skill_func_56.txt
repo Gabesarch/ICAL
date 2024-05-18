@@ -1,0 +1,18 @@
+# Define InteractionObject instances for the pens and the bed using the correct object IDs
+pen_on_desk = InteractionObject("Pen", object_instance="Pen_3")  # Pen on the desk
+pen_on_sidetable = InteractionObject("Pen", object_instance="Pen_23")  # Pen on the side table
+bed = InteractionObject("Bed", object_instance="Bed_9")  # Bed
+
+# (causal abstraction) Navigate to the pen on the desk, pick it up, and place it on the bed
+pen_on_desk.go_to()  # Navigate to the pen on the desk
+pen_on_desk.pickup()  # Pick up the pen
+bed.go_to()  # Navigate to the bed
+pen_on_desk.place(bed)  # Place the pen on the bed
+
+# (causal abstraction) Navigate to the pen on the side table, pick it up, and place it on the bed
+pen_on_sidetable.go_to()  # Navigate to the pen on the side table
+pen_on_sidetable.pickup()  # Pick up the pen
+bed.go_to()  # Navigate to the bed again
+pen_on_sidetable.place(bed)  # Place the pen on the bed
+
+# All pens are now on the bed as per the Commander's instruction

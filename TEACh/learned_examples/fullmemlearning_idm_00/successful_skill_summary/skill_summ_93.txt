@@ -1,0 +1,1 @@
+The revised script will correctly identify and use a clean plate and a knife to slice a tomato and serve two slices on the plate.

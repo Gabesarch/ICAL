@@ -1,0 +1,17 @@
+"Plate_2": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_4": {"label": "Knife", "holding": False, "supported_by": ["Chair"]}
+"Tomato_6": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Tomato_14": {"label": "Tomato", "holding": False, "sliced": True, "cooked": False, "supported_by": ["DiningTable"]}
+"Knife_15": {"label": "Knife", "holding": True, "supported_by": ["Microwave"]}
+"Plate_16": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"CounterTop_45": {"label": "CounterTop"}
+"Microwave_58": {"label": "Microwave", "toggled": False, "open": False}
+"Tomato_64": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Fridge_71": {"label": "Fridge", "open": False}
+"Knife_75": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Knife_77": {"label": "Knife", "holding": False, "supported_by": ["Chair"]}
+"Plate_78": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"DiningTable_82": {"label": "DiningTable"}
+"TomatoSliced_86": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["DiningTable"]}
+"TomatoSliced_87": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["DiningTable"]}

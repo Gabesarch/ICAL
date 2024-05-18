@@ -1,0 +1,5 @@
+```python
+target_keychain = InteractionObject("KeyChain", object_instance = "KeyChain")
+target_keychain.go_to()
+target_keychain.pickup()
+```

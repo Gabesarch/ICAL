@@ -1,0 +1,28 @@
+"Pan_2": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Lettuce_3": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Fridge"]}
+"Plate_7": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Knife_10": {"label": "Knife", "holding": True, "supported_by": ["CounterTop"]}
+"Lettuce_12": {"label": "Lettuce", "holding": False, "sliced": True, "supported_by": ["Microwave"]}
+"Knife_13": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"CounterTop_18": {"label": "CounterTop"}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"CounterTop_26": {"label": "CounterTop"}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Knife_38": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Plate_46": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Pot_47": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner", "StoveBurner"]}
+"Fridge_50": {"label": "Fridge", "open": False}
+"Lettuce_60": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["DiningTable"]}
+"Pan_61": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Knife_66": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Microwave_67": {"label": "Microwave", "toggled": False, "open": True}
+"LettuceSliced_77": {"label": "LettuceSliced", "holding": False, "supported_by": ["CounterTop"]}

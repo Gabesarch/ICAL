@@ -1,0 +1,20 @@
+"Plate_4": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_5": {"label": "Knife", "holding": True, "supported_by": ["CounterTop"]}
+"Knife_16": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Pot_17": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Bread_18": {"label": "Bread", "holding": False, "sliced": True, "cooked": False, "supported_by": ["CounterTop"]}
+"Plate_24": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["SideTable"]}
+"Knife_28": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Knife_32": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Plate_33": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+"CounterTop_43": {"label": "CounterTop"}
+"Bread_51": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"Pot_52": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Knife_53": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Potato_55": {"label": "Potato", "holding": False, "sliced": False, "cooked": True, "supported_by": ["Microwave"]}
+"Microwave_65": {"label": "Microwave", "toggled": True, "open": False}
+"Knife_78": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Plate_79": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["SideTable"]}
+"Toaster_81": {"label": "Toaster", "toggled": True}
+"SideTable_90": {"label": "SideTable"}
+"BreadSliced_95": {"label": "BreadSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}

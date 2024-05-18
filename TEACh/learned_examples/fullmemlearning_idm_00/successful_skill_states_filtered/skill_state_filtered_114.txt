@@ -1,0 +1,14 @@
+"TissueBox_8": {"label": "TissueBox", "holding": False, "supported_by": ["CoffeeTable"]}
+"TissueBox_12": {"label": "TissueBox", "holding": False, "supported_by": ["Ottoman"]}
+"TissueBox_15": {"label": "TissueBox", "holding": False, "supported_by": ["Chair", "DiningTable"]}
+"TissueBox_23": {"label": "TissueBox", "holding": False, "supported_by": ["SideTable"]}
+"Box_32": {"label": "Box", "holding": False, "open": True, "supported_by": ["Floor"]}
+"TissueBox_37": {"label": "TissueBox", "holding": False, "supported_by": ["DiningTable"]}
+"CoffeeTable_56": {"label": "CoffeeTable"}
+"Ottoman_63": {"label": "Ottoman"}
+"Chair_67": {"label": "Chair"}
+"Chair_68": {"label": "Chair"}
+"Chair_69": {"label": "Chair"}
+"DiningTable_71": {"label": "DiningTable"}
+"Sofa_72": {"label": "Sofa"}
+"SideTable_73": {"label": "SideTable"}

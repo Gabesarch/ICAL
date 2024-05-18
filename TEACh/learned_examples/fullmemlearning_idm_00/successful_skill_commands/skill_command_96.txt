@@ -1,0 +1,1 @@
+<Driver> What should I do today? <Commander> make a plate of toast. <Commander> check sink for knife. <Commander> check sink for knife. <Driver> How many slices do you need? <Commander> plate is on the stool next to countertop. <Commander> 1 piece. <Driver> Done. <Commander> good job. <Driver> What next? 

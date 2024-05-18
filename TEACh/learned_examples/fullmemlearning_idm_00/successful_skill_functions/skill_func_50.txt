@@ -1,0 +1,21 @@
+# Define InteractionObject instances for the watch, plate, and ottoman
+watch_on_plate = InteractionObject("Watch", object_instance="Watch_1")  # Watch is on the plate
+plate_with_watch = InteractionObject("Plate", object_instance="Plate_37")  # Plate that supports the watch
+ottoman = InteractionObject("Ottoman", object_instance="Ottoman_48")  # Single ottoman mentioned by the Commander
+
+# Go to the plate that has the watch
+plate_with_watch.go_to()
+
+# Pick up the watch from the plate
+watch_on_plate.pickup()
+
+# Go to the ottoman
+ottoman.go_to()
+
+# Place the watch onto the ottoman
+watch_on_plate.place(ottoman)
+
+# Causal abstraction comments:
+# The watch is identified by its instance on the plate, which is necessary to fulfill the Commander's instruction.
+# The plate is approached to retrieve the watch, which is the object of interest for the task.
+# The watch is then placed onto the ottoman, completing the task as per the Commander's request.

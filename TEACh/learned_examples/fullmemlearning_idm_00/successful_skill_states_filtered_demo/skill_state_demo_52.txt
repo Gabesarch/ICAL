@@ -1,0 +1,19 @@
+"PepperShaker_2": {"label": "PepperShaker", "holding": False, "supported_by": ["CounterTop"]}
+"Knife_3": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Potato_4": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"Plate_5": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Stool"]}
+"Potato_10": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"CounterTop_15": {"label": "CounterTop"}
+"DiningTable_17": {"label": "DiningTable"}
+"Drawer_34": {"label": "Drawer", "open": False}
+"CounterTop_35": {"label": "CounterTop"}
+"Microwave_43": {"label": "Microwave", "toggled": False, "open": True}
+"Plate_50": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Potato_52": {"label": "Potato", "holding": False, "sliced": True, "cooked": True, "supported_by": ["Microwave_43"]}
+"Pot_53": {"label": "Pot", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Knife_55": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Knife_61": {"label": "Knife", "holding": True, "supported_by": ["CounterTop"]}
+"Stool_82": {"label": "Stool"}
+"PotatoSliced_87": {"label": "PotatoSliced", "holding": False, "cooked": True, "supported_by": ["CounterTop"]}
+"PotatoSliced_88": {"label": "PotatoSliced", "holding": False, "cooked": True, "supported_by": ["CounterTop"]}
+"PotatoSliced_89": {"label": "PotatoSliced", "holding": False, "cooked": True, "supported_by": ["CounterTop"]}

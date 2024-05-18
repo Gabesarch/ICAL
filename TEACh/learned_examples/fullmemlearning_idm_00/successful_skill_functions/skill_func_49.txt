@@ -1,0 +1,38 @@
+# Define InteractionObject instances for the pepper shaker, plate, sink basin, faucet, and dish sponge
+pepper_shaker = InteractionObject("PepperShaker", object_instance="PepperShaker_2")  # Pepper shaker on top of the plate
+dirty_plate = InteractionObject("Plate", object_instance="Plate_84")  # Dirty plate on the countertop
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_91")  # Sink basin for washing
+faucet = InteractionObject("Faucet", object_instance="Faucet_103")  # Faucet for water
+dish_sponge = InteractionObject("DishSponge", object_instance="DishSponge_1")  # Dish sponge for cleaning
+
+# Remove the pepper shaker from the plate and place it aside on the countertop
+pepper_shaker.pickup()
+counter_top = InteractionObject("CounterTop", object_instance="CounterTop_19")  # CounterTop to place the pepper shaker
+pepper_shaker.place(counter_top)
+
+# Verify that the plate is dirty before washing
+if dirty_plate.check_attribute("dirty", True):
+    # Wash the plate using the dish sponge and the running water from the faucet
+    dirty_plate.pickup()
+    sink_basin.go_to()
+    dirty_plate.place(sink_basin)
+    
+    # If the faucet is not already running, turn it on
+    if not faucet.check_attribute("toggled", True):
+        faucet.go_to()
+        faucet.toggle_on()
+    
+    # Use the dish sponge to clean the plate
+    dish_sponge.pickup()
+    dish_sponge.place(dirty_plate)  # Scrub the plate with the sponge
+    dirty_plate.change_state("dirty", False)  # Update the plate's state to clean
+    
+    # Turn off the faucet after washing the plate
+    faucet.go_to()
+    faucet.toggle_off()
+
+# Causal abstraction comments:
+# The pepper shaker is removed from the plate to allow for washing without obstruction.
+# The plate's dirty status is verified to ensure that cleaning is necessary.
+# The dish sponge is used to scrub the plate clean, utilizing the running water from the faucet.
+# The faucet is turned off after washing to conserve water and complete the task.

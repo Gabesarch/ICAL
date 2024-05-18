@@ -1,0 +1,1 @@
+<Driver> What should I do today? <Commander> prepare coffee in clean mug. <Commander> there is a coffee machine by the window. <Driver> Where is a mug? <Commander> to your left. <Commander> in the dust bin. <Commander> to your left. <Commander> good. 

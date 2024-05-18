@@ -1,0 +1,29 @@
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Knife_2": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Vase_4": {"label": "Vase", "holding": False, "supported_by": ["Sink"]}
+"PaperTowelRoll_6": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["Cabinet"]}
+"Plate_11": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"SoapBottle_12": {"label": "SoapBottle", "holding": False, "supported_by": ["CounterTop"]}
+"Fork_14": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Knife_15": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Bottle_16": {"label": "Bottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["Stool"]}
+"PaperTowelRoll_18": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["Sink"]}
+"Knife_19": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Mug_21": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Fridge"]}
+"CounterTop_29": {"label": "CounterTop"}
+"CounterTop_31": {"label": "CounterTop"}
+"CounterTop_54": {"label": "CounterTop"}
+"Bottle_55": {"label": "Bottle", "holding": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"Knife_56": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Microwave_57": {"label": "Microwave", "toggled": False, "open": False}
+"Fork_59": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Shelf"]}
+"SoapBottle_64": {"label": "SoapBottle", "holding": False, "supported_by": ["Plate", "CounterTop"]}
+"Plate_68": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Vase_70": {"label": "Vase", "holding": False, "supported_by": ["Cabinet"]}
+"PaperTowelRoll_77": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["CounterTop", "Pan"]}
+"Vase_79": {"label": "Vase", "holding": False, "supported_by": ["Drawer"]}
+"SinkBasin_84": {"label": "SinkBasin"}
+"Lettuce_87": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Sink"]}
+"Knife_88": {"label": "Knife", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"Mug_93": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Microwave"]}
+"Faucet_98": {"label": "Faucet", "toggled": True}

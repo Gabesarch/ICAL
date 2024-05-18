@@ -1,0 +1,37 @@
+"Tomato_2": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"Fork_10": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["CounterTop", "Microwave"]}
+"Potato_11": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"SoapBottle_12": {"label": "SoapBottle", "holding": False, "supported_by": ["Sink"]}
+"Plate_13": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Potato_14": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"CellPhone_17": {"label": "CellPhone", "holding": False, "supported_by": ["CounterTop", "Microwave"]}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"CounterTop_32": {"label": "CounterTop"}
+"Cabinet_41": {"label": "Cabinet", "open": False}
+"Cabinet_43": {"label": "Cabinet", "open": False}
+"Cabinet_44": {"label": "Cabinet", "open": False}
+"Cabinet_45": {"label": "Cabinet", "open": False}
+"Cabinet_46": {"label": "Cabinet", "open": False}
+"Cabinet_47": {"label": "Cabinet", "open": False}
+"Cabinet_48": {"label": "Cabinet", "open": False}
+"Cabinet_49": {"label": "Cabinet", "open": False}
+"Cabinet_50": {"label": "Cabinet", "open": True}
+"Cabinet_51": {"label": "Cabinet", "open": False}
+"CounterTop_62": {"label": "CounterTop"}
+"Plate_66": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Bottle_67": {"label": "Bottle", "holding": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"Potato_69": {"label": "Potato", "holding": False, "sliced": True, "cooked": False, "supported_by": ["CounterTop"]}
+"Pot_78": {"label": "Pot", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Knife_82": {"label": "Knife", "holding": True, "supported_by": ["CounterTop", "Microwave"]}
+"SinkBasin_87": {"label": "SinkBasin"}
+"SaltShaker_88": {"label": "SaltShaker", "holding": False, "supported_by": ["CounterTop", "Microwave"]}
+"Fridge_91": {"label": "Fridge", "open": False}
+"Knife_92": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Tomato_99": {"label": "Tomato", "holding": False, "sliced": True, "cooked": False, "supported_by": ["Cabinet"]}
+"Microwave_101": {"label": "Microwave", "toggled": False, "open": False}
+"Faucet_104": {"label": "Faucet", "toggled": True}
+"TomatoSliced_105": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}
+"TomatoSliced_106": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}
+"PotatoSliced_107": {"label": "PotatoSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}

@@ -1,0 +1,13 @@
+```python
+target_newspaper = InteractionObject("Newspaper", object_instance = "Newspaper")
+target_sofa = InteractionObject("Sofa", object_instance = "Sofa")
+target_newspaper.pickup_and_place(target_sofa)
+target_newspaper.pickup()
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_coffeetable.go_to()
+target_newspaper.place(target_coffeetable)
+target_coffeetable.go_to()
+target_newspaper.place(target_coffeetable)
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_newspaper.pickup_and_place(target_chair)
+```

@@ -18,7 +18,7 @@ python main.py \
  --group teach_eval_skill_tfd \
  --server_port 0 \
  --check_success_change_state \
- --skill_folder ./output/fullmemlearning_idm_00 \
+ --skill_folder ./learned_examples/fullmemlearning_idm_00 \
  --precompute_map_path ./data/precomputed_maps_LEARNEDMEM \
  --gpt_model gpt-4-1106-Preview \
  --topk_mem_examples 10 \

@@ -1,0 +1,36 @@
+"CreditCard_0": {"label": "CreditCard", "holding": False, "supported_by": ["Box", "Floor"]}
+"KeyChain_1": {"label": "KeyChain", "holding": False, "supported_by": ["Desk"]}
+"Pillow_2": {"label": "Pillow", "holding": False, "supported_by": ["Bed"]}
+"Laptop_3": {"label": "Laptop", "holding": False, "supported_by": ["Desk"]}
+"Pen_4": {"label": "Pen", "holding": False, "supported_by": ["Box", "Floor"]}
+"Book_5": {"label": "Book", "holding": False, "supported_by": ["Bed"]}
+"Book_6": {"label": "Book", "holding": False, "supported_by": ["Desk"]}
+"Book_7": {"label": "Book", "holding": False, "supported_by": ["Chair"]}
+"Box_8": {"label": "Box", "holding": False, "open": True, "supported_by": ["Floor"]}
+"LaundryHamper_9": {"label": "LaundryHamper"}
+"BasketBall_10": {"label": "BasketBall", "holding": False, "supported_by": ["Floor"]}
+"Pen_11": {"label": "Pen", "holding": False, "supported_by": ["Bed"]}
+"Pencil_12": {"label": "Pencil", "holding": False, "supported_by": ["Desk"]}
+"Laptop_13": {"label": "Laptop", "holding": False, "supported_by": ["Desk"]}
+"Pillow_14": {"label": "Pillow", "holding": False, "supported_by": ["Bed"]}
+"FloorLamp_15": {"label": "FloorLamp", "toggled": True}
+"KeyChain_16": {"label": "KeyChain", "holding": False, "supported_by": ["Box", "Floor"]}
+"GarbageCan_17": {"label": "GarbageCan"}
+"Bowl_18": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Shelf"]}
+"CreditCard_19": {"label": "CreditCard", "holding": False, "supported_by": ["Desk"]}
+"CellPhone_20": {"label": "CellPhone", "holding": False, "supported_by": ["Desk"]}
+"CD_21": {"label": "CD", "holding": False, "supported_by": ["Desk"]}
+"AlarmClock_22": {"label": "AlarmClock", "holding": False, "supported_by": ["Chair"]}
+"Window_23": {"label": "Window"}
+"LightSwitch_24": {"label": "LightSwitch"}
+"Mug_25": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Floor", "GarbageCan"]}
+"Statue_26": {"label": "Statue", "holding": False, "supported_by": ["Desk"]}
+"Bed_27": {"label": "Bed"}
+"Blinds_28": {"label": "Blinds"}
+"Chair_29": {"label": "Chair"}
+"Chair_30": {"label": "Chair"}
+"Drawer_31": {"label": "Drawer", "open": False}
+"Drawer_32": {"label": "Drawer", "open": False}
+"Desk_33": {"label": "Desk"}
+"Drawer_34": {"label": "Drawer", "open": False}
+"Shelf_35": {"label": "Shelf"}

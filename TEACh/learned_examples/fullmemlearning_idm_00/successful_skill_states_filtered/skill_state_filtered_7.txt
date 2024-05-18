@@ -1,0 +1,4 @@
+"CreditCard_0": {"label": "CreditCard", "holding": False, "supported_by": ["Box", "Floor"]}
+"Box_8": {"label": "Box", "holding": False, "open": True, "supported_by": ["Floor"]}
+"CreditCard_19": {"label": "CreditCard", "holding": False, "supported_by": ["Desk"]}
+"Desk_33": {"label": "Desk"}

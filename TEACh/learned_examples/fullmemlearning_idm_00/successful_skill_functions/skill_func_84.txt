@@ -1,0 +1,60 @@
+# Define InteractionObject instances for the objects involved in the task
+plate = InteractionObject("Plate", object_instance="Plate_57")  # Assuming the plate is the last instance
+sink = InteractionObject("SinkBasin", object_instance="SinkBasin_55")
+faucet = InteractionObject("Faucet", object_instance="Faucet_23")
+knife = InteractionObject("Knife", object_instance="Knife_31")  # Assuming the knife is the last instance
+lettuce = InteractionObject("Lettuce", object_instance="Lettuce_50")  # Assuming the lettuce is the last instance
+tomato = InteractionObject("Tomato", object_instance="Tomato_54")  # Assuming the tomato is the last instance
+potato = InteractionObject("Potato", object_instance="Potato_33")  # Assuming the potato is the last instance
+microwave = InteractionObject("Microwave", object_instance="Microwave_43")
+
+# Check if the plate is dirty and clean it if necessary
+plate.go_to()
+if plate.check_attribute("dirty", True):
+    plate.pickup()
+    sink.go_to()
+    plate.place(sink)
+    faucet.go_to()
+    faucet.toggle_on()
+    faucet.toggle_off()
+    plate.pickup()  # Pick up the clean plate
+    plate.change_state("dirty", False)  # Update the plate's state to clean
+
+# Retrieve a knife and slice one lettuce, one tomato, and one potato
+knife.go_to()
+knife.pickup()
+lettuce.go_to()
+lettuce.slice()
+lettuce_sliced = InteractionObject("LettuceSliced", parent_object=lettuce.object_instance)  # Initialize new sliced object from sliced parent
+tomato.go_to()
+tomato.slice()
+tomato_sliced = InteractionObject("TomatoSliced", parent_object=tomato.object_instance)  # Initialize new sliced object from sliced parent
+potato.go_to()
+potato.slice()
+potato_sliced1 = InteractionObject("PotatoSliced", parent_object=potato.object_instance)  # Initialize new sliced object from sliced parent
+potato_sliced2 = InteractionObject("PotatoSliced", parent_object=potato.object_instance)  # Initialize new sliced object from sliced parent
+
+# Cook two slices of potato in the microwave
+microwave.go_to()
+microwave.open()
+potato_sliced1.pickup()
+potato_sliced2.pickup()
+potato_sliced1.place(microwave)
+potato_sliced2.place(microwave)
+microwave.close()
+microwave.toggle_on()
+microwave.toggle_off()
+microwave.open()
+potato_sliced1.pickup()  # Retrieve the now cooked potato slice
+potato_sliced2.pickup()  # Retrieve the now cooked potato slice
+potato_sliced1.change_state("cooked", True)  # Update the potato slice's state to cooked
+potato_sliced2.change_state("cooked", True)  # Update the potato slice's state to cooked
+
+# Assemble the salad on the clean plate
+plate.go_to()
+lettuce_sliced.pickup()
+lettuce_sliced.place(plate)
+tomato_sliced.pickup()
+tomato_sliced.place(plate)
+potato_sliced1.place(plate)
+potato_sliced2.place(plate)

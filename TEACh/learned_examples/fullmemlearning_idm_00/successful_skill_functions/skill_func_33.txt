@@ -1,0 +1,52 @@
+# Initialize InteractionObject instances for the fridge, lettuce, knife, tomato, and plate
+fridge = InteractionObject("Fridge", object_instance="Fridge_71")
+lettuce = InteractionObject("Lettuce", object_instance="Lettuce_11")  # Lettuce in the fridge
+knife = InteractionObject("Knife", object_instance="Knife_73")  # Knife on the countertop
+tomato = InteractionObject("Tomato", object_instance="Tomato_80")  # Tomato on the table
+plate = InteractionObject("Plate", object_instance="Plate_66")  # Plate on the countertop
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_74")  # Sink basin
+faucet = InteractionObject("Faucet", object_instance="Faucet_87")  # Faucet
+
+# Go to the fridge and open it to retrieve the lettuce
+fridge.go_to()
+fridge.open()
+
+# Retrieve two lettuces from the fridge, slice them, and create instances for the sliced lettuce
+lettuce.go_to()
+lettuce.pickup()
+knife.go_to()
+knife.pickup()
+lettuce.slice()
+lettuce_sliced_1 = InteractionObject("LettuceSliced", parent_object=lettuce.object_instance)  # Initialize new sliced object from sliced parent
+lettuce_sliced_2 = InteractionObject("LettuceSliced", parent_object=lettuce.object_instance)  # Initialize new sliced object from sliced parent
+
+# Go to the tomato on the table, slice it, and create an instance for the sliced tomato
+tomato.go_to()
+tomato.slice()
+tomato_sliced = InteractionObject("TomatoSliced", parent_object=tomato.object_instance)  # Initialize new sliced object from sliced parent
+
+# Check if the plate is dirty and clean it if necessary
+plate.go_to()
+if plate.check_attribute("dirty", True):
+    sink_basin.go_to()
+    plate.place(sink_basin)
+    faucet.go_to()
+    faucet.toggle_on()  # Turn on the faucet to clean the plate
+    faucet.toggle_off()  # Turn off the faucet after cleaning
+    plate.pickup()  # Pick up the clean plate
+    plate.change_state("dirty", False)  # Update the plate's state to clean
+
+# Place two slices of lettuce and one slice of tomato on the clean plate
+lettuce_sliced_1.go_to()
+lettuce_sliced_1.pickup()
+plate.go_to()
+lettuce_sliced_1.place(plate)
+lettuce_sliced_2.pickup()
+lettuce_sliced_2.place(plate)
+tomato_sliced.go_to()
+tomato_sliced.pickup()
+tomato_sliced.place(plate)
+
+# Close the fridge after retrieving the items
+fridge.go_to()
+fridge.close()

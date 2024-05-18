@@ -1,0 +1,59 @@
+# Retrieve the knife from the fridge
+fridge = InteractionObject("Fridge", object_instance="Fridge_68")
+fridge.go_to()
+fridge.open()
+knife = InteractionObject("Knife", object_instance="Knife_67")  # Knife is in the fridge
+knife.go_to()
+knife.pickup()
+fridge.close()
+
+# Retrieve the lettuce from the back of the table, slice it twice, and create instances for the sliced lettuce
+lettuce = InteractionObject("Lettuce", object_instance="Lettuce_5")  # Lettuce is at the back of the table
+lettuce.go_to()
+lettuce.pickup()
+lettuce.slice()
+lettuce_sliced_1 = InteractionObject("LettuceSliced", parent_object=lettuce.object_instance)  # Initialize new sliced object from sliced parent
+lettuce.slice()
+lettuce_sliced_2 = InteractionObject("LettuceSliced", parent_object=lettuce.object_instance)  # Initialize new sliced object from sliced parent
+
+# Retrieve the tomato from the drawer, slice it, and create an instance for the sliced tomato
+drawer = InteractionObject("Drawer", object_instance="Drawer_23")  # Assuming the first drawer instance is where the tomato is
+drawer.go_to()
+drawer.open()
+tomato = InteractionObject("Tomato", object_instance="Tomato_80")  # Tomato is in the drawer
+tomato.go_to()
+tomato.pickup()
+drawer.close()
+tomato.slice()
+tomato.change_state("sliced", True)  # Update the tomato's state to sliced immediately after slicing
+tomato_sliced = InteractionObject("TomatoSliced", parent_object=tomato.object_instance)  # Initialize new sliced object from sliced parent
+
+# Check if the plate past the toaster (on the end) is dirty and clean it if necessary
+plate = InteractionObject("Plate", object_instance="Plate_6")  # Plate is past the toaster (on the end)
+plate.go_to()
+if plate.check_attribute("dirty", True):
+    sink = InteractionObject("SinkBasin", object_instance="SinkBasin_93")
+    faucet = InteractionObject("Faucet", object_instance="Faucet_105")
+    plate.pickup()
+    sink.go_to()
+    plate.place(sink)
+    faucet.go_to()
+    faucet.toggle_on()
+    faucet.toggle_off()
+    plate.pickup()  # Pick up the clean plate
+    plate.change_state("dirty", False)  # Update the plate's state to clean
+
+# Place two slices of lettuce and one slice of tomato on the clean plate
+lettuce_sliced_1.pickup()
+lettuce_sliced_1.place(plate)
+lettuce_sliced_2.pickup()
+lettuce_sliced_2.place(plate)
+tomato_sliced.pickup()
+tomato_sliced.place(plate)
+
+# Causal abstraction comments:
+# The knife is retrieved from the fridge to slice the lettuce and tomato, which are essential components of the salad.
+# The lettuce is sliced twice to provide enough components for the salad, as instructed.
+# The tomato is sliced to add variety and flavor to the salad, and its state is updated to reflect this action.
+# The dirty plate is cleaned to ensure a hygienic presentation of the salad, and its state is updated to clean.
+# The salad components are assembled on the clean plate, following the instructions to include two slices of lettuce and one slice of tomato.

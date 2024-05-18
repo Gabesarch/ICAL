@@ -1,0 +1,1 @@
+<Commander> hello. <Driver> Hello. <Driver> What should I do today? <Commander> clean the dirty mug. <Commander> mug is beside the stove. <Commander> left side. <Commander> rinse the mug in the basin. <Commander> turn off the tap first. <Commander> place the mug beside. <Commander> remove extra items from the basin. <Commander> now rinse the mug. <Commander> done, thank you!! 

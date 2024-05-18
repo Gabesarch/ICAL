@@ -1,0 +1,20 @@
+"Cup_7": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet", "Pan"]}
+"Cup_10": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Cabinet_11": {"label": "Cabinet", "open": False}
+"Cabinet_19": {"label": "Cabinet", "open": False}
+"Cabinet_20": {"label": "Cabinet", "open": False}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"CounterTop_32": {"label": "CounterTop"}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"CounterTop_39": {"label": "CounterTop"}
+"Cabinet_43": {"label": "Cabinet", "open": False}
+"Cup_45": {"label": "Cup", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"CoffeeMachine_64": {"label": "CoffeeMachine", "toggled": False}
+"Apple_66": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Sink"]}
+"SinkBasin_68": {"label": "SinkBasin"}
+"DishSponge_76": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Mug_79": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop", "CoffeeMachine"]}
+"Faucet_81": {"label": "Faucet", "toggled": True}

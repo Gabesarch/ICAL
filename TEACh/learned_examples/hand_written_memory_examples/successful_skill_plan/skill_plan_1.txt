@@ -1,0 +1,4 @@
+1. Faucet is on so first toggle it off.
+2. Take plate Plate_68 to the sink to clean it.
+3. Place the plate in the sink and turn on the faucet to clean it.
+4. turn off the faucet and pick up the plate. Put it down in a good location.

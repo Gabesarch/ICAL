@@ -1,0 +1,7 @@
+1. Go to the laptop and pick it up.
+2. Place the laptop on the floor to clear space.
+3. Go to each watch based on its correct instance ID.
+4. Pick up each watch.
+5. Go to the specified open box.
+6. Place each watch into the box.
+7. Do not attempt to close the box as it is already open.

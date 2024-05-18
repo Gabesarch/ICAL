@@ -1,0 +1,9 @@
+"Spoon_2": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Egg_7": {"label": "Egg", "holding": False, "supported_by": ["CounterTop"]}
+"CounterTop_23": {"label": "CounterTop"}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Faucet_25": {"label": "Faucet", "toggled": True}
+"Pot_32": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Egg_47": {"label": "Egg", "holding": False, "supported_by": ["CounterTop", "Pot"]}
+"HousePlant_53": {"label": "HousePlant", "filled": False, "fillLiquid": None}
+"SinkBasin_57": {"label": "SinkBasin"}

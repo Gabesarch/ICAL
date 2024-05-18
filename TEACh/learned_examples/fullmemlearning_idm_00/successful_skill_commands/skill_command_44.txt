@@ -1,0 +1,1 @@
+<Commander> Hello. <Driver> how can i help you today? <Commander> Today, you will need to put all the candles (2) on a single coffee table. <Driver> ok. <Driver> i only see 2. <Driver> are there more? <Commander> No. All done in here. Thank you. <Driver> ok. 

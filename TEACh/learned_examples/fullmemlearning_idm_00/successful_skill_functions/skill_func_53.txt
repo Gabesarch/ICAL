@@ -1,0 +1,76 @@
+# Define InteractionObject instances for the knife, bread, toaster, plate, lettuce, and countertop
+knife = InteractionObject("Knife", object_instance="Knife_11")  # Knife is on the dining table
+bread = InteractionObject("Bread", object_instance="Bread_1")  # Bread is on the dining table
+toaster = InteractionObject("Toaster", object_instance="Toaster_91")  # Toaster for toasting bread
+dirty_plate = InteractionObject("Plate", object_instance="Plate_7")  # Dirty plate is on the dining table
+lettuce = InteractionObject("Lettuce", object_instance="Lettuce_90")  # Correct lettuce is on the sink
+countertop = InteractionObject("CounterTop", object_instance="CounterTop_20")  # Countertop for slicing
+
+# Pick up the knife and slice two pieces of bread
+knife.go_to()
+knife.pickup()
+bread.go_to()
+bread.slice()
+bread_sliced_1 = InteractionObject("BreadSliced", parent_object=bread.object_instance)  # Initialize new sliced object from sliced parent
+bread_sliced_2 = InteractionObject("BreadSliced", parent_object=bread.object_instance)  # Initialize new sliced object from sliced parent
+
+# Toast the two slices of bread
+toaster.go_to()
+bread_sliced_1.pickup()
+bread_sliced_1.place(toaster)
+toaster.toggle_on()  # Start toasting the first bread slice
+# Wait for the bread to toast (this step is abstracted in the script)
+toaster.toggle_off()  # Stop toasting after it's done
+bread_sliced_1.change_state("cooked", True)  # Update the bread slice's state to toasted
+bread_sliced_1.pickup()  # Remove the toasted bread slice from the toaster
+
+bread_sliced_2.pickup()
+bread_sliced_2.place(toaster)
+toaster.toggle_on()  # Start toasting the second bread slice
+# Wait for the bread to toast (this step is abstracted in the script)
+toaster.toggle_off()  # Stop toasting after it's done
+bread_sliced_2.change_state("cooked", True)  # Update the bread slice's state to toasted
+bread_sliced_2.pickup()  # Remove the toasted bread slice from the toaster
+
+# Clean the dirty plate if necessary
+if dirty_plate.check_attribute("dirty", True):
+    sink = InteractionObject("SinkBasin", object_instance="SinkBasin_92")  # Sink for cleaning the plate
+    faucet = InteractionObject("Faucet", object_instance="Faucet_104")  # Faucet for cleaning the plate
+    dirty_plate.go_to()
+    dirty_plate.pickup()
+    sink.go_to()
+    dirty_plate.place(sink)
+    faucet.go_to()
+    faucet.toggle_on()
+    # Wait for the plate to be cleaned (this step is abstracted in the script)
+    faucet.toggle_off()
+    dirty_plate.pickup()  # Pick up the clean plate
+    dirty_plate.change_state("dirty", False)  # Update the plate's state to clean
+
+# Slice the lettuce and create instances for the sliced lettuce
+lettuce.go_to()
+knife.go_to()  # Go to the knife before slicing lettuce
+knife.pickup()  # Pick up the knife to use for slicing
+lettuce.pickup()
+countertop.go_to()
+lettuce.place(countertop)
+lettuce.slice()
+lettuce.change_state("sliced", True)  # Correctly update the lettuce's state to sliced
+lettuce_sliced_1 = InteractionObject("LettuceSliced", parent_object=lettuce.object_instance)  # Initialize new sliced object from sliced parent
+lettuce_sliced_2 = InteractionObject("LettuceSliced", parent_object=lettuce.object_instance)  # Initialize new sliced object from sliced parent
+
+# Arrange the toasted bread slices and lettuce slices on the clean plate
+dirty_plate.go_to()
+bread_sliced_1.place(dirty_plate)
+bread_sliced_2.place(dirty_plate)
+lettuce_sliced_1.pickup()
+lettuce_sliced_1.place(dirty_plate)
+lettuce_sliced_2.pickup()
+lettuce_sliced_2.place(dirty_plate)
+
+# Causal abstraction comments:
+# The knife is used to slice the bread, which is necessary for toasting.
+# The toaster is used to toast the bread slices, which is essential for making toast.
+# The dirty plate is cleaned to ensure a hygienic surface for the food.
+# The lettuce is sliced to provide a fresh component for the meal.
+# The toasted bread and lettuce are placed on the plate to assemble the final dish.

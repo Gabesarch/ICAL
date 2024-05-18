@@ -1,0 +1,59 @@
+# Define InteractionObject instances for the cabinets, sink basin, faucet, and dish sponge
+left_bottom_cabinet = InteractionObject("Cabinet", object_instance="Cabinet_22")  # Cabinet under the sink
+next_left_cabinet = InteractionObject("Cabinet", object_instance="Cabinet_23")  # Cabinet next to the toaster
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_71")
+faucet = InteractionObject("Faucet", object_instance="Faucet_83")
+dish_sponge = InteractionObject("DishSponge", object_instance="DishSponge_78")
+countertop = InteractionObject("CounterTop", object_instance="CounterTop_18")
+
+# Open the left bottom cabinet and retrieve all dirty dishware
+left_bottom_cabinet.go_to()
+left_bottom_cabinet.open()
+plate_cabinet = InteractionObject("Plate", object_instance="Plate_77")  # Dirty plate in the cabinet
+cup_cabinet = InteractionObject("Cup", object_instance="Cup_52")  # Dirty cup in the cabinet
+
+# Open the next left cabinet and retrieve all dirty dishware
+next_left_cabinet.go_to()
+next_left_cabinet.open()
+plate_counter = InteractionObject("Plate", object_instance="Plate_4")  # Dirty plate on the countertop
+cup_chair = InteractionObject("Cup", object_instance="Cup_11")  # Dirty cup on the chair
+
+# Clean each dirty dishware item in the sink
+dirty_dishware = [plate_cabinet, cup_cabinet, plate_counter, cup_chair]
+for dish in dirty_dishware:
+    dish.go_to()
+    dish.pickup()
+    sink_basin.go_to()
+    dish.place(sink_basin)
+    dish_sponge.go_to()
+    faucet.toggle_on()
+    # Scrub the dishware with the dish sponge (abstracted in the script)
+    faucet.toggle_off()
+    # Update the state of the dishware to reflect it has been cleaned
+    dish.change_state("dirty", False)
+    # If the dishware was a cup, it is now filled with water
+    if dish.object_class == "Cup":
+        dish.change_state("filled", True)
+        dish.change_state("fillLiquid", "water")
+    dish.pickup()  # Pick up the clean dishware
+    countertop.go_to()
+    dish.place(countertop)  # Place the cleaned dishware on the countertop
+
+# Ensure the faucet is turned off after cleaning
+faucet.go_to()
+if faucet.check_attribute("toggled", True):
+    faucet.toggle_off()
+
+# Close the cabinets after retrieving and cleaning the dishware
+left_bottom_cabinet.go_to()
+left_bottom_cabinet.close()
+next_left_cabinet.go_to()
+next_left_cabinet.close()
+
+# Causal abstraction comments:
+# The cabinets specified by the Commander are opened to retrieve the dirty dishware.
+# Each dirty dishware item is cleaned in the sink using the faucet and dish sponge, ensuring they are ready for use.
+# The state of each dishware item is updated to reflect its cleanliness and filled status after the cleaning process.
+# The cleaned dishware is placed on the countertop, keeping the kitchen organized.
+# The faucet is checked and turned off if necessary to prevent water waste.
+# The cabinets are closed after the task is completed, maintaining the tidiness of the kitchen.

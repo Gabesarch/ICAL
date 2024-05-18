@@ -138,18 +138,6 @@ class Ai2Thor(Ai2Thor_Base):
                 self.log_iter = True
             else:
                 self.log_iter = False
-
-            # self.summ_writer = utils.improc.Summ_writer(
-            #     writer=self.writer,
-            #     global_step=iter_,
-            #     log_freq=self.log_freq,
-            #     fps=8,
-            #     just_gif=True)
-
-            # if args.save_output:
-            #     print("RUNNING SAVE OUTPUT")
-            #     self.save_output()
-            #     return 
             
             total_loss = self.run_train()
 

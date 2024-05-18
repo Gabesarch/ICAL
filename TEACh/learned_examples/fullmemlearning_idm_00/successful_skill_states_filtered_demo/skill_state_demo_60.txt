@@ -1,0 +1,16 @@
+"Knife_8": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Plate_10": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["SideTable"]}
+"Knife_14": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Plate_15": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"CounterTop_21": {"label": "CounterTop"}
+"CounterTop_39": {"label": "CounterTop"}
+"Plate_53": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+"Bread_56": {"label": "Bread", "holding": False, "sliced": True, "cooked": False, "supported_by": ["SideTable"]}
+"Knife_58": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Knife_62": {"label": "Knife", "holding": True, "supported_by": ["CounterTop"]}
+"Fridge_64": {"label": "Fridge", "open": False}
+"Toaster_65": {"label": "Toaster", "toggled": True}
+"SideTable_76": {"label": "SideTable"}
+"DiningTable_77": {"label": "DiningTable"}
+"DiningTable_78": {"label": "DiningTable"}
+"BreadSliced_81": {"label": "BreadSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}

@@ -1,0 +1,7 @@
+1. Turn off the microwave and retrieve the knife.
+2. Retrieve lettuce from the fridge, slice it, and create instances for the sliced lettuce.
+3. Retrieve the tomato, slice it, and create an instance for the sliced tomato.
+4. Retrieve the potato from the garbage can, slice it, and create an instance for the sliced potato.
+5. Cook one slice of potato by placing it in the microwave, toggling the microwave on, then off, and updating the potato slice's state to cooked.
+6. Check if the plate is dirty and clean it if necessary.
+7. Arrange two slices of lettuce and one cooked slice of potato on the clean plate.

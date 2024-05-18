@@ -1,0 +1,49 @@
+# Define InteractionObject instances for the knife, lettuce, tomato, potato, and plate
+knife = InteractionObject("Knife", object_instance="Knife_60")  # Knife is on a chair
+lettuce_dining_table = InteractionObject("Lettuce", object_instance="Lettuce_15")  # Lettuce is on the dining table
+tomato_chair = InteractionObject("Tomato", object_instance="Tomato_10")  # Tomato is on a chair
+potato_plate_dining_table = InteractionObject("Potato", object_instance="Potato_57")  # Potato is on the plate on the dining table
+plate_dining_table = InteractionObject("Plate", object_instance="Plate_55")  # Plate is on the microwave
+
+# Slice the lettuce
+knife.go_to()
+knife.pickup()
+lettuce_dining_table.go_to()
+lettuce_dining_table.slice()
+lettuce_sliced_1 = InteractionObject("LettuceSliced", parent_object=lettuce_dining_table.object_instance)  # Initialize new sliced object from sliced parent
+lettuce_sliced_2 = InteractionObject("LettuceSliced", parent_object=lettuce_dining_table.object_instance)  # Initialize new sliced object from sliced parent
+
+# Slice the tomato
+tomato_chair.go_to()
+tomato_chair.slice()
+tomato_sliced = InteractionObject("TomatoSliced", parent_object=tomato_chair.object_instance)  # Initialize new sliced object from sliced parent
+
+# Cook the potato in the microwave (incorrect method based on dialogue, should be on stove)
+microwave = InteractionObject("Microwave", object_instance="Microwave_48")
+potato_plate_dining_table.go_to()
+potato_plate_dining_table.pickup()
+microwave.go_to()
+microwave.open()
+potato_plate_dining_table.place(microwave)
+microwave.close()
+microwave.toggle_on()
+microwave.toggle_off()
+microwave.open()
+potato_plate_dining_table.pickup()
+potato_plate_dining_table.slice()
+potato_sliced = InteractionObject("PotatoSliced", parent_object=potato_plate_dining_table.object_instance)  # Initialize new sliced object from sliced parent
+
+# Update the cooked state of the potato and sliced potato
+potato_plate_dining_table.change_state("cooked", True)
+potato_sliced.change_state("cooked", True)
+
+# Arrange the food on the plate
+plate_dining_table.go_to()
+lettuce_sliced_1.pickup()
+lettuce_sliced_1.place(plate_dining_table)
+lettuce_sliced_2.pickup()
+lettuce_sliced_2.place(plate_dining_table)
+tomato_sliced.pickup()
+tomato_sliced.place(plate_dining_table)
+potato_sliced.pickup()
+potato_sliced.place(plate_dining_table)

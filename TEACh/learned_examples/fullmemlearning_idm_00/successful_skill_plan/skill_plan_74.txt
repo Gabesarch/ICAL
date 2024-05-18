@@ -1,0 +1,10 @@
+1. Check if the faucet is on and turn it off to conserve water.
+2. Define InteractionObject instances for the mugs that need to be cleaned.
+3. For each dirty mug:
+   a. Go to the mug and pick it up.
+   b. If the mug is filled with liquid, pour it out into the sink basin.
+   c. Place the mug in the sink basin.
+   d. Turn on the faucet to rinse the mug with water.
+   e. Update the mug's state to reflect that it is no longer dirty.
+   f. Turn off the faucet after cleaning.
+   g. Pick up the clean mug and place it back on the countertop.

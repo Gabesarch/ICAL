@@ -1,0 +1,26 @@
+"Apple_3": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["CounterTop"]}
+"PaperTowelRoll_6": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["CounterTop"]}
+"Tomato_8": {"label": "Tomato", "holding": False, "sliced": True, "cooked": False, "supported_by": ["Stool"]}
+"Plate_9": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Plate_16": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Tomato_17": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Tomato_18": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Tomato_19": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"Bottle_22": {"label": "Bottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"CounterTop_28": {"label": "CounterTop"}
+"CounterTop_30": {"label": "CounterTop"}
+"CounterTop_53": {"label": "CounterTop"}
+"Knife_55": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Plate_67": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"Tomato_68": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Shelf"]}
+"Fridge_80": {"label": "Fridge", "open": False}
+"Bowl_82": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"SinkBasin_83": {"label": "SinkBasin"}
+"Knife_87": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Mug_92": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Faucet_97": {"label": "Faucet", "toggled": False}
+"TomatoSliced_98": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop", "Bowl"]}
+"TomatoSliced_99": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop", "Bowl"]}
+"TomatoSliced_100": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop", "Bowl"]}
+"TomatoSliced_101": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop", "Bowl"]}
+"TomatoSliced_102": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["Stool"]}

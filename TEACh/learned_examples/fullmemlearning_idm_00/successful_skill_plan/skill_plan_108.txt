@@ -1,0 +1,5 @@
+1. Identify and pick up the knife near the oven.
+2. Identify and pick up the tomato from the counter.
+3. Slice the tomato and create instances for the sliced tomatoes.
+4. Identify a clean plate from the specified drawer.
+5. Place two slices of tomato onto the clean plate.

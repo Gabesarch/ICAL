@@ -1,0 +1,25 @@
+# Define InteractionObject instances for the cabinet, potato, pot, and stove burner
+cabinet_above_microwave = InteractionObject("Cabinet", object_instance="Cabinet_35")  # The upper left cabinet one more to the left from the microwave
+potato_to_boil = InteractionObject("Potato", object_instance="Potato_17")  # The correct potato instance to boil
+pot_with_water = InteractionObject("Pot", object_instance="Pot_19")  # A clean pot filled with water
+stove_burner = InteractionObject("StoveBurner", object_instance="StoveBurner_33")  # The stove burner under the selected pot
+
+# (causal abstraction) Navigate to the specified cabinet and open it to access the potato
+cabinet_above_microwave.go_to()
+cabinet_above_microwave.open()
+
+# (causal abstraction) Pick up the potato from the cabinet
+potato_to_boil.go_to()
+potato_to_boil.pickup()
+
+# (causal abstraction) Place the potato in the pot filled with water
+pot_with_water.go_to()
+potato_to_boil.place(pot_with_water)
+
+# (causal abstraction) Turn on the stove burner to start boiling the potato
+stove_burner.go_to()
+stove_burner.toggle_on()
+
+# (causal abstraction) Update the potato's state to "cooked" after it has been placed in the pot on the stove burner and the burner is turned on
+# This step ensures the state tracker is consistent with the actual object states in the environment
+potato_to_boil.change_state("cooked", True)

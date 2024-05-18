@@ -1,0 +1,1 @@
+The script is supposed to clean a dirty plate by rinsing it with water from the faucet and then placing it back on the countertop.

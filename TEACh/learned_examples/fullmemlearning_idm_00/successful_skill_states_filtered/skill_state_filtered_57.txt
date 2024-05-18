@@ -1,0 +1,35 @@
+"Knife_4": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"PepperShaker_5": {"label": "PepperShaker", "holding": False, "supported_by": ["DiningTable", "Bowl"]}
+"Knife_6": {"label": "Knife", "holding": True, "supported_by": ["Sink"]}
+"Knife_19": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": True}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Cabinet_39": {"label": "Cabinet", "open": False}
+"Cabinet_40": {"label": "Cabinet", "open": False}
+"Cabinet_41": {"label": "Cabinet", "open": False}
+"Cabinet_42": {"label": "Cabinet", "open": False}
+"Cabinet_43": {"label": "Cabinet", "open": False}
+"CounterTop_48": {"label": "CounterTop"}
+"Tomato_67": {"label": "Tomato", "holding": False, "sliced": True, "cooked": False, "supported_by": ["Cabinet"]}
+"Fridge_74": {"label": "Fridge", "open": False}
+"SinkBasin_75": {"label": "SinkBasin"}
+"Knife_78": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Knife_80": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"DiningTable_85": {"label": "DiningTable"}
+"Chair_86": {"label": "Chair"}
+"Faucet_87": {"label": "Faucet", "toggled": False}
+"Bowl_88": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"TomatoSliced_89": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}

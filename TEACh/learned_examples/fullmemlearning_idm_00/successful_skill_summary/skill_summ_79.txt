@@ -1,0 +1,1 @@
+The revised script navigates to the fridge to retrieve a potato, finds a clean pot filled with water, places the potato in the pot, boils it on the stove burner, and updates the potato's state to "cooked."

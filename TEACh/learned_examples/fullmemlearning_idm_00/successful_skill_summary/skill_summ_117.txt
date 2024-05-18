@@ -1,0 +1,1 @@
+The script should identify the clean mug next to the stove top, ensure it is empty, place it in the coffee machine, start the coffee-making process, and update the mug's state to reflect that it is filled with coffee.

@@ -1,0 +1,6 @@
+1. Retrieve the knife from the microwave and turn off the microwave if it's on.
+2. Retrieve the tomato from the cabinet above the fridge, slice it, and create instances for the sliced tomatoes.
+3. Retrieve the potato from the island, slice it, and create an instance for the sliced potatoes.
+4. Cook one slice of potato in the microwave.
+5. Clean the dirty plate next to the sink.
+6. Assemble the salad on the clean plate with one slice of cooked potato and two slices of tomato.

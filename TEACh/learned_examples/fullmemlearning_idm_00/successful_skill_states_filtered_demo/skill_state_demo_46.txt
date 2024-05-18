@@ -1,0 +1,25 @@
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Fridge"]}
+"Pot_5": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner"]}
+"PaperTowelRoll_6": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["CounterTop"]}
+"Plate_10": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Egg_15": {"label": "Egg", "holding": False, "supported_by": ["Fridge"]}
+"PaperTowelRoll_16": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["Cabinet"]}
+"Egg_20": {"label": "Egg", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"Plate_22": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Egg_23": {"label": "Egg", "holding": False, "supported_by": ["StoveBurner"]}
+"CounterTop_33": {"label": "CounterTop"}
+"StoveBurner_34": {"label": "StoveBurner"}
+"CounterTop_36": {"label": "CounterTop"}
+"StoveBurner_39": {"label": "StoveBurner"}
+"StoveBurner_48": {"label": "StoveBurner"}
+"CounterTop_51": {"label": "CounterTop"}
+"Faucet_59": {"label": "Faucet", "toggled": True}
+"StoveBurner_66": {"label": "StoveBurner"}
+"Egg_71": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"CoffeeMachine_74": {"label": "CoffeeMachine", "toggled": True}
+"Potato_75": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Plate_83": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"PaperTowelRoll_92": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["CounterTop", "Pot"]}
+"Pan_95": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Pot_96": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Mug_107": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop", "CoffeeMachine"]}

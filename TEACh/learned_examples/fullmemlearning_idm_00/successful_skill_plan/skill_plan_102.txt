@@ -1,0 +1,7 @@
+1. Define InteractionObject instances for the plate and the faucet.
+2. Go to the sink and pick up the plate.
+3. Check if the plate is dirty; if it is, rinse the plate by ensuring the faucet is on.
+4. If the faucet is off, toggle it on to rinse the plate.
+5. After rinsing, change the state of the plate to not dirty.
+6. Turn off the faucet.
+7. Place the clean plate back on the sink or an appropriate location.

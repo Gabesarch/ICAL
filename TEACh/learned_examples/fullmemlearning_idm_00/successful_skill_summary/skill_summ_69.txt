@@ -1,0 +1,1 @@
+The script is supposed to make toast with two slices of bread, slice a tomato, and assemble the toast, tomato slices, and lettuce on a plate.

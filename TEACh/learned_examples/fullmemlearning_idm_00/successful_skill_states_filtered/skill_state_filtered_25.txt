@@ -1,0 +1,8 @@
+"PepperShaker_9": {"label": "PepperShaker", "holding": False, "supported_by": ["CounterTop", "Pot"]}
+"CounterTop_52": {"label": "CounterTop"}
+"CounterTop_53": {"label": "CounterTop"}
+"HousePlant_91": {"label": "HousePlant", "filled": False, "fillLiquid": None}
+"Pot_99": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"SinkBasin_108": {"label": "SinkBasin"}
+"PepperShaker_111": {"label": "PepperShaker", "holding": False, "supported_by": ["CounterTop", "Pot"]}
+"Faucet_125": {"label": "Faucet", "toggled": True}

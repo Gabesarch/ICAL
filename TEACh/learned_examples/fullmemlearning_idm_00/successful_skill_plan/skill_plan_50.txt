@@ -1,0 +1,5 @@
+1. Identify the specific instance of the watch on the plate.
+2. Identify the specific instance of the plate that supports the watch.
+3. Pick up the watch from the plate.
+4. Identify the single ottoman mentioned by the Commander.
+5. Place the watch onto the ottoman.

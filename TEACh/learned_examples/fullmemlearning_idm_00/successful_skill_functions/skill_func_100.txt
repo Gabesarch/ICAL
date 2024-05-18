@@ -1,0 +1,43 @@
+# Define InteractionObject instances for the cabinet, bread, knife, toaster, and plate
+cabinet_above_sink = InteractionObject("Cabinet", object_instance="Cabinet_17")  # Cabinet above the sink
+bread = InteractionObject("Bread", object_instance="Bread_7")  # Bread in the cupboard above the sink
+right_cabinet = InteractionObject("Cabinet", object_instance="Cabinet_18")  # Right cupboard where the plate is
+knife = InteractionObject("Knife", object_instance="Knife_2")  # Knife in the right cupboard
+toaster = InteractionObject("Toaster", object_instance="Toaster_40")  # Toaster for toasting bread
+clean_plate = InteractionObject("Plate", object_instance="Plate_9")  # Clean plate in the right cupboard
+
+# Retrieve the bread from the cabinet above the sink
+cabinet_above_sink.go_to()
+cabinet_above_sink.open()
+bread.go_to()
+bread.pickup()
+cabinet_above_sink.close()
+
+# Retrieve the knife from the right cupboard and slice the bread
+right_cabinet.go_to()
+right_cabinet.open()
+knife.go_to()
+knife.pickup()
+bread.slice()
+bread_sliced = InteractionObject("BreadSliced", parent_object=bread.object_instance)  # Initialize new sliced object from sliced parent
+right_cabinet.close()
+
+# Toast the bread slice
+toaster.go_to()
+bread_sliced.pickup()
+bread_sliced.place(toaster)
+toaster.toggle_on()  # Start toasting the bread slice
+# Wait for the bread to toast (this step is abstracted in the script)
+toaster.toggle_off()  # Stop toasting after it's done
+bread_sliced.change_state("cooked", True)  # Update the bread slice's state to toasted
+bread_sliced.pickup()  # Remove the toasted bread slice from the toaster
+
+# Place the toasted bread slice on the clean plate
+clean_plate.go_to()
+bread_sliced.place(clean_plate)
+
+# Causal abstraction comments:
+# The bread is retrieved from the specified cabinet and sliced to create a piece suitable for toasting.
+# The knife is used to slice the bread, which is necessary to fit it into the toaster.
+# The toaster is used to toast the bread slice, fulfilling the requirement to make toast.
+# The clean plate is identified and used to place the toasted bread slice, as instructed by the Commander.

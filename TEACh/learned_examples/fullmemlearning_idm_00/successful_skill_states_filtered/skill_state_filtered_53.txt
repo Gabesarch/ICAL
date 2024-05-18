@@ -1,0 +1,24 @@
+"Bread_1": {"label": "Bread", "holding": False, "sliced": True, "cooked": False, "supported_by": ["DiningTable"]}
+"Knife_2": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Lettuce_5": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Fridge"]}
+"Plate_7": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_11": {"label": "Knife", "holding": True, "supported_by": ["DiningTable"]}
+"Lettuce_13": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Bread_14": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"CounterTop_20": {"label": "CounterTop"}
+"DiningTable_21": {"label": "DiningTable"}
+"CounterTop_23": {"label": "CounterTop"}
+"Knife_66": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Fridge_67": {"label": "Fridge", "open": False}
+"Plate_85": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Lettuce_90": {"label": "Lettuce", "holding": False, "sliced": True, "supported_by": ["CounterTop_20"]}
+"Toaster_91": {"label": "Toaster", "toggled": False}
+"SinkBasin_92": {"label": "SinkBasin"}
+"Knife_96": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Bread_97": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Mug_102": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Faucet_104": {"label": "Faucet", "toggled": False}
+"BreadSliced_106": {"label": "BreadSliced", "holding": False, "cooked": True, "supported_by": ["CounterTop"]}
+"BreadSliced_107": {"label": "BreadSliced", "holding": False, "cooked": True, "supported_by": ["CounterTop"]}
+"LettuceSliced_108": {"label": "LettuceSliced", "holding": False, "supported_by": ["CounterTop"]}
+"LettuceSliced_109": {"label": "LettuceSliced", "holding": False, "supported_by": ["CounterTop"]}

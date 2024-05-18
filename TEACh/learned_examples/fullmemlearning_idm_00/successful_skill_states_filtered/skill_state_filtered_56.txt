@@ -1,0 +1,5 @@
+"Pen_3": {"label": "Pen", "holding": False, "supported_by": ["Desk"]}
+"Bed_9": {"label": "Bed"}
+"Pen_23": {"label": "Pen", "holding": False, "supported_by": ["SideTable"]}
+"Desk_35": {"label": "Desk"}
+"SideTable_37": {"label": "SideTable"}

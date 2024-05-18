@@ -1,0 +1,5 @@
+1. Check if the faucet is on; if so, go to the faucet and turn it off.
+2. Go to the mug and pick it up.
+3. If the mug is filled, pour out the contents into the sink basin and update the state to not filled and "fillLiquid" to None.
+4. If the mug is dirty, place it in the sink basin, turn on the faucet to rinse it, update the mug's state to not dirty, and then turn off the faucet.
+5. Place the clean mug back in the sink basin.

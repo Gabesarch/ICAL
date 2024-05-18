@@ -1,0 +1,8 @@
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+```

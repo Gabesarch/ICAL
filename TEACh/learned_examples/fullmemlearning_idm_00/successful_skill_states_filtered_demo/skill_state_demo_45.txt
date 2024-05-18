@@ -1,0 +1,16 @@
+"DishSponge_3": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["CounterTop", "Microwave"]}
+"SoapBottle_13": {"label": "SoapBottle", "holding": False, "supported_by": ["CounterTop", "Plate"]}
+"Bottle_14": {"label": "Bottle", "holding": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"SoapBottle_15": {"label": "SoapBottle", "holding": False, "supported_by": ["CounterTop"]}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"CounterTop_32": {"label": "CounterTop"}
+"CounterTop_33": {"label": "CounterTop"}
+"CounterTop_54": {"label": "CounterTop"}
+"CounterTop_63": {"label": "CounterTop"}
+"Plate_67": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Bottle_68": {"label": "Bottle", "holding": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop", "Pan"]}
+"SoapBottle_69": {"label": "SoapBottle", "holding": False, "supported_by": ["Sink"]}
+"SinkBasin_88": {"label": "SinkBasin"}
+"DishSponge_98": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["CounterTop", "Plate"]}
+"Microwave_102": {"label": "Microwave", "toggled": False, "open": False}
+"Faucet_105": {"label": "Faucet", "toggled": True}

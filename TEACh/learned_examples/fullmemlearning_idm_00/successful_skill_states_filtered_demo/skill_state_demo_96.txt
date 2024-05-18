@@ -1,0 +1,18 @@
+"SoapBottle_10": {"label": "SoapBottle", "holding": False, "supported_by": ["Plate", "Stool"]}
+"Potato_11": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"CounterTop_24": {"label": "CounterTop"}
+"CounterTop_26": {"label": "CounterTop"}
+"CounterTop_49": {"label": "CounterTop"}
+"Bottle_50": {"label": "Bottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Knife_51": {"label": "Knife", "holding": True, "supported_by": ["Sink"]}
+"Bread_53": {"label": "Bread", "holding": False, "sliced": True, "cooked": False, "supported_by": ["CounterTop"]}
+"Potato_56": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Toaster_58": {"label": "Toaster", "toggled": True}
+"SoapBottle_59": {"label": "SoapBottle", "holding": False, "supported_by": ["Cabinet"]}
+"Plate_63": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Stool"]}
+"Pot_70": {"label": "Pot", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"SinkBasin_79": {"label": "SinkBasin"}
+"Knife_83": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Stool_91": {"label": "Stool"}
+"Stool_92": {"label": "Stool"}
+"BreadSliced_94": {"label": "BreadSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}

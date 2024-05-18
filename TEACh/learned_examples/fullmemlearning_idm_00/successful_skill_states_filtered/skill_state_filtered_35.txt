@@ -1,0 +1,22 @@
+"Spoon_1": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Chair"]}
+"Apple_8": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Drawer"]}
+"Spoon_21": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"Drawer_29": {"label": "Drawer", "open": False}
+"Drawer_31": {"label": "Drawer", "open": False}
+"Drawer_32": {"label": "Drawer", "open": False}
+"Drawer_33": {"label": "Drawer", "open": False}
+"Drawer_39": {"label": "Drawer", "open": False}
+"Drawer_40": {"label": "Drawer", "open": False}
+"Drawer_42": {"label": "Drawer", "open": False}
+"Drawer_44": {"label": "Drawer", "open": False}
+"Drawer_46": {"label": "Drawer", "open": False}
+"CounterTop_48": {"label": "CounterTop"}
+"Drawer_49": {"label": "Drawer", "open": False}
+"Drawer_52": {"label": "Drawer", "open": False}
+"Drawer_53": {"label": "Drawer", "open": False}
+"Drawer_56": {"label": "Drawer", "open": False}
+"GarbageCan_64": {"label": "GarbageCan"}
+"Microwave_73": {"label": "Microwave", "toggled": False, "open": False}
+"Fridge_81": {"label": "Fridge", "open": False}
+"Spoon_94": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Floor", "GarbageCan"]}
+"Chair_98": {"label": "Chair"}

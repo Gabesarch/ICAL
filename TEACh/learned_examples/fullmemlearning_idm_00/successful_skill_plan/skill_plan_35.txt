@@ -1,0 +1,5 @@
+1. Identify and define InteractionObject instances for each spoon mentioned in the dialogue and the current state.
+2. Locate a drawer to place the spoons in.
+3. Pick up the spoon from the garbage can and place it in the drawer.
+4. Pick up the spoon from the chair and place it in the drawer.
+5. Ensure all other spoons are placed in the drawer.

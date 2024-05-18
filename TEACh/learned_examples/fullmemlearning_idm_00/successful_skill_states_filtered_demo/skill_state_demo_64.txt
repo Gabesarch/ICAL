@@ -1,0 +1,11 @@
+"RemoteControl_0": {"label": "RemoteControl", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"GarbageCan_7": {"label": "GarbageCan"}
+"RemoteControl_18": {"label": "RemoteControl", "holding": False, "supported_by": ["DiningTable"]}
+"Chair_27": {"label": "Chair"}
+"Sofa_28": {"label": "Sofa"}
+"Chair_30": {"label": "Chair"}
+"Chair_31": {"label": "Chair"}
+"Chair_32": {"label": "Chair"}
+"Chair_33": {"label": "Chair"}
+"Chair_36": {"label": "Chair"}
+"DiningTable_37": {"label": "DiningTable"}

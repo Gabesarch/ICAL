@@ -1,0 +1,35 @@
+# Define InteractionObject instances for the knife, lettuce, and plate
+knife_sink = InteractionObject("Knife", object_instance="Knife_49")  # Knife is in the sink
+lettuce_counter_top = InteractionObject("Lettuce", object_instance="Lettuce_80")  # Lettuce is on the countertop
+plate_counter_top = InteractionObject("Plate", object_instance="Plate_10")  # Plate is on the countertop
+
+# Go to the knife and pick it up
+knife_sink.go_to()
+knife_sink.pickup()
+
+# Go to the lettuce, slice it, and initialize lettuce slices
+lettuce_counter_top.go_to()
+lettuce_counter_top.slice()
+lettuce_sliced_1 = InteractionObject("LettuceSliced", parent_object=lettuce_counter_top.object_instance)  # Initialize new sliced object from sliced parent
+lettuce_sliced_2 = InteractionObject("LettuceSliced", parent_object=lettuce_counter_top.object_instance)  # Initialize new sliced object from sliced parent
+
+# Check if the plate is clean, even though the Commander said it is clean, we should still verify it
+if not plate_counter_top.check_attribute("dirty", False):
+    # If the plate is not clean, clean it at the sink
+    sink = InteractionObject("SinkBasin", object_instance="SinkBasin_77")
+    faucet = InteractionObject("Faucet", object_instance="Faucet_91")
+    plate_counter_top.go_to()
+    plate_counter_top.pickup()
+    sink.go_to()
+    plate_counter_top.place(sink)
+    faucet.go_to()
+    faucet.toggle_on()  # Turn on the faucet to clean the plate
+    faucet.toggle_off()  # Turn off the faucet after cleaning
+    plate_counter_top.pickup()  # Pick up the clean plate
+    plate_counter_top.change_state("dirty", False)  # Update the plate's state to clean
+
+# Place the two lettuce slices on the clean plate
+lettuce_sliced_1.pickup()
+lettuce_sliced_1.place(plate_counter_top)
+lettuce_sliced_2.pickup()
+lettuce_sliced_2.place(plate_counter_top)

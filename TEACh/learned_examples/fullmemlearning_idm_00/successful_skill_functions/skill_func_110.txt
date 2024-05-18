@@ -1,0 +1,43 @@
+# Define InteractionObject instances for the faucet, mug, and sink basin
+faucet = InteractionObject("Faucet", object_instance="Faucet_24")  # Faucet in the sink
+mug = InteractionObject("Mug", object_instance="Mug_65")  # Mug in the sink
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_56")  # Sink basin for rinsing
+
+# Turn off the faucet if it is currently on to conserve water
+if faucet.check_attribute("toggled", True):
+    faucet.go_to()
+    faucet.toggle_off()
+
+# Go to the mug and pick it up
+mug.go_to()
+mug.pickup()
+
+# If the mug is filled with liquid, pour it out into the sink basin
+if mug.check_attribute("filled", True):
+    sink_basin.go_to()
+    mug.pour(sink_basin)
+    mug.change_state("filled", False)  # Update the mug's state to not filled
+    mug.change_state("fillLiquid", None)  # Update the mug's liquid content to None
+
+# If the mug is dirty, rinse it by placing it in the sink basin and turning on the faucet
+if mug.check_attribute("dirty", True):
+    sink_basin.go_to()
+    mug.place(sink_basin)
+    faucet.go_to()
+    faucet.toggle_on()
+    # Assume the mug is now clean, update its state
+    mug.change_state("dirty", False)
+    # Turn off the faucet after rinsing to conserve water
+    faucet.toggle_off()
+
+# Place the clean mug back in the sink basin
+mug.pickup()
+sink_basin.go_to()
+mug.place(sink_basin)
+
+# Causal abstraction comments:
+# The faucet is turned off initially to prevent wasting water before cleaning begins.
+# The mug is identified in the sink and picked up to ensure we are using the correct object as per the Commander's instructions.
+# The mug is emptied before rinsing to remove any existing liquid, and the state is updated to reflect this change.
+# If the mug is dirty, it is rinsed by placing it in the sink basin and turning on the faucet, then the faucet is turned off to conserve water after cleaning.
+# The clean mug is placed back in the sink basin, completing the task as instructed.

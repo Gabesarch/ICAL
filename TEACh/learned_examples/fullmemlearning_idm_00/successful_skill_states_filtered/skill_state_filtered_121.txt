@@ -1,0 +1,19 @@
+"Knife_6": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Plate_10": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Pot_12": {"label": "Pot", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"Mug_16": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Microwave"]}
+"Knife_20": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"DiningTable_27": {"label": "DiningTable"}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"CounterTop_34": {"label": "CounterTop"}
+"CounterTop_37": {"label": "CounterTop"}
+"CounterTop_39": {"label": "CounterTop"}
+"Pot_47": {"label": "Pot", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner"]}
+"Potato_49": {"label": "Potato", "holding": False, "sliced": True, "cooked": False, "supported_by": ["CounterTop"]}
+"Plate_50": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"SinkBasin_60": {"label": "SinkBasin"}
+"Knife_63": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Microwave_66": {"label": "Microwave", "toggled": True, "open": False}
+"Knife_67": {"label": "Knife", "holding": True, "supported_by": ["CounterTop"]}
+"Faucet_75": {"label": "Faucet", "toggled": True}
+"PotatoSliced_76": {"label": "PotatoSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}

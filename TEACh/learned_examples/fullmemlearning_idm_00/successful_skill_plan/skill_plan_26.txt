@@ -1,0 +1,9 @@
+1. Go to the dirty mug and pick it up.
+2. Go to the sink basin.
+3. If the faucet is on, turn it off.
+4. Pour out the contents of the mug into the sink basin.
+5. Place the mug under the faucet.
+6. Turn on the faucet to rinse the mug.
+7. Turn off the faucet after rinsing.
+8. Update the mug's state to reflect that it is no longer dirty.
+9. Place the clean mug on the countertop.

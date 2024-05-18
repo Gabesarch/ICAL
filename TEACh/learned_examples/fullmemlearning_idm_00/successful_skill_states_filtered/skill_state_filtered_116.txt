@@ -1,0 +1,28 @@
+"Plate_5": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_6": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Knife_20": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Bread_22": {"label": "Bread", "holding": False, "sliced": True, "cooked": False, "supported_by": ["CounterTop"]}
+"Bread_30": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Plate_35": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+"Knife_44": {"label": "Knife", "holding": False, "supported_by": ["Stool"]}
+"Bread_45": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Knife_50": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Plate_55": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Knife_62": {"label": "Knife", "holding": False, "supported_by": ["Microwave"]}
+"Bread_67": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Knife_69": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Plate_75": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Bread_84": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"CounterTop_106": {"label": "CounterTop"}
+"Drawer_110": {"label": "Drawer", "open": False}
+"Bread_114": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Pot_115": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Knife_116": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Microwave_128": {"label": "Microwave", "toggled": False, "open": False}
+"Knife_141": {"label": "Knife", "holding": True, "supported_by": ["Microwave"]}
+"Plate_142": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Toaster_144": {"label": "Toaster", "toggled": False}
+"Drawer_152": {"label": "Drawer", "open": False}
+"Drawer_155": {"label": "Drawer", "open": False}
+"Stool_157": {"label": "Stool"}
+"BreadSliced_158": {"label": "BreadSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}

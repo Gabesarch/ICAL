@@ -1,0 +1,1 @@
+Looking at the demonstration scripts, it is evident that the code should pick the plate and clean it in the sink. The demonstration script does this and I do not notice any inefficiencies in the program. The code is not well commented, and comments should be added for readability.

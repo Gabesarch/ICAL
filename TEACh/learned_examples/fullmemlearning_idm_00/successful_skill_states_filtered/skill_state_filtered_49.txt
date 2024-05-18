@@ -1,0 +1,14 @@
+"DishSponge_1": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"PepperShaker_2": {"label": "PepperShaker", "holding": False, "supported_by": ["CounterTop", "Plate"]}
+"Apple_3": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Sink"]}
+"PepperShaker_12": {"label": "PepperShaker", "holding": False, "supported_by": ["Cabinet"]}
+"DishSponge_15": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"CounterTop_19": {"label": "CounterTop"}
+"CounterTop_22": {"label": "CounterTop"}
+"Knife_65": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Plate_84": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"SinkBasin_91": {"label": "SinkBasin"}
+"PepperShaker_94": {"label": "PepperShaker", "holding": False, "supported_by": ["Microwave"]}
+"DishSponge_98": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Pot", "CounterTop"]}
+"Mug_101": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"Faucet_103": {"label": "Faucet", "toggled": True}

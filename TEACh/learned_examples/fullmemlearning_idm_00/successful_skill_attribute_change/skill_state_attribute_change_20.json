@@ -1,0 +1,1 @@
+{"0": {"id": 11, "label": "Lettuce", "attribute": "0", "before": "Microwave", "after": "Cabinet"}, "1": {"id": 17, "label": "Cabinet", "attribute": "3", "before": "Bowl", "after": "Lettuce"}, "2": {"id": 43, "label": "Microwave", "attribute": "toggled", "before": true, "after": false}, "3": {"id": 43, "label": "Microwave", "attribute": "open", "before": false, "after": true}}

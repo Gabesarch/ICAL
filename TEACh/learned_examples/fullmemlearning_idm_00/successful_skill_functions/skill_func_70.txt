@@ -1,0 +1,46 @@
+# Define InteractionObject instances for the mug on the stool, sink basin, faucet, and coffee machine
+stool_mug = InteractionObject("Mug", object_instance="Mug_87")  # Mug on the stool by the toaster
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_74")  # Sink basin for washing
+faucet = InteractionObject("Faucet", object_instance="Faucet_88")  # Faucet for water
+coffee_machine_mug = InteractionObject("Mug", object_instance="Mug_14")  # Dirty mug in the coffee machine
+coffee_machine = InteractionObject("CoffeeMachine", object_instance="CoffeeMachine_72")  # Coffee machine to prepare coffee
+
+# Pick up the specified mug from the stool
+stool_mug.go_to()
+stool_mug.pickup()
+
+# Check if the mug is dirty before attempting to wash it
+if stool_mug.check_attribute("dirty", True):
+    # Check if the faucet is on; if so, turn it off before washing the mug
+    if faucet.check_attribute("toggled", True):
+        faucet.toggle_off()
+
+    # Wash the mug in the sink basin
+    sink_basin.go_to()
+    stool_mug.place(sink_basin)
+    faucet.toggle_on()  # Rinse the mug with water
+    faucet.toggle_off()  # Turn off the faucet after rinsing
+    stool_mug.change_state("dirty", False)  # Update the mug's state to clean
+
+# Remove the dirty cup from the coffee maker and place it in the sink
+coffee_machine_mug.go_to()
+coffee_machine_mug.pickup()
+coffee_machine_mug.place(sink_basin)
+
+# Place the clean mug on the coffee maker and start the coffee-making process
+stool_mug.pickup()
+coffee_machine.go_to()
+stool_mug.place(coffee_machine)
+coffee_machine.toggle_on()  # Start the coffee machine to prepare coffee
+# Wait for coffee to be prepared (this step is abstracted in the script)
+coffee_machine.toggle_off()  # Turn off the coffee machine after coffee is prepared
+stool_mug.change_state("filled", True)  # Update the mug's state to filled
+stool_mug.change_state("fillLiquid", "coffee")  # Update the mug's fillLiquid to coffee
+
+# Causal abstraction comments:
+# The mug is identified on the stool by the toaster and picked up to ensure we are using the correct object as per the Commander's instructions.
+# Before attempting to wash the mug, its state is checked to see if it is dirty. If it is not dirty, the washing step is skipped.
+# The faucet's state is checked, and if it is on, it is turned off to prevent water waste before washing the mug.
+# The mug is washed in the sink basin to meet the requirement of using a clean mug for coffee preparation.
+# The dirty cup in the coffee maker is removed and placed in the sink to clear the way for the clean mug.
+# The coffee machine is used to prepare coffee, and after the coffee is prepared, the mug's state is updated to reflect that it is filled with coffee, completing the task as instructed by the Commander.

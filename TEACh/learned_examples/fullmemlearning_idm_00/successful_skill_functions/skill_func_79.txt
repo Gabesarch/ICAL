@@ -1,0 +1,25 @@
+# Navigate to the fridge and open it to retrieve the potato
+fridge = InteractionObject("Fridge", object_instance="Fridge_61")
+fridge.go_to()
+fridge.open()
+potato = InteractionObject("Potato", object_instance="Potato_54")
+potato.go_to()
+potato.pickup()
+fridge.close()
+
+# Find a clean pot that is filled with water
+pot = InteractionObject("Pot", object_instance="Pot_16")  # Assuming Pot_16 is clean and filled with water
+pot.go_to()
+
+# Place the potato in the pot
+potato.place(pot)
+
+# Navigate to the stove burner, place the pot on it, and boil the potato
+stove_burner = InteractionObject("StoveBurner", object_instance="StoveBurner_37")
+stove_burner.go_to()
+pot.pickup()  # Pick up the pot with the potato
+pot.place(stove_burner)  # Place the pot on the stove burner
+stove_burner.toggle_on()  # Turn on the stove burner to boil the potato
+
+# Update the potato's state to "cooked" after boiling
+potato.change_state("cooked", True)

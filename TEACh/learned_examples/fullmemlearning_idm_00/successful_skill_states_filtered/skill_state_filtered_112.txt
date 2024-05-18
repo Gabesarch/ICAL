@@ -1,0 +1,9 @@
+"Plate_7": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"SoapBottle_8": {"label": "SoapBottle", "holding": False, "supported_by": ["Sink"]}
+"CounterTop_22": {"label": "CounterTop"}
+"CounterTop_24": {"label": "CounterTop"}
+"CounterTop_47": {"label": "CounterTop"}
+"Plate_61": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"SinkBasin_77": {"label": "SinkBasin"}
+"Lettuce_80": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Sink"]}
+"Faucet_91": {"label": "Faucet", "toggled": True}

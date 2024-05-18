@@ -1,0 +1,39 @@
+# Define InteractionObject instances for the microwave, knife, bread, toaster, and plate
+microwave = InteractionObject("Microwave", object_instance="Microwave_128")
+knife = InteractionObject("Knife", object_instance="Knife_141")  # Knife is in the microwave
+bread = InteractionObject("Bread", object_instance="Bread_22")  # Bread is on the countertop
+toaster = InteractionObject("Toaster", object_instance="Toaster_144")  # Toaster for toasting bread
+plate = InteractionObject("Plate", object_instance="Plate_5")  # Clean plate on the countertop
+
+# Retrieve the knife from the microwave
+microwave.go_to()
+microwave.open()
+knife.go_to()
+knife.pickup()
+microwave.close()
+
+# Slice the bread to create a slice
+bread.go_to()
+bread.pickup()
+bread.slice()
+bread_sliced = InteractionObject("BreadSliced", parent_object=bread.object_instance)  # Initialize new sliced object from sliced parent
+
+# Toast the bread slice
+toaster.go_to()
+bread_sliced.pickup()
+bread_sliced.place(toaster)
+toaster.toggle_on()  # Start toasting the bread slice
+# Wait for the bread to toast (this step is abstracted in the script)
+toaster.toggle_off()  # Stop toasting after it's done
+bread_sliced.change_state("cooked", True)  # Update the bread slice's state to toasted
+
+# Place the toasted bread on the clean plate
+plate.go_to()
+bread_sliced.pickup()
+bread_sliced.place(plate)
+
+# Causal abstraction comments:
+# The knife is retrieved from the microwave, which is necessary for slicing the bread.
+# The bread is sliced to create a slice that can be toasted, as toasting requires individual slices.
+# The toaster is used to toast the bread slice, which is the main task as per the dialogue instructions.
+# The clean plate is used to hold the toasted bread slice, completing the task as requested by the Commander.

@@ -1,0 +1,1 @@
+<Driver> What shall I do today? <Commander> find the lettuce ans slice it with the knife. <Commander> take the plate out of shelf below the stove. <Driver> Done. <Commander> then place the lettuce slices on the plate. 

@@ -1,0 +1,9 @@
+"Pot_5": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner"]}
+"StoveBurner_34": {"label": "StoveBurner"}
+"CounterTop_36": {"label": "CounterTop"}
+"StoveBurner_39": {"label": "StoveBurner"}
+"StoveBurner_48": {"label": "StoveBurner"}
+"Faucet_59": {"label": "Faucet", "toggled": True}
+"StoveBurner_66": {"label": "StoveBurner"}
+"Potato_75": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Pot_96": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}

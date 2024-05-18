@@ -1,0 +1,26 @@
+"Bowl_1": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Apple_7": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Drawer"]}
+"PepperShaker_9": {"label": "PepperShaker", "holding": False, "supported_by": ["CounterTop", "Pot"]}
+"SaltShaker_10": {"label": "SaltShaker", "holding": False, "supported_by": ["Plate", "Cabinet"]}
+"Lettuce_12": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Apple_20": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Sink"]}
+"Bowl_22": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Drawer"]}
+"Bowl_26": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Apple_28": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Bowl_34": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"SaltShaker_35": {"label": "SaltShaker", "holding": False, "supported_by": ["Bowl", "CounterTop"]}
+"Lettuce_36": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Apple_37": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["CounterTop"]}
+"CounterTop_52": {"label": "CounterTop"}
+"CounterTop_53": {"label": "CounterTop"}
+"CounterTop_74": {"label": "CounterTop"}
+"CounterTop_83": {"label": "CounterTop"}
+"HousePlant_91": {"label": "HousePlant", "filled": False, "fillLiquid": None}
+"Pot_99": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Lettuce_104": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Sink"]}
+"SinkBasin_108": {"label": "SinkBasin"}
+"SaltShaker_109": {"label": "SaltShaker", "holding": False, "supported_by": ["CounterTop"]}
+"PepperShaker_111": {"label": "PepperShaker", "holding": False, "supported_by": ["CounterTop", "Pot"]}
+"Apple_114": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Drawer"]}
+"Bowl_123": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Drawer"]}
+"Faucet_125": {"label": "Faucet", "toggled": True}

@@ -1,0 +1,5 @@
+1. Check if the faucet is on and turn it off to conserve water.
+2. Define InteractionObject instances for the dirty dishes.
+3. Iterate over the dirty dishes, clean them by rinsing with water, and update their states.
+4. For the mug, ensure to update the state to reflect that it remains filled with water after cleaning.
+5. Place the clean dishes back on the countertop.

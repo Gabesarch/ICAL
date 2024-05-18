@@ -1,0 +1,27 @@
+"CounterTop_34": {"label": "CounterTop"}
+"CounterTop_39": {"label": "CounterTop"}
+"Cabinet_40": {"label": "Cabinet", "open": False}
+"Cabinet_41": {"label": "Cabinet", "open": False}
+"Cabinet_42": {"label": "Cabinet", "open": False}
+"Cabinet_43": {"label": "Cabinet", "open": False}
+"Cabinet_44": {"label": "Cabinet", "open": False}
+"Cabinet_45": {"label": "Cabinet", "open": False}
+"Cabinet_46": {"label": "Cabinet", "open": False}
+"Cabinet_47": {"label": "Cabinet", "open": False}
+"Cabinet_48": {"label": "Cabinet", "open": False}
+"Cabinet_49": {"label": "Cabinet", "open": False}
+"Cabinet_50": {"label": "Cabinet", "open": False}
+"Cabinet_51": {"label": "Cabinet", "open": False}
+"Cabinet_52": {"label": "Cabinet", "open": False}
+"Cabinet_53": {"label": "Cabinet", "open": False}
+"Cabinet_54": {"label": "Cabinet", "open": False}
+"Cabinet_55": {"label": "Cabinet", "open": False}
+"Cabinet_56": {"label": "Cabinet", "open": False}
+"CounterTop_59": {"label": "CounterTop"}
+"Cabinet_60": {"label": "Cabinet", "open": False}
+"Cabinet_64": {"label": "Cabinet", "open": False}
+"Fridge_65": {"label": "Fridge", "open": False}
+"CoffeeMachine_82": {"label": "CoffeeMachine", "toggled": False}
+"SinkBasin_84": {"label": "SinkBasin"}
+"Mug_97": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Faucet_98": {"label": "Faucet", "toggled": False}

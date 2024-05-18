@@ -1,0 +1,10 @@
+1. Go to the dirty bowl on the countertop.
+2. Pick up the bowl.
+3. Place the bowl in the sink basin.
+4. Go to the dish sponge and pick it up.
+5. Go to the soap bottle and apply soap to the sponge.
+6. Scrub the bowl with the soapy sponge and update the bowl's state to clean.
+7. Go to the faucet and turn it on to rinse the bowl.
+8. Update the bowl's state to filled with water.
+9. Turn off the faucet.
+10. Pick up the bowl and place it back on the countertop.

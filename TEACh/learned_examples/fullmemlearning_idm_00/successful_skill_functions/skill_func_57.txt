@@ -1,0 +1,40 @@
+# Initialize InteractionObject instances for the bowl, faucet, sink basin, cabinet, tomato, and knife
+bowl = InteractionObject("Bowl", object_instance="Bowl_88")  # Bowl on the dining table
+faucet = InteractionObject("Faucet", object_instance="Faucet_87")  # Faucet is currently on
+sink_basin = InteractionObject("SinkBasin", object_instance="SinkBasin_75")  # Sink basin
+cabinet = InteractionObject("Cabinet", object_instance="Cabinet_25")  # Cabinet above the oven next to the cooker
+tomato = InteractionObject("Tomato", object_instance="Tomato_67")  # Tomato inside the specified cabinet
+knife = InteractionObject("Knife", object_instance="Knife_6")  # Knife in the sink
+
+# Turn off the faucet if it's on before cleaning the bowl
+if faucet.check_attribute("toggled", True):
+    faucet.go_to()
+    faucet.toggle_off()
+
+# Check if the bowl is dirty and clean it if necessary
+if bowl.check_attribute("dirty", True):
+    bowl.go_to()
+    bowl.pickup()
+    sink_basin.go_to()
+    bowl.place(sink_basin)
+    faucet.go_to()
+    faucet.toggle_on()  # Turn on the faucet to clean the bowl
+    faucet.toggle_off()  # Turn off the faucet after cleaning
+    bowl.pickup()  # Pick up the clean bowl
+    bowl.change_state("dirty", False)  # Update the bowl's state to clean
+
+# Open the cabinet to locate the tomato
+cabinet.go_to()
+cabinet.open()
+
+# Slice the tomato and place one slice in the bowl
+tomato.go_to()
+tomato.pickup()
+knife.go_to()
+knife.pickup()
+tomato.slice()
+tomato_sliced = InteractionObject("TomatoSliced", parent_object=tomato.object_instance)  # Initialize new sliced object from sliced parent
+tomato_sliced.go_to()
+tomato_sliced.pickup()
+bowl.go_to()
+tomato_sliced.place(bowl)  # Place one slice of tomato in the bowl

@@ -1,0 +1,100 @@
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Spoon_1": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Floor", "GarbageCan"]}
+"Potato_2": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Tomato_3": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Bread_4": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Knife_5": {"label": "Knife", "holding": False, "supported_by": ["Chair"]}
+"CellPhone_6": {"label": "CellPhone", "holding": False, "supported_by": ["Drawer"]}
+"SaltShaker_7": {"label": "SaltShaker", "holding": False, "supported_by": ["Plate", "CounterTop"]}
+"Apple_8": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Fridge"]}
+"Lettuce_9": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Pan_10": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["StoveBurner", "StoveBurner", "CounterTop", "StoveBurner"]}
+"Plate_11": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Egg_12": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"Kettle_13": {"label": "Kettle", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Ladle_14": {"label": "Ladle", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Fork_15": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Cup_16": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"SoapBottle_17": {"label": "SoapBottle", "holding": False, "supported_by": ["Sink"]}
+"Apple_18": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Drawer"]}
+"Lettuce_19": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Tomato_20": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Plate_21": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Egg_22": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"Fork_23": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Ladle_24": {"label": "Ladle", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"CellPhone_25": {"label": "CellPhone", "holding": False, "supported_by": ["Drawer"]}
+"Potato_26": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"Pan_27": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Window_29": {"label": "Window"}
+"Drawer_30": {"label": "Drawer", "open": False}
+"StoveBurner_31": {"label": "StoveBurner"}
+"Drawer_32": {"label": "Drawer", "open": False}
+"Drawer_33": {"label": "Drawer", "open": False}
+"Drawer_34": {"label": "Drawer", "open": False}
+"StoveBurner_35": {"label": "StoveBurner"}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Cabinet_39": {"label": "Cabinet", "open": False}
+"Drawer_40": {"label": "Drawer", "open": False}
+"Drawer_41": {"label": "Drawer", "open": False}
+"Cabinet_42": {"label": "Cabinet", "open": False}
+"Drawer_43": {"label": "Drawer", "open": False}
+"StoveBurner_44": {"label": "StoveBurner"}
+"Drawer_45": {"label": "Drawer", "open": False}
+"StoveBurner_46": {"label": "StoveBurner"}
+"Drawer_47": {"label": "Drawer", "open": False}
+"Cabinet_48": {"label": "Cabinet", "open": False}
+"CounterTop_49": {"label": "CounterTop"}
+"Drawer_50": {"label": "Drawer", "open": False}
+"Cabinet_51": {"label": "Cabinet", "open": False}
+"StoveBurner_52": {"label": "StoveBurner"}
+"Drawer_53": {"label": "Drawer", "open": False}
+"Drawer_54": {"label": "Drawer", "open": False}
+"Window_55": {"label": "Window"}
+"CounterTop_56": {"label": "CounterTop"}
+"Drawer_57": {"label": "Drawer", "open": False}
+"StoveBurner_58": {"label": "StoveBurner"}
+"Window_59": {"label": "Window"}
+"Cabinet_60": {"label": "Cabinet", "open": False}
+"SoapBottle_61": {"label": "SoapBottle", "holding": False, "supported_by": ["Cabinet"]}
+"Cup_62": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop", "Microwave"]}
+"LightSwitch_63": {"label": "LightSwitch"}
+"Pot_64": {"label": "Pot", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"GarbageCan_65": {"label": "GarbageCan"}
+"StoveKnob_66": {"label": "StoveKnob", "toggled": True}
+"StoveKnob_67": {"label": "StoveKnob", "toggled": False}
+"StoveKnob_68": {"label": "StoveKnob", "toggled": True}
+"StoveKnob_69": {"label": "StoveKnob", "toggled": True}
+"StoveKnob_70": {"label": "StoveKnob", "toggled": False}
+"StoveKnob_71": {"label": "StoveKnob", "toggled": False}
+"Fork_72": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Ladle_73": {"label": "Ladle", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"Microwave_74": {"label": "Microwave", "toggled": False, "open": False}
+"Kettle_75": {"label": "Kettle", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Chair"]}
+"Egg_76": {"label": "Egg", "holding": False, "supported_by": ["Cabinet"]}
+"Plate_77": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Fridge"]}
+"Pan_78": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["StoveBurner", "StoveBurner", "CounterTop", "StoveBurner"]}
+"Lettuce_79": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Spatula_80": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"CoffeeMachine_81": {"label": "CoffeeMachine", "toggled": False}
+"Fridge_82": {"label": "Fridge", "open": False}
+"Apple_83": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Chair"]}
+"Knife_84": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"SinkBasin_85": {"label": "SinkBasin"}
+"SaltShaker_86": {"label": "SaltShaker", "holding": False, "supported_by": ["Cabinet"]}
+"PepperShaker_87": {"label": "PepperShaker", "holding": False, "supported_by": ["CounterTop"]}
+"CellPhone_88": {"label": "CellPhone", "holding": False, "supported_by": ["Cabinet"]}
+"Knife_89": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Bread_90": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Tomato_91": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"Potato_92": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Pan", "StoveBurner"]}
+"DishSponge_93": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Toaster_94": {"label": "Toaster", "toggled": True}
+"Spoon_95": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"Mug_96": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop", "CoffeeMachine"]}
+"Bowl_97": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Faucet_98": {"label": "Faucet", "toggled": True}
+"Chair_99": {"label": "Chair"}

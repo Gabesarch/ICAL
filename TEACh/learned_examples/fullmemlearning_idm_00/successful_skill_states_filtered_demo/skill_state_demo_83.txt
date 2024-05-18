@@ -1,0 +1,9 @@
+"TissueBox_3": {"label": "TissueBox", "holding": False, "supported_by": ["Floor", "Shelf"]}
+"Box_4": {"label": "Box", "holding": False, "open": True, "supported_by": ["DiningTable"]}
+"TissueBox_7": {"label": "TissueBox", "holding": False, "supported_by": ["DiningTable"]}
+"DiningTable_25": {"label": "DiningTable"}
+"SideTable_26": {"label": "SideTable"}
+"Chair_28": {"label": "Chair"}
+"SideTable_30": {"label": "SideTable"}
+"Shelf_36": {"label": "Shelf"}
+"SideTable_38": {"label": "SideTable"}

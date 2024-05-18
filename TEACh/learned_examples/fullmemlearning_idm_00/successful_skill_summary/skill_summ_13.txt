@@ -1,0 +1,1 @@
+The script collects all remote controls and places them on a chair near the dining table, then checks the drawers under the TV.

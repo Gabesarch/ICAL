@@ -1,0 +1,7 @@
+1. Navigate to the fridge and open it.
+2. Retrieve the potato from the fridge.
+3. Find a clean pot that is filled with water.
+4. Place the potato in the pot.
+5. Navigate to the stove burner and place the pot on it.
+6. Turn on the stove burner to boil the potato.
+7. Update the potato's state to "cooked" after boiling.

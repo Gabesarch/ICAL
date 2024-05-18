@@ -1,0 +1,1 @@
+The script is supposed to retrieve a mug from a cabinet, clean it if dirty, prepare coffee in the mug using a coffee machine, and place the filled mug on the countertop.

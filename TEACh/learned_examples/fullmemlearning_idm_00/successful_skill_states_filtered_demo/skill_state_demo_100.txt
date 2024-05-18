@@ -1,0 +1,26 @@
+"Knife_2": {"label": "Knife", "holding": True, "supported_by": ["CounterTop"]}
+"Bread_7": {"label": "Bread", "holding": False, "sliced": True, "cooked": False, "supported_by": ["Cabinet"]}
+"Plate_9": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Bread_14": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Cabinet_16": {"label": "Cabinet", "open": False}
+"Cabinet_17": {"label": "Cabinet", "open": False}
+"Cabinet_18": {"label": "Cabinet", "open": True}
+"Cabinet_19": {"label": "Cabinet", "open": False}
+"Cabinet_20": {"label": "Cabinet", "open": False}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"CounterTop_26": {"label": "CounterTop"}
+"CounterTop_32": {"label": "CounterTop"}
+"Plate_39": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"Toaster_40": {"label": "Toaster", "toggled": False}
+"Bread_43": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Knife_49": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Fridge_53": {"label": "Fridge", "open": False}
+"SinkBasin_54": {"label": "SinkBasin"}
+"Knife_57": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"DiningTable_66": {"label": "DiningTable"}
+"DiningTable_68": {"label": "DiningTable"}
+"BreadSliced_70": {"label": "BreadSliced", "holding": False, "cooked": False, "supported_by": ["CounterTop"]}

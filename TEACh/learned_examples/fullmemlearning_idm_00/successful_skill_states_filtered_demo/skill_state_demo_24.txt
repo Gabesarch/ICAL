@@ -1,0 +1,39 @@
+"Tomato_1": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Pot_4": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner"]}
+"SaltShaker_8": {"label": "SaltShaker", "holding": False, "supported_by": ["CounterTop"]}
+"Knife_12": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Bowl_14": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Floor", "Safe"]}
+"SaltShaker_15": {"label": "SaltShaker", "holding": False, "supported_by": ["Bowl", "Floor", "Safe"]}
+"Tomato_17": {"label": "Tomato", "holding": False, "sliced": True, "cooked": False, "supported_by": ["Sink"]}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"CounterTop_33": {"label": "CounterTop"}
+"CounterTop_34": {"label": "CounterTop"}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Cabinet_39": {"label": "Cabinet", "open": False}
+"Cabinet_40": {"label": "Cabinet", "open": False}
+"Cabinet_41": {"label": "Cabinet", "open": False}
+"Cabinet_42": {"label": "Cabinet", "open": False}
+"Cabinet_43": {"label": "Cabinet", "open": False}
+"Cabinet_44": {"label": "Cabinet", "open": False}
+"Cabinet_45": {"label": "Cabinet", "open": False}
+"Cabinet_46": {"label": "Cabinet", "open": False}
+"Cabinet_47": {"label": "Cabinet", "open": False}
+"Bowl_48": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Knife_51": {"label": "Knife", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"SaltShaker_58": {"label": "SaltShaker", "holding": False, "supported_by": ["DiningTable"]}
+"Fridge_67": {"label": "Fridge", "open": False}
+"Pot_68": {"label": "Pot", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner"]}
+"Potato_69": {"label": "Potato", "holding": False, "sliced": True, "cooked": False, "supported_by": ["Sink"]}
+"SinkBasin_70": {"label": "SinkBasin"}
+"Knife_72": {"label": "Knife", "holding": True, "supported_by": ["CounterTop"]}
+"Tomato_79": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Chair"]}
+"Cup_81": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Safe_88": {"label": "Safe", "open": False}
+"Faucet_89": {"label": "Faucet", "toggled": True}
+"PotatoSliced_94": {"label": "PotatoSliced", "holding": False, "cooked": False, "supported_by": ["Sink"]}
+"TomatoSliced_95": {"label": "TomatoSliced", "holding": False, "cooked": False, "supported_by": ["Sink"]}

@@ -1,0 +1,38 @@
+# Initialize InteractionObject instances for the tomato, knife, and plate
+tomato = InteractionObject("Tomato", object_instance="Tomato_2")  # Tomato on the dining table
+knife = InteractionObject("Knife", object_instance="Knife_78")  # Knife on the dining table
+plate = InteractionObject("Plate", object_instance="Plate_60")  # Plate on the dining table
+
+# Go to the knife and pick it up
+knife.go_to()
+knife.pickup()
+
+# Go to the tomato, pick it up, and slice it
+tomato.go_to()
+tomato.pickup()
+tomato.slice()
+
+# Initialize new sliced objects from the sliced parent tomato
+tomato_sliced_1 = InteractionObject("TomatoSliced", parent_object=tomato.object_instance)
+tomato_sliced_2 = InteractionObject("TomatoSliced", parent_object=tomato.object_instance)
+
+# Go to the plate and check if it is clean
+plate.go_to()
+if plate.check_attribute("dirty", True):
+    # If the plate is dirty, clean it
+    sink = InteractionObject("SinkBasin", object_instance="SinkBasin_63")
+    faucet = InteractionObject("Faucet", object_instance="Faucet_86")
+    soap = InteractionObject("SoapBottle", object_instance="SoapBottle_16")
+    plate.pickup()
+    sink.go_to()
+    faucet.toggle_on()  # Turn on the faucet to clean the plate
+    # Assuming cleaning requires soap, but the API does not provide a method to use soap, so this step is implied
+    faucet.toggle_off()  # Turn off the faucet after cleaning
+    plate.pickup()  # Pick up the clean plate
+    plate.change_state("dirty", False)  # Update the plate's state to clean
+
+# Place two slices of tomato onto the clean plate
+tomato_sliced_1.pickup()
+tomato_sliced_1.place(plate)
+tomato_sliced_2.pickup()
+tomato_sliced_2.place(plate)

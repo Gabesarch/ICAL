@@ -1,0 +1,30 @@
+"Lettuce_3": {"label": "Lettuce", "holding": False, "sliced": True, "supported_by": ["CounterTop"]}
+"Bread_8": {"label": "Bread", "holding": False, "sliced": True, "cooked": False, "supported_by": ["CounterTop"]}
+"Knife_9": {"label": "Knife", "holding": True, "supported_by": ["Stool"]}
+"CounterTop_19": {"label": "CounterTop"}
+"Cabinet_20": {"label": "Cabinet", "open": False}
+"CounterTop_21": {"label": "CounterTop"}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_40": {"label": "Cabinet", "open": False}
+"Cabinet_43": {"label": "Cabinet", "open": False}
+"CounterTop_44": {"label": "CounterTop"}
+"Bread_48": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Fork_49": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Toaster_53": {"label": "Toaster", "toggled": False}
+"SoapBottle_54": {"label": "SoapBottle", "holding": False, "supported_by": ["CounterTop"]}
+"Pan_57": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Plate_58": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"SinkBasin_74": {"label": "SinkBasin"}
+"PepperShaker_76": {"label": "PepperShaker", "holding": False, "supported_by": ["CounterTop"]}
+"Lettuce_77": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Fridge"]}
+"DishSponge_80": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Stool_87": {"label": "Stool"}
+"Faucet_88": {"label": "Faucet", "toggled": False}
+"BreadSliced_89": {"label": "BreadSliced", "holding": False, "cooked": True, "supported_by": ["CounterTop"]}
+"BreadSliced_90": {"label": "BreadSliced", "holding": False, "cooked": True, "supported_by": ["CounterTop"]}
+"LettuceSliced_91": {"label": "LettuceSliced", "holding": False, "supported_by": ["CounterTop"]}

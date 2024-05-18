@@ -1,0 +1,13 @@
+# Define InteractionObject instances for the tissue box and the dining table
+tissue_box_shelf = InteractionObject("TissueBox", object_instance="TissueBox_3")  # Tissue box on the shelf to the left
+dining_table_right_corner = InteractionObject("DiningTable", object_instance="DiningTable_25")  # Dining table to the extreme right corner
+
+# (causal abstraction) Navigate to the tissue box and pick it up
+tissue_box_shelf.go_to()
+tissue_box_shelf.pickup()
+
+# (causal abstraction) Navigate to the dining table and place the tissue box on it
+dining_table_right_corner.go_to()
+tissue_box_shelf.place(dining_table_right_corner)
+
+# The tissue box is now placed on the dining table as per the Commander's instruction

@@ -1,0 +1,45 @@
+# Initialize InteractionObject instances for the knife, tomato, and plate
+knife = InteractionObject("Knife", object_instance="Knife_7")  # Knife on the countertop
+tomato = InteractionObject("Tomato", object_instance="Tomato_5")  # Tomato on the stool
+plate = InteractionObject("Plate", object_instance="Plate_46")  # Dirty plate on the dining table
+sink = InteractionObject("SinkBasin", object_instance="SinkBasin_56")  # Sink basin
+faucet = InteractionObject("Faucet", object_instance="Faucet_73")  # Faucet
+
+# Go to the dirty plate and pick it up
+plate.go_to()
+plate.pickup()
+
+# Go to the sink basin to clean the plate
+sink.go_to()
+plate.place(sink)
+
+# Turn on the faucet to clean the plate
+faucet.go_to()
+faucet.toggle_on()
+faucet.toggle_off()
+
+# Pick up the clean plate and update its state
+plate.pickup()
+plate.change_state("dirty", False)
+
+# Go to the tomato and pick up the knife
+tomato.go_to()
+knife.pickup()
+
+# Slice the tomato into two slices
+tomato.slice()
+
+# Initialize new sliced objects from the sliced parent tomato
+tomato_sliced_1 = InteractionObject("TomatoSliced", parent_object=tomato.object_instance)
+tomato_sliced_2 = InteractionObject("TomatoSliced", parent_object=tomato.object_instance)
+
+# Place two slices of tomato onto the clean plate
+tomato_sliced_1.pickup()
+tomato_sliced_1.place(plate)
+tomato_sliced_2.pickup()
+tomato_sliced_2.place(plate)
+
+# Causal abstraction comments:
+# The plate is cleaned first to ensure hygiene and to provide a suitable surface for the food.
+# The tomato is sliced to prepare it for serving, as per the task requirements.
+# Two slices of tomato are placed onto the plate, completing the task of serving sliced tomato on a clean plate.

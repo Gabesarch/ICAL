@@ -1,0 +1,1 @@
+The revised script will collect all newspapers from their current locations and place them onto a single chair, as instructed by the dialogue.

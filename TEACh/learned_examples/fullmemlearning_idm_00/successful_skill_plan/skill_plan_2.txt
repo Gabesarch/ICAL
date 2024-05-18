@@ -1,0 +1,9 @@
+1. Go to the knife and pick it up.
+2. Go to the lettuce on the dining table, slice it, and create instances for the sliced lettuce.
+3. Go to the tomato on the chair, slice it, and create an instance for the sliced tomato.
+4. Go to the potato on the plate on the dining table, pick it up.
+5. Go to the microwave, open it, place the potato inside, close it, turn it on, then turn it off, open it, and take out the potato.
+6. Update the potato's "cooked" state to True.
+7. Slice the potato and create an instance for the sliced potato.
+8. Update the sliced potato's "cooked" state to True.
+9. Go to the plate on the dining table and arrange the sliced lettuce, tomato, and potato on it.

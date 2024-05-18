@@ -1,0 +1,66 @@
+# Retrieve the knife from the fridge
+fridge = InteractionObject("Fridge", object_instance="Fridge_70")
+fridge.go_to()
+fridge.open()
+knife = InteractionObject("Knife", object_instance="Knife_7")  # Knife is in the fridge
+knife.go_to()
+knife.pickup()
+fridge.close()
+
+# Retrieve the lettuce from under the sink, slice it twice, and create instances for the sliced lettuce
+lettuce = InteractionObject("Lettuce", object_instance="Lettuce_76")  # Lettuce is under the sink
+lettuce.go_to()
+lettuce.pickup()
+lettuce.slice()
+lettuce_sliced_1 = InteractionObject("LettuceSliced", parent_object=lettuce.object_instance)  # Initialize new sliced object from sliced parent
+lettuce.slice()
+lettuce_sliced_2 = InteractionObject("LettuceSliced", parent_object=lettuce.object_instance)  # Initialize new sliced object from sliced parent
+
+# Retrieve the potato from the chair, slice it, and create an instance for the sliced potato
+potato = InteractionObject("Potato", object_instance="Potato_5")  # Potato is on the chair
+potato.go_to()
+potato.pickup()
+potato.slice()
+potato_sliced = InteractionObject("PotatoSliced", parent_object=potato.object_instance)  # Initialize new sliced object from sliced parent
+
+# Cook the sliced potato in the microwave
+microwave = InteractionObject("Microwave", object_instance="Microwave_46")
+microwave.go_to()
+microwave.open()
+potato_sliced.pickup()
+potato_sliced.place(microwave)
+microwave.close()
+microwave.toggle_on()
+microwave.toggle_off()
+microwave.open()
+potato_sliced.pickup()  # Retrieve the now cooked potato slice
+potato_sliced.change_state("cooked", True)  # Update the potato slice's state to cooked
+microwave.close()
+
+# Clean the dirty plate next to the stove
+plate = InteractionObject("Plate", object_instance="Plate_57")  # Plate is dirty and next to the stove
+plate.go_to()
+sinkbasin = InteractionObject("SinkBasin", object_instance="SinkBasin_73")
+faucet = InteractionObject("Faucet", object_instance="Faucet_87")
+plate.pickup()
+sinkbasin.go_to()
+plate.place(sinkbasin)
+faucet.go_to()
+faucet.toggle_on()
+faucet.toggle_off()
+plate.pickup()  # Pick up the clean plate
+plate.change_state("dirty", False)  # Update the plate's state to clean
+
+# Assemble the salad on the clean plate with two slices of lettuce and one cooked potato slice
+lettuce_sliced_1.pickup()
+lettuce_sliced_1.place(plate)
+lettuce_sliced_2.pickup()
+lettuce_sliced_2.place(plate)
+potato_sliced.place(plate)  # Place the cooked potato slice on the plate
+
+# Causal abstraction comments:
+# The knife is retrieved from the fridge to slice the lettuce, which is necessary for the salad.
+# The lettuce is sliced twice to provide enough components for the salad, as instructed.
+# The potato is sliced and then cooked in the microwave, fulfilling the requirement to have a cooked potato slice in the salad.
+# The dirty plate is cleaned to ensure a hygienic presentation of the salad.
+# The salad is assembled on the clean plate, with the specified quantities of lettuce and potato, as per the dialogue instructions.

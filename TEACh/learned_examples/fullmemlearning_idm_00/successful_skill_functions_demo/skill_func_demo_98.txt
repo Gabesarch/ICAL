@@ -1,0 +1,5 @@
+```python
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_potato.pickup_and_place(target_pot)
+```

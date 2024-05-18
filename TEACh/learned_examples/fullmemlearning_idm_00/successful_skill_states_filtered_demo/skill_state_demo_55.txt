@@ -1,0 +1,9 @@
+"TissueBox_2": {"label": "TissueBox", "holding": False, "supported_by": ["DiningTable"]}
+"Plate_4": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"TissueBox_6": {"label": "TissueBox", "holding": False, "supported_by": ["CoffeeTable"]}
+"Box_7": {"label": "Box", "holding": False, "open": True, "supported_by": ["DiningTable"]}
+"TissueBox_17": {"label": "TissueBox", "holding": False, "supported_by": ["Plate", "DiningTable"]}
+"Sofa_43": {"label": "Sofa"}
+"CoffeeTable_47": {"label": "CoffeeTable"}
+"DiningTable_50": {"label": "DiningTable"}
+"CoffeeTable_56": {"label": "CoffeeTable"}

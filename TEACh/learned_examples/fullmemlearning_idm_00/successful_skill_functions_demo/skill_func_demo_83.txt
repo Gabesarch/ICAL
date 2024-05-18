@@ -1,0 +1,6 @@
+```python
+target_tissuebox = InteractionObject("TissueBox", object_instance = "TissueBox")
+target_sidetable = InteractionObject("SideTable", object_instance = "SideTable")
+target_tissuebox.pickup_and_place(target_sidetable)
+target_tissuebox.place(target_sidetable)
+```

@@ -1,0 +1,28 @@
+# Define InteractionObject instances for the potato, pot, and stove burner
+potato_to_boil = InteractionObject("Potato", object_instance="Potato_75")  # The potato on the left side of the fridge
+pot_with_water = InteractionObject("Pot", object_instance="Pot_5")  # The pot on the stove burner
+stove_burner = InteractionObject("StoveBurner", object_instance="StoveBurner_34")  # The stove burner under the selected pot
+
+# (causal abstraction) Navigate to the specified potato and pick it up
+potato_to_boil.go_to()
+potato_to_boil.pickup()
+
+# (causal abstraction) Navigate to the pot on the stove burner
+pot_with_water.go_to()
+
+# (causal abstraction) Check if the pot is filled with water, fill it if necessary
+if not pot_with_water.check_attribute("filled", True):
+    faucet = InteractionObject("Faucet", object_instance="Faucet_59")
+    faucet.go_to()
+    faucet.toggle_on()  # Fill the pot with water
+    faucet.toggle_off()
+
+# (causal abstraction) Place the potato in the pot with water
+potato_to_boil.place(pot_with_water)
+
+# (causal abstraction) Turn on the stove burner to start boiling the potato
+stove_burner.go_to()
+stove_burner.toggle_on()
+
+# (causal abstraction) Update the potato's state to "cooked" after boiling
+potato_to_boil.change_state("cooked", True)

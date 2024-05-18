@@ -1,0 +1,39 @@
+# Define InteractionObject instances for the potato, microwave, knife, and plate
+potato = InteractionObject("Potato", object_instance="Potato_52")  # Potato on the dining table
+microwave = InteractionObject("Microwave", object_instance="Microwave_43")  # Microwave in the kitchen
+knife = InteractionObject("Knife", object_instance="Knife_61")  # Knife on the countertop
+plate = InteractionObject("Plate", object_instance="Plate_5")  # Plate on the stool
+
+# Cook the potato in the microwave
+potato.go_to()
+potato.pickup()
+microwave.go_to()
+potato.place(microwave)
+microwave.toggle_on()  # Start cooking the potato
+# Wait for the potato to cook (this step is abstracted in the script)
+microwave.toggle_off()  # Stop cooking after it's done
+microwave.open()
+potato.pickup()  # Retrieve the cooked potato
+potato.change_state("cooked", True)  # Update the potato's state to cooked
+
+# Slice the cooked potato
+knife.go_to()
+knife.pickup()
+potato.slice()
+potato_sliced_1 = InteractionObject("PotatoSliced", parent_object=potato.object_instance)  # Initialize new sliced object from sliced parent
+potato_sliced_2 = InteractionObject("PotatoSliced", parent_object=potato.object_instance)  # Initialize new sliced object from sliced parent
+potato_sliced_3 = InteractionObject("PotatoSliced", parent_object=potato.object_instance)  # Initialize new sliced object from sliced parent
+
+# Place three slices of the cooked potato on the plate
+plate.go_to()
+potato_sliced_1.pickup()
+potato_sliced_1.place(plate)
+potato_sliced_2.pickup()
+potato_sliced_2.place(plate)
+potato_sliced_3.pickup()
+potato_sliced_3.place(plate)
+
+# Causal abstraction comments:
+# The potato is cooked in the microwave to fulfill the requirement of being cooked before slicing.
+# The knife is used to slice the cooked potato into pieces, as instructed by the Commander.
+# The plate is identified and used to hold the potato slices, completing the task of serving the potato.

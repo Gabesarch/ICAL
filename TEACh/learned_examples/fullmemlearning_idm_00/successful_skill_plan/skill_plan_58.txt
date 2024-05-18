@@ -1,0 +1,7 @@
+1. Retrieve a knife from the countertop.
+2. Slice the bread and create instances for the sliced bread.
+3. Toast two slices of bread in the toaster.
+4. Check if the plate on the dining table is clean; if not, clean it.
+5. Retrieve a tomato from the stool.
+6. Slice the tomato and create instances for the sliced tomato.
+7. Assemble the toasted bread and tomato slices on the clean plate.

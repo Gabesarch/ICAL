@@ -1,0 +1,9 @@
+"Newspaper_2": {"label": "Newspaper", "holding": False, "supported_by": ["Floor", "CoffeeTable"]}
+"Newspaper_5": {"label": "Newspaper", "holding": False, "supported_by": ["Floor", "Shelf"]}
+"Box_6": {"label": "Box", "holding": False, "open": True, "supported_by": ["TVStand"]}
+"Newspaper_8": {"label": "Newspaper", "holding": False, "supported_by": ["Box", "TVStand"]}
+"CoffeeTable_27": {"label": "CoffeeTable"}
+"TVStand_33": {"label": "TVStand"}
+"Shelf_35": {"label": "Shelf"}
+"Chair_36": {"label": "Chair"}
+"Sofa_37": {"label": "Sofa"}

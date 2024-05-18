@@ -1,0 +1,1 @@
+{"0": {"id": 2, "label": "Box", "attribute": "emptied", "before": false, "after": true}, "1": {"id": 4, "label": "Watch", "attribute": "0", "before": "Sofa", "after": "Box"}, "2": {"id": 18, "label": "Laptop", "attribute": "0", "before": "Sofa", "after": "CoffeeTable"}, "3": {"id": 20, "label": "Watch", "attribute": "0", "before": "Sofa", "after": "Box"}}

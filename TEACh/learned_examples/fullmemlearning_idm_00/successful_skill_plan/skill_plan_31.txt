@@ -1,0 +1,6 @@
+1. Go to the fridge and retrieve the bread.
+2. Go to the microwave and retrieve the knife.
+3. Slice the bread and create an instance for the sliced bread.
+4. Go to the toaster and toast a slice of bread.
+5. Retrieve a clean plate from next to the stove.
+6. Place the toasted bread on the clean plate.

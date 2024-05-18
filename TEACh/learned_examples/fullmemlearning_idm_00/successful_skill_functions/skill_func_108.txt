@@ -1,0 +1,36 @@
+# Initialize InteractionObject instances for the knife, tomato, and plate
+knife = InteractionObject("Knife", object_instance="Knife_72")  # Knife close to the oven
+tomato = InteractionObject("Tomato", object_instance="Tomato_79")  # Tomato on the counter
+drawer_for_plate = InteractionObject("Drawer", object_instance="Drawer_45")  # Drawer to the right, farthest from the ones beneath the sink
+
+# Pick up the knife
+knife.go_to()
+knife.pickup()
+
+# Pick up the tomato and slice it
+tomato.go_to()
+tomato.pickup()
+tomato.slice()
+
+# Initialize new sliced objects from the sliced parent tomato
+tomato_sliced_1 = InteractionObject("TomatoSliced", parent_object=tomato.object_instance)
+tomato_sliced_2 = InteractionObject("TomatoSliced", parent_object=tomato.object_instance)
+
+# Find a clean plate in the specified drawer
+drawer_for_plate.go_to()
+drawer_for_plate.open()
+plate = InteractionObject("Plate", object_instance="Plate_65")  # Assuming the plate is in the last drawer instance
+plate.go_to()
+plate.pickup()
+
+# Place two slices of tomato onto the clean plate
+tomato_sliced_1.pickup()
+tomato_sliced_1.place(plate)
+tomato_sliced_2.pickup()
+tomato_sliced_2.place(plate)
+
+# Causal abstraction comments:
+# The knife is picked up to slice the tomato, which is necessary to create slices for serving.
+# The tomato is sliced to provide fresh ingredients for serving.
+# A clean plate is retrieved from the specified drawer to ensure hygiene and presentation.
+# Two slices of tomato are placed onto the plate, fulfilling the requirement to serve two slices as per the dialogue instructions.

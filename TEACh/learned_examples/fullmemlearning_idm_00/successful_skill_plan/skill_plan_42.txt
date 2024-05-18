@@ -1,0 +1,4 @@
+1. Go to the microwave, open it, and retrieve the apple.
+2. Go to the fridge, open it, and place the apple inside.
+3. Find the apple on the edge of the table, pick it up, and place it in the fridge.
+4. Close the fridge.
