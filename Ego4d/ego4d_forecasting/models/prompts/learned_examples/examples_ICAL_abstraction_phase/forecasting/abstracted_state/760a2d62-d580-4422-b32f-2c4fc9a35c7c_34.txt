@@ -1,0 +1,5 @@
+ID [10] Mop
+ID [1] Right arm of user
+ID [3] Left arm of user
+ID [5] Toilet
+ID [11] Floor

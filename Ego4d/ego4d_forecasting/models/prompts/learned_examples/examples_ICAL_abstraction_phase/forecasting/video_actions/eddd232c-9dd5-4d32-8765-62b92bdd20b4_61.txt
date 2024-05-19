@@ -1,0 +1,1 @@
+1. take_(pick,_grab,_get) plant_(bud,_frond,_plant,_reed,_seedling,_shrub,_stem,_vine,_weed)

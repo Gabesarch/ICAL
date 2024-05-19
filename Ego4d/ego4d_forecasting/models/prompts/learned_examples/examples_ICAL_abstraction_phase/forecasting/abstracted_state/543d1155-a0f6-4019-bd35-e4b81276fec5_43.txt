@@ -1,0 +1,6 @@
+ID [2] Pastry being prepared
+ID [1] User's body, indicating the position and orientation of the user
+ID [3] Right hand of the user, which is involved in the action
+ID [4] Left hand of the user, which is involved in the action
+ID [9] Mixing bowl containing the pastry
+ID [13] Spoon used for mixing

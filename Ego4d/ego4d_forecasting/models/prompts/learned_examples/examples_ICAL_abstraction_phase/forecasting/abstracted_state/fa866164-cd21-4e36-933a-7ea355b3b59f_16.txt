@@ -1,0 +1,8 @@
+ID [1] Wood piece
+ID [2] User's body
+ID [3] Right hand of user
+ID [4] Left hand of user
+ID [5] Metal ruler or straight edge tool
+ID [7] Blue container or toolbox
+ID [8] Orange wristband or identifier on user's right wrist
+ID [9] Hose or cable on the floor

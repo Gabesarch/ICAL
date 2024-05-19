@@ -1,0 +1,6 @@
+ID [1] Pot filled with water
+ID [4] Faucet
+ID [10] Brush
+ID [14] Left hand of user
+ID [16] Right hand of user
+ID [15] Door

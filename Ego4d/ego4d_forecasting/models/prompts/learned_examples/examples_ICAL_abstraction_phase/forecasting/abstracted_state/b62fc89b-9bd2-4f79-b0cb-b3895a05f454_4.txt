@@ -1,0 +1,4 @@
+ID [1] Fridge from which the bottle is taken
+ID [2] Right hand of the user taking the bottle
+ID [3] Bottle being taken from the fridge
+ID [4] Floor of the room

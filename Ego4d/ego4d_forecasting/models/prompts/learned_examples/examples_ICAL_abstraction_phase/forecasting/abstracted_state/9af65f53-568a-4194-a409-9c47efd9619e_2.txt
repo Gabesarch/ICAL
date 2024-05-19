@@ -1,0 +1,6 @@
+ID [1] Canvas with a painting in progress
+ID [16] Palette with paint
+ID [15] Right hand of user with a paintbrush
+ID [14] Left hand of user covering paint
+ID [8] Easel holding the canvas
+ID [3] Table with painting supplies

@@ -1,0 +1,6 @@
+ID [5] Card being moved by the user
+ID [8] Pin on the table
+ID [17] User's right hand
+ID [23] User's left hand
+ID [6] Playing board
+ID [12] Plate with fries

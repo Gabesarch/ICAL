@@ -1,0 +1,5 @@
+ID [1] Paper being drawn on
+ID [15] Pencil in the user's hand
+ID [4] Paintbrush on the table
+ID [9] Phone possibly used for reference
+ID [5] Container with various art supplies

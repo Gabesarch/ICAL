@@ -1,0 +1,1 @@
+The dish in the sink will go from dirty to clean. The user will pick up and wash various items from the countertop, changing their state from dirty to clean. The sink will be used continuously for washing, and the dishwashing liquid will decrease in volume as it is used.

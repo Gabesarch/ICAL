@@ -1,0 +1,1 @@
+The user is seen cutting a string (ID 25) with scissors (ID 13) and manipulating a mask (ID 22). The user's actions suggest they are in the process of sewing or preparing to sew, as indicated by the presence of a sewing machine (ID 2).

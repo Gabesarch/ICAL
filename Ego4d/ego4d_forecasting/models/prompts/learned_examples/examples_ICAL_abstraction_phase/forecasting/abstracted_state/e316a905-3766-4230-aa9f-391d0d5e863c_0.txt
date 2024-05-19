@@ -1,0 +1,6 @@
+ID [7] Wrench being used on the engine
+ID [11] Engine being worked on
+ID [2] Right hand of the user holding the wrench
+ID [4] Left hand of the user supporting the work
+ID [16] Clamp on the engine
+ID [5] Workbench where the engine is placed

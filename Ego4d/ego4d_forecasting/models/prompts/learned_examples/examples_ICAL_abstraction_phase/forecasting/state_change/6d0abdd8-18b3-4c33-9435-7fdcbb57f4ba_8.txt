@@ -1,0 +1,1 @@
+The car will transition from being dirty to clean as the user washes it. The sponge will alternate between being dry, dipped in water, and then used for washing, becoming soapy and wet. The wheel and wipers will also change from dirty to clean as they are washed.

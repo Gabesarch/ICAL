@@ -1,0 +1,6 @@
+ID [35] Wood being moved
+ID [16] Tape measure
+ID [3] Right arm of user
+ID [4] Left arm of user
+ID [6] Workbench or table
+ID [14] Ground or floor

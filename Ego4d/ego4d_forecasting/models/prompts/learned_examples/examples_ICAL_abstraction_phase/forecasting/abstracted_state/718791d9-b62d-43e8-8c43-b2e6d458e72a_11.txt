@@ -1,0 +1,4 @@
+ID [6] Radio being held
+ID [2] Right arm of user
+ID [3] Left arm of user
+ID [4,7,8,9] Components of the radio

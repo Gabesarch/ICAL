@@ -1,0 +1,4 @@
+ID [1] Multimeter
+ID [2] Right hand of user holding the multimeter
+ID [3] Electrical panel
+ID [4] Wire being tested with the multimeter

@@ -1,0 +1,1 @@
+The container will change from being open or misaligned to being closed or properly adjusted. The toolbox will change from closed to open as the user retrieves items, and then back to closed after use. Tools will be moved from their storage location to being in use and then returned.

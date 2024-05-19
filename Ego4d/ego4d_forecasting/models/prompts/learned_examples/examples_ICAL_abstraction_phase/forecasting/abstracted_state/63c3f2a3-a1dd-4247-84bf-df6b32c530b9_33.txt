@@ -1,0 +1,9 @@
+ID [2] Wood being held
+ID [4] Right arm of user
+ID [5] Left arm of user
+ID [7] Hammer
+ID [9] Orange bucket, possibly containing tools or materials
+ID [10] Workbench
+ID [13] Clamp on workbench
+ID [15] Metal object on workbench
+ID [20] Additional piece of wood on workbench

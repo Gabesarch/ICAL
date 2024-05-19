@@ -1,0 +1,1 @@
+The user is holding a caliper (ID 1) with their right hand (ID 4), which suggests they are measuring or preparing to mark a piece of metal (ID 2). The future actions involve drilling the caliper, which implies the user will use the caliper for precise measurements before making holes in the metal part.

@@ -1,0 +1,1 @@
+The car goes from being dirty to clean as the user wipes it down. The wiper is initially in the user's hand and is later placed down, indicating a change in the state of use. The user may also open the car, suggesting a change from closed to open.

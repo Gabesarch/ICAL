@@ -1,0 +1,6 @@
+ID [1] Bed being made
+ID [6] User's right hand
+ID [7] User's left hand
+ID [5] Cloth items on the bed
+ID [8] Mat on the floor
+ID [9] Papers on the bed

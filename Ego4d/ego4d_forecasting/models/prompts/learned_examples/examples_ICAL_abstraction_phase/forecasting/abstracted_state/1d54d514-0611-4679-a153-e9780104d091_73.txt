@@ -1,0 +1,5 @@
+ID [2] Jug being manipulated by the user
+ID [1] User's body, indicating the position and orientation of the user
+ID [3] Countertop, likely the surface where food preparation or other related tasks are performed
+ID [4] Paper or cloth, possibly for cleaning or covering surfaces
+ID [5] Kitchen equipment or appliances, context for the setting

@@ -1,0 +1,2 @@
+ID [1] Brick being placed
+ID [2] Sand surface where bricks are being laid

@@ -1,0 +1,5 @@
+1. The user is wearing gloves, which suggests that they are preparing for a cleaning task where they might come into contact with chemicals or dirt.
+2. The napkin is the focus of the current action, indicating it will be used shortly for wiping or cleaning.
+3. The proximity of the toilet suggests that it might be the object to be cleaned.
+4. The presence of a lid and the future action of opening it suggest that the user will clean inside the toilet as well.
+5. The sequence of actions involving the napkin, from stretching to wiping to disposing, indicates a complete cleaning cycle for a single-use item.

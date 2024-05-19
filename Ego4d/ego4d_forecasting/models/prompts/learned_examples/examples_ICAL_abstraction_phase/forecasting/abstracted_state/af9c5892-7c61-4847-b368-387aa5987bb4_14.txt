@@ -1,0 +1,9 @@
+ID [1] Wrench being held by the user
+ID [2] Right hand of the user
+ID [3] Left hand of the user
+ID [7] Red toolbox or container
+ID [9] Soil or dirt area
+ID [12] Red shovel
+ID [14] Green grass
+ID [15] Brown handle of an unidentified tool or equipment
+ID [18] Wheel or circular object

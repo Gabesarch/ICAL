@@ -1,0 +1,4 @@
+ID [5] Black piece of wood
+ID [1] Right arm of user
+ID [10] Ladder
+ID [8, 11] Ladder rung

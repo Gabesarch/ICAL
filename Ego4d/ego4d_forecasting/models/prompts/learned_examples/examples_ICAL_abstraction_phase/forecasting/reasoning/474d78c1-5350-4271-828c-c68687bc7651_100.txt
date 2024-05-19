@@ -1,0 +1,1 @@
+The user is currently moving a spoon (ID 10) under running water (ID 22), likely rinsing it off after applying dish soap (ID 24). The user will likely continue to clean the spoon with a sponge (ID 18), rinse it, and then place it aside to dry. The bowl (ID 16) will also be cleaned in a similar manner.

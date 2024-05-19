@@ -1,0 +1,4 @@
+ID [1] Sponge being used for washing
+ID [2, 3] User's hands dipping the sponge
+ID [5] Bucket containing soapy water
+ID [4] Hose likely used for rinsing

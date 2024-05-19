@@ -1,0 +1,5 @@
+ID [50] Pencil
+ID [2] Tape measure
+ID [23] Wood plank
+ID [3] Right hand of user holding the pencil
+ID [33] Left hand of user holding the tape measure

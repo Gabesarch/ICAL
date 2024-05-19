@@ -1,0 +1,1 @@
+1. turn_(spin,_rotate,_flip,_turn_over) wire_(adapter,_cable,_charger,_connector,_cord,_wire)

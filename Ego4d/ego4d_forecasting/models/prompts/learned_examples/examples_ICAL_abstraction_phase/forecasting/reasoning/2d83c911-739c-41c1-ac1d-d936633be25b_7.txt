@@ -1,0 +1,1 @@
+The user is currently drawing on a piece of paper (ID 1) using their right hand (ID 2) while the left hand (ID 4) is stabilizing the paper. Given the materials and actions, the user is likely to continue drawing, occasionally cleaning the paper or wiping away debris, and may use other materials on the table (ID 5) as part of the drawing process.

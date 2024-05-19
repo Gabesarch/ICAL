@@ -1,0 +1,4 @@
+1. The user's hand is in contact with the plant, indicating that the plant is the focus of the current task.
+2. The presence of a bucket (ID 9) near the user suggests it will be used for carrying soil or waste.
+3. The gravel ground (IDs 1, 2, 3) indicates outdoor activity, likely gardening, which involves planting and soil management.
+4. The sequence of actions suggests a cycle of taking plants, placing them, and then cleaning up, which is typical in gardening tasks.

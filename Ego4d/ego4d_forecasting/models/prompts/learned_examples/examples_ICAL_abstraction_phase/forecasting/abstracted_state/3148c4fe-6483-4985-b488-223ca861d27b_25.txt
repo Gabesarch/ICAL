@@ -1,0 +1,4 @@
+ID [1] Red car being cleaned
+ID [2] Right hand of user holding the wiper
+ID [14] Left hand of user assisting in cleaning
+ID [16] Wiper used for cleaning the car

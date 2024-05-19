@@ -1,0 +1,4 @@
+ID [8] Bag, possibly containing laundry items
+ID [12] Washing machine
+ID [13] Drawer, potentially containing detergent or washing supplies
+ID [14] Cloth items on the bed, possibly to be washed

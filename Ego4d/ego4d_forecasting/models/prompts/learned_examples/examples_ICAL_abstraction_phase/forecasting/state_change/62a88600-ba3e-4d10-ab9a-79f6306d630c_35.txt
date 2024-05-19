@@ -1,0 +1,1 @@
+The tablet will change from showing the home screen to different applications or screens as the user operates it. The pen will be held and moved by the user to interact with the tablet. The tablet may be lifted and placed down again, indicating a change in its position.

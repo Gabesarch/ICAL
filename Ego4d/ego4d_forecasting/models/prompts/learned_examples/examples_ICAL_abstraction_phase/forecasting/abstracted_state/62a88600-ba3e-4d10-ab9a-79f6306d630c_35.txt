@@ -1,0 +1,4 @@
+ID [2] Tablet being operated
+ID [5] Pen being used to interact with the tablet
+ID [3] Cardboard or paper under the tablet
+ID [4] Laptop nearby, possibly related to the task

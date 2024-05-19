@@ -1,0 +1,1 @@
+The cloth will change from being soaked in water to being wrung out and possibly beaten to remove dirt and water. The basin's water may become dirty as the washing progresses. The pile of clothes (ID 7) will decrease as each item is washed and moved to a different location.

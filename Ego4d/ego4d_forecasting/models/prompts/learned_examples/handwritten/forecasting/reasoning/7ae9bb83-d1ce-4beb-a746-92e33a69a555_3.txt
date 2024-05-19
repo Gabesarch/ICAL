@@ -1,0 +1,1 @@
+The individual is holding a black piece of wood (ID [5]) with their right arm (ID [1]) and is reaching to a screw (not in view) that they are going to place on the wood. The individual is likely screwing together wood pieces which would require action sequences involving screws, wood, and a drill. 

@@ -1,0 +1,1 @@
+The wood will be moved from being lifted to being placed down in a specific position. The drill will be used, causing it to change from a resting state to an active state as it drills into the wood. Screws will be taken and placed into the wood, changing from a loose state to being attached to the wood.

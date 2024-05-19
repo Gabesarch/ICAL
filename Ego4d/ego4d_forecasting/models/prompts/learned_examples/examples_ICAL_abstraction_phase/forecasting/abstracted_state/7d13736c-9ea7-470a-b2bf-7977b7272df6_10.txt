@@ -1,0 +1,5 @@
+ID [17] Cloth being manipulated
+ID [16] Left hand of user
+ID [2] Right hand of user
+ID [8] Bucket possibly containing water or dye
+ID [1] Large container, possibly for rinsing or storing water

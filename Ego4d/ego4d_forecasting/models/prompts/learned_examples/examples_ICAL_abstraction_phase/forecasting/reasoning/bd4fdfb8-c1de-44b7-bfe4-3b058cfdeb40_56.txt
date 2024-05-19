@@ -1,0 +1,1 @@
+The user is lifting a jug (ID 16) with their right arm (ID 7), indicating they are about to perform an action with it, such as filling it with water or washing it. The proximity to the faucet (ID 14) and the presence of cleaning supplies (IDs 19 and 22) suggest that the user will engage in cleaning activities.

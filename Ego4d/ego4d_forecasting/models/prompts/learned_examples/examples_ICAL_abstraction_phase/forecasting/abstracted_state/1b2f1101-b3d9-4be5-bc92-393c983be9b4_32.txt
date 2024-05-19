@@ -1,0 +1,5 @@
+ID [13] Metal chip being held
+ID [2] Right hand of user
+ID [20] Left hand of user
+ID [7] Blue tape roll
+ID [42] White container

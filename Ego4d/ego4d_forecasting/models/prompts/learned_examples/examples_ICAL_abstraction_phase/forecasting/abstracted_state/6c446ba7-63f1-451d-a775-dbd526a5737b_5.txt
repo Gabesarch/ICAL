@@ -1,0 +1,5 @@
+ID [2] Pants that are the focus of the user's actions
+ID [3] Right hand of the user, manipulating the pants
+ID [4] Left hand of the user, manipulating the pants
+ID [6] Blue cloth, possibly related to the washing task
+ID [1] Floor, where the user is performing the task

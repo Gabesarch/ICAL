@@ -1,0 +1,1 @@
+The user is moving a card (ID 5) with their hands (IDs 17 & 23), indicating they are playing a card game. The presence of pins (ID 8) suggests that the game involves using pins, possibly to mark positions or scores on the playing board (ID 6).

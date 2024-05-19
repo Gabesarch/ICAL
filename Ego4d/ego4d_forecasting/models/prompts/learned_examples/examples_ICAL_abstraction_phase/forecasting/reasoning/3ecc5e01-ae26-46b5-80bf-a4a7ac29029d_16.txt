@@ -1,0 +1,1 @@
+The user is currently painting a stone (ID 4) with a paintbrush (ID 20). The user is likely to continue this activity, which involves using various colors (IDs 1, 9, 10, 11, 13, 14, 15, 16, 27), and may need to open and close paint tubes, hence the lid (ID 18) is relevant.

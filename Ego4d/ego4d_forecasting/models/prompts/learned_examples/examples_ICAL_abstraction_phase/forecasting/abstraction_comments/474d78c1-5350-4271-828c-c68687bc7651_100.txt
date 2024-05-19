@@ -1,0 +1,5 @@
+1. The spoon is the focus of the current action, indicating it is being cleaned first.
+2. The presence of the sponge and dish soap suggests a cleaning task is underway.
+3. The bowl is in the sink but not the focus of the current action, indicating it will be cleaned next.
+4. The running water is essential for the cleaning process, indicating it will be used throughout the task.
+5. The user's hands are actively involved in the task, suggesting that future actions will also involve manual cleaning.

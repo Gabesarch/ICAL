@@ -1,0 +1,5 @@
+ID [1] Switch that is being turned on
+ID [5] Wood piece on the table
+ID [8] Metal panel on the table
+ID [12] Cabinet in the vicinity
+ID [9] Door in the background

@@ -1,0 +1,23 @@
+ID [2] Drawer being opened
+ID [1] Floor
+ID [3] Toolbox
+ID [4] Cardboard box
+ID [5] White bag
+ID [6] Black bag
+ID [7] Door
+ID [8] Cabinet
+ID [9] Wall
+ID [10] Shelf with various items
+ID [11] Red tool
+ID [12] Electrical panel
+ID [13] White socket
+ID [14] White door frame
+ID [15] Black electronic device
+ID [16] Blue container
+ID [17] White container
+ID [18] Black container
+ID [19] Grey container
+ID [20] White device on shelf
+ID [21] Black device on shelf
+ID [22] Red device on shelf
+ID [23] Red toolbox

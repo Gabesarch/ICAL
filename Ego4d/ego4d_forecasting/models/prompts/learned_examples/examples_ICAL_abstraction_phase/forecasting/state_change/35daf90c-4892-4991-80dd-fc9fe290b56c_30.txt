@@ -1,0 +1,1 @@
+The string will go from being tied to untied and possibly discarded. The shoe may be moved, cleaned, or have something applied to it. The towel might be used for drying or cleaning and then placed elsewhere. The faucet's state will change from off to on for water usage. The cabinet may be opened and closed, and items like the bottle may be taken out or put away.

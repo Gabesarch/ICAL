@@ -1,0 +1,4 @@
+1. It is necessary for the screw to be picked up and put on the wood before drilling into the wood.
+2. Pay attention to what is in the user's hand and where the user is looking in the video. For example, here the user is clearly holding a piece of wood, and thus is likely screwing into the wood and building something with it.
+3. There are other objects surrounding the user, such as a ladder. However, this doesn't seem to be directly relevant to the task in this case. Some items in the peripheral view may or may not be relevant for the action prediction.
+4. Although I do not directly see a drill in the video, I predicted a drill to be used later since a screw is being placed in the wood. 

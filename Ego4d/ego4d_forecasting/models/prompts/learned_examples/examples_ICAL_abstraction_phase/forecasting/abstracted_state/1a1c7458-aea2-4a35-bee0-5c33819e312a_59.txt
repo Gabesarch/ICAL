@@ -1,0 +1,9 @@
+ID [29] Soldering iron being moved
+ID [9] Electronic device, possibly a radio
+ID [27] Lid of the device
+ID [33] Battery inside the device
+ID [31] Switch on the device
+ID [23] Pliers, a tool likely to be used
+ID [19] Metal component, possibly for repair or assembly
+ID [13] Clip, potentially for holding components in place
+ID [18] Container for storing small parts or tools

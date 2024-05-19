@@ -1,0 +1,1 @@
+The user is seen taking a bottle from the fridge (ID 1) with their right hand (ID 2). This action suggests that the user will use the bottle for a subsequent task, possibly involving pouring a liquid from the bottle.

@@ -1,0 +1,6 @@
+ID [33] Wire that the user is holding
+ID [5] Electrical outlet
+ID [15] Phone on the floor
+ID [10] User's right hand interacting with the wire
+ID [14] User's left hand interacting with the wire
+ID [7] Desk or table near the user

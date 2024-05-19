@@ -1,0 +1,5 @@
+1. The object in the center of view for the entirety of the video is dough, indicating this is a main object for the task the user is performing.
+2. The user's hands are directly interacting with the dough, indicating an action relating to working with the dough with the user's hands.
+3. The scene seems to be a kitchen scene which would indicate that the task involves food or preperation given the items used.
+4. There is a bowl beside the user which may be used later (or was used earlier) for mixing.
+5. It would make sense that the dough would later be cut or seperated into pieces.

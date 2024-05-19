@@ -1,0 +1,4 @@
+ID [2] Right hand applying the medium
+ID [3] Left hand steadying the surface
+ID [7] Artwork being created
+ID [8] Surface on which the artwork is being made

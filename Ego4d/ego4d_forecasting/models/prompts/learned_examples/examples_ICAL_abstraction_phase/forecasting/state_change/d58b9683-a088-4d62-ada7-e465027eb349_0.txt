@@ -1,0 +1,1 @@
+The bricks will change from being held to being placed in a specific order on the sand surface. The sand will be adjusted to create a level base for the bricks. Cement will be applied between the bricks to bond them together. The user may use a mold to shape clay for additional bricks.

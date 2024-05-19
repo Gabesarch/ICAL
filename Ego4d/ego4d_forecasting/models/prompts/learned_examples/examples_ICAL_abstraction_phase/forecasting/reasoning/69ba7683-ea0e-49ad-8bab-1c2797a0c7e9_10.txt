@@ -1,0 +1,1 @@
+The user is seen making the bed (ID 1) with both hands (IDs 6 & 7). The user is likely to continue this task, then move on to organizing the room, which includes handling the mat (ID 8), folding and packing clothes (ID 5), and dealing with papers (ID 9).

@@ -1,0 +1,4 @@
+ID [1] Floor being swept
+ID [5] Dust pan with dirt in it
+ID [6,7] Broom for cleaning the floor
+ID [10] Left hand holding the dust pan

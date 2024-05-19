@@ -1,0 +1,1 @@
+The multimeter will be used to test different wires, changing from being held to being applied to wires. The wires may change position or be disconnected and reconnected based on the test results. The user may also put on safety glasses before continuing to work on the electrical panel.

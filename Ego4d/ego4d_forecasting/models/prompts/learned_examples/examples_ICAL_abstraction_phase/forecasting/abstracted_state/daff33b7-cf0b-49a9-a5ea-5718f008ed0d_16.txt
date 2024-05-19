@@ -1,0 +1,4 @@
+ID [1] Bag being moved
+ID [2] Right arm of user
+ID [3] Left arm of user
+ID [4] Grass or similar contents

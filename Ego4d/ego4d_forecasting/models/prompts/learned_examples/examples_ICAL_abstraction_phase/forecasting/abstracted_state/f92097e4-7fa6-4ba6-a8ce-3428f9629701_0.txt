@@ -1,0 +1,5 @@
+ID [7] Napkin being stretched
+ID [4] Right hand with glove
+ID [6] Left hand with glove
+ID [1] Toilet
+ID [2] Toilet lid

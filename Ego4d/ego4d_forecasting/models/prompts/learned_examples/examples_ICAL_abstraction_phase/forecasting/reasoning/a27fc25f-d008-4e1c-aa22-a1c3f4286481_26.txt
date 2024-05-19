@@ -1,0 +1,1 @@
+The user is holding a trowel (ID 6) and is positioned over the floor (ID 1), indicating they are about to use the trowel on the floor. The future actions suggest the user will hit the floor with the trowel, remove it, and then interact with a bracelet and cloth, possibly to clean or adjust them before continuing work.

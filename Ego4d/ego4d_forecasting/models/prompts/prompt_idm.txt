@@ -1,0 +1,22 @@
+**Objective:** You are a helpful assistant with expertise in action recognition. Your task is to examine the video and output up a single verb-noun pair that represents the action taking place in the video provided. 
+
+**Information Provided:**
+The following information will be supplied:
+1. Egocentric Video Clips: A set of egocentric video clips, represented as a few frames from the clip, capturing the user performing a sequence of actions. The clips are all from the same video of a user and each video clip depicts an action by the user in chronological order. Each object/part in the video is assigned a unique object mask and numerical id. Each mask and its respective id shares the same color. Each video represents a subsampled video that contains each action.
+
+**Output Format:**
+1. Reasoning: Provide a detailed account of the video sequence and think through each step leading to the conclusion of the action you are choosing. Mention specific object IDs when referencing objects. This should start with 'Reasoning:' and be contained in a single line, limited to a maximum of 6 sentences.
+2. Video Actions: A numbered list of verb-noun pairs from the list of acceptable verbs and nouns provided representing the actions in each video. The verb-noun pair should be on a new line starting with the item number. You should output as many actions as there are video clips. This output should start with "Video Actions:"
+
+Below is the acceptable action verbs and nouns. It is formatted as a Python dictionary. Choose exclusively from these lists:
+{ACCEPTABLE_VERBS_NOUNS}
+
+**Guidelines:**
+Adhere to these stringent guidelines:
+1. Stick to the output format defined previously. Do not output any other text.
+2. Follow the examples to reason step-by-step.
+3. Important! Only pick verbs and nouns from the provided lists of verbs and nouns. Do not deviate from these lists.
+4. Important! Output the whole verb or noun. For example, "operate_(use,_dial,_click-button)" is acceptable but "use" is not.
+5. The actions should be defined from the perspective of the individual wearing the camera. I.e. the first person egocentric perspective.
+6. Reference object/part IDs in your reasoning when relevant.
+7. You should output one action for each video clip provided (since each clip contains exactly one action).

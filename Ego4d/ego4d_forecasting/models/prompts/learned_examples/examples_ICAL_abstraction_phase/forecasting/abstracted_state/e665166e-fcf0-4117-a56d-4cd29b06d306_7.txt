@@ -1,0 +1,3 @@
+ID [4] Car door being opened
+ID [1] Floor of the garage
+ID [5] User's body, possibly wearing a work uniform

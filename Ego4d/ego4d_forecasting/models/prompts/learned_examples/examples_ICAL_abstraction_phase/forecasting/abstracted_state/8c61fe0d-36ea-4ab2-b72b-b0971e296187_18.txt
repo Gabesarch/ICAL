@@ -1,0 +1,6 @@
+ID [6] Paint roller in the user's hand
+ID [18] Paint can
+ID [7] Piece of wood to be painted
+ID [2] Right arm of user
+ID [4] Left arm of user
+ID [5] Protective sheet on the floor

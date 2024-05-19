@@ -1,0 +1,1 @@
+The user is holding a sponge (ID 14) and is near a sink with a bowl (ID 24) and a glass (ID 27), indicating they are about to wash dishes. The running water (ID 12) and the presence of dish soap (ID 26) support this activity.

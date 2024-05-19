@@ -1,0 +1,5 @@
+ID [1] Palette with various colors of paint
+ID [2] Paintbrush being used to apply paint
+ID [3] Right hand of user holding the paintbrush
+ID [4] Left hand of user holding the palette
+ID [6] Canvas or artwork being painted on

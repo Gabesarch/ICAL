@@ -1,0 +1,1 @@
+The user is holding a wrench (ID 7) and is positioned over an engine (ID 11), indicating that they are likely tightening or adjusting parts of the engine. The presence of a clamp (ID 16) suggests that parts may need to be held in place while being worked on.

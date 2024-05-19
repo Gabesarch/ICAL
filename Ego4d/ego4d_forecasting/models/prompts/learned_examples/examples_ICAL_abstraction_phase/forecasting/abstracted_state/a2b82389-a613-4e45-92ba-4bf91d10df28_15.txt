@@ -1,0 +1,5 @@
+ID [13] Screw being loosened
+ID [1] Right hand of user
+ID [2] Left hand of user
+ID [15] Workbench with various tools and parts
+ID [11] Drawer, likely containing additional tools or parts

@@ -1,0 +1,6 @@
+ID [11] Bottle of sauce
+ID [4] Pot with food
+ID [5] Left hand of user
+ID [7] Right hand of user reaching for the bottle
+ID [17] Wooden spoon in the pot
+ID [25] Lid of the bottle

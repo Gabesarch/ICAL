@@ -1,0 +1,6 @@
+ID [1] Caliper being held by the user
+ID [2] Metal part likely to be measured or marked
+ID [3] User's left arm
+ID [4] User's right arm
+ID [5] Grinder on the ground
+ID [6] Pipe on the ground

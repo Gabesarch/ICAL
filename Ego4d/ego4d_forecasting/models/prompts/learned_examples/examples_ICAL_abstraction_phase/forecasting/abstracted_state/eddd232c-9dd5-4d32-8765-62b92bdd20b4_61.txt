@@ -1,0 +1,4 @@
+ID [4] Right hand of user
+ID [6] Plant being handled
+ID [9] Red bucket
+ID [1, 2, 3] Ground with gravel and soil

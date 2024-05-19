@@ -1,0 +1,1 @@
+The user is moving a piece of wood (ID 35) and has a tape measure (ID 16) in hand, suggesting they are measuring and preparing the wood for a task. The user's arms (IDs 3 & 4) are actively engaged in the task, and the workbench (ID 6) is the surface being used for the work.

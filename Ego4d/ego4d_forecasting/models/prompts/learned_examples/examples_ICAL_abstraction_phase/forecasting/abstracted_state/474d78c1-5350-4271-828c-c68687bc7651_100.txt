@@ -1,0 +1,7 @@
+ID [10] Spoon being washed
+ID [16] Bowl in the sink
+ID [18] Sponge for cleaning
+ID [21] Right hand of user
+ID [27] Left hand of user
+ID [22] Running water from the faucet
+ID [24] Dish soap

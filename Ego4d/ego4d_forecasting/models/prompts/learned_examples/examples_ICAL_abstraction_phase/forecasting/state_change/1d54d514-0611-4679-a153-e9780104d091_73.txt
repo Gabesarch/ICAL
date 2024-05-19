@@ -1,0 +1,1 @@
+The jug will go from being held to being placed on a surface. Papers may be picked up and possibly used for wrapping or covering items. The user may interact with the oven or other appliances, indicating a change in their state (e.g., turned on or adjusted). The user's interaction with the door suggests movement in or out of the space.

@@ -1,0 +1,4 @@
+ID [5] Piece of wood being worked on
+ID [8] Drill being removed from the wood
+ID [2] Right hand of the user operating the drill
+ID [4] Left hand of the user supporting the wood

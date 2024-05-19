@@ -1,0 +1,5 @@
+ID [1] Paper with a drawing
+ID [2] Right hand of user holding a drawing tool
+ID [4] Left hand of user holding the paper
+ID [3] Table surface where the drawing is taking place
+ID [5] Additional drawing or craft materials

@@ -1,0 +1,1 @@
+1. put_(place,_leave,_drop) wheel_(tyre,_wheel)

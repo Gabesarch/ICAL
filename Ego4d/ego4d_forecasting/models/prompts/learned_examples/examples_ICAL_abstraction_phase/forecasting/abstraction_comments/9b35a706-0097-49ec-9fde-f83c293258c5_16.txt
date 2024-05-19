@@ -1,0 +1,5 @@
+1. The torch is essential for visibility in dark or shadowed areas, indicating the importance of lighting in the task.
+2. The user's hands are actively engaged, suggesting manipulation of parts or tools.
+3. The presence of an engine or mechanical part suggests a repair or maintenance task.
+4. The sequence of actions involving a wrench and a container with a spray indicates a multi-step mechanical process.
+5. The opening and closing of a drawer suggest the use of various tools that are stored when not in use.

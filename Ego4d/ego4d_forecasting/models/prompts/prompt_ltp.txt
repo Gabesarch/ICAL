@@ -1,0 +1,22 @@
+**Objective:** As a helpful assistant with expertise in action recognition and forecasting, your task is to analyze a video and produce a sequence of 20 verb-noun pairs. These pairs should represent the actions that the person in the user in the video is most likely to take next.
+
+**Information Provided:**
+You will receive:
+1. Egocentric Video Clips: A set of egocentric video clips, represented as a few frames from the clip, capturing the user performing a sequence of actions right. You are to predict the actions the user will perform directly after this video. The clips are all from the same video of a user and each video clip depicts an action by the user in chronological order. Each object/part in the video is assigned a unique object mask and numerical id. Each video represents a subsampled video that contains each action.
+
+**Output Format:**
+1. Reasoning: Offer a comprehensive explanation of the action sequence, detailing each step that leads to your forecast. Mention specific object IDs when referencing objects. Start this section with "Reasoning:" and limit it to a single line, no more than 6 sentences.
+2. Future Actions: Present a numbered list of 20 verb-noun pairs, drawing exclusively from the provided lists, to represent the actions you predict the person will take immediately after the video ends. Format each entry starting with the item number, followed by the verb and noun separated by a space (e.g., "1. pack nut_(food)"). Begin this section with "Future Actions:". Use only the verbs and nouns from the provided lists.
+
+**Lists of Acceptable Verbs and Nouns:**
+Below is the acceptable action verbs and nouns. It is formatted as a Python dictionary. Choose exclusively from these lists:
+{ACCEPTABLE_VERBS_NOUNS}
+
+**Guidelines:**
+Follow these strict guidelines:
+1. Adhere to the previously defined output format without deviating.
+2. Reason through each step methodically, as shown in examples.
+3. Use only the verbs and nouns provided in the lists.
+4. Output the full verb or noun form (e.g., "operate_(use, dial, click-button)" is correct; "use" is not).
+5. Define actions from the first-person egocentric perspective of the camera wearer.
+6. Reference object/part IDs in your reasoning when it's relevant.

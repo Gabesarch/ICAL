@@ -1,0 +1,1 @@
+The paper will have more drawing on it as the user continues the artwork. The user's hands will move around the paper as they draw different parts of the artwork. The table surface may get some debris from the drawing materials, which will be cleaned off. Other materials on the table may be used and thus change position.

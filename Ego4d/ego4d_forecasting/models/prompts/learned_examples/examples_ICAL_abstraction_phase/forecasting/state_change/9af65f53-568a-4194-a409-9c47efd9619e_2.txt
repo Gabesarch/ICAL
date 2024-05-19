@@ -1,0 +1,1 @@
+The paint on the palette will be covered and uncovered multiple times, indicating intermittent breaks in the painting process. The canvas will show progress in the painting with each action of painting. The table may become more cluttered with painting supplies as the user continues to work.

@@ -1,0 +1,1 @@
+The colander goes from full to empty as its contents are poured into the bowl. The bowl's state changes from empty to containing the food from the colander. The user's hands change from a position of pouring to potentially scraping, cutting, or adjusting the contents in the bowl.

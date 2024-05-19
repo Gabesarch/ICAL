@@ -1,0 +1,6 @@
+ID [7] Vacuum cleaner being lifted
+ID [10] Right hand of user lifting the vacuum cleaner
+ID [12] Left hand of user lifting the vacuum cleaner
+ID [1] Car near the user
+ID [3] Chair in the vicinity
+ID [11] Door in the background

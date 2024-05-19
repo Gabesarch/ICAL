@@ -1,0 +1,5 @@
+ID [6] Knife being cleaned
+ID [12] Right hand of user cleaning the knife
+ID [14] Faucet, possibly used for cleaning
+ID [15] Chopping board, likely to be used after cleaning the knife
+ID [7] Onion, potential ingredient for cooking

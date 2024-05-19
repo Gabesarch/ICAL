@@ -1,0 +1,1 @@
+The wrench will likely be used on an object or equipment, changing its state from untouched to adjusted or fixed. The shovel may be used to move soil, changing the soil's location. The grass may be cut or watered, altering its appearance. The wheel (ID 18) might be attached to a device, changing it from stationary to mobile.

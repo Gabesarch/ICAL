@@ -1,0 +1,5 @@
+ID [9] Pan with pasta on the stove
+ID [32] Right hand holding a utensil
+ID [37] Left hand inspecting the pasta
+ID [1] Stove
+ID [13] Kitchen counter

@@ -1,0 +1,1 @@
+The wheel will change position from being on the workbench to being held and then placed back down. The pliers and rubber band will be used, altering their state from at rest to being inserted or applied to something. The container and tray may be moved or contents altered as parts are taken or placed.

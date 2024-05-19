@@ -1,0 +1,5 @@
+ID [2] Curtain rod
+ID [3] User's left hand
+ID [4] User's right hand
+ID [5] Curtain
+ID [6] Wall

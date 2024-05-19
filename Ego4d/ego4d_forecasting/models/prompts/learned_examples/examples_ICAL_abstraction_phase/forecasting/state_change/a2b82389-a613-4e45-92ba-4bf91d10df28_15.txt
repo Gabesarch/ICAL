@@ -1,0 +1,1 @@
+The screw will change from being secured in place to being removed and placed aside. The user may open a drawer (ID 11) to retrieve or store parts or tools, changing the drawer's state from closed to open. The workbench may become more cluttered as parts are removed or added.

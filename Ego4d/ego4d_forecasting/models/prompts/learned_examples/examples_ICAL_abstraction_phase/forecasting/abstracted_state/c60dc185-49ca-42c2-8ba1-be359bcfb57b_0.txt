@@ -1,0 +1,4 @@
+ID [5] Flower being handled by the user
+ID [3] Right hand of the user
+ID [2] Left hand of the user
+ID [1] Plant from which the flower is being taken

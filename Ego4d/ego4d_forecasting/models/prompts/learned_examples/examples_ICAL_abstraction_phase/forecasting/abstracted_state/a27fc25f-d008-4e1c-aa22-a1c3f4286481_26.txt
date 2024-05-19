@@ -1,0 +1,6 @@
+ID [6] Trowel in the user's hand
+ID [1] Floor where work is being done
+ID [4] Right arm of user
+ID [7] Left arm of user
+ID [8] Bracelet on user's wrist
+ID [9] Cloth nearby

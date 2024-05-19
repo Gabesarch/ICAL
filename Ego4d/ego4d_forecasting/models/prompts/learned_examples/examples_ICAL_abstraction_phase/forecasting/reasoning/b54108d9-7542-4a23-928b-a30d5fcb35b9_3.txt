@@ -1,0 +1,1 @@
+The user is currently lifting a piece of wood (ID 12) with their right arm (ID 2) and holding a drill (ID 7) with their left arm (ID 4). The user is likely to adjust the position of the wood, place it down, and then use the drill to work on the wood, such as drilling screws into it.

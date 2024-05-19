@@ -1,0 +1,6 @@
+ID [1] Yellow fabric, likely the material being sewn
+ID [4] Right hand of the user, performing the sewing action
+ID [6] Left hand of the user, supporting the fabric
+ID [9] Button, the object of focus for the sewing task
+ID [8] Needle, implied by the action of sewing
+ID [12] String, necessary for attaching the button

@@ -1,0 +1,4 @@
+ID [1] Cardboard piece being manipulated
+ID [2] Right hand of user
+ID [3] Left hand of user
+ID [4] Cutting mat on the table

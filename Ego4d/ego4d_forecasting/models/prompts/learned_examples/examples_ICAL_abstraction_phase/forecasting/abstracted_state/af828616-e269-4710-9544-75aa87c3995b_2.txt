@@ -1,0 +1,6 @@
+ID [2] Wheel that is being handled
+ID [1] Workbench where the task is taking place
+ID [15] Pliers, potentially used for gripping or bending
+ID [20] Rubber band, possibly used for securing or as part of the repair process
+ID [34] Container, likely for holding small parts or tools
+ID [9] Tray, possibly for organizing or holding items temporarily

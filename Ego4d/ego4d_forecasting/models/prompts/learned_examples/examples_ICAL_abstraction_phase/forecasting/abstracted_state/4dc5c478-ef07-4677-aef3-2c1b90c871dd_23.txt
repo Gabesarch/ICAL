@@ -1,0 +1,7 @@
+ID [4] Paintbrush in the user's hand
+ID [6] Wooden railing
+ID [1] User's right leg
+ID [2] User's left leg
+ID [3] User's body (wearing red shorts)
+ID [7] Plant pot
+ID [8] Wooden surface (possibly a deck or part of the railing)

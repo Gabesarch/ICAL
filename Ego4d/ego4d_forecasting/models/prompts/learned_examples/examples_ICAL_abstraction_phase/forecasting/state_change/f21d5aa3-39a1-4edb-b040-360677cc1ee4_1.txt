@@ -1,0 +1,1 @@
+The switch goes from an off position to an on position, activating a device or light. The user may push a door open, changing its state from closed to open. The user may also pick up and move objects such as a bag or wood, changing their location and state from resting to being manipulated.

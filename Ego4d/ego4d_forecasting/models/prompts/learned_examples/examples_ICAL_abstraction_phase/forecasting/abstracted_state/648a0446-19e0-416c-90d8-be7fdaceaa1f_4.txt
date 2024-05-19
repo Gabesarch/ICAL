@@ -1,0 +1,6 @@
+ID [1] Basin of water
+ID [2] Blue cloth being washed
+ID [4] Right hand of user lifting the cloth
+ID [12] Left hand of user supporting the cloth
+ID [7] Pile of clothes waiting to be washed
+ID [5] Orange bucket, possibly containing washing supplies or water

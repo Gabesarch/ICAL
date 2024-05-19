@@ -1,0 +1,5 @@
+1. The focus on the sink and the brush indicates that the user is engaged in a cleaning task, specifically washing dishes.
+2. The presence of dishwashing liquid (ID 6) suggests that the user will use it to aid in cleaning the dishes.
+3. The items on the countertop (IDs 12, 18, 7, 13, 8) are likely to be washed next, following the same process as the dish in the sink.
+4. The user's hands are actively involved in the task, indicating that the actions will be manual rather than using a dishwasher.
+5. The sequence of actions suggests a repetitive process of picking up, washing, and putting down items.

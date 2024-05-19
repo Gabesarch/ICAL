@@ -1,0 +1,5 @@
+ID [3] Sponge in the user's hand
+ID [2] Right arm of the user
+ID [13] Car being washed
+ID [6] Water on the ground, indicating recent washing activity
+ID [7] Car wheel, a specific part of the car that may be washed separately

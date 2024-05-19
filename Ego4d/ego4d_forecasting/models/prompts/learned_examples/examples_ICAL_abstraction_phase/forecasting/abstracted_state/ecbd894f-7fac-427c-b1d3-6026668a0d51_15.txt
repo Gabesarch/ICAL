@@ -1,0 +1,8 @@
+ID [1] Colander containing food
+ID [2] Right hand of user
+ID [3] Left hand of user
+ID [4] Bowl receiving the contents
+ID [5] Wooden spoon or utensil
+ID [6] Floor
+ID [7] User's body
+ID [8,9] Bags and packets on the floor, possibly containing ingredients or tools

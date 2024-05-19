@@ -1,0 +1,1 @@
+The wire will change from being held to being connected or disconnected from the outlet. The phone may be picked up or put down, indicating a change in its state of use. The user's hands will interact with various objects, changing their state from idle to active.

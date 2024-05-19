@@ -1,0 +1,1 @@
+The user is lifting a vacuum cleaner (ID 7) with both hands (IDs 10 & 12), indicating they are about to use it. The presence of a car (ID 1) and a chair (ID 3) suggests that the user might clean around these objects. The door (ID 11) being in the background could imply the user will move through it after or before cleaning.

@@ -1,0 +1,5 @@
+ID [15] Zucchini being held by the user
+ID [24] Right hand of user
+ID [17] Left hand of user
+ID [9] Kitchen counter
+ID [13] Knife on the counter

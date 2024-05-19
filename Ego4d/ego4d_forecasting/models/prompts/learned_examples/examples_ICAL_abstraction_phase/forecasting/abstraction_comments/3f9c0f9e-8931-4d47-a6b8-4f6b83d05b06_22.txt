@@ -1,0 +1,4 @@
+1. The wheel is the focal point of the task, indicating actions will revolve around its manipulation.
+2. The presence of a lever suggests actions that require leverage, such as adjusting or removing the wheel.
+3. The workbench is the setting for the task, so tools and parts will be taken from and returned to this area.
+4. The drawer being opened implies that additional tools or parts are needed for the task at hand.

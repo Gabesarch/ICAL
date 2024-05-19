@@ -1,0 +1,7 @@
+ID [5] Engine component being repaired
+ID [2] Right hand of user holding a tool
+ID [4] Left hand of user holding the engine component
+ID [7] Black bag possibly containing tools or parts
+ID [9] Red and black object, possibly a tool bag or case
+ID [10] Blue tool, likely a screwdriver, in the user's hand
+ID [39] Brown and black object, possibly a part of the engine or a tool

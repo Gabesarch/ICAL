@@ -1,0 +1,6 @@
+ID [3] Bowl containing flour
+ID [5] Right arm of user
+ID [8] Left arm of user
+ID [13] Lid of a container
+ID [14] Beans
+ID [18] Cup

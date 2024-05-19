@@ -1,0 +1,5 @@
+1. The cloth is the central object of the user's actions, indicating it will undergo various manipulations.
+2. The presence of a bucket with liquid suggests the cloth will be repeatedly dipped and squeezed, likely as part of a cleaning or dyeing process.
+3. The user's hands are actively manipulating the cloth, which will lead to actions such as rolling, hitting, and folding.
+4. The large container (ID 1) in the background may be used for rinsing the cloth after it has been dipped in the bucket.
+5. The sequence of actions suggests a repetitive process, likely indicating a methodical approach to treating the cloth.

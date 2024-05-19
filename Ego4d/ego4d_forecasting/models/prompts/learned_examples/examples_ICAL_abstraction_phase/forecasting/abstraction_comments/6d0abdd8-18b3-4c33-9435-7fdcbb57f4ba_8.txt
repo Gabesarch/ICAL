@@ -1,0 +1,5 @@
+1. The sponge is the primary tool for washing, so its interaction with water and the car's surface is crucial for predicting future actions.
+2. The sequence of actions will likely involve repetitive motions of dipping, washing, and lifting the sponge.
+3. Specific parts of the car, like the wheel and wipers, may require focused cleaning actions separate from the general washing of the car's body.
+4. The presence of water on the ground is an indicator of the ongoing washing process, which will likely continue in the immediate future.
+5. The user's right arm (ID 2) is actively involved in the washing process, indicating that actions will be centered around the movements of this arm.

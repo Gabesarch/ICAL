@@ -1,0 +1,1 @@
+The mop goes from being held to being placed on the floor. The user's hands will be free to perform other tasks. The floor may go from wet to dry as it dries after mopping. Shoes may be picked up, indicating a change from being on the floor to being held or cleaned.

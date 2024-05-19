@@ -1,0 +1,4 @@
+ID [17] Pliers being held by the user
+ID [13] Wire that is likely to be cut
+ID [2] Right hand of user holding the pliers
+ID [3] Left hand of user holding the wire

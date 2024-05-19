@@ -1,0 +1,1 @@
+The piece of wood will be placed on the workbench and possibly secured with the clamp. The user may use the hammer to hit the wood, which could involve nails or chiseling. The metal object (ID 15) might be a tool that will be used on the wood, changing its shape or structure.

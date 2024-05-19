@@ -1,0 +1,8 @@
+ID [3] Potato being peeled
+ID [6] Chopping board
+ID [21] Tomato
+ID [17] Knife
+ID [12] Plate
+ID [18] Bottle of oil
+ID [2] Left hand of user
+ID [4] Right hand of user

@@ -1,0 +1,5 @@
+1. The user's focus on the potato (ID 3) and the presence of a peeler suggest that peeling is the current and next immediate action.
+2. The presence of a chopping board (ID 6) and a knife (ID 17) nearby indicates that cutting will follow peeling.
+3. The presence of a bottle of oil (ID 18) suggests that after prepping the potatoes, they may be cooked, which involves oil.
+4. The presence of a tomato (ID 21) on the chopping board suggests that it may be prepared next after the potatoes.
+5. The plate (ID 12) is likely to be used to hold the prepared ingredients.

@@ -1,0 +1,5 @@
+ID [9] Hose being pulled and adjusted
+ID [13] Spray nozzle of the hose
+ID [12] Right hand of user holding the hose
+ID [7] Left hand of user adjusting the nozzle
+ID [4] Plants that may be watered

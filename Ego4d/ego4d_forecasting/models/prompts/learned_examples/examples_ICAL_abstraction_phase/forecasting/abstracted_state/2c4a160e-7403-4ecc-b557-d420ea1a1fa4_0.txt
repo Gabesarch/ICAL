@@ -1,0 +1,8 @@
+ID [1] Faucet that is being closed
+ID [3] Right hand of user closing the faucet
+ID [4] Left hand of user
+ID [5] Sink where the faucet is located
+ID [6] Foam indicating recent washing activity
+ID [7] Knife on the countertop
+ID [8] Cabinet above the countertop
+ID [9] Bowl on the countertop

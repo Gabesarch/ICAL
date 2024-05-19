@@ -1,0 +1,5 @@
+1. The knife is the focus of the current action, indicating its importance in the sequence of tasks.
+2. The chopping board is in close proximity to the knife, suggesting it will be used next.
+3. The presence of food items like onions implies that the user is in the process of food preparation.
+4. The faucet's role is to clean items, so it will be turned on and off between cleaning the knife and the chopping board.
+5. The user's hands are the primary tools for these actions, indicating that the focus should be on what they are holding or moving towards.

@@ -1,0 +1,5 @@
+ID [1] Bamboo being sewn
+ID [2] Right hand of user sewing bamboo
+ID [3] Left hand of user sewing bamboo
+ID [4] Woven bamboo structure
+ID [7] Unprocessed bamboo sticks

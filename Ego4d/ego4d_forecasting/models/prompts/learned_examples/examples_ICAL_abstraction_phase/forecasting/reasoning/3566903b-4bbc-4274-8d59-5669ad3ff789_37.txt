@@ -1,0 +1,1 @@
+The user is pulling a string (ID 15) with their right hand (ID 20) and holding it with their left hand (ID 22), which suggests they are in the process of sewing or repairing. The presence of a shoe (ID 10) and an awl (ID 7) indicates that the user might be repairing the shoe with the string.

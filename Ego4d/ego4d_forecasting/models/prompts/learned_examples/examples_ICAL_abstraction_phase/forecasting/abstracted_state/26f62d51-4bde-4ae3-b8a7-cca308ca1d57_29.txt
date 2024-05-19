@@ -1,0 +1,5 @@
+ID [15] Dough being manipulated
+ID [2] Right hand of user
+ID [4] Left hand of user
+ID [3] Kitchen counter
+ID [1] Flour on the counter

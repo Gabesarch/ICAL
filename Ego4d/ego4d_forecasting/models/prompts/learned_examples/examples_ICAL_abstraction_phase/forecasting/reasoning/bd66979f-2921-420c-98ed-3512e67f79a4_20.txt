@@ -1,0 +1,1 @@
+The user is seen hitting a container (ID 26) with their hands (IDs 2 & 6). This action suggests the user is trying to close or adjust the container. The future actions involve the toolbox (ID 11), indicating the user will interact with it, likely to retrieve or store tools.

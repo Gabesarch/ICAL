@@ -1,0 +1,1 @@
+The caliper will be used to measure and possibly mark the metal part, which will then be drilled, altering its physical state. The user may also interact with the pipe and the grinder, indicating a change in the state of these objects as they are used.

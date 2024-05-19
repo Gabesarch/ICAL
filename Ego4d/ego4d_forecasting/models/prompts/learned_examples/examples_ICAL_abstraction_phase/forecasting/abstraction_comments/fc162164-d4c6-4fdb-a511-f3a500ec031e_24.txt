@@ -1,0 +1,5 @@
+1. The presence of cooking utensils and ingredients in the user's immediate vicinity suggests a cooking task.
+2. The user's repeated lifting and putting down of ingredients indicates a preparation phase before actual cooking.
+3. The pot on the stove is likely to be the recipient of the prepared ingredients.
+4. The sequence of actions involving the knife and the cutting board suggests that the user will be cutting the ingredients.
+5. The user's body orientation towards the stove and ingredients suggests a focus on the cooking task at hand.

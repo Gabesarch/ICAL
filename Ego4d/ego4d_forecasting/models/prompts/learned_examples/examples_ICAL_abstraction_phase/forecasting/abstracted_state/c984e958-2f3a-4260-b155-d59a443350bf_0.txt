@@ -1,0 +1,6 @@
+ID [6] Pants being folded
+ID [8] Right hand folding the pants
+ID [17] Left hand folding the pants
+ID [13] Drawer partially open
+ID [1] Bed with items on it
+ID [11] Cabinet with drawers

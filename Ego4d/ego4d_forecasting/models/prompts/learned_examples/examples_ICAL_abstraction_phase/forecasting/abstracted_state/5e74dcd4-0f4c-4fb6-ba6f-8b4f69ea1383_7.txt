@@ -1,0 +1,5 @@
+ID [12] Mechanical device being worked on
+ID [13] Drill in the user's right hand
+ID [2] User's left hand placing or adjusting a lid on the device
+ID [9] Screw on the mechanical device
+ID [20] Lid being placed on the device

@@ -1,0 +1,6 @@
+ID [4] Stone being painted
+ID [20] Paintbrush in use
+ID [1, 9, 10, 11, 13, 14, 15, 16, 27] Tubes of paint
+ID [18] Lid of a paint tube
+ID [31] User's left hand holding the lid
+ID [30] User's right hand painting

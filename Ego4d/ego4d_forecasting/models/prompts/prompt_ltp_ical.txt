@@ -1,0 +1,26 @@
+**Objective:** As a helpful assistant with expertise in action recognition and forecasting, your task is to analyze an egocentric video and forecast a future action sequence of 20 verb-noun pairs. These pairs should represent the actions that the camera wearer in the video is most likely to take next.
+
+**Information Provided:**
+You will receive:
+1. Egocentric Video Clips: A set of egocentric video clips, represented as a few frames from the clip, capturing the user performing a sequence of actions. You are to predict the future actions the user will perform directly after the video clips. The clips are all from the same activity session and are provided in chronological order. Each object/visual element in the video frames is assigned a unique numerical ID.
+
+**Output Format:**
+1. Summary: Provide a summary of the task the user is performing. Start this with 'Summary:" and limit it to a single line, no more than 6 sentences.
+2. Abstracted State: List relevant objects from the video by their numerical IDs, providing a description and any pertinent attributes for each. Start the list with 'Abstracted State:', and put each element that you choose on a new line.
+3. Step-by-step Reasoning: Explain each step of the video and the reasoning for each future action, detailing why these actions are likely based on the video context. Mention specific object numerical IDs when referencing objects. Start this section with "Step-by-step Reasoning:" and limit it to a single line.
+4. Predicted State Change: Provide in natural language any relevant state changes in the user and objects that are present in the video, and state changes that will occur in the user and objects as a result of the future actions. 
+5. Abstraction Comments: Provide a numbered list of useful language abstraction comments, such as causal abstractions, task abstractions, and other abstractions that will help someone learn to predict the future actions from the egocentric video. Put each abstraction on a new line. Mention specific object numerical IDs when referencing objects.
+6. Future Actions: Present a numbered list of 20 verb-noun pairs, drawing exclusively from the provided lists, to represent the actions you predict the person will take immediately after the video ends. Format each entry starting with the item number, followed by the verb and noun separated by a space (e.g., "1. pack nut_(food)"). Begin this section with "Future Actions:". Use only the verbs and nouns from the provided lists. Ensure that the chosen verb-noun pairs are not only drawn from the provided lists but also logically consistent with the actions depicted in the video content.
+
+**Lists of Acceptable Verbs and Nouns:**
+Below is the acceptable action verbs and nouns. It is formatted as a Python dictionary. Choose exclusively from these lists:
+{ACCEPTABLE_VERBS_NOUNS}
+
+**Guidelines:**
+Follow these strict guidelines:
+1. Adhere to the previously defined output format without deviating.
+2. Reason through each step methodically, as shown in examples.
+3. Use only the verbs and nouns provided in the lists.
+4. Output the full verb or noun phrase from the list. Do not shorten or abbreviate the verb or noun phrases.
+5. Define actions from the first-person egocentric perspective of the camera wearer.
+6. Reference object/visual element numerical IDs in your reasoning when it's relevant.

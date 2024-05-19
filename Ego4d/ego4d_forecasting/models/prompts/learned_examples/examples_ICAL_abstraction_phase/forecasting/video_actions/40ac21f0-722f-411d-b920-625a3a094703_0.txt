@@ -1,0 +1,1 @@
+1. put_(place,_leave,_drop) phone_(cellphone,_phone,_smartphone)

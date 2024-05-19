@@ -1,0 +1,6 @@
+ID [5] Mold used for shaping bricks
+ID [1] Sand on the ground
+ID [2] User's left hand
+ID [4] User's right hand
+ID [3] Pile of clay
+ID [6] Newly shaped brick

@@ -1,0 +1,5 @@
+ID [15] String being manipulated
+ID [20] Right hand of user pulling the string
+ID [22] Left hand of user holding the string
+ID [7] Awl
+ID [10] Shoe potentially being repaired

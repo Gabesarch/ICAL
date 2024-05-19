@@ -1,0 +1,1 @@
+The jug will go from being lifted to being placed down, likely filled with water or cleaned. The faucet's state will change from off to on and back to off as the user adjusts it to control the water flow. The glass will be taken, used, and then placed down. The sponge and soap will be used to wash the sink, changing from dry to wet and soapy.

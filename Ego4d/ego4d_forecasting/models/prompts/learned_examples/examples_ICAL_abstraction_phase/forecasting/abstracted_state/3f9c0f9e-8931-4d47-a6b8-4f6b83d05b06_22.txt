@@ -1,0 +1,4 @@
+ID [8] Wheel that is being manipulated
+ID [19] Lever, possibly for use with the wheel
+ID [50] Workbench where the task is taking place
+ID [57] Drawer that may contain tools or parts

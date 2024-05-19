@@ -1,0 +1,5 @@
+ID [7] Trowel being used to apply cement
+ID [22] Right hand of user applying cement
+ID [4] Left hand of user supporting trowel
+ID [1] Surface where cement is being applied
+ID [2] Cement mixture

@@ -1,0 +1,6 @@
+ID [14] Sponge in the user's hand
+ID [24] Bowl in the sink
+ID [27] Glass in the sink
+ID [12] Running water from the tap
+ID [21] Left hand of the user
+ID [26] Dish soap

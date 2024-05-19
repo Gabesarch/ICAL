@@ -1,0 +1,12 @@
+ID [1] Switch that is being pressed
+ID [2] Right hand of the user pressing the switch
+ID [3] Left hand of the user
+ID [4] Chair near the user
+ID [5] Table near the user
+ID [6] Paper on the table
+ID [7] Legs of the chair
+ID [8] Legs of the user
+ID [9] Floor beneath the user
+ID [10] Shadow on the floor
+ID [11] Edge of the table
+ID [12] Object on the table (possibly a pen)

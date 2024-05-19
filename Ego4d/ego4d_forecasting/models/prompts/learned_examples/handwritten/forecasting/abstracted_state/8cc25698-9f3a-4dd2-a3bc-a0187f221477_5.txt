@@ -1,0 +1,5 @@
+ID [7] Dough that is being molded and kneaded
+ID [3] Right hand molding the dough
+ID [6] Left hand molding the dough
+ID [5] Orange bowl
+ID [1] Kitchen countertop

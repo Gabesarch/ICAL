@@ -1,0 +1,4 @@
+1. The user's interaction with the fridge and the bottle suggests a task that involves using the contents of the bottle.
+2. The presence of the bottle in the user's hand throughout the video frames indicates its importance in the upcoming actions.
+3. The user's proximity to the fridge and the direction of movement suggest that the fridge will be closed soon after the bottle is taken out.
+4. The floor's visibility in the video frames suggests that it may be the surface on which the bottle's contents will be used or spilled, necessitating cleaning.

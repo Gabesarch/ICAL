@@ -1,0 +1,1 @@
+The wrench will be used to tighten nuts on the engine, changing the state of the engine parts from loose to secure. The clamp may be adjusted to hold different parts of the engine, changing its position and grip. The user may also open a drawer to retrieve or put away tools, changing the state of the drawer from closed to open.

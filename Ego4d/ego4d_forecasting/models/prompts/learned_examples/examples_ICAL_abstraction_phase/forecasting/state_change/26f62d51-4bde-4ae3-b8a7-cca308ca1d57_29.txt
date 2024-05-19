@@ -1,0 +1,1 @@
+The dough will change shape and position on the counter as it is turned, folded, and pulled. The amount of flour on the counter may increase as the user sprinkles more to facilitate the dough handling.

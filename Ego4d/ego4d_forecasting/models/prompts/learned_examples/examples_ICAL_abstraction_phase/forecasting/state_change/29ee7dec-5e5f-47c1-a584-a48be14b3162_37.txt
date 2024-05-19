@@ -1,0 +1,1 @@
+The pasta in the pan will change from being cooked to being mixed, served, or stored. The user may retrieve items from the fridge or cabinet, indicating the addition of ingredients or storage of leftovers. The stove's state will change from being used to being turned off after cooking.

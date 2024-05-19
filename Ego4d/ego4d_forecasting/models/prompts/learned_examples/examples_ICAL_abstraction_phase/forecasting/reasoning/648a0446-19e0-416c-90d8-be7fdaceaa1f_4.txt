@@ -1,0 +1,1 @@
+The user is currently lifting a blue cloth (ID 2) from a basin of water (ID 1) using both hands (IDs 4 & 12). This suggests the user is in the process of washing clothes by hand. The future actions likely involve further steps in hand-washing, such as turning the cloth, pouring water, and hitting the cloth to remove excess water.

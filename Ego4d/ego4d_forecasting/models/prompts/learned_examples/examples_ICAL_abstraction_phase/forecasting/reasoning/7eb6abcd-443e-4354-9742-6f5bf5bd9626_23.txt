@@ -1,0 +1,1 @@
+The video shows the user opening a bag (ID 8), which is a precursor to doing laundry. The presence of a washing machine (ID 12) and a drawer that could contain detergent (ID 13) supports this. The user will likely transfer items from the bag to the washing machine and use detergent from the drawer.

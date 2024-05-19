@@ -1,0 +1,6 @@
+ID [3] Dough being prepared
+ID [5] Right hand pressing the dough
+ID [6] Left hand pressing the dough
+ID [7] Rolling pin nearby
+ID [11] Pan with cooked flatbread
+ID [13] Stove

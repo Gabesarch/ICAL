@@ -1,0 +1,1 @@
+The video shows the user dipping a brush (ID 10) into water in the sink (ID 5) to wash a dish (ID 4) with their hands (IDs 2 & 3). The user is likely to continue washing the dish and then proceed to wash other items like cups, containers, plates, and cutlery.

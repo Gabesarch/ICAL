@@ -1,0 +1,4 @@
+ID [5] Bag being folded
+ID [2] Right hand of user folding the bag
+ID [4] Left hand of user folding the bag
+ID [1] Floor where the bag is being folded

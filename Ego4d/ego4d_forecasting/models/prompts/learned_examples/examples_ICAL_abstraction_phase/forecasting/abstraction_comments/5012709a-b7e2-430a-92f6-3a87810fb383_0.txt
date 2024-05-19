@@ -1,0 +1,5 @@
+1. The user's focus on the paper and the presence of drawing tools suggest that the main task is related to art.
+2. The presence of a phone (ID 9) on the table could indicate that the user is using it as a reference for their drawing.
+3. The container (ID 5) with art supplies suggests that the user may reach for additional tools as needed.
+4. The sequence of drawing and cleaning the paper implies a process of refinement in the artwork.
+5. The user's hand movements and the items on the table provide context for predicting the use of specific tools like pencils and paintbrushes.

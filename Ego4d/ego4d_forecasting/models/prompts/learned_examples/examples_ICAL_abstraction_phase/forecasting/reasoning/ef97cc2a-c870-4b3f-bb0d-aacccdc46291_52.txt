@@ -1,0 +1,1 @@
+The user is pressing the dough (ID 3) with both hands (IDs 5 & 6), indicating the dough is being prepared for cooking. The presence of a rolling pin (ID 7) suggests the dough will be rolled out. A pan with a flatbread (ID 11) on the stove (ID 13) indicates the dough will be cooked after preparation.

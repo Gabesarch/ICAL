@@ -1,0 +1,6 @@
+ID [13] Scissors used for cutting
+ID [22] Mask being manipulated
+ID [2] Sewing machine likely to be used in the task
+ID [3] Right hand of user
+ID [5] Left hand of user
+ID [25] String being cut

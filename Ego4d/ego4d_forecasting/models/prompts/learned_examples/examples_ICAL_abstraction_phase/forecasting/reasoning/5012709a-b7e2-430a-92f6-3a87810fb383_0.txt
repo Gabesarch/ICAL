@@ -1,0 +1,1 @@
+The user is currently drawing on paper (ID 1) with a pencil (ID 15). Given the future actions, the user will likely continue to draw, switch between using a pencil and a paintbrush (ID 4), and clean the paper surface as needed.

@@ -1,0 +1,1 @@
+The user is holding a multimeter (ID 1) with their right hand (ID 2) and is about to test or is currently testing a wire (ID 4) in an electrical panel (ID 3). The user will likely continue to test various wires and possibly adjust or repair the electrical connections based on the readings from the multimeter.

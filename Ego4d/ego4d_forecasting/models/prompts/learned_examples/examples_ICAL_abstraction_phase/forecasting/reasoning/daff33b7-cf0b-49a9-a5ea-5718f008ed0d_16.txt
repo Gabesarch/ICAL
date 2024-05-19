@@ -1,0 +1,1 @@
+The user is seen moving a bag (ID 1) with both hands (IDs 2 & 3), which suggests the bag is being transported. The future actions involve repeatedly lifting and moving the bag, as well as handling grass, which implies the bag may be filled with or will be filled with grass (ID 4).

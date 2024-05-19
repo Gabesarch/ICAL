@@ -1,0 +1,1 @@
+The user is seen putting down a pot (ID 7) and is likely to use the trowel (ID 10) next to pour soil (ID 3) into the pot. The user's body position (ID 1) and hand placement (IDs 2 & 4) suggest preparation for further potting actions.

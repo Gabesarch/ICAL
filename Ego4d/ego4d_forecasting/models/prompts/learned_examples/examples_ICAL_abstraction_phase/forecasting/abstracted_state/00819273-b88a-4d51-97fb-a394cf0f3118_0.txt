@@ -1,0 +1,6 @@
+ID [9] Paintbrush
+ID [14] Right hand of user holding the paintbrush
+ID [2] Covered object, possibly to be painted
+ID [3] Rail or post, potential painting surface
+ID [5] Wooden surface, potential painting surface
+ID [12] Left hand of user, possibly for support or to hold another object

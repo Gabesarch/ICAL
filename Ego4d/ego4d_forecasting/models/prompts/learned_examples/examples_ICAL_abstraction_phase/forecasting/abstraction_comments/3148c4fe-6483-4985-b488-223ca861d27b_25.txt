@@ -1,0 +1,5 @@
+1. The main focus of the user's actions is the car, indicating that the task involves cleaning or maintaining the vehicle.
+2. The wiper is the tool in use, suggesting that the task involves wiping or cleaning a surface.
+3. The presence of the car and the actions of wiping suggest that the user may use additional cleaning tools or materials such as a cloth, spray, or paper.
+4. The user's hands are actively engaged in the task, indicating that the actions involve manual cleaning.
+5. The sequence of actions suggests that after cleaning, the user may engage in other tasks related to the car, such as opening it or handling items like a bag or shoes.

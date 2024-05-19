@@ -1,0 +1,1 @@
+The user is picking up a screwdriver (ID 18) from a workbench (ID 2), which suggests they are about to use it, possibly for a task involving the motorcycle (ID 13).

@@ -1,0 +1,4 @@
+ID [6] Wire being manipulated
+ID [2] Right hand of user
+ID [3] Left hand of user
+ID [9] Ladder in the background

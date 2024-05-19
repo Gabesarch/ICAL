@@ -1,0 +1,49 @@
+------------------FORECASTING------------------
+
+GPT4V PREDICTED:
+Reasoning: The individual is currently climbing a ladder, which suggests they are ascending to reach a higher point, possibly for maintenance or retrieval tasks. Once at the top, they may need to stabilize themselves, inspect the area, perform a task, and then descend. The task could involve using tools, adjusting something, or simply checking the status of an item or area.
+
+Future Actions:
+1. stand ladder
+2. inspect_(check,_look,_examine,_view) area
+3. take_(pick,_grab,_get) tool
+4. adjust_(regulate,_increase/reduce,_change) object
+5. use tool
+6. put_(place,_leave,_drop) tool
+7. inspect_(check,_look,_examine,_view) work
+8. take_(pick,_grab,_get) tool
+9. adjust_(regulate,_increase/reduce,_change) object
+10. use tool
+11. put_(place,_leave,_drop) tool
+12. inspect_(check,_look,_examine,_view) work
+13. take_(pick,_grab,_get) tool
+14. adjust_(regulate,_increase/reduce,_change) object
+15. use tool
+16. put_(place,_leave,_drop) tool
+17. inspect_(check,_look,_examine,_view) work
+18. climb ladder
+19. descend ladder
+20. walk ground
+
+GROUND TRUTH:
+GT Video Actions:
+1. put_(place,_leave,_drop) screw_(bolt,_nail,_screw)
+2. take_(pick,_grab,_get) drill_(drill,_driller)
+3. take_(pick,_grab,_get) wood_(fiber,_firewood,_floorboard,_log,_lumber,_plank,_plywood,_timber,_wood,_woodcraft,_woodwork)
+4. put_(place,_leave,_drop) drill_(drill,_driller)
+5. take_(pick,_grab,_get) screw_(bolt,_nail,_screw)
+6. put_(place,_leave,_drop) wood_(fiber,_firewood,_floorboard,_log,_lumber,_plank,_plywood,_timber,_wood,_woodcraft,_woodwork)
+7. take_(pick,_grab,_get) drill_(drill,_driller)
+8. put_(place,_leave,_drop) drill_(drill,_driller)
+9. take_(pick,_grab,_get) hammer_(hammer,_mallet)
+10. put_(place,_leave,_drop) screw_(bolt,_nail,_screw)
+11. put_(place,_leave,_drop) screw_(bolt,_nail,_screw)
+12. put_(place,_leave,_drop) screw_(bolt,_nail,_screw)
+13. put_(place,_leave,_drop) screw_(bolt,_nail,_screw)
+14. take_(pick,_grab,_get) wood_(fiber,_firewood,_floorboard,_log,_lumber,_plank,_plywood,_timber,_wood,_woodcraft,_woodwork)
+15. take_(pick,_grab,_get) drill_(drill,_driller)
+16. put_(place,_leave,_drop) drill_(drill,_driller)
+17. take_(pick,_grab,_get) screw_(bolt,_nail,_screw)
+18. move_(transfer,_pass,_exchange) wood_(fiber,_firewood,_floorboard,_log,_lumber,_plank,_plywood,_timber,_wood,_woodcraft,_woodwork)
+19. put_(place,_leave,_drop) screw_(bolt,_nail,_screw)
+20. put_(place,_leave,_drop) screw_(bolt,_nail,_screw)

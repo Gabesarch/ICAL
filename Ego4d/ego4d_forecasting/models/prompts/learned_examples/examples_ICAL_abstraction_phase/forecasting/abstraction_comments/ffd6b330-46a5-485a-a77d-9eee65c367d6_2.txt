@@ -1,0 +1,5 @@
+1. The kettle being poured suggests the addition of hot water or liquid to a dish or preparation of a hot beverage.
+2. The presence of a knife and cutting board with vegetables indicates that cutting and preparing vegetables is part of the task.
+3. The bowl with sauce (ID 26) suggests that the user is in the process of preparing a dish that requires sauce.
+4. The user's hand holding a vegetable (ID 22) indicates active food preparation.
+5. The whole squash (ID 38) is likely to be cut and added to the dish being prepared.

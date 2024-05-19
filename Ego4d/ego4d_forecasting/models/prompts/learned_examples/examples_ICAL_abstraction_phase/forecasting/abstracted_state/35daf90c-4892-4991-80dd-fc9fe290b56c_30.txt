@@ -1,0 +1,6 @@
+ID [5] String being untied
+ID [10] Shoe potentially associated with the string
+ID [8] Towel in the vicinity
+ID [9] Faucet which may be used for water
+ID [11] Cabinet that might be opened or interacted with
+ID [12] Bottle, possibly containing a liquid for cleaning or applying to the shoe

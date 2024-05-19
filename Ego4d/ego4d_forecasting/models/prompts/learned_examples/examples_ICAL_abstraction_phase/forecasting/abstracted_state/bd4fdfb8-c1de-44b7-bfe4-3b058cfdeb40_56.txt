@@ -1,0 +1,7 @@
+ID [16] Jug being lifted
+ID [7] Right arm of user
+ID [12] Left arm of user
+ID [14] Faucet of the sink
+ID [3] Sink basin
+ID [19] Sponge near the sink
+ID [22] Soap near the sink

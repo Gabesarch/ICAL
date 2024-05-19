@@ -1,0 +1,1 @@
+The video sequence provided shows the individual turning on a switch (ID 1). This action is typically followed by the operation of a device or illumination of an area. The user may then proceed to interact with objects in the environment such as a door, book, bag, or wood, which are part of the workshop tasks.

@@ -1,0 +1,1 @@
+The user is seen moving a mold (ID 5) which is part of the brick-making process. The user's hands (IDs 2 & 4) are actively involved in shaping and smoothing the brick (ID 6) inside the mold. The presence of sand (ID 1) and clay (ID 3) suggests that these materials are used in the brick-making process.

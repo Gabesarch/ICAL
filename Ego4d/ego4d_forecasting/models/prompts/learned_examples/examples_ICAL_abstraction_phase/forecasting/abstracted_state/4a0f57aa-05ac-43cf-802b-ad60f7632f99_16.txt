@@ -1,0 +1,5 @@
+ID [6] Soldering iron being used by the user
+ID [10] Metal piece being soldered
+ID [2] Right hand of user holding the soldering iron
+ID [7] Left hand of user supporting the metal piece
+ID [9] Sparks from soldering indicating the joining of metal pieces

@@ -1,0 +1,1 @@
+The drawer will change from closed to open. Tools will be taken out of the drawer and used, changing their state from stored to in-use. Wires will be manipulated, cut, and inserted, changing from unaltered to modified. The electrical panel may be opened, indicating a change from closed to accessed.

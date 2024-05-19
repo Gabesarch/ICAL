@@ -1,0 +1,11 @@
+ID [5] Sink with water
+ID [4] Dish being washed
+ID [3] Right hand of user washing the dish
+ID [2] Left hand of user holding the dish
+ID [10] Brush for washing
+ID [6] Dishwashing liquid
+ID [12] Cup on the countertop
+ID [18] Container on the countertop
+ID [7] Plate on the countertop
+ID [13] Knife on the countertop
+ID [8] Fork on the countertop

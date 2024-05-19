@@ -1,0 +1,6 @@
+ID [4] Onion being lifted
+ID [10] Tomato on the cutting board
+ID [2] Pot on the stove
+ID [25] Knife on the cutting board
+ID [1] User's torso indicating the user's position in the kitchen
+ID [12] Cutting board

@@ -1,0 +1,1 @@
+The bag will change from being in one location to another as it is moved. The grass will change from being on the ground to inside the bag. The bag will go from being on the ground to being lifted by the user.

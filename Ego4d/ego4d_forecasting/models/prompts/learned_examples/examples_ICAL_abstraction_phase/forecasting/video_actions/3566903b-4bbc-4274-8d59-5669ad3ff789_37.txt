@@ -1,0 +1,1 @@
+1. pull string_(bobbin,_knot,_lace,_ribbon,_spool,_strand,_string,_thread,_twine,_wool,_yarn)

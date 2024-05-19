@@ -1,0 +1,1 @@
+1. put_(place,_leave,_drop) screw_(bolt,_nail,_screw)

@@ -1,0 +1,1 @@
+The pot will go from being under the faucet to being moved, scrubbed, and possibly placed elsewhere. The faucet's state will change from running to being adjusted and turned off. The door will be opened and closed, indicating movement in and out of the space.

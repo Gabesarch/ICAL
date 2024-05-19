@@ -1,0 +1,5 @@
+ID [5] Tree being trimmed
+ID [2] Right hand holding the cutting tool
+ID [3] Left hand supporting the branch
+ID [14] Branch that is being cut
+ID [1] Ground below the tree

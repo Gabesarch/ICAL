@@ -1,0 +1,1 @@
+The user is cleaning a knife (ID 6) which is a preparation step before or after using it for cooking. The user's right hand (ID 12) is holding the knife under the faucet (ID 14), indicating the cleaning action. The presence of a chopping board (ID 15) and onion (ID 7) suggests that the user might be preparing to chop ingredients for cooking.

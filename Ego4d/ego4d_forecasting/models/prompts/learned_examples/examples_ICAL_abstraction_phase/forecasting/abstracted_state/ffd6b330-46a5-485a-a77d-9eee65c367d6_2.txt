@@ -1,0 +1,7 @@
+ID [6] Kettle
+ID [15] Knife
+ID [12] Cutting board with sliced vegetables
+ID [8] Sliced squash on the cutting board
+ID [22] User's hand holding a vegetable
+ID [26] Bowl with sauce
+ID [38] Whole squash
