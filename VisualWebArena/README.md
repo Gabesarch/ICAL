@@ -5,8 +5,8 @@
 ### Contents
 <div class="toc">
 <ul>
-<li><a href="#install"></a>Install</li>
-<li><a href="#dataset"> Dataset </a></li>
+<li><a href="#install"> Install </a></li>
+<li><a href="#setup"> Setup </a></li>
 <li><a href="#running-the-ical-evaluation"> Running the ICAL evaluation </a></li>
 <li><a href="#citation"> Citation </a></li>
 </ul>
@@ -30,7 +30,7 @@ You can also run the unit tests to ensure that VisualWebArena is installed corre
 pytest -x
 ```
 
-## End-to-end Evaluation
+## Setup
 1. Setup the standalone environments.
 Please check out [this page](environment_docker/README.md) for details.
 
