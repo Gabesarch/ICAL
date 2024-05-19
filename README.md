@@ -71,4 +71,4 @@ If you find our work useful, please consider citing our paper:
 ```
 
 ## Acknowledgements
-This work builds on the existing research and frameworks in each of the respective domains. We would like to thank the contributors to the Ego4D, VisualWebArena, and TEACh projects for their invaluable resources and support.
+This work builds on the existing research and frameworks in each of the respective domains. We would like to thank the contributors to the Ego4D, VisualWebArena, and TEACh projects for their invaluable resources.
