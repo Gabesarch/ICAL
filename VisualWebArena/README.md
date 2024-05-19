@@ -7,10 +7,13 @@
 <ul>
 <li><a href="#install"></a>Installation</li>
 <li><a href="#dataset"> Dataset </a></li>
-<li><a href="#running-full-pipeline-with-GT-perception"> Running Pipeline </a></li>
+<li><a href="#running-the-ical-evaluation"> Running the ICAL evaluation </a></li>
 <li><a href="#citation"> Citation </a></li>
 </ul>
 </div>
+
+## ICAL examples
+You can view the ICAL learned examples [here](https://github.com/Gabesarch/ICAL/VisualWebArena/learned_examples).
 
 ## Install
 ```bash
@@ -59,56 +62,14 @@ If using OpenAI models, set a valid OpenAI API key (starting with `sk-`) as the 
 export OPENAI_API_KEY=your_key
 ```
 
-## Running with ICAL examples
-
-
-
-If using Gemini, first install the [gcloud CLI](https://cloud.google.com/sdk/docs/install). Configure the API key by authenticating with Google Cloud:
-```
-gcloud auth login
-gcloud config set project <your_project_name>
-```
-
-6. Launch the evaluation. For example, to reproduce our GPT-3.5 captioning baseline:
+## Running the ICAL evaluation
+To run the evaluation, replace the paths in `scripts/run_final_eval.sh` with your local paths. Then run the script:
 ```bash
-python run.py \
-  --instruction_path agent/prompts/jsons/p_cot_id_actree_3s.json \
-  --test_start_idx 0 \
-  --test_end_idx 1 \
-  --result_dir <your_result_dir> \
-  --test_config_base_dir=config_files/test_classifieds \
-  --model gpt-3.5-turbo-1106 \
-  --observation_type accessibility_tree_with_captioner
-```
-This script will run the first Classifieds example with the GPT-3.5 caption-augmented agent. The trajectory will be saved in `<your_result_dir>/0.html`. Note that the baselines that include a captioning model run on GPU by default (e.g., BLIP-2-T5XL as the captioning model will take up approximately 12GB of GPU VRAM).
-
-## GPT-4V + SoM Agent
-![SoM](media/som_figure.png)
-
-To run the GPT-4V + SoM agent we proposed in our paper, you can run evaluation with the following flags:
-```bash
-python run.py \
-  --instruction_path agent/prompts/jsons/p_som_cot_id_actree_3s.json \
-  --test_start_idx 0 \
-  --test_end_idx 1 \
-  --result_dir <your_result_dir> \
-  --test_config_base_dir=config_files/test_classifieds \
-  --model gpt-4-vision-preview \
-  --action_set_tag som  --observation_type image_som
+sh scripts/run_final_eval.sh
 ```
 
-To run Gemini models, you can change the provider, model, and the max_obs_length (as Gemini uses characters instead of tokens for inputs):
-```bash
-python run.py \
-  --instruction_path agent/prompts/jsons/p_som_cot_id_actree_3s.json \
-  --test_start_idx 0 \
-  --test_end_idx 1 \
-  --max_steps 1 \
-  --result_dir <your_result_dir> \
-  --test_config_base_dir=config_files/test_classifieds \
-  --provider google  --model gemini --mode completion  --max_obs_length 15360 \
-  --action_set_tag som  --observation_type image_som
-```
+### ICAL scripts
+We provide our scripts for the VLM abstraction and human-in-the-loop in `ICAL_scripts`.
 
 ## Citation
 If you find our environment or our models useful, please consider citing ICAL as well as VisualWebArena:

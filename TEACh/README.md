@@ -14,6 +14,9 @@
 </ul>
 </div>
 
+## ICAL examples
+You can view the ICAL learned examples [here](https://github.com/Gabesarch/ICAL/TEACh/learned_examples/fullmemlearning_idm_00).
+
 ## Important Files
 
 ICAL example learning script: `models/teach_skill_learning.py` (with `run_abstraction_phase` and `run_human_in_the_loop_phase` functions for each phase)
