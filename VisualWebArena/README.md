@@ -5,7 +5,7 @@
 ### Contents
 <div class="toc">
 <ul>
-<li><a href="#install"></a>Installation</li>
+<li><a href="#install"></a>Install</li>
 <li><a href="#dataset"> Dataset </a></li>
 <li><a href="#running-the-ical-evaluation"> Running the ICAL evaluation </a></li>
 <li><a href="#citation"> Citation </a></li>
