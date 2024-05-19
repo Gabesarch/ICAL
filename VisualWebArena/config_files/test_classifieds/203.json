@@ -1,0 +1,47 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 203,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=41938",
+  "geolocation": null,
+  "intent_template": "Help me leave a comment with the title \"Interested\" with the text \"I want to buy this item\", if the item comes with a cable that is able to connect to my USB-C ports, else leave a comment with the same title but with the text \"Do you have a USB-C cable?\".",
+  "intent": "Help me leave a comment with the title \"Interested\" with the text \"I want to buy this item\", if the item comes with a cable that is able to connect to my USB-C ports, else leave a comment with the same title but with the text \"Do you have a USB-C cable?\".",
+  "image": null,
+  "instantiation_dict": {},
+  "require_reset": true,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=41938",
+        "locator": "func:get_query_text(__page__, '.comments_list h3')",
+        "required_contents": {
+          "must_include": [
+            "Interested by Blake Sullivan"
+          ]
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=41938",
+        "locator": "func:get_query_text(__page__, '.comments_list')",
+        "required_contents": {
+          "must_include": [
+            "Do you have a USB-C cable?"
+          ]
+        }
+      }
+    ]
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "",
+  "intent_template_id": 64
+}

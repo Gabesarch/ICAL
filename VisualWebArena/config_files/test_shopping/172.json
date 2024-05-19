@@ -1,0 +1,41 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 172,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "I really like {{stuff}}. Can you find me {{product}} and add it to my shopping cart?",
+  "intent": "I really like this animal's pattern. Can you find me a queen size bedding set that has the same pattern and add it to my shopping cart?",
+  "image": [
+    "https://images.pexels.com/photos/39857/leopard-leopard-spots-animal-wild-39857.jpeg"
+  ],
+  "instantiation_dict": {
+    "stuff": "this animal's pattern",
+    "product": "a queen size bedding set that has the same pattern"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart/",
+        "locator": "lambda:(() => { try { return Array.from(document.querySelectorAll('.item-info')).find(el => el.textContent.includes('Girls Leopard Print Bedding Set Teens Luxury Pink Black Cheetah Print Bed Sheet Set Twin Size for Kids Children Women Bedroom Decor Fitted Sheet Chic Wild Animal Bed Cover with 1 Pillow Case')).querySelector('td.col.item > div > dl > dd:nth-child(4)').textContent.trim() } catch (e) { return '' }})()",
+        "required_contents": {
+          "exact_match": "Queen"
+        }
+      }
+    ]
+  },
+  "intent_template_id": 49,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "easy",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/girls-leopard-print-bedding-set-teens-luxury-pink-black-cheetah-print-bed-sheet-set-twin-size-for-kids-children-women-bedroom-decor-fitted-sheet-chic-wild-animal-bed-cover-with-1-pillow-case.html"
+}

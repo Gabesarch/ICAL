@@ -1,0 +1,42 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 431,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "Help me find all items between {{lower}} and {{upper}} that look like the image below and put them in my cart.",
+  "intent": "Help me find all items between $10 and $20 that look like the image below and put them in my cart.",
+  "image": "https://images.pexels.com/photos/239578/pexels-photo-239578.jpeg",
+  "instantiation_dict": {
+    "lower": "$10",
+    "upper": "$20"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "6 Pack Assorted Macarons | Gluten Free | Almond Overload, Blueberry Cheesecake & Chocolate Raspberry",
+            "12 Pack | Cheesecake Combo French Macarons Value Pack"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 137,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "hard",
+  "comments": ""
+}

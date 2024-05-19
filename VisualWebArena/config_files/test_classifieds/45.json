@@ -1,0 +1,29 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 45,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "I recall seeing this exact item on the site, help me find the most recent post of it.",
+  "intent": "I recall seeing this exact item on the site, help me find the most recent post of it.",
+  "image": "http://gsarch@tayer.psy.cmu.edu:9980/oc-content/uploads/45196/45196.png",
+  "instantiation_dict": {},
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=45196",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 18
+}

@@ -1,0 +1,48 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 236,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/customer/account/",
+  "geolocation": null,
+  "viewport_size": {
+    "width": 1280
+  },
+  "intent_template": "Can you set the {{side}} side address to {{address}}? My phone number is also {{number}}.",
+  "instantiation_dict": {
+    "side": "right",
+    "address": "5000 Forbes Ave, Pittsburgh, PA 15213",
+    "number": "(412) 268-2000"
+  },
+  "intent": "Can you set the right side address to 5000 Forbes Ave, Pittsburgh, PA 15213? My phone number is also (412) 268-2000.",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/customer/account/",
+        "locator": "lambda:(() => { try { return document.querySelector('#maincontent > div.columns > div.column.main > div.block.block-dashboard-addresses > div.block-content > div.box.box-shipping-address > div.box-content > address').textContent } catch (e) { return '' }})()",
+        "required_contents": {
+          "must_include": [
+            "5000 Forbes Ave",
+            "Pittsburgh",
+            "Pennsylvania",
+            "15213",
+            "(412) 268-2000 |OR| 4122682000 |OR| 412-268-2000"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 77,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

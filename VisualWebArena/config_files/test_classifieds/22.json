@@ -1,0 +1,39 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 22,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=search&sCategory=10&sShowAs=gallery",
+  "geolocation": null,
+  "viewport_size": {
+    "width": 1280
+  },
+  "intent_template": "How {{quantity}} does the {{item}} have?",
+  "intent": "How many miles does the red car in the second row have?",
+  "image": null,
+  "instantiation_dict": {
+    "quantity": "many miles",
+    "item": "red car in the second row"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "103K |OR| 103,000 |OR| 103000"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": ""
+  },
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "easy",
+  "comments": "",
+  "intent_template_id": 9
+}

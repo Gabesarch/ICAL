@@ -1,0 +1,47 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 223,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=13215",
+  "geolocation": null,
+  "intent_template": "If there is a Santa Claus card or envelope in the listing, help me to comment with the title \"Other cards?\" and with text asking \"Are there any other Santa Claus themed envelopes?\"",
+  "intent": "If there is a Santa Claus card or envelope in the listing, help me to comment with the title \"Other cards?\" and with text asking \"Are there any other Santa Claus themed envelopes?\"",
+  "image": null,
+  "instantiation_dict": {},
+  "require_reset": true,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=12085",
+        "locator": "func:get_query_text(__page__, '.comments_list h3')",
+        "required_contents": {
+          "must_include": [
+            "Other cards? by Blake Sullivan"
+          ]
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=12085",
+        "locator": "func:get_query_text(__page__, '.comments_list')",
+        "required_contents": {
+          "must_include": [
+            "Are there any other Santa Claus themed envelopes?"
+          ]
+        }
+      }
+    ]
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "",
+  "intent_template_id": 71
+}

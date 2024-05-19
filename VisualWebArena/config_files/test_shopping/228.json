@@ -1,0 +1,39 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 228,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/home-kitchen/wall-art.html?p=14",
+  "geolocation": null,
+  "intent_template": "Can you add the product that looks most like {{emojis}} to my cart?",
+  "instantiation_dict": {
+    "emojis": "a single \ud83c\udf3b"
+  },
+  "intent": "Can you add the product that looks most like a single \ud83c\udf3b to my cart?",
+  "require_reset": true,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Bathroom Decor Artwork Black and White Animal Resting Elephant Look Sunflower Field Framed Wall Art Giclee Wall Decor on Canvas Stretched Artwork Living Room Bedroom Ready to Hang,11x14in"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 74,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "easy",
+  "comments": ""
+}

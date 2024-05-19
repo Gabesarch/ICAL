@@ -1,0 +1,39 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 59,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/home-kitchen/home-decor-products/artificial-plants-flowers.html",
+  "geolocation": null,
+  "intent_template": "Tell me the price of the {{product}} in the {{location}}.",
+  "intent": "Tell me the price of the yellow one in the first row.",
+  "instantiation_dict": {
+    "product": "yellow one",
+    "location": "first row"
+  },
+  "require_reset": false,
+  "viewport_size": {
+    "width": 1280
+  },
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "37.99"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "$8.99"
+  },
+  "intent_template_id": 18,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "comments": "",
+  "overall_difficulty": "easy"
+}

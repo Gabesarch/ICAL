@@ -1,0 +1,39 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 84,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/love-live-quote-art-wall-canvas-painting-dream-art-picture-black-white-print-and-poster-for-living-room-home-decor-70x100cm-3pcs-frameless.html |AND| http://gsarch@tayer.psy.cmu.edu:7770/pittsburgh-pa-skyline-blue-by-michael-tompsett-16x24-inch-canvas-wall-art.html",
+  "geolocation": null,
+  "intent_template": "Add the product that {{attribute}} from my open tabs to the shopping cart",
+  "instantiation_dict": {
+    "attribute": "is most colorful"
+  },
+  "intent": "Add the product that is most colorful from my open tabs to the shopping cart",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Pittsburgh PA Skyline Blue"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 22,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "comments": "",
+  "overall_difficulty": "medium"
+}

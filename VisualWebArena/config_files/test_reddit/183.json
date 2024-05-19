@@ -1,0 +1,51 @@
+{
+  "sites": [
+    "reddit",
+    "shopping"
+  ],
+  "task_id": 183,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999 |AND| http://gsarch@tayer.psy.cmu.edu:7770/grocery-gourmet-food/fresh-meal-kits.html?p=5&product_list_order=name",
+  "geolocation": null,
+  "intent_template": "Can you make a post in f/food, title it '{{title}}', add the full sized version of the image with {{food}}, and navigate to it?",
+  "instantiation_dict": {
+    "title": "[I ate] this",
+    "food": "the pop tart on this page of OneStopMarket"
+  },
+  "intent": "Can you make a post in f/food, title it '[I ate] this', add the full sized version of the image with the pop tart on this page of OneStopMarket, and navigate to it?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html",
+      "page_image_query"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "last",
+        "locator": "func:get_query_text(__page__, \"#main > article > div > div.submission__inner > header\")",
+        "required_contents": {
+          "must_include": [
+            "[I ate] this",
+            "MarvelsGrantMan136",
+            "food"
+          ]
+        }
+      }
+    ],
+    "page_image_query": [
+      {
+        "eval_image_url": "last",
+        "eval_image_class": ".submission__image",
+        "eval_fuzzy_image_match": "http://gsarch@tayer.psy.cmu.edu:7770/media/catalog/product/cache/829a59e57f886f8cf0598ffca4f8a940/B/0/B08JQRPJBR.0.jpg"
+      }
+    ]
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "",
+  "intent_template_id": 77
+}

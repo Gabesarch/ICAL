@@ -1,0 +1,34 @@
+{
+  "sites": [
+    "wikipedia",
+    "reddit"
+  ],
+  "task_id": 59,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/dataisbeautiful/39014 |AND| http://gsarch@tayer.psy.cmu.edu:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+  "geolocation": null,
+  "intent_template": "What {{question}} that {{modifier}}? Answer using the information from the Wikipedia site in the second tab.",
+  "intent": "What is the total employees (in 2021) of the accounting firms that provide both tax and legal services? Answer using the information from the Wikipedia site in the second tab.",
+  "image": [],
+  "instantiation_dict": {
+    "question": "is the total employees (in 2021) of the accounting firms",
+    "modifier": "provide both tax and legal services"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "876374 |OR| 876,374"
+      ]
+    }
+  },
+  "intent_template_id": 18,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:8888/wikipedia_en_all_maxi_2022-05/A/Deloitte: 345374, http://gsarch@tayer.psy.cmu.edu:8888/wikipedia_en_all_maxi_2022-05/A/PricewaterhouseCoopers: 295000, http://gsarch@tayer.psy.cmu.edu:8888/wikipedia_en_all_maxi_2022-05/A/KPMG: 236000"
+}

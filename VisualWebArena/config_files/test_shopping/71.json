@@ -1,0 +1,34 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 71,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/video-games/playstation-4/accessories.html",
+  "geolocation": null,
+  "intent_template": "List out reviewers, if exist, who mention {{description}} for the {{product}}",
+  "instantiation_dict": {
+    "description": "malfunctioning",
+    "product": "item with the black and white graphic design"
+  },
+  "intent": "List out reviewers, if exist, who mention malfunctioning for the item with the black and white graphic design",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "fuzzy_match": "N/A"
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "There are no reviews on this item.",
+    "reference_answer_raw_annotation": "N/A"
+  },
+  "intent_template_id": 20,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "comments": "",
+  "overall_difficulty": "easy"
+}

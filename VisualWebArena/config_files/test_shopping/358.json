@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 358,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/catalogsearch/result/index/?p=6&q=korean",
+  "geolocation": null,
+  "intent_template": "Buy {{product}} with {{detail}} on the packaging.",
+  "intent": "Buy snacks with a cute animal on the packaging.",
+  "instantiation_dict": {
+    "product": "snacks",
+    "detail": "a cute animal"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "document.querySelector(\".order-details-items.ordered\").outerText",
+        "required_contents": {
+          "must_include": [
+            "B094C9G7G2"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 120,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

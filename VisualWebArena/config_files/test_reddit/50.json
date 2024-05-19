@@ -1,0 +1,34 @@
+{
+  "sites": [
+    "wikipedia",
+    "reddit"
+  ],
+  "task_id": 50,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/dataisbeautiful/18254 |AND| http://gsarch@tayer.psy.cmu.edu:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+  "geolocation": null,
+  "intent_template": "What {{question}} that {{modifier}}? Answer using the information from the Wikipedia site in the second tab.",
+  "intent": "What is the name of the major commercial airport in the state that is colored green? Answer using the information from the Wikipedia site in the second tab.",
+  "image": [],
+  "instantiation_dict": {
+    "question": "is the name of the major commercial airport in the state",
+    "modifier": "is colored green"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "Seattle-Tacoma |OR| Sea-Tac"
+      ]
+    }
+  },
+  "intent_template_id": 18,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:8888/wikipedia_en_all_maxi_2022-05/A/Washington_(state): ... Seattle-Tacoma International Airport (Sea-Tac) is the major commercial airport of greater Seattle..."
+}

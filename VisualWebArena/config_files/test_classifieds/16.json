@@ -1,0 +1,38 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 16,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=search&sCategory=3",
+  "geolocation": null,
+  "viewport_size": {
+    "width": 1280
+  },
+  "intent_template": "What is the email of the seller of {{item}} on this page?",
+  "intent": "What is the email of the seller of the item with the coffee mug in the picture on this page?",
+  "image": null,
+  "instantiation_dict": {
+    "item": "the item with the coffee mug in the picture"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "layla_garcia352@example.com"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": ""
+  },
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=15810",
+  "intent_template_id": 7
+}

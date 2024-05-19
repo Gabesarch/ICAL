@@ -1,0 +1,51 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 144,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "I recall seeing this exact {{item}} on the site, add a comment on its listing with the title \"{{title}}\" and text \"{{comment}}\".",
+  "intent": "I recall seeing this exact item of pillows in the Household section on the site, add a comment on its listing with the title \"Commentary\" and text \"How funky...\".",
+  "image": "http://gsarch@tayer.psy.cmu.edu:9980/oc-content/uploads/41127/41127.png",
+  "instantiation_dict": {
+    "item": "item of pillows in the Household section",
+    "title": "Commentary",
+    "comment": "How funky..."
+  },
+  "require_reset": true,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=41127",
+        "locator": "func:get_query_text(__page__, '.comments_list h3')",
+        "required_contents": {
+          "must_include": [
+            "Commentary by Blake Sullivan"
+          ]
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=41127",
+        "locator": "func:get_query_text(__page__, '.comments_list')",
+        "required_contents": {
+          "must_include": [
+            "How funky..."
+          ]
+        }
+      }
+    ]
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=41127",
+  "intent_template_id": 52
+}

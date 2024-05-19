@@ -1,0 +1,34 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 279,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "Can you take me to the page that has this {{subject}} {{item}}?",
+  "instantiation_dict": {
+    "subject": "video game character",
+    "item": "on slippers"
+  },
+  "intent": "Can you take me to the page that has this video game character on slippers?",
+  "image": "http://gsarch@tayer.psy.cmu.edu:7770/media/catalog/product/cache/829a59e57f886f8cf0598ffca4f8a940/B/0/B09PPRDWBX.0.jpg",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "fuzzy_match": "N/A"
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "Such an item is not available on OneStopMarket."
+  },
+  "intent_template_id": 91,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "comments": "",
+  "overall_difficulty": "medium"
+}

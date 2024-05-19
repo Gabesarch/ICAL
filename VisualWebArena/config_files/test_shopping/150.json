@@ -1,0 +1,29 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 150,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "I remembered that I ordered something like this, can you show me the corresponding order page?",
+  "intent": "I remembered that I ordered something like this, can you show me the corresponding order page?",
+  "image": "https://images.pexels.com/photos/12021852/pexels-photo-12021852.jpeg",
+  "instantiation_dict": {},
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:7770/sales/order/view/order_id/161/",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "intent_template_id": 44,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "hard",
+  "comments": "pg1. http://gsarch@tayer.psy.cmu.edu:7770/wangliwer-mini-wireless-bluetooth-speaker-with-mic-tf-card-metal-portable-subwoof-sound-fm-radio-aux-mp3-music-plays-loudspeaker-portable-speaker-color-pink.html"
+}

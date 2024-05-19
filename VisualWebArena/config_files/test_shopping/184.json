@@ -1,0 +1,53 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 184,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "I really like {{stuff}}. Can you find me {{product}} and buy {{quantity}} for me?",
+  "intent": "I really like this drink. Can you find me mochi that have flavor of this drink and buy 4*2 of them for me?",
+  "image": [
+    "https://images.pexels.com/photos/12187693/pexels-photo-12187693.jpeg"
+  ],
+  "instantiation_dict": {
+    "stuff": "this drink",
+    "product": "mochi that have flavor of this drink",
+    "quantity": "4*2 of them"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "func:shopping_get_order_product_quantity(__page__,'B08PHZ6G4J')",
+        "required_contents": {
+          "required_values": [
+            "== 8"
+          ]
+        }
+      },
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "func:shopping_get_order_product_option(__page__, 'B08PHZ6G4J', 'Flavor Name')",
+        "required_contents": {
+          "must_include": [
+            "Bubble Milk Tea"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 56,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/royal-family-2-packs-of-mini-mochi-individually-wrapped-japenese-taiwanese-asia-sweet-rice-wagashi-snack-dessert-dagashi-candies-cake-candy-drinks-daifuku-bubble-milk-tea-total-8-4oz.html"
+}

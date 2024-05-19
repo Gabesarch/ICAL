@@ -1,0 +1,52 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 234,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/home-kitchen/kitchen-dining/kitchen-table-linens.html",
+  "geolocation": null,
+  "intent_template": "Between {{item1}} and {{item2}}, add the cheaper one to my cart and the other to my wishlist.",
+  "instantiation_dict": {
+    "item1": "the second item in the top row",
+    "item2": "the one below it"
+  },
+  "intent": "Between the second item in the top row and the one below it, add the cheaper one to my cart and the other to my wishlist.",
+  "viewport_size": {
+    "width": 1280
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/wishlist/?limit=50",
+        "locator": "document.querySelector('.products-grid.wishlist').textContent",
+        "required_contents": {
+          "must_include": [
+            "ARTSHOWING Anchor Table Runner and Placemats Set of 6, Burlap Linen Table Runners 13x90inch, Heat-Insulating Placemats for Table Decor, Love The Life You Live"
+          ]
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "13x90'' Table Runner with Placemats Set of 6 Live Every Moment Laugh Every Day Love Beyond Words Honeycomb Yellow Background Non-Slip Washable Table Mats Table Runner Set for Dining Table Home Decor"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 76,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "hard",
+  "comments": ""
+}

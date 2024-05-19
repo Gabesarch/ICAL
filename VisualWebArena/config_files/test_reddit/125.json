@@ -1,0 +1,37 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 125,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999",
+  "geolocation": null,
+  "intent_template": "Find me a post in {{forum}} that illustrates the {{company}} revenue in {{datetime}}, and tell me the revenue of {{department}} (in billions).",
+  "intent": "Find me a post in /f/dataisbeautiful that illustrates the Nvidia revenue in FY22, and tell me the revenue of the whole company in FY22 (in billions).",
+  "image": null,
+  "instantiation_dict": {
+    "forum": "/f/dataisbeautiful",
+    "company": "Nvidia",
+    "datetime": "FY22",
+    "department": "the whole company in FY22"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match",
+      "url_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "27"
+      ]
+    },
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/dataisbeautiful/124787 |OR| http://gsarch@tayer.psy.cmu.edu:9999/f/dataisbeautiful/124787/oc-nvidia-s-fy22-income-statement"
+  },
+  "intent_template_id": 49,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9999/f/dataisbeautiful/124787"
+}

@@ -1,0 +1,110 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 84,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/consoles",
+  "geolocation": null,
+  "intent_template": "Downvote the posts {{modifier1}} and upvote the posts {{modifier2}} but {{action}}.",
+  "intent": "Downvote the posts in odd row and upvote the posts in even row but skip the one with a fox icon.",
+  "image": [],
+  "instantiation_dict": {
+    "modifier1": "in odd row",
+    "modifier2": "in even row",
+    "action": "skip the one with a fox icon"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": null,
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/consoles/124522",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/consoles/124584",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/consoles/124590",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/consoles/81946",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/consoles/81967",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/consoles/124571",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/consoles/124523",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-downvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/consoles/81949",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-downvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/consoles/124520",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-downvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/consoles/124545",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-downvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/consoles/103639",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-downvoted"
+        }
+      }
+    ]
+  },
+  "intent_template_id": 35,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "Note: Does not check every single post on the page. Upvote: 2 (124522), 4 (124584), 6, 8, 10 (124590), 12, 16, 18 (81946), 20, 22 (81967), 24; Downvote: 1 (124523), 3, 5 (81949), 7, 9, 11 (124520), 13, 15, 17 (124545), 19, 21 (103639), 23, 25. Skip 14 (124571)."
+}

@@ -1,0 +1,34 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 147,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/crestlive-products-dresser-storage-drawer-organizer-fabric-dresser-for-bedroom-living-room-entryway-closets-easy-pull-fabric-bins-wood-top-mixed-color.html",
+  "geolocation": null,
+  "intent_template": "Can you return the link of an image {{description}}?",
+  "intent": "Can you return the link of an image illustrating the dimensions of the dresser?",
+  "image": null,
+  "instantiation_dict": {
+    "description": "illustrating the dimensions of the dresser"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "fuzzy_match": "N/A"
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "Such an image does not exist on the page.",
+    "reference_answer_raw_annotation": "N/A"
+  },
+  "intent_template_id": 43,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "hard",
+  "comments": "",
+  "overall_difficulty": "hard"
+}

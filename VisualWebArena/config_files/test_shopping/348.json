@@ -1,0 +1,45 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 348,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/catalogsearch/result/index/?q=travel+adapter",
+  "geolocation": null,
+  "image": "https://images.pexels.com/photos/16075421/pexels-photo-16075421.jpeg",
+  "intent_template": "Empty my cart first and add all the items (in any color) from this page to my shopping cart which {{condition}}.",
+  "intent": "Empty my cart first and add all the items (in any color) from this page to my shopping cart which is compatible with the socket in the image.",
+  "instantiation_dict": {
+    "condition": "is compatible with the socket in the image"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Key Power 230-Watt Step Down 220V to 110V Voltage Converter & International Travel Adapter",
+            "USB Charger, Charging Block CIQILY 5-Pack 1A/5V USB Power Home Travel Adapter Wall Charger Cube Brick Box Base Head Compatible for Phone X 8 7 6 Plus 5S, iPad, Samsung, LG, Moto,Tablet, Android Phone",
+            "OEM HTC USB Travel Charger Adapter U250 / CNR6300 / 79H00095-14M",
+            "Universal Power Supply Notebook Laptop Charger 120 W car Home Laptop Adapter Plug for car/Home/Travel with overheating/Overload/Short Circuit Protection US Plug",
+            "SCOOFEX Universal Travel Adapter, International Power Electric Outlet Converters with USB Ports - Wall Charger AC Plug Type C Type A Type G Type I for US/EU/UK/AU/Asia/China/Japan 150+Countries",
+            "130.73 |OR| 118.74"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 114,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "MacBook Charger Case Cover is ambiguous: it's actually a case, which is why we consider both 130.73 or 118.74 to be correct."
+}

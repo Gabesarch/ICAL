@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 289,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "Add {{quantity}} of {{item}} from this page to my shopping cart.",
+  "intent": "Add 72 cans of the purple energy drink from this page to my shopping cart.",
+  "instantiation_dict": {
+    "quantity": "72 cans",
+    "item": "the purple energy drink"
+  },
+  "require_reset": true,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart/",
+        "locator": "lambda:(() => {try {return Array.from(document.querySelectorAll('.item-info')).find(el => el.textContent.includes('V8 +Energy, Healthy Energy Drink, Steady Energy from Black and Green Tea, Pomegranate Blueberry, 8 Ounce Can ,Pack of 24')).querySelector('input').getAttribute('data-item-qty')} catch (e) {return ' '}})()",
+        "required_contents": {
+          "must_include": [
+            "3"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 96,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/v8-energy-healthy-energy-drink-steady-energy-from-black-and-green-tea-pomegranate-blueberry-8-ounce-can-pack-of-24.html"
+}

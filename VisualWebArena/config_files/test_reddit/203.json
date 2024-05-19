@@ -1,0 +1,47 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 203,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/gaming?next%5Branking%5D=712&next%5Bid%5D=83741",
+  "geolocation": null,
+  "intent_template": "Can you message the users who posted {{condition}} on this page with '{{message}}'?",
+  "instantiation_dict": {
+    "condition": "pictures related to Nintendo games",
+    "message": "Mama mia!!"
+  },
+  "intent": "Can you message the users who posted pictures related to Nintendo games on this page with 'Mama mia!!'?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/messages",
+        "locator": "func:get_query_text(__page__, \"#main > table > tbody\")",
+        "required_contents": {
+          "must_include": [
+            "evolve_into_wizards",
+            "afieldbleed47",
+            "devilmaycry10092",
+            "peen_was",
+            "Ghimzzo",
+            "ENateFak",
+            "dorgobar",
+            "Mama mia!!"
+          ]
+        }
+      }
+    ]
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "Did not check for three ambiguous posts http://gsarch@tayer.psy.cmu.edu:9999/f/gaming/61510/i-was-cleaning-my-basement-and-found-some-games-i-saved-from and http://gsarch@tayer.psy.cmu.edu:9999/f/gaming/105197/updated-game-room and http://gsarch@tayer.psy.cmu.edu:9999/f/gaming/126167/welp",
+  "intent_template_id": 84
+}

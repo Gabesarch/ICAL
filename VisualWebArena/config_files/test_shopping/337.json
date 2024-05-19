@@ -1,0 +1,34 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 337,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "image": "https://images.pexels.com/photos/6348050/pexels-photo-6348050.jpeg",
+  "intent_template": "Buy me {{item}} to {{address}}.",
+  "intent": "Buy me the cheapest bike to Mars's place as shown in the image. My phone number is also (650) 555-0111 in case it is needed..",
+  "instantiation_dict": {
+    "item": "the cheapest bike",
+    "address": "Mars's place as shown in the image. My phone number is also (650) 555-0111 in case it is needed."
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "fuzzy_match": "N/A"
+    },
+    "string_note": "OneStopMarket has no bikes.",
+    "reference_url": "",
+    "program_html": []
+  },
+  "intent_template_id": 111,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "OneStopMarket has no bikes."
+}

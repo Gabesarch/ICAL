@@ -1,0 +1,43 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 271,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/home-kitchen/furniture/bedroom-furniture.html?p=5&product_list_limit=36&product_list_order=name",
+  "geolocation": null,
+  "intent_template": "{{modifier}} {{item}} to my cart and order it only if the total comes out to less than {{amount}}?",
+  "instantiation_dict": {
+    "modifier": "Can you add",
+    "item": "the bed with a slide in white in the triple bunk + 2 drawers configuration",
+    "amount": "$1000"
+  },
+  "intent": "Can you add the bed with a slide in white in the triple bunk + 2 drawers configuration to my cart and order it only if the total comes out to less than $1000?",
+  "require_reset": true,
+  "reference_url": "",
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "func:get_query_text(__page__, \".order-details-items.ordered\")",
+        "required_contents": {
+          "must_include": [
+            "B09QSHGPLH",
+            "White",
+            "Triple Bunk Bed with 2 Drawers"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 90,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "hard"
+}

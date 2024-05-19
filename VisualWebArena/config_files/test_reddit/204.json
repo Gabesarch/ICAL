@@ -1,0 +1,31 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 204,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/space",
+  "geolocation": null,
+  "intent_template": "Can you take me to the comments section of {{post}} {{condition}}?",
+  "instantiation_dict": {
+    "post": "the last post on this page",
+    "condition": "that has a picture of a person"
+  },
+  "intent": "Can you take me to the comments section of the last post on this page that has a picture of a person?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/space/134033/3-years-ago-i-built-this-telescope-in-my-parents-garage-it-s",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "easy",
+  "comments": "",
+  "intent_template_id": 64
+}

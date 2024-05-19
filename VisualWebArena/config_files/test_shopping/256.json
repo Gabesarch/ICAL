@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 256,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/aroy-d-longan-in-syrup-20oz-565g-2-pack.html",
+  "geolocation": null,
+  "intent_template": "Can you add {{items}} to the comparison page?",
+  "instantiation_dict": {
+    "items": "this and the other canned fruit (of the same brand) that looks like this, but red instead of brown"
+  },
+  "intent": "Can you add this and the other canned fruit (of the same brand) that looks like this, but red instead of brown to the comparison page?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/catalog/product_compare",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Aroy-D Longan in Syrup 20oz (565g), 2 pack",
+            "Aroy-d Rambutan in Syrup (Pack of 6)"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 33,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "hard",
+  "comments": ""
+}

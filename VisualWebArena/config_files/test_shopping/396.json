@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 396,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/video-games/legacy-systems/nintendo-systems.html?p=4",
+  "geolocation": null,
+  "intent_template": "Buy the {{product}} on the page {{detail}}.",
+  "intent": "Buy the item on the page with a pink background on the display image (in any edition).",
+  "instantiation_dict": {
+    "product": "item",
+    "detail": "with a pink background on the display image (in any edition)"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "document.querySelector(\".order-details-items.ordered\").outerText",
+        "required_contents": {
+          "must_include": [
+            "B001IAP45W"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 129,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "easy",
+  "comments": ""
+}

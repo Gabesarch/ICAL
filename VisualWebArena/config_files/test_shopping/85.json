@@ -1,0 +1,39 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 85,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/office-book-stand-tree-shaped-bookshelf-on-the-table-simple-student-shelf-bookcase-storage-shelf-organizer.html |AND| http://gsarch@tayer.psy.cmu.edu:7770/home-bookshelf-bookcase-shelf-bookshelf-book-shelves-simple-student-desktop-small-picture-book-storage-household-simple-floor-living-room-children-s-bookcase-durable-bookcase-display-shelf-storage-org.html |AND| http://gsarch@tayer.psy.cmu.edu:7770/lorell-6-shelf-panel-bookcase-36-x-12-x-72-mahogany.html",
+  "geolocation": null,
+  "intent_template": "Add the product that {{attribute}} from my open tabs to the shopping cart",
+  "instantiation_dict": {
+    "attribute": "looks like an animal"
+  },
+  "intent": "Add the product that looks like an animal from my open tabs to the shopping cart",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Home Bookshelf Bookcase Shelf Bookshelf"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 22,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "comments": "",
+  "overall_difficulty": "medium"
+}

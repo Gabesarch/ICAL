@@ -1,0 +1,41 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 173,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/memes/top?t=all",
+  "geolocation": null,
+  "intent_template": "Can you post a comment on the post {{description}} with the text '{{comment}}'?",
+  "instantiation_dict": {
+    "description": "with an \ud83d\udc7d in it",
+    "comment": "Scary!"
+  },
+  "intent": "Can you post a comment on the post with an \ud83d\udc7d in it with the text 'Scary!'?",
+  "require_reset": true,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/memes/21032/at-lease-is-not-brazil",
+        "locator": "func:get_query_text(__page__, \"#main\")",
+        "required_contents": {
+          "must_include": [
+            "MarvelsGrantMan136",
+            "Scary!"
+          ]
+        }
+      }
+    ]
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 72
+}

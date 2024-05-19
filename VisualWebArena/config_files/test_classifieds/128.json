@@ -1,0 +1,38 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 128,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=74603",
+  "geolocation": null,
+  "intent_template": "Tell me the {{product}}.",
+  "intent": "Tell me the jersey numbers (in digits) in the image of this listing.",
+  "image": null,
+  "instantiation_dict": {
+    "product": "jersey numbers (in digits) in the image of this listing"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "99",
+        "13",
+        "80",
+        "92"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": ""
+  },
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 40
+}

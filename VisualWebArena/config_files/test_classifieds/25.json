@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 25,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "How many {{item}} {{criteria}}?",
+  "intent": "How many red boats were posted on 16th November 2023?",
+  "image": null,
+  "instantiation_dict": {
+    "item": "red boats",
+    "criteria": "were posted on 16th November 2023"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "1 |OR| one"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": ""
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=49894",
+  "intent_template_id": 10
+}

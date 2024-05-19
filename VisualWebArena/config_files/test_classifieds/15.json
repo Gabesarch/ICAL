@@ -1,0 +1,38 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 15,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=search&sCategory=21",
+  "geolocation": null,
+  "viewport_size": {
+    "width": 1280
+  },
+  "intent_template": "What is the email of the seller of {{item}} on this page?",
+  "intent": "What is the email of the seller of the guitar in the red case on this page?",
+  "image": null,
+  "instantiation_dict": {
+    "item": "the guitar in the red case"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "haruto_abdullah497@example.com"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": ""
+  },
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "easy",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=67527",
+  "intent_template_id": 7
+}

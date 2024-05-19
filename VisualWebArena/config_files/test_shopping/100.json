@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 100,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "{{description}}, can you add one to my wishlist?",
+  "intent": "I like the shirt this person is wearing, can you add one to my wishlist?",
+  "image": "coco_images/000000173008.jpg",
+  "instantiation_dict": {
+    "description": "I like the shirt this person is wearing"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/wishlist/?limit=50",
+        "locator": "document.querySelector('.products-grid.wishlist').textContent",
+        "required_contents": {
+          "must_include": [
+            "hawaiian"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 29,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "comments": "",
+  "overall_difficulty": "medium"
+}

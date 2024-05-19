@@ -1,0 +1,34 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 212,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Find me the {{attribute}} {{item}} from the classifieds site that {{condition}}.{{action}}",
+  "intent": "Find me the cheapest watch or necklace from the classifieds site that is from the location \"Pennsylvania\". Do not take the listing price at face value and use the actual item price for comparison, which can be verified in the listing description.",
+  "image": null,
+  "instantiation_dict": {
+    "attribute": "cheapest",
+    "item": "watch or necklace",
+    "condition": "is from the location \"Pennsylvania\"",
+    "action": " Do not take the listing price at face value and use the actual item price for comparison, which can be verified in the listing description."
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=47839",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "The other watch/ring listings on the website are fake listings that state their actual price in the description. Super hard task.",
+  "intent_template_id": 68
+}

@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 299,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/catalogsearch/result/?q=under+armor",
+  "geolocation": null,
+  "intent_template": "What size of {{item}} should I buy if {{condition}}?",
+  "intent": "What size of the zip hoodie in this page should I buy if my waist size is 30 inches?",
+  "instantiation_dict": {
+    "item": "the zip hoodie in this page",
+    "condition": "my waist size is 30 inches"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "S |OR| Small"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "This task requires OCR.",
+    "reference_answer_raw_annotation": "S"
+  },
+  "intent_template_id": 99,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/under-armor-men-s-sc30-ua-threadborne-full-zip-hoodie.html"
+}

@@ -1,0 +1,32 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 72,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "I like {{attribute}}. Can you find the {{detail}} where I can buy similar items, if there's one?",
+  "intent": "I like the products in the image. Can you find the cheapest posting from Delaware where I can buy similar items, if there's one?",
+  "image": "https://images.pexels.com/photos/5883534/pexels-photo-5883534.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "instantiation_dict": {
+    "attribute": "the products in the image",
+    "detail": "cheapest posting from Delaware"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=43255",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "hard",
+  "comments": "",
+  "intent_template_id": 29
+}

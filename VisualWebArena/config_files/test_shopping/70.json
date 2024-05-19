@@ -1,0 +1,37 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 70,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/home-kitchen/bedding/decorative-pillows-inserts-covers.html",
+  "geolocation": null,
+  "intent_template": "List out reviewers, if exist, who mention {{description}} for the {{product}}",
+  "instantiation_dict": {
+    "description": "'cute'",
+    "product": "pink thing"
+  },
+  "intent": "List out reviewers, if exist, who mention 'cute' for the pink thing",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "Lou HS",
+        "Mrs. Renfro"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "Lou HS, Mrs. Renfro"
+  },
+  "intent_template_id": 20,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "comments": "",
+  "overall_difficulty": "easy"
+}

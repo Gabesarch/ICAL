@@ -1,0 +1,34 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 402,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/grocery-gourmet-food/breads-bakery/cakes.html?p=2",
+  "geolocation": null,
+  "intent_template": "Buy the {{product}} on the page {{detail}}.",
+  "intent": "Buy the cakes on the page with Korean packaging.",
+  "instantiation_dict": {
+    "product": "cakes",
+    "detail": "with Korean packaging"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "fuzzy_match": "N/A"
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "There are no Korean cakes on this page.",
+    "reference_answer_raw_annotation": "N/A"
+  },
+  "intent_template_id": 129,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

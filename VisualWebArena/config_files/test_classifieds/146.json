@@ -1,0 +1,32 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 146,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=search&sCategory=9&sOrder=i_price&iOrderType=asc&iPage=124&sShowAs=gallery",
+  "geolocation": null,
+  "intent_template": "Navigate to the {{product}} on this page {{condition}}.",
+  "intent": "Navigate to the item on this page whose image has exactly 4 books.",
+  "image": null,
+  "instantiation_dict": {
+    "product": "item",
+    "condition": "whose image has exactly 4 books"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=66304",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 48
+}

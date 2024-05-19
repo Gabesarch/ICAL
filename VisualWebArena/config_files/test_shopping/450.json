@@ -1,0 +1,41 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 450,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/stackable-clear-shoe-box-front-drop-magnetic-door-dustproof-and-breathable-sneaker-storage-box-shoe-box-organizer-for-women-and-men-fit-up-to-us-size-16.html",
+  "geolocation": null,
+  "intent_template": "Find me the cheapest {{item}} with the same {{characteristic}} as the majority of the {{items}} shown in the second image on this page and put it in my cart",
+  "intent": "Find me the cheapest shoe with the same brand as the majority of the shoes shown in the second image on this page and put it in my cart",
+  "instantiation_dict": {
+    "item": "shoe",
+    "items": "shoes",
+    "characteristic": "brand"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Nike SB Mens Charge Canvas Canvas Lifestyle Fashion Sneakers Gray 9.5 Medium (D)"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 146,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": ""
+}

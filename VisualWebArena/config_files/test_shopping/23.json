@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 23,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "What is the color of the {{type}} item in the \"{{product_category}}\" category?",
+  "instantiation_dict": {
+    "type": "third most expensive",
+    "product_category": "Exercise & Fitness"
+  },
+  "intent": "What is the color of the third most expensive item in the \"Exercise & Fitness\" category?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "red"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "red"
+  },
+  "intent_template_id": 6,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "comments": "",
+  "overall_difficulty": "medium"
+}

@@ -1,0 +1,43 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 198,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/office-products/office-electronics/printers-accessories.html?product_list_limit=36",
+  "geolocation": null,
+  "intent_template": "Can you add the item {{offset}} the {{item}} to my cart?",
+  "instantiation_dict": {
+    "offset": "in the same column but at the bottom of the page as",
+    "item": "HP M225DW LaserJet Pro MFP printer"
+  },
+  "viewport_size": {
+    "width": 1280
+  },
+  "intent": "Can you add the item in the same column but at the bottom of the page as the HP M225DW LaserJet Pro MFP printer to my cart?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Flat Scanner Cable for HP LJ Pro M1212NF 1212 1213 1216 1217 1218 121X Printer"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 62,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

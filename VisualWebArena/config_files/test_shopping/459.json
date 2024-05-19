@@ -1,0 +1,43 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 459,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/butterfly-dance-helen-vladykina-cotton-woven-blanket-throw-made-in-the-usa-72x54.html",
+  "geolocation": null,
+  "intent_template": "Add to my cart {{item}} {{condition}}.",
+  "intent": "Add to my cart all blankets (including this one) with the same two people holding up the blanket in the photo.",
+  "instantiation_dict": {
+    "item": "all blankets (including this one)",
+    "condition": "with the same two people holding up the blanket in the photo"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Frida Kahlo - Beautiful and Strong - Cotton Woven Blanket Throw - Made in The USA (72x54)",
+            "Hawk - Animal Spirits Totem - Sue Coccia - Cotton Woven Blanket Throw - Made in The USA (72x54)",
+            "Sloth Wanna Hang - Victoria Borges - Cotton Woven Blanket Throw - Made in The USA (72x54)",
+            "Butterfly Dance - Helen Vladykina - Cotton Woven Blanket Throw - Made in The USA (72x54)"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 150,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "Can be solved by searching for 'Pure Country Weavers blankets'"
+}

@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 382,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/video-games/xbox-one.html?p=9",
+  "geolocation": null,
+  "intent_template": "Buy the {{product}} on the page {{detail}}.",
+  "intent": "Buy the controller (in any color) on the page with a black gradient.",
+  "instantiation_dict": {
+    "product": "controller (in any color)",
+    "detail": "with a black gradient"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "document.querySelector(\".order-details-items.ordered\").outerText",
+        "required_contents": {
+          "must_include": [
+            "B075JFXXTM"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 129,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

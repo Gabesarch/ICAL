@@ -1,0 +1,34 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 6,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/forums/all",
+  "geolocation": null,
+  "intent_template": "I'm trying to do some research about the post with this image. Tell me how many comments this post has.",
+  "intent": "I'm trying to do some research about the post with this image. Tell me how many comments this post has.",
+  "image": "http://gsarch@tayer.psy.cmu.edu:9999/submission_images/ac7dbdd1f4053d2603a4e72e7eac53a35d1cf80c665889fbf4c2affe4415c996.jpg",
+  "instantiation_dict": {},
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "28"
+      ]
+    },
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/food/82940/homemade-sweet-amp-spicy-sticky-chinese-pork-belly",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "28"
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "hard",
+  "comments": "hard (even harder for humans): product image provided, and need to identify that the post is in /f/food, and find the correct one. It's several pages in.",
+  "intent_template_id": 2
+}

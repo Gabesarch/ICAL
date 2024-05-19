@@ -1,0 +1,66 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 164,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "Find me {{category}} that is of the same brand as products in one of the following pictures. It needs to {{description}}.",
+  "intent": "Find me a television that is of the same brand as products in one of the following pictures. It needs to have price at least $600.",
+  "image": [
+    "https://images.pexels.com/photos/1447254/pexels-photo-1447254.jpeg",
+    "https://images.pexels.com/photos/3066/smartphone-mockup-mobile-phone-screen.jpg"
+  ],
+  "instantiation_dict": {
+    "category": "a television",
+    "description": "have price at least $600"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html",
+      "page_image_query"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "last",
+        "locator": "func:shopping_get_product_price(__page__)",
+        "required_contents": {
+          "required_values": [
+            ">= 600"
+          ]
+        }
+      },
+      {
+        "url": "last",
+        "locator": "func:shopping_get_product_attributes(__page__, 'brand name |OR| manufacturer')",
+        "required_contents": {
+          "must_include": [
+            "LG |OR| SAMSUNG"
+          ]
+        }
+      }
+    ],
+    "page_image_query": [
+      {
+        "eval_image_url": "last",
+        "eval_image_class": ".fotorama__stage__frame",
+        "eval_vqa": [
+          {
+            "question": "Is this a television? (yes/no)",
+            "answer": "yes"
+          }
+        ]
+      }
+    ]
+  },
+  "intent_template_id": 47,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/lg-50nano80upa-50-nanocell-4k-nano80-series-smart-ultra-hd-tv-with-an-lg-sn6y-3-1-channel-dts-virtual-high-resolution-soundbar-and-subwoofer-2021.html"
+}

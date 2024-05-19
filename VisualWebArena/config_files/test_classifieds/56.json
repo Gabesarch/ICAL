@@ -1,0 +1,32 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 56,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Find the {{item}} that {{condition}}.",
+  "intent": "Find the cheapest snowblower that is not red in color.",
+  "image": null,
+  "instantiation_dict": {
+    "item": "cheapest snowblower",
+    "condition": "is not red in color"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=25929",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "easy",
+  "comments": "",
+  "intent_template_id": 23
+}

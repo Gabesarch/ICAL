@@ -1,0 +1,35 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 136,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "I recall seeing this exact item on the site, tell me the email of the lister of the item. I recall {{hint}}.",
+  "intent": "I recall seeing this exact item on the site, tell me the email of the lister of the item. I recall that it was pretty cheap.",
+  "image": "http://gsarch@tayer.psy.cmu.edu:9980/oc-content/uploads/37999/37999.png",
+  "instantiation_dict": {
+    "hint": "that it was pretty cheap"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "noah_popov126@example.com"
+      ]
+    },
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=37999",
+    "program_html": [],
+    "string_note": ""
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "",
+  "intent_template_id": 49
+}

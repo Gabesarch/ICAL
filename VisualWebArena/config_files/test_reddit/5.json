@@ -1,0 +1,34 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 5,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/forums/all",
+  "geolocation": null,
+  "intent_template": "I'm trying to do some research about the post with this image. Tell me how many comments this post has.",
+  "intent": "I'm trying to do some research about the post with this image. Tell me how many comments this post has.",
+  "image": "http://gsarch@tayer.psy.cmu.edu:9999/submission_images/1dca2e0d195036fd9d5bb3416cef4cc061796b48dc8b7a8b4d4d14229340a45e.jpg",
+  "instantiation_dict": {},
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "121"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "121"
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "hard (even harder for humans): product image provided, and need to identify that the post is in /f/MechanicalKeyboards, and find the correct one",
+  "intent_template_id": 2
+}

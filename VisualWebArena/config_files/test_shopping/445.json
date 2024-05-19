@@ -1,0 +1,39 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 445,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/grocery-gourmet-food/breads-bakery/cookies.html?price=80-90",
+  "geolocation": null,
+  "intent_template": "Place the item with {{quality}} on this page into my cart",
+  "intent": "Place the item with the darkest packaging on this page into my cart",
+  "instantiation_dict": {
+    "quality": "the darkest packaging"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "B.A.D. FOOD CO The Peanutter - Peanut Butter Cookies | 5.4oz \u2013 12 Pack | , Grain-Free, Gluten-Free, Refined Sugar Free, No-Soy, Dairy-Free, Non-GMO, Paleo Friendly, and Nutrient Dense!"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 144,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "easy",
+  "comments": ""
+}

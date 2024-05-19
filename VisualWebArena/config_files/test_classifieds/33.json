@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 33,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Find {{item}} and post a comment offering $10 less than their asking price.",
+  "intent": "Find the latest listing of a white fridge and post a comment offering $10 less than their asking price.",
+  "image": null,
+  "instantiation_dict": {
+    "item": "the latest listing of a white fridge"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=62633",
+        "locator": "func:get_query_text(__page__, '.comments_list')",
+        "required_contents": {
+          "must_include": [
+            "$115"
+          ]
+        }
+      }
+    ]
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=62633",
+  "intent_template_id": 12
+}

@@ -1,0 +1,38 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 174,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=search&sCategory=17&sOrder=i_price&iOrderType=desc&sShowAs=gallery",
+  "geolocation": null,
+  "intent_template": "For the {{item}} on this page {{attribute}}, tell me the {{detail}}.",
+  "intent": "For the item on this page which includes a Black Friday logo in the image, tell me the most specific location given of the posting.",
+  "image": null,
+  "instantiation_dict": {
+    "item": "item",
+    "attribute": "which includes a Black Friday logo in the image",
+    "detail": "most specific location given of the posting"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "Shaw",
+        "Washington, D.C."
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": ""
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 54
+}

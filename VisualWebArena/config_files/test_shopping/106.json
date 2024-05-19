@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 106,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/home-kitchen/wall-art/posters-prints.html",
+  "geolocation": null,
+  "intent_template": "{{description}}, can you add the most similar one on this page to my wishlist?",
+  "intent": "I like this painting, can you add the most similar one on this page to my wishlist?",
+  "image": "coco_images/000000415238.jpg",
+  "instantiation_dict": {
+    "description": "I like this painting"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/wishlist/?limit=50",
+        "locator": "document.querySelector('.products-grid.wishlist').textContent",
+        "required_contents": {
+          "must_include": [
+            "Wieco Art Sunflower by Vincent Van Gogh Oil Paintings Reproduction Modern Floral Giclee Canvas Prints Artwork Flowers Pictures on Canvas Wall Art for Home and Office Decorations |OR| African American Canvas Wall Art Black Woman With Butterflies Paintings Sexy Black arounded by Sunflower Canvas Paintings Afro Women Picture Black Queen Inspirational Wall Art Hanging Poster Painting Black Girl Photography Abstract Watercolor Sunflower Pa"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 30,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "comments": "",
+  "overall_difficulty": "medium"
+}

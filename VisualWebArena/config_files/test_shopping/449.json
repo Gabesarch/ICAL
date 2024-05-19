@@ -1,0 +1,42 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 449,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/patio-lawn-garden/gardening-lawn-care/plants-seeds-bulbs.html?p=3",
+  "geolocation": null,
+  "intent_template": "Add all the items with {{quality}} on this page into my cart",
+  "intent": "Add all the items with flowers on this page into my cart",
+  "instantiation_dict": {
+    "quality": "flowers"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Four (4) Orchid Cactus (Epiphyllum) 8\" Fresh Cuttings: 2 for White and 2 for Red Flower",
+            "Hirt's White Christmas Cactus Plant - Zygocactus - 6\" Pot",
+            "Hawaiian Red Plumeria Plant Cutting Kanoa Hawaii 1 Pack SK34",
+            "Knockout Double Pink Rose, 1 Gal"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 145,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

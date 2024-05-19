@@ -1,0 +1,41 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 429,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/electronics/computers-accessories/computers-tablets.html?p=5",
+  "geolocation": null,
+  "intent_template": "Can you add all the {{items}} {{condition}} to my shopping cart?",
+  "intent": "Can you add all the items on this page with a stylus to my shopping cart?",
+  "instantiation_dict": {
+    "items": "items on this page",
+    "condition": "with a stylus"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Navitech 7\" Purple Case/Cover with 360 Rotational Stand & Stylus Pen Compatible with The Hisense Sero Pro 8 / Haier Pad Mini 7.5",
+            "Toshiba Dynabook Tecra A30-G 13.3\" FHD Business Laptop Computer, Celeron 5205U Processor @ 1.9GHz, 8GB DDR4 RAM, 256GB PCIe SSD, WiFi 6, Bluetooth, Type-C, Windows 10 Pro Education, 64GB Flash Drive"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 72,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

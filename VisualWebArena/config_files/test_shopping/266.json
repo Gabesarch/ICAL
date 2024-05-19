@@ -1,0 +1,41 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 266,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "Can you order the cheapest thing {{item}}?",
+  "image": "https://images.pexels.com/photos/9137660/pexels-photo-9137660.jpeg",
+  "instantiation_dict": {
+    "item": "from the \"GPS System Accessories\" category to protect the display touch screen on my car (which is in the picture)"
+  },
+  "intent": "Can you order the cheapest thing from the \"GPS System Accessories\" category to protect the display touch screen on my car (which is in the picture)?",
+  "require_reset": false,
+  "reference_url": "",
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "func:get_query_text(__page__, \".order-details-items.ordered\")",
+        "required_contents": {
+          "must_include": [
+            "B07SFY2VNB"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 88,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/lfotpp-fit-for-2019-2020-2021-silverado-1500-infotainment-3-8-inch-car-navigation-screen-protector-tempered-glass-9h-hardness-car-infotainment-display-center-touchscreen-protective-film-scratch-resistant.html"
+}

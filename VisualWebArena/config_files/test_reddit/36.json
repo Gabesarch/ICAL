@@ -1,0 +1,33 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 36,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/forums/all",
+  "geolocation": null,
+  "intent_template": "Navigate to the comments section of the {{ranking}} image post in the {{subreddit}} subreddit that {{attribute}}.",
+  "intent": "Navigate to the comments section of the all time top ranked image post in the /f/nyc subreddit that contains an animal.",
+  "image": null,
+  "instantiation_dict": {
+    "ranking": "all time top ranked",
+    "subreddit": "/f/nyc",
+    "attribute": "contains an animal"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/nyc/44619",
+    "program_html": [],
+    "url_note": "GOLD in PRED"
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "need to navigate to the correct subreddit and identify the top post that contains a picture of animals (there is a lanternfly costume which is a distractor)",
+  "intent_template_id": 13
+}

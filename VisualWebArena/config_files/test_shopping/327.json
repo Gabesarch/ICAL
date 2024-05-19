@@ -1,0 +1,42 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 327,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "image": "https://images.pexels.com/photos/8534088/pexels-photo-8534088.jpeg",
+  "intent_template": "Purchase the cheapest {{item}}, in {{color}}.",
+  "intent": "Purchase the cheapest item that has the same functionality as this, in black.",
+  "instantiation_dict": {
+    "item": "item that has the same functionality as this",
+    "color": "black"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "document.querySelector(\".order-details-items.ordered\").outerText",
+        "required_contents": {
+          "must_include": [
+            "B09RB14X4D",
+            "Black"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 107,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/wireless-earbuds-mics-call-noise-canceling-wireless-charging-case-bluetooth-5-0-headset-wireless-earphones-mini-earbuds-stereo-headphones-white.html"
+}

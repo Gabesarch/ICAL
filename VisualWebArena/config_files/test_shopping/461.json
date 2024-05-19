@@ -1,0 +1,41 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 461,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "Add to my cart {{item}} {{condition}}.",
+  "intent": "Add to my cart a wig that costs between $50 and $100 and can help me cosplay the character in the image.",
+  "image": "https://images.pexels.com/photos/13352513/pexels-photo-13352513.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "instantiation_dict": {
+    "item": "a wig that costs between $50 and $100",
+    "condition": "and can help me cosplay the character in the image"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Anime Vocaloid Hatsune Miku Synthetic Wig Costume Game Play Wigs Cosplay miku Long wavy blue Hair Wigs + wig cap One Size PL-823"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 150,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": ""
+}

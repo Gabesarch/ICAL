@@ -1,0 +1,39 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 15,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/clothing-shoes-jewelry/sport-specific-clothing/competitive-swimwear.html?product_list_limit=36",
+  "geolocation": null,
+  "intent_template": "What is the price range for products in the {{region}}?",
+  "instantiation_dict": {
+    "region": "second and third rows of this page"
+  },
+  "intent": "What is the price range for products in the second and third rows of this page?",
+  "viewport_size": {
+    "width": 1280
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "4.99",
+        "16.09"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "$4.99 - $16.09"
+  },
+  "intent_template_id": 4,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "comments": "",
+  "overall_difficulty": "easy"
+}

@@ -1,0 +1,38 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 192,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=search&sCategory=9&sShowAs=gallery&sOrder=i_price&iOrderType=asc&iPage=119",
+  "geolocation": null,
+  "intent_template": "For the {{item}} on this page {{attribute}}, tell me the {{detail}}.",
+  "intent": "For the listing on this page with books of cars, tell me the primary color of the cars.",
+  "image": null,
+  "instantiation_dict": {
+    "item": "listing",
+    "attribute": "with books of cars",
+    "detail": "primary color of the cars"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "red",
+        "white"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": ""
+  },
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=57831",
+  "intent_template_id": 54
+}

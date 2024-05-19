@@ -1,0 +1,41 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 438,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "Navigate to the category where this image is most likely to be found. Then, find me the cheapest item that costs {{range}} and can {{function}} like in the image shown and add it to my cart.",
+  "intent": "Navigate to the category where this image is most likely to be found. Then, find me the cheapest item that costs more than $5 and can charge multiple devices like in the image shown and add it to my cart.",
+  "image": "https://images.pexels.com/photos/8101107/pexels-photo-8101107.jpeg",
+  "instantiation_dict": {
+    "range": "more than $5",
+    "function": "charge multiple devices"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Philips 6-Outlet Extender Surge Protector, 3-Prong, Wall Adapter Plug, Space Saving Design, 1020J, UL Listed, White, SPS1006WA/37 |OR| J.VOLT 4 Outlet Power Strip, 15A 125V 1875W, 90 Joules, 20-Inch Short Cord with Angled Plug, Small Power Strip Surge Protector, ETL Listed"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 140,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "The second item is a power strip (which may be more suitable for the image), but the first can also charge multiple things."
+}

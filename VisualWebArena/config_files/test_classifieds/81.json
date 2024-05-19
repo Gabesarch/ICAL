@@ -1,0 +1,32 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 81,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Find the cheapest {{item}} {{condition}}.",
+  "intent": "Find the cheapest book with a hurricane on the cover.",
+  "image": null,
+  "instantiation_dict": {
+    "item": "book",
+    "condition": "with a hurricane on the cover"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=4727",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "",
+  "intent_template_id": 32
+}

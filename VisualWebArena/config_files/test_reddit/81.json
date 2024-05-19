@@ -1,0 +1,87 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 81,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/photoshopbattles",
+  "geolocation": null,
+  "intent_template": "Upvote all the posts that {{modifier}} on this page.",
+  "intent": "Upvote all the posts that have a picture which contains cat on this page.",
+  "image": [],
+  "instantiation_dict": {
+    "modifier": "have a picture which contains cat"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": null,
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/photoshopbattles/45482",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/photoshopbattles/24822",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/photoshopbattles/131315",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/photoshopbattles/89211",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/photoshopbattles/131323",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/photoshopbattles/24783",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/photoshopbattles/67033",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/photoshopbattles/66941",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote"
+        }
+      }
+    ]
+  },
+  "intent_template_id": 34,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "Note: Does not check every single post on the page. Picture 10 (45482), 16 (24822), 18 (131315), 19 (89211) has cat."
+}

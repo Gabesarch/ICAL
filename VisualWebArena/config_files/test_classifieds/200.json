@@ -1,0 +1,33 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 200,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/24-pcs-lot-wild-animal-cupcake-wrappers-birthday-cake-party-decoration-supplies-lion-monkey-zebra-elephant.html |AND| http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Show me the {{attribute}} {{item}} from the classifieds site {{description}} on OneStopMarket.",
+  "intent": "Show me the latest listing of a pillow from the classifieds site with a pattern matching the top left animal in the first image of the listing on OneStopMarket.",
+  "image": null,
+  "instantiation_dict": {
+    "attribute": "latest",
+    "item": "listing of a pillow",
+    "description": "with a pattern matching the top left animal in the first image of the listing"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=65205",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "",
+  "intent_template_id": 62
+}

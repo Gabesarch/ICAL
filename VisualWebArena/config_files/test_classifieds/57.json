@@ -1,0 +1,69 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 57,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Add a comment on the {{item}} with the title \"{{title}}\" and text \"{{comment}}\".",
+  "intent": "Add a comment on the two most recently posted blue bikes between $100-150 with the title \"Interested in your bike\" and text \"Is it still available?\".",
+  "image": null,
+  "instantiation_dict": {
+    "item": "two most recently posted blue bikes between $100-150",
+    "title": "Interested in your bike",
+    "comment": "Is it still available?"
+  },
+  "require_reset": true,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=66613",
+        "locator": "func:get_query_text(__page__, '.comments_list h3')",
+        "required_contents": {
+          "must_include": [
+            "Interested in your bike"
+          ]
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=66613",
+        "locator": "func:get_query_text(__page__, '.comments_list')",
+        "required_contents": {
+          "must_include": [
+            "Is it still available?"
+          ]
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=71313",
+        "locator": "func:get_query_text(__page__, '.comments_list h3')",
+        "required_contents": {
+          "must_include": [
+            "Interested in your bike"
+          ]
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=71313",
+        "locator": "func:get_query_text(__page__, '.comments_list')",
+        "required_contents": {
+          "must_include": [
+            "Is it still available?"
+          ]
+        }
+      }
+    ]
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=66613 and http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=71313",
+  "intent_template_id": 11
+}

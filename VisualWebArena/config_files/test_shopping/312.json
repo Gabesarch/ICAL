@@ -1,0 +1,34 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 312,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "viewport_size": {
+    "width": 1280
+  },
+  "intent_template": "Please show me the product page for the item in the {{row}} row, {{column}} column.",
+  "intent": "Please show me the product page for the item in the second row, second column.",
+  "instantiation_dict": {
+    "row": "second",
+    "column": "second"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:7770/q-mixers-premium-ginger-ale-real-ingredients-less-sweet-6-7-fl-oz-24-bottles.html",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "intent_template_id": 102,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "easy",
+  "comments": ""
+}

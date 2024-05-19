@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 150,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=search&sCategory=16&sOrder=i_price&iOrderType=asc&iPage=331&sShowAs=gallery",
+  "geolocation": null,
+  "intent_template": "For the {{item}}, tell me the {{detail}}.",
+  "intent": "For the item with the Amazon webpage in its image, tell me the price in dollars displayed on the Amazon site.",
+  "image": null,
+  "instantiation_dict": {
+    "item": "item with the Amazon webpage in its image",
+    "detail": "price in dollars displayed on the Amazon site"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "249 |OR| two hundred twenty nine"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": ""
+  },
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=9246",
+  "intent_template_id": 53
+}

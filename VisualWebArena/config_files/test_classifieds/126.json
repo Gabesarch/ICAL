@@ -1,0 +1,32 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 126,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Find me {{product}} that {{condition}} in the image.",
+  "intent": "Find me the most recently listed item in the \"Books\" category that references the person in the image.",
+  "image": "https://images.pexels.com/photos/3592123/pexels-photo-3592123.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  "instantiation_dict": {
+    "product": "the most recently listed item in the \"Books\" category",
+    "condition": "references the person"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=64659",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "intent_template_id": 30,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": ""
+}

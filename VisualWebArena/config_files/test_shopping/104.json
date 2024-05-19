@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 104,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/catalogsearch/result/index/?p=2&q=dress",
+  "geolocation": null,
+  "intent_template": "{{description}}, can you add the most similar one on this page to my wishlist?",
+  "intent": "I love the color and style of this, can you add the most similar one on this page to my wishlist?",
+  "image": "coco_images/000000327601.jpg",
+  "instantiation_dict": {
+    "description": "I love the color and style of this"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/wishlist/?limit=50",
+        "locator": "document.querySelector('.products-grid.wishlist').textContent",
+        "required_contents": {
+          "must_include": [
+            "ANTS Women's Simple Short Bridesmaid Dress Chiffon Homecoming Dresses"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 30,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "comments": "",
+  "overall_difficulty": "medium"
+}

@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 196,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Navigate to the {{product}} from {{location}} that {{condition}}.",
+  "intent": "Navigate to the most expensive red truck in the \"Cars + trucks\" category from Maryland that is at least 50,000 dollars.",
+  "image": null,
+  "instantiation_dict": {
+    "product": "most expensive red truck in the \"Cars + trucks\" category",
+    "location": "Maryland",
+    "condition": "is at least 50,000 dollars"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "fuzzy_match": "N/A"
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "There are no red trucks from Maryland worth at least 50000 dollars.",
+    "reference_answer_raw_annotation": "N/A"
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "",
+  "intent_template_id": 58
+}

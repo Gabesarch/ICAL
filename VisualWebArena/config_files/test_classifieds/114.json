@@ -1,0 +1,33 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 114,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Navigate to the {{item}} from {{location}} {{condition}}.",
+  "intent": "Navigate to the oldest listing from Virginia which contains multiple people in its image.",
+  "image": null,
+  "instantiation_dict": {
+    "item": "oldest listing",
+    "location": "Virginia",
+    "condition": "which contains multiple people in its image"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=29164",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 43
+}

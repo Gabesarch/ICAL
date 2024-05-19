@@ -1,0 +1,39 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 444,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/health-household/diet-sports-nutrition/nutrition-bars-drinks.html?price=40-50",
+  "geolocation": null,
+  "intent_template": "Place the item with {{quality}} on this page into my cart",
+  "intent": "Place the item with the highest amount of protein per bar on this page into my cart",
+  "instantiation_dict": {
+    "quality": "the highest amount of protein per bar"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Garden Of Life, Fit Bar Smores Organic, 1.9 Ounce"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 144,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": ""
+}

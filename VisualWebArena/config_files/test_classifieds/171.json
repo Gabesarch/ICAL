@@ -1,0 +1,31 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 171,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Navigate to the {{product}}.",
+  "intent": "Navigate to the oldest listing in the \"Cell phones\" category which has a hot pink screen in the image.",
+  "image": null,
+  "instantiation_dict": {
+    "product": "oldest listing in the \"Cell phones\" category which has a hot pink screen in the image"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=32832",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "easy",
+  "comments": "",
+  "intent_template_id": 57
+}

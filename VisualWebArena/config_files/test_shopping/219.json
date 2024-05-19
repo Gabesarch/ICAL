@@ -1,0 +1,37 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 219,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/clothing-shoes-jewelry/men/uniforms-work-safety.html",
+  "geolocation": null,
+  "intent_template": "What {{query}} {{question}}?",
+  "instantiation_dict": {
+    "query": "are the two types of birds",
+    "question": "on the front of that colorful shirt"
+  },
+  "intent": "What are the two types of birds on the front of that colorful shirt?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "toucan",
+        "parrot"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "A toucan and parrots"
+  },
+  "intent_template_id": 70,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": ""
+}

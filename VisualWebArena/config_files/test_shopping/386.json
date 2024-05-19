@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 386,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "Can you buy the {{item}} in the \"{{product_category}}\" category?",
+  "instantiation_dict": {
+    "item": "incorrectly labeled Bud Light",
+    "product_category": "Alcoholic Beverages"
+  },
+  "intent": "Can you buy the incorrectly labeled Bud Light in the \"Alcoholic Beverages\" category?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "document.querySelector(\".order-details-items.ordered\").outerText",
+        "required_contents": {
+          "must_include": [
+            "B00U56P3AQ"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 130,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "comments": "",
+  "overall_difficulty": "hard"
+}

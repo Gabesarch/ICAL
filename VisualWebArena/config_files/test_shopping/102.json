@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 102,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "{{description}}, can you add one to my wishlist?",
+  "intent": "I need one of what its wearing for the winter, can you add one to my wishlist?",
+  "image": "coco_images/000000286708.jpg",
+  "instantiation_dict": {
+    "description": "I need one of what its wearing for the winter"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/wishlist/?limit=50",
+        "locator": "document.querySelector('.products-grid.wishlist').textContent",
+        "required_contents": {
+          "must_include": [
+            "beanie"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 29,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "comments": "",
+  "overall_difficulty": "medium"
+}

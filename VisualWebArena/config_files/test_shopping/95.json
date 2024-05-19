@@ -1,0 +1,41 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 95,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/catalogsearch/result/index/?q=necktie&product_list_limit=36",
+  "geolocation": null,
+  "intent_template": "I like {{attribute}}. Can you add something like that {{condition}} to my wishlist, if there's one?",
+  "intent": "I like this person's outfit. Can you add something like that from this page in the same colors to my wishlist, if there's one?",
+  "image": "coco_images/000000163682.jpg",
+  "instantiation_dict": {
+    "attribute": "this person's outfit",
+    "condition": "from this page in the same colors"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/wishlist/?limit=50",
+        "locator": "document.querySelector('.products-grid.wishlist').textContent",
+        "required_contents": {
+          "must_include": [
+            "Barry.Wang Men's Ties Set Silk Wedding Neckties Woven Silk Formal Business Casual(4/6/8PCS) |OR| Dress Shirts for Men Slim Fit, Classic Long Sleeve Solid Button Down Business Dress Shirt Wedding Party Top"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 26,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "comments": "",
+  "overall_difficulty": "hard"
+}

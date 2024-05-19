@@ -1,0 +1,39 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 227,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/home-kitchen/wall-art.html?p=6",
+  "geolocation": null,
+  "intent_template": "Can you add the product that looks most like {{emojis}} to my cart?",
+  "instantiation_dict": {
+    "emojis": "\ud83d\udc80"
+  },
+  "intent": "Can you add the product that looks most like \ud83d\udc80 to my cart?",
+  "require_reset": true,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Canvas Prints All is Vanity Wood Framed Canvas Wall Art Home Office Decor Ready to Hang 16\"x20\""
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 74,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": ""
+}

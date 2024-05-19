@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 456,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/wapbeng-white-european-and-american-wig-ladies-short-curly-hair-wig-42cm-womens-wigs-lovely-fashion-curly-cosplay-wigs.html",
+  "geolocation": null,
+  "intent_template": "Add to my cart {{item}} {{condition}}.",
+  "intent": "Add to my cart a wig that looks most like this but with longer hair that is between $50 and $100.",
+  "instantiation_dict": {
+    "item": "a wig that looks most like this",
+    "condition": "but with longer hair that is between $50 and $100"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Wavy Hair Wigs - Wigs Synthetic Wigs,for Art Photo Shoot Wig Props and Cosplay Costume Full Wig 100% density (Silver)"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 150,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": ""
+}

@@ -1,0 +1,34 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 87,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/aww",
+  "geolocation": null,
+  "intent_template": "Consider {{modifier}}. What is {{question}}?",
+  "intent": "Consider all post in this page. What is the total number of dogs shown?",
+  "image": [],
+  "instantiation_dict": {
+    "modifier": "all post in this page",
+    "question": "the total number of dogs shown"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "9"
+      ]
+    },
+    "reference_url": null
+  },
+  "intent_template_id": 37,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "test scrolling"
+}

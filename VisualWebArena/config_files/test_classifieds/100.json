@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 100,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "What is {{attribute}} on the {{product}}?",
+  "intent": "What is the number shown on the image of the most expensive race car in the Arts + crafts section?",
+  "image": null,
+  "instantiation_dict": {
+    "attribute": "the number shown",
+    "product": "image of the most expensive race car in the Arts + crafts section"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "61 |OR| sixty one"
+      ]
+    },
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=2354",
+    "program_html": [],
+    "string_note": ""
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "",
+  "intent_template_id": 38
+}

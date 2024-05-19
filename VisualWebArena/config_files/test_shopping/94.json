@@ -1,0 +1,41 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 94,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/clothing-shoes-jewelry/men/clothing.html?p=2",
+  "geolocation": null,
+  "intent_template": "I like {{attribute}}. Can you add something like that {{condition}} to my wishlist, if there's one?",
+  "intent": "I like what the person on the left is wearing. Can you add something like that from this page to my wishlist, if there's one?",
+  "image": "coco_images/000000066771.jpg",
+  "instantiation_dict": {
+    "attribute": "what the person on the left is wearing",
+    "condition": "from this page"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/wishlist/?limit=50",
+        "locator": "document.querySelector('.products-grid.wishlist').textContent",
+        "required_contents": {
+          "must_include": [
+            "IZOD Men's Advantage Performance Full Zip Fleece Jacket"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 26,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "comments": "",
+  "overall_difficulty": "hard"
+}

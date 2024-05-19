@@ -1,0 +1,51 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 76,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/funny/125907",
+  "geolocation": null,
+  "intent_template": "{{question}}? {{action}} and create a comment with the following format: {{comment_format}}.",
+  "intent": "How much money does the person have? Downvote the post and create a comment with the following format: \"This is a <amount of money (in digits only)> bill from <country>.\" (not including the double inverted commas), replacing <amount of money> with the actual amount of money the person has and <country> with the country that issue the bill.",
+  "image": [],
+  "instantiation_dict": {
+    "question": "How much money does the person have",
+    "action": "Downvote the post",
+    "comment_format": "\"This is a <amount of money (in digits only)> bill from <country>.\" (not including the double inverted commas), replacing <amount of money> with the actual amount of money the person has and <country> with the country that issue the bill"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": null,
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/funny/125907",
+        "locator": "document.querySelector('div.submission__vote').querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "must_include": [
+            "vote vote--user-downvoted"
+          ]
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/funny/125907",
+        "locator": "func:reddit_get_latest_comment_content_by_username(__page__, 'MarvelsGrantMan136')",
+        "required_contents": {
+          "must_include": [
+            "This is a 20000000000 bill from Zimbabwe. |OR| This is a 20,000,000,000 bill from Zimbabwe."
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 32,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9999/f/funny/125907"
+}

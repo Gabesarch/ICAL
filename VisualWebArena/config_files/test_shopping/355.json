@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 355,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/sports-outdoors/exercise-fitness.html?p=6",
+  "geolocation": null,
+  "intent_template": "I am a fan of {{organization}}. Can you find an image address of a {{product}} with their logo that I can wear to support them?",
+  "intent": "I am a fan of the Minnesota Vikings. Can you find an image address of a shirt with their logo that I can wear to support them?",
+  "instantiation_dict": {
+    "organization": "the Minnesota Vikings",
+    "product": "shirt"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "B07BCKK3HS.0.jpg |OR| B07BCKK3HS.1.jpg"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "http://gsarch@tayer.psy.cmu.edu:7770/media/catalog/product/cache/829a59e57f886f8cf0598ffca4f8a940/B/0/B07BCKK3HS.0.jpg"
+  },
+  "intent_template_id": 117,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

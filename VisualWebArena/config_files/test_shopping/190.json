@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 190,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "Can you add {{items}} to the comparison page?",
+  "instantiation_dict": {
+    "items": "the two most expensive white projectors in the \"Video Projectors\" category"
+  },
+  "intent": "Can you add the two most expensive white projectors in the \"Video Projectors\" category to the comparison page?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/catalog/product_compare",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Samsung Ultra Short Throw Laser Projector - 3840 x 2160 - Front - 20000 Hour Normal Mode4K UHD - 2,000,000:1-2800 lm (Renewed)",
+            "Panasonic LCD Projector - 720p - HDTV - 4:3 PT-EX800ZLU"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 33,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

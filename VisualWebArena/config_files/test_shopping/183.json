@@ -1,0 +1,45 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 183,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "Find me {{category}} that is of the same brand as products in one of the following pictures and buy {{quantity}} for me. It needs to {{description}}.",
+  "intent": "Find me a \ud83d\udcfa that is of the same brand as products in one of the following pictures and buy 3\ufe0f\u20e3 for me. It needs to have price between $4000 and $10000.",
+  "image": [
+    "https://images.pexels.com/photos/2942361/pexels-photo-2942361.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "https://images.pexels.com/photos/16121799/pexels-photo-16121799/free-photo-of-close-up-of-cellphone.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  ],
+  "instantiation_dict": {
+    "category": "a \ud83d\udcfa",
+    "quantity": "3\ufe0f\u20e3",
+    "description": "have price between $4000 and $10000"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "func:shopping_get_order_product_quantity(__page__,'B08H5STXXC |OR| B07YGWT3KV |OR| B08X4XCJ4T |OR| B0959NDNJV |OR| B09GMQ72RH |OR| B098KLX2R8')",
+        "required_contents": {
+          "required_values": [
+            "== 3"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 54,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": ""
+}

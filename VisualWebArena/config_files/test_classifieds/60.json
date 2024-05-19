@@ -1,0 +1,32 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 60,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Find the {{product}} where {{detail}}.",
+  "intent": "Find the most expensive video game item where I can roleplay the situation in the image.",
+  "image": "https://images.pexels.com/photos/620335/pexels-photo-620335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "instantiation_dict": {
+    "product": "most expensive video game item",
+    "detail": "I can roleplay the situation in the image"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=4188",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 26
+}

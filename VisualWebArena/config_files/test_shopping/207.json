@@ -1,0 +1,38 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 207,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/grocery-gourmet-food/breakfast-foods/cereals.html?p=5",
+  "geolocation": null,
+  "intent_template": "What is the name of the monster on that {{color}} box in the bottom row?",
+  "instantiation_dict": {
+    "color": "blue"
+  },
+  "intent": "What is the name of the monster on that blue box in the bottom row?",
+  "viewport_size": {
+    "width": 1280
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "Boo Berry"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "Boo Berry"
+  },
+  "intent_template_id": 66,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": ""
+}

@@ -1,0 +1,39 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 118,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=search&sCategory=11&sOrder=dt_pub_date&iOrderType=desc&sShowAs=gallery",
+  "geolocation": null,
+  "viewport_size": {
+    "width": 1280
+  },
+  "intent_template": "What is {{attribute}} on the {{product}}?",
+  "intent": "What is the time on the phone with the visible screen in the third row on this page?",
+  "image": null,
+  "instantiation_dict": {
+    "attribute": "the time",
+    "product": "phone with the visible screen in the third row on this page"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "3:03 |OR| 303"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": ""
+  },
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=69495",
+  "intent_template_id": 38
+}

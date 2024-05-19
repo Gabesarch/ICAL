@@ -1,0 +1,33 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 52,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Find me the most recent {{type}} in the \"{{category}}\" category of {{item}}.",
+  "intent": "Find me the most recent painting in the \"Arts + crafts\" category of something that looks close to this.",
+  "image": "https://images.pexels.com/photos/1330219/pexels-photo-1330219.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  "instantiation_dict": {
+    "type": "painting",
+    "category": "Arts + crafts",
+    "item": "something that looks close to this"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=60133",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "easy",
+  "comments": "2nd page of the Arts + crafts section",
+  "intent_template_id": 20
+}

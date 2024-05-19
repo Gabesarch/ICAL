@@ -1,0 +1,32 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 42,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/forums/all",
+  "geolocation": null,
+  "intent_template": "Navigate to the comments section of the first image post in {{subreddit}} that {{attribute}}.",
+  "intent": "Navigate to the comments section of the first image post in /f/MechanicalKeyboards as sorted by hot that does not have a keyboard in its photo.",
+  "image": null,
+  "instantiation_dict": {
+    "subreddit": "/f/MechanicalKeyboards as sorted by hot",
+    "attribute": "does not have a keyboard in its photo"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/MechanicalKeyboards/78235",
+    "program_html": [],
+    "url_note": "GOLD in PRED"
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 15
+}

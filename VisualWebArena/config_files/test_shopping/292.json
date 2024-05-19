@@ -1,0 +1,38 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 292,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/catalogsearch/result/?q=shirt",
+  "geolocation": null,
+  "intent_template": "What is the {{attribute}} of {{item}} that has the most similar pattern as {{property}} in the picture in this page?",
+  "intent": "What is the price of the shirt that has the most similar pattern as the man is wearing in the picture in this page?",
+  "image": "https://images.pexels.com/photos/6963032/pexels-photo-6963032.jpeg",
+  "instantiation_dict": {
+    "attribute": "price",
+    "item": "the shirt",
+    "property": "the man is wearing"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "3.99"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "$3.99"
+  },
+  "intent_template_id": 97,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/mens-casual-plaid-collar-shirt-beach-shirts-for-men-long-t-shirt-men-s-t-shirts-muscle-shirts-mens-graphic-tees.html"
+}

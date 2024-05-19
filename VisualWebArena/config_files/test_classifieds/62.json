@@ -1,0 +1,33 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 62,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Find the {{product}} with {{detail}} from the image {{location}}.",
+  "intent": "Find the most expensive video game item with the character from the image on its display.",
+  "image": "https://images.pexels.com/photos/2854693/pexels-photo-2854693.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "instantiation_dict": {
+    "product": "most expensive video game item",
+    "detail": "the character",
+    "location": "on its display"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=19137",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 25
+}

@@ -1,0 +1,37 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 130,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/clothing-shoes-jewelry/women/clothing.html?p=3",
+  "geolocation": null,
+  "intent_template": "I'm interested in the {{item}}. Can you return an image link showing {{image_desc}}?",
+  "intent": "I'm interested in the pink hoodie. Can you return an image link showing how it looks like from the back?",
+  "image": null,
+  "instantiation_dict": {
+    "item": "pink hoodie",
+    "image_desc": "how it looks like from the back"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "B073ZB2V56.1.jpg"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "http://gsarch@tayer.psy.cmu.edu:7770/media/catalog/product/cache/829a59e57f886f8cf0598ffca4f8a940/B/0/B073ZB2V56.1.jpg"
+  },
+  "intent_template_id": 37,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "comments": "",
+  "overall_difficulty": "easy"
+}

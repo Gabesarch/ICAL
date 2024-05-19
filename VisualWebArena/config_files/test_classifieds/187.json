@@ -1,0 +1,32 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 187,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=search&sCategory=9&iPage=6&sShowAs=gallery",
+  "geolocation": null,
+  "intent_template": "Navigate to the {{product}} where {{detail}}.",
+  "intent": "Navigate to the item on the page where Lightning McQueen is in the image.",
+  "image": null,
+  "instantiation_dict": {
+    "product": "item on the page",
+    "detail": "Lightning McQueen is in the image"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=79133",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 60
+}

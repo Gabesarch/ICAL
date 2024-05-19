@@ -1,0 +1,41 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 283,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/clothing-shoes-jewelry/women/shoes.html?p=12",
+  "geolocation": null,
+  "intent_template": "Can you order the shoes on this page that I would most likely wear if I was in the image{{size}}?",
+  "instantiation_dict": {
+    "size": " in a size 8"
+  },
+  "image": "https://images.pexels.com/photos/1619719/pexels-photo-1619719.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "intent": "Can you order the shoes on this page that I would most likely wear if I was in the image in a size 8?",
+  "require_reset": false,
+  "reference_url": "",
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "func:get_query_text(__page__, \".order-details-items.ordered\")",
+        "required_contents": {
+          "must_include": [
+            "B00IGRMOAI",
+            "8"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 92,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium"
+}

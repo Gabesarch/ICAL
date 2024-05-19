@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 110,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "Add this exact product to my shopping cart. I think it is in the \"{{category}}\" category.",
+  "intent": "Add this exact product to my shopping cart. I think it is in the \"Smartwatch Accessories\" category.",
+  "image": "http://gsarch@tayer.psy.cmu.edu:7770/media/catalog/product/cache/89ff578b9cd87e0600daac45c9e1ea98/B/0/B09CGLFYKT.0.jpg",
+  "instantiation_dict": {
+    "category": "Smartwatch Accessories"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Fullmosa Compatible with Apple Watch Band 44mm with Bumper Case, Rugged iWatch Band with Screen Protector Only for Apple Watch Series 6/5/4/SE, Orange"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 34,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "comments": "need to process exact image",
+  "overall_difficulty": "hard"
+}

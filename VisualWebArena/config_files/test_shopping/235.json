@@ -1,0 +1,49 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 235,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/home-kitchen/kitchen-dining/kitchen-table-linens.html?p=4",
+  "geolocation": null,
+  "intent_template": "Between {{item1}} and {{item2}}, add the cheaper one to my cart and the other to my wishlist.",
+  "instantiation_dict": {
+    "item1": "the Japanese style tablecover",
+    "item2": "the 3 leaf clover one"
+  },
+  "intent": "Between the Japanese style tablecover and the 3 leaf clover one, add the cheaper one to my cart and the other to my wishlist.",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/wishlist/?limit=50",
+        "locator": "document.querySelector('.products-grid.wishlist').textContent",
+        "required_contents": {
+          "must_include": [
+            "GGACEN Decorative Elastic Edged Square Fitted Tablecloth,Miyajima Torii Sumo and Flag Polyester Indoor Outdoor Fitted Tablecover for Banquet Buffet Kitchen Dining and Party Fit Square Table up to 30\""
+          ]
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "St. Patrick's Day Table Runner 36 Inches Long Farmhouse Dress Scarves, Green Clover Black and White Buffalo Plaid Dining Tablerunner for Coffee Table/Kitchen Island/Party D\u00e9cor, Small 13\" x 36\""
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 76,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "hard",
+  "comments": ""
+}

@@ -1,0 +1,39 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 195,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/MechanicalKeyboards/top?t=all&next%5BnetScore%5D=2415&next%5Bid%5D=78388",
+  "geolocation": null,
+  "intent_template": "Can you comment '{{comment}}' on the post with {{item}} posted {{timeframe}}?",
+  "instantiation_dict": {
+    "comment": "Wish I had this for my setup",
+    "item": "a pink escape key",
+    "timeframe": "after 8pm UTC"
+  },
+  "intent": "Can you comment 'Wish I had this for my setup' on the post with a pink escape key posted after 8pm UTC?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/MechanicalKeyboards/120858/literally-found-this-guy-in-a-giant-ewaste-pile-at-my",
+        "locator": "func:reddit_get_latest_comment_content_by_username(__page__, 'MarvelsGrantMan136')",
+        "required_contents": {
+          "exact_match": "Wish I had this for my setup"
+        }
+      }
+    ]
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 81
+}

@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 93,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "Add something like the {{item}} to my shopping cart.",
+  "intent": "Add something like the one in the bottom right to my shopping cart.",
+  "image": "coco_images/000000324715.jpg",
+  "instantiation_dict": {
+    "item": "one in the bottom right"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "scissors"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 25,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "comments": "",
+  "overall_difficulty": "medium"
+}

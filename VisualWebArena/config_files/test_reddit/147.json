@@ -1,0 +1,38 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 147,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/food/18831",
+  "geolocation": null,
+  "intent_template": "Leave a comment in this post with the text as the number of {{item}} in the image.",
+  "intent": "Leave a comment in this post with the text as the number of buns in the image.",
+  "image": null,
+  "instantiation_dict": {
+    "item": "buns"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/food/18831",
+        "locator": "func:reddit_get_latest_comment_content_by_username(__page__, 'MarvelsGrantMan136')",
+        "required_contents": {
+          "must_include": [
+            "10 |OR| ten"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 60,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "easy",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9999/f/food/18831"
+}

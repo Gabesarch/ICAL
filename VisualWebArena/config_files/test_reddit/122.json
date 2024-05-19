@@ -1,0 +1,29 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 122,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999",
+  "geolocation": null,
+  "intent_template": "I'm doing some research about the post with this image. Navigate to the recipe posted by the OP in the comments.",
+  "intent": "I'm doing some research about the post with this image. Navigate to the recipe posted by the OP in the comments.",
+  "image": "http://gsarch@tayer.psy.cmu.edu:9999/submission_images/44269ef7e842aaa07cbe1de220cd59dd2161be3f445f6ca913da8fee650e438f.jpg",
+  "instantiation_dict": {},
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/food/18967/-/comment/114718",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "intent_template_id": 48,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "hard",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9999/f/food/18967/homemade-korean-fried-chicken"
+}

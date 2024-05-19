@@ -1,0 +1,38 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 218,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/health-household/diet-sports-nutrition/nutrition-bars-drinks.html?p=3",
+  "geolocation": null,
+  "intent_template": "What colors do the {{item}} come in?",
+  "instantiation_dict": {
+    "item": "bars in the bottom left"
+  },
+  "intent": "What colors do the bars in the bottom left come in?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "green",
+        "blue",
+        "pink",
+        "yellow |OR| gold"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "Green, blue, pink, and yellow"
+  },
+  "intent_template_id": 64,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

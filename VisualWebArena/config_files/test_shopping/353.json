@@ -1,0 +1,32 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 353,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/clothing-shoes-jewelry.html?p=12",
+  "geolocation": null,
+  "intent_template": "I really like these {{product}}, but I am not satisfied with the color. Could you find me an item on this page for these {{product}} with a {{shadeChoice}} shade or color?",
+  "intent": "I really like these shoes, but I am not satisfied with the color. Could you find me an item on this page for these shoes with a darker shade or color?",
+  "image": "https://images.pexels.com/photos/3636684/pexels-photo-3636684.jpeg",
+  "instantiation_dict": {
+    "product": "shoes",
+    "shadeChoice": "darker"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:7770/vans-old-skool-black-white-skate-vn-0d3hy28-mens-us-9-5-uk-8-5-eur-42-5.html",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "intent_template_id": 115,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "easy",
+  "comments": ""
+}

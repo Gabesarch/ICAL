@@ -1,0 +1,39 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 446,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/electronics/television-video/televisions.html?p=4&price=0-100",
+  "geolocation": null,
+  "intent_template": "Place the item with {{quality}} on this page into my cart",
+  "intent": "Place the item with the thickest bezels on this page into my cart",
+  "instantiation_dict": {
+    "quality": "the thickest bezels"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "SAMSUNG 40 inches LED Smart FDHTV 1080P (Renewed)"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 144,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

@@ -1,0 +1,32 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 26,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/forums/all",
+  "geolocation": null,
+  "intent_template": "Find this post and tell me what the top comment says.",
+  "intent": "Find this post and tell me what the top comment says.",
+  "image": "https://images.pexels.com/photos/9782305/pexels-photo-9782305.jpeg",
+  "instantiation_dict": {},
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "fuzzy_match": "N/A"
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "This post does not exist on the site.",
+    "reference_answer_raw_annotation": "This post does not exist on the site."
+  },
+  "intent_template_id": 9,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "hard",
+  "comments": "hard: image provided, need to identify that there is no such post"
+}

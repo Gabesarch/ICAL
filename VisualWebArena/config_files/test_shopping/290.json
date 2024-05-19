@@ -1,0 +1,39 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 290,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/catalogsearch/result/index/?p=2&q=pillow",
+  "geolocation": null,
+  "intent_template": "What is the {{size_attribute}} of the {{product}} with {{attribute}} in {{unit}}?",
+  "intent": "What is the size of the white queen size pillow with grid pattern in inches?",
+  "instantiation_dict": {
+    "size_attribute": "size",
+    "product": "white queen size pillow",
+    "attribute": "grid pattern",
+    "unit": "inches"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "26",
+        "20"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "26*20"
+  },
+  "intent_template_id": 95,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/wellboo-white-pillowcases-black-and-white-plaid-pillow-cases-large-checkered-pillow-shams-grid-cotton-queen-standard-women-men-teen-boys-girls-buffalo-check-pillowcase-decorative-envelope-closure.html"
+}

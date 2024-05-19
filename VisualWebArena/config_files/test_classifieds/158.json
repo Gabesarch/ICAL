@@ -1,0 +1,32 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 158,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Explore the \"{{category}}\" category, and find the {{item}}.",
+  "intent": "Explore the \"Jewelry\" category, and find the oldest listed necklace whose image shows the necklace being worn by a human.",
+  "image": null,
+  "instantiation_dict": {
+    "category": "Jewelry",
+    "item": "oldest listed necklace whose image shows the necklace being worn by a human"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=69302",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 36
+}

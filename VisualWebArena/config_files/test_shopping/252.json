@@ -1,0 +1,49 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 252,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/video-games/legacy-systems/nintendo-systems.html",
+  "geolocation": null,
+  "intent_template": "I have {{subjects}}, can you order enough {{product}} so each can get their own?",
+  "instantiation_dict": {
+    "subjects": "octuplets on the way",
+    "product": "white wii remotes"
+  },
+  "intent": "I have octuplets on the way, can you order enough white wii remotes so each can get their own?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "func:get_query_text(__page__, \".order-details-items.ordered\")",
+        "required_contents": {
+          "must_include": [
+            "B091YR9XRH"
+          ]
+        }
+      },
+      {
+        "url": "last",
+        "locator": "func:shopping_get_order_product_quantity(__page__, \"B091YR9XRH\")",
+        "required_contents": {
+          "required_values": [
+            "== 4"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 83,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

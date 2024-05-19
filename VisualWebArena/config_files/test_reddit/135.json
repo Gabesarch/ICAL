@@ -1,0 +1,33 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 135,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999",
+  "geolocation": null,
+  "intent_template": "Can you search for '{{term}}' and find the post with {{number}} upvotes and includes a meme of {{item}}?",
+  "intent": "Can you search for 'meme' and find the post with 2 upvotes and includes a meme of three Spider-Men, a flag of the Netherlands, and a flag of Croatia?",
+  "image": null,
+  "instantiation_dict": {
+    "term": "meme",
+    "number": "2",
+    "item": "three Spider-Men, a flag of the Netherlands, and a flag of Croatia"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/memes/63334 |OR| http://gsarch@tayer.psy.cmu.edu:9999/f/memes/63334/if-i-missed-any-flags-that-look-like-these-feel-free-to-add",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "intent_template_id": 53,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "hard",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9999/f/memes/63334"
+}

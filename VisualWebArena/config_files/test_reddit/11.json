@@ -1,0 +1,29 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 11,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/forums/all",
+  "geolocation": null,
+  "intent_template": "Can you help me find and navigate to the comments section of the post with this image?",
+  "intent": "Can you help me find and navigate to the comments section of the post with this image?",
+  "image": "http://gsarch@tayer.psy.cmu.edu:9999/submission_images/534655c4f627b6bfc41f279290a8f0dec6616d24ed7baa2a7b7054326fdd4269.jpg",
+  "instantiation_dict": {},
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/pittsburgh/45900",
+    "program_html": [],
+    "url_note": "GOLD in PRED"
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "hard",
+  "comments": "hard: product image provided, need to identify that it's of Pittsburgh, navigate to that subreddit, and click on the post",
+  "intent_template_id": 4
+}

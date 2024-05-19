@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 85,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Find the {{product}}, and tell me how much it costs in dollars.",
+  "intent": "Find the most expensive ring that does not show the physical ring in the image, and tell me how much it costs in dollars.",
+  "image": null,
+  "instantiation_dict": {
+    "product": "most expensive ring that does not show the physical ring in the image"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match",
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "3200"
+      ]
+    },
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=57020",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "hard",
+  "comments": "",
+  "intent_template_id": 33
+}

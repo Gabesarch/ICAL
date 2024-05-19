@@ -1,0 +1,33 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 207,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/nintendo-switch-oled-model-w-neon-red-neon-blue-joy-con.html |AND| http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Show me the {{attribute}} {{item}} from the classifieds site {{description}} on OneStopMarket.",
+  "intent": "Show me the cheapest headphones from the classifieds site that matches the color scheme of the item on OneStopMarket.",
+  "image": null,
+  "instantiation_dict": {
+    "attribute": "cheapest",
+    "item": "headphones",
+    "description": "that matches the color scheme of the item"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=44307",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "",
+  "intent_template_id": 62
+}

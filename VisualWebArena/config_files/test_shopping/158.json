@@ -1,0 +1,79 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 158,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "Find me {{category}} that is of the same brand as products in one of the following pictures. It needs to {{description}}.",
+  "intent": "Find me a digital camera that is of the same brand as products in one of the following pictures. It needs to be black and have at least 12 reviews. Furthermore, it cannot be too expensive - it needs to have price less than $700.",
+  "image": [
+    "https://images.pexels.com/photos/1022187/pexels-photo-1022187.jpeg",
+    "https://images.pexels.com/photos/89551/pexels-photo-89551.jpeg"
+  ],
+  "instantiation_dict": {
+    "category": "a digital camera",
+    "description": "be black and have at least 12 reviews. Furthermore, it cannot be too expensive - it needs to have price less than $700"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html",
+      "page_image_query"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "last",
+        "locator": "func:shopping_get_num_reviews(__page__)",
+        "required_contents": {
+          "required_values": [
+            ">= 12"
+          ]
+        }
+      },
+      {
+        "url": "last",
+        "locator": "func:shopping_get_product_price(__page__)",
+        "required_contents": {
+          "required_values": [
+            "< 700"
+          ]
+        }
+      },
+      {
+        "url": "last",
+        "locator": "func:shopping_get_product_attributes(__page__, 'manufacturer |OR| brand name')",
+        "required_contents": {
+          "must_include": [
+            "Olympus |OR| Nikon"
+          ]
+        }
+      }
+    ],
+    "page_image_query": [
+      {
+        "eval_image_url": "last",
+        "eval_image_class": ".fotorama__stage__frame",
+        "eval_vqa": [
+          {
+            "question": "Is this a digital camera? (yes/no)",
+            "answer": "yes"
+          },
+          {
+            "question": "Is the color of the product black? (yes/no)",
+            "answer": "yes"
+          }
+        ]
+      }
+    ]
+  },
+  "intent_template_id": 47,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/olympus-om-d-e-m1-16mp-mirrorless-digital-camera-with-3-inch-lcd-body-only-silver-w-black-trim.html"
+}

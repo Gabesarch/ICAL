@@ -1,0 +1,39 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 74,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/wieco-art-sunflower-by-vincent-van-gogh-oil-paintings-reproduction-modern-floral-giclee-canvas-prints-artwork-flowers-pictures-on-canvas-wall-art-for-home-and-office-decorations.html",
+  "geolocation": null,
+  "intent_template": "Add this to my cart if {{condition}}",
+  "instantiation_dict": {
+    "condition": "it is yellow"
+  },
+  "intent": "Add this to my cart if it is yellow",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Wieco Art Sunflower by Vincent Van Gogh"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 21,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "comments": "",
+  "overall_difficulty": "easy"
+}

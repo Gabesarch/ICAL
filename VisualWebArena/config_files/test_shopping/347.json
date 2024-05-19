@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 347,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "image": "https://images.pexels.com/photos/5967048/pexels-photo-5967048.jpeg",
+  "intent_template": "Prepend the country code of {{country}} to the phone number of my account profile.",
+  "intent": "Prepend the country code of the country of the map show in the image to the phone number of my account profile.",
+  "instantiation_dict": {
+    "country": "the country of the map show in the image"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/customer/address/",
+        "locator": "document.querySelector(\".box-address-billing > div.box-content > address > a\").outerText.substring(0, 2)",
+        "required_contents": {
+          "must_include": [
+            "7 |OR| +7"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 113,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "Russia +7"
+}

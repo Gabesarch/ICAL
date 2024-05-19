@@ -1,0 +1,35 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 194,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=search&sCategory=9&sShowAs=gallery&sOrder=dt_pub_date&iOrderType=desc&iPage=90",
+  "geolocation": null,
+  "intent_template": "Navigate to the {{product}} where {{detail}}.",
+  "intent": "Navigate to the item on the page where Mickey Mouse is in the image.",
+  "image": null,
+  "instantiation_dict": {
+    "product": "item on the page",
+    "detail": "Mickey Mouse is in the image"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "fuzzy_match": "N/A"
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "There are no items with Mickey Mouse on the page.",
+    "reference_answer_raw_annotation": "N/A"
+  },
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 60
+}

@@ -1,0 +1,42 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 370,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "Buy me a {{product}} that {{relation}} in the image{{detail}}.",
+  "intent": "Buy me a phone (from the \"Cell Phones\" category) that looks the most like the items in the image.",
+  "image": "https://images.pexels.com/photos/3954444/pexels-photo-3954444.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  "instantiation_dict": {
+    "product": "phone (from the \"Cell Phones\" category)",
+    "relation": "looks the most like the items",
+    "detail": ""
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "document.querySelector(\".order-details-items.ordered\").outerText",
+        "required_contents": {
+          "must_include": [
+            "B07NVKVYZR"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 125,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "hard",
+  "comments": ""
+}

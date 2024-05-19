@@ -1,0 +1,35 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 64,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/dataisbeautiful/60133",
+  "geolocation": null,
+  "intent_template": "What {{question}} that {{modifier}}?",
+  "intent": "What are the colors of the flag used in the country that is the third largest producer of cherries in year 2012?",
+  "image": [],
+  "instantiation_dict": {
+    "question": "are the colors of the flag used in the country",
+    "modifier": "is the third largest producer of cherries in year 2012"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "red",
+        "green",
+        "white"
+      ]
+    }
+  },
+  "intent_template_id": 25,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:8888/wikipedia_en_all_maxi_2022-05/A/Italy"
+}

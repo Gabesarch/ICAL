@@ -1,0 +1,31 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 45,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "Find me the cheapest item in the \"{{category}}\" category that comes in {{shape}}.",
+  "instantiation_dict": {
+    "category": "Children's Dental Care",
+    "shape": "the style of a cupcake"
+  },
+  "intent": "Find me the cheapest item in the \"Children's Dental Care\" category that comes in the style of a cupcake.",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:7770/children-s-toothbrush-u-shaped-age-2-12-kids-silicone-toothbrush-food-soft-silicone-brush-head-with-cute-cake-look.html",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "intent_template_id": 15,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "comments": "",
+  "overall_difficulty": "medium"
+}

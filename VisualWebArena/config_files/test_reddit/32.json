@@ -1,0 +1,29 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 32,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/forums/all",
+  "geolocation": null,
+  "intent_template": "Find the user who posted this and navigate to the comments section of one of their other posts.",
+  "intent": "Find the user who posted this and navigate to the comments section of one of their other posts.",
+  "image": "http://gsarch@tayer.psy.cmu.edu:9999/submission_images/bd60b4847804344faecd02aaaa6cb280024a63cd3610283ab2de3406f3f75cf8.jpg",
+  "instantiation_dict": {},
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/nyc/44500 |OR| http://gsarch@tayer.psy.cmu.edu:9999/f/nyc/44527 |OR| http://gsarch@tayer.psy.cmu.edu:9999/f/pics/89551 |OR| http://gsarch@tayer.psy.cmu.edu:9999/f/pics/110950 |OR| http://gsarch@tayer.psy.cmu.edu:9999/f/nyc/130377",
+    "program_html": [],
+    "url_note": "GOLD in PRED"
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "hard",
+  "comments": "hard: need to navigate to the appropriate subreddit (based off DC Wharf), identify the correct user, and navigate to their other posts",
+  "intent_template_id": 12
+}

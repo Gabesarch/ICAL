@@ -1,0 +1,35 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 192,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/aww/most_commented?t=all",
+  "geolocation": null,
+  "intent_template": "What is the sum of the number of upvotes for the posts on this page that have {{item}}?",
+  "instantiation_dict": {
+    "item": "three animals"
+  },
+  "intent": "What is the sum of the number of upvotes for the posts on this page that have three animals?",
+  "require_reset": true,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "3566 |OR| 3,566"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "3566"
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "1) http://gsarch@tayer.psy.cmu.edu:9999/f/aww/80942/oc-what-do-you-suspect-they-want 2) http://gsarch@tayer.psy.cmu.edu:9999/f/aww/102762/they-think-the-couch-is-theirs-oc",
+  "intent_template_id": 80
+}

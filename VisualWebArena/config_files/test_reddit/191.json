@@ -1,0 +1,35 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 191,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/iphone/top?t=all",
+  "geolocation": null,
+  "intent_template": "What is the sum of the number of upvotes for the posts on this page that have {{item}}?",
+  "instantiation_dict": {
+    "item": "any part of a physical phone"
+  },
+  "intent": "What is the sum of the number of upvotes for the posts on this page that have any part of a physical phone?",
+  "require_reset": true,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "3463 |OR| 3,463"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "3463"
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "medium",
+  "comments": "1) http://gsarch@tayer.psy.cmu.edu:9999/f/iphone/106148/apple-really-should-bring-back-the-rose-gold-color-option-it 2) http://gsarch@tayer.psy.cmu.edu:9999/f/iphone/41010/strong-magnets 3) http://gsarch@tayer.psy.cmu.edu:9999/f/iphone/62333/this-mesh-thing-fell-out-of-my-iphone-13-pro-is-it-a-big",
+  "intent_template_id": 80
+}

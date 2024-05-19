@@ -1,0 +1,42 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 342,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "image": "https://images.pexels.com/photos/18338406/pexels-photo-18338406.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "intent_template": "Buy {{item}} {{condition}}.",
+  "intent": "Buy a motherboard which has the same CPU socket as the motherboard in the image.",
+  "instantiation_dict": {
+    "item": "a motherboard",
+    "condition": "which has the same CPU socket as the motherboard in the image"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "document.querySelector(\".order-details-items.ordered\").outerText",
+        "required_contents": {
+          "must_include": [
+            "B09J1S2LDS",
+            "294.99"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 109,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/asus-tuf-gaming-z690-plus-wifi-d4-lga1700-intel-12th-gen-atx-gaming-motherboard-pcie-5-0-ddr4-4xm-2-nvme-ssd-14-2-power-stages-wifi-6-2-5gb-lan-front-usb-3-2-gen-2-type-c-thunderbolt-4-argb-headers.html"
+}

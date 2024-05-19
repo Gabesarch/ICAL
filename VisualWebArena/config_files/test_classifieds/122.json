@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 122,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Find the {{product}}, and tell me how much it costs in dollars.",
+  "intent": "Find the oldest listed red book in the \"Books\" category, and tell me how much it costs in dollars.",
+  "image": null,
+  "instantiation_dict": {
+    "product": "oldest listed red book in the \"Books\" category"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match",
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "3"
+      ]
+    },
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=69456",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "hard",
+  "comments": "",
+  "intent_template_id": 33
+}

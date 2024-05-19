@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 197,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/sports-outdoors/fan-shop/clothing.html?p=10",
+  "geolocation": null,
+  "intent_template": "Can you add the item {{offset}} the {{item}} to my cart?",
+  "instantiation_dict": {
+    "offset": "one row up and one column left of",
+    "item": "red and white polka dot romper"
+  },
+  "intent": "Can you add the item one row up and one column left of the red and white polka dot romper to my cart?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Sweatshirt for Men Long Sleeve Turn Down Collar Spring Summer Printed Casual Slim Fit Button Down Shirts Tops T-Shirts"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 62,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

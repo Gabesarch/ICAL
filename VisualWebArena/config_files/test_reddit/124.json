@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 124,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999",
+  "geolocation": null,
+  "intent_template": "Find me a post in {{forum}} that illustrates the {{company}} revenue in {{datetime}}, and tell me the revenue of {{department}} (in billions).",
+  "intent": "Find me a post in /f/dataisbeautiful that illustrates the Microsoft revenue in 1985, and tell me the revenue of the whole company in 1985 (in billions).",
+  "image": null,
+  "instantiation_dict": {
+    "forum": "/f/dataisbeautiful",
+    "company": "Microsoft",
+    "datetime": "1985",
+    "department": "the whole company in 1985"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "0.14"
+      ]
+    },
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/dataisbeautiful/18389 |OR| http://gsarch@tayer.psy.cmu.edu:9999/f/dataisbeautiful/18389/oc-microsoft-ipo-vs-now-breaking-down-its-revenue-and"
+  },
+  "intent_template_id": 49,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9999/f/dataisbeautiful/18389"
+}

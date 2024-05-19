@@ -1,0 +1,41 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 7,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "{{modifier}}List the full product names of {{color}} {{product}} and tell me the price range of the available products",
+  "intent": "Search for 'pencil case'. List the full product names of those with animal designs on the first page and tell me the price range of the available products",
+  "instantiation_dict": {
+    "modifier": "Search for 'pencil case'. ",
+    "color": "those with",
+    "product": "animal designs on the first page"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "Cosmetic Bag Leather Pencil Case,Cosmetic Bag Leather Pencil Case,Two Wolves,Portable Small Makeup Bags Travel bag Multifunctional Pen Holder Box with Zipper for Women Girls Lady Teens",
+        "Danielle Cute Boston Terrier, Frenchie, French Bulldog Portable Pencil Case, Cosmetic Travel Organizer Bag | 9x3x3 in",
+        "Dinosaur Pattern Travel Bag Large Toiletries Bag Cosmetic Pouch Pencil Case Tote Multifunction Organizer Storage Bag",
+        "11.99",
+        "38.67"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": ""
+  },
+  "intent_template_id": 2,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "comments": "",
+  "overall_difficulty": "hard"
+}

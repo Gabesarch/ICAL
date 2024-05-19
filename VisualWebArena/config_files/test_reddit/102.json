@@ -1,0 +1,47 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 102,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/MechanicalKeyboards/56362",
+  "geolocation": null,
+  "intent_template": "{{question}}? Leave a comment replying to user \"{{user}}\" with the following format: {{format}}.",
+  "intent": "How many red keys are in the picture? Leave a comment replying to user \"liverblow\" with the following format: \"It has <number of red key> $%@\" (not including the double inverted commas), replacing <number of red key> with the actual number of red key. Remember to use digits.",
+  "image": [],
+  "instantiation_dict": {
+    "question": "How many red keys are in the picture",
+    "user": "liverblow",
+    "format": "\"It has <number of red key> $%@\" (not including the double inverted commas), replacing <number of red key> with the actual number of red key. Remember to use digits"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/MechanicalKeyboards/56362",
+        "locator": "func:reddit_get_parent_comment_username_of_latest_comment_by_username(__page__, 'MarvelsGrantMan136')",
+        "required_contents": {
+          "exact_match": "liverblow"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/MechanicalKeyboards/56362",
+        "locator": "func:reddit_get_latest_comment_content_by_username(__page__, 'MarvelsGrantMan136')",
+        "required_contents": {
+          "exact_match": "It has 3 $%@"
+        }
+      }
+    ]
+  },
+  "intent_template_id": 41,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "easy",
+  "comments": ""
+}

@@ -1,0 +1,143 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 83,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/Art/active",
+  "geolocation": null,
+  "intent_template": "Upvote all the posts that {{modifier}} on this page.",
+  "intent": "Upvote all the posts that have a picture which contains a human or human-like face on this page.",
+  "image": [],
+  "instantiation_dict": {
+    "modifier": "have a picture which contains a human or human-like face"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": null,
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/Art/116512",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/Art/116619",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/Art/116536",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/Art/116517",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/Art/116504",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/Art/116469",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/Art/116444",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/Art/116617",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/Art/116583",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/Art/116508",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/Art/116439",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/Art/116461",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/Art/116595",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/Art/116610",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/Art/116476",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/Art/116538",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote"
+        }
+      }
+    ]
+  },
+  "intent_template_id": 34,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "Note: Does not check every single post on the page. Picture 1 (116512), 2 (116619), 3 (116536), 4, 6 (116517), 9 (116504), 11 (116469), 15 (116444), 16 (116617), 17 (116583), 19 (116508), 21 (116439), 24 (116461) has human face."
+}

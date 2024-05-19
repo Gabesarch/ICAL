@@ -1,0 +1,34 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 364,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/sports-outdoors/exercise-fitness.html?p=6",
+  "geolocation": null,
+  "intent_template": "I am a fan of {{organization}}. Can you find an image address of a {{product}} with their logo that I can wear to support them?",
+  "intent": "I am a fan of the Green Bay Packers. Can you find an image address of a shirt with their logo that I can wear to support them?",
+  "instantiation_dict": {
+    "organization": "the Green Bay Packers",
+    "product": "shirt"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "fuzzy_match": "N/A"
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "There are no Packers shirts available on this page.",
+    "reference_answer_raw_annotation": "N/A"
+  },
+  "intent_template_id": 117,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

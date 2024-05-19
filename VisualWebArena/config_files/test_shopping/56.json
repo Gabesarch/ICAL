@@ -1,0 +1,43 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 56,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/beauty-personal-care/skin-care/sunscreens-tanning-products.html",
+  "geolocation": null,
+  "intent_template": "Add the {{product}} in the {{location}} to my wish list.",
+  "intent": "Add the orange one in the first row to my wish list.",
+  "instantiation_dict": {
+    "product": "orange one",
+    "location": "first row"
+  },
+  "viewport_size": {
+    "width": 1280
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/wishlist/?limit=50",
+        "locator": "document.querySelector('.products-grid.wishlist').textContent",
+        "required_contents": {
+          "must_include": [
+            "Banana Boat Ultra Sport Sunscreen Lotion, Broad Spectum SPF 30, 8 Fl Oz"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 12,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "comments": "",
+  "overall_difficulty": "easy"
+}

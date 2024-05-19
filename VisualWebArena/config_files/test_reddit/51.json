@@ -1,0 +1,32 @@
+{
+  "sites": [
+    "wikipedia",
+    "reddit"
+  ],
+  "task_id": 51,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/dataisbeautiful/18267 |AND| http://gsarch@tayer.psy.cmu.edu:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+  "geolocation": null,
+  "intent_template": "What {{question}} that {{modifier}}? Answer using the information from the Wikipedia site in the second tab.",
+  "intent": "What is the ISIN of the company that occupies the largest portion in Warren Buffet's portfolio? Answer using the information from the Wikipedia site in the second tab.",
+  "image": [],
+  "instantiation_dict": {
+    "question": "is the ISIN of the company",
+    "modifier": "occupies the largest portion in Warren Buffet's portfolio"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "exact_match": "US0378331005"
+    }
+  },
+  "intent_template_id": 18,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:8888/wikipedia_en_all_maxi_2022-05/A/Apple_Inc."
+}

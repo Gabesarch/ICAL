@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 298,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/catalogsearch/result/?q=champion+hoodie",
+  "geolocation": null,
+  "intent_template": "What size of {{item}} should I buy if {{condition}}?",
+  "intent": "What size of the dark green hoodie in this page should I buy if my chest size is 120 cm?",
+  "instantiation_dict": {
+    "item": "the dark green hoodie in this page",
+    "condition": "my chest size is 120 cm"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "XL |OR| X-Large"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "This task requires OCR.",
+    "reference_answer_raw_annotation": "XL"
+  },
+  "intent_template_id": 99,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/champion-men-s-sideline-quarter-zip-pullover-with-woven.html"
+}

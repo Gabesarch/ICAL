@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 212,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/patio-lawn-garden/gardening-lawn-care.html?p=4",
+  "geolocation": null,
+  "intent_template": "Can you add the {{item}} with {{number}} stars to my cart?",
+  "instantiation_dict": {
+    "item": "red flower seeds",
+    "number": "around 4"
+  },
+  "intent": "Can you add the red flower seeds with around 4 stars to my cart?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Red Roselle Seeds (Hibiscus sabdariffa) 50+ Tropical Hibiscus Seeds Packed in FROZEN SEED CAPSULES for Growing Seeds Now or Saving Seeds for Years"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 68,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "easy",
+  "comments": ""
+}

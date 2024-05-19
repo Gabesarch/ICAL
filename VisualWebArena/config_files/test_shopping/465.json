@@ -1,0 +1,39 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 465,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/ihappywall-3-pieces-bathroom-canvas-wall-art-teal-style-bathtub-bath-set-towel-relax-soothe-unwind-bathroom-still-life-picture-poster-print-on-canvas-stretched-and-framed-ready-to-hang.html",
+  "geolocation": null,
+  "intent_template": "Add this (in any size) to my cart if {{condition}}",
+  "intent": "Add this (in any size) to my cart if the at least one of the posters has the word \"happy\" printed on it",
+  "instantiation_dict": {
+    "condition": "the at least one of the posters has the word \"happy\" printed on it"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_exclude": [
+            "iHAPPYWALL 3 Pieces Bathroom Canvas Wall Art Teal Style Bathtub Bath Set Towel Relax Soothe Unwind Bathroom Still Life Picture Poster Print On Canvas Stretched and Framed Ready To Hang"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 151,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

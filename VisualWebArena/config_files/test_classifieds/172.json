@@ -1,0 +1,31 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 172,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Navigate to the {{product}}.",
+  "intent": "Navigate to the cheapest listing in the \"Furniture category\" with three blue chairs suitable for a workplace in the image.",
+  "image": null,
+  "instantiation_dict": {
+    "product": "cheapest listing in the \"Furniture category\" with three blue chairs suitable for a workplace in the image"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=23701",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "easy",
+  "comments": "",
+  "intent_template_id": 57
+}

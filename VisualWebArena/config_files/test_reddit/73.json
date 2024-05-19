@@ -1,0 +1,52 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 73,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999",
+  "geolocation": null,
+  "intent_template": "Find a post in {{forum}} that {{description}}. Then, repost the picture to {{forum2}} with {{characteristic}}. Finally, {{action}}.",
+  "intent": "Find a post in f/MechanicalKeyboards that contains a special keyboard that has a huge W key. Then, repost the picture to f/gaming with title \"WwWwWwWwWwwWw all the way\". Finally, navigate to the post.",
+  "image": [],
+  "instantiation_dict": {
+    "forum": "f/MechanicalKeyboards",
+    "description": "contains a special keyboard that has a huge W key",
+    "forum2": "f/gaming",
+    "characteristic": "title \"WwWwWwWwWwwWw all the way\"",
+    "action": "navigate to the post"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html",
+      "page_image_query",
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "f/gaming",
+    "url_note": "GOLD in PRED",
+    "program_html": [
+      {
+        "url": "last",
+        "locator": "lambda:(() => { try { return document.querySelector('.submission__link').textContent } catch { return '' } })()",
+        "required_contents": {
+          "exact_match": "WwWwWwWwWwwWw all the way"
+        }
+      }
+    ],
+    "page_image_query": [
+      {
+        "eval_image_url": "last",
+        "eval_image_class": ".submission__image",
+        "eval_fuzzy_image_match": "http://gsarch@tayer.psy.cmu.edu:9999/submission_images/c876b20d6b3b643774e61d6a3c0914a9bc013118c9f10bdc9ff4e940a084f4b9.jpg"
+      }
+    ]
+  },
+  "intent_template_id": 30,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "hard",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9999/f/MechanicalKeyboards/14329"
+}

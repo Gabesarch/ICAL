@@ -1,0 +1,41 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 221,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "Can you add the most expensive {{category}} to my cart that is less than ${{dollars}} and {{color}}?",
+  "instantiation_dict": {
+    "category": "smartwatch (from the \"Smartwatches\" category)",
+    "dollars": "200",
+    "color": "not black"
+  },
+  "intent": "Can you add the most expensive smartwatch (from the \"Smartwatches\" category) to my cart that is less than $200 and not black?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "SAMSUNG Galaxy Watch Active 2 (40mm, GPS, Bluetooth) Smart Watch with Advanced Health Monitoring, Fitness Tracking, and Long Lasting Battery - Rose Gold (US Version) (Renewed)"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 71,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

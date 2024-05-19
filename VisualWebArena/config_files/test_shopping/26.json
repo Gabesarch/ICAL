@@ -1,0 +1,32 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 26,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "Search for \"{{keyword}}\" and show me the {{item_order}} item {{condition}}",
+  "instantiation_dict": {
+    "keyword": "plush toy",
+    "item_order": "first",
+    "condition": "that is pink in color"
+  },
+  "intent": "Search for \"plush toy\" and show me the first item that is pink in color",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:7770/olpchee-foldable-plush-children-s-sofa-backrest-chair-cute-cartoon-infant-baby-seat-for-living-room-bedroom-corgi.html",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "intent_template_id": 7,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "comments": "",
+  "overall_difficulty": "easy"
+}

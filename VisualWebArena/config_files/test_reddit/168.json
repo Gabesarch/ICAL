@@ -1,0 +1,49 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 168,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/pics?next%5Branking%5D=1773&next%5Bid%5D=67091",
+  "geolocation": null,
+  "intent_template": "Can you repost the image on this page that would fit best in {{subreddit}} with the same title and text as the original post and take me to the comments section of the post?",
+  "instantiation_dict": {
+    "subreddit": "f/EarthPorn"
+  },
+  "intent": "Can you repost the image on this page that would fit best in f/EarthPorn with the same title and text as the original post and take me to the comments section of the post?",
+  "require_reset": true,
+  "eval": {
+    "eval_types": [
+      "program_html",
+      "page_image_query"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "last",
+        "locator": "func:get_query_text(__page__, \"#main > article > div > div.submission__inner > header\")",
+        "required_contents": {
+          "must_include": [
+            "Aurora Borealis looking in the Direction to Svalbard flying from Lahore to Toronto (my pic) \ud83c\udf42\ud83d\udcab\u2728",
+            "MarvelsGrantMan136",
+            "EarthPorn"
+          ]
+        }
+      }
+    ],
+    "page_image_query": [
+      {
+        "eval_image_url": "last",
+        "eval_image_class": ".submission__image",
+        "eval_fuzzy_image_match": "http://gsarch@tayer.psy.cmu.edu:9999/submission_images/1972dfbb29553ecc270ae83ab679d218f425d478136f1f524a09047e299a2cef.jpg"
+      }
+    ]
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 70
+}

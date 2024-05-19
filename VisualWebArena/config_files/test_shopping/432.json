@@ -1,0 +1,42 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 432,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "Help me find all items between {{lower}} and {{upper}} that look like the image below and put them in my cart.",
+  "intent": "Help me find all items between $30 and $40 that look like the image below and put them in my cart.",
+  "image": "http://gsarch@tayer.psy.cmu.edu:7770/media/catalog/product/cache/829a59e57f886f8cf0598ffca4f8a940/B/0/B07Q9QGBGV.0.jpg",
+  "instantiation_dict": {
+    "lower": "$30",
+    "upper": "$40"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Magic Array Wireless Charger, 10w Ultra-Thin Qi Fast Wireless Charging Pad, Compatible with iPhone X/XS/MAX/8/8 Plus/Galaxy Note 9/S9/S10/S9 Plus/Note 8/S8 Edge More (Adapter NOT Included) (Pink)",
+            "Magic Array Wireless Charger, 10w Ultra-Thin Qi Fast Wireless Charging Pad, Compatible with iPhone X/XS/MAX/8/8 Plus/Galaxy Note 9/S9/S10/S9 Plus/Note 8/S8 Edge More (Adapter NOT Included) (Brown)"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 137,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

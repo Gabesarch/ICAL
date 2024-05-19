@@ -1,0 +1,42 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 6,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "{{modifier}}List the full product names of {{color}} {{product}} and tell me the price range of the available products",
+  "intent": "Search for 'Nike slide slippers'. List the full product names of red ones on the first page and tell me the price range of the available products",
+  "instantiation_dict": {
+    "modifier": "Search for 'Nike slide slippers'. ",
+    "color": "red",
+    "product": "ones on the first page"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "Nike Men's Air Max Camden Slide Sandal",
+        "Nike Men's Benassi JDI Fanny Pack Slides",
+        "Nike Offcourt Slide Mens Bq4639-002 Size 12",
+        "Nike Jordan Men's Break Slide Red AR6374-602",
+        "42.81",
+        "69.00"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "These models are availiable: Nike Men's Air Max Camden Slide Sandal, Nike Men's Benassi JDI Fanny Pack Slides, Nike Offcourt Slide Mens Bq4639-002 Size 12, Nike Jordan Men's Break Slide Red AR6374-602. The price ranges from $42.81 to $69.00"
+  },
+  "intent_template_id": 2,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "easy",
+  "comments": "",
+  "overall_difficulty": "hard"
+}

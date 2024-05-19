@@ -1,0 +1,32 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 157,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "Find me {{category}} of the same brand as the product in this picture. It needs to {{description}}.",
+  "intent": "Find me protein bars of the same brand as the product in this picture. It needs to have price between $30 and $50.",
+  "image": "https://images.pexels.com/photos/12709747/pexels-photo-12709747.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "instantiation_dict": {
+    "category": "protein bars",
+    "description": "have price between $30 and $50"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:7770/kellogg-s-special-k-protein-bars-meal-replacement-protein-snacks-value-size-chocolatey-chip-cookie-dough-19oz-box-12-bars.html",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "intent_template_id": 46,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "hard",
+  "comments": ""
+}

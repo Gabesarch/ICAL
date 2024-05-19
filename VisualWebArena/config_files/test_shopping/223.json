@@ -1,0 +1,43 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 223,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "Can you add all the {{items}} {{condition}} to my shopping cart?",
+  "intent": "Can you add all the amiibo figures that cost less than $50 to my shopping cart?",
+  "instantiation_dict": {
+    "items": "amiibo figures that cost",
+    "condition": "less than $50"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "amiibo SAMUS/E.M.M.I. 2-in-1 Pack (Nintendo Switch)",
+            "Nintendo amiibo - Ice Climbers - Super Smash Bros. Series",
+            "Nintendo Amiibo - Chrom - Super Smash Bros. Series - Switch",
+            "Nintendo Amiibo - Link: The Legend of Zelda: Link's Awakening Series - Switch"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 72,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

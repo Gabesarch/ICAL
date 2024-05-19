@@ -1,0 +1,32 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 134,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=search&sOrder=dt_pub_date&iOrderType=desc&sPattern=+Xbox+One+games&sCategory=24&iPage=5&sShowAs=gallery",
+  "geolocation": null,
+  "intent_template": "Navigate to the {{product}} which {{condition}} in this image.",
+  "intent": "Navigate to the listing on this page whose image includes a jersey which is the same color as the item in this image.",
+  "image": "https://images.pexels.com/photos/36753/flower-purple-lical-blosso.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  "instantiation_dict": {
+    "product": "listing on this page whose image includes a jersey",
+    "condition": "is the same color as the item"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=42088",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 47
+}

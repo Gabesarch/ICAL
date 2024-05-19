@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 187,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "Add the least expensive {{item}} that can hold {{storable}} to my shopping cart.",
+  "instantiation_dict": {
+    "item": "opaque phone case",
+    "storable": "an iPhone X"
+  },
+  "intent": "Add the least expensive opaque phone case that can hold an iPhone X to my shopping cart.",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Asuwish Compatible with iPhone Xs X 10 10s Wallet Case Tempered Glass Screen Protector Leather Flip Cover Card Holder Phone Cases for iPhoneX iPhoneXs iPhone10 i PhoneX SX 10x 10xs X\u2019s Women Men Black"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 58,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

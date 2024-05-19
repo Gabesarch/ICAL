@@ -1,0 +1,33 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 58,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Explore the \"{{category}}\" category of {{location}} and find me {{item}}.",
+  "intent": "Explore the \"Furniture\" category of Washington, D.C. and find me the most recent blue chair.",
+  "image": null,
+  "instantiation_dict": {
+    "category": "Furniture",
+    "location": "Washington, D.C.",
+    "item": "the most recent blue chair"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=37760",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 24
+}

@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 170,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999",
+  "geolocation": null,
+  "intent_template": "Can you subscribe to the forum {{condition}}?",
+  "image": "https://images.pexels.com/photos/1884574/pexels-photo-1884574.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "instantiation_dict": {
+    "condition": "that is most likely to contain posts like this"
+  },
+  "intent": "Can you subscribe to the forum that is most likely to contain posts like this?",
+  "require_reset": true,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999",
+        "locator": "func:get_query_text(__page__, \"#sidebar > section > ul\")",
+        "required_contents": {
+          "must_include": [
+            "sports"
+          ]
+        }
+      }
+    ]
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 71
+}

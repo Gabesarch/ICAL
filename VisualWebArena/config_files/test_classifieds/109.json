@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 109,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "How {{quantity}} does the {{item}} have?",
+  "intent": "How many miles does the most expensive white sports car in the \"Cars + trucks\" category from Ohio have?",
+  "image": null,
+  "instantiation_dict": {
+    "quantity": "many miles",
+    "item": "most expensive white sports car in the \"Cars + trucks\" category from Ohio"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "36K |OR| 36,000 |OR| 36000"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": ""
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=48555",
+  "intent_template_id": 9
+}

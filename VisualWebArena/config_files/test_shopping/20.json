@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 20,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "What is the price of the most expensive {{color}} product in the \"{{product_category}}\" category?",
+  "instantiation_dict": {
+    "color": "blue",
+    "product_category": "Posters & Prints"
+  },
+  "intent": "What is the price of the most expensive blue product in the \"Posters & Prints\" category?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "399.99"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "$399.99"
+  },
+  "intent_template_id": 5,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "comments": "",
+  "overall_difficulty": "medium"
+}

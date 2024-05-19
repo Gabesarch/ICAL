@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 21,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/forums/all",
+  "geolocation": null,
+  "intent_template": "Find and upvote this post. I think it was posted in {{forum}}.",
+  "intent": "Find and upvote this post. I think it was posted in /f/OldSchoolCool.",
+  "image": "http://gsarch@tayer.psy.cmu.edu:9999/submission_images/97414d47ab9fe6c197aaa93f5157a80d59db4df0cbc9b683c7cb5aa9ad326e0e.jpg",
+  "instantiation_dict": {
+    "forum": "/f/OldSchoolCool"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/OldSchoolCool/56995/goerge-clooney-1990",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "must_include": [
+            "vote vote--user-upvoted"
+          ]
+        }
+      }
+    ]
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "hard",
+  "comments": "hard: product image provided, need to find the correct post (third page in /f/OldSchoolCool) and upvote it",
+  "intent_template_id": 8
+}

@@ -1,0 +1,38 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 175,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999",
+  "geolocation": null,
+  "intent_template": "How much money was user {{user}}'s {{security}} worth {{timeframe}} in their screenshot (in {{currency}})?",
+  "instantiation_dict": {
+    "user": "cezapiza",
+    "security": "SPY puts",
+    "timeframe": "the day before",
+    "currency": "USD"
+  },
+  "intent": "How much money was user cezapiza's SPY puts worth the day before in their screenshot (in USD)?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "360"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "$360"
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "Post is http://gsarch@tayer.psy.cmu.edu:9999/f/wallstreetbets/115267/up-60-on-my-spy-puts-today",
+  "intent_template_id": 73
+}

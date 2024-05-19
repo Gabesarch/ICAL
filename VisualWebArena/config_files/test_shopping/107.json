@@ -1,0 +1,41 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 107,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "I need something to store {{item}}. Add one to my shopping cart.",
+  "intent": "I need something to store the item on the right. Add one to my shopping cart.",
+  "image": "coco_images/000000444275.jpg",
+  "instantiation_dict": {
+    "item": "the item on the right"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "microwave",
+            "storage |OR| shelf |OR| rack"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 31,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/xxjf-microwave-rack-stainless-steel-2-tier-microwave-oven-rack-kitchen-storage-organiser-cabinet-printer-shelf-bakers-rack.html",
+  "overall_difficulty": "hard"
+}

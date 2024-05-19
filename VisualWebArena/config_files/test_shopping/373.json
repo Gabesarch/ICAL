@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 373,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "What is the color of the {{type}} item in the \"{{product_category}}\" category?",
+  "instantiation_dict": {
+    "type": "cheapest car charger",
+    "product_category": "Chargers & Power Adapters"
+  },
+  "intent": "What is the color of the cheapest car charger item in the \"Chargers & Power Adapters\" category?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "black"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "black"
+  },
+  "intent_template_id": 6,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "comments": "",
+  "overall_difficulty": "medium"
+}

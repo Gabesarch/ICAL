@@ -1,0 +1,39 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 229,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/home-kitchen/wall-art/posters-prints.html?p=24",
+  "geolocation": null,
+  "intent_template": "Can you add the product that looks most like {{emojis}} to my cart?",
+  "instantiation_dict": {
+    "emojis": "this pattern: \ud83c\udded\ud83c\uddfa"
+  },
+  "intent": "Can you add the product that looks most like this pattern: \ud83c\udded\ud83c\uddfa to my cart?",
+  "require_reset": true,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "When Sick Kids Should Stay Home from School Poster - Laminated, 12x18 in. - Pre-K, Home Daycare Supplies - Elementary School Nurse Office Decor - Pediatric Health"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 74,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

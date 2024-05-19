@@ -1,0 +1,38 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 27,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/forums/all",
+  "geolocation": null,
+  "intent_template": "Make a Reddit post with this image ({{image_url}}) in the most relevant subreddit, and navigate to its comments section.",
+  "intent": "Make a Reddit post with this image (https://images.pexels.com/photos/14267038/pexels-photo-14267038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2) in the most relevant subreddit, and navigate to its comments section.",
+  "image": "https://images.pexels.com/photos/14267038/pexels-photo-14267038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  "instantiation_dict": {
+    "image_url": "https://images.pexels.com/photos/14267038/pexels-photo-14267038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match",
+      "page_image_query"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/MechanicalKeyboards",
+    "url_note": "GOLD in PRED",
+    "page_image_query": [
+      {
+        "eval_image_url": "last",
+        "eval_image_class": ".submission__content",
+        "eval_fuzzy_image_match": "https://images.pexels.com/photos/14267038/pexels-photo-14267038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      }
+    ]
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "hard",
+  "comments": "hard: existing models probably cannot handle this task because of screen browsing/navigation capabilities",
+  "intent_template_id": 10
+}

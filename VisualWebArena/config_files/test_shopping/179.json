@@ -1,0 +1,60 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 179,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "Find me {{category}} that is of the same brand as the product in this picture and buy {{quantity}} for me. It needs to {{description}}.",
+  "intent": "Find me all of the protein bars that is of the same brand as the product in this picture and buy 12 bars of each (at the lowest possible per unit price) for me. It needs to have per unit price between $1.66 and $4.08.",
+  "image": "https://images.pexels.com/photos/12538285/pexels-photo-12538285.jpeg",
+  "instantiation_dict": {
+    "category": "all of the protein bars",
+    "quantity": "12 bars of each (at the lowest possible per unit price)",
+    "description": "have per unit price between $1.66 and $4.08"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "func:shopping_get_order_product_quantity(__page__,'B00MXUFL0E')",
+        "required_contents": {
+          "required_values": [
+            "== 1"
+          ]
+        }
+      },
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "func:shopping_get_order_product_option(__page__, 'B00MXUFL0E', 'Size')",
+        "required_contents": {
+          "must_include": [
+            "12 Count (Pack of 1)"
+          ]
+        }
+      },
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "func:shopping_get_order_product_quantity(__page__,'B07ZD2PB9F')",
+        "required_contents": {
+          "required_values": [
+            "== 1"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 53,
+  "reasoning_difficulty": "hrad",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/kellogg-s-special-k-protein-bars-meal-replacement-protein-snacks-value-size-strawberry-19oz-box-12-bars.html, http://gsarch@tayer.psy.cmu.edu:7770/kellogg-s-special-k-protein-bars-meal-replacement-protein-snacks-value-size-chocolatey-chip-cookie-dough-19oz-box-12-bars.html. Per unit price is calculated as listed price divided by 12."
+}

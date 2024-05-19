@@ -1,0 +1,50 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 430,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "Help me find all items between {{lower}} and {{upper}} that look like the image below and put them in my cart.",
+  "intent": "Help me find all items between $40 and $50 that look like the image below and put them in my cart.",
+  "image": "http://gsarch@tayer.psy.cmu.edu:7770/media/catalog/product/cache/829a59e57f886f8cf0598ffca4f8a940/B/0/B01GBZZA48.0.jpg",
+  "instantiation_dict": {
+    "lower": "$40",
+    "upper": "$50"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "125ft Weather Seal Quad Shield Outdoor 3GHZ RG-6 Coaxial Cable 75 Ohm (Satellite TV or Broadband Internet) Anti Corrosion Brass Connector RG6 Fittings Assembled in USA by PHAT SATELLITE INTL",
+            "GE RG6 Coaxial Cable, 100 ft. F-Type Connectors, Quad Shielded Coax Cable, 3 GHz Digital, In-Wall Rated, Ideal for TV Antenna, DVR, VCR, Satellite, Cable Box, Home Theater, Black, 34842",
+            "SiriusXM Satellite Radio 75 Foot RG6 Coaxial Cable Antenna Cable Extension Kit Works with All Sirius, XM and SiriusXM Radio Receivers and Boomboxes",
+            "Ucland RP-SMA Male to SMA Male Adapter Connector RG174 Coaxial Cable for Satellite Television Black 2m",
+            "55ft TRI-Shield 14AWG 75 Ohm Gel Coated Braid Direct Burial Underground RG-11 Coax HD Cable TV Antenna Weather Seal All Brass CONNECTORS UL ETL Cut to Order Assembled in USA",
+            "65ft Made in USA Plenum RG-11 Coax 3Ghz HD Cable TV Antenna 14AWG 75 Ohm All Brass CONNECTORS CMP UL ETL Anti-Static Commercial FIRE Retardant Cut to Order Assembled in USA by PHAT SATELLITE INTL",
+            "90ft TRI-Shield 14AWG 75 Ohm Gel Coated Braid Direct Burial Underground RG-11 Coax HD Cable TV Antenna Weather Seal All Brass CONNECTORS UL ETL Cut to Order Assembled in USA",
+            "75 Ft Pro Brand RG6 Coax Cable Black Solid Copper Center Conductor Digital 2.25 GHz Satellite HDTV Dish 75 Ohm Shielded Braided Satellite Dish Off-Air HDTV Aerial Antenna Video Jumper Signal",
+            "GE RG6 Coaxial Cable, 100 ft. F-Type Connectors, Quad Shielded Coax Cable, 3 GHz Digital, In-Wall Rated, Ideal for TV Antenna, DVR, VCR, Satellite, Cable Box, Home Theater, Black, 34842",
+            "Ucland RP-SMA Male to SMA Male Adapter Connector RG174 Coaxial Cable for Satellite Television Black 2m"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 137,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": ""
+}

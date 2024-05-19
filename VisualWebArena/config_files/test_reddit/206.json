@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 206,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/EarthPorn/most_commented?t=all&next%5BcommentCount%5D=89&next%5Bid%5D=76289",
+  "geolocation": null,
+  "intent_template": "What is the top comment on the post about {{condition}}?",
+  "instantiation_dict": {
+    "condition": "the thing that looks like the image"
+  },
+  "image": "http://gsarch@tayer.psy.cmu.edu:8888/wikipedia_en_all_maxi_2022-05/I/Crystal_skull_british_museum_random9834672.jpg.webp",
+  "intent": "What is the top comment on the post about the thing that looks like the image?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "Why not Zoidberg?"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "Why not Zoidberg?"
+  },
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "easy",
+  "comments": "",
+  "intent_template_id": 85
+}

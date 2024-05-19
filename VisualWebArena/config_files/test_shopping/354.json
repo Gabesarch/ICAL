@@ -1,0 +1,50 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 354,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "Find me {{category}} that are of the same brand as the product in this picture. It needs to {{description}}.",
+  "intent": "Find me shoes that are of the same brand as the product in this picture. It needs to be less than 70 dollars.",
+  "image": "https://images.pexels.com/photos/14544746/pexels-photo-14544746.jpeg",
+  "instantiation_dict": {
+    "category": "shoes",
+    "description": "be less than 70 dollars"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "last",
+        "locator": "lambda:(() => { res = parseFloat(document.querySelector(\"#maincontent > div.columns > div > div.product-info-main > div.product-info-price > div.price-box.price-final_price > span > span\").outerText.substr(1)); return res ? res : 0; })()",
+        "required_contents": {
+          "required_values": [
+            "< 70"
+          ]
+        }
+      },
+      {
+        "url": "last",
+        "locator": "lambda:(() => { try { return document.querySelector('#maincontent > div.page-title-wrapper.product > h1 > span').textContent } catch (e) { return '' }})()",
+        "required_contents": {
+          "must_include": [
+            "Croc"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 116,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

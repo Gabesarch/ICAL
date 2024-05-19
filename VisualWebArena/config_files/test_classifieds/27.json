@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 27,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "How many {{item}} {{criteria}}?",
+  "intent": "How many of the listings in \"Rvs + campers\" posted on 16th November 2023 show the interior of the car?",
+  "image": null,
+  "instantiation_dict": {
+    "item": "of the listings in \"Rvs + campers\" posted on 16th November 2023",
+    "criteria": "show the interior of the car"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "3 |OR| three"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": ""
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "hard",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=32934 and http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=74707 and http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=32672",
+  "intent_template_id": 10
+}

@@ -1,0 +1,39 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 53,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/sports-outdoors/fan-shop/footwear.html",
+  "geolocation": null,
+  "intent_template": "Add the {{product}} to my wish list.",
+  "intent": "Add the blue and orange one to my wish list.",
+  "instantiation_dict": {
+    "product": "blue and orange one"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/wishlist/?limit=50",
+        "locator": "document.querySelector('.products-grid.wishlist').textContent",
+        "required_contents": {
+          "must_include": [
+            "SKICKS Florida Gators Slip-On Sneaker - Adult Unisex"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 13,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "comments": "",
+  "overall_difficulty": "easy"
+}

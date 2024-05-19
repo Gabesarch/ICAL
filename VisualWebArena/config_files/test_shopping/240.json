@@ -1,0 +1,45 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 240,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/video-games/legacy-systems/playstation-systems.html?p=2&product_list_limit=15&product_list_mode=list",
+  "geolocation": null,
+  "intent_template": "Can you add {{item}} {{condition}} to my wishlist?",
+  "instantiation_dict": {
+    "item": "the items",
+    "condition": "corresponding to the prime numbered positions on this page"
+  },
+  "intent": "Can you add the items corresponding to the prime numbered positions on this page to my wishlist?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/wishlist/?limit=50",
+        "locator": "document.querySelector('.products-grid.wishlist').textContent",
+        "required_contents": {
+          "must_include": [
+            "Orange Chrome Mirror Vinyl Decal Faceplate Mod Skin Kit for Sony PlayStation Portable 3000 Console by System Skins",
+            "PS3 Controller Wireless Bluetooth PlayStation 3 Remote with Charger Cable (White+Blue)",
+            "UUShop Protective Vinyl Skin Sticker Decal Warp for Sony Playstation VR Skull",
+            "Extreme Sim Racing Wheel Stand Cockpit SXT V2 Racing Simulator - Racing Wheel Stand Black Edition For Logitech G25, G27, G29, G920, Thrustmaster And Fanatec - Heavy Dutty and Foldable",
+            "PS4 Slim Skins - Decals for PS4 Controller Playstation 4 Slim - Stickers Cover for PS4 Slim Controller Sony Playstation Four Slim Accessories with Dualshock 4 Two Controllers Skin - Deadpool",
+            "Game Controller Stand Holder Wall Mount - 2 Pack for Gaming&Audio Headsets Holder Hook, Controller Headset Stand Holder for PS5/PS4/Xbox Gamer Gifts,No Screws, Easy to Install - Black"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 69,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "hard",
+  "comments": ""
+}

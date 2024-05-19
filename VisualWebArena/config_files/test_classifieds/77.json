@@ -1,0 +1,59 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 77,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Navigate to my listing {{item}} and {{action}}.",
+  "intent": "Navigate to my listing of the all-black bike and change the price (including in the description) to one dollar more than the cheapest bike on the site (ignoring bikes that cost $1).",
+  "image": null,
+  "instantiation_dict": {
+    "item": "of the all-black bike",
+    "action": "change the price (including in the description) to one dollar more than the cheapest bike on the site (ignoring bikes that cost $1)"
+  },
+  "require_reset": true,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=84145",
+        "locator": "func:get_query_text(__page__, '.price')",
+        "required_contents": {
+          "must_include": [
+            "6.00"
+          ]
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=84145",
+        "locator": "func:get_query_text(__page__, '.desc')",
+        "required_contents": {
+          "must_include": [
+            "$6"
+          ]
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=84145",
+        "locator": "func:get_query_text(__page__, '.desc')",
+        "required_contents": {
+          "must_exclude": [
+            "$300"
+          ]
+        }
+      }
+    ]
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "hard",
+  "comments": "",
+  "intent_template_id": 2
+}

@@ -1,0 +1,41 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 222,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "Can you add the most expensive {{category}} to my cart that is less than ${{dollars}} and {{color}}?",
+  "instantiation_dict": {
+    "category": "USB adapter for a Switch",
+    "dollars": "113",
+    "color": "looks like bricks"
+  },
+  "intent": "Can you add the most expensive USB adapter for a Switch to my cart that is less than $113 and looks like bricks?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "8Bitdo Wireless USB Adapter 1 for Switch, Switch OLED, Windows, Mac & Raspberry Pi, Compatible with Switch Pro, Switch Joy-con, PS5 PS4 Controller and More"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 71,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

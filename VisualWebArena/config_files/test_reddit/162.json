@@ -1,0 +1,33 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 162,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999",
+  "geolocation": null,
+  "intent_template": "Can you give me the URL for a gif I could send to my friend about the contrast of investing in a retirement account vs a brokerage account from the hot posts of /f/wallstreetbets?",
+  "intent": "Can you give me the URL for a gif I could send to my friend about the contrast of investing in a retirement account vs a brokerage account from the hot posts of /f/wallstreetbets?",
+  "instantiation_dict": {},
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "http://gsarch@tayer.psy.cmu.edu:9999/submission_images/73199932fc7c826edb8313f0993483b6982ea7d3ea368e8d904eab71cb642e2e.gif"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "http://gsarch@tayer.psy.cmu.edu:9999/submission_images/73199932fc7c826edb8313f0993483b6982ea7d3ea368e8d904eab71cb642e2e.gif"
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 67
+}

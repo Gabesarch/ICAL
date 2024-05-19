@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 20,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/forums/all",
+  "geolocation": null,
+  "intent_template": "Find and upvote this post. I think it was posted in {{forum}}.",
+  "intent": "Find and upvote this post. I think it was posted in /f/space.",
+  "image": "http://gsarch@tayer.psy.cmu.edu:9999/submission_images/a1920694edca7656fc929bab1166d2d667181e3aa495147cbe319dbadcd6cccb.jpg",
+  "instantiation_dict": {
+    "forum": "/f/space"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/space/91926/milkdromeda",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "must_include": [
+            "vote vote--user-upvoted"
+          ]
+        }
+      }
+    ]
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "hard",
+  "comments": "hard: product image provided, need to find the correct post (second page in /f/space) and upvote it",
+  "intent_template_id": 8
+}

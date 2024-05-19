@@ -1,0 +1,39 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 90,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/mildlyinteresting/21720",
+  "geolocation": null,
+  "intent_template": "{{question}}? Leave a comment with the following format: {{format}}.",
+  "intent": "How many teeth does the pumpkin have? Leave a comment with the following format: \"It has <number of teeth> teeth :)\" (not including the double inverted commas), replacing <number of teeth> with the actual number of teeth the pumpkin has. Remember to use digits.",
+  "image": [],
+  "instantiation_dict": {
+    "question": "How many teeth does the pumpkin have",
+    "format": "\"It has <number of teeth> teeth :)\" (not including the double inverted commas), replacing <number of teeth> with the actual number of teeth the pumpkin has. Remember to use digits"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": null,
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/mildlyinteresting/21720",
+        "locator": "func:reddit_get_latest_comment_content_by_username(__page__, 'MarvelsGrantMan136')",
+        "required_contents": {
+          "exact_match": "It has 4 teeth :)"
+        }
+      }
+    ]
+  },
+  "intent_template_id": 38,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "easy",
+  "comments": "some basic tasks"
+}

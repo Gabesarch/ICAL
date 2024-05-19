@@ -1,0 +1,35 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 301,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/jaybee-s-nuts-and-dried-fruits-sweet-dried-pineapple-rings-15-oz-tasty-tropical-dry-fruit-slices-on-the-go-snack-resealable-bag-kosher.html",
+  "geolocation": null,
+  "intent_template": "How many calories are in {{item}}?",
+  "intent": "How many calories are in this item per serving?",
+  "instantiation_dict": {
+    "item": "this item per serving"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "70"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "This task requires OCR.",
+    "reference_answer_raw_annotation": "70"
+  },
+  "intent_template_id": 100,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/jaybee-s-nuts-and-dried-fruits-sweet-dried-pineapple-rings-15-oz-tasty-tropical-dry-fruit-slices-on-the-go-snack-resealable-bag-kosher.html"
+}

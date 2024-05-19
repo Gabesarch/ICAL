@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 66,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "List out reviewers, if exist, who mention {{description}} for the {{product}}",
+  "instantiation_dict": {
+    "description": "being disappointed",
+    "product": "first red and yellow product"
+  },
+  "intent": "List out reviewers, if exist, who mention being disappointed for the first red and yellow product",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "John",
+        "Vini C",
+        "Amazon Customer",
+        "Katie Switalski",
+        "Catherine L."
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "John, Vini C, Amazon Customer, Katie Switalski, Catherine L."
+  },
+  "intent_template_id": 20,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "comments": "",
+  "overall_difficulty": "medium"
+}

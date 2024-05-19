@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 215,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/home-kitchen/wall-art/posters-prints.html?p=23",
+  "geolocation": null,
+  "intent_template": "Can you add the {{item}} with {{number}} stars to my cart?",
+  "instantiation_dict": {
+    "item": "flower picture",
+    "number": "4.5"
+  },
+  "intent": "Can you add the flower picture with 4.5 stars to my cart?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Flowers Home Decorations 3 Panels Purple Lavender Flower Artwork for Living Room Office Bathroom Wall Decor Posters and Prints Frame to Hang (Lavender-2, 12*16inch)"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 68,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "easy",
+  "comments": ""
+}

@@ -1,0 +1,43 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 186,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "Can you find me {{category}} that is the combination of the following images and buy it for me?",
+  "intent": "Can you find me a sport equipment that is the combination of the following images and buy it for me?",
+  "image": [
+    "https://images.pexels.com/photos/1537671/pexels-photo-1537671.jpeg",
+    "https://images.pexels.com/photos/2883462/pexels-photo-2883462.jpeg"
+  ],
+  "instantiation_dict": {
+    "category": "a sport equipment"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "document.querySelector('.order-details-items.ordered').outerText",
+        "required_contents": {
+          "must_include": [
+            "roller skate |OR| cycling shoes |OR| bike shoes |OR| bicycle shoes"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 57,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/sxzhsm-roller-skates-for-women-outdoor-parkour-shoes-with-wheels-for-girls-boys-kick-rollers-shoes-retractable-adults-kids-quad-roller-skates-men-unisex-skating-shoes-recreation-sneakers-eu39-white.html"
+}

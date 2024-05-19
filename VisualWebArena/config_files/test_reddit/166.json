@@ -1,0 +1,41 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 166,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999",
+  "geolocation": null,
+  "intent_template": "Can you find {{post}} and message the poster '{{message}}'?",
+  "instantiation_dict": {
+    "post": "a post of the International Space Station's solar panels with the Earth in the background",
+    "message": "Was the sun super bright in space?"
+  },
+  "intent": "Can you find a post of the International Space Station's solar panels with the Earth in the background and message the poster 'Was the sun super bright in space?'?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/messages",
+        "locator": "func:get_query_text(__page__, \"#main > table > tbody\")",
+        "required_contents": {
+          "must_include": [
+            "astro_pettit |OR| Hazelil",
+            "Was the sun super bright in space?"
+          ]
+        }
+      }
+    ]
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9999/f/space/27376/a-view-i-captured-of-the-sun-between-iss-solar-panels-more |OR| http://gsarch@tayer.psy.cmu.edu:9999/f/space/92045/ireland-seen-from-the-international-space-station",
+  "intent_template_id": 69
+}

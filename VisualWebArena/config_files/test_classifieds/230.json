@@ -1,0 +1,34 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 230,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/sudugo-smart-watch-2021-ver-watches-for-women-1-69-touch-screen-fitness-tracker-with-heart-rate-and-sleep-monitor-ip67-waterproof-smartwatch-calorie-pedometer-activity-tracker-for-android-ios-pink.html |AND| http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Find me the {{attribute}} {{item}} from the classifieds site that {{condition}}.{{action}}",
+  "intent": "Find me the cheapest watch in the Jewelry category from the classifieds site that roughly matches the time shown on the first image of this watch on OneStopMarket, up to an error of plus minus 10 minutes.",
+  "image": null,
+  "instantiation_dict": {
+    "attribute": "cheapest",
+    "item": "watch in the Jewelry category",
+    "condition": "roughly matches the time shown on the first image of this watch on OneStopMarket, up to an error of plus minus 10 minutes",
+    "action": ""
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=56727",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "",
+  "intent_template_id": 68
+}

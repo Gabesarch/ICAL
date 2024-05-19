@@ -1,0 +1,43 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 46,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/home-kitchen/kitchen-dining/kitchen-table-linens.html",
+  "geolocation": null,
+  "intent_template": "Add the {{attribute}} one in the {{order}} to my shopping cart.",
+  "instantiation_dict": {
+    "attribute": "red",
+    "order": "second row of this page"
+  },
+  "intent": "Add the red one in the second row of this page to my shopping cart.",
+  "viewport_size": {
+    "width": 1280
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "ARTSHOWING Anchor Table Runner and Placemats Set of 6, Burlap Linen Table Runners 13x90inch, Heat-Insulating Placemats for Table Decor, Love The Life You Live"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 16,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "comments": "",
+  "overall_difficulty": "easy"
+}

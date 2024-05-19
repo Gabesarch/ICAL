@@ -1,0 +1,32 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 182,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999",
+  "geolocation": null,
+  "intent_template": "I am a student at the school in the image. Can you make a post asking for the best {{location}} in the forum for the city my school is in and navigate to it?",
+  "instantiation_dict": {
+    "location": "Indian food"
+  },
+  "image": "http://gsarch@tayer.psy.cmu.edu:8888/wikipedia_en_all_maxi_2022-05/I/Stanstadium_view.jpg.webp",
+  "intent": "I am a student at the school in the image. Can you make a post asking for the best Indian food in the forum for the city my school is in and navigate to it?",
+  "require_reset": true,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "fuzzy_match": "N/A"
+    },
+    "string_note": "There is no forum for Palo Alto, where Stanford is located.",
+    "reference_url": ""
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "Hard to read text off the football field and has to recognize that StamfordCT is not where Stanford is located. Also there is no forum for Palo Alto.",
+  "intent_template_id": 76
+}

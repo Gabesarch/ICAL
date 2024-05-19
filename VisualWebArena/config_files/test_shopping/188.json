@@ -1,0 +1,34 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 188,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "Add the least expensive {{item}} that can hold {{storable}} to my shopping cart.",
+  "instantiation_dict": {
+    "item": "car",
+    "storable": "4 people"
+  },
+  "intent": "Add the least expensive car that can hold 4 people to my shopping cart.",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "fuzzy_match": "N/A"
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "There are no cars available on OneStopMarket.",
+    "reference_answer_raw_annotation": "N/A"
+  },
+  "intent_template_id": 58,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "easy",
+  "comments": ""
+}

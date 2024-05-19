@@ -1,0 +1,38 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 106,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999",
+  "geolocation": null,
+  "intent_template": "Subscribe to a forum that contains {{picture}}.",
+  "intent": "Subscribe to a forum that contains the following picture.",
+  "image": "http://gsarch@tayer.psy.cmu.edu:9999/submission_images/1479b251ab514f120dc5049645aebb24c1ffb22c6a7c358322f8f7e901caa330.png",
+  "instantiation_dict": {
+    "picture": "the following picture"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999",
+        "locator": "func:get_query_text(__page__, '.sidebar')",
+        "required_contents": {
+          "must_include": [
+            "dataisbeautiful"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 42,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "easy",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9999/39053"
+}

@@ -1,0 +1,33 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 3,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Find me the {{attribute}} {{item}}. It should be between {{range}}.",
+  "intent": "Find me the most recently posted item in the \"Photo + video\" category that is not completely black in color. It should be between $1000 to $1200.",
+  "image": null,
+  "instantiation_dict": {
+    "attribute": "most recently posted",
+    "item": "item in the \"Photo + video\" category that is not completely black in color",
+    "range": "$1000 to $1200"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=39343",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 1
+}

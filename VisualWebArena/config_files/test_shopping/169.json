@@ -1,0 +1,45 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 169,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "Can you find me {{category}} that combines the {{attribute}} of the items in the following images?",
+  "intent": "Can you find me a product that combines the functions of the items in the following images?",
+  "image": [
+    "https://images.pexels.com/photos/9582658/pexels-photo-9582658.jpeg",
+    "https://images.pexels.com/photos/3205735/pexels-photo-3205735.jpeg"
+  ],
+  "instantiation_dict": {
+    "category": "a product",
+    "attribute": "functions"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "last",
+        "locator": "lambda:(() => { try { return document.querySelector('#maincontent > div.page-title-wrapper.product > h1 > span').textContent } catch (e) { return '' }})()",
+        "required_contents": {
+          "must_include": [
+            "Clock",
+            "Camera"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 50,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/hidden-clock-camera-wifi-hd-1080p-spy-camera-with-night-vision-motion-detection-loop-recording-covert-nanny-cam-for-home-office-surveillance-no-audio.html"
+}

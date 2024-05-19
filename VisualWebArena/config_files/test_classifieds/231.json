@@ -1,0 +1,33 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 231,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/Maine/99914/new-tourist-trap |AND| http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Show me the {{attribute}} {{item}} {{condition}} from the classifieds site that looks the most similar to the flower in the image on Reddit. It doesn't have to be the same color.",
+  "intent": "Show me the cheapest flower in the Farm + garden category under $10 from the classifieds site that looks the most similar to the flower in the image on Reddit. It doesn't have to be the same color.",
+  "image": null,
+  "instantiation_dict": {
+    "attribute": "cheapest",
+    "item": "flower in the Farm + garden category",
+    "condition": "under $10"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=69345 |OR| http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=10003",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "",
+  "intent_template_id": 73
+}

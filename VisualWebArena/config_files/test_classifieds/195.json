@@ -1,0 +1,35 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 195,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Navigate to the {{product}} that costs {{range}}.",
+  "intent": "Navigate to the most expensive yellow motorcycle in the \"Motorcycles\" category that costs at least 25,000 dollars.",
+  "image": null,
+  "instantiation_dict": {
+    "product": "most expensive yellow motorcycle in the \"Motorcycles\" category",
+    "range": "at least 25,000 dollars"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "fuzzy_match": "N/A"
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "There are no yellow motorcycles worth at least 25000 dollars.",
+    "reference_answer_raw_annotation": "N/A"
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "",
+  "intent_template_id": 56
+}

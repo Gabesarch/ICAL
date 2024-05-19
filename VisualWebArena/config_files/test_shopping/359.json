@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 359,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/grocery-gourmet-food/food-beverage-gifts/snack-gifts.html?p=14",
+  "geolocation": null,
+  "intent_template": "Buy the {{product}} with {{detail}} on the packaging (in any size).",
+  "intent": "Buy the snacks with horses on the packaging (in any size).",
+  "instantiation_dict": {
+    "product": "snacks",
+    "detail": "horses"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "document.querySelector(\".order-details-items.ordered\").outerText",
+        "required_contents": {
+          "must_include": [
+            "B0095MWPB6"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 121,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

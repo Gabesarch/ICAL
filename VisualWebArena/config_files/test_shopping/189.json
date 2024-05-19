@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 189,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "Can you add {{items}} to the comparison page?",
+  "instantiation_dict": {
+    "items": "the two most expensive fully black VR headsets in the \"Virtual Reality\" category"
+  },
+  "intent": "Can you add the two most expensive fully black VR headsets in the \"Virtual Reality\" category to the comparison page?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/catalog/product_compare",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "ZJJY VR Headsets, Virtual Reality Headset, Bluetooth Controller for iPhone 11/Pro/X/Xs/Max/XR/8P/7P,for Samsung S20/S10/S9/S8/Plus/Note 10/9/8,Phones w/ 4.5-6.2in Screen, L025xq",
+            "ZNBJJWCP 3D VR Glasses Headset Virtual Reality Goggles Play Movies Photos Enjoyment for Smartphones"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 33,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "Medium visual difficuly because the most expensive headset has some blue lighting effects on it."
+}

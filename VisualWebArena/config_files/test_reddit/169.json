@@ -1,0 +1,49 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 169,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/pics/top?t=all&next%5BnetScore%5D=589&next%5Bid%5D=67196",
+  "geolocation": null,
+  "intent_template": "Can you repost the image on this page that would fit best in {{subreddit}} with the same title and text as the original post and take me to the comments section of the post?",
+  "instantiation_dict": {
+    "subreddit": "f/sports"
+  },
+  "intent": "Can you repost the image on this page that would fit best in f/sports with the same title and text as the original post and take me to the comments section of the post?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html",
+      "page_image_query"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "last",
+        "locator": "func:get_query_text(__page__, \"#main > article > div > div.submission__inner > header\")",
+        "required_contents": {
+          "must_include": [
+            "Pele, Ali, Jordan, Montana, Brown, Kareem, Evert, King, Nicklaus, Russell, Elway and Holyfield",
+            "MarvelsGrantMan136",
+            "sports"
+          ]
+        }
+      }
+    ],
+    "page_image_query": [
+      {
+        "eval_image_url": "last",
+        "eval_image_class": ".submission__image",
+        "eval_fuzzy_image_match": "http://gsarch@tayer.psy.cmu.edu:9999/submission_images/539a1a709c696de5b7c3bb8d8df51fd2b5cff90b91de30da1e6e13f88b6d71a6.jpg"
+      }
+    ]
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 70
+}

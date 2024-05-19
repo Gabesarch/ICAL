@@ -1,0 +1,44 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 180,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "Find me {{category}} that is of the same brand as products in one of the following pictures and buy {{quantity}} for me. It needs to {{description}}.",
+  "intent": "Find me a digital camera with warranty that is of the same brand as products in one of the following pictures and buy one for me. It needs to be black and have at least 12 reviews. Furthermore, it cannot be too expensive - it needs to have price less than $700.",
+  "image": [
+    "https://images.pexels.com/photos/6708408/pexels-photo-6708408.jpeg"
+  ],
+  "instantiation_dict": {
+    "category": "a digital camera with warranty",
+    "quantity": "one",
+    "description": "be black and have at least 12 reviews. Furthermore, it cannot be too expensive - it needs to have price less than $700"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "func:shopping_get_order_product_quantity(__page__,'B001P06Q66')",
+        "required_contents": {
+          "required_values": [
+            "== 1"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 54,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/olympus-sp-590uz-12mp-digital-camera-with-26x-wide-angle-optical-dual-image-stabilized-zoom-and-2-7-inch-lcd-black.html"
+}

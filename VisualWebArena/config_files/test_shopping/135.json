@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 135,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/schlumbergera-hybrid-zygocactus-christmas-cactus-plant-3-5-inch-pot-1-plant.html",
+  "geolocation": null,
+  "intent_template": "Return an image link of an image showing how this item looks like {{attribute}}.",
+  "intent": "Return an image link of an image showing how this item looks like when it is flowering.",
+  "image": null,
+  "instantiation_dict": {
+    "attribute": "when it is flowering"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "B07W88SQCT.0.jpg"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "http://gsarch@tayer.psy.cmu.edu:7770/media/catalog/product/cache/829a59e57f886f8cf0598ffca4f8a940/B/0/B07W88SQCT.0.jpg"
+  },
+  "intent_template_id": 38,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "comments": "",
+  "overall_difficulty": "easy"
+}

@@ -1,0 +1,29 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 2,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/movies",
+  "geolocation": null,
+  "intent_template": "I'm trying to find this post. Navigate to the comment section for it.",
+  "intent": "I'm trying to find this post. Navigate to the comment section for it.",
+  "image": "http://gsarch@tayer.psy.cmu.edu:9999/submission_images/91ba8efd310cfbb3dd72dcd58183713fe00378019b90ee05555fe62cbae8d46c.jpg",
+  "instantiation_dict": {},
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/movies/107714",
+    "program_html": [],
+    "url_note": "GOLD in PRED"
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": "medium: need to navigate to the bottom to find this. /f/movies is not all images, but a mix of posts and images",
+  "intent_template_id": 0
+}

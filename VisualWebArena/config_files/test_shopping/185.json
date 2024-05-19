@@ -1,0 +1,53 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 185,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "I really like {{stuff}}. Can you find me {{product}} and buy {{quantity}} for me?",
+  "intent": "I really like this animal's pattern. Can you find me a twin xl size bedding set that have the same pattern and buy two for me?",
+  "image": [
+    "https://images.pexels.com/photos/267074/pexels-photo-267074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  ],
+  "instantiation_dict": {
+    "stuff": "this animal's pattern",
+    "product": "a twin xl size bedding set that have the same pattern",
+    "quantity": "two"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "func:shopping_get_order_product_quantity(__page__,'B08SQJF7PF')",
+        "required_contents": {
+          "required_values": [
+            "== 2"
+          ]
+        }
+      },
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "func:shopping_get_order_product_option(__page__, 'B08SQJF7PF', 'Size')",
+        "required_contents": {
+          "must_include": [
+            "Twin XL"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 56,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/girls-leopard-print-bedding-set-teens-luxury-pink-black-cheetah-print-bed-sheet-set-twin-size-for-kids-children-women-bedroom-decor-fitted-sheet-chic-wild-animal-bed-cover-with-1-pillow-case.html"
+}

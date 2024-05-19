@@ -1,0 +1,39 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 463,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/motivational-posters-for-classroom-office-decorations-inspirational-quote-wall-art-for-teachers-students-school-counselors-home-office-set-of-10-creative-chalkboard-designs.html",
+  "geolocation": null,
+  "intent_template": "Add this (in any size) to my cart if {{condition}}",
+  "intent": "Add this (in any size) to my cart if the at least one of the posters has the word \"inspire\" printed on it",
+  "instantiation_dict": {
+    "condition": "the at least one of the posters has the word \"inspire\" printed on it"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_exclude": [
+            "Motivational Posters for Classroom & Office Decorations | Inspirational Quote Wall Art for Teachers, Students, School Counselors, Home & Office | Set of 10 Creative Chalkboard Designs"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 151,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": ""
+}

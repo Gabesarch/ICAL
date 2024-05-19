@@ -1,0 +1,42 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 344,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "image": "https://images.pexels.com/photos/4705617/pexels-photo-4705617.jpeg",
+  "intent_template": "Buy {{item}} {{condition}}.",
+  "intent": "Buy the cheapest battery which is the same type as the boy is holding in the image.",
+  "instantiation_dict": {
+    "item": "the cheapest battery",
+    "condition": "which is the same type as the boy is holding in the image"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "document.querySelector(\".order-details-items.ordered\").outerText",
+        "required_contents": {
+          "must_include": [
+            "B002M6WY72",
+            "8.59"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 109,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/petsafe-9-volt-replacement-alkaline-battery-compatible-with-petsafe-9v-battery-operated-products-pac11-12067.html"
+}

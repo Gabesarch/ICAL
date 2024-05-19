@@ -1,0 +1,37 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 127,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/clothing-shoes-jewelry/men/clothing.html",
+  "geolocation": null,
+  "intent_template": "I'm interested in the {{item}}. Can you return an image link showing {{image_desc}}?",
+  "intent": "I'm interested in the ugly christmas sweater. Can you return an image link showing how it looks like from the back?",
+  "image": null,
+  "instantiation_dict": {
+    "item": "ugly christmas sweater",
+    "image_desc": "how it looks like from the back"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "B00NIN2O28.1.jpg"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "http://gsarch@tayer.psy.cmu.edu:7770/media/catalog/product/cache/829a59e57f886f8cf0598ffca4f8a940/B/0/B00NIN2O28.1.jpg"
+  },
+  "intent_template_id": 37,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "hard",
+  "comments": "hard: need to process image, look at images on the product page",
+  "overall_difficulty": "hard"
+}

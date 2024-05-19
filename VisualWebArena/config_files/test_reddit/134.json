@@ -1,0 +1,32 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 134,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999",
+  "geolocation": null,
+  "intent_template": "How many comments did the post with this image receive? I remember it being one of the top 50 hot posts of {{forum}}.",
+  "intent": "How many comments did the post with this image receive? I remember it being one of the top 50 hot posts of /f/Maine.",
+  "image": "http://gsarch@tayer.psy.cmu.edu:9999/submission_images/3d8439cefc3104ad519424a4f5d7df87b67abfdbcbdd9151b826538d6438d5e2.jpg",
+  "instantiation_dict": {
+    "forum": "/f/Maine"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "29"
+      ]
+    }
+  },
+  "intent_template_id": 52,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9999/f/Maine/120773"
+}

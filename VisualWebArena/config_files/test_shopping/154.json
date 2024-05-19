@@ -1,0 +1,53 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 154,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "Find me {{category}} of the same brand as the product in this picture.",
+  "intent": "Find me a set of headphones of the same brand as the product in this picture.",
+  "image": "https://images.pexels.com/photos/45889/camera-photo-camera-sony-alpha-7-sony-45889.jpeg",
+  "instantiation_dict": {
+    "category": "a set of headphones"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html",
+      "page_image_query"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "last",
+        "locator": "func:shopping_get_product_attributes(__page__, 'manufacturer |OR| brand name')",
+        "required_contents": {
+          "must_include": [
+            "Sony"
+          ]
+        }
+      }
+    ],
+    "page_image_query": [
+      {
+        "eval_image_url": "last",
+        "eval_image_class": ".fotorama__stage__frame",
+        "eval_vqa": [
+          {
+            "question": "Is this a headphone? (yes/no)",
+            "answer": "yes"
+          }
+        ]
+      }
+    ]
+  },
+  "intent_template_id": 45,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

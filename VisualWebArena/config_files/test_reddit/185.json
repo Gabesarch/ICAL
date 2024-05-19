@@ -1,0 +1,52 @@
+{
+  "sites": [
+    "reddit",
+    "shopping",
+    "wikipedia"
+  ],
+  "task_id": 185,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999 |AND| http://gsarch@tayer.psy.cmu.edu:8888/wikipedia_en_all_maxi_2022-05/A/Pok\u00e9mon |AND| http://gsarch@tayer.psy.cmu.edu:7770/video-games/legacy-systems/playstation-systems.html?p=3",
+  "geolocation": null,
+  "intent_template": "Can you make a post in {{forum}} titled '{{title}}', add the full sized version of the image on the shopping page most related to the wikipedia page? Finally, navigate to the comments section of it.",
+  "instantiation_dict": {
+    "forum": "the /f/gaming forum",
+    "title": "Should I buy this? I can get a 25% discount"
+  },
+  "intent": "Can you make a post in the /f/gaming forum titled 'Should I buy this? I can get a 25% discount', add the full sized version of the image on the shopping page most related to the wikipedia page? Finally, navigate to the comments section of it.",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html",
+      "page_image_query"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "last",
+        "locator": "func:get_query_text(__page__, \"#main > article > div > div.submission__inner > header\")",
+        "required_contents": {
+          "must_include": [
+            "Should I buy this? I can get a 25% discount",
+            "MarvelsGrantMan136",
+            "gaming"
+          ]
+        }
+      }
+    ],
+    "page_image_query": [
+      {
+        "eval_image_url": "last",
+        "eval_image_class": ".submission__image",
+        "eval_fuzzy_image_match": "http://gsarch@tayer.psy.cmu.edu:7770/media/catalog/product/cache/829a59e57f886f8cf0598ffca4f8a940/B/0/B07CMWR38H.0.jpg"
+      }
+    ]
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "hard",
+  "comments": "",
+  "intent_template_id": 78
+}

@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 35,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "Explore the \"{{category}}\" category listed by ascending price and tell me the color of the {{order}} item in the first row.",
+  "instantiation_dict": {
+    "category": "Patio Furniture & Accessories",
+    "order": "fourth"
+  },
+  "intent": "Explore the \"Patio Furniture & Accessories\" category listed by ascending price and tell me the color of the fourth item in the first row.",
+  "viewport_size": {
+    "width": 1280
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "one_of": [
+        "yellow",
+        "gold"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "yellow"
+  },
+  "intent_template_id": 10,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "comments": "",
+  "overall_difficulty": "medium"
+}

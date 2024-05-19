@@ -1,0 +1,35 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 324,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/catalogsearch/result/index/?q=screen+protector",
+  "geolocation": null,
+  "image": "https://images.pexels.com/photos/12741170/pexels-photo-12741170.jpeg",
+  "intent_template": "Tell me the price of the {{product}}.",
+  "intent": "Tell me the price of the items on this page that are compatible with this phone brand.",
+  "instantiation_dict": {
+    "product": "items on this page that are compatible with this phone brand"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "9.99",
+        "8.49"
+      ]
+    },
+    "reference_url": "",
+    "program_html": []
+  },
+  "intent_template_id": 19,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "easy",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/fotbor-for-iphone-xr-iphone-11-screen-protector-privacy-tempered-glass-film-2-pack-iphone-11-privacy-screen-protector-iphone-xr-privacy-screen-protector-anti-spy-easy-install-case-friendly-6-1-inch.html and http://gsarch@tayer.psy.cmu.edu:7770/mkeke-compatible-with-iphone-11-pro-max-screen-protector-iphone-xs-max-screen-protector-tempered-glass-3-pack-6-5.html"
+}

@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 57,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/home-kitchen/home-decor-products/artificial-plants-flowers.html",
+  "geolocation": null,
+  "intent_template": "Add the {{product}} {{condition}} to my wish list.",
+  "intent": "Add the one on this page with 'garden' written on it to my wish list.",
+  "instantiation_dict": {
+    "product": "one on this page",
+    "condition": "with 'garden' written on it"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/wishlist/?limit=50",
+        "locator": "document.querySelector('.products-grid.wishlist').textContent",
+        "required_contents": {
+          "must_include": [
+            "Artificial Succulent Plant Pot Milk White Ceramic Flowerpot Wine Bottle can Shape Home Office Desktop Countertop Decoration Small Potted Plant (ws8003)"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 17,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "hard",
+  "comments": "",
+  "overall_difficulty": "hard"
+}

@@ -1,0 +1,39 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 49,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/clothing-shoes-jewelry/men/clothing.html",
+  "geolocation": null,
+  "intent_template": "Add the {{product}} to my wish list.",
+  "intent": "Add the green checkered polo shirt (in any size) on this page to my wish list.",
+  "instantiation_dict": {
+    "product": "green checkered polo shirt (in any size) on this page"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/wishlist/?limit=50",
+        "locator": "document.querySelector('.products-grid.wishlist').textContent",
+        "required_contents": {
+          "must_include": [
+            "Men & Boy Long Sleeve Flannel Plaid Casual Shirts Button Down Regular Fit Long Sleeve Cotton Polo Shirt L-5XL"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 13,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "comments": "",
+  "overall_difficulty": "easy"
+}

@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 40,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Search for \"{{phrase}}\" and tell me {{detail}}.",
+  "intent": "Search for \"dishwasher\" and tell me the brand of the most recent listing of a stainless steel one.",
+  "image": null,
+  "instantiation_dict": {
+    "phrase": "dishwasher",
+    "detail": "the brand of the most recent listing of a stainless steel one"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "LG"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": ""
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=18607",
+  "intent_template_id": 16
+}

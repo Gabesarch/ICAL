@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 87,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "Add all the items I need to make this to my shopping cart.",
+  "intent": "Add all the items I need to make this to my shopping cart.",
+  "image": "coco_images/000000029675.jpg",
+  "instantiation_dict": {},
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "hot dog",
+            "roll |OR| rolls |OR| bun",
+            "mustard"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 23,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "easy",
+  "comments": "",
+  "overall_difficulty": "hard"
+}

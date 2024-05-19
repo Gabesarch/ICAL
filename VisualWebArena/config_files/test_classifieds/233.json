@@ -1,0 +1,33 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 233,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=28914 |AND| http://gsarch@tayer.psy.cmu.edu:9999/f/springfieldMO/48540/never",
+  "geolocation": null,
+  "intent_template": "Are the characters in the image on Reddit shown in the listing on the classifieds site? If they are, name me the movie that they appear in.",
+  "intent": "Are the characters in the image on Reddit shown in the listing on the classifieds site? If they are, name me the movie that they appear in.",
+  "image": null,
+  "instantiation_dict": {},
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "lion king"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": ""
+  },
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "easy",
+  "comments": "",
+  "intent_template_id": 74
+}

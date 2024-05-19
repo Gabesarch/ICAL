@@ -1,0 +1,41 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 440,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "Navigate to the category where I can find {{item}} that can help me {{function}}. Add the cheapest one to my cart.",
+  "intent": "Navigate to the category where I can find the ingredient that can help me make the drink in the photo. Add the cheapest one to my cart.",
+  "image": "https://images.pexels.com/photos/15125130/pexels-photo-15125130/free-photo-of-coffee-beans-around-coffee-cup.jpeg",
+  "instantiation_dict": {
+    "item": "the ingredient",
+    "function": "make the drink in the photo"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Hills Bros Instant Sugar-Free Double Mocha Cappuccino Mix, Easy to Use, Enjoy Coffeehouse Flavor from Home, Frothy and 8 g of Carbs, 12 Oz"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 141,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": ""
+}

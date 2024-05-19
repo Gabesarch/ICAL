@@ -1,0 +1,35 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 128,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/clothing-shoes-jewelry/women/clothing.html",
+  "geolocation": null,
+  "intent_template": "I'm interested in the {{item}}. Can you return an image link showing {{image_desc}}?",
+  "intent": "I'm interested in the nightmare before christmas sweatshirt. Can you return an image link showing how it looks like from the back?",
+  "image": null,
+  "instantiation_dict": {
+    "item": "nightmare before christmas sweatshirt",
+    "image_desc": "how it looks like from the back"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "fuzzy_match": "N/A"
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "Such an image does not exist on the page.",
+    "reference_answer_raw_annotation": "N/A"
+  },
+  "intent_template_id": 37,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "hard",
+  "comments": "hard: need to process image, look at images on the product page",
+  "overall_difficulty": "hard"
+}

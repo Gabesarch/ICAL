@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 211,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/grocery-gourmet-food/breakfast-foods/cereals.html?p=11",
+  "geolocation": null,
+  "intent_template": "How many {{attribute}} does the box with the {{object}} have?",
+  "instantiation_dict": {
+    "attribute": "grams of whole grain (per serving)",
+    "object": "volleyball player"
+  },
+  "intent": "How many grams of whole grain (per serving) does the box with the volleyball player have?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "22"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "22 grams"
+  },
+  "intent_template_id": 67,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "easy",
+  "comments": ""
+}

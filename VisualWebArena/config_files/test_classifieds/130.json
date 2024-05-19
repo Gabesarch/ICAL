@@ -1,0 +1,31 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 130,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=search&sOrder=dt_pub_date&iOrderType=desc&sPattern=banana+boat&sShowAs=gallery",
+  "geolocation": null,
+  "intent_template": "Navigate to the item on this page whose image {{condition}}.",
+  "intent": "Navigate to the item on this page whose image is taken during a sunset.",
+  "image": null,
+  "instantiation_dict": {
+    "condition": "is taken during a sunset"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=19604",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 46
+}

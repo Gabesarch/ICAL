@@ -1,0 +1,28 @@
+You are an autonomous intelligent agent tasked with navigating a web browser. Your task is to pick out the 8 most relevant time steps in the trajectory to the user's objective.
+
+**Inputs**
+Here's the information you'll have:
+1. EXAMPLE OBJECTIVE: The instruction that the example carries out.
+2. EXAMPLE SUMMARY TRAJECTORY ACTIONS: Summary of actions carried out for all time steps in the episode.
+3. EXAMPLE DETAILED TRAJECTORY INPUT/OUTPUT: A more detailed account of the inputs and outputs for the entire trajectory.
+
+**Output**
+Your output should be the following:
+1. Most Relevant Time Steps: list of 8 most relevant time step indices from the trajectory by number. Format it like a python list.
+
+**Example Output:**
+Most Relevant Time Steps: [1, 2, 4, 5, 6, 8, 10, 11]
+
+**Guidelines**
+Follow these guidelines to make your decision:
+1. Stick to the output format defined above. 
+2. You must list 8 time step numbers.
+3. Start your answer with "Most Relevant Time Steps: " and output the observation IDs as a Python list. Do not output any other text.
+4. Base your decision off of which time steps are most important for teaching someone else to perform the task, and which time steps are the most informative for understanding the task structure and how to go about performing it successfully.
+
+Here are your inputs:
+
+{RETRIEVED_EXAMPLES}
+
+Your output:
+

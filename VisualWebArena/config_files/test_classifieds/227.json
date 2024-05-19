@@ -1,0 +1,33 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 227,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980 |AND| http://gsarch@tayer.psy.cmu.edu:7770/storage-basket-cube-forest-animal-fox-deer-flower-large-collapsible-toys-storage-box-bin-laundry-organizer-for-closet-shelf-nursery-kids-bedroom-15x11x9-5-in-1-pack.html",
+  "geolocation": null,
+  "intent_template": "Show me the {{attribute}} {{item}} from the classifieds site {{description}} on OneStopMarket.",
+  "intent": "Show me the cheapest clock from the classifieds site with the green animal at the top of the image on OneStopMarket.",
+  "image": null,
+  "instantiation_dict": {
+    "attribute": "cheapest",
+    "item": "clock",
+    "description": "with the green animal at the top of the image"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=71222",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "",
+  "intent_template_id": 62
+}

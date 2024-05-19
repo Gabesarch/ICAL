@@ -1,0 +1,52 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 335,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "image": "https://images.pexels.com/photos/6347514/pexels-photo-6347514.jpeg",
+  "intent_template": "Buy me {{item}} to {{address}}.",
+  "intent": "Buy me a chocolate ice cream to the address same as the label shown in the image. My phone number is also (650) 555-0111 in case it is needed.",
+  "instantiation_dict": {
+    "item": "a chocolate ice cream",
+    "address": "the address same as the label shown in the image. My phone number is also (650) 555-0111 in case it is needed"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "document.querySelector(\".order-details-items.ordered\").outerText",
+        "required_contents": {
+          "must_include": [
+            "chocolate",
+            "ice cream"
+          ]
+        }
+      },
+      {
+        "url": "func:shopping_get_latest_order_url()",
+        "locator": "document.querySelector(\".box-order-shipping-address\").outerText",
+        "required_contents": {
+          "must_include": [
+            "123 Bloome Street",
+            "Manhattan, New York, 12112"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 111,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "This task requires OCR."
+}

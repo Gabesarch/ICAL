@@ -1,0 +1,42 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 176,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/food",
+  "geolocation": null,
+  "intent_template": "Can you comment on the food from the country in the image and about {{description}} saying '{{comment}}'?",
+  "instantiation_dict": {
+    "description": "\ud83c\udf5c",
+    "comment": "Sooo tasty!"
+  },
+  "image": "http://gsarch@tayer.psy.cmu.edu:8888/wikipedia_en_all_maxi_2022-05/I/Extreme_points_japan_map.png.webp",
+  "intent": "Can you comment on the food from the country in the image and about \ud83c\udf5c saying 'Sooo tasty!'?",
+  "require_reset": true,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/food/104562/i-ate-tonkotsu-ramen",
+        "locator": "func:get_query_text(__page__, \"#main\")",
+        "required_contents": {
+          "must_include": [
+            "MarvelsGrantMan136",
+            "Sooo tasty!"
+          ]
+        }
+      }
+    ]
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "",
+  "intent_template_id": 74
+}

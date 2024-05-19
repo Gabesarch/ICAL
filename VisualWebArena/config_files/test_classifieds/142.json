@@ -1,0 +1,33 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 142,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "I recall seeing this exact item for under $20 on the site, tell me the state where this listing is located.",
+  "intent": "I recall seeing this exact item for under $20 on the site, tell me the state where this listing is located.",
+  "image": "http://gsarch@tayer.psy.cmu.edu:9980/oc-content/uploads/22310/22310.png",
+  "instantiation_dict": {},
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "Pennsylvania"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": ""
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "hard",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=22310",
+  "intent_template_id": 51
+}

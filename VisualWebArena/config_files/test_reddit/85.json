@@ -1,0 +1,118 @@
+{
+  "sites": [
+    "reddit",
+    "wikipedia"
+  ],
+  "task_id": 85,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/EarthPorn?next%5Branking%5D=18106&next%5Bid%5D=98160 |AND| http://gsarch@tayer.psy.cmu.edu:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+  "geolocation": null,
+  "intent_template": "Consider {{modifier}}. Downvote the posts {{modifier1}} and upvote the posts {{modifier2}}.",
+  "intent": "Consider all posts with bodies of water in this page. Downvote the posts that are taken in northern hemisphere and upvote the posts that are taken in the southern hemisphere.",
+  "image": [],
+  "instantiation_dict": {
+    "modifier": "all posts with bodies of water in this page",
+    "modifier1": "that are taken in northern hemisphere",
+    "modifier2": "that are taken in the southern hemisphere"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": null,
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/EarthPorn/98160",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-downvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/EarthPorn/119215",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-downvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/EarthPorn/119100",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-downvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/EarthPorn/76382",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-downvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/EarthPorn/76394",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-downvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/EarthPorn/76351",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/EarthPorn/76405",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/EarthPorn/76416",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/EarthPorn/76387",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/EarthPorn/54431",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/EarthPorn/119220",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/f/EarthPorn/119108",
+        "locator": "document.querySelectorAll('div.submission__vote')[0].querySelector('form').getAttribute('class')",
+        "required_contents": {
+          "exact_match": "vote vote--user-upvoted"
+        }
+      }
+    ]
+  },
+  "intent_template_id": 36,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "Note: Does not check every single post on the page. north: 1 (98160), 2, 6 (119215), 7, 8, 10, 11 (119100), 12 (76382), 13, 15, 18 (76394), 19, 20, 23; south: 4 (54431), 17 (119220), 21 (119108)"
+}

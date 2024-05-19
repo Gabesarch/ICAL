@@ -1,0 +1,65 @@
+{
+  "sites": [
+    "reddit",
+    "shopping"
+  ],
+  "task_id": 207,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999 |AND| http://gsarch@tayer.psy.cmu.edu:7770/sony-wh-1000xm4-wireless-noise-canceling-over-ear-headphones-black-with-sony-wla-ns7-wireless-tv-adapter-bundle-2-items.html |AND| http://gsarch@tayer.psy.cmu.edu:7770/bang-olufsen-beoplay-hx-comfortable-wireless-anc-over-ear-headphones-timber.html",
+  "geolocation": null,
+  "intent_template": "Can you first make a post in {{forum1}} (then afterwards in {{forum2}}) asking for a comparison between the two {{item}} in the shopping tabs? Make sure to include both their SKUs in the title and a picture of the {{condition}}.",
+  "instantiation_dict": {
+    "forum1": "f/headphones",
+    "forum2": "f/gaming",
+    "item": "headphones",
+    "condition": "darker one"
+  },
+  "intent": "Can you first make a post in f/headphones (then afterwards in f/gaming) asking for a comparison between the two headphones in the shopping tabs? Make sure to include both their SKUs in the title and a picture of the darker one.",
+  "require_reset": true,
+  "eval": {
+    "eval_types": [
+      "program_html",
+      "page_image_query"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/user/MarvelsGrantMan136",
+        "locator": "func:get_query_text(__page__, \"#main > article:nth-child(4)\")",
+        "required_contents": {
+          "must_include": [
+            "headphones",
+            "B09M79MQYD",
+            "B08YJ3W1HB"
+          ]
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9999/user/MarvelsGrantMan136",
+        "locator": "func:get_query_text(__page__, \"#main > article:nth-child(3)\")",
+        "required_contents": {
+          "must_include": [
+            "gaming",
+            "B09M79MQYD",
+            "B08YJ3W1HB"
+          ]
+        }
+      }
+    ],
+    "page_image_query": [
+      {
+        "eval_image_url": "http://gsarch@tayer.psy.cmu.edu:9999/user/MarvelsGrantMan136",
+        "eval_image_class": ".submission__row",
+        "eval_fuzzy_image_match": "http://gsarch@tayer.psy.cmu.edu:7770/media/catalog/product/cache/829a59e57f886f8cf0598ffca4f8a940/B/0/B09M79MQYD.0.jpg |OR| http://gsarch@tayer.psy.cmu.edu:7770/media/catalog/product/cache/829a59e57f886f8cf0598ffca4f8a940/B/0/B09M79MQYD.1.jpg",
+        "ssim_threshold": 0.6
+      }
+    ]
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "hard",
+  "comments": "",
+  "intent_template_id": 86
+}

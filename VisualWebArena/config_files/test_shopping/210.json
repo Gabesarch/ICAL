@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 210,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/grocery-gourmet-food/breakfast-foods/cereals.html?p=9",
+  "geolocation": null,
+  "intent_template": "How many {{attribute}} does the box with the {{object}} have?",
+  "instantiation_dict": {
+    "attribute": "vitamins and minerals",
+    "object": "unicorn"
+  },
+  "intent": "How many vitamins and minerals does the box with the unicorn have?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "12"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "12 vitamins and minerals"
+  },
+  "intent_template_id": 67,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "easy",
+  "comments": ""
+}

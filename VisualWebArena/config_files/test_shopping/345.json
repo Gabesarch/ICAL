@@ -1,0 +1,41 @@
+{
+  "sites": [
+    "shopping",
+    "wikipedia"
+  ],
+  "task_id": 345,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770 |AND| http://gsarch@tayer.psy.cmu.edu:8888/wikipedia_en_all_maxi_2022-05/I/Country_calling_codes_map.svg.png.webp",
+  "geolocation": null,
+  "image": null,
+  "intent_template": "Prepend the country code of {{country}} to the phone number of my account profile.",
+  "intent": "Prepend the country code of South Korea to the phone number of my account profile.",
+  "instantiation_dict": {
+    "country": "South Korea"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/customer/address/",
+        "locator": "document.querySelector(\".box-address-billing > div.box-content > address > a\").outerText.substring(0, 3)",
+        "required_contents": {
+          "must_include": [
+            "82 |OR| +82"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 113,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": ""
+}

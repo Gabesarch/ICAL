@@ -1,0 +1,38 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 217,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/beauty-personal-care/foot-hand-nail-care/nail-art-polish.html?p=5",
+  "geolocation": null,
+  "intent_template": "What colors do the {{item}} come in?",
+  "instantiation_dict": {
+    "item": "mini ring trays"
+  },
+  "intent": "What colors do the mini ring trays come in?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "purple |OR| violet",
+        "yellow |OR| gold",
+        "black",
+        "pink"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": "Purple, yellow, black, and pink"
+  },
+  "intent_template_id": 64,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "easy",
+  "comments": ""
+}

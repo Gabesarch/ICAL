@@ -1,0 +1,41 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 109,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "Can you add {{items}} to the comparison page?",
+  "intent": "Can you add these items to the comparison page?",
+  "image": "coco_images/000000348012.jpg",
+  "instantiation_dict": {
+    "items": "these items"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/catalog/product_compare",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "scissors",
+            "tape"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 33,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "comments": "",
+  "overall_difficulty": "medium"
+}

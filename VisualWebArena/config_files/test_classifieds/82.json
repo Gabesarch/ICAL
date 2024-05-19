@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 82,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Find the {{product}}, and tell me how much it costs in dollars.",
+  "intent": "Find the most expensive purple hard-case book, and tell me how much it costs in dollars.",
+  "image": null,
+  "instantiation_dict": {
+    "product": "most expensive purple hard-case book"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match",
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "1100"
+      ]
+    },
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=44383",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 33
+}

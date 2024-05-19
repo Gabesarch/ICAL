@@ -1,0 +1,33 @@
+{
+  "sites": [
+    "wikipedia",
+    "reddit"
+  ],
+  "task_id": 117,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/memes/85200 |AND| http://gsarch@tayer.psy.cmu.edu:8888/wikipedia_en_all_maxi_2022-05/A/User:The_other_Kiwix_guy/Landing",
+  "geolocation": null,
+  "intent_template": "What is the birth year of the {{character}}? Answer using the Wikipedia site in the second tab.",
+  "intent": "What is the birth year of the dog with pink hair? Answer using the Wikipedia site in the second tab.",
+  "image": [],
+  "instantiation_dict": {
+    "character": "dog with pink hair"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "2005"
+      ]
+    }
+  },
+  "intent_template_id": 46,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:8888/wikipedia_en_all_maxi_2022-05/A/Doge_(meme)"
+}

@@ -1,0 +1,33 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 225,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/womens-hoodies-clearance-tie-die-printed-hoodies-sweatshirt-long-sleeve-drawstring-pullover-tops-hooded-shirts.html |AND| http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Show me the {{attribute}} {{item}} from the classifieds site {{description}} on OneStopMarket.",
+  "intent": "Show me the most expensive ring from the classifieds site with the same shape as the shape on the right side of the hoodie shown on OneStopMarket.",
+  "image": null,
+  "instantiation_dict": {
+    "attribute": "most expensive",
+    "item": "ring",
+    "description": "with the same shape as the shape on the right side of the hoodie shown"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=66601",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "",
+  "intent_template_id": 62
+}

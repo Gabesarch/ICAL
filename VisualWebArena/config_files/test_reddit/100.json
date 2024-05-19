@@ -1,0 +1,39 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 100,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999",
+  "geolocation": null,
+  "intent_template": "Navigate to the comments section of a post that {{condition}}.",
+  "intent": "Navigate to the comments section of a post that contains a picture of a cake.",
+  "image": [],
+  "instantiation_dict": {
+    "condition": "contains a picture of a cake"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "page_image_query"
+    ],
+    "page_image_query": [
+      {
+        "eval_image_url": "last",
+        "eval_image_class": ".submission__image",
+        "eval_vqa": [
+          {
+            "question": "Does the picture contain a cake? (yes/no)",
+            "answer": "yes"
+          }
+        ]
+      }
+    ]
+  },
+  "intent_template_id": 40,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "easy",
+  "comments": "just search \"cake\""
+}

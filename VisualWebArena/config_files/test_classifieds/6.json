@@ -1,0 +1,38 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 6,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Return the links of the {{attribute}} {{items}}.",
+  "intent": "Return the links of the 3 most recent motorcycles within $1000 to $2000 that are not orange.",
+  "image": null,
+  "instantiation_dict": {
+    "attribute": "3 most recent",
+    "items": "motorcycles within $1000 to $2000 that are not orange"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=4208",
+        "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=65357",
+        "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=11549"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": ""
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 3
+}

@@ -1,0 +1,40 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 267,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/video-games/pc/accessories.html?p=4&product_list_order=price",
+  "geolocation": null,
+  "intent_template": "Can you add {{item}} to my cart and take me to the final checkout screen before placing the order?",
+  "instantiation_dict": {
+    "item": "the RGB headset"
+  },
+  "intent": "Can you add the RGB headset to my cart and take me to the final checkout screen before placing the order?",
+  "require_reset": true,
+  "reference_url": "",
+  "eval": {
+    "eval_types": [
+      "url_match",
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/#payment",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/#payment",
+        "locator": "func:get_query_text(__page__, \"#opc-sidebar > div.opc-block-summary > div > div.content.minicart-items > div > ol\")",
+        "required_contents": {
+          "must_include": [
+            "RAFIKI Gaming Headset with Microphone for PS4, PS5, Laptop, PC,Mobile Phone,7.1 Surround Sound Headphones,Memory Foam Ear Pads LED Lights, Self-Adjusting Over Ear Headset"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 89,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "easy"
+}

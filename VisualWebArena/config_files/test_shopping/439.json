@@ -1,0 +1,41 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 439,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "Navigate to the category where I can find {{item}} that can help me {{function}}. Add the cheapest one to my cart.",
+  "intent": "Navigate to the category where I can find camera that can help me take photos like this. Add the cheapest one to my cart.",
+  "image": "https://images.pexels.com/photos/1618606/pexels-photo-1618606.jpeg",
+  "instantiation_dict": {
+    "item": "camera",
+    "function": "take photos like this"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:7770/checkout/cart",
+        "locator": "",
+        "required_contents": {
+          "must_include": [
+            "Action Camera Ultra HD 4K Action Camera 10m Waterproof 2.0' Screen 1080p Sport Camera Cam Driving Recorder Tachograph HD (Bundle : Camera Add 64GB Card, Color : Blue)"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 141,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": ""
+}

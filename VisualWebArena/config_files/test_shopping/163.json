@@ -1,0 +1,47 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 163,
+  "require_login": true,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/",
+  "geolocation": null,
+  "intent_template": "Add something like {{attribute}} to my wish list.",
+  "intent": "Add something like this to my wish list.",
+  "image": "https://images.pexels.com/photos/837267/pexels-photo-837267.jpeg",
+  "instantiation_dict": {
+    "attribute": "this"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "page_image_query"
+    ],
+    "page_image_query": [
+      {
+        "eval_image_url": "http://gsarch@tayer.psy.cmu.edu:7770/wishlist/",
+        "eval_image_class": ".products-grid .wishlist .product-image-photo",
+        "eval_vqa": [
+          {
+            "question": "Is this a cactus? (yes/no)",
+            "answer": "yes"
+          },
+          {
+            "question": "Is this a potted plant? (yes/no)",
+            "answer": "yes"
+          }
+        ]
+      }
+    ],
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "",
+    "reference_answer_raw_annotation": ""
+  },
+  "intent_template_id": 32,
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/artificial-cactus-fake-cactus-16-faux-cacti-plants-for-home-garden-office-store-decoration.html",
+  "overall_difficulty": "medium"
+}

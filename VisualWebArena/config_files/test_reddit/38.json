@@ -1,0 +1,29 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 38,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/forums/all",
+  "geolocation": null,
+  "intent_template": "I'd like to find the subreddit for the city this photo was taken in. Can you navigate to it?",
+  "intent": "I'd like to find the subreddit for the city this photo was taken in. Can you navigate to it?",
+  "image": "https://images.pexels.com/photos/11355109/pexels-photo-11355109.jpeg",
+  "instantiation_dict": {},
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/jerseycity",
+    "program_html": [],
+    "url_note": "GOLD in PRED"
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "hard: need to identify that the picture is of Jersey City, and navigate there",
+  "intent_template_id": 14
+}

@@ -1,0 +1,51 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 145,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "I recall seeing this exact {{item}} on the site, add a comment on its listing with the title \"{{title}}\" and text \"{{comment}}\".",
+  "intent": "I recall seeing this exact expensive item in the Video Gaming category on the site, add a comment on its listing with the title \"Urgent\" and text \"Need this for my bowling alley.\".",
+  "image": "http://gsarch@tayer.psy.cmu.edu:9980/oc-content/uploads/43992/43992.png",
+  "instantiation_dict": {
+    "item": "expensive item in the Video Gaming category",
+    "title": "Urgent",
+    "comment": "Need this for my bowling alley."
+  },
+  "require_reset": true,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=43992",
+        "locator": "func:get_query_text(__page__, '.comments_list h3')",
+        "required_contents": {
+          "must_include": [
+            "Urgent by Blake Sullivan"
+          ]
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=43992",
+        "locator": "func:get_query_text(__page__, '.comments_list')",
+        "required_contents": {
+          "must_include": [
+            "Need this for my bowling alley."
+          ]
+        }
+      }
+    ]
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=43992",
+  "intent_template_id": 52
+}

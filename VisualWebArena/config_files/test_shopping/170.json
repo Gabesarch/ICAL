@@ -1,0 +1,44 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 170,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770",
+  "geolocation": null,
+  "intent_template": "Can you find me {{category}} that combines the {{attributes}} of the items in the following images?",
+  "intent": "Can you find me a product that combines the functions of the items in the following images?",
+  "image": [
+    "https://images.pexels.com/photos/4206091/pexels-photo-4206091.jpeg",
+    "https://images.pexels.com/photos/1772123/pexels-photo-1772123.jpeg"
+  ],
+  "instantiation_dict": {
+    "category": "a product",
+    "attributes": "functions"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "last",
+        "locator": "lambda:(() => { try { return document.querySelector('#maincontent > div.page-title-wrapper.product > h1 > span').textContent } catch (e) { return '' }})()",
+        "required_contents": {
+          "must_include": [
+            "Projection Keyboard"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 51,
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/la-guapa-virtual-projection-keyboard-laser-projection-bluetooth-wireless-keyboard-for-smart-phone-pc-tablet-laptop-wireless-laser-projection-keyboard-silver.html"
+}

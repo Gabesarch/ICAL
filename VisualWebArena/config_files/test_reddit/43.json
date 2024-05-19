@@ -1,0 +1,51 @@
+{
+  "sites": [
+    "shopping",
+    "reddit"
+  ],
+  "task_id": 43,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770 |AND| http://gsarch@tayer.psy.cmu.edu:9999/forums",
+  "geolocation": null,
+  "intent_template": "Gather the title of {{product}} from OneStopShop, and post its full product name in the {{subreddit}} subreddit under the title \"{{post_title}}\"",
+  "instantiation_dict": {
+    "product": "the cheapest yellow video projector in the \"Video Projectors\" category",
+    "subreddit": "/f/gadgets",
+    "post_title": "Has anyone bought this product?"
+  },
+  "intent": "Gather the title of the cheapest yellow video projector in the \"Video Projectors\" category from OneStopShop, and post its full product name in the /f/gadgets subreddit under the title \"Has anyone bought this product?\"",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match",
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/gadgets",
+    "url_note": "GOLD in PRED",
+    "program_html": [
+      {
+        "url": "func:reddit_get_post_url('__last_url__')",
+        "locator": "func:get_query_text(__page__, '.submission__title')",
+        "required_contents": {
+          "exact_match": "Has anyone bought this product?"
+        }
+      },
+      {
+        "url": "func:reddit_get_post_url('__last_url__')",
+        "locator": "func:get_query_text(__page__, '.submission__body')",
+        "required_contents": {
+          "must_include": [
+            "RUIQIMAO Mini Projector Portable 1080P Home Cinema Projector Theater Video 100''Display LCD HiFi Audio for TV Box/Xbox/TF Card/U Disk P2L1"
+          ]
+        }
+      }
+    ]
+  },
+  "intent_template_id": 16,
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/ruiqimao-mini-projector-portable-1080p-home-cinema-projector-theater-video-100-display-lcd-hifi-audio-for-tv-box-xbox-tf-card-u-disk-p2l1.html",
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "hard"
+}

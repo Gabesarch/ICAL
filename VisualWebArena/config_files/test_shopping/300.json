@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "shopping"
+  ],
+  "task_id": 300,
+  "require_login": false,
+  "storage_state": "./.auth/shopping_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:7770/baseball-hoodie-for-boys-teens-men-word-cloud-silhouette.html",
+  "geolocation": null,
+  "intent_template": "What size of {{item}} should I buy if {{condition}}?",
+  "intent": "What size of this item should I buy if my shirt width is 28 and 1/4 inches?",
+  "instantiation_dict": {
+    "item": "this item",
+    "condition": "my shirt width is 28 and 1/4 inches"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "XX-Large |OR| XXLarge |OR| 2X-L |OR| 2XL"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "This task requires OCR.",
+    "reference_answer_raw_annotation": "XX-Large"
+  },
+  "intent_template_id": 99,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:7770/baseball-hoodie-for-boys-teens-men-word-cloud-silhouette.html"
+}

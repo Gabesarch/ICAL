@@ -1,0 +1,32 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 7,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/forums/all",
+  "geolocation": null,
+  "intent_template": "I'm doing some research about the post with this image. Navigate to the comment url of the recipe posted by the OP in the comments.",
+  "intent": "I'm doing some research about the post with this image. Navigate to the comment url of the recipe posted by the OP in the comments.",
+  "image": "http://gsarch@tayer.psy.cmu.edu:9999/submission_images/e1eaca118ba95fee4a25afbba5bda97e46f53b6abfffba484a79961e2058f9bd.jpg",
+  "instantiation_dict": {},
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "fuzzy_match": "N/A"
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": "The OP did not provide a recipe",
+    "reference_answer_raw_annotation": "The OP did not provide a recipe"
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "hard",
+  "comments": "product image provided, and need to find the post and check if a recipe is provided (it is not)",
+  "intent_template_id": 3
+}

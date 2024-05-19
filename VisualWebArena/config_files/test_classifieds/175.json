@@ -1,0 +1,33 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 175,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "Navigate to the {{product}} from {{location}} that {{condition}}.",
+  "intent": "Navigate to the cheapest controller in the \"Video gaming\" category from Ohio or Pennsylvania that is predominantly white.",
+  "image": null,
+  "instantiation_dict": {
+    "product": "cheapest controller in the \"Video gaming\" category",
+    "location": "Ohio or Pennsylvania",
+    "condition": "is predominantly white"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=80517",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "hard",
+  "comments": "",
+  "intent_template_id": 58
+}

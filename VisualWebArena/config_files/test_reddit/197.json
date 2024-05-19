@@ -1,0 +1,31 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 197,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999",
+  "geolocation": null,
+  "intent_template": "Can you take me to the comments section of {{post}} {{condition}}?",
+  "instantiation_dict": {
+    "post": "the most commented post (of all time) in f/food",
+    "condition": "where the food is vegetarian"
+  },
+  "intent": "Can you take me to the comments section of the most commented post (of all time) in f/food where the food is vegetarian?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/food/18823/i-ate-maple-pecan-croissant",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": "",
+  "intent_template_id": 64
+}

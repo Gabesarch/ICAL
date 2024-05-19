@@ -1,0 +1,29 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 9,
+  "require_login": true,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/food",
+  "geolocation": null,
+  "intent_template": "I'm doing some research about the post with this image. Navigate to the comment url of the recipe posted by the OP in the comments.",
+  "intent": "I'm doing some research about the post with this image. Navigate to the comment url of the recipe posted by the OP in the comments.",
+  "image": "http://gsarch@tayer.psy.cmu.edu:9999/submission_images/f85e45ccbb6417ca67872694cb4e9906fb5d52415517b5a82ccd4be43df2bce5.jpg",
+  "instantiation_dict": {},
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "url_match"
+    ],
+    "reference_answers": null,
+    "reference_url": "http://gsarch@tayer.psy.cmu.edu:9999/f/food/125449/-/comment/2293962 |OR| http://gsarch@tayer.psy.cmu.edu:9999/f/food/125449/-/comment/2305083",
+    "program_html": [],
+    "url_note": "EXACT"
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": "product image provided, and need to find the post (starting from /f/food) and check if a recipe is provided",
+  "intent_template_id": 3
+}

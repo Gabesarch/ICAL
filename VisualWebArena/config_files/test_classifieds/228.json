@@ -1,0 +1,52 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 228,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980 |AND| http://gsarch@tayer.psy.cmu.edu:7770/posterazzi-pdxjp6549small-live-photo-print-12-x-24-multi.html",
+  "geolocation": null,
+  "intent_template": "Find me the {{attribute}} {{item}} from the classifieds site that {{condition}}.{{action}}",
+  "intent": "Find me the most recent live plant listing from the classifieds site that is the same plant type as the plant shown in the image on OneStopMarket. Then, if there are at least 3 of those plants below 9ft tall shown in the product listing image, comment with the title \"Interested\" and text \"I want 3\".",
+  "image": null,
+  "instantiation_dict": {
+    "attribute": "most recent",
+    "item": "live plant listing",
+    "condition": "is the same plant type as the plant shown in the image on OneStopMarket",
+    "action": " Then, if there are at least 3 of those plants below 9ft tall shown in the product listing image, comment with the title \"Interested\" and text \"I want 3\"."
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "program_html"
+    ],
+    "reference_answers": null,
+    "reference_url": "",
+    "program_html": [
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=58212",
+        "locator": "func:get_query_text(__page__, '.comments_list h3')",
+        "required_contents": {
+          "must_include": [
+            "Interested by Blake Sullivan"
+          ]
+        }
+      },
+      {
+        "url": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=58212",
+        "locator": "func:get_query_text(__page__, '.comments_list')",
+        "required_contents": {
+          "must_include": [
+            "I want 3"
+          ]
+        }
+      }
+    ]
+  },
+  "reasoning_difficulty": "hard",
+  "visual_difficulty": "hard",
+  "overall_difficulty": "hard",
+  "comments": "",
+  "intent_template_id": 68
+}

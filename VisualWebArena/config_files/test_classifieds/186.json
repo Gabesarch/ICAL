@@ -1,0 +1,36 @@
+{
+  "sites": [
+    "classifieds"
+  ],
+  "task_id": 186,
+  "require_login": true,
+  "storage_state": "./.auth/classifieds_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9980",
+  "geolocation": null,
+  "intent_template": "For the {{item}}, tell me the {{detail}}.",
+  "intent": "For the most recently listed item in the \"Books\" category of a single book with a car on the cover, tell me the color of the car.",
+  "image": null,
+  "instantiation_dict": {
+    "item": "most recently listed item in the \"Books\" category of a single book with a car on the cover",
+    "detail": "color of the car"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "yellow"
+      ]
+    },
+    "reference_url": "",
+    "program_html": [],
+    "string_note": ""
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "medium",
+  "overall_difficulty": "medium",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9980/index.php?page=item&id=9146",
+  "intent_template_id": 53
+}

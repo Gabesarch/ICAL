@@ -1,0 +1,46 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 167,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999",
+  "geolocation": null,
+  "intent_template": "{{intro}}. Can you navigate to the comments section of a post {{description}}?",
+  "instantiation_dict": {
+    "intro": "I am feeling sad today",
+    "description": "that has an image of a dog and a cat to cheer me up"
+  },
+  "intent": "I am feeling sad today. Can you navigate to the comments section of a post that has an image of a dog and a cat to cheer me up?",
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "page_image_query"
+    ],
+    "page_image_query": [
+      {
+        "eval_image_url": "last",
+        "eval_image_class": ".submission__row",
+        "eval_vqa": [
+          {
+            "question": "Is there a cat in this photo? (yes/no)",
+            "answer": "yes"
+          },
+          {
+            "question": "Is there a dog in this photo? (yes/no)",
+            "answer": "yes"
+          }
+        ]
+      }
+    ],
+    "reference_url": "",
+    "program_html": [],
+    "string_note": ""
+  },
+  "reasoning_difficulty": "medium",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "medium",
+  "comments": "An example is at http://gsarch@tayer.psy.cmu.edu:9999/f/aww/81028/cute-buddies",
+  "intent_template_id": 63
+}

@@ -1,0 +1,32 @@
+{
+  "sites": [
+    "reddit"
+  ],
+  "task_id": 120,
+  "require_login": false,
+  "storage_state": "./.auth/reddit_state.json",
+  "start_url": "http://gsarch@tayer.psy.cmu.edu:9999/submission_images/361ec602ee63f8d052217fe6577e7163471ae1b86280acd498aa626a28239da2.jpg",
+  "geolocation": null,
+  "intent_template": "According to the image, {{question}}?",
+  "intent": "According to the image, which country in this picture has the worst rail system?",
+  "image": [],
+  "instantiation_dict": {
+    "question": "which country in this picture has the worst rail system"
+  },
+  "require_reset": false,
+  "eval": {
+    "eval_types": [
+      "string_match"
+    ],
+    "reference_answers": {
+      "must_include": [
+        "U.S. |OR| United States |OR| US"
+      ]
+    }
+  },
+  "intent_template_id": 47,
+  "reasoning_difficulty": "easy",
+  "visual_difficulty": "easy",
+  "overall_difficulty": "easy",
+  "comments": "http://gsarch@tayer.psy.cmu.edu:9999/f/memes/106690"
+}
