@@ -44,7 +44,7 @@ Detailed steps for running ICAL in the TEACh domain can be found in the [TEACh R
 ## Learned Examples
 The ICAL learned examples for each domain can be found in the following locations:
 
-- **Ego4D:** [Ego4D ICAL Learned Examples](Ego4D/ego4d_forecasting/models/prompts/learned_examples/examples_ICAL_abstraction_phase/forecasting)
+- **Ego4D:** [Ego4D ICAL Learned Examples](Ego4d/ego4d_forecasting/models/prompts/learned_examples/examples_ICAL_abstraction_phase/forecasting)
 - **VisualWebArena:** [VisualWebArena ICAL Learned Examples](VisualWebArena/learned_examples)
 - **TEACh:** [TEACh ICAL Learned Examples](TEACh/learned_examples/fullmemlearning_idm_00)
 
