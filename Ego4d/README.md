@@ -68,6 +68,8 @@ To run the evaluation using ICAL examples, run:
 bash tools/long_term_anticipation/evaluate_ICAL_abstract_only.sh output/
 ```
 
+See [this file](https://github.com/Gabesarch/ICAL/blob/main/Ego4d/scripts/run_lta_gpt4v.py) for the main run file for ICAL.
+
 ## Citation
 If you find our environment or our models useful, please consider citing ICAL as well as Ego4d:
 ```

@@ -96,8 +96,6 @@ def get_prompt_abstraction_phase(
     single_image=False,
     with_SoM=True,
 ):
-    # if len(images[0])>1:
-    #     assert(False)
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
     message = [
         {
@@ -118,8 +116,6 @@ def get_prompt_abstraction_phase(
             # i abstraction_comments
 
             c = [Image.open(video_image) for video_image in c]
-            # c = np.concatenate([np.asarray(video_image) for video_image in c], axis=1)
-            # c = [Image.fromarray(c)]
 
             c = c[:2]
             
@@ -136,14 +132,8 @@ def get_prompt_abstraction_phase(
                 else:
                     example_img = image_f
                 
-                # current_prompt_example = self.ltp_pred_prompt.replace('{video_actions}', w)
                 example_content.extend(
-                    # {
-                        # "role": "system",
-                        # "name": "example_user",
-                        # "content": 
                         [
-                            # {"type": "text", "text": inputs_example},
                             {
                                 "type": "text",
                                 "text": f"Frame {image_i+1}:",
@@ -159,11 +149,9 @@ def get_prompt_abstraction_phase(
                     # }
                 )
             inputs_example = f"Inputs:\n\nVideo actions:\n{b}\n\nFuture actions:\n{a}"
-            # print(inputs_example)
             example_content = [{"type": "text", "text": inputs_example}] + example_content
             message.append({"role": "system", "name": "example_user", "content": example_content})
             output_example = f"Outputs:\n\nSummary: {e}\n\nAbstracted State:\n{f}\n\nStep-by-step Reasoning: {g}\n\nPredicted State Change: {h}\n\nAbstraction Comments:\n{i}"
-            # print(output_example)
             message.append(
                     {
                         "role": "system",
@@ -171,10 +159,6 @@ def get_prompt_abstraction_phase(
                         "content": [{"type": "text", "text": output_example}],
                     }
                 )
-    # images_samples = images[0][0,0].unsqueeze(0) #.unbind(1)
-    # image_std, image_mean = image_std.to(images_samples.device), image_mean.to(images_samples.device)
-    # images_samples = images_samples * image_std + image_mean
-    # images_samples = images_samples.unbind(1)
     newsize = (768, 768)
     if single_image:
         images_samples = [video_image.resize(newsize) for video_image in images]
@@ -190,7 +174,6 @@ def get_prompt_abstraction_phase(
         images_samples_ = copy.deepcopy(images_samples)
     content = []
     print(f'Number of images: {len(images_samples)}')
-    # for image_i, image in enumerate(images_samples):
     content.append(
         {
             "type": "text",
@@ -211,7 +194,6 @@ def get_prompt_abstraction_phase(
             ]
         )
     inputs = f"Inputs:\n\nVideo actions:\n{video_actions}\n\nFuture actions:\n{future_actions}"
-    # current_prompt = self.ltp_pred_prompt.replace('{video_actions}', video_actions)
     print(inputs)
     content = [{"type": "text", "text": inputs}] + content
     message.append({"role": "user", "content": content})
@@ -253,8 +235,6 @@ def save_examples_json(
         image_paths = os.listdir(file_path.replace('actions', 'images_SoM').replace('.txt', ''))
         image_paths_idxs = np.argsort([int(im_path.replace('.png', '')) for im_path in image_paths])
         image_paths = [os.path.join(path.replace('actions', 'images_SoM'), file_.replace('.txt', ''), image_paths[im_path_idx]) for im_path_idx in list(image_paths_idxs)]
-        # raw images
-        # image_paths_raw = os.listdir(file_path.replace('actions', 'images_raw').replace('.txt', ''))
         
         images_raw = [Image.open(f.replace('images_SoM', 'images_raw')) for f in image_paths]
         image_encodings = clip.encode_images(images_raw)
@@ -438,8 +418,6 @@ def main(cfg):
 
     task = TaskType(cfg)
 
-    
-
     checkpoint_callback = ModelCheckpoint(
         monitor=task.checkpoint_metric, mode="min", save_last=True, save_top_k=1
     )
@@ -492,13 +470,7 @@ def main(cfg):
             with open(os.path.join(metric_dir, 'metrics.json')) as json_file:
                 results = json.load(json_file)
         
-        do_abstraction = cfg.DO_ABSTRACTION #False
-
-        # save_examples_json(f'ego4d_forecasting/models/prompts/examples_abstraction_phase_only00/forecasting/', task.model.clip)
-        # save_examples_json(f'ego4d_forecasting/models/prompts/examples_abstraction_phase_only00/recognition/', task.model.clip)
-        # save_examples_json(f'ego4d_forecasting/models/prompts/examples/forecasting/', task.model.clip)
-        # save_examples_json(f'ego4d_forecasting/models/prompts/examples/recognition/', task.model.clip)
-        # st()
+        do_abstraction = cfg.DO_ABSTRACTION
         examples_forecasting_json2 = None
         for step, batch in enumerate(task.val_loader):
 
@@ -520,13 +492,10 @@ def main(cfg):
                     if clip_id in results.keys():
                         print(f"{clip_id} exists... skipping...")
                         continue
-
-            # if do_abstraction:
-            #     if step<=2:
-            #         continue
-            # if step<=1:
-            #     continue
-
+            
+            '''
+            Run example through model
+            '''
             if cfg.IN_TRY_EXCEPT:
                 try:
                     result, images_samples_ltp = task.validation_step(batch, step, return_images_only=do_abstraction)
@@ -541,10 +510,13 @@ def main(cfg):
                     result[k] = float(result[k])
             results[clip_id] = result
 
-            video_image = np.concatenate([np.asarray(image_sample) for image_sample in images_samples_ltp], axis=1)
-            video_image = Image.fromarray(video_image) #(image_sample.squeeze(0).permute(1,2,0).cpu().numpy() * 255).astype(np.uint8)) 
-            os.makedirs(os.path.join(metric_dir, 'videos'), exist_ok=True)
-            video_image.save(os.path.join(metric_dir, 'videos', f'{clip_id}.png'))
+            '''
+            Visualize video
+            '''
+            # video_image = np.concatenate([np.asarray(image_sample) for image_sample in images_samples_ltp], axis=1)
+            # video_image = Image.fromarray(video_image) #(image_sample.squeeze(0).permute(1,2,0).cpu().numpy() * 255).astype(np.uint8)) 
+            # os.makedirs(os.path.join(metric_dir, 'videos'), exist_ok=True)
+            # video_image.save(os.path.join(metric_dir, 'videos', f'{clip_id}.png'))
             
             with open(os.path.join(metric_dir, 'metrics.json'), "w") as outfile: 
                 json.dump(results, outfile, indent=4, sort_keys=True)
@@ -552,6 +524,9 @@ def main(cfg):
             images, forecast_labels, video_labels, _, _ = batch
             
             if do_abstraction:
+                '''
+                VLM abstraction generation
+                '''
 
                 example_folder_name = cfg.EXAMPLE_FOLDER_NAME #'examples_abstraction_phase_only_multiimage'
 
@@ -582,12 +557,6 @@ def main(cfg):
                     with open(examples_forecasting2) as json_data:
                         examples_forecasting_json2 = json.load(json_data)
                     examples_forecasting_json.update(examples_forecasting_json2)
-                
-                # examples_forecasting = retrieve_topk(
-                #     examples_forecasting_json,
-                #     current_images,
-                #     task.model.clip,
-                # )
                 update_examples = False
                 if update_examples:
                     task.model.get_example_embeddings(example_json=examples_forecasting_json)
@@ -616,13 +585,6 @@ def main(cfg):
                     response = task.model.generate_from_openai_completion(prompt)
                 except:
                     continue
-
-                # st()
-                # images_samples_prompt[2].save('output/test.png')
-
-                # video_image = np.concatenate([np.asarray(image_sample) for image_sample in images_samples_ltp], axis=1)
-                # video_image = Image.fromarray(video_image) #(image_sample.squeeze(0).permute(1,2,0).cpu().numpy() * 255).astype(np.uint8)) 
-                # video_image.save('images/video.png')
 
                 save_example(
                     example_folder_name,
@@ -670,6 +632,9 @@ def main(cfg):
                 
             save_examples = False
             if save_examples:
+                '''
+                Save few-shot examples (do not need to touch this)
+                '''
                 examples_image_dir = os.path.join('ego4d_forecasting', 'models', 'prompts', 'examples', 'forecasting', 'images_SoM')
                 os.makedirs(examples_image_dir, exist_ok=True)
                 examples_image_raw_dir = os.path.join('ego4d_forecasting', 'models', 'prompts', 'examples', 'forecasting', 'images_raw')
@@ -721,35 +686,14 @@ def main(cfg):
                     text_gt_recognition += f'{l_idx+1}. {task.idx2verbs[int(video_labels[0,l_idx,0].cpu().numpy())]} {task.idx2nouns[int(video_labels[0,l_idx,1].cpu().numpy())]}'
                 with open(os.path.join(examples_actions_dir, f'{clip_id}.txt'), 'w') as f:
                     f.write(text_gt_recognition)
-                st()
                 if step>=3:
                     break
 
             if cfg.MAX_EPISODES is not None:
                 if step+1>=cfg.MAX_EPISODES:
                     break
-                
-
-        
-
 
 if __name__ == "__main__":
     args = parse_args()
     cfg = load_config(args)
-    # if args.on_cluster:
-    #     copy_and_run_with_config(
-    #         main,
-    #         cfg,
-    #         args.working_directory,
-    #         job_name=args.job_name,
-    #         time="72:00:00",
-    #         partition="devlab,learnlab,learnfair",
-    #         gpus_per_node=cfg.NUM_GPUS,
-    #         ntasks_per_node=cfg.NUM_GPUS,
-    #         cpus_per_task=10,
-    #         mem="470GB",
-    #         nodes=cfg.NUM_SHARDS,
-    #         constraint="volta32gb",
-    #     )
-    # else:  # local
     main(cfg)
