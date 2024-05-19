@@ -33,7 +33,7 @@ Each folder (Ego4D, VisualWebArena, TEACh) includes:
 ## Running ICAL in Each Domain
 
 ### Ego4D
-To learn more about running ICAL in Ego4D Forecasting, please refer to the [Ego4D README](Ego4D/README.md).
+To learn more about running ICAL in Ego4D Forecasting, please refer to the [Ego4D README](Ego4d/README.md).
 
 ### VisualWebArena
 For instructions on running ICAL in VisualWebArena, please refer to the [VisualWebArena README](VisualWebArena/README.md).
