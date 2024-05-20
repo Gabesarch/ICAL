@@ -59,7 +59,7 @@ To install and set up the ICAL environment, follow these general steps:
 
 2. Navigate to the domain directory you are interested in (e.g., `Ego4D`), and follow the installation instructions provided in its README file.
 
-## Citation
+<!-- ## Citation
 If you find our work useful, please consider citing our paper:
 ```
 @article{sarch2024ical,
@@ -68,7 +68,7 @@ If you find our work useful, please consider citing our paper:
   journal={},
   year={2024}
 }
-```
+``` -->
 
 ## Acknowledgements
 This work builds on the existing research and frameworks in each of the respective domains. We would like to thank the contributors to the Ego4D, VisualWebArena, and TEACh projects for their invaluable resources.
