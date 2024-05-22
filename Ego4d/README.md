@@ -70,23 +70,5 @@ bash tools/long_term_anticipation/evaluate_ICAL_abstract_only.sh output/
 
 See [this file](https://github.com/Gabesarch/ICAL/blob/main/Ego4d/scripts/run_lta_gpt4v.py) for the main run file for ICAL.
 
-## Citation
-If you find our environment or our models useful, please consider citing ICAL as well as Ego4d:
-```
-@article{sarch2024ical,
-  title={},
-  author={},
-  journal={},
-  year={2024}
-}
-@inproceedings{grauman2022ego4d,
-  title={Ego4d: Around the world in 3,000 hours of egocentric video},
-  author={Grauman, Kristen and Westbury, Andrew and Byrne, Eugene and Chavis, Zachary and Furnari, Antonino and Girdhar, Rohit and Hamburger, Jackson and Jiang, Hao and Liu, Miao and Liu, Xingyu and others},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-  pages={18995--19012},
-  year={2022}
-}
-```
-
 ## Acknowledgements
-This code builds on [Ego4d Action Anticipation](https://github.com/EGO4D/forecasting). Be sure to check them out!
+This code builds on [Ego4d Action Anticipation](https://github.com/EGO4D/forecasting).
