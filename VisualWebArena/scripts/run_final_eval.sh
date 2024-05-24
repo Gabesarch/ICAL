@@ -5,8 +5,8 @@ export RESULTS_DIR="output"
 mkdir -p ./.auth
 python browser_env/auto_login.py
 python run_eval.py \
-  --instruction_path data/human_demos/planning_examples.json \
-  --instruction_jsons data/memory_human_in_the_loop/merged_classifieds_shopping_reddit_V2/planning_examples.json \
+  --instruction_path learned_examples/human_demos_with_abstractions/planning_examples.json \
+  --instruction_jsons learned_examples/merged_classifieds_shopping_reddit_V2/planning_examples.json \
   --result_dir $RESULTS_DIR \
   --test_config_base_dir=config_files/test_classifieds \
   --model gpt-4-vision-preview \
