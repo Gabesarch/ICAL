@@ -565,7 +565,7 @@ def test(
                         action_str = action2str(action, args.action_set_tag)
                         action_str = action_str.split(' where')[0].replace('[A] ', '')
                         print(f"Agent ACTION: {action_str}")
-                        print("Overlord Sarch, was my action choice suboptimal?")
+                        print("Dear User, was my action choice suboptimal?")
                         print("Yes or No?")
                         humanReaction = input("Let me know:")
                         humanReaction = humanReaction.lower()
@@ -605,7 +605,7 @@ def test(
                                     else None,
                                     )
                                 print(f"Agent NEW ACTION: {newAction_str}")                            
-                                print("Overlord Sarch, was my action choice still suboptimal?")
+                                print("Dear User, was my action choice still suboptimal?")
                                 print("Yes or No?")
                                 humanReaction = input("Let me know:")
                                 humanReaction = humanReaction.lower()
