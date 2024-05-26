@@ -1,12 +1,13 @@
 #!/bin/sh
 export AZURE_OPENAI_KEY="YOUR_KEY_HERE"
 export AZURE_OPENAI_ENDPOINT="YOUR_ENDPOINT_HERE"
+export TEACH_ROOT="TEACH_ROOT_HERE"
 python main.py \
  --mode teach_skill_learning \
  --split train \
  --create_movie \
  --remove_map_vis \
- --teach_data_dir ./dataset \
+ --teach_data_dir $TEACH_ROOT \
  --use_gt_depth \
  --use_gt_seg \
  --use_gt_centroids \

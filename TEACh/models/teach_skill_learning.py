@@ -134,7 +134,7 @@ class ContinualSubGoalController(SubGoalController, ProgramGen):
         self.demo_folder = args.demo_folder
 
         tag = "allfiles"
-        self.task_name_to_descs = load_json(f'./data/task_name_to_descs_{tag}.json')
+        self.task_name_to_descs = load_json(f'./data/task_name_to_descs_{args.split}_{tag}.json')
 
         super(ContinualSubGoalController, self).__init__(
             data_dir, 
@@ -150,7 +150,6 @@ class ContinualSubGoalController(SubGoalController, ProgramGen):
             segmentation_network=segmentation_network
             )
         
-
         if args.get_skills_demos:
             self.run_abstraction_phase()
             assert(False) # the end
@@ -1622,19 +1621,6 @@ def run_teach():
 
     task_type = None
     task_type = args.task_type
-    # ['Put_All_X_On_Y', 'Salad', 'Clean_All_X', 'Plate_Of_Toast', 'N_Slices_Of_X_In_Y', 'Coffee', 'Breakfast', 'Water_Plant', 'Put_All_X_In_One_Y', 'Sandwich', 'Boil_X', 'N_Cooked_Slices_Of_X_In_Y']
-    # task_type = 'Coffee'
-
-    # ['Put_all_Newspaper_on_any_Sofa', 'Put_all_Fork_in_any_Sink', 'Make_a_salad', 'Clean_all_the_Cloths', 'Make_a_plate_of_toast', 'Serve_1_slice(s)_of_Lettuce_in_a_Bowl', 'Prepare_coffee_in_a_clean_mug', 'Prepare_breakfast', 'Serve_1_slice(s)_of_Tomato_on_a_Plate', 'Serve_1_slice(s)_of_Tomato_in_a_Bowl', 'Water_the_plant', 'Put_all_Mug_in_any_Sink', 'Put_all_SmallHandheldObjects_on_one_CoffeeTable', 'Make_a_sandwich', 'Boil_Potato', 'Put_all_Cup_in_one_Cabinet', 'Clean_all_the_Pots', 'Cook_2_slice(s)_of_Potato_and_serve_in_a_Bowl', 'Put_all_Watch_on_one_Tables', 'Serve_2_slice(s)_of_Tomato_on_a_Plate', 'Serve_1_slice(s)_of_Lettuce_on_a_Plate', 'Put_all_RemoteControl_on_one_Sofa', 'Clean_all_the_Bowls', 'Put_all_Watch_on_one_ArmChair', 'Clean_all_the_Plates', 'Put_all_SaltShaker_on_any_DiningTable', 'Put_all_Silverware_in_any_Sink', 'Put_all_Newspaper_on_one_Sofa', 'Clean_all_the_Pans', 'Cook_1_slice(s)_of_Potato_and_serve_in_a_Bowl', 'Clean_all_the_Cups', 'Put_all_PepperShaker_in_any_Cabinet', 'Put_all_Mug_in_one_Cabinet', 'Clean_all_the_Drinkwares', 'Put_all_TissueBox_on_one_Tables', 'Put_all_Kettle_on_any_DiningTable', 'Put_all_Lettuce_in_any_Fridge', 'Put_all_Apple_in_one_Cabinet', 'Put_all_Watch_on_any_SideTable', 'Put_all_Dishware_on_any_DiningTable', 'Put_all_SmallHandheldObjects_on_one_Tables', 'Put_all_Pen_on_any_Bed', 'Put_all_RemoteControl_on_one_Chairs', 'Clean_all_the_Mugs', 'Put_all_Lettuce_on_any_DiningTable', 'Put_all_Candle_on_any_CoffeeTable', 'Put_all_Spoon_in_any_Sink', 'Cook_1_slice(s)_of_Potato_and_serve_on_a_Plate', 'Put_all_TissueBox_on_any_Tables', 'Put_all_TissueBox_on_one_CoffeeTable', 'Put_all_Bread_in_any_Cabinet', 'Put_all_Watch_on_one_Sofa', 'Cook_3_slice(s)_of_Potato_and_serve_in_a_Bowl', 'Cook_5_slice(s)_of_Potato_and_serve_in_a_Bowl', 'Cook_3_slice(s)_of_Potato_and_serve_on_a_Plate', 'Put_all_AlarmClock_on_any_Bed', 'Put_all_Newspaper_on_any_ArmChair', 'Put_all_Pillow_on_any_Chairs', 'Put_all_RemoteControl_on_any_Chairs', 'Put_all_Cloth_in_any_Bathtub', 'Put_all_RemoteControl_on_one_Tables', 'Cook_2_slice(s)_of_Potato_and_serve_on_a_Plate', 'Put_all_SmallHandheldObjects_on_any_Chairs', 'Put_all_RemoteControl_on_one_ArmChair', 'Cook_4_slice(s)_of_Potato_and_serve_on_a_Plate', 'Put_all_Newspaper_on_one_SideTable', 'Put_all_Condiments_in_any_Cabinet', 'Put_all_RemoteControl_on_one_Dresser', 'Put_all_Book_on_any_Desk', 'Put_all_RemoteControl_on_any_Tables', 'Serve_2_slice(s)_of_Lettuce_on_a_Plate', 'Clean_all_the_Dishwares', 'Put_all_RemoteControl_on_any_Sofa', 'Put_all_RemoteControl_on_one_Ottoman', 'Put_all_Egg_in_one_Cabinet', 'Put_all_Spatula_in_any_Cabinet', 'Clean_all_the_Tablewares', 'Put_all_Bread_on_any_DiningTable', 'Cook_5_slice(s)_of_Potato_and_serve_on_a_Plate', 'Put_all_CreditCard_on_any_Bed', 'Put_all_Drinkware_on_any_DiningTable', 'Put_all_SmallHandheldObjects_on_one_ArmChair', 'Put_all_Newspaper_on_one_Dresser', 'Put_all_Newspaper_on_one_Ottoman', 'Put_all_RemoteControl_on_one_SideTable', 'Put_all_Newspaper_on_one_Chairs', 'Put_all_Watch_on_one_Furniture', 'Put_all_Egg_on_any_DiningTable', 'Put_all_CreditCard_on_any_Desk', 'Put_all_Newspaper_in_one_Box', 'Put_all_Newspaper_on_one_Furniture', 'Put_all_SaltShaker_in_one_Cabinet', 'Put_all_Bowl_on_any_DiningTable', 'Serve_3_slice(s)_of_Tomato_on_a_Plate', 'Serve_3_slice(s)_of_Lettuce_on_a_Plate', 'Put_all_RemoteControl_on_any_Dresser', 'Put_all_Watch_in_one_Box', 'Put_all_Condiments_in_one_Cabinet', 'Put_all_RemoteControl_on_one_CoffeeTable', 'Put_all_Candle_on_one_CoffeeTable', 'Put_all_RemoteControl_on_one_Furniture', 'Put_all_Fork_on_any_DiningTable', 'Put_all_SmallHandheldObjects_on_one_Sofa', 'Put_all_SmallHandheldObjects_on_one_Furniture', 'Put_all_Watch_on_one_Chairs', 'Put_all_Watch_on_any_Tables', 'Put_all_DishSponge_in_any_Sink', 'Put_all_Potato_in_any_Cabinet', 'Put_all_Mug_on_any_DiningTable', 'Put_all_Apple_in_any_Cabinet', 'Put_all_Bottle_in_one_Cabinet', 'Put_all_Watch_on_any_CoffeeTable', 'Put_all_RemoteControl_in_one_Box', 'Put_all_Pillow_on_any_Sofa', 'Put_all_RemoteControl_on_any_ArmChair', 'Put_all_Plate_on_any_DiningTable', 'Put_all_RemoteControl_on_any_SideTable', 'Put_all_Tomato_in_any_Fridge', 'Put_all_TissueBox_on_one_SideTable', 'Put_all_Newspaper_on_one_Tables', 'Put_all_Newspaper_on_any_SideTable', 'Put_all_Bowl_in_any_Sink', 'Put_all_Newspaper_on_one_ArmChair', 'Put_all_Ladle_in_one_Cabinet', 'Clean_all_the_Cookwares', 'Put_all_Spoon_in_one_Drawer', 'Put_all_Apple_in_any_Fridge', 'Put_all_Cup_in_any_Cabinet', 'Put_all_Ladle_in_any_Sink', 'Put_all_Tomato_in_one_Cabinet', 'Put_all_Spatula_in_one_Drawer', 'Put_all_SaltShaker_in_any_Cabinet', 'Put_all_SoapBar_on_any_CounterTop', 'Put_all_Fruit_in_any_Fridge', 'Put_all_SportsEquipment_on_any_Bed', 'Put_all_Spatula_in_any_Sink', 'Put_all_Candle_on_one_Tables', 'Put_all_Mug_in_any_Cabinet', 'Put_all_PepperShaker_in_one_Cabinet', 'Put_all_Laptop_on_any_Bed', 'Put_all_Ladle_in_one_Drawer', 'Put_all_Newspaper_on_one_CoffeeTable', 'Put_all_Plate_in_any_Cabinet', 'Serve_4_slice(s)_of_Tomato_on_a_Plate', 'Put_all_ScrubBrush_on_any_CounterTop', 'Put_all_Cup_in_any_Sink', 'Put_all_Cup_on_any_DiningTable', 'Put_all_Watch_on_one_Ottoman', 'Put_all_Ladle_in_any_Cabinet', 'Put_all_SmallHandheldObjects_on_one_Chairs', 'Put_all_Watch_on_one_SideTable', 'Put_all_Tomato_in_any_Cabinet', 'Put_all_CreditCard_on_any_Furniture', 'Put_all_RemoteControl_on_any_Furniture', 'Put_all_Pillow_on_any_ArmChair', 'Cook_4_slice(s)_of_Potato_and_serve_in_a_Bowl', 'Serve_5_slice(s)_of_Tomato_in_a_Bowl', 'Put_all_RemoteControl_on_any_TVStand', 'Serve_3_slice(s)_of_Lettuce_in_a_Bowl', 'Put_all_Fork_in_any_Drawer', 'Serve_2_slice(s)_of_Tomato_in_a_Bowl', 'Put_all_Lettuce_in_any_Cabinet', 'Put_all_AlarmClock_on_any_Furniture', 'Put_all_Fork_in_one_Drawer', 'Put_all_Plate_in_one_Cabinet', 'Put_all_Watch_on_any_Sofa', 'Put_all_Fruit_on_any_DiningTable', 'Put_all_Pen_on_any_Desk', 'Put_all_Spatula_in_one_Cabinet', 'Put_all_Candle_on_any_Tables', 'Put_all_Spoon_in_any_Drawer', 'Serve_3_slice(s)_of_Tomato_in_a_Bowl', 'Put_all_Book_on_any_Furniture', 'Put_all_Bowl_in_any_Cabinet', 'Put_all_Book_on_any_Bed', 'Put_all_Apple_on_any_DiningTable', 'Put_all_RemoteControl_in_any_Box', 'Put_all_Newspaper_on_any_CoffeeTable']
-    # task_type = 'Put_all_Fork_in_any_Sink'
-    # task_type = 'Salad'
-    # task_type = 'Plate_Of_Toast'
-    # task_type = 'Boil_X'
-    # task_type = 'N_Cooked_Slices_Of_X_In_Y'
-    # task_type = 'Coffee'
-    # task_type = 'Prepare_coffee_in_a_clean_mug'
-    # task_type = 'Breakfast'
-    # task_type = ['Salad', 'Breakfast', 'Sandwich', 'N_Cooked_Slices_Of_X_In_Y', 'Plate_Of_Toast']
     if task_type is not None:
         if type(task_type)==list:
             sorted_task_files = {tt_:sorted_task_files[tt_] for tt_ in task_type}
@@ -1664,47 +1650,24 @@ def run_teach():
     global_iteration = -1
     if args.skip_if_exists:
         if args.online_skill_learning:
-            # output_folder = f'output/{args.mode}_{args.set_name}' #f'output/skill_logging_{args.set_name}'
             stats_path = os.path.join(output_folder, 'stats.json')
             if os.path.exists(stats_path):
                 stats = load_json(stats_path)
                 global_iters = [stats[k]['global_iteration'] for k in stats.keys()]
                 global_iteration = max(global_iters)
 
-    # if (1):
-    #     if split_ in ["valid_seen", "valid_unseen"]:
-    #         num_iterations = 0
-
-    #     files_train = []
-    #     for task_type in list(sorted_task_files.keys()):
-    #         files_train.extend(sorted_task_files[task_type][num_iterations:])
-    #         print(task_type, len(sorted_task_files[task_type][num_iterations:]))
-        
-    #     st()
-        
-    #     files_train_ = []
-    #     for f_t in files_train:
-    #         files_train_.append(os.path.split(f_t)[-1].split('.tfd.json')[0])
-
-    #     with open(f'data/teach_idm_{split_}.p', 'wb') as f:
-    #         pickle.dump(files_train_, f)
-
-    #     st()
-
     if args.get_expert_program_idm or args.get_expert_program or args.online_skill_learning:
         with open(f'./data/teach_idm_{split_}.p', 'rb') as f:
             file_list = pickle.load(f)
         for task_type in list(sorted_task_files.keys()):
-            sorted_task_files[task_type] = [f for f in sorted_task_files[task_type] if f.replace('.tfd.json', '') not in file_list]
+            sorted_task_files[task_type] = [f for f in sorted_task_files[task_type] if f.replace('.tfd.json', '') in file_list]
 
     if args.online_skill_learning:
         with open(f'./data/teach_idm_{split_}.p', 'rb') as f:
             file_list = pickle.load(f)
-        # print(len(sum(list(sorted_task_files.values()), [])))
         for task_type in list(sorted_task_files.keys()):
             sorted_task_files[task_type] = [f for f in sorted_task_files[task_type] if os.path.split(f)[-1].replace('.tfd.json', '') not in file_list]
-        # print(len(sum(list(sorted_task_files.values()), [])))
-
+    
     for task_file_iteration in range(num_iterations):
         for task_type_ in list(sorted_task_files.keys()):
             
@@ -1744,7 +1707,6 @@ def run_teach():
                 
                 if args.skip_if_exists:
                     if args.online_skill_learning:
-                        # output_folder = f'output/{args.mode}_{args.set_name}' #f'output/skill_logging_{args.set_name}'
                         stats_path = os.path.join(output_folder, 'stats.json')
                         if os.path.exists(stats_path):
                             stats = load_json(stats_path)
@@ -1752,14 +1714,9 @@ def run_teach():
                                 assert(False) # max episodes reached.. ending memory learning
                             if os.path.split(file)[-1] in stats.keys():
                                 print(f"File already in metrics... skipping...")
-                                # sorted_task_files_[task_type].remove(file)
-                                # if len(sorted_task_files_[task_type])==0:
-                                #     task_to_instance_dict[task_type_].remove(task_type)
                                 iter_ += 1
                                 continue
                     elif args.get_expert_program or args.get_expert_program_idm:
-
-                        # output_folder = f'output/{args.mode}_{args.set_name}' #f'output/skill_logging_{args.set_name}'
                         stats_path = os.path.join(args.demo_folder, task_type, file.replace('.tfd.json', '.txt'))
                         if os.path.exists(stats_path):
                             successful_episodes += 1
@@ -1804,10 +1761,6 @@ def run_teach():
                                 print(traceback.format_exc())
                         else:
                             metrics_instance, er = subgoalcontroller.run_ICAL_learning(num_environments=args.num_environments_skills)
-                        # # remove file from list
-                        # sorted_task_files_[task_type].remove(file)
-                        # if len(sorted_task_files_[task_type])==0:
-                        #     task_to_instance_dict[task_type_].remove(task_type)
                         break
                     if segmentation_network is None:
                         segmentation_network = subgoalcontroller.object_tracker.ddetr

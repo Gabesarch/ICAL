@@ -1,10 +1,11 @@
 #!/bin/sh
 export AZURE_OPENAI_KEY="YOUR_KEY_HERE"
 export AZURE_OPENAI_ENDPOINT="YOUR_ENDPOINT_HERE"
+export TEACH_ROOT="TEACH_ROOT_HERE"
 python main.py \
  --mode teach_eval_tfd \
  --split valid_seen \
- --teach_data_dir ./data \
+ --teach_data_dir $TEACH_ROOT \
  --precompute_map_path ./data/precomputed_maps_estimated \
  --create_movie \
  --remove_map_vis \
@@ -23,8 +24,8 @@ python main.py \
  --gpt_model gpt-4-1106-Preview \
  --topk_mem_examples 10 \
  --episode_in_try_except \
- --zoedepth_checkpoint ./checkpoints/teach_zoedepth_train_00/model-00020000.pth \
- --solq_checkpoint ./checkpoints/TEACH_solq_aithor05/model-00023000.pth \
+ --zoedepth_checkpoint ./checkpoints/model-00020000.pth \
+ --solq_checkpoint ./checkpoints/model-00023000.pth \
  --instruct_lambda 1.0 \
  --state_lambda 0.0 \
  --visual_lambda 0.0 \

@@ -1,13 +1,13 @@
 #!/bin/sh
 export AZURE_OPENAI_KEY="YOUR_KEY_HERE"
 export AZURE_OPENAI_ENDPOINT="YOUR_ENDPOINT_HERE"
+export TEACH_ROOT="TEACH_ROOT_HERE"
 python main.py \
  --mode teach_skill_learning \
  --split train \
  --create_movie \
  --remove_map_vis \
- --gpt_embedding_dir ./dataset/gpt_embeddings \
- --teach_data_dir ./dataset \
+ --teach_data_dir $TEACH_ROOT \
  --use_gt_depth \
  --use_gt_seg \
  --use_gt_centroids \
@@ -24,7 +24,7 @@ python main.py \
  --shuffle \
  --num_online_learning_iterations 50 \
  --num_environments_skills 1 \
- --demo_folder ./learned_examples/expert_programs_idm/task_demos \
+ --demo_folder ./output/expert_programs_idm/task_demos \
  --skill_folder2 ./learned_examples/hand_written_memory_examples \
  --use_gt_metadata \
  --force_actions \

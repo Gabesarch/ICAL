@@ -8,9 +8,8 @@
 <ul>
 <li><a href="#important-files"> Important Files </a></li>
 <li><a href="#installation"> Installation </a></li>
-<li><a href="#dataset"> Dataset </a></li>
-<li><a href="#running-full-pipeline-with-GT-perception"> Running Pipeline </a></li>
-<li><a href="#citation"> Citation </a></li>
+<li><a href="#teach-dataset"> Dataset </a></li>
+<li><a href="#running-ical-on-teach"> Running ICAL on TEACh </a></li>
 </ul>
 </div>
 
@@ -89,12 +88,30 @@ teach_download
 ```
 Place the extracted data in the `./dataset`
 
-## Checkpoints and GPT Embeddings
+## Checkpoints
 To run our model with estimated depth and segmentation, download the SOLQ and ZoeDepth checkpoints:
+
+1. Download inverse dynamics model checkpoint: [here](https://drive.google.com/file/d/1fcuAvrF93zqNV_lKrCLz9YmwMeGlZfpk/view?usp=drive_link). Place it in the `./checkpoints` folder (or anywhere you want and specify the path with `--load_model_path`). 
 
 2. Download SOLQ checkpoint: [here](https://drive.google.com/file/d/1hTCtTuygPCJnhAkGeVPzWGHiY3PHNE2j/view?usp=sharing). Place it in the `./checkpoints` folder (or anywhere you want and specify the path with `--solq_checkpoint`). 
 
 3. Download ZoeDepth checkpoint: [here](https://drive.google.com/file/d/1gMe8_5PzaNKWLT5OP-9KKEYhbNxRjk9F/view?usp=drive_link). Place it in the `./checkpoints` folder (or anywhere you want and specify the path with `--zoedepth_checkpoint`). (Also make sure you clone the ZoeDepth repo: `git clone https://github.com/isl-org/ZoeDepth.git`)
+
+## Running ICAL on TEACh
+To evaluate the agent using the learned ICAL examples, replace your openai keys and teach data path in `scripts/run_teach_tfd_withskills_learnedExamples_idm.sh`. Then run the script:
+```bash
+sh scripts/run_teach_tfd_withskills_learnedExamples_idm.sh
+```
+
+### Running the ICAL learning
+To to run the ICAL to learn the examples, first generate the labeled demonstrations:
+```bash
+sh scripts/run_teach_get_expert_programs_idm.sh
+```
+Then, run the ICAL abstraction and human-in-the-loop phases:
+```bash
+sh scripts/run_teach_online_skill_learning_idm.sh
+```
 
 ### Remote Server Setup
 To run the Ai2THOR simulator on a headless machine, you must either stat an X-server or use Ai2THOR's new headless mode. 

@@ -26,7 +26,6 @@ else:
             msft_interal_key = org_key[2].strip()
     except:
         openai.api_key = os.getenv("OPENAI_API_KEY")
-from .api_primitives import InteractionObject
 import logging
 import sys
 logging.basicConfig()

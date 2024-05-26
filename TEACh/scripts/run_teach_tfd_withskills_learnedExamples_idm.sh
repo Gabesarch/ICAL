@@ -1,6 +1,7 @@
 #!/bin/sh
 export AZURE_OPENAI_KEY="YOUR_KEY_HERE"
 export AZURE_OPENAI_ENDPOINT="YOUR_ENDPOINT_HERE"
+export TEACH_ROOT="TEACH_ROOT_HERE"
 python main.py \
  --mode teach_eval_tfd \
  --split valid_seen \

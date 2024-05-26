@@ -1,12 +1,13 @@
 #!/bin/sh
 export AZURE_OPENAI_KEY="YOUR_KEY_HERE"
 export AZURE_OPENAI_ENDPOINT="YOUR_ENDPOINT_HERE"
+export TEACH_ROOT="TEACH_ROOT_HERE"
 python main.py \
  --mode teach_skill_learning \
  --split train \
  --create_movie \
  --remove_map_vis \
- --teach_data_dir ./dataset \
+ --teach_data_dir $TEACH_ROOT \
  --use_gt_depth \
  --use_gt_seg \
  --use_gt_centroids \
@@ -24,7 +25,7 @@ python main.py \
  --use_attribute_detector \
  --skip_if_exists \
  --get_expert_program_idm \
- --load_model_path ./checkpoints/inverse_dynamics_model/idm_alf_wlabels_teach_queryobj_00/model-00000045.pth \
+ --load_model_path ./checkpoints/model-00000045.pth \
  --demo_folder ./output/expert_programs_idm/task_demos \
  --seed 0 \
  --W 900 \
