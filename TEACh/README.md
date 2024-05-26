@@ -108,6 +108,7 @@ To to run the ICAL to learn the examples, first generate the labeled demonstrati
 ```bash
 sh scripts/run_teach_get_expert_programs_idm.sh
 ```
+If you wish to skip this step, we provide the labeled demos for you in `./output/expert_programs_idm/task_demos`.
 Then, run the ICAL abstraction and human-in-the-loop phases:
 ```bash
 sh scripts/run_teach_online_skill_learning_idm.sh
