@@ -1,0 +1,48 @@
+Dialogue Instruction:
+<Driver> task?
+<Commander> Hello. First we need to cut bread.
+<Commander> Next we need to toast a slice.
+<Driver> next
+<Commander> All done.
+
+Initial Object State:
+"Knife_16": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Knife_29": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Cabinet_41": {"label": "Cabinet", "open": False}
+"CounterTop_42": {"label": "CounterTop"}
+"CounterTop_43": {"label": "CounterTop"}
+"Cabinet_50": {"label": "Cabinet", "open": False}
+"Cabinet_51": {"label": "Cabinet", "open": False}
+"Cabinet_52": {"label": "Cabinet", "open": False}
+"Cabinet_53": {"label": "Cabinet", "open": False}
+"Cabinet_54": {"label": "Cabinet", "open": False}
+"Cabinet_57": {"label": "Cabinet", "open": False}
+"CounterTop_58": {"label": "CounterTop"}
+"Cabinet_59": {"label": "Cabinet", "open": False}
+"Cabinet_60": {"label": "Cabinet", "open": False}
+"Knife_62": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Knife_85": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_tvstand = InteractionObject("TVStand", object_instance = "TVStand")
+target_tvstand.go_to()
+target_tvstand.slice()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.pickup_and_place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.pickup()
+target_countertop.go_to()
+target_breadsliced.place(target_countertop)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.toggle_off()
+target_breadsliced.pickup_and_place(target_countertop)
+```

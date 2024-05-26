@@ -1,0 +1,30 @@
+Dialogue Instruction:
+<Driver> task?
+<Commander> Prepare coffee in a clean mug
+<Commander> Mug is to the right of the microwave
+<Commander> Done
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"CounterTop_41": {"label": "CounterTop"}
+"CounterTop_43": {"label": "CounterTop"}
+"CounterTop_45": {"label": "CounterTop"}
+"CounterTop_49": {"label": "CounterTop"}
+"CoffeeMachine_61": {"label": "CoffeeMachine", "toggled": False}
+"SinkBasin_82": {"label": "SinkBasin"}
+"Mug_93": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_coffeemachine.go_to()
+target_mug.place(target_coffeemachine)
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_mug.pickup_and_place(target_countertop)
+```

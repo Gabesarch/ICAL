@@ -1,0 +1,43 @@
+Dialogue Instruction:
+<Commander> hi
+<Driver> what can i do today
+<Commander> cook 3 slices of potatoes with the help of knife
+<Driver> done next?
+<Commander> please plate the potatoes in clean plate
+<Commander> 3 slices
+<Driver> done next task?
+<Commander> done thanks
+
+Initial Object State:
+"Plate_5": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+"Bowl_7": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Bowl_9": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Stool"]}
+"Plate_11": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"CounterTop_15": {"label": "CounterTop"}
+"CounterTop_24": {"label": "CounterTop"}
+"CounterTop_25": {"label": "CounterTop"}
+"CounterTop_42": {"label": "CounterTop"}
+"Knife_48": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Bowl_50": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Plate_54": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Fridge"]}
+"Knife_69": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Pot_73": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner"]}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_knife.pickup_and_place(target_countertop)
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.pickup()
+target_countertop.go_to()
+target_pot.place(target_countertop)
+target_knife.pickup_and_place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_potatosliced.pickup_and_place(target_bowl)
+```

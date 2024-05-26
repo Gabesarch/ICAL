@@ -1,0 +1,46 @@
+Dialogue Instruction:
+<Driver> Hi! What am I doing?
+<Commander> Hi
+<Commander> boil the potato by cooking it in a water
+<Driver> ok
+<Commander> potato is under the sink
+<Driver> Done
+<Commander> done
+<Driver> I have boiled a potato
+
+Initial Object State:
+"Pot_10": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["DiningTable"]}
+"CounterTop_28": {"label": "CounterTop"}
+"CounterTop_31": {"label": "CounterTop"}
+"CounterTop_33": {"label": "CounterTop"}
+"Pot_41": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"SinkBasin_54": {"label": "SinkBasin"}
+"Faucet_69": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_pot.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_pot.go_to()
+target_pot.pickup()
+target_sinkbasin.go_to()
+target_pot.pour(target_sinkbasin)
+target_sinkbasin.go_to()
+target_pot.place(target_sinkbasin)
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_pot.go_to()
+target_pot.pickup()
+target_sinkbasin.go_to()
+target_pot.pour(target_sinkbasin)
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_pot.place(target_countertop)
+```

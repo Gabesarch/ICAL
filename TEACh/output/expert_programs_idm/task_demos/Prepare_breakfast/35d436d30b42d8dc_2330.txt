@@ -1,0 +1,102 @@
+Dialogue Instruction:
+<Driver> how can I help?
+<Commander> please cut the lettuce in the middle with a knife
+<Commander> the knife should be next to it
+<Driver> is that all?
+<Commander> there is a tomato in the fridge that will also need to be sliced
+<Commander> once that is done please slice the potato that is in the cabinet to the bottom right of the sink
+<Driver> there doesn't seem to be a tomato in the fridge
+<Commander> please look above the fridge
+<Commander> my apologies
+<Commander> please cook the potato slice
+<Commander> once that is cooked, please place a slice from each onto the plate that is next to the microwave
+<Driver> one of each is on the plate
+<Driver> is there anything else?
+<Commander> please place a slice on tomato on the plate
+<Driver> I have placed a slice of tomato, potato and lettuce on the plate
+
+Initial Object State:
+"Bowl_1": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Lettuce_6": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Drawer"]}
+"Potato_10": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Bowl", "Cabinet"]}
+"Lettuce_12": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop", "Microwave"]}
+"CounterTop_29": {"label": "CounterTop"}
+"CounterTop_30": {"label": "CounterTop"}
+"CounterTop_51": {"label": "CounterTop"}
+"CounterTop_60": {"label": "CounterTop"}
+"Potato_67": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Pot_76": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Knife_80": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Lettuce_81": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"SaltShaker_86": {"label": "SaltShaker", "holding": False, "supported_by": ["Plate", "CounterTop"]}
+"Egg_87": {"label": "Egg", "holding": False, "supported_by": ["Plate", "CounterTop"]}
+"Fridge_89": {"label": "Fridge", "open": False}
+"Knife_90": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Bowl_100": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Drawer"]}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.go_to()
+target_lettuce.slice()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_fridge.go_to()
+target_fridge.close()
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.pickup_and_place(target_countertop)
+target_potato.pickup()
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_knife.go_to()
+target_knife.pickup()
+target_lettuce.go_to()
+target_lettuce.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_fridge.go_to()
+target_fridge.open()
+target_fridge.go_to()
+target_fridge.close()
+target_fridge.go_to()
+target_fridge.close()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_knife.go_to()
+target_knife.pickup()
+target_lettuce.go_to()
+target_lettuce.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.pickup_and_place(target_countertop)
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_saltshaker.pickup()
+target_countertop.go_to()
+target_saltshaker.place(target_countertop)
+target_egg = InteractionObject("Egg", object_instance = "Egg")
+target_egg.pickup_and_place(target_countertop)
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.pickup()
+target_countertop.go_to()
+target_pot.place(target_countertop)
+target_countertop.go_to()
+target_pot.place(target_countertop)
+target_countertop.go_to()
+target_pot.place(target_countertop)
+target_potatosliced.pickup_and_place(target_countertop)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = "TomatoSliced")
+target_tomatosliced.pickup()
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.go_to()
+target_tomatosliced.place(target_bowl)
+```

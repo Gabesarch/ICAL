@@ -1,0 +1,21 @@
+Dialogue Instruction:
+<Driver> what do i need to do?
+<Commander> put all the newspaper on one furniture
+
+Initial Object State:
+"Newspaper_4": {"label": "Newspaper", "holding": False, "supported_by": ["DiningTable"]}
+"Newspaper_12": {"label": "Newspaper", "holding": False, "supported_by": ["CoffeeTable"]}
+"CreditCard_14": {"label": "CreditCard", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"CoffeeTable_40": {"label": "CoffeeTable"}
+
+Demonstration Script:
+```python
+target_creditcard = InteractionObject("CreditCard", object_instance = "CreditCard")
+target_dresser = InteractionObject("Dresser", object_instance = "Dresser")
+target_creditcard.pickup_and_place(target_dresser)
+target_newspaper = InteractionObject("Newspaper", object_instance = "Newspaper")
+target_newspaper.pickup()
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_coffeetable.go_to()
+target_newspaper.place(target_coffeetable)
+```

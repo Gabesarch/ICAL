@@ -1,0 +1,61 @@
+Dialogue Instruction:
+<Driver> hi
+<Driver> what can I do today?
+<Commander> hi. put all spatula in one cabinet
+<Driver> how many?
+<Driver> where are they?
+<Commander> one is next to the dirty plate by the coffee maker
+<Commander> and the other is in the fridge
+<Commander> move the paper
+<Commander> it's beneath
+<Commander> done thanks
+
+Initial Object State:
+"Spatula_3": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Cabinet_10": {"label": "Cabinet", "open": False}
+"Cabinet_11": {"label": "Cabinet", "open": False}
+"Cabinet_12": {"label": "Cabinet", "open": False}
+"Cabinet_14": {"label": "Cabinet", "open": False}
+"Cabinet_17": {"label": "Cabinet", "open": False}
+"Cabinet_20": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Cabinet_40": {"label": "Cabinet", "open": False}
+"Cabinet_41": {"label": "Cabinet", "open": False}
+"Cabinet_45": {"label": "Cabinet", "open": False}
+"Cabinet_46": {"label": "Cabinet", "open": False}
+"Cabinet_49": {"label": "Cabinet", "open": False}
+"Cabinet_50": {"label": "Cabinet", "open": False}
+"Cabinet_52": {"label": "Cabinet", "open": False}
+"Cabinet_53": {"label": "Cabinet", "open": False}
+"Cabinet_54": {"label": "Cabinet", "open": False}
+"Knife_58": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Spatula_76": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Knife_88": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Fridge_91": {"label": "Fridge", "open": False}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_knife.pickup_and_place(target_diningtable)
+target_spatula = InteractionObject("Spatula", object_instance = "Spatula")
+target_spatula.pickup()
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_spatula.place(target_cabinet)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_cabinet.go_to()
+target_spatula.place(target_cabinet)
+```

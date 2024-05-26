@@ -1,0 +1,42 @@
+Dialogue Instruction:
+<Driver> Hi what are my directions?
+<Commander> Hi, can you please make coffee
+<Commander> there is a mug in the cabinet under the microwave, you might have to rinse it
+<Commander> that was everything, thank you!
+
+Initial Object State:
+"Mug_1": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Fridge"]}
+"Microwave_40": {"label": "Microwave", "toggled": True, "open": False}
+"SinkBasin_61": {"label": "SinkBasin"}
+"CoffeeMachine_63": {"label": "CoffeeMachine", "toggled": False}
+"Mug_70": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Faucet_71": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.go_to()
+target_microwave.open()
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_coffeemachine.go_to()
+target_mug.place(target_coffeemachine)
+target_coffeemachine.go_to()
+target_coffeemachine.toggle_on()
+```

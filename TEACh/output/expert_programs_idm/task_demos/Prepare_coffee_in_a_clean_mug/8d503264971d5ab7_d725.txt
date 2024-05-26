@@ -1,0 +1,83 @@
+Dialogue Instruction:
+<Driver> What shall I do today?
+<Commander> Find mug
+<Commander> Mug is in fridge
+<Commander> Rinse the cup in sink
+<Commander> Coffee maker is in right side
+<Commander> place the cup in coffee maker
+<Commander> turn on the coffee maker
+<Commander> Done
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop", "Microwave"]}
+"Cup_1": {"label": "Cup", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Pan", "CounterTop"]}
+"Spoon_3": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Egg_4": {"label": "Egg", "holding": False, "supported_by": ["Fridge"]}
+"Fork_10": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Apple_11": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Egg_13": {"label": "Egg", "holding": False, "supported_by": ["CounterTop"]}
+"Egg_17": {"label": "Egg", "holding": False, "supported_by": ["Fridge"]}
+"Egg_19": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"Fork_20": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Fork_22": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Spoon_26": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Apple_27": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Sink"]}
+"Fork_28": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"CounterTop_51": {"label": "CounterTop"}
+"CounterTop_52": {"label": "CounterTop"}
+"CounterTop_58": {"label": "CounterTop"}
+"Apple_61": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Cabinet"]}
+"CoffeeMachine_63": {"label": "CoffeeMachine", "toggled": False}
+"Fork_68": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"SinkBasin_78": {"label": "SinkBasin"}
+"Fridge_85": {"label": "Fridge", "open": False}
+"Egg_89": {"label": "Egg", "holding": False, "supported_by": ["Stool"]}
+"Spoon_90": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["CounterTop", "Microwave"]}
+"Cup_92": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Stool"]}
+"Mug_93": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Pan", "Fridge"]}
+"Faucet_96": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_fridge.go_to()
+target_fridge.close()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_fork = InteractionObject("Fork", object_instance = "Fork")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_fork.pickup_and_place(target_countertop)
+target_spoon = InteractionObject("Spoon", object_instance = "Spoon")
+target_spoon.pickup()
+target_sinkbasin.go_to()
+target_spoon.place(target_sinkbasin)
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_cup.pickup_and_place(target_sinkbasin)
+target_apple = InteractionObject("Apple", object_instance = "Apple")
+target_apple.pickup()
+target_countertop.go_to()
+target_apple.place(target_countertop)
+target_mug.pickup_and_place(target_sinkbasin)
+target_egg = InteractionObject("Egg", object_instance = "Egg")
+target_egg.pickup()
+target_countertop.go_to()
+target_egg.place(target_countertop)
+target_mug.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_coffeemachine.go_to()
+target_mug.place(target_coffeemachine)
+```

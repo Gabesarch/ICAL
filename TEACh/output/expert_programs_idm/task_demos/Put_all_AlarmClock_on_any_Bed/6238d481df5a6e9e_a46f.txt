@@ -1,0 +1,16 @@
+Dialogue Instruction:
+<Driver> how may i help?
+<Commander> Hi, today I'd like to gather all my alarm clocks on my bed please
+<Driver> of course
+<Commander> The next alarm clock is located in the unit cupboard
+<Driver> thank you
+<Commander> it's in the right most cupboard
+
+Initial Object State:
+
+Demonstration Script:
+```python
+target_watch = InteractionObject("Watch", object_instance = "Watch")
+target_watch.go_to()
+target_watch.pickup()
+```

@@ -1,0 +1,43 @@
+Dialogue Instruction:
+<Driver> how can i help?
+<Commander> I would like you to serve me a slice of toast
+<Driver> sure
+<Driver> only one?
+<Commander> Yes, one is enough
+<Commander> I'd like it to be served on a clean plate
+<Driver> It's on a plate
+<Commander> Thank you, that would be all!
+
+Initial Object State:
+"Knife_1": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Plate_10": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Bread_14": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"CounterTop_34": {"label": "CounterTop"}
+"CounterTop_36": {"label": "CounterTop"}
+"CounterTop_59": {"label": "CounterTop"}
+"Knife_61": {"label": "Knife", "holding": False, "supported_by": ["Shelf"]}
+"Bread_63": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Stool"]}
+"Toaster_68": {"label": "Toaster", "toggled": False}
+"Plate_73": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Knife_93": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_knife.pickup_and_place(target_countertop)
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_bread.pickup()
+target_countertop.go_to()
+target_bread.place(target_countertop)
+target_toaster = InteractionObject("Toaster", object_instance = "Toaster")
+target_toaster.go_to()
+target_bread.place(target_toaster)
+target_toaster.go_to()
+target_toaster.toggle_on()
+target_toaster.go_to()
+target_toaster.toggle_off()
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_breadsliced.pickup_and_place(target_plate)
+```

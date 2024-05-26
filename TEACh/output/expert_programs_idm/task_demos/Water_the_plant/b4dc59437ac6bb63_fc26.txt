@@ -1,0 +1,27 @@
+Dialogue Instruction:
+<Driver> what can I do for you?
+<Commander> i'd like my plant watered
+<Driver> all set!
+<Commander> thank you
+
+Initial Object State:
+"CounterTop_21": {"label": "CounterTop"}
+"Faucet_23": {"label": "Faucet", "toggled": True}
+"Bowl_32": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"SinkBasin_55": {"label": "SinkBasin"}
+
+Demonstration Script:
+```python
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_bowl.pickup_and_place(target_countertop)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_bowl.go_to()
+target_bowl.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_bowl.pour(target_sinkbasin)
+```

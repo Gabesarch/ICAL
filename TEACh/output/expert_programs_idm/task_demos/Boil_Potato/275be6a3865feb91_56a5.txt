@@ -1,0 +1,18 @@
+Dialogue Instruction:
+<Driver> hi how can i help
+<Commander> Can you please boil me a potato
+<Commander> There is one to the left of the fridge
+<Driver> done
+<Commander> Great thanks
+
+Initial Object State:
+"Pot_5": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner"]}
+"Potato_75": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Pot_96": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+
+Demonstration Script:
+```python
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_potato.pickup_and_place(target_pot)
+```

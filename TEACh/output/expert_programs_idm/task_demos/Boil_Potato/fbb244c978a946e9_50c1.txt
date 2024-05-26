@@ -1,0 +1,48 @@
+Dialogue Instruction:
+<Driver> Hello, what should I do today?
+<Commander> boil a potato
+<Commander> grab potato and place in pot
+<Driver> I have boiled the potato.
+<Commander> potato is on the chair under the counter
+<Commander> is there water in the pot?
+<Driver> Yes there is water.
+<Commander> dump and refill then try again
+<Driver> That won't work I have tried that before.
+<Driver> What's the next task?
+<Commander> 
+<Commander> that's the only task
+<Commander> 
+
+Initial Object State:
+"Cup_9": {"label": "Cup", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Potato_10": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Knife_12": {"label": "Knife", "holding": False, "supported_by": ["Stool"]}
+"Pot_13": {"label": "Pot", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Knife_15": {"label": "Knife", "holding": False, "supported_by": ["SideTable"]}
+"Potato_16": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Stool"]}
+"CounterTop_22": {"label": "CounterTop"}
+"Pot_31": {"label": "Pot", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner"]}
+"Knife_32": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Potato_34": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Microwave"]}
+"Cup_42": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Knife_57": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_knife.pickup_and_place(target_diningtable)
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.pickup()
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.go_to()
+target_potato.place(target_pot)
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_pot.pickup_and_place(target_countertop)
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_cup.pickup()
+target_countertop.go_to()
+target_cup.place(target_countertop)
+target_pot.go_to()
+target_pot.pickup()
+```

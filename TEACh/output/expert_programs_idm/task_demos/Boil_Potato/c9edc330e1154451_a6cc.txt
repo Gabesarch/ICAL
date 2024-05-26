@@ -1,0 +1,65 @@
+Dialogue Instruction:
+<Driver> What shall I do today?
+<Commander> Boil potato
+
+Initial Object State:
+"Knife_2": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Plate_3": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_6": {"label": "Knife", "holding": False, "supported_by": ["Shelf"]}
+"PepperShaker_7": {"label": "PepperShaker", "holding": False, "supported_by": ["Sink"]}
+"Potato_8": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"WineBottle_15": {"label": "WineBottle", "holding": False, "filled": True, "fillLiquid": None, "supported_by": ["StoveBurner", "Pot"]}
+"Potato_24": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Shelf"]}
+"Plate_26": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Floor", "Shelf"]}
+"Plate_30": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"Potato_32": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Potato_38": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Knife_44": {"label": "Knife", "holding": False, "supported_by": ["Chair"]}
+"WineBottle_49": {"label": "WineBottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner"]}
+"WineBottle_53": {"label": "WineBottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["Floor", "Shelf"]}
+"Plate_54": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Floor", "Shelf"]}
+"CounterTop_62": {"label": "CounterTop"}
+"WineBottle_87": {"label": "WineBottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"SinkBasin_93": {"label": "SinkBasin"}
+"Pot_94": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner"]}
+"Potato_96": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"PepperShaker_97": {"label": "PepperShaker", "holding": False, "supported_by": ["DiningTable"]}
+"Knife_98": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Plate_107": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Floor", "Shelf"]}
+"Knife_108": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Faucet_113": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_potato.pickup_and_place(target_countertop)
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_potato.place(target_sinkbasin)
+target_peppershaker = InteractionObject("PepperShaker", object_instance = "PepperShaker")
+target_peppershaker.pickup_and_place(target_countertop)
+target_potato.pickup()
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup_and_place(target_countertop)
+target_knife.pickup()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_winebottle = InteractionObject("WineBottle", object_instance = "WineBottle")
+target_winebottle.pickup_and_place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_potato.pickup_and_place(target_countertop)
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.pickup()
+target_countertop.go_to()
+target_pot.place(target_countertop)
+```

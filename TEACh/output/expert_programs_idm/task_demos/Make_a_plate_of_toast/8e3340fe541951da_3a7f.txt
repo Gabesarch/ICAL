@@ -1,0 +1,44 @@
+Dialogue Instruction:
+<Driver> hi how can i help
+<Commander> Can you make a plate of toast for me
+<Commander> There is some bread next to the stove
+<Commander> to the left
+<Commander> and a knife in the sink
+<Commander> once toasted there is a plate on the table
+<Driver> was that everything
+<Commander> Thank you! That is all
+
+Initial Object State:
+"SaltShaker_1": {"label": "SaltShaker", "holding": False, "supported_by": ["Cabinet"]}
+"Knife_8": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"SaltShaker_10": {"label": "SaltShaker", "holding": False, "supported_by": ["Plate", "DiningTable"]}
+"CounterTop_15": {"label": "CounterTop"}
+"CounterTop_23": {"label": "CounterTop"}
+"Knife_36": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Plate_44": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Toaster_46": {"label": "Toaster", "toggled": True}
+"SaltShaker_62": {"label": "SaltShaker", "holding": False, "supported_by": ["Stool"]}
+"PepperShaker_63": {"label": "PepperShaker", "holding": False, "supported_by": ["Pan", "StoveBurner"]}
+"Knife_64": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_knife.pickup_and_place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.pickup()
+target_toaster = InteractionObject("Toaster", object_instance = "Toaster")
+target_toaster.go_to()
+target_breadsliced.place(target_toaster)
+target_peppershaker = InteractionObject("PepperShaker", object_instance = "PepperShaker")
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_peppershaker.pickup_and_place(target_chair)
+target_peppershaker.place(target_countertop)
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_saltshaker.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+```

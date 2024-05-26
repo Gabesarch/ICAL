@@ -1,0 +1,61 @@
+Dialogue Instruction:
+<Driver> what can i do for you?
+<Commander> I just need my plant watered
+<Driver> sure
+<Driver> i found a container
+<Commander> great
+<Driver> done
+<Commander> awesome
+
+Initial Object State:
+"Bowl_0": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Drawer"]}
+"Spoon_1": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Spatula_13": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"SoapBottle_19": {"label": "SoapBottle", "holding": False, "supported_by": ["Sink"]}
+"Spoon_26": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["CounterTop", "Microwave"]}
+"Spoon_32": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Spatula_39": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Spatula_44": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Bowl_45": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Drawer"]}
+"Bowl_47": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Spoon_48": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Spatula_50": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Spatula_53": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Spoon_56": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"Bowl_61": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Drawer"]}
+"SoapBottle_62": {"label": "SoapBottle", "holding": False, "supported_by": ["CounterTop"]}
+"CounterTop_77": {"label": "CounterTop"}
+"CounterTop_78": {"label": "CounterTop"}
+"CounterTop_99": {"label": "CounterTop"}
+"CounterTop_108": {"label": "CounterTop"}
+"SoapBottle_114": {"label": "SoapBottle", "holding": False, "supported_by": ["Cabinet"]}
+"Spatula_127": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"SinkBasin_133": {"label": "SinkBasin"}
+"Spoon_146": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["CounterTop", "Microwave"]}
+"Bowl_148": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Faucet_150": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_soapbottle = InteractionObject("SoapBottle", object_instance = "SoapBottle")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_soapbottle.pickup_and_place(target_countertop)
+target_spoon = InteractionObject("Spoon", object_instance = "Spoon")
+target_spoon.pickup()
+target_countertop.go_to()
+target_spoon.place(target_countertop)
+target_spatula = InteractionObject("Spatula", object_instance = "Spatula")
+target_spatula.pickup_and_place(target_countertop)
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_bowl.place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_bowl.go_to()
+target_bowl.pickup()
+```

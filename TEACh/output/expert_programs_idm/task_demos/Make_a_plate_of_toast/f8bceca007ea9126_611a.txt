@@ -1,0 +1,39 @@
+Dialogue Instruction:
+<Driver> what can we do today
+<Commander> make a plate of toast
+<Commander> bread is under the coffee pot in the cabinet
+<Driver> help find the plate please
+<Commander> near the sink
+<Commander> in the black cabinet
+<Driver> done
+
+Initial Object State:
+"Plate_4": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_5": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Knife_18": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Knife_24": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Knife_29": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Knife_41": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"CounterTop_48": {"label": "CounterTop"}
+"Knife_58": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Potato_60": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Plate", "CounterTop"]}
+"Knife_83": {"label": "Knife", "holding": False, "supported_by": ["Microwave"]}
+"Plate_84": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_knife.pickup_and_place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.pickup()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+target_breadsliced.pickup_and_place(target_plate)
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.pickup()
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_breadsliced.pickup_and_place(target_plate)
+```

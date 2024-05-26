@@ -1,0 +1,63 @@
+Dialogue Instruction:
+<Commander> Hey can you make a slice of toast for me please
+<Driver> okay
+<Driver> where can I find a knife?
+<Commander> there's one in the fridge
+<Driver> done
+<Commander> can you put the toast on a plate please
+<Driver> sure
+<Driver> done
+
+Initial Object State:
+"Knife_6": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Lettuce_11": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Plate_16": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_21": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Knife_24": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Knife_31": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Knife_38": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Lettuce_49": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Knife_61": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Knife_69": {"label": "Knife", "holding": False, "supported_by": ["Microwave"]}
+"Lettuce_73": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Knife_76": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Knife_80": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Lettuce_84": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Knife_88": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Lettuce_93": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"CounterTop_98": {"label": "CounterTop"}
+"CounterTop_107": {"label": "CounterTop"}
+"CounterTop_108": {"label": "CounterTop"}
+"CounterTop_125": {"label": "CounterTop"}
+"Fridge_130": {"label": "Fridge", "open": False}
+"Knife_131": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Plate_137": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Toaster_138": {"label": "Toaster", "toggled": True}
+"Lettuce_144": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Knife_152": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Faucet_163": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.go_to()
+target_lettuce.slice()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_toaster = InteractionObject("Toaster", object_instance = "Toaster")
+target_breadsliced.pickup_and_place(target_toaster)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_toaster.go_to()
+target_toaster.toggle_off()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_breadsliced.pickup_and_place(target_plate)
+```

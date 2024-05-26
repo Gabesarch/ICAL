@@ -1,0 +1,15 @@
+Dialogue Instruction:
+<Driver> what's first
+<Commander> get the credit card that is inside a box next to the chair
+<Commander> and place on the desk
+
+Initial Object State:
+"Pen_4": {"label": "Pen", "holding": False, "supported_by": ["Box", "Floor"]}
+"Pen_11": {"label": "Pen", "holding": False, "supported_by": ["Bed"]}
+
+Demonstration Script:
+```python
+target_pen = InteractionObject("Pen", object_instance = "Pen")
+target_pen.go_to()
+target_pen.pickup()
+```

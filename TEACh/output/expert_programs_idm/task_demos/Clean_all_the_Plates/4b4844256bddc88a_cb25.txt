@@ -1,0 +1,38 @@
+Dialogue Instruction:
+<Driver> hi
+<Driver> what task today
+<Commander> clean the plate
+<Commander> plate is on white dining table
+<Driver> where is it
+<Commander> good job
+
+Initial Object State:
+"SoapBottle_12": {"label": "SoapBottle", "holding": False, "supported_by": ["DiningTable", "Plate"]}
+"CounterTop_21": {"label": "CounterTop"}
+"DiningTable_22": {"label": "DiningTable"}
+"CounterTop_24": {"label": "CounterTop"}
+"SoapBottle_69": {"label": "SoapBottle", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"Plate_86": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"SinkBasin_93": {"label": "SinkBasin"}
+"Faucet_105": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_soapbottle = InteractionObject("SoapBottle", object_instance = "SoapBottle")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_soapbottle.pickup_and_place(target_diningtable)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_plate.place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_plate.pickup_and_place(target_sinkbasin)
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_plate.pickup_and_place(target_countertop)
+```

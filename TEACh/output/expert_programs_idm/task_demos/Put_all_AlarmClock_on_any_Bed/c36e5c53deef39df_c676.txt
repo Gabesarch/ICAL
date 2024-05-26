@@ -1,0 +1,47 @@
+Dialogue Instruction:
+<Driver> Hello, what shall I be doing today?
+<Commander> Hello. We need to take the alarm clocks and place on the bed
+<Driver> Ok.
+<Driver> I have placed 1 alarm clock on the bed. Are there more?
+<Commander> Take the alarm clock that was already on the bead and move it to a different spot
+<Driver> Done
+<Commander> The other one
+<Driver> Done
+<Commander> OK. There is one more in the trash can next to the box on the floor
+<Driver> Are there more?
+<Driver> ok
+<Commander> Yep. keep going
+<Commander> Good work. All tasks complete. Thanks )
+
+Initial Object State:
+"Bowl_2": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Bed"]}
+"AlarmClock_4": {"label": "AlarmClock", "holding": False, "supported_by": ["Bed"]}
+"AlarmClock_7": {"label": "AlarmClock", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"Bowl_11": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Bed"]}
+"AlarmClock_24": {"label": "AlarmClock", "holding": False, "supported_by": ["Floor", "DogBed"]}
+"Bowl_30": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Chair"]}
+"Desk_55": {"label": "Desk"}
+
+Demonstration Script:
+```python
+target_desk = InteractionObject("Desk", object_instance = "Desk")
+target_desk.go_to()
+None.place(target_desk)
+target_alarmclock = InteractionObject("AlarmClock", object_instance = "AlarmClock")
+target_alarmclock.go_to()
+target_alarmclock.toggle_on()
+target_desk.go_to()
+target_desk.toggle_off()
+target_desk.go_to()
+target_desk.toggle_off()
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.go_to()
+target_bowl.pickup()
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_desk.go_to()
+target_bowl.place(target_desk)
+target_desk.go_to()
+target_bowl.place(target_desk)
+```

@@ -1,0 +1,135 @@
+Dialogue Instruction:
+<Driver> Hi! What can I do for you today?
+<Commander> hi
+<Commander> today we need to make salad
+<Commander> you need to slice lettuce first
+<Commander> knife is in the sink
+<Driver> lettuce?
+<Commander> lettuce is in the fridge
+<Driver> Done.
+<Commander> slice tomato
+<Driver> Where is tomato?
+<Commander> tomato is in bottom cabinet next to fridge
+<Driver> Done.
+<Commander> slice potato and 2 slices to be cooked in microwave
+<Commander> potato is next to lettuce
+<Driver> Done.
+<Commander> grab a plate now, it is in the bottom cabinet next to fridge
+<Commander> place all the salad components on the plate.
+<Driver> Done.
+<Driver> How many slices of lettuce?
+<Commander> 2 slices of cooked potato and each slice of lettuce and tomato
+<Driver> How's that?
+<Commander> good job
+
+Initial Object State:
+"PaperTowelRoll_1": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["Plate", "Cabinet"]}
+"Lettuce_3": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Fridge"]}
+"Plate_7": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Lettuce_13": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Plate_15": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+"CounterTop_19": {"label": "CounterTop"}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"CounterTop_28": {"label": "CounterTop"}
+"CounterTop_29": {"label": "CounterTop"}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Cabinet_39": {"label": "Cabinet", "open": False}
+"Cabinet_40": {"label": "Cabinet", "open": False}
+"Cabinet_41": {"label": "Cabinet", "open": False}
+"Cabinet_42": {"label": "Cabinet", "open": False}
+"Cabinet_43": {"label": "Cabinet", "open": False}
+"Cabinet_44": {"label": "Cabinet", "open": False}
+"Cabinet_45": {"label": "Cabinet", "open": False}
+"CounterTop_46": {"label": "CounterTop"}
+"Pan_50": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Fridge_51": {"label": "Fridge", "open": False}
+"Knife_52": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Plate_58": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Lettuce_65": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"PaperTowelRoll_71": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["Sink"]}
+"Knife_73": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Tomato_79": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Plate", "Cabinet"]}
+"Microwave_80": {"label": "Microwave", "toggled": True, "open": False}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_knife.pickup_and_place(target_countertop)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.open()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.go_to()
+target_lettuce.pickup()
+target_fridge.go_to()
+target_fridge.close()
+target_countertop.go_to()
+target_lettuce.place(target_countertop)
+target_knife.pickup_and_place(target_countertop)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.open()
+target_papertowelroll = InteractionObject("PaperTowelRoll", object_instance = "PaperTowelRoll")
+target_papertowelroll.pickup_and_place(target_countertop)
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_tomato.pickup()
+target_cabinet.go_to()
+target_cabinet.close()
+target_countertop.go_to()
+target_tomato.place(target_countertop)
+target_knife.go_to()
+target_knife.pickup()
+target_tomato.go_to()
+target_tomato.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_knife.go_to()
+target_knife.pickup()
+target_lettuce.go_to()
+target_lettuce.slice()
+target_lettuce.go_to()
+target_lettuce.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.go_to()
+target_potatosliced.pickup()
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.go_to()
+target_microwave.toggle_off()
+target_microwave.go_to()
+target_microwave.open()
+target_microwave.go_to()
+target_potatosliced.place(target_microwave)
+target_potatosliced.pickup_and_place(target_microwave)
+target_microwave.close()
+target_microwave.go_to()
+target_microwave.toggle_on()
+target_microwave.go_to()
+target_microwave.toggle_off()
+target_cabinet.go_to()
+target_cabinet.open()
+target_pan = InteractionObject("Pan", object_instance = "Pan")
+target_pan.pickup_and_place(target_countertop)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = None, parent_object = "Lettuce") # Initialize new sliced object from sliced parent
+target_lettucesliced.pickup()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_lettucesliced.place(target_plate)
+target_lettucesliced.pickup_and_place(target_plate)
+target_potatosliced.pickup()
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = None, parent_object = "Tomato") # Initialize new sliced object from sliced parent
+target_tomatosliced.pickup_and_place(target_countertop)
+target_microwave.open()
+target_potatosliced.pickup_and_place(target_plate)
+target_potatosliced.pickup()
+target_microwave.go_to()
+target_microwave.close()
+target_plate.go_to()
+target_potatosliced.place(target_plate)
+```

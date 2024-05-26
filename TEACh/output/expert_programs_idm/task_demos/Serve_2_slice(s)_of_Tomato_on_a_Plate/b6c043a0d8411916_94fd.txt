@@ -1,0 +1,76 @@
+Dialogue Instruction:
+<Driver> Hello
+<Commander> find the knife on the island
+<Driver> First task
+<Driver> Knife found
+<Driver> What next?
+<Commander> slice tomato twice
+<Driver> Done
+<Commander> put knife down
+<Commander> get plate from cabinet above coffee maker
+<Commander> left
+<Commander> put 2 tomato slices on plate
+<Commander> that's one
+<Driver> Done
+<Commander> and 2, finished
+
+Initial Object State:
+"Knife_1": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Tomato_2": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Plate_6": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Knife_14": {"label": "Knife", "holding": False, "supported_by": ["Microwave"]}
+"Plate_15": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Cabinet_20": {"label": "Cabinet", "open": False}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"CounterTop_36": {"label": "CounterTop"}
+"Plate_55": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Knife_64": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Tomato_69": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Knife_73": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"DiningTable_75": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_tomato.go_to()
+target_tomato.slice()
+target_tomato.go_to()
+target_tomato.slice()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.open()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_plate.pickup_and_place(target_countertop)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = None, parent_object = "Tomato") # Initialize new sliced object from sliced parent
+target_tomatosliced.pickup()
+target_plate.go_to()
+target_tomatosliced.place(target_plate)
+target_tomatosliced.pickup_and_place(target_plate)
+target_tomatosliced.pickup()
+target_countertop.go_to()
+target_tomatosliced.place(target_countertop)
+target_tomatosliced.pickup_and_place(target_plate)
+target_tomatosliced.pickup()
+target_plate.go_to()
+target_tomatosliced.place(target_plate)
+```

@@ -1,0 +1,32 @@
+Dialogue Instruction:
+<Commander> clean mug
+<Commander> mug next to the coffeemaker
+<Commander> place mug in coffeemaker is the task
+<Commander> and turn on
+<Commander> place in maker
+<Commander> then turn on
+<Commander> no
+<Commander> don't clean
+<Commander> just place in maker
+<Commander> great
+
+Initial Object State:
+"Plate_12": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"CounterTop_17": {"label": "CounterTop"}
+"CounterTop_21": {"label": "CounterTop"}
+"Plate_32": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Chair"]}
+"SinkBasin_47": {"label": "SinkBasin"}
+"Mug_65": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_mug.pickup_and_place(target_sinkbasin)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_mug.pickup_and_place(target_countertop)
+```

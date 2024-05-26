@@ -1,0 +1,44 @@
+Dialogue Instruction:
+<Driver> How can i help
+<Commander> please slice a lettuce and put a slice onto a plate
+<Driver> where can i find a knife
+<Commander> i think i left one in the fridge
+<Driver> done
+<Commander> thanks that's everything
+
+Initial Object State:
+"Knife_2": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Lettuce_4": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Potato_8": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Pan", "Cabinet"]}
+"Knife_10": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Potato_12": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Plate", "CounterTop"]}
+"CounterTop_14": {"label": "CounterTop"}
+"CounterTop_22": {"label": "CounterTop"}
+"Knife_35": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Potato_42": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Fridge_47": {"label": "Fridge", "open": False}
+"Lettuce_57": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["DiningTable"]}
+"Knife_63": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+
+Demonstration Script:
+```python
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_lettuce.pickup_and_place(target_countertop)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.open()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_fridge.go_to()
+target_fridge.close()
+target_fridge.go_to()
+target_fridge.close()
+target_lettuce.go_to()
+target_lettuce.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.pickup_and_place(target_countertop)
+target_potato.place(target_countertop)
+```

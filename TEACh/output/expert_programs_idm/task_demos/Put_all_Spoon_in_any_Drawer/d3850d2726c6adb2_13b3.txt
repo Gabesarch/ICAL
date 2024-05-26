@@ -1,0 +1,23 @@
+Dialogue Instruction:
+<Commander> please place all the spoons in a drawer
+<Commander> there is one in the bin
+<Commander> and another on the chair at the head of the table
+<Commander> that's great
+
+Initial Object State:
+"Spoon_1": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Chair"]}
+"Spoon_21": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"CounterTop_48": {"label": "CounterTop"}
+"CounterTop_55": {"label": "CounterTop"}
+"Spoon_94": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Floor", "GarbageCan"]}
+
+Demonstration Script:
+```python
+target_vase = InteractionObject("Vase", object_instance = "Vase")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_vase.pickup_and_place(target_countertop)
+target_spoon = InteractionObject("Spoon", object_instance = "Spoon")
+target_spoon.pickup()
+target_countertop.go_to()
+target_spoon.place(target_countertop)
+```

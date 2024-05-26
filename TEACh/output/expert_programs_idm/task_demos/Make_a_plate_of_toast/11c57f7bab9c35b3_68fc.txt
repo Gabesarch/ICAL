@@ -1,0 +1,50 @@
+Dialogue Instruction:
+<Commander> hi
+<Commander> make one slice of toast please
+<Commander> bread is on the black side table
+<Driver> okay
+<Commander> after toasting place it on this same plate
+<Commander> only one slice
+
+Initial Object State:
+"Knife_8": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Plate_10": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["SideTable"]}
+"Knife_14": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Plate_15": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"Plate_53": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+"Knife_58": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Knife_62": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Fridge_64": {"label": "Fridge", "open": False}
+"Toaster_65": {"label": "Toaster", "toggled": True}
+"DiningTable_77": {"label": "DiningTable"}
+"DiningTable_78": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_fridge.go_to()
+target_fridge.close()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_knife.pickup_and_place(target_diningtable)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.pickup()
+target_toaster = InteractionObject("Toaster", object_instance = "Toaster")
+target_toaster.go_to()
+target_breadsliced.place(target_toaster)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_breadsliced.pickup_and_place(target_plate)
+target_breadsliced.pickup()
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+target_toaster.go_to()
+target_breadsliced.place(target_toaster)
+target_breadsliced.pickup_and_place(target_toaster)
+target_breadsliced.pickup()
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+target_breadsliced.go_to()
+target_breadsliced.pickup()
+```

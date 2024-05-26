@@ -1,0 +1,48 @@
+Dialogue Instruction:
+<Commander> hi
+<Driver> Hi what's the task
+<Commander> please boil the potato
+<Driver> where is the Potato
+<Commander> next to the toaster
+<Driver> where is the pot
+<Commander> can you place the potato in the pot on the stove?
+<Commander> it's the only task so we don't need to worry about removing it from the water
+<Commander> the one with water in it
+<Driver> done
+<Commander> can you turn the burner off and on
+<Commander> good job!
+
+Initial Object State:
+"SaltShaker_12": {"label": "SaltShaker", "holding": False, "supported_by": ["Sink"]}
+"Kettle_14": {"label": "Kettle", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"SaltShaker_53": {"label": "SaltShaker", "holding": False, "supported_by": ["StoveBurner"]}
+"SaltShaker_58": {"label": "SaltShaker", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"SaltShaker_75": {"label": "SaltShaker", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"SaltShaker_83": {"label": "SaltShaker", "holding": False, "supported_by": ["Sink"]}
+"SaltShaker_91": {"label": "SaltShaker", "holding": False, "supported_by": ["Pot", "CounterTop"]}
+"SaltShaker_101": {"label": "SaltShaker", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"Kettle_110": {"label": "Kettle", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"SaltShaker_116": {"label": "SaltShaker", "holding": False, "supported_by": ["Plate", "Cabinet"]}
+"SaltShaker_122": {"label": "SaltShaker", "holding": False, "supported_by": ["Sink"]}
+"CounterTop_128": {"label": "CounterTop"}
+"CounterTop_137": {"label": "CounterTop"}
+"CounterTop_138": {"label": "CounterTop"}
+"CounterTop_155": {"label": "CounterTop"}
+"Kettle_170": {"label": "Kettle", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"SaltShaker_172": {"label": "SaltShaker", "holding": False, "supported_by": ["Plate", "CounterTop"]}
+
+Demonstration Script:
+```python
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_potatosliced.pickup_and_place(target_countertop)
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_saltshaker.pickup()
+target_countertop.go_to()
+target_saltshaker.place(target_countertop)
+target_saltshaker.pickup_and_place(target_countertop)
+target_kettle = InteractionObject("Kettle", object_instance = "Kettle")
+target_kettle.pickup()
+target_countertop.go_to()
+target_kettle.place(target_countertop)
+```

@@ -1,0 +1,61 @@
+Dialogue Instruction:
+<Commander> grab the fork
+<Commander> on the counter at the end
+<Driver> Alright
+<Driver> next
+<Commander> put in a single drawer
+<Driver> where?
+<Commander> any drawer
+<Commander> that opens
+<Commander> place in the drawer
+<Driver> done
+<Commander> it's the drawer under the microwave
+<Commander> and you grab the wrong fork
+<Commander> you have to follow my lead
+<Commander> grab the fork at the end of the counter
+<Commander> next to the spoon
+<Driver> Done
+<Commander> next fork by the sink
+<Commander> do the same and we done
+<Commander> same
+<Driver> done
+<Driver> Anything more?
+<Commander> good job finish
+
+Initial Object State:
+"Knife_4": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Fork_9": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Fork_12": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_14": {"label": "Knife", "holding": False, "supported_by": ["CounterTop", "Microwave"]}
+"CounterTop_37": {"label": "CounterTop"}
+"CounterTop_38": {"label": "CounterTop"}
+"CounterTop_44": {"label": "CounterTop"}
+"Fork_54": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"SinkBasin_64": {"label": "SinkBasin"}
+"Knife_69": {"label": "Knife", "holding": False, "supported_by": ["CounterTop", "Microwave"]}
+"Microwave_73": {"label": "Microwave", "toggled": False, "open": False}
+"Knife_77": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Faucet_82": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_fork = InteractionObject("Fork", object_instance = "Fork")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_fork.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_off()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_knife.pickup_and_place(target_diningtable)
+target_fork.pickup()
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.go_to()
+target_fork.place(target_microwave)
+target_microwave.go_to()
+target_microwave.toggle_off()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_fork.pickup_and_place(target_countertop)
+target_microwave.toggle_off()
+```

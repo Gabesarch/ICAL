@@ -1,0 +1,65 @@
+Dialogue Instruction:
+<Commander> get dish from microwave
+<Driver> hi how are you today
+<Commander> good
+<Commander> rinse with water
+<Driver> there was no dish in the microwave only bread
+<Commander> look again
+<Commander> maybe that is turntable
+<Commander> okay another one in cabinet over brown block to right of sink
+<Driver> there is no valid object at that location
+<Commander> ok
+<Driver> could it be in a cabinet
+<Commander> next cabinet to right
+<Commander> clean all dishware
+<Commander> good finished
+<Commander> thanks
+
+Initial Object State:
+"Cup_4": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Bread_10": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop", "Microwave"]}
+"Cup_16": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["DiningTable"]}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"CounterTop_31": {"label": "CounterTop"}
+"CounterTop_37": {"label": "CounterTop"}
+"Bread_48": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"Cup_57": {"label": "Cup", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["DiningTable"]}
+"SinkBasin_59": {"label": "SinkBasin"}
+"Microwave_63": {"label": "Microwave", "toggled": True, "open": False}
+"Faucet_72": {"label": "Faucet", "toggled": False}
+"Bowl_74": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+
+Demonstration Script:
+```python
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_bread.pickup_and_place(target_countertop)
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.close()
+target_microwave.go_to()
+target_microwave.open()
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.pickup_and_place(target_countertop)
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_cup.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_cup.place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_cup.go_to()
+target_cup.pickup()
+```

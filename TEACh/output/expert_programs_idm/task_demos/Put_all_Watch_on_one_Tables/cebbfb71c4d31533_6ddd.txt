@@ -1,0 +1,28 @@
+Dialogue Instruction:
+<Driver> what shall i do today?
+<Commander> put watches on one table
+<Commander> they are on the couch
+<Commander> red couch
+<Driver> next
+<Commander> actually that's the couch they need to be on
+<Commander> search around a little
+<Commander> check the tables
+<Commander> red couch
+<Commander> good job
+
+Initial Object State:
+"Watch_1": {"label": "Watch", "holding": False, "supported_by": ["DiningTable"]}
+"Watch_27": {"label": "Watch", "holding": False, "supported_by": ["Sofa"]}
+"CoffeeTable_42": {"label": "CoffeeTable"}
+
+Demonstration Script:
+```python
+target_watch = InteractionObject("Watch", object_instance = "Watch")
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_watch.pickup_and_place(target_coffeetable)
+target_watch.pickup()
+target_coffeetable.go_to()
+target_watch.place(target_coffeetable)
+target_watch.go_to()
+target_watch.pickup()
+```

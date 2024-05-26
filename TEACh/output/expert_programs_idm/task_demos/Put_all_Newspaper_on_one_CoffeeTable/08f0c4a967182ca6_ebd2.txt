@@ -1,0 +1,30 @@
+Dialogue Instruction:
+<Driver> What can I help you with?
+<Commander> Hi, can you please put Newspaper on the Coffee Table
+<Commander> the news paper is on the table with the lamp
+<Commander> Another news paper is on the dining table can you bring it to the coffee table too
+<Driver> The newspaper is on the coffee table now.
+<Driver> Done.
+<Commander> That is all I need, thank you
+
+Initial Object State:
+"Newspaper_2": {"label": "Newspaper", "holding": False, "supported_by": ["DiningTable"]}
+"Newspaper_11": {"label": "Newspaper", "holding": False, "supported_by": ["SideTable"]}
+"SideTable_26": {"label": "SideTable"}
+"SideTable_27": {"label": "SideTable"}
+"CoffeeTable_29": {"label": "CoffeeTable"}
+"Sofa_39": {"label": "Sofa"}
+
+Demonstration Script:
+```python
+target_sidetable = InteractionObject("SideTable", object_instance = "SideTable")
+target_sidetable.go_to()
+None.place(target_sidetable)
+target_newspaper = InteractionObject("Newspaper", object_instance = "Newspaper")
+target_sofa = InteractionObject("Sofa", object_instance = "Sofa")
+target_newspaper.pickup_and_place(target_sofa)
+target_newspaper.pickup()
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_coffeetable.go_to()
+target_newspaper.place(target_coffeetable)
+```

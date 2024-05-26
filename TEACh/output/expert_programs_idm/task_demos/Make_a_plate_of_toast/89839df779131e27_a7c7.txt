@@ -1,0 +1,90 @@
+Dialogue Instruction:
+<Driver> hi, what should I do today?
+<Commander> make a plate of toast
+<Commander> bread is on the right cabinet that is on top of the sink
+<Commander> knife is in the drawer on the left under the microwave
+<Commander> under the microwave
+<Commander> put the toast on clean plate
+<Commander> plate is on the right of the sink
+<Driver> ok
+
+Initial Object State:
+"SoapBottle_1": {"label": "SoapBottle", "holding": False, "supported_by": ["Fridge"]}
+"Knife_2": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Bread_7": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Fork_8": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Floor", "Fridge"]}
+"Plate_9": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Fork_12": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Bread_14": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Cabinet_16": {"label": "Cabinet", "open": False}
+"Cabinet_17": {"label": "Cabinet", "open": False}
+"Cabinet_18": {"label": "Cabinet", "open": False}
+"Cabinet_19": {"label": "Cabinet", "open": False}
+"Cabinet_20": {"label": "Cabinet", "open": False}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"CounterTop_26": {"label": "CounterTop"}
+"CounterTop_32": {"label": "CounterTop"}
+"Plate_39": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"Fork_42": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"Bread_43": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Knife_49": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Tomato_51": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"SinkBasin_54": {"label": "SinkBasin"}
+"Knife_57": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"SoapBottle_60": {"label": "SoapBottle", "holding": False, "supported_by": ["Sink"]}
+"DiningTable_66": {"label": "DiningTable"}
+"Faucet_67": {"label": "Faucet", "toggled": False}
+"DiningTable_68": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_plate.pickup_and_place(target_sinkbasin)
+target_fork = InteractionObject("Fork", object_instance = "Fork")
+target_fork.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_fork.place(target_countertop)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_bread.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_bread.go_to()
+target_bread.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = None, parent_object = "Bread") # Initialize new sliced object from sliced parent
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_breadsliced.pickup_and_place(target_diningtable)
+target_breadsliced.pickup()
+target_diningtable.go_to()
+target_breadsliced.place(target_diningtable)
+target_breadsliced.pickup_and_place(target_diningtable)
+target_breadsliced.pickup()
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+target_soapbottle = InteractionObject("SoapBottle", object_instance = "SoapBottle")
+target_soapbottle.pickup_and_place(target_countertop)
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_tomato.pickup()
+target_countertop.go_to()
+target_tomato.place(target_countertop)
+target_plate.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_plate.pickup_and_place(target_diningtable)
+target_breadsliced.pickup()
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+target_breadsliced.pickup_and_place(target_plate)
+```

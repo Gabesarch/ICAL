@@ -1,0 +1,51 @@
+Dialogue Instruction:
+<Driver> hello how can I help
+<Commander> can you please toast a slice of bread?
+<Driver> yes sure
+<Driver> where can I find a knife?
+<Commander> there's a knife in the microwave
+<Driver> Ah OK
+<Driver> I am done
+<Commander> that was all, thank you!
+
+Initial Object State:
+"Plate_5": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Potato_18": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"Potato_23": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Plate_35": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+"Potato_42": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"Potato_46": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Floor", "GarbageCan"]}
+"Plate_55": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Potato_60": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Plate", "Cabinet"]}
+"Potato_70": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"Plate_75": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Potato_83": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Potato_86": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"CounterTop_106": {"label": "CounterTop"}
+"Faucet_108": {"label": "Faucet", "toggled": False}
+"Potato_118": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Microwave_128": {"label": "Microwave", "toggled": False, "open": False}
+"Plate_142": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Toaster_144": {"label": "Toaster", "toggled": False}
+
+Demonstration Script:
+```python
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.go_to()
+target_potato.open()
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_microwave.pickup_and_place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.pickup()
+target_countertop.go_to()
+target_breadsliced.place(target_countertop)
+target_toaster = InteractionObject("Toaster", object_instance = "Toaster")
+target_toaster.go_to()
+target_toaster.toggle_on()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup_and_place(target_countertop)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_off()
+target_breadsliced.pickup_and_place(target_plate)
+```

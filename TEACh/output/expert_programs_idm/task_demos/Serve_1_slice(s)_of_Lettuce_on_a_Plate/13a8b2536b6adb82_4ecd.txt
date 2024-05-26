@@ -1,0 +1,58 @@
+Dialogue Instruction:
+<Driver> Hi
+<Driver> What's the task?
+<Commander> we need to cut one slice of lettuce
+<Commander> I think it's in the sink
+<Driver> ok
+<Driver> next?
+<Commander> put one slice of lettuce on the plate that on the table
+<Driver> ok
+<Commander> great job!
+
+Initial Object State:
+"Lettuce_3": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Plate_7": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"Lettuce_14": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Sink"]}
+"CounterTop_19": {"label": "CounterTop"}
+"CounterTop_39": {"label": "CounterTop"}
+"Plate_54": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Potato_56": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Knife_59": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"SinkBasin_60": {"label": "SinkBasin"}
+"Lettuce_64": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Knife_65": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Faucet_82": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.slice()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+None.place(target_sinkbasin)
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_lettuce.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.go_to()
+target_potato.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = "LettuceSliced")
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_lettucesliced.pickup_and_place(target_plate)
+target_plate.pickup()
+target_sinkbasin.go_to()
+target_plate.place(target_sinkbasin)
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_plate.pickup_and_place(target_countertop)
+target_lettucesliced.pickup()
+target_plate.go_to()
+target_lettucesliced.place(target_plate)
+```

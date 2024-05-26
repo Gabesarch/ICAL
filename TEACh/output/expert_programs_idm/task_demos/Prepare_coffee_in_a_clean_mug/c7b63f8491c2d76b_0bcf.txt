@@ -1,0 +1,29 @@
+Dialogue Instruction:
+<Driver> first task?
+<Commander> rinse a mug
+<Driver> mug?
+<Commander> the mug next to the sink
+<Driver> that's a cup not a mug
+<Commander> try the safe by the black bin
+<Commander> make coffee please
+<Commander> thank done
+<Driver> cool
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Drawer"]}
+"SinkBasin_59": {"label": "SinkBasin"}
+"Mug_76": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Floor", "Safe"]}
+"Faucet_78": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_mug.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_off()
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+```

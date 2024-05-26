@@ -1,0 +1,66 @@
+Dialogue Instruction:
+<Driver> What should I do today?
+<Commander> get coffee mug
+<Commander> rinse in sink
+<Commander> correct
+<Commander> empty sink first
+<Commander> never mind
+<Commander> dump water
+<Commander> take to the coffee maker
+<Commander> 
+<Commander> dump
+<Commander> what's going on?
+<Commander> place and turn on
+<Driver> I have put the mug on the coffee maker
+<Driver> What next?
+<Commander> turn on
+<Driver> I have already made coffee
+<Commander> not complete
+<Driver> What next?
+<Commander> the mug is still dirty
+<Commander> rinse with water
+<Commander> now put coffee in it
+<Driver> I had already rinsed it but have redone it
+<Commander> place in the coffee maker
+<Commander> turn on
+<Commander> no coffee in the mug
+<Driver> I have turned it on and off twice
+<Commander> it's not complete
+<Commander> 
+<Driver> 
+<Commander> 
+<Commander> 
+<Driver> What next for the day
+<Driver> Is there another task
+<Commander> that's it
+<Commander> one task
+<Driver> 
+
+Initial Object State:
+"CoffeeMachine_97": {"label": "CoffeeMachine", "toggled": False}
+"SinkBasin_100": {"label": "SinkBasin"}
+"Mug_116": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Faucet_117": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_mug.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_off()
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_coffeemachine.go_to()
+target_mug.place(target_coffeemachine)
+target_coffeemachine.go_to()
+target_coffeemachine.toggle_on()
+target_mug.pickup_and_place(target_sinkbasin)
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug.pickup_and_place(target_sinkbasin)
+```

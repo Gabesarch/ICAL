@@ -1,0 +1,26 @@
+Dialogue Instruction:
+<Commander> put all remote in one box
+<Commander> 2 total
+<Commander> one on the table behind the laptop
+<Commander> there is still one on the table behind the laptop
+
+Initial Object State:
+"RemoteControl_2": {"label": "RemoteControl", "holding": False, "supported_by": ["Sofa"]}
+"RemoteControl_20": {"label": "RemoteControl", "holding": False, "supported_by": ["DiningTable"]}
+"Chair_29": {"label": "Chair"}
+"DiningTable_32": {"label": "DiningTable"}
+"Chair_34": {"label": "Chair"}
+"Chair_35": {"label": "Chair"}
+"Chair_36": {"label": "Chair"}
+"Chair_39": {"label": "Chair"}
+
+Demonstration Script:
+```python
+target_remotecontrol = InteractionObject("RemoteControl", object_instance = "RemoteControl")
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_remotecontrol.pickup_and_place(target_chair)
+target_remotecontrol.pickup()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_remotecontrol.place(target_diningtable)
+```

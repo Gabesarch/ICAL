@@ -1,0 +1,39 @@
+Dialogue Instruction:
+<Commander> Hi Please water the plant.
+<Driver> hi
+
+Initial Object State:
+"SaltShaker_4": {"label": "SaltShaker", "holding": False, "supported_by": ["Sink"]}
+"CounterTop_26": {"label": "CounterTop"}
+"CounterTop_27": {"label": "CounterTop"}
+"CounterTop_48": {"label": "CounterTop"}
+"CounterTop_57": {"label": "CounterTop"}
+"SinkBasin_82": {"label": "SinkBasin"}
+"SaltShaker_83": {"label": "SaltShaker", "holding": False, "supported_by": ["Cabinet"]}
+"Bowl_95": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Faucet_97": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_bowl.pickup_and_place(target_sinkbasin)
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_saltshaker.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_saltshaker.place(target_countertop)
+target_bowl.go_to()
+target_bowl.pickup()
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_bowl.go_to()
+target_bowl.pickup()
+target_sinkbasin.go_to()
+target_bowl.pour(target_sinkbasin)
+target_countertop.go_to()
+target_bowl.place(target_countertop)
+```

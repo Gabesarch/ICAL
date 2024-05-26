@@ -1,0 +1,82 @@
+Dialogue Instruction:
+<Commander> We need to make a slice of toast
+<Driver> Hello, what tasks do I do today?
+<Commander> find knife
+<Driver> Please find it for me.
+<Commander> other side of middle table, there are two chairs
+<Commander> in one of the chairs, there is knife
+<Commander> yes
+<Driver> I have picked it
+<Commander> FIND BREAD BESIDE STOVE
+<Commander> In other chair, there is bread
+<Commander> beside bottle
+<Driver> There is no bread beside the stove but i have seen it on one of the chairs.
+<Commander> Yes. Slice the bread
+<Commander> We need to toast the bread
+<Driver> I have sliced the bread.
+<Commander> toaster is beside coffee maker
+<Driver> Okay
+<Commander> pick a slice and place it in toaster
+<Commander> Toaster is left of fridge
+<Commander> right of sink
+<Driver> Is there no bowl to place the slices?
+<Commander> No need to place in bowl
+<Commander> Now we need find plate
+<Driver> Yes or a plate too is okay.
+<Driver> I can not see a plate though. Kindly search for me.
+<Commander> searching for plate
+<Commander> remove egg and place the toast in plate
+<Commander> could you search for a plate in fridge?
+<Driver> That is not a plate it is a pan
+<Commander> When I searched, plate is in fridge
+<Driver> I have removed both the egg and the glass from the pan but the receptacle is too small to hold the slice.
+<Driver> Okay let me get it.
+<Commander> remove apple and take the plate
+<Commander> Done
+<Commander> Thanks
+
+Initial Object State:
+"Tomato_9": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Plate", "Fridge"]}
+"Plate_10": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Knife_14": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Knife_17": {"label": "Knife", "holding": False, "supported_by": ["Stool"]}
+"CounterTop_26": {"label": "CounterTop"}
+"CounterTop_28": {"label": "CounterTop"}
+"CounterTop_51": {"label": "CounterTop"}
+"Knife_53": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Toaster_60": {"label": "Toaster", "toggled": True}
+"Plate_65": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Tomato_66": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"Fridge_78": {"label": "Fridge", "open": False}
+"Knife_85": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_knife.pickup_and_place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.pickup()
+target_toaster = InteractionObject("Toaster", object_instance = "Toaster")
+target_toaster.go_to()
+target_breadsliced.place(target_toaster)
+target_breadsliced.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_countertop.go_to()
+target_breadsliced.place(target_countertop)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_countertop.go_to()
+target_breadsliced.place(target_countertop)
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_tomato.pickup_and_place(target_fridge)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_fridge.go_to()
+target_fridge.close()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_breadsliced.pickup_and_place(target_plate)
+```

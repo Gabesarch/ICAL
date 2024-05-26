@@ -1,0 +1,126 @@
+Dialogue Instruction:
+<Driver> hello
+<Commander> today we need to find the potato
+<Driver> what shall i do today
+<Commander> please look in the fridge
+<Commander> the knife should be in the sink to do a slice of the potato
+<Commander> we need 3 potato slices please
+<Commander> after the potato is sliced we to cook 3 slices
+<Commander> the slices can be cooked on the stove
+<Commander> in a pan
+<Commander> everything ok?
+<Driver> ok done
+<Commander> seems to a delay
+<Commander> one minute please
+<Driver> i cooked the slices
+<Driver> ok
+<Commander> cooked 3 slices?
+<Commander> great
+<Commander> now the 3 potato slices
+<Driver> yes i cooked 3 slices
+<Commander> need to be on a clean plate
+<Driver> what should i do next
+<Commander> the plate is on the chair
+<Commander> by the breakfast table
+<Driver> where can i find plate
+<Commander> on the chair
+<Commander> seems delayed a lot
+<Commander> you are right beside it
+<Commander> if the plate is dirty please wash it in the sink
+<Commander> if the sink is full you may need to remove items from the sink
+<Commander> and then wash the plate with water from the tap
+<Commander> once the plate is clean
+<Commander> please place the 3 cooked potato slices on the plate
+<Commander> that should finish the task
+<Commander> the delay is very bad
+<Driver> i can't place plate in the sink
+<Commander> I hope you are receiving messages
+<Driver> yes
+<Commander> turn water off first
+<Commander> then place plate in empty sink
+<Commander> then rinse with water on
+<Commander> remove all sink items before plate may be necessary
+<Driver> i am unable to place it
+<Commander> if plate is clean then place slices on plate
+<Commander> it may not need a rinse
+<Driver> ok sir
+<Commander> we need 3 cooked slices on the plate
+<Commander> please
+<Commander> perfect
+<Commander> the task is now complete
+<Commander> thank you
+<Driver> yes
+<Driver> done
+<Commander> i will close and thank you again
+<Driver> ok
+
+Initial Object State:
+"DishSponge_1": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Potato_2": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Pan_5": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["Shelf"]}
+"Pan_7": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["StoveBurner", "StoveBurner"]}
+"Potato_8": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Shelf"]}
+"CounterTop_11": {"label": "CounterTop"}
+"Pot_24": {"label": "Pot", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner"]}
+"Plate_25": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Chair"]}
+"Pan_35": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["Shelf"]}
+"Potato_39": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"SinkBasin_42": {"label": "SinkBasin"}
+"DishSponge_45": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Knife_51": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Mug_53": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Sink"]}
+"DiningTable_54": {"label": "DiningTable"}
+"DiningTable_55": {"label": "DiningTable"}
+"Faucet_62": {"label": "Faucet", "toggled": False}
+"DiningTable_64": {"label": "DiningTable"}
+"Bowl_65": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Shelf"]}
+
+Demonstration Script:
+```python
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_potato.pickup_and_place(target_diningtable)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.pickup_and_place(target_diningtable)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.pickup()
+target_diningtable.go_to()
+target_potatosliced.place(target_diningtable)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_potatosliced.pickup_and_place(target_plate)
+target_potatosliced.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_potatosliced.place(target_countertop)
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.pickup_and_place(target_countertop)
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_dishsponge = InteractionObject("DishSponge", object_instance = "DishSponge")
+target_dishsponge.pickup_and_place(target_countertop)
+target_plate.pickup()
+target_sinkbasin.go_to()
+target_plate.place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_plate.pickup_and_place(target_countertop)
+target_faucet.toggle_off()
+target_plate.pickup_and_place(target_diningtable)
+target_potatosliced.pickup()
+target_plate.go_to()
+target_potatosliced.place(target_plate)
+target_potatosliced.pickup_and_place(target_plate)
+target_pan = InteractionObject("Pan", object_instance = "Pan")
+target_pan.pickup()
+target_diningtable.go_to()
+target_pan.place(target_diningtable)
+target_potatosliced.pickup_and_place(target_plate)
+```

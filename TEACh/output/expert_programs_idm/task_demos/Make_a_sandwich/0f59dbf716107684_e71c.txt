@@ -1,0 +1,84 @@
+Dialogue Instruction:
+<Commander> Hello,
+<Driver> what do i do
+<Driver> hey
+<Commander> Please make a single slice tomato sandwich
+<Driver> ok what do i use
+<Commander> knife on table, bread in fridge, tomato in garbage.
+<Commander> Plate on counter, make sure to toast bread
+<Commander> almost done
+<Commander> why bowl?
+<Commander> Need plate
+<Commander> Toast bread, put on plate, one slice tomato
+<Commander> Plate is under paper towels, it is blue
+<Commander> by sink
+<Commander> one more toast
+<Driver> same plate or??
+<Commander> yes
+<Commander> same plate
+<Commander> You only need 1 tomato slice,
+<Commander> 2 toast and 1 tomato slice on plate
+<Commander> never mind done
+
+Initial Object State:
+"PaperTowelRoll_3": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"Tomato_5": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Microwave"]}
+"Bowl_6": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Bread_8": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Bread_9": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"CounterTop_15": {"label": "CounterTop"}
+"CounterTop_16": {"label": "CounterTop"}
+"CounterTop_31": {"label": "CounterTop"}
+"Bread_34": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"Knife_35": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Bowl_38": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["DiningTable"]}
+"Tomato_41": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Floor", "GarbageCan"]}
+"Plate_43": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"PaperTowelRoll_49": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["CounterTop", "Plate"]}
+"SinkBasin_53": {"label": "SinkBasin"}
+"Knife_58": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+
+Demonstration Script:
+```python
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_tomato.pickup_and_place(target_countertop)
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_bread.pickup()
+target_countertop.go_to()
+target_bread.place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup_and_place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.pickup()
+target_countertop.go_to()
+target_breadsliced.place(target_countertop)
+target_breadsliced.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_countertop.go_to()
+target_breadsliced.place(target_countertop)
+target_knife.go_to()
+target_knife.pickup()
+target_tomato.go_to()
+target_tomato.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_bowl.pickup_and_place(target_sinkbasin)
+target_papertowelroll = InteractionObject("PaperTowelRoll", object_instance = "PaperTowelRoll")
+target_papertowelroll.pickup()
+target_countertop.go_to()
+target_papertowelroll.place(target_countertop)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = None, parent_object = "Tomato") # Initialize new sliced object from sliced parent
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_tomatosliced.pickup_and_place(target_plate)
+target_breadsliced.pickup()
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+target_tomatosliced.pickup_and_place(target_plate)
+target_breadsliced.pickup()
+target_countertop.go_to()
+target_breadsliced.place(target_countertop)
+target_breadsliced.pickup_and_place(target_plate)
+```

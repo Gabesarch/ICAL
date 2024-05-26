@@ -1,0 +1,34 @@
+Dialogue Instruction:
+<Driver> Hi, what is my directions?
+<Commander> could you please put my 2 alarm clocks onto my bed
+<Commander> the first one is on my desk chair
+<Commander> the other is in the bin next to the desk
+<Driver> Done, is there any more?
+<Commander> that should be everything, thanks for your help
+
+Initial Object State:
+"AlarmClock_5": {"label": "AlarmClock", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"AlarmClock_6": {"label": "AlarmClock", "holding": False, "supported_by": ["Bed"]}
+"AlarmClock_20": {"label": "AlarmClock", "holding": False, "supported_by": ["Chair"]}
+"Desk_51": {"label": "Desk"}
+
+Demonstration Script:
+```python
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.close()
+target_alarmclock = InteractionObject("AlarmClock", object_instance = "AlarmClock")
+target_alarmclock.go_to()
+target_alarmclock.pickup()
+target_sofa = InteractionObject("Sofa", object_instance = "Sofa")
+target_sofa.go_to()
+target_sofa.toggle_off()
+target_desk = InteractionObject("Desk", object_instance = "Desk")
+target_desk.go_to()
+target_alarmclock.place(target_desk)
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_alarmclock.pickup_and_place(target_countertop)
+target_alarmclock.place(target_countertop)
+target_desk.go_to()
+target_alarmclock.place(target_desk)
+```

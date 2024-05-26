@@ -1,0 +1,20 @@
+Dialogue Instruction:
+<Driver> what shall I do today?
+<Commander> Put the newspaper on the sofa.
+<Commander> The newspaper is in the drawer on the coffee table.
+<Commander> Below the laptop
+<Commander> O
+<Commander> Oh not in the drawer just on the shelf
+<Commander> The coffee table in front of the couch
+<Commander> done
+
+Initial Object State:
+"Newspaper_6": {"label": "Newspaper", "holding": False, "supported_by": ["Floor", "Shelf"]}
+"Chair_27": {"label": "Chair"}
+
+Demonstration Script:
+```python
+target_newspaper = InteractionObject("Newspaper", object_instance = "Newspaper")
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_newspaper.pickup_and_place(target_chair)
+```

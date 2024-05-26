@@ -1,0 +1,80 @@
+Dialogue Instruction:
+<Commander> Boil a potato in water.
+<Commander> Fill the pot with water. Place the potato in.
+<Commander> Place it on the stove
+<Commander> Turn on stove
+<Commander> Done
+<Driver> next
+
+Initial Object State:
+"Potato_3": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Knife_5": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"CellPhone_6": {"label": "CellPhone", "holding": False, "supported_by": ["Cabinet"]}
+"Knife_9": {"label": "Knife", "holding": False, "supported_by": ["Chair"]}
+"Fork_17": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Pot_18": {"label": "Pot", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Cup_19": {"label": "Cup", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Pot", "StoveBurner"]}
+"Fork_23": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"Fork_35": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_36": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Pot_51": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner", "StoveBurner", "CounterTop", "StoveBurner"]}
+"Knife_58": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"CellPhone_60": {"label": "CellPhone", "holding": False, "supported_by": ["Sink"]}
+"Cup_65": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"CellPhone_68": {"label": "CellPhone", "holding": False, "supported_by": ["Cabinet"]}
+"CounterTop_90": {"label": "CounterTop"}
+"CounterTop_97": {"label": "CounterTop"}
+"Cup_103": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop", "Pot"]}
+"Pot_105": {"label": "Pot", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"StoveKnob_107": {"label": "StoveKnob", "toggled": False}
+"StoveKnob_108": {"label": "StoveKnob", "toggled": True}
+"StoveKnob_109": {"label": "StoveKnob", "toggled": True}
+"StoveKnob_110": {"label": "StoveKnob", "toggled": False}
+"StoveKnob_111": {"label": "StoveKnob", "toggled": False}
+"StoveKnob_112": {"label": "StoveKnob", "toggled": True}
+"Fork_113": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Knife_125": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"SinkBasin_126": {"label": "SinkBasin"}
+"CellPhone_129": {"label": "CellPhone", "holding": False, "supported_by": ["Pan", "CounterTop"]}
+"Knife_130": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Potato_133": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Faucet_139": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_cup.pickup_and_place(target_countertop)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_off()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup_and_place(target_countertop)
+target_knife.pickup()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_fork = InteractionObject("Fork", object_instance = "Fork")
+target_fork.pickup_and_place(target_countertop)
+target_cellphone = InteractionObject("CellPhone", object_instance = "CellPhone")
+target_cellphone.pickup()
+target_countertop.go_to()
+target_cellphone.place(target_countertop)
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.pickup_and_place(target_countertop)
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_pot.place(target_sinkbasin)
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_pot.pickup_and_place(target_countertop)
+target_pot.pickup()
+target_countertop.go_to()
+target_pot.place(target_countertop)
+target_stoveknob = InteractionObject("StoveKnob", object_instance = "StoveKnob")
+target_stoveknob.go_to()
+target_stoveknob.toggle_off()
+target_pot.pickup_and_place(target_countertop)
+```

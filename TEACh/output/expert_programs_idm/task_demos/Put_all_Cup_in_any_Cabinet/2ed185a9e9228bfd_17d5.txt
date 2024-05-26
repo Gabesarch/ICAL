@@ -1,0 +1,46 @@
+Dialogue Instruction:
+<Driver> how can I help
+<Commander> there is a cup in the fridge. please place it in any cabinet
+<Driver> the cup is in the cabinet
+<Commander> that is all. thank you
+
+Initial Object State:
+"Cup_4": {"label": "Cup", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Fridge"]}
+"SoapBottle_10": {"label": "SoapBottle", "holding": False, "supported_by": ["Cabinet"]}
+"SoapBottle_15": {"label": "SoapBottle", "holding": False, "supported_by": ["Fridge"]}
+"Cabinet_18": {"label": "Cabinet", "open": False}
+"CounterTop_23": {"label": "CounterTop"}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Cabinet_39": {"label": "Cabinet", "open": False}
+"Cabinet_40": {"label": "Cabinet", "open": False}
+"Fridge_42": {"label": "Fridge", "open": False}
+"SoapBottle_52": {"label": "SoapBottle", "holding": False, "supported_by": ["CounterTop"]}
+"Cup_63": {"label": "Cup", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+
+Demonstration Script:
+```python
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_soapbottle = InteractionObject("SoapBottle", object_instance = "SoapBottle")
+target_soapbottle.pickup_and_place(target_fridge)
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_cup.pickup()
+target_fridge.go_to()
+target_fridge.close()
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_cup.place(target_countertop)
+```

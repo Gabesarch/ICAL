@@ -1,0 +1,52 @@
+Dialogue Instruction:
+<Driver> What shall I do today?
+<Commander> find the lettuce ans slice it with the knife
+<Commander> take the plate out of shelf below the stove
+<Driver> Done
+<Commander> then place the lettuce slices on the plate
+
+Initial Object State:
+"Bowl_0": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Knife_5": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Bowl_15": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Knife_19": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"CounterTop_26": {"label": "CounterTop"}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Cabinet_39": {"label": "Cabinet", "open": False}
+"Cabinet_40": {"label": "Cabinet", "open": False}
+"Cabinet_41": {"label": "Cabinet", "open": False}
+"Cabinet_42": {"label": "Cabinet", "open": False}
+"Cabinet_43": {"label": "Cabinet", "open": False}
+"Knife_64": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Knife_68": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Lettuce_70": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Bowl_78": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.go_to()
+target_lettuce.slice()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.pickup_and_place(target_countertop)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = None, parent_object = "Lettuce") # Initialize new sliced object from sliced parent
+target_lettucesliced.pickup()
+target_countertop.go_to()
+target_lettucesliced.place(target_countertop)
+```

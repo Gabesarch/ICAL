@@ -1,0 +1,85 @@
+Dialogue Instruction:
+<Commander> I need help
+<Driver> Hello, how can i help?
+<Commander> I would like a slice of toast please
+<Driver> I've made toast, what's next?
+<Commander> Can you serve it on a clean plate please
+<Driver> Done!
+<Commander> That's all, thank you!
+
+Initial Object State:
+"Knife_5": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"SoapBottle_9": {"label": "SoapBottle", "holding": False, "supported_by": ["Sink"]}
+"SoapBottle_13": {"label": "SoapBottle", "holding": False, "supported_by": ["Fridge"]}
+"Cabinet_16": {"label": "Cabinet", "open": False}
+"Cabinet_17": {"label": "Cabinet", "open": False}
+"Cabinet_18": {"label": "Cabinet", "open": False}
+"Cabinet_19": {"label": "Cabinet", "open": False}
+"Cabinet_20": {"label": "Cabinet", "open": False}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"CounterTop_34": {"label": "CounterTop"}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_39": {"label": "Cabinet", "open": False}
+"CounterTop_40": {"label": "CounterTop"}
+"Fridge_56": {"label": "Fridge", "open": False}
+"Plate_59": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"SoapBottle_63": {"label": "SoapBottle", "holding": False, "supported_by": ["Sink"]}
+"Toaster_68": {"label": "Toaster", "toggled": True}
+"Knife_74": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"SinkBasin_77": {"label": "SinkBasin"}
+"Knife_81": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Faucet_86": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_knife.pickup_and_place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.pickup()
+target_toaster = InteractionObject("Toaster", object_instance = "Toaster")
+target_toaster.go_to()
+target_breadsliced.place(target_toaster)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_fridge.go_to()
+target_fridge.close()
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.open()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup_and_place(target_countertop)
+target_soapbottle = InteractionObject("SoapBottle", object_instance = "SoapBottle")
+target_soapbottle.pickup()
+target_countertop.go_to()
+target_soapbottle.place(target_countertop)
+target_soapbottle.pickup_and_place(target_countertop)
+target_plate.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_plate.place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_plate.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_countertop.go_to()
+target_breadsliced.place(target_countertop)
+```

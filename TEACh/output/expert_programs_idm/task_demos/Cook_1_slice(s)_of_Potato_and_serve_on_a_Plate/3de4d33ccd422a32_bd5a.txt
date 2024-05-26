@@ -1,0 +1,49 @@
+Dialogue Instruction:
+<Driver> hi
+<Driver> what should i do today?
+<Commander> cook 1 slice of potato and serve on a plate
+<Driver> where can i find potato
+<Driver> and knife too
+<Commander> potato is in the side shelf
+<Commander> knife is on the stool
+<Driver> done
+<Commander> take plate near the dinning table and place the potato slice
+<Driver> done
+
+Initial Object State:
+"Knife_6": {"label": "Knife", "holding": False, "supported_by": ["Stool"]}
+"CounterTop_20": {"label": "CounterTop"}
+"CounterTop_40": {"label": "CounterTop"}
+"Microwave_48": {"label": "Microwave", "toggled": True, "open": False}
+"Plate_55": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Chair"]}
+"Potato_57": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Shelf"]}
+"Knife_60": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"SinkBasin_61": {"label": "SinkBasin"}
+"Knife_66": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Faucet_83": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_potato.pickup_and_place(target_countertop)
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.open()
+target_potato.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_potato.go_to()
+target_potato.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_plate.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = None, parent_object = "Potato") # Initialize new sliced object from sliced parent
+target_potatosliced.pickup_and_place(target_plate)
+target_plate.pickup()
+```

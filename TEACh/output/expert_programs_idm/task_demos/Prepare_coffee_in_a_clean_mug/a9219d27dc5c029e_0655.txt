@@ -1,0 +1,34 @@
+Dialogue Instruction:
+<Driver> how can I help?
+<Commander> can you please make coffee?
+<Commander> there's a mug in the bin
+<Driver> sure
+<Driver> I can't put it in the coffee machine
+<Commander> try turn it off first
+<Commander> it's done, thanks
+
+Initial Object State:
+"CoffeeMachine_48": {"label": "CoffeeMachine", "toggled": True}
+"SinkBasin_53": {"label": "SinkBasin"}
+"Mug_61": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Floor", "GarbageCan"]}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_coffeemachine.go_to()
+target_mug.place(target_coffeemachine)
+target_mug.pickup_and_place(target_coffeemachine)
+target_mug.pickup()
+target_coffeemachine.go_to()
+target_mug.place(target_coffeemachine)
+target_coffeemachine.go_to()
+target_coffeemachine.toggle_off()
+target_coffeemachine.go_to()
+target_coffeemachine.toggle_on()
+```

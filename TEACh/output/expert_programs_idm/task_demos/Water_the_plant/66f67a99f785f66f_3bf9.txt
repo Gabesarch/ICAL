@@ -1,0 +1,21 @@
+Dialogue Instruction:
+<Driver> what can I assist with?
+<Commander> i need my plant watered
+<Driver> all set!
+<Commander> thanks
+
+Initial Object State:
+"Mug_2": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Chair"]}
+"Mug_52": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Fridge"]}
+"Mug_54": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["DiningTable"]}
+"Mug_129": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_cellphone = InteractionObject("CellPhone", object_instance = "CellPhone")
+target_cellphone.go_to()
+target_mug.pour(target_cellphone)
+```

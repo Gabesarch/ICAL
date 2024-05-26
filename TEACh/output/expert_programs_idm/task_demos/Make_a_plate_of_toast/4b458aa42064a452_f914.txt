@@ -1,0 +1,108 @@
+Dialogue Instruction:
+<Driver> how can I assist you?
+<Commander> please make a plate of toast
+<Driver> anything else?
+<Commander> nope, thanks!
+
+Initial Object State:
+"Spoon_2": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"Knife_7": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"SaltShaker_10": {"label": "SaltShaker", "holding": False, "supported_by": ["Chair"]}
+"Lettuce_12": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Plate_14": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Egg_15": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"Fork_18": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Cup_20": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"Egg_24": {"label": "Egg", "holding": False, "supported_by": ["Cabinet"]}
+"Spoon_29": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"SaltShaker_34": {"label": "SaltShaker", "holding": False, "supported_by": ["Chair"]}
+"Egg_35": {"label": "Egg", "holding": False, "supported_by": ["Plate", "Cabinet"]}
+"Spoon_37": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Plate_38": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"SaltShaker_39": {"label": "SaltShaker", "holding": False, "supported_by": ["Drawer"]}
+"Spoon_41": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"SaltShaker_45": {"label": "SaltShaker", "holding": False, "supported_by": ["CounterTop"]}
+"Plate_47": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Cup_50": {"label": "Cup", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Chair"]}
+"SaltShaker_52": {"label": "SaltShaker", "holding": False, "supported_by": ["Plate", "CounterTop"]}
+"Spoon_53": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Lettuce_58": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Fork_59": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Fork_61": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"Lettuce_63": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Sink"]}
+"Spoon_64": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Chair"]}
+"Spoon_67": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Fork_69": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"Plate_70": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Plate_75": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Fork_76": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Cup_78": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Fridge"]}
+"Egg_81": {"label": "Egg", "holding": False, "supported_by": ["Fridge"]}
+"Lettuce_82": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Drawer"]}
+"SaltShaker_84": {"label": "SaltShaker", "holding": False, "supported_by": ["CounterTop"]}
+"Lettuce_88": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"SaltShaker_90": {"label": "SaltShaker", "holding": False, "supported_by": ["CounterTop"]}
+"Cup_91": {"label": "Cup", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop", "Microwave"]}
+"CounterTop_115": {"label": "CounterTop"}
+"CounterTop_122": {"label": "CounterTop"}
+"Cup_128": {"label": "Cup", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Fork_138": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"Egg_142": {"label": "Egg", "holding": False, "supported_by": ["Cabinet"]}
+"Plate_143": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Lettuce_145": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Knife_150": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"SinkBasin_151": {"label": "SinkBasin"}
+"SaltShaker_152": {"label": "SaltShaker", "holding": False, "supported_by": ["Drawer"]}
+"Knife_155": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Spoon_161": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Microwave"]}
+"Faucet_164": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_plate.pickup_and_place(target_countertop)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_off()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_knife.place(target_sinkbasin)
+target_knife.pickup_and_place(target_sinkbasin)
+target_spoon = InteractionObject("Spoon", object_instance = "Spoon")
+target_spoon.pickup()
+target_sinkbasin.go_to()
+target_spoon.place(target_sinkbasin)
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_cup.pickup_and_place(target_sinkbasin)
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_saltshaker.pickup()
+target_countertop.go_to()
+target_saltshaker.place(target_countertop)
+target_plate.pickup_and_place(target_sinkbasin)
+target_egg = InteractionObject("Egg", object_instance = "Egg")
+target_egg.pickup()
+target_countertop.go_to()
+target_egg.place(target_countertop)
+target_fork = InteractionObject("Fork", object_instance = "Fork")
+target_fork.pickup_and_place(target_countertop)
+target_plate.pickup()
+target_sinkbasin.go_to()
+target_plate.place(target_sinkbasin)
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_plate.pickup_and_place(target_countertop)
+target_knife.pickup()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.pickup_and_place(target_plate)
+target_breadsliced.pickup()
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+```

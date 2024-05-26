@@ -1,0 +1,56 @@
+Dialogue Instruction:
+<Driver> what is your bidding?
+<Commander> this one is big
+<Driver> bring it on
+<Commander> please boil the potato
+<Driver> oh no.
+<Driver> all set?
+
+Initial Object State:
+"Potato_4": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"PepperShaker_5": {"label": "PepperShaker", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"Lettuce_13": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"PepperShaker_34": {"label": "PepperShaker", "holding": False, "supported_by": ["Floor", "Shelf"]}
+"PepperShaker_39": {"label": "PepperShaker", "holding": False, "supported_by": ["DiningTable"]}
+"PepperShaker_40": {"label": "PepperShaker", "holding": False, "supported_by": ["CounterTop"]}
+"CounterTop_61": {"label": "CounterTop"}
+"CounterTop_67": {"label": "CounterTop"}
+"Lettuce_88": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"SinkBasin_104": {"label": "SinkBasin"}
+"PepperShaker_106": {"label": "PepperShaker", "holding": False, "supported_by": ["StoveBurner", "Pot"]}
+"Potato_107": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Faucet_113": {"label": "Faucet", "toggled": True}
+"Mug_115": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["DiningTable"]}
+
+Demonstration Script:
+```python
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_potato.pickup_and_place(target_countertop)
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.pickup()
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.pickup_and_place(target_sinkbasin)
+target_remotecontrol = InteractionObject("RemoteControl", object_instance = "RemoteControl")
+target_remotecontrol.pickup()
+target_sinkbasin.go_to()
+target_remotecontrol.place(target_sinkbasin)
+target_peppershaker = InteractionObject("PepperShaker", object_instance = "PepperShaker")
+target_peppershaker.pickup_and_place(target_sinkbasin)
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_potato.pickup_and_place(target_countertop)
+```

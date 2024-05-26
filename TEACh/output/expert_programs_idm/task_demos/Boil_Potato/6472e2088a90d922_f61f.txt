@@ -1,0 +1,148 @@
+Dialogue Instruction:
+<Driver> how can i help
+<Commander> could you please boil a potato for me
+<Driver> done
+<Commander> thanks
+
+Initial Object State:
+"Bowl_0": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Spoon_2": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"Knife_5": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"PepperShaker_6": {"label": "PepperShaker", "holding": False, "supported_by": ["CounterTop"]}
+"Knife_7": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"SaltShaker_8": {"label": "SaltShaker", "holding": False, "supported_by": ["Cabinet"]}
+"Potato_14": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Fork_15": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"Pot_19": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner", "StoveBurner"]}
+"Knife_20": {"label": "Knife", "holding": False, "supported_by": ["Chair"]}
+"Knife_21": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"SaltShaker_22": {"label": "SaltShaker", "holding": False, "supported_by": ["Cabinet"]}
+"Knife_25": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"PepperShaker_26": {"label": "PepperShaker", "holding": False, "supported_by": ["Cabinet"]}
+"Knife_27": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"SaltShaker_28": {"label": "SaltShaker", "holding": False, "supported_by": ["Microwave"]}
+"Potato_31": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Fork_32": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Fork_35": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Bowl_37": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["DiningTable"]}
+"SaltShaker_38": {"label": "SaltShaker", "holding": False, "supported_by": ["Cabinet"]}
+"PepperShaker_39": {"label": "PepperShaker", "holding": False, "supported_by": ["Cabinet"]}
+"Bowl_41": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Spoon_42": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"PepperShaker_43": {"label": "PepperShaker", "holding": False, "supported_by": ["Sink"]}
+"Knife_44": {"label": "Knife", "holding": False, "supported_by": ["Microwave"]}
+"SaltShaker_45": {"label": "SaltShaker", "holding": False, "supported_by": ["Drawer"]}
+"Fork_51": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Bowl_57": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["DiningTable"]}
+"Knife_66": {"label": "Knife", "holding": False, "supported_by": ["Chair"]}
+"Knife_67": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Bowl_68": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Knife_70": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Knife_71": {"label": "Knife", "holding": False, "supported_by": ["Chair"]}
+"Pot_73": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Knife_76": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Knife_77": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Knife_79": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Spoon_81": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"SaltShaker_86": {"label": "SaltShaker", "holding": False, "supported_by": ["Sink"]}
+"Knife_87": {"label": "Knife", "holding": False, "supported_by": ["Microwave"]}
+"Knife_88": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Bowl_90": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Knife_92": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Knife_93": {"label": "Knife", "holding": False, "supported_by": ["Chair"]}
+"SaltShaker_98": {"label": "SaltShaker", "holding": False, "supported_by": ["Cabinet"]}
+"Spoon_100": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"Bowl_102": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"SaltShaker_104": {"label": "SaltShaker", "holding": False, "supported_by": ["Drawer"]}
+"Bowl_105": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"Potato_109": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"SaltShaker_112": {"label": "SaltShaker", "holding": False, "supported_by": ["Cabinet"]}
+"PepperShaker_113": {"label": "PepperShaker", "holding": False, "supported_by": ["Bowl", "DiningTable"]}
+"Knife_114": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Spoon_117": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"PepperShaker_118": {"label": "PepperShaker", "holding": False, "supported_by": ["CounterTop"]}
+"SaltShaker_119": {"label": "SaltShaker", "holding": False, "supported_by": ["Bowl", "DiningTable"]}
+"Spoon_122": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Potato_125": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Floor", "GarbageCan"]}
+"CounterTop_126": {"label": "CounterTop"}
+"Cabinet_127": {"label": "Cabinet", "open": False}
+"Cabinet_128": {"label": "Cabinet", "open": False}
+"Cabinet_129": {"label": "Cabinet", "open": False}
+"Cabinet_130": {"label": "Cabinet", "open": False}
+"Cabinet_131": {"label": "Cabinet", "open": False}
+"Cabinet_132": {"label": "Cabinet", "open": False}
+"Cabinet_133": {"label": "Cabinet", "open": False}
+"Cabinet_134": {"label": "Cabinet", "open": False}
+"Cabinet_135": {"label": "Cabinet", "open": False}
+"Cabinet_136": {"label": "Cabinet", "open": False}
+"Cabinet_137": {"label": "Cabinet", "open": False}
+"Cabinet_138": {"label": "Cabinet", "open": False}
+"Cabinet_139": {"label": "Cabinet", "open": False}
+"Cabinet_140": {"label": "Cabinet", "open": False}
+"Cabinet_141": {"label": "Cabinet", "open": False}
+"Cabinet_142": {"label": "Cabinet", "open": False}
+"Cabinet_143": {"label": "Cabinet", "open": False}
+"Cabinet_144": {"label": "Cabinet", "open": False}
+"Cabinet_145": {"label": "Cabinet", "open": False}
+"Cabinet_146": {"label": "Cabinet", "open": False}
+"Cabinet_147": {"label": "Cabinet", "open": False}
+"CounterTop_152": {"label": "CounterTop"}
+"Pot_158": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner", "StoveBurner"]}
+"Fork_167": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"Pan_168": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Potato_169": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"SinkBasin_179": {"label": "SinkBasin"}
+"SaltShaker_181": {"label": "SaltShaker", "holding": False, "supported_by": ["Pot", "StoveBurner"]}
+"Knife_182": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"PepperShaker_183": {"label": "PepperShaker", "holding": False, "supported_by": ["Plate", "Cabinet"]}
+"Knife_184": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Spoon_187": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"DiningTable_189": {"label": "DiningTable"}
+"Faucet_191": {"label": "Faucet", "toggled": True}
+"Bowl_192": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+
+Demonstration Script:
+```python
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_potato.pickup_and_place(target_pot)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.pickup()
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.go_to()
+target_potatosliced.place(target_bowl)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_knife.pickup_and_place(target_countertop)
+target_knife.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_knife.place(target_sinkbasin)
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_saltshaker.pickup_and_place(target_sinkbasin)
+target_knife.pickup()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_saltshaker.pickup_and_place(target_countertop)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_off()
+target_fork = InteractionObject("Fork", object_instance = "Fork")
+target_fork.pickup_and_place(target_countertop)
+target_spoon = InteractionObject("Spoon", object_instance = "Spoon")
+target_spoon.pickup()
+target_countertop.go_to()
+target_spoon.place(target_countertop)
+target_pan = InteractionObject("Pan", object_instance = "Pan")
+target_pan.go_to()
+target_pan.pickup()
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.toggle_off()
+target_peppershaker = InteractionObject("PepperShaker", object_instance = "PepperShaker")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_peppershaker.pickup_and_place(target_diningtable)
+target_bowl.pickup()
+target_countertop.go_to()
+target_bowl.place(target_countertop)
+target_potato.pickup_and_place(target_pot)
+```

@@ -1,0 +1,27 @@
+Dialogue Instruction:
+<Commander> can you place the salt shaker into a cabinet
+<Commander> the salt shaker is on the table
+<Commander> that's great
+
+Initial Object State:
+"SaltShaker_6": {"label": "SaltShaker", "holding": False, "supported_by": ["DiningTable"]}
+"Cabinet_14": {"label": "Cabinet", "open": False}
+"Cabinet_15": {"label": "Cabinet", "open": False}
+"Cabinet_17": {"label": "Cabinet", "open": False}
+"Cabinet_18": {"label": "Cabinet", "open": False}
+"Cabinet_19": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"SaltShaker_50": {"label": "SaltShaker", "holding": False, "supported_by": ["Cabinet"]}
+
+Demonstration Script:
+```python
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_saltshaker.pickup_and_place(target_cabinet)
+```

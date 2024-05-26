@@ -1,0 +1,118 @@
+Dialogue Instruction:
+<Driver> hi
+<Commander> hello
+<Driver> what should i do today?
+<Commander> We will prepare breakfast. Please make 2 cups of coffee in clean mugs.
+<Driver> ok
+<Driver> where can i find mugs
+<Commander> There is a mug on the stove and table
+<Driver> done
+<Commander> Thank you.
+<Commander> Now slice the apple please
+<Driver> done
+<Commander> Thank you. Please put both cups of coffee on the table
+<Driver> done
+<Commander> Thank you nice job. Now please clean two bowls and put them on the table
+<Driver> where are the bowls
+<Commander> The bowl is by the sink. The other bowl is in lower cabinet to the right of the sink
+<Commander> Now please place one apple slice in each bowl
+<Driver> done
+<Commander> Thank you well done.
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Pan", "StoveBurner"]}
+"Bowl_8": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"Mug_10": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"Cabinet_15": {"label": "Cabinet", "open": False}
+"Cabinet_18": {"label": "Cabinet", "open": False}
+"CounterTop_19": {"label": "CounterTop"}
+"CounterTop_20": {"label": "CounterTop"}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"CounterTop_35": {"label": "CounterTop"}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Knife_39": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Bowl_42": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Plate_47": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"SinkBasin_57": {"label": "SinkBasin"}
+"Knife_62": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"StoveKnob_63": {"label": "StoveKnob", "toggled": True}
+"StoveKnob_64": {"label": "StoveKnob", "toggled": True}
+"StoveKnob_65": {"label": "StoveKnob", "toggled": False}
+"StoveKnob_66": {"label": "StoveKnob", "toggled": True}
+"Mug_73": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Microwave"]}
+"Faucet_74": {"label": "Faucet", "toggled": True}
+"DiningTable_76": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_mug.place(target_countertop)
+target_stoveknob = InteractionObject("StoveKnob", object_instance = "StoveKnob")
+target_stoveknob.go_to()
+target_stoveknob.toggle_on()
+target_stoveknob.go_to()
+target_stoveknob.toggle_on()
+target_mug.pickup_and_place(target_countertop)
+target_mug.pickup()
+target_countertop.go_to()
+target_mug.place(target_countertop)
+target_mug.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_mug.pickup_and_place(target_countertop)
+target_mug.pickup()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_mug.place(target_diningtable)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_plate.pickup()
+target_sinkbasin.go_to()
+target_sinkbasin.toggle_off()
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_faucet.go_to()
+target_faucet.pickup()
+target_sinkbasin.go_to()
+target_sinkbasin.toggle_off()
+target_diningtable.go_to()
+target_faucet.place(target_diningtable)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.close()
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.go_to()
+target_bowl.pickup()
+target_bowl.pickup_and_place(target_sinkbasin)
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_plate.go_to()
+target_plate.pickup()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_plate.go_to()
+target_plate.place(target_plate)
+```

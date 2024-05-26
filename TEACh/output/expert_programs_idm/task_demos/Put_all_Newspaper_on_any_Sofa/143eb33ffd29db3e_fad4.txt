@@ -1,0 +1,24 @@
+Dialogue Instruction:
+<Driver> how can i help?
+<Commander> all newspaper need to be on the sofa
+<Commander> one is on the table by the corner next to the white chair
+<Commander> one is on the dining table next to the box
+<Driver> all done
+<Commander> done
+
+Initial Object State:
+"Newspaper_3": {"label": "Newspaper", "holding": False, "supported_by": ["Floor", "CoffeeTable"]}
+"Newspaper_10": {"label": "Newspaper", "holding": False, "supported_by": ["DiningTable"]}
+"Newspaper_18": {"label": "Newspaper", "holding": False, "supported_by": ["SideTable"]}
+"Sofa_46": {"label": "Sofa"}
+
+Demonstration Script:
+```python
+target_newspaper = InteractionObject("Newspaper", object_instance = "Newspaper")
+target_sofa = InteractionObject("Sofa", object_instance = "Sofa")
+target_newspaper.pickup_and_place(target_sofa)
+target_newspaper.pickup()
+target_sofa.go_to()
+target_newspaper.place(target_sofa)
+target_newspaper.pickup_and_place(target_sofa)
+```

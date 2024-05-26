@@ -1,0 +1,61 @@
+Dialogue Instruction:
+<Driver> First Task?
+<Commander> Clean a plate.
+<Driver> next
+<Commander> There's another plate on the table in the northeast corner of the room. It needs to be cleaned as well.
+<Commander> And we're done! Thanks for playing.
+
+Initial Object State:
+"Apple_3": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Floor", "GarbageCan"]}
+"Bowl_5": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"Knife_6": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Lettuce_8": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["DiningTable"]}
+"Plate_9": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Lettuce_11": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Fridge"]}
+"Bowl_14": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Knife_16": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Plate_17": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"DiningTable_24": {"label": "DiningTable"}
+"CounterTop_31": {"label": "CounterTop"}
+"CounterTop_34": {"label": "CounterTop"}
+"CounterTop_36": {"label": "CounterTop"}
+"Plate_47": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Lettuce_49": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Sink"]}
+"SinkBasin_57": {"label": "SinkBasin"}
+"Knife_60": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Bowl_61": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Fridge"]}
+"Knife_64": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Apple_65": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Sink"]}
+"Faucet_72": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_plate.pickup_and_place(target_diningtable)
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_lettuce.place(target_countertop)
+target_apple = InteractionObject("Apple", object_instance = "Apple")
+target_apple.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_plate.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.go_to()
+target_bowl.pickup()
+target_plate.pickup_and_place(target_sinkbasin)
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_plate.pickup_and_place(target_countertop)
+```

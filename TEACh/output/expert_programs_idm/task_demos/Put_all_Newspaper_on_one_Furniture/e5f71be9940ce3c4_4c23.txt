@@ -1,0 +1,33 @@
+Dialogue Instruction:
+<Driver> What should I do today?
+<Commander> hi
+<Driver> Hi
+<Driver> What should I do today?
+<Commander> let's grab all the newspaper and put it on one piece of furniture
+<Driver> Okay
+<Driver> Where should I start?
+<Commander> one near the tv
+<Driver> Thank you
+<Commander> one on the coffee table
+<Driver> Okay, I'm ready for the next newspaper.
+<Commander> one on coffee table near the sofa
+<Driver> Okay, I moved that one to the same table.
+<Commander> we're finished
+<Commander> fantastic job
+<Driver> Thank you, you too!
+
+Initial Object State:
+"Newspaper_0": {"label": "Newspaper", "holding": False, "supported_by": ["Dresser"]}
+"Newspaper_7": {"label": "Newspaper", "holding": False, "supported_by": ["Floor", "CoffeeTable"]}
+"SideTable_22": {"label": "SideTable"}
+"SideTable_23": {"label": "SideTable"}
+
+Demonstration Script:
+```python
+target_newspaper = InteractionObject("Newspaper", object_instance = "Newspaper")
+target_sidetable = InteractionObject("SideTable", object_instance = "SideTable")
+target_newspaper.pickup_and_place(target_sidetable)
+target_newspaper.pickup()
+target_sidetable.go_to()
+target_newspaper.place(target_sidetable)
+```

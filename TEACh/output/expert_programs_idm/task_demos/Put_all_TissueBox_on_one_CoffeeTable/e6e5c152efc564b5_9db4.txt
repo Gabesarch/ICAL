@@ -1,0 +1,32 @@
+Dialogue Instruction:
+<Commander> Hi today can you please get and place all the tissue boxes on the coffee table
+<Commander> there is a tissue box in front of the tv
+<Commander> there is another on the dining table
+<Commander> there is a third on the side table
+<Driver> Are there any more
+<Driver> 
+<Commander> there is a final one on the side table
+<Commander> below the blue painting
+<Driver> Can I assist with anything else?
+<Commander> That's great thank you
+
+Initial Object State:
+"TissueBox_11": {"label": "TissueBox", "holding": False, "supported_by": ["Floor", "Shelf"]}
+"TissueBox_14": {"label": "TissueBox", "holding": False, "supported_by": ["SideTable"]}
+"TissueBox_19": {"label": "TissueBox", "holding": False, "supported_by": ["DiningTable", "Chair"]}
+"TissueBox_36": {"label": "TissueBox", "holding": False, "supported_by": ["TVStand"]}
+"CoffeeTable_59": {"label": "CoffeeTable"}
+
+Demonstration Script:
+```python
+target_tissuebox = InteractionObject("TissueBox", object_instance = "TissueBox")
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_tissuebox.pickup_and_place(target_coffeetable)
+target_tissuebox.pickup()
+target_coffeetable.go_to()
+target_tissuebox.place(target_coffeetable)
+target_tissuebox.pickup_and_place(target_coffeetable)
+target_tissuebox.pickup()
+target_coffeetable.go_to()
+target_tissuebox.place(target_coffeetable)
+```

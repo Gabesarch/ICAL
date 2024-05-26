@@ -1,0 +1,38 @@
+Dialogue Instruction:
+<Commander> mug is on the centre cabinet
+<Commander> fill it with coffee
+<Driver> Hello!
+<Driver> please wait
+<Commander> no problem
+<Commander> done, thanks!!
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"CoffeeMachine_42": {"label": "CoffeeMachine", "toggled": True}
+"SinkBasin_55": {"label": "SinkBasin"}
+"Mug_73": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Faucet_75": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_coffeemachine.go_to()
+target_mug.place(target_coffeemachine)
+```

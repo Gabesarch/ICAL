@@ -1,0 +1,23 @@
+Dialogue Instruction:
+<Driver> Hello what is my task
+<Commander> Hello
+<Commander> Let's put all remotes on the tables
+<Commander> There is one on the chair
+<Driver> I put two remotes on the table what is next
+<Driver> Please give me my next task or location of another remote
+<Commander> You did great. We're done. Thank you
+<Driver> cool
+
+Initial Object State:
+"RemoteControl_1": {"label": "RemoteControl", "holding": False, "supported_by": ["TVStand"]}
+"RemoteControl_19": {"label": "RemoteControl", "holding": False, "supported_by": ["ArmChair", "Floor"]}
+"CoffeeTable_38": {"label": "CoffeeTable"}
+
+Demonstration Script:
+```python
+target_remotecontrol = InteractionObject("RemoteControl", object_instance = "RemoteControl")
+target_remotecontrol.go_to()
+target_remotecontrol.pickup()
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_remotecontrol.pickup_and_place(target_coffeetable)
+```

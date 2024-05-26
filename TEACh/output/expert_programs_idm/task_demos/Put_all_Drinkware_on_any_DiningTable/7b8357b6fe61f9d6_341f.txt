@@ -1,0 +1,46 @@
+Dialogue Instruction:
+<Driver> What should I do today?
+<Commander> We will place all drinkware on the dining table
+<Commander> Go to the sink
+<Commander> Take the cup out of the sink
+<Commander> Good work
+<Driver> thanks
+<Commander> There is one more item
+<Commander> It is inside of the microwave
+<Commander> Open the microwave
+<Commander> Take the cup
+<Commander> Place on table
+<Driver> done!
+<Commander> Finished!
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop", "CoffeeMachine"]}
+"Bowl_7": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Floor", "Shelf"]}
+"DiningTable_22": {"label": "DiningTable"}
+"CoffeeMachine_62": {"label": "CoffeeMachine", "toggled": True}
+"Bowl_77": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Shelf"]}
+"Microwave_82": {"label": "Microwave", "toggled": True, "open": False}
+"Faucet_93": {"label": "Faucet", "toggled": True}
+"Mug_95": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"DiningTable_98": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_coffeemachine.go_to()
+target_coffeemachine.toggle_on()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+None.place(target_diningtable)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.pickup_and_place(target_diningtable)
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.toggle_off()
+target_microwave.go_to()
+target_microwave.open()
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.pickup_and_place(target_diningtable)
+```

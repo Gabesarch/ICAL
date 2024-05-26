@@ -1,0 +1,37 @@
+Dialogue Instruction:
+<Driver> what's first?
+<Commander> put a remote in a single box
+<Driver> ok
+<Commander> remote on coffee table
+<Commander> box on table by window
+<Commander> i'm sorry sofa by window
+<Commander> put remote in that box
+<Driver> next
+<Commander> that's all
+<Driver> cool
+
+Initial Object State:
+"RemoteControl_5": {"label": "RemoteControl", "holding": False, "supported_by": ["Box", "Sofa"]}
+"RemoteControl_19": {"label": "RemoteControl", "holding": False, "supported_by": ["CoffeeTable"]}
+"Plate_23": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"SideTable_35": {"label": "SideTable"}
+"SideTable_36": {"label": "SideTable"}
+"SideTable_38": {"label": "SideTable"}
+"SideTable_40": {"label": "SideTable"}
+"CoffeeTable_44": {"label": "CoffeeTable"}
+
+Demonstration Script:
+```python
+target_remotecontrol = InteractionObject("RemoteControl", object_instance = "RemoteControl")
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_remotecontrol.pickup_and_place(target_coffeetable)
+target_sidetable = InteractionObject("SideTable", object_instance = "SideTable")
+target_remotecontrol.place(target_sidetable)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_plate.pickup_and_place(target_countertop)
+target_remotecontrol.pickup()
+target_cellphone = InteractionObject("CellPhone", object_instance = "CellPhone")
+target_cellphone.go_to()
+target_remotecontrol.place(target_cellphone)
+```

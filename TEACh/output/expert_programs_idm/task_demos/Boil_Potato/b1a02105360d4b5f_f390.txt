@@ -1,0 +1,47 @@
+Dialogue Instruction:
+<Driver> hi
+<Driver> what to do
+<Commander> we are boiling a potato
+<Driver> where is potato
+<Commander> in fridge
+<Driver> where is the bowl
+<Commander> pot
+<Commander> on the dark brown table
+
+Initial Object State:
+"Potato_7": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"StoveBurner_12": {"label": "StoveBurner"}
+"StoveBurner_14": {"label": "StoveBurner"}
+"CounterTop_17": {"label": "CounterTop"}
+"Faucet_19": {"label": "Faucet", "toggled": False}
+"StoveBurner_20": {"label": "StoveBurner"}
+"StoveBurner_24": {"label": "StoveBurner"}
+"Pot_26": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["SideTable"]}
+"Potato_29": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Fridge_36": {"label": "Fridge", "open": False}
+"Egg_41": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+
+Demonstration Script:
+```python
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_potato.pickup_and_place(target_pot)
+target_pot.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_pot.place(target_countertop)
+target_egg = InteractionObject("Egg", object_instance = "Egg")
+target_egg.go_to()
+target_egg.pickup()
+target_pot.pickup_and_place(target_countertop)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_stoveburner = InteractionObject("StoveBurner", object_instance = "StoveBurner")
+target_pot.pickup_and_place(target_stoveburner)
+target_potato.pickup()
+target_pot.go_to()
+target_potato.place(target_pot)
+```

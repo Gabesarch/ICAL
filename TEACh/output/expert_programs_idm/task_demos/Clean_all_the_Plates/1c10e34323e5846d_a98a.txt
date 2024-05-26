@@ -1,0 +1,25 @@
+Dialogue Instruction:
+<Driver> what should i do?
+<Commander> Hello
+<Commander> We need to clean the plate on the table
+<Driver> hello
+<Driver> done
+<Commander> Thank you all tasks complete )
+
+Initial Object State:
+"Plate_44": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"SinkBasin_54": {"label": "SinkBasin"}
+"Faucet_69": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_plate.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_plate.go_to()
+target_plate.pickup()
+```

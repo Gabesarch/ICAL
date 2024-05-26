@@ -1,0 +1,35 @@
+Dialogue Instruction:
+<Commander> Hello
+<Driver> Hi. What is our first task )
+<Driver> Hello?
+<Commander> let's try and put the remotes in the boxes
+<Driver> ok
+<Commander> each remote goes in a different box
+<Commander> I see one on a chair
+<Driver> LOL I see it, but only one box
+<Commander> I only see one box as well.
+<Commander> let me read the steps again. sorry
+<Driver> I put them both in. Did it clear?
+<Driver> ok
+<Commander> Okay now it says we're done. Great job!
+<Commander> thank you
+<Driver> Bye
+
+Initial Object State:
+"RemoteControl_1": {"label": "RemoteControl", "holding": False, "supported_by": ["Box", "DiningTable"]}
+"RemoteControl_4": {"label": "RemoteControl", "holding": False, "supported_by": ["Floor", "Shelf"]}
+"RemoteControl_18": {"label": "RemoteControl", "holding": False, "supported_by": ["Chair"]}
+"SideTable_28": {"label": "SideTable"}
+"SideTable_32": {"label": "SideTable"}
+"SideTable_40": {"label": "SideTable"}
+
+Demonstration Script:
+```python
+target_remotecontrol = InteractionObject("RemoteControl", object_instance = "RemoteControl")
+target_candle = InteractionObject("Candle", object_instance = "Candle")
+target_remotecontrol.pickup_and_place(target_candle)
+target_remotecontrol.pickup()
+target_sidetable = InteractionObject("SideTable", object_instance = "SideTable")
+target_sidetable.go_to()
+target_remotecontrol.place(target_sidetable)
+```

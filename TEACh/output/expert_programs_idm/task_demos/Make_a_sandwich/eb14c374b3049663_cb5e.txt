@@ -1,0 +1,96 @@
+Dialogue Instruction:
+<Driver> task???
+<Commander> slice bread
+<Commander> check cabinet above the sink
+<Commander> right side
+<Driver> knife?
+<Commander> slice with knife
+<Driver> where is it
+<Driver> the knife
+<Commander> in the fridge
+<Commander> slice 2 slices
+<Commander> then slice lettuce
+<Commander> go toast the bread 2 slices also
+<Commander> use the plate next to the lettuce
+<Commander> clean first
+<Commander> your doing good
+<Commander> after cleaning place all components on the plate
+<Driver> ok
+<Commander> good job
+
+Initial Object State:
+"Knife_1": {"label": "Knife", "holding": False, "supported_by": ["Floor", "Fridge"]}
+"Cup_3": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"Bread_6": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Plate_7": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"Bread_8": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Cup_10": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Fridge"]}
+"Knife_11": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"CounterTop_23": {"label": "CounterTop"}
+"CounterTop_29": {"label": "CounterTop"}
+"Plate_36": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"Bread_40": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Knife_46": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Cup_49": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop", "Microwave"]}
+"Fridge_50": {"label": "Fridge", "open": False}
+"SinkBasin_51": {"label": "SinkBasin"}
+"Knife_54": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"DiningTable_63": {"label": "DiningTable"}
+"Faucet_64": {"label": "Faucet", "toggled": True}
+"DiningTable_65": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_bread.pickup_and_place(target_countertop)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.open()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_fridge.go_to()
+target_fridge.close()
+target_bread.go_to()
+target_bread.slice()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = None, parent_object = "Bread") # Initialize new sliced object from sliced parent
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_breadsliced.pickup_and_place(target_plate)
+target_breadsliced.pickup()
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+target_plate.go_to()
+target_plate.pickup()
+target_plate.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_chair.go_to()
+target_breadsliced.place(target_chair)
+target_breadsliced.pickup_and_place(target_countertop)
+target_plate.pickup()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_cup.pickup_and_place(target_countertop)
+target_plate.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_plate.place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_plate.pickup_and_place(target_diningtable)
+target_breadsliced.pickup()
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+target_breadsliced.pickup_and_place(target_plate)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = "LettuceSliced")
+target_lettucesliced.pickup()
+target_plate.go_to()
+target_lettucesliced.place(target_plate)
+```

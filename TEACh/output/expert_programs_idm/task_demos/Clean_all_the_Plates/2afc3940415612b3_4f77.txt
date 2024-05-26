@@ -1,0 +1,20 @@
+Dialogue Instruction:
+<Commander> hi
+<Driver> Hello
+<Commander> you need to clean dirty plate
+<Driver> sure
+<Commander> under the microwave cabinet
+<Commander> good job, thanks
+<Driver> )
+
+Initial Object State:
+"Plate_2": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"SinkBasin_54": {"label": "SinkBasin"}
+"Plate_56": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+
+Demonstration Script:
+```python
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_plate.pickup_and_place(target_sinkbasin)
+```

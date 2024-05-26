@@ -1,0 +1,43 @@
+Dialogue Instruction:
+<Commander> Hey can you make a coffee for me please
+<Driver> sure
+<Commander> thank you
+<Driver> where is the mug?
+<Commander> should be in the fridge
+<Driver> Done
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Fridge"]}
+"Mug_26": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Mug_51": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Plate", "Cabinet"]}
+"CounterTop_68": {"label": "CounterTop"}
+"CounterTop_69": {"label": "CounterTop"}
+"CounterTop_90": {"label": "CounterTop"}
+"CounterTop_99": {"label": "CounterTop"}
+"CoffeeMachine_121": {"label": "CoffeeMachine", "toggled": False}
+"SinkBasin_124": {"label": "SinkBasin"}
+"Fridge_128": {"label": "Fridge", "open": False}
+"Mug_140": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop", "CoffeeMachine"]}
+
+Demonstration Script:
+```python
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_fridge.go_to()
+target_fridge.close()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_mug.place(target_countertop)
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_mug.pickup_and_place(target_sinkbasin)
+target_mug.pickup()
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_coffeemachine.go_to()
+target_mug.place(target_coffeemachine)
+target_coffeemachine.go_to()
+target_coffeemachine.toggle_on()
+```

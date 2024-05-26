@@ -1,0 +1,64 @@
+Dialogue Instruction:
+<Driver> How can i help today?
+<Commander> can you please make a slice of lettuce?
+<Driver> of course
+<Commander> a knife is on one of the stools
+<Driver> thank you
+<Driver> I've sliced the lettuce for you
+<Commander> can you put it on a clean plate?
+<Commander> there's one on the shelves
+<Driver> where can i find a plate?
+<Commander> there's one on the shelves
+<Driver> plated up the lettuce for you
+<Commander> that was everything, thanks!
+
+Initial Object State:
+"Bowl_0": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"Plate_10": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Shelf"]}
+"WineBottle_11": {"label": "WineBottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Bowl_16": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Stool"]}
+"WineBottle_18": {"label": "WineBottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["Plate", "Shelf", "Shelf"]}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"CounterTop_26": {"label": "CounterTop"}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"DiningTable_28": {"label": "DiningTable"}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Cabinet_39": {"label": "Cabinet", "open": False}
+"Cabinet_40": {"label": "Cabinet", "open": False}
+"CounterTop_46": {"label": "CounterTop"}
+"WineBottle_60": {"label": "WineBottle", "holding": False, "filled": True, "fillLiquid": None, "supported_by": ["Sink"]}
+"Plate_61": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Fridge"]}
+"Bowl_95": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+
+Demonstration Script:
+```python
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+None.place(target_diningtable)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = "LettuceSliced")
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_lettucesliced.pickup_and_place(target_bowl)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.close()
+target_cabinet.go_to()
+target_cabinet.close()
+target_winebottle = InteractionObject("WineBottle", object_instance = "WineBottle")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_winebottle.pickup_and_place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_plate.go_to()
+target_plate.place(target_plate)
+```

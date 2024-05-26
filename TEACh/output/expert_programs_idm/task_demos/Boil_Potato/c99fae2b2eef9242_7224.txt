@@ -1,0 +1,52 @@
+Dialogue Instruction:
+<Driver> how can I help you?
+<Commander> i'd like a potato boiled in water
+<Driver> of course!
+<Driver> do we have any large pans?
+<Commander> check the cabinet underneath the coffee maker
+<Driver> thank you!
+<Commander> no problem
+<Driver> did that work?
+<Commander> thank you!
+
+Initial Object State:
+"Pot_2": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Potato_10": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Potato_13": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Cabinet_19": {"label": "Cabinet", "open": False}
+"Cabinet_20": {"label": "Cabinet", "open": False}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"CounterTop_37": {"label": "CounterTop"}
+"CounterTop_39": {"label": "CounterTop"}
+"CounterTop_41": {"label": "CounterTop"}
+"Cabinet_42": {"label": "Cabinet", "open": False}
+"CounterTop_45": {"label": "CounterTop"}
+"Cabinet_46": {"label": "Cabinet", "open": False}
+"Potato_63": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Pot_79": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+
+Demonstration Script:
+```python
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_pot.pickup_and_place(target_countertop)
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.pickup()
+target_pot.go_to()
+target_potato.place(target_pot)
+```

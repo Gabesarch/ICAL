@@ -1,0 +1,85 @@
+Dialogue Instruction:
+<Driver> Hello. What should I do?
+<Commander> Hi! Let's go ahead and clean all the dishes.
+<Commander> The first dirty bowl is on the table by the fridge, behind the lettuce.
+<Commander> The second bowl will be on the same table but on the second shelf.
+<Commander> The last bowl should be in the fridge.
+<Commander> Amazing job!
+<Commander> Thank you!
+<Commander> We are finished!
+<Driver> thanks
+
+Initial Object State:
+"Cup_6": {"label": "Cup", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Bowl_8": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Fridge"]}
+"Plate_10": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Bread_13": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Bread_14": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"Bowl_15": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Shelf"]}
+"Plate_16": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Shelf"]}
+"Cup_17": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Fridge"]}
+"CounterTop_41": {"label": "CounterTop"}
+"CounterTop_47": {"label": "CounterTop"}
+"Bread_55": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Shelf"]}
+"Fridge_63": {"label": "Fridge", "open": False}
+"Plate_66": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Pot_69": {"label": "Pot", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner"]}
+"Bowl_77": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"Cup_80": {"label": "Cup", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Stool"]}
+"SinkBasin_84": {"label": "SinkBasin"}
+"Pan_90": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Faucet_93": {"label": "Faucet", "toggled": False}
+"Stool_96": {"label": "Stool"}
+
+Demonstration Script:
+```python
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_bowl.pickup_and_place(target_countertop)
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_bread.pickup()
+target_countertop.go_to()
+target_bread.place(target_countertop)
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_cup.pickup_and_place(target_countertop)
+target_pan = InteractionObject("Pan", object_instance = "Pan")
+target_pan.pickup()
+target_countertop.go_to()
+target_pan.place(target_countertop)
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_bowl.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_off()
+target_bowl.go_to()
+target_bowl.pickup()
+target_sinkbasin.go_to()
+target_bowl.pour(target_sinkbasin)
+target_countertop.go_to()
+target_bowl.place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup_and_place(target_countertop)
+target_bowl.pickup()
+target_sinkbasin.go_to()
+target_bowl.place(target_sinkbasin)
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.pickup_and_place(target_countertop)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.open()
+target_stool = InteractionObject("Stool", object_instance = "Stool")
+target_stool.go_to()
+target_stool.open()
+target_pot.pickup_and_place(target_countertop)
+target_bowl.pickup()
+target_fridge.go_to()
+target_bowl.pour(target_fridge)
+target_sinkbasin.go_to()
+target_bowl.place(target_sinkbasin)
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+```

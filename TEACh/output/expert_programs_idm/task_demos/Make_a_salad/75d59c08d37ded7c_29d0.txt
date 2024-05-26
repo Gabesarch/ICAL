@@ -1,0 +1,84 @@
+Dialogue Instruction:
+<Driver> Hi what shall I do today
+<Commander> let's make a salad
+<Commander> first you need to find the knife
+<Commander> I think there's a knife on the chair by the table
+<Driver> next
+<Commander> okay there is some lettuce in the fridge
+<Commander> At least I think this is the fridge
+<Driver> i already cut the lettuce
+<Commander> we also need to slice up a tomato
+<Driver> what next
+<Driver> tomato maybe?
+<Driver> or plate
+<Commander> It's on the table on the other side of the counter
+<Driver> where is the tomato?
+<Driver> 
+<Commander> please look on the other side of the counter
+<Commander> There are two small tables
+<Commander> Okay, we need to slice the tomato with the knife
+<Commander> The knife is in the fridge
+<Driver> done
+<Commander> Now they must all go on a plate
+<Commander> which is next to the sink
+<Driver> done?
+<Commander> that was it
+<Driver> 
+<Driver> 
+<Commander> 
+<Driver> 
+
+Initial Object State:
+"Lettuce_4": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Chair"]}
+"Knife_6": {"label": "Knife", "holding": False, "supported_by": ["Chair"]}
+"Plate_8": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"WineBottle_9": {"label": "WineBottle", "holding": False, "filled": True, "fillLiquid": None, "supported_by": ["Sink"]}
+"Knife_15": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"WineBottle_17": {"label": "WineBottle", "holding": False, "filled": True, "fillLiquid": None, "supported_by": ["Fridge"]}
+"CounterTop_25": {"label": "CounterTop"}
+"DiningTable_27": {"label": "DiningTable"}
+"CounterTop_45": {"label": "CounterTop"}
+"Tomato_47": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Stool"]}
+"WineBottle_59": {"label": "WineBottle", "holding": False, "filled": True, "fillLiquid": None, "supported_by": ["DiningTable"]}
+"Plate_60": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Knife_65": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Lettuce_70": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Fridge"]}
+"Knife_71": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Faucet_88": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_sidetable = InteractionObject("SideTable", object_instance = "SideTable")
+target_sidetable.go_to()
+None.place(target_sidetable)
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_lettuce.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_tomato.pickup_and_place(target_countertop)
+target_knife.pickup()
+target_lettuce.go_to()
+target_lettuce.slice()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_winebottle = InteractionObject("WineBottle", object_instance = "WineBottle")
+target_winebottle.pickup_and_place(target_countertop)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = None, parent_object = "Lettuce") # Initialize new sliced object from sliced parent
+target_lettucesliced.pickup()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_lettucesliced.place(target_plate)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = "TomatoSliced")
+target_tomatosliced.pickup_and_place(target_countertop)
+target_lettucesliced.pickup()
+target_plate.go_to()
+target_lettucesliced.place(target_plate)
+```

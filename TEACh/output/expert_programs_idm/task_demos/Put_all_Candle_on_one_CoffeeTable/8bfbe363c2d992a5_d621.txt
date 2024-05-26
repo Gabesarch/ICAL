@@ -1,0 +1,38 @@
+Dialogue Instruction:
+<Commander> Hello.
+<Driver> how can i help you today?
+<Commander> Today, you will need to put all the candles (2) on a single coffee table.
+<Driver> ok
+<Driver> i only see 2
+<Driver> are there more?
+<Commander> No. All done in here. Thank you.
+<Driver> ok
+
+Initial Object State:
+"Candle_4": {"label": "Candle", "holding": False, "supported_by": ["Floor", "ArmChair"]}
+"Candle_6": {"label": "Candle", "holding": False, "supported_by": ["CoffeeTable"]}
+"Candle_8": {"label": "Candle", "holding": False, "supported_by": ["DiningTable"]}
+"Chair_28": {"label": "Chair"}
+"Chair_29": {"label": "Chair"}
+"Chair_30": {"label": "Chair"}
+"CoffeeTable_38": {"label": "CoffeeTable"}
+"Chair_39": {"label": "Chair"}
+"Chair_40": {"label": "Chair"}
+"Chair_41": {"label": "Chair"}
+"Chair_42": {"label": "Chair"}
+
+Demonstration Script:
+```python
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_chair.go_to()
+None.place(target_chair)
+target_candle = InteractionObject("Candle", object_instance = "Candle")
+target_candle.go_to()
+target_candle.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_countertop.toggle_off()
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_coffeetable.go_to()
+target_candle.place(target_coffeetable)
+```

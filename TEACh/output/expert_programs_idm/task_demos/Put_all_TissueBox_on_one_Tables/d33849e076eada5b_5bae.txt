@@ -1,0 +1,36 @@
+Dialogue Instruction:
+<Driver> What should I do today?
+<Commander> find a tissuebox
+<Commander> put on a table
+<Driver> I have found the tissue box
+<Driver> found*
+<Driver> I have placed it on the table
+<Commander> find another and put on same table
+<Commander> the one that was already on the table
+<Commander> maybe pick it up and put it down
+<Driver> Help me find another tissue box
+<Driver> How many I'm I supposed to put on the table?
+<Commander> 2
+<Driver> I had already picked that one up and put it back on the table
+<Driver> Search again please
+<Commander> move one to the white cabinet with plant
+<Driver> I have found another one
+<Commander> that was it good job
+<Driver> I have placed it on the table
+
+Initial Object State:
+"TissueBox_3": {"label": "TissueBox", "holding": False, "supported_by": ["Sofa"]}
+"TissueBox_5": {"label": "TissueBox", "holding": False, "supported_by": ["CoffeeTable"]}
+"TissueBox_10": {"label": "TissueBox", "holding": False, "supported_by": ["SideTable"]}
+"CoffeeTable_44": {"label": "CoffeeTable"}
+
+Demonstration Script:
+```python
+target_tissuebox = InteractionObject("TissueBox", object_instance = "TissueBox")
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_tissuebox.pickup_and_place(target_coffeetable)
+target_tissuebox.pickup()
+target_coffeetable.go_to()
+target_tissuebox.place(target_coffeetable)
+target_tissuebox.pickup_and_place(target_coffeetable)
+```

@@ -1,0 +1,55 @@
+Dialogue Instruction:
+<Driver> hello how can I help
+<Commander> please put the bowl in the sink
+<Commander> it's between the stove and the door
+<Driver> I will do this now
+<Driver> done
+<Commander> there's another one in the cabinet under the toaster
+<Driver> done
+
+Initial Object State:
+"DishSponge_1": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Bowl_8": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Fork_12": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"Fork_18": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"DishSponge_21": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"CounterTop_22": {"label": "CounterTop"}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"CounterTop_30": {"label": "CounterTop"}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Cabinet_39": {"label": "Cabinet", "open": False}
+"Cabinet_40": {"label": "Cabinet", "open": False}
+"Fork_48": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Bowl_59": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"SinkBasin_68": {"label": "SinkBasin"}
+"DishSponge_73": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+
+Demonstration Script:
+```python
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_bowl.pickup_and_place(target_countertop)
+target_dishsponge = InteractionObject("DishSponge", object_instance = "DishSponge")
+target_dishsponge.pickup()
+target_countertop.go_to()
+target_dishsponge.place(target_countertop)
+target_fork = InteractionObject("Fork", object_instance = "Fork")
+target_fork.pickup_and_place(target_countertop)
+target_bowl.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_bowl.place(target_sinkbasin)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.close()
+target_bowl.pickup_and_place(target_sinkbasin)
+```

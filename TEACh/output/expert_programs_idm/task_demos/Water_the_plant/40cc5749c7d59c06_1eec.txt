@@ -1,0 +1,24 @@
+Dialogue Instruction:
+<Driver> what can i help with?
+<Commander> water my plant please
+<Driver> sure
+<Driver> i see a pot with water in it. can i use that?
+<Commander> you should be able to
+<Commander> unless there is something else inside it.
+<Driver> watered it
+<Commander> never mind!
+<Commander> Thank you!
+
+Initial Object State:
+"Pot_32": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"HousePlant_53": {"label": "HousePlant", "filled": False, "fillLiquid": None}
+
+Demonstration Script:
+```python
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.go_to()
+target_pot.pickup()
+target_houseplant = InteractionObject("HousePlant", object_instance = "HousePlant")
+target_houseplant.go_to()
+target_pot.pour(target_houseplant)
+```

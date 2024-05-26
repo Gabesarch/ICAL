@@ -1,0 +1,26 @@
+Dialogue Instruction:
+<Driver> hi
+<Driver> what should i do today?
+<Commander> Today you will put three remote controls on any table.
+<Driver> ok
+<Driver> where are the remotes
+<Commander> The remote controls are on the brown chairs
+<Driver> done
+<Commander> Good job
+
+Initial Object State:
+"RemoteControl_1": {"label": "RemoteControl", "holding": False, "supported_by": ["ArmChair"]}
+"RemoteControl_6": {"label": "RemoteControl", "holding": False, "supported_by": ["ArmChair"]}
+"RemoteControl_21": {"label": "RemoteControl", "holding": False, "supported_by": ["Chair"]}
+"CoffeeTable_39": {"label": "CoffeeTable"}
+
+Demonstration Script:
+```python
+target_remotecontrol = InteractionObject("RemoteControl", object_instance = "RemoteControl")
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_remotecontrol.pickup_and_place(target_coffeetable)
+target_remotecontrol.pickup()
+target_coffeetable.go_to()
+target_remotecontrol.place(target_coffeetable)
+target_remotecontrol.pickup_and_place(target_coffeetable)
+```

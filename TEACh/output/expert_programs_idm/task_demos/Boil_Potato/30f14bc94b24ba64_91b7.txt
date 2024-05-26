@@ -1,0 +1,42 @@
+Dialogue Instruction:
+<Driver> what can i do for you?
+<Commander> boil a potato please
+<Driver> sure
+<Driver> i see the potato
+<Commander> yeah it should be to the left of the stove
+<Driver> good?
+<Commander> all set
+
+Initial Object State:
+"Cup_3": {"label": "Cup", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Pot_12": {"label": "Pot", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Pan", "StoveBurner"]}
+"Cup_19": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"CounterTop_27": {"label": "CounterTop"}
+"CounterTop_32": {"label": "CounterTop"}
+"CounterTop_52": {"label": "CounterTop"}
+"Pot_73": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"SinkBasin_77": {"label": "SinkBasin"}
+"Cup_86": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Faucet_91": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_pot.pickup_and_place(target_countertop)
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_cup.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_cup.place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_cup.pickup_and_place(target_countertop)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.pickup()
+target_countertop.go_to()
+target_potatosliced.place(target_countertop)
+```

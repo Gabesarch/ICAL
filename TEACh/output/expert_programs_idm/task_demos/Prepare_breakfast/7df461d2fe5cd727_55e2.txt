@@ -1,0 +1,164 @@
+Dialogue Instruction:
+<Driver> what do I do?
+<Commander> making coffee
+<Commander> grab a mug
+<Driver> where is the mug?
+<Commander> on the counter next to you
+<Commander> empty, and wash
+<Driver> should I wash the mug
+<Commander> place in coffee maker after cleaning
+<Commander> yes
+<Driver> okay
+<Commander> turn on water
+<Commander> turn off
+<Commander> place in coffee maker next to sink
+<Commander> empty first
+<Commander> turn on
+<Commander> now we are making sandwich
+<Commander> grab plate on the counter and clean
+<Commander> place in sink and clean
+<Commander> place back on counter
+<Commander> for now
+<Commander> go to the fridge
+<Commander> grab bread
+<Driver> where is the bread?
+<Commander> after grading bread place on counter
+<Commander> knife in the fridge
+<Commander> grab that bread
+<Commander> that's the correct one
+<Commander> knife next to the stove
+<Commander> on the left side
+<Commander> slice bread
+<Driver> is that the correct knife
+<Commander> yes
+<Commander> slice bread
+<Driver> bread is sliced
+<Commander> toast bread
+<Commander> slice bread on the island
+<Commander> toast
+<Commander> go to toaster
+<Driver> should return this slice and go slice the other bread on the island?
+<Commander> no that's the right slice
+<Commander> 
+<Commander> 
+<Commander> 2 slices
+<Commander> are you lost
+<Commander> turn on
+<Driver> it's okay lol
+<Commander> one more slice
+<Commander> place the toasted one on the counter
+<Driver> where do I put the slice?
+<Driver> okay
+<Commander> not the plate just the counter
+<Commander> turn and
+<Commander> grab a tomato after that
+<Driver> both slices toasted
+<Driver> okay
+<Commander> right in front of you
+<Commander> slice
+<Commander> grab a knife
+<Driver> the tomato is sliced
+<Commander> grab a slice and take to that plate on the counter
+<Commander> bread first
+<Driver> okay
+<Commander> bread first
+<Commander> 2 slices
+<Commander> 1 slice tomato
+<Driver> done
+<Commander> great job. we're done.
+
+Initial Object State:
+"Knife_2": {"label": "Knife", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"SaltShaker_4": {"label": "SaltShaker", "holding": False, "supported_by": ["Cabinet"]}
+"Bread_5": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Knife_7": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"CounterTop_10": {"label": "CounterTop"}
+"CounterTop_19": {"label": "CounterTop"}
+"CounterTop_20": {"label": "CounterTop"}
+"CounterTop_37": {"label": "CounterTop"}
+"Fridge_42": {"label": "Fridge", "open": False}
+"Knife_43": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Bread_48": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Plate_49": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"SaltShaker_54": {"label": "SaltShaker", "holding": False, "supported_by": ["Stool"]}
+"CoffeeMachine_55": {"label": "CoffeeMachine", "toggled": True}
+"SinkBasin_63": {"label": "SinkBasin"}
+"Knife_64": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Tomato_70": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Mug_72": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Faucet_75": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_coffeemachine.go_to()
+target_mug.place(target_coffeemachine)
+target_coffeemachine.go_to()
+target_coffeemachine.toggle_off()
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_saltshaker.pickup_and_place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_bread.pickup_and_place(target_countertop)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.open()
+target_bread.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_tomato.go_to()
+target_tomato.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_countertop.go_to()
+target_breadsliced.place(target_countertop)
+target_breadsliced.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_countertop.go_to()
+target_breadsliced.place(target_countertop)
+target_breadsliced.pickup_and_place(target_countertop)
+target_tomato.pickup()
+target_countertop.go_to()
+target_tomato.place(target_countertop)
+target_knife.go_to()
+target_knife.pickup()
+target_tomato.go_to()
+target_tomato.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = None, parent_object = "Tomato") # Initialize new sliced object from sliced parent
+target_tomatosliced.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+target_breadsliced.pickup_and_place(target_countertop)
+target_tomato.pickup()
+target_countertop.go_to()
+target_tomato.place(target_countertop)
+target_plate.go_to()
+target_tomato.place(target_plate)
+```

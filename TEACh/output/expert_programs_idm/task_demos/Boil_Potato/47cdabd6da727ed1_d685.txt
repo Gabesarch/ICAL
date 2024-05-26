@@ -1,0 +1,76 @@
+Dialogue Instruction:
+<Commander> Could you please boil a potato for me
+<Commander> There should be one in the fridge
+<Commander> and there is a pot on the stove already, you may need to fill it with water
+<Commander> If that pot isnt working, you can try the one that is next to the sink
+<Commander> on the right
+<Driver> The sink is full of eggs, I have to empty the sink first
+<Commander> Okay that's no problem
+<Commander> That's great, thank you!
+<Driver> Did it work?
+<Commander> Yes youre all done
+
+Initial Object State:
+"Potato_6": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Plate", "Cabinet"]}
+"Pot_17": {"label": "Pot", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner"]}
+"CellPhone_19": {"label": "CellPhone", "holding": False, "supported_by": ["Fridge"]}
+"CellPhone_35": {"label": "CellPhone", "holding": False, "supported_by": ["DiningTable"]}
+"Potato_50": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"CellPhone_59": {"label": "CellPhone", "holding": False, "supported_by": ["Drawer"]}
+"Pot_61": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"CellPhone_74": {"label": "CellPhone", "holding": False, "supported_by": ["Drawer"]}
+"CellPhone_93": {"label": "CellPhone", "holding": False, "supported_by": ["Sink"]}
+"Potato_100": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Shelf"]}
+"Potato_110": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Floor", "GarbageCan"]}
+"CounterTop_130": {"label": "CounterTop"}
+"CounterTop_136": {"label": "CounterTop"}
+"StoveBurner_137": {"label": "StoveBurner"}
+"StoveBurner_138": {"label": "StoveBurner"}
+"StoveBurner_139": {"label": "StoveBurner"}
+"StoveBurner_142": {"label": "StoveBurner"}
+"Fridge_152": {"label": "Fridge", "open": False}
+"CellPhone_156": {"label": "CellPhone", "holding": False, "supported_by": ["DiningTable"]}
+"Pot_158": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"SinkBasin_173": {"label": "SinkBasin"}
+"Potato_176": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Faucet_182": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.go_to()
+target_potato.pickup()
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.close()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_pot.pickup_and_place(target_sinkbasin)
+target_cellphone = InteractionObject("CellPhone", object_instance = "CellPhone")
+target_pot.place(target_cellphone)
+target_sinkbasin.go_to()
+target_sinkbasin.toggle_off()
+target_pot.go_to()
+target_pot.pour(target_pot)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.pickup_and_place(target_countertop)
+target_pot.pickup()
+target_stoveburner = InteractionObject("StoveBurner", object_instance = "StoveBurner")
+target_stoveburner.go_to()
+target_pot.place(target_stoveburner)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_pot.pickup_and_place(target_sinkbasin)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.pickup()
+target_countertop.go_to()
+target_breadsliced.place(target_countertop)
+```

@@ -1,0 +1,11 @@
+Dialogue Instruction:
+<Driver> task
+<Commander> put the three alarm clocks on the bed
+<Commander> one is by the night stand next to the left of the bed
+<Commander> great work
+
+Initial Object State:
+
+Demonstration Script:
+```python
+```

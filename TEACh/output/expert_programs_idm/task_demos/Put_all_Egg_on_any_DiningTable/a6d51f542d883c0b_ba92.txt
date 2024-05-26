@@ -1,0 +1,46 @@
+Dialogue Instruction:
+<Driver> Hello, what is my directions?
+<Commander> i need you to put all of my eggs onto the dining table
+<Commander> there should be some in the fridge
+<Commander> i also left one on the stove opposite the fridge
+<Driver> is there any more eggs?
+<Commander> there should be one more in the sink
+<Commander> that should be all of them, thank you for your help!
+
+Initial Object State:
+"Spoon_0": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Floor", "Fridge"]}
+"Egg_17": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"Spoon_18": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Egg_19": {"label": "Egg", "holding": False, "supported_by": ["Fridge"]}
+"Egg_21": {"label": "Egg", "holding": False, "supported_by": ["Pan", "StoveBurner"]}
+"Spoon_25": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["CounterTop", "Microwave"]}
+"Egg_31": {"label": "Egg", "holding": False, "supported_by": ["Pot", "DiningTable"]}
+"Drawer_33": {"label": "Drawer", "open": False}
+"CounterTop_44": {"label": "CounterTop"}
+"Drawer_46": {"label": "Drawer", "open": False}
+"CounterTop_50": {"label": "CounterTop"}
+"Drawer_51": {"label": "Drawer", "open": False}
+"Egg_52": {"label": "Egg", "holding": False, "supported_by": ["Floor", "Fridge"]}
+"Fridge_71": {"label": "Fridge", "open": False}
+"Spoon_82": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+
+Demonstration Script:
+```python
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_egg = InteractionObject("Egg", object_instance = "Egg")
+target_egg.go_to()
+target_egg.pickup()
+target_drawer = InteractionObject("Drawer", object_instance = "Drawer")
+target_drawer.go_to()
+target_drawer.close()
+target_egg.go_to()
+target_egg.pickup()
+target_winebottle = InteractionObject("WineBottle", object_instance = "WineBottle")
+target_winebottle.go_to()
+target_winebottle.close()
+target_spoon = InteractionObject("Spoon", object_instance = "Spoon")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_spoon.pickup_and_place(target_countertop)
+```

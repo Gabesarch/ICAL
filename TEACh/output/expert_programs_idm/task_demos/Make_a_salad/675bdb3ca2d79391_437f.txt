@@ -1,0 +1,104 @@
+Dialogue Instruction:
+<Driver> Hi what are my directions
+<Commander> Please slice lettuce
+<Commander> lettuce is in the fridge
+<Commander> knife is on the sink
+<Driver> done
+<Commander> now slice a tomato
+<Commander> tomato is on the table
+<Driver> done
+<Commander> now cook a slice of potato
+<Commander> potato is also on the table
+<Commander> cook 2 slices
+<Driver> done
+<Commander> now put all components on a clean plate and make a salad
+<Driver> done
+<Commander> that was everything, thank you
+
+Initial Object State:
+"Lettuce_3": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Knife_6": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Plate_9": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Fridge"]}
+"Lettuce_14": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Plate_17": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Microwave"]}
+"StoveBurner_23": {"label": "StoveBurner"}
+"CounterTop_24": {"label": "CounterTop"}
+"DiningTable_26": {"label": "DiningTable"}
+"StoveBurner_27": {"label": "StoveBurner"}
+"StoveBurner_28": {"label": "StoveBurner"}
+"StoveBurner_42": {"label": "StoveBurner"}
+"CounterTop_44": {"label": "CounterTop"}
+"Fridge_53": {"label": "Fridge", "open": False}
+"Plate_59": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"Knife_64": {"label": "Knife", "holding": False, "supported_by": ["Shelf"]}
+"SinkBasin_65": {"label": "SinkBasin"}
+"Lettuce_69": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Fridge"]}
+"Knife_70": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"StoveKnob_71": {"label": "StoveKnob", "toggled": False}
+"StoveKnob_72": {"label": "StoveKnob", "toggled": True}
+"StoveKnob_73": {"label": "StoveKnob", "toggled": True}
+"StoveKnob_74": {"label": "StoveKnob", "toggled": True}
+"Pan_80": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["StoveBurner"]}
+"Faucet_87": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_knife.pickup_and_place(target_countertop)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.open()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.go_to()
+target_lettuce.pickup()
+target_fridge.go_to()
+target_fridge.close()
+target_countertop.go_to()
+target_lettuce.place(target_countertop)
+target_knife.go_to()
+target_knife.pickup()
+target_lettuce.go_to()
+target_lettuce.slice()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.go_to()
+target_potatosliced.pickup()
+target_pan = InteractionObject("Pan", object_instance = "Pan")
+target_potatosliced.pickup_and_place(target_pan)
+target_potatosliced.pickup()
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.pickup_and_place(target_pan)
+target_stoveknob = InteractionObject("StoveKnob", object_instance = "StoveKnob")
+target_stoveknob.toggle_on()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_plate.pickup()
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_plate.place(target_sinkbasin)
+target_plate.pickup_and_place(target_sinkbasin)
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_plate.pickup_and_place(target_countertop)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = None, parent_object = "Lettuce") # Initialize new sliced object from sliced parent
+target_lettucesliced.pickup()
+target_plate.go_to()
+target_lettucesliced.place(target_plate)
+target_stoveburner = InteractionObject("StoveBurner", object_instance = "StoveBurner")
+target_pan.pickup_and_place(target_stoveburner)
+target_potatosliced.pickup()
+target_plate.go_to()
+target_potatosliced.place(target_plate)
+target_potatosliced.pickup_and_place(target_plate)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = "TomatoSliced")
+target_tomatosliced.pickup()
+target_plate.go_to()
+target_tomatosliced.place(target_plate)
+target_tomatosliced.pickup_and_place(target_plate)
+```

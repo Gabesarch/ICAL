@@ -1,0 +1,34 @@
+Dialogue Instruction:
+<Driver> how can I help today?
+<Commander> i'd like the plant watered
+<Driver> sure
+<Driver> found a cup to fill with water
+<Commander> great
+<Driver> done
+<Commander> thanks
+
+Initial Object State:
+"Cup_6": {"label": "Cup", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Cup_19": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Microwave"]}
+"CounterTop_27": {"label": "CounterTop"}
+"CounterTop_29": {"label": "CounterTop"}
+"CounterTop_52": {"label": "CounterTop"}
+"Cup_76": {"label": "Cup", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Floor", "GarbageCan"]}
+"Faucet_96": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_cup.go_to()
+target_cup.pickup()
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_cup.place(target_countertop)
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+```

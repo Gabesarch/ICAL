@@ -1,0 +1,67 @@
+Dialogue Instruction:
+<Driver> hi, what should I do today?
+<Commander> make slice of potato
+<Driver> 
+<Driver> ok
+<Driver> what should I do next?
+<Commander> cook the slice
+<Driver> done
+<Driver> next?
+<Commander> put the cooked slice of potato in a clean bowl in the top left cabinet above the fridge
+<Commander> fridge
+<Commander> done thanks
+
+Initial Object State:
+"Knife_4": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"SaltShaker_6": {"label": "SaltShaker", "holding": False, "supported_by": ["Fridge"]}
+"Potato_7": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Pan", "StoveBurner"]}
+"SaltShaker_12": {"label": "SaltShaker", "holding": False, "supported_by": ["Sink"]}
+"Knife_15": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"CounterTop_24": {"label": "CounterTop"}
+"Potato_56": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Pan", "StoveBurner"]}
+"SaltShaker_57": {"label": "SaltShaker", "holding": False, "supported_by": ["CounterTop"]}
+"Plate_58": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Knife_62": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Knife_66": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Lettuce_68": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Sink"]}
+"DishSponge_71": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["CounterTop", "Plate"]}
+"Faucet_75": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_lettuce.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_dishsponge = InteractionObject("DishSponge", object_instance = "DishSponge")
+target_dishsponge.pickup_and_place(target_countertop)
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.pickup()
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_knife.pickup_and_place(target_countertop)
+target_potato.pickup()
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_knife.pickup_and_place(target_countertop)
+target_knife.place(target_countertop)
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_saltshaker.pickup_and_place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_plate.pickup_and_place(target_countertop)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.pickup()
+target_plate.go_to()
+target_potatosliced.place(target_plate)
+```

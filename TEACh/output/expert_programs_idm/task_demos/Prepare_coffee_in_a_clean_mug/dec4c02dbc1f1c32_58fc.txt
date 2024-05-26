@@ -1,0 +1,41 @@
+Dialogue Instruction:
+<Driver> hello what should I do?
+<Commander> Oh sorry!
+<Driver> it is fine
+<Commander> Prepare some coffee in a clean mug.
+<Driver> Okay where is the coffee cup
+<Commander> Your doing great!
+<Commander> it's finished!!
+<Commander> Good Job!
+<Driver> Okay what should I do next
+<Commander> 
+<Commander> It was only one task.
+<Driver> okay
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"CounterTop_19": {"label": "CounterTop"}
+"CounterTop_20": {"label": "CounterTop"}
+"CounterTop_35": {"label": "CounterTop"}
+"SinkBasin_57": {"label": "SinkBasin"}
+"Mug_72": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Fridge"]}
+"Faucet_73": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_mug.pickup_and_place(target_countertop)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_countertop.go_to()
+target_mug.place(target_countertop)
+target_mug.pickup_and_place(target_countertop)
+```

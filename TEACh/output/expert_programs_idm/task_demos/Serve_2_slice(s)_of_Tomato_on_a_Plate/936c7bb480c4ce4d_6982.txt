@@ -1,0 +1,46 @@
+Dialogue Instruction:
+<Driver> hi
+<Driver> what is the task?
+<Commander> task is to serve 2 slices of tomatoes on a plate.
+<Commander> first get a knife
+<Driver> where is the plate?
+<Commander> on the centre aisle
+<Driver> done
+<Commander> great work.
+
+Initial Object State:
+"Tomato_0": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Tomato_11": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"CounterTop_15": {"label": "CounterTop"}
+"CounterTop_24": {"label": "CounterTop"}
+"CounterTop_25": {"label": "CounterTop"}
+"CounterTop_42": {"label": "CounterTop"}
+"Fridge_47": {"label": "Fridge", "open": False}
+"Knife_48": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Plate_54": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_69": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Tomato_75": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Microwave"]}
+
+Demonstration Script:
+```python
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_tomato.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup_and_place(target_countertop)
+target_plate.pickup()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = "TomatoSliced")
+target_tomatosliced.pickup_and_place(target_countertop)
+target_tomatosliced.pickup()
+target_countertop.go_to()
+target_tomatosliced.place(target_countertop)
+```

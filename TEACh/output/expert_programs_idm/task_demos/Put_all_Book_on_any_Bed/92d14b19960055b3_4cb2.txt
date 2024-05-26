@@ -1,0 +1,47 @@
+Dialogue Instruction:
+<Commander> hello
+<Driver> hey
+<Commander> Would you like your task?
+<Driver> yes
+<Commander> Please put the book on to the bed.
+<Driver> where is the book
+<Commander> Book is on the table.
+<Commander> Pick up book and put it on the bed please.
+<Commander> Are you able to move, Robot?
+<Commander> Please respond.
+<Driver> i am trying
+<Commander> I'm sorry. There is also a book on the desk if that works better.
+<Commander> Can you pick up the book? Use your hand.
+<Commander> Good job.
+<Commander> Now please place it on the bed
+<Commander> Can you pick the book back up and place it on the bed?
+<Driver> done
+<Commander> That is the table, the bed is blue
+<Driver> it's a bed
+<Commander> I apologize the view I have it appears to be a table. The bed with the blue comforter is the one you want.
+<Commander> Are you able to move the robot?
+<Driver> yeah
+<Commander> 
+<Driver> 
+<Driver> already done
+<Commander> Please put the other book on the bed too
+<Driver> done
+<Commander> Good job. Can you pick up the first book and try to place it in a different spot on the same blue bed
+<Driver> okay
+<Driver> done
+<Commander> Thank you the task completed.
+
+Initial Object State:
+"Book_7": {"label": "Book", "holding": False, "supported_by": ["Desk"]}
+"Book_13": {"label": "Book", "holding": False, "supported_by": ["Bed"]}
+"Desk_57": {"label": "Desk"}
+
+Demonstration Script:
+```python
+target_book = InteractionObject("Book", object_instance = "Book")
+target_desk = InteractionObject("Desk", object_instance = "Desk")
+target_book.pickup_and_place(target_desk)
+target_book.pickup()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_book.pickup_and_place(target_lettuce)
+```

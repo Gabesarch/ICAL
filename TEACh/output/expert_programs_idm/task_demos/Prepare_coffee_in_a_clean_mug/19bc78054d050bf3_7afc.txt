@@ -1,0 +1,50 @@
+Dialogue Instruction:
+<Commander> Hi, can you make coffee?
+<Driver> hello how can I help?
+<Commander> a mug is in the right cupboard under the sink
+<Driver> sure thank you
+<Driver> coffee is done
+<Commander> all good, thanks!
+
+Initial Object State:
+"Plate_4": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Plate_18": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Plate_26": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+"Cabinet_40": {"label": "Cabinet", "open": False}
+"Cabinet_41": {"label": "Cabinet", "open": False}
+"Cabinet_42": {"label": "Cabinet", "open": False}
+"Cabinet_43": {"label": "Cabinet", "open": False}
+"Cabinet_44": {"label": "Cabinet", "open": False}
+"Cabinet_45": {"label": "Cabinet", "open": False}
+"Cabinet_46": {"label": "Cabinet", "open": False}
+"Cabinet_47": {"label": "Cabinet", "open": False}
+"Cabinet_48": {"label": "Cabinet", "open": False}
+"Cabinet_49": {"label": "Cabinet", "open": False}
+"Cabinet_50": {"label": "Cabinet", "open": False}
+"Cabinet_51": {"label": "Cabinet", "open": False}
+"Cabinet_52": {"label": "Cabinet", "open": False}
+"Cabinet_53": {"label": "Cabinet", "open": False}
+"Cabinet_54": {"label": "Cabinet", "open": False}
+"Cabinet_55": {"label": "Cabinet", "open": False}
+"Cabinet_56": {"label": "Cabinet", "open": False}
+"Cabinet_60": {"label": "Cabinet", "open": False}
+"Cabinet_64": {"label": "Cabinet", "open": False}
+"CoffeeMachine_82": {"label": "CoffeeMachine", "toggled": False}
+"SinkBasin_84": {"label": "SinkBasin"}
+"Plate_90": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+
+Demonstration Script:
+```python
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_plate.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_plate.pour(target_sinkbasin)
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_coffeemachine.go_to()
+target_plate.place(target_coffeemachine)
+```

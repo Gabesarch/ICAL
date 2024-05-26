@@ -1,0 +1,19 @@
+Dialogue Instruction:
+<Commander> We need to fill coffee in mug
+<Commander> mug is on the chair near counter table
+<Commander> done
+
+Initial Object State:
+"Mug_1": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Fridge"]}
+"CoffeeMachine_69": {"label": "CoffeeMachine", "toggled": True}
+"Mug_84": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Chair"]}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_mug.pickup_and_place(target_coffeemachine)
+target_coffeemachine.toggle_off()
+target_coffeemachine.go_to()
+target_coffeemachine.toggle_on()
+```

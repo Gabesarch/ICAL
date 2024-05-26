@@ -1,0 +1,174 @@
+Dialogue Instruction:
+<Driver> HI! What should I do for you today?
+<Commander> Hello. First let's get the bread out of the fridge next to you
+<Commander> We will need to slice this and make 2 pieces of toast
+<Driver> Got it.
+<Commander> The knife is in the lower big cabinet across from the fridge
+<Commander> Grab that lettuce. We will need it later too
+<Commander> I'll do another search for the knife
+<Commander> It's in the upper right cabinet over the stove
+<Driver> found it
+<Commander> : )
+<Commander> You will need to slice the bread lettuce and tomato next to the toaster.
+<Driver> Where is the lettuce located?
+<Commander> One second
+<Commander> In the cabinet just below the toaster
+<Commander> Or that one on the counter works, too LOL
+<Commander> Now. 2 slices of toast, 1 slice of lettuce, and 1 slice of tomato need to be placed on the plate that is on the counter with the loaf of bread
+<Driver> I can't seem to find the plate.
+<Commander> If you look on the counter with the bread to our left
+<Commander> you'll see salt shakers sitting on top of the plate
+<Driver> I see. It has the salt shakers on it.
+<Commander> yep )
+<Commander> Remove the salt shakers, then assemble
+<Commander> 1 Now 1 lettuce and 1 tomato
+<Commander> Good work all tasks complete : )
+<Driver> Done. 2 slices of toast, 1 lettuce 1 tomato
+
+Initial Object State:
+"Plate_6": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Potato_7": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"PepperShaker_8": {"label": "PepperShaker", "holding": False, "supported_by": ["Drawer"]}
+"SaltShaker_10": {"label": "SaltShaker", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"Tomato_13": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Bread_15": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Lettuce_17": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Tomato_18": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Floor", "GarbageCan"]}
+"SaltShaker_20": {"label": "SaltShaker", "holding": False, "supported_by": ["CounterTop", "Plate"]}
+"PepperShaker_21": {"label": "PepperShaker", "holding": False, "supported_by": ["Cabinet"]}
+"Lettuce_22": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Bread_23": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Plate_25": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"PepperShaker_26": {"label": "PepperShaker", "holding": False, "supported_by": ["Drawer"]}
+"SaltShaker_27": {"label": "SaltShaker", "holding": False, "supported_by": ["Sink"]}
+"Tomato_29": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Lettuce_30": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Tomato_33": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Stool"]}
+"SaltShaker_35": {"label": "SaltShaker", "holding": False, "supported_by": ["CounterTop", "Plate"]}
+"PepperShaker_36": {"label": "PepperShaker", "holding": False, "supported_by": ["StoveBurner", "Pot"]}
+"CounterTop_37": {"label": "CounterTop"}
+"CounterTop_42": {"label": "CounterTop"}
+"Cabinet_43": {"label": "Cabinet", "open": False}
+"Cabinet_44": {"label": "Cabinet", "open": False}
+"Cabinet_45": {"label": "Cabinet", "open": False}
+"Cabinet_46": {"label": "Cabinet", "open": False}
+"Cabinet_47": {"label": "Cabinet", "open": False}
+"Cabinet_48": {"label": "Cabinet", "open": False}
+"Cabinet_49": {"label": "Cabinet", "open": False}
+"Cabinet_50": {"label": "Cabinet", "open": False}
+"Cabinet_51": {"label": "Cabinet", "open": False}
+"Cabinet_52": {"label": "Cabinet", "open": False}
+"Cabinet_53": {"label": "Cabinet", "open": False}
+"Cabinet_54": {"label": "Cabinet", "open": False}
+"Cabinet_55": {"label": "Cabinet", "open": False}
+"Cabinet_56": {"label": "Cabinet", "open": False}
+"Cabinet_57": {"label": "Cabinet", "open": False}
+"Cabinet_58": {"label": "Cabinet", "open": False}
+"Cabinet_59": {"label": "Cabinet", "open": False}
+"CounterTop_62": {"label": "CounterTop"}
+"Cabinet_63": {"label": "Cabinet", "open": False}
+"Cabinet_67": {"label": "Cabinet", "open": False}
+"Fridge_68": {"label": "Fridge", "open": False}
+"Lettuce_69": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Bread_76": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Tomato_80": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Pot_83": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner"]}
+"Knife_86": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"SaltShaker_88": {"label": "SaltShaker", "holding": False, "supported_by": ["Plate", "Cabinet"]}
+"PepperShaker_90": {"label": "PepperShaker", "holding": False, "supported_by": ["Sink"]}
+"Knife_91": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Potato_92": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Plate_93": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+
+Demonstration Script:
+```python
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_bread.go_to()
+target_bread.pickup()
+target_fridge.go_to()
+target_fridge.close()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_bread.place(target_countertop)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_fridge.go_to()
+target_fridge.close()
+target_cabinet.go_to()
+target_cabinet.open()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_plate.pickup()
+target_bread.go_to()
+target_bread.slice()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_fridge.go_to()
+target_fridge.open()
+target_fridge.go_to()
+target_fridge.close()
+target_breadsliced = InteractionObject("BreadSliced", object_instance = None, parent_object = "Bread") # Initialize new sliced object from sliced parent
+target_breadsliced.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_countertop.go_to()
+target_breadsliced.place(target_countertop)
+target_breadsliced.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_countertop.go_to()
+target_breadsliced.place(target_countertop)
+target_breadsliced.pickup_and_place(target_countertop)
+target_bread.pickup()
+target_countertop.go_to()
+target_bread.place(target_countertop)
+target_breadsliced.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_tomato.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.go_to()
+target_lettuce.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_cabinet.go_to()
+target_cabinet.open()
+target_lettuce.pickup_and_place(target_countertop)
+target_knife.pickup()
+target_lettuce.go_to()
+target_lettuce.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_knife.pickup_and_place(target_countertop)
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.pickup()
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.go_to()
+target_potato.place(target_pot)
+target_peppershaker = InteractionObject("PepperShaker", object_instance = "PepperShaker")
+target_peppershaker.pickup_and_place(target_countertop)
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_saltshaker.pickup()
+target_countertop.go_to()
+target_saltshaker.place(target_countertop)
+target_plate.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+target_breadsliced.pickup_and_place(target_plate)
+target_plate.pickup()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = None, parent_object = "Lettuce") # Initialize new sliced object from sliced parent
+target_lettucesliced.pickup_and_place(target_countertop)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = "TomatoSliced")
+target_tomatosliced.pickup()
+target_countertop.go_to()
+target_tomatosliced.place(target_countertop)
+```

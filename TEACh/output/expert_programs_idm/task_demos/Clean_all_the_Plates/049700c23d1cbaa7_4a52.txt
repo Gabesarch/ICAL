@@ -1,0 +1,24 @@
+Dialogue Instruction:
+<Driver> hi
+<Driver> what is my task?
+<Commander> hi
+<Commander> clean a dirty plate
+<Commander> plate is next to sink
+<Driver> done
+<Commander> good job
+
+Initial Object State:
+"Plate_3": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Plate_11": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"CounterTop_20": {"label": "CounterTop"}
+"Plate_54": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Faucet_71": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_plate.pickup_and_place(target_countertop)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+```

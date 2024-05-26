@@ -1,0 +1,62 @@
+Dialogue Instruction:
+<Driver> what do you need?
+<Commander> please boil a potato in water
+<Driver> all set?
+
+Initial Object State:
+"SoapBottle_1": {"label": "SoapBottle", "holding": False, "supported_by": ["Sink"]}
+"Pot_2": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Pan_3": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["Fridge"]}
+"WineBottle_5": {"label": "WineBottle", "holding": False, "filled": True, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Plate_7": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Sink"]}
+"Potato_9": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Microwave"]}
+"SoapBottle_12": {"label": "SoapBottle", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"WineBottle_13": {"label": "WineBottle", "holding": False, "filled": True, "fillLiquid": None, "supported_by": ["Pot", "CounterTop"]}
+"Potato_14": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"CounterTop_23": {"label": "CounterTop"}
+"CounterTop_26": {"label": "CounterTop"}
+"CounterTop_41": {"label": "CounterTop"}
+"Potato_65": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Plate_73": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"WineBottle_80": {"label": "WineBottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["Floor", "GarbageCan"]}
+"Cup_83": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Pan_85": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["StoveBurner", "StoveBurner"]}
+"Pot_86": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner"]}
+"SinkBasin_89": {"label": "SinkBasin"}
+"SoapBottle_91": {"label": "SoapBottle", "holding": False, "supported_by": ["Sink"]}
+
+Demonstration Script:
+```python
+target_winebottle = InteractionObject("WineBottle", object_instance = "WineBottle")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_winebottle.pickup_and_place(target_diningtable)
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_pot.place(target_countertop)
+target_pot.go_to()
+target_pot.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_pot.pour(target_sinkbasin)
+target_sinkbasin.go_to()
+target_pot.place(target_sinkbasin)
+target_soapbottle = InteractionObject("SoapBottle", object_instance = "SoapBottle")
+target_soapbottle.pickup_and_place(target_sinkbasin)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_sinkbasin.go_to()
+target_plate.place(target_sinkbasin)
+target_soapbottle.pickup_and_place(target_countertop)
+target_pan = InteractionObject("Pan", object_instance = "Pan")
+target_pan.pickup()
+target_countertop.go_to()
+target_pan.place(target_countertop)
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_cup.pickup_and_place(target_countertop)
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.pickup()
+target_countertop.go_to()
+target_potato.place(target_countertop)
+```

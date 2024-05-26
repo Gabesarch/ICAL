@@ -1,0 +1,48 @@
+Dialogue Instruction:
+<Driver> Hello, what shall I be doing today?
+<Commander> Please cook 2 slices of potato and serve on a plate.
+<Driver> Ok.
+<Commander> The potato is behind the sink.
+<Driver> ok
+<Commander> There is a knife in the fridge.
+<Commander> Perfect. We are finished.
+
+Initial Object State:
+"Bowl_5": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Stool"]}
+"Potato_8": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Potato_12": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Stool"]}
+"CounterTop_19": {"label": "CounterTop"}
+"CounterTop_27": {"label": "CounterTop"}
+"Knife_40": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Potato_47": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Pot_49": {"label": "Pot", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner", "StoveBurner"]}
+"Fridge_52": {"label": "Fridge", "open": False}
+"Bowl_56": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Knife_68": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+
+Demonstration Script:
+```python
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_potato.pickup_and_place(target_countertop)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.open()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_fridge.go_to()
+target_fridge.close()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.pickup_and_place(target_countertop)
+target_potatosliced.pickup()
+target_countertop.go_to()
+target_potatosliced.place(target_countertop)
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_potatosliced.pickup_and_place(target_pot)
+target_potatosliced.pickup()
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.go_to()
+target_potatosliced.place(target_bowl)
+```

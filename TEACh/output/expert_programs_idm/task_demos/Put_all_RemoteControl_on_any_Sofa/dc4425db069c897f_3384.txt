@@ -1,0 +1,29 @@
+Dialogue Instruction:
+<Driver> Hi, how can I help today?
+<Commander> i need you to put my 3 remotes onto the sofa
+<Driver> on it!
+<Commander> one is under the Tv and the other on the table
+<Driver> All remotes are on the sofa
+<Commander> could you try and move the remote that is furthest back
+<Commander> thank you that is much better
+<Driver> You're welcome
+
+Initial Object State:
+"RemoteControl_1": {"label": "RemoteControl", "holding": False, "supported_by": ["DiningTable"]}
+"RemoteControl_5": {"label": "RemoteControl", "holding": False, "supported_by": ["Dresser"]}
+"RemoteControl_18": {"label": "RemoteControl", "holding": False, "supported_by": ["SideTable"]}
+"Sofa_40": {"label": "Sofa"}
+
+Demonstration Script:
+```python
+target_remotecontrol = InteractionObject("RemoteControl", object_instance = "RemoteControl")
+target_sofa = InteractionObject("Sofa", object_instance = "Sofa")
+target_remotecontrol.pickup_and_place(target_sofa)
+target_remotecontrol.pickup()
+target_sofa.go_to()
+target_remotecontrol.place(target_sofa)
+target_remotecontrol.pickup_and_place(target_sofa)
+target_remotecontrol.pickup()
+target_sofa.go_to()
+target_remotecontrol.place(target_sofa)
+```

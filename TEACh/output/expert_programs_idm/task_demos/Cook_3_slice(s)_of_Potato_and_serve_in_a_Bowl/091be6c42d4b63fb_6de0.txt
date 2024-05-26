@@ -1,0 +1,79 @@
+Dialogue Instruction:
+<Driver> hi, what is task today?
+<Commander> cook the potato on the black table
+<Commander> slice it
+<Driver> done
+<Driver> done
+<Commander> clean the bowl and place three slices
+<Driver> done
+
+Initial Object State:
+"Knife_4": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Potato_5": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Chair"]}
+"Pot_6": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner"]}
+"Potato_13": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Knife_14": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"CounterTop_31": {"label": "CounterTop"}
+"CounterTop_32": {"label": "CounterTop"}
+"Bowl_46": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"Knife_49": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Microwave_50": {"label": "Microwave", "toggled": True, "open": False}
+"Pot_66": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner"]}
+"Potato_67": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"SinkBasin_68": {"label": "SinkBasin"}
+"Knife_70": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Faucet_87": {"label": "Faucet", "toggled": False}
+"DiningTable_89": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.go_to()
+target_potato.pickup()
+target_potato.go_to()
+target_potato.open()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.go_to()
+target_microwave.close()
+target_microwave.go_to()
+target_microwave.toggle_on()
+target_microwave.go_to()
+target_microwave.toggle_off()
+target_microwave.go_to()
+target_microwave.open()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_potato.pickup_and_place(target_diningtable)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.go_to()
+target_bowl.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_bowl.pour(target_sinkbasin)
+target_countertop.go_to()
+target_bowl.place(target_countertop)
+target_knife.pickup_and_place(target_countertop)
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.pickup()
+target_sinkbasin.go_to()
+target_pot.place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_bowl.go_to()
+target_bowl.pickup()
+target_sinkbasin.go_to()
+target_bowl.pour(target_sinkbasin)
+target_diningtable.go_to()
+target_bowl.place(target_diningtable)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.pickup_and_place(target_diningtable)
+```

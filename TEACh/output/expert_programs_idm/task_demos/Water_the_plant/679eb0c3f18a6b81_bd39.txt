@@ -1,0 +1,18 @@
+Dialogue Instruction:
+<Driver> hi
+<Commander> HI. All we have to do is water the plant
+<Driver> ok
+<Commander> Great!
+<Driver> done
+<Commander> Thank you!
+
+Initial Object State:
+"Bowl_1": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Drawer"]}
+"Bowl_100": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+
+Demonstration Script:
+```python
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.go_to()
+target_bowl.pickup()
+```

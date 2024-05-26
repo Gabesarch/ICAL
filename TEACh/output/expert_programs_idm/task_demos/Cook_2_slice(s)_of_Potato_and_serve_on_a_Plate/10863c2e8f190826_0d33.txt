@@ -1,0 +1,49 @@
+Dialogue Instruction:
+<Driver> how can I help?
+<Commander> can you slice a potato and cook 2 slices and serve them to me on a plate please
+<Commander> there is a potato in the microwave
+<Driver> where can I find a knife?
+<Commander> there should be a knife right in the cupboard right of the microwave
+<Commander> on cooked can you put the slices on the plate in front of you please
+
+Initial Object State:
+"Knife_4": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Pan_17": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["CounterTop", "StoveBurner"]}
+"Knife_22": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Knife_40": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"CounterTop_51": {"label": "CounterTop"}
+"CounterTop_53": {"label": "CounterTop"}
+"CounterTop_76": {"label": "CounterTop"}
+"Knife_78": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Microwave_79": {"label": "Microwave", "toggled": True, "open": False}
+"Pan_89": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Knife_110": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+
+Demonstration Script:
+```python
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.go_to()
+target_microwave.toggle_off()
+target_microwave.go_to()
+target_microwave.open()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_microwave.pickup_and_place(target_countertop)
+target_watch = InteractionObject("Watch", object_instance = "Watch")
+target_watch.open()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup_and_place(target_countertop)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.pickup()
+target_countertop.go_to()
+target_potatosliced.place(target_countertop)
+target_potatosliced.pickup_and_place(target_microwave)
+target_potatosliced.pickup()
+target_pan = InteractionObject("Pan", object_instance = "Pan")
+target_pan.go_to()
+target_potatosliced.place(target_pan)
+target_potatosliced.pickup_and_place(target_pan)
+target_potatosliced.pickup()
+target_cellphone = InteractionObject("CellPhone", object_instance = "CellPhone")
+target_cellphone.go_to()
+target_potatosliced.place(target_cellphone)
+```

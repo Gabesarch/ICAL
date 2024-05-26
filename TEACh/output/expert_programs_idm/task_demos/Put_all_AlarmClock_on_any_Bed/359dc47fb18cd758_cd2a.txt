@@ -1,0 +1,41 @@
+Dialogue Instruction:
+<Driver> how can I help?
+<Commander> can you put 3 alarm clocks on the bed please
+<Commander> they are in the wardrobe left of the bed
+<Commander> can you check the drawers for the other 2 please
+<Commander> the other 2 are on the chairs behind you
+<Commander> sorry i did not see them there
+<Driver> Ok
+<Commander> many thanks
+<Driver> done
+
+Initial Object State:
+"Drawer_8": {"label": "Drawer", "open": False}
+"Drawer_9": {"label": "Drawer", "open": False}
+"Drawer_11": {"label": "Drawer", "open": False}
+"Drawer_12": {"label": "Drawer", "open": False}
+"Desk_14": {"label": "Desk"}
+
+Demonstration Script:
+```python
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_plate.pickup_and_place(target_countertop)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.close()
+target_drawer = InteractionObject("Drawer", object_instance = "Drawer")
+target_drawer.go_to()
+target_drawer.open()
+target_drawer.go_to()
+target_drawer.open()
+target_desk = InteractionObject("Desk", object_instance = "Desk")
+target_desk.go_to()
+target_desk.close()
+target_drawer.go_to()
+target_drawer.open()
+target_pan = InteractionObject("Pan", object_instance = "Pan")
+target_sofa = InteractionObject("Sofa", object_instance = "Sofa")
+target_pan.pickup_and_place(target_sofa)
+target_pan.place(target_desk)
+target_pan.pickup_and_place(target_sofa)
+```

@@ -1,0 +1,113 @@
+Dialogue Instruction:
+<Commander> wash a mug out in the sink
+<Driver> what shall i do today?
+<Driver> where can i find a mug?
+<Commander> on the stool
+<Commander> by the toaster
+<Commander> wash it out
+<Commander> turn on water
+<Commander> if it's clean grab it
+<Commander> grab coffee mug
+<Commander> coffee
+<Commander> wash
+<Driver> i think i need turn off the tap first
+<Commander> yes
+<Driver> i cleaned the mug.
+<Driver> what should i do next?
+<Commander> go to coffee maker
+<Commander> to your left
+<Commander> place on coffee maker
+<Driver> there is a dirty cup in the coffee maker
+<Commander> remove
+<Commander> place in sink
+<Commander> that's the mug i think we have to use
+<Driver> should i need to clean the cup
+<Commander> wash it and we will use that one
+<Commander> when you done place on the coffeemaker and start
+<Commander> finish
+<Commander> good job
+<Driver> thank you
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet", "Pan"]}
+"Egg_1": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"PepperShaker_6": {"label": "PepperShaker", "holding": False, "supported_by": ["Plate", "Cabinet"]}
+"Mug_14": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop", "CoffeeMachine"]}
+"PepperShaker_16": {"label": "PepperShaker", "holding": False, "supported_by": ["Fridge"]}
+"PepperShaker_20": {"label": "PepperShaker", "holding": False, "supported_by": ["Sink"]}
+"Egg_23": {"label": "Egg", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"CounterTop_24": {"label": "CounterTop"}
+"CounterTop_29": {"label": "CounterTop"}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Cabinet_39": {"label": "Cabinet", "open": False}
+"Cabinet_40": {"label": "Cabinet", "open": False}
+"Cabinet_41": {"label": "Cabinet", "open": False}
+"Cabinet_42": {"label": "Cabinet", "open": False}
+"Cabinet_43": {"label": "Cabinet", "open": False}
+"Cabinet_44": {"label": "Cabinet", "open": False}
+"Cabinet_45": {"label": "Cabinet", "open": False}
+"Cabinet_46": {"label": "Cabinet", "open": False}
+"CounterTop_49": {"label": "CounterTop"}
+"Cabinet_50": {"label": "Cabinet", "open": False}
+"Cabinet_54": {"label": "Cabinet", "open": False}
+"SinkBasin_74": {"label": "SinkBasin"}
+"PepperShaker_77": {"label": "PepperShaker", "holding": False, "supported_by": ["Bowl", "Fridge"]}
+"Egg_82": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"Mug_87": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Stool"]}
+"Faucet_88": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_mug.pickup_and_place(target_countertop)
+target_peppershaker = InteractionObject("PepperShaker", object_instance = "PepperShaker")
+target_peppershaker.pickup()
+target_countertop.go_to()
+target_peppershaker.place(target_countertop)
+target_egg = InteractionObject("Egg", object_instance = "Egg")
+target_egg.pickup_and_place(target_countertop)
+target_egg.pickup()
+target_countertop.go_to()
+target_egg.place(target_countertop)
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_mug.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_off()
+target_mug.pickup_and_place(target_sinkbasin)
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_mug.pickup_and_place(target_sinkbasin)
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_countertop.go_to()
+target_mug.place(target_countertop)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_mug.pickup_and_place(target_countertop)
+```

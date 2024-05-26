@@ -1,0 +1,19 @@
+Dialogue Instruction:
+<Commander> hi
+<Driver> hi
+<Driver> what should i do today
+<Commander> put alarm clocks on bed
+<Driver> ok
+<Driver> where can i find alarm clock
+<Commander> under the laptop cabinet
+<Driver> done
+<Driver> next one?
+<Commander> left to bed lamp
+<Driver> done
+<Commander> good job
+
+Initial Object State:
+
+Demonstration Script:
+```python
+```

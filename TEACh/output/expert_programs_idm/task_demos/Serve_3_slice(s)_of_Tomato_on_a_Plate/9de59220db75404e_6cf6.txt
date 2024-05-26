@@ -1,0 +1,46 @@
+Dialogue Instruction:
+<Driver> How can I help
+<Commander> i need you to serve 3 slices of tomato on a plate
+<Driver> Where is the knife
+<Commander> in the fridge
+<Commander> the plate should be in there also
+<Driver> Anything else?
+<Commander> that will do for now
+
+Initial Object State:
+"Tomato_1": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop", "Pan"]}
+"Plate_10": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+"Tomato_14": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Plate_15": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"CounterTop_18": {"label": "CounterTop"}
+"CounterTop_27": {"label": "CounterTop"}
+"CounterTop_28": {"label": "CounterTop"}
+"CounterTop_45": {"label": "CounterTop"}
+"Fridge_50": {"label": "Fridge", "open": False}
+"Knife_51": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Plate_57": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_72": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Tomato_78": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+
+Demonstration Script:
+```python
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_tomato.go_to()
+target_tomato.slice()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = None, parent_object = "Tomato") # Initialize new sliced object from sliced parent
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_tomatosliced.pickup_and_place(target_plate)
+target_tomatosliced.pickup()
+target_plate.go_to()
+target_tomatosliced.place(target_plate)
+target_tomatosliced.pickup_and_place(target_plate)
+```

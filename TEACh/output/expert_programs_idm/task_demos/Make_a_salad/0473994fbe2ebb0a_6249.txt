@@ -1,0 +1,102 @@
+Dialogue Instruction:
+<Commander> hi, you need to make a salad
+<Commander> first make a slice of lettuce
+<Driver> Okay
+<Commander> check the top cabinet near the fridge
+<Commander> slice the lettuce using a knife.
+<Commander> you can find the knife near the stove
+<Commander> grab a tomato and slice it
+<Commander> put all the components on a clean plate.
+<Commander> ok
+<Driver> done
+<Commander> good job
+
+Initial Object State:
+"Knife_8": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Knife_12": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Lettuce_20": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Knife_21": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Knife_26": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Lettuce_44": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Lettuce_69": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Knife_73": {"label": "Knife", "holding": False, "supported_by": ["Microwave"]}
+"CounterTop_80": {"label": "CounterTop"}
+"CounterTop_85": {"label": "CounterTop"}
+"Cabinet_86": {"label": "Cabinet", "open": False}
+"Cabinet_87": {"label": "Cabinet", "open": False}
+"Cabinet_88": {"label": "Cabinet", "open": False}
+"Cabinet_89": {"label": "Cabinet", "open": False}
+"Cabinet_90": {"label": "Cabinet", "open": False}
+"Cabinet_91": {"label": "Cabinet", "open": False}
+"Cabinet_92": {"label": "Cabinet", "open": False}
+"Cabinet_93": {"label": "Cabinet", "open": False}
+"Cabinet_94": {"label": "Cabinet", "open": False}
+"Cabinet_95": {"label": "Cabinet", "open": False}
+"Cabinet_96": {"label": "Cabinet", "open": False}
+"Cabinet_97": {"label": "Cabinet", "open": False}
+"Cabinet_98": {"label": "Cabinet", "open": False}
+"Cabinet_99": {"label": "Cabinet", "open": False}
+"Cabinet_100": {"label": "Cabinet", "open": False}
+"Cabinet_101": {"label": "Cabinet", "open": False}
+"Cabinet_102": {"label": "Cabinet", "open": False}
+"CounterTop_105": {"label": "CounterTop"}
+"Cabinet_106": {"label": "Cabinet", "open": False}
+"Cabinet_110": {"label": "Cabinet", "open": False}
+"Fridge_111": {"label": "Fridge", "open": False}
+"Lettuce_112": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Microwave_122": {"label": "Microwave", "toggled": False, "open": False}
+"Knife_129": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Knife_134": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+
+Demonstration Script:
+```python
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_fridge.go_to()
+target_fridge.close()
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_watch = InteractionObject("Watch", object_instance = "Watch")
+target_watch.go_to()
+target_watch.pickup()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.go_to()
+target_lettuce.pickup()
+target_cabinet.go_to()
+target_cabinet.close()
+target_bathtubbasin = InteractionObject("BathtubBasin", object_instance = "BathtubBasin")
+target_bathtubbasin.go_to()
+target_bathtubbasin.close()
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_chair.go_to()
+target_lettuce.place(target_chair)
+target_cabinet.go_to()
+target_cabinet.open()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_lettuce.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_fridge.go_to()
+target_fridge.close()
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.go_to()
+target_microwave.open()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_cabinet.go_to()
+target_cabinet.close()
+target_cabinet.go_to()
+target_cabinet.close()
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = "LettuceSliced")
+target_lettucesliced.pickup_and_place(target_countertop)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = "TomatoSliced")
+target_tomatosliced.pickup()
+target_countertop.go_to()
+target_tomatosliced.place(target_countertop)
+target_tomatosliced.go_to()
+target_tomatosliced.pickup()
+```

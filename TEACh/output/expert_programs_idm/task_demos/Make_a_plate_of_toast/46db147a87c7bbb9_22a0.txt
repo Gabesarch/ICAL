@@ -1,0 +1,42 @@
+Dialogue Instruction:
+<Driver> how can I help?
+<Commander> please make a plate of toast
+<Commander> a knife is on the shelf
+<Commander> one slice of bread needs to be toasted and put on a clean plate
+<Driver> how many slices do you like?
+<Commander> one slice
+<Driver> it is done
+<Commander> thank you
+<Driver> yay
+
+Initial Object State:
+"Knife_1": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Plate_10": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Potato_12": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Pot", "Cabinet"]}
+"CounterTop_34": {"label": "CounterTop"}
+"CounterTop_36": {"label": "CounterTop"}
+"CounterTop_59": {"label": "CounterTop"}
+"Knife_61": {"label": "Knife", "holding": False, "supported_by": ["Shelf"]}
+"Potato_66": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"Toaster_68": {"label": "Toaster", "toggled": False}
+"Plate_73": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Knife_93": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.go_to()
+target_potato.slice()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_toaster = InteractionObject("Toaster", object_instance = "Toaster")
+target_breadsliced.pickup_and_place(target_toaster)
+target_toaster.toggle_on()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_breadsliced.pickup_and_place(target_plate)
+```

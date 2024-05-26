@@ -1,0 +1,52 @@
+Dialogue Instruction:
+<Driver> Hello. What is my first task?
+<Commander> hello
+<Commander> Please put coffee in a clean mug
+<Driver> Where is the mug?
+<Commander> The mug is on the bar stool
+<Commander> Awesome! Task complete.
+<Commander> thanks
+<Driver> Thanks!
+
+Initial Object State:
+"Cup_14": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Fridge"]}
+"Cup_25": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"CounterTop_33": {"label": "CounterTop"}
+"CounterTop_53": {"label": "CounterTop"}
+"Cup_64": {"label": "Cup", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Fridge"]}
+"SinkBasin_74": {"label": "SinkBasin"}
+"Mug_95": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Stool"]}
+"Faucet_96": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_cup.go_to()
+target_cup.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_cup.pour(target_sinkbasin)
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_cup.place(target_countertop)
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_mug.pickup_and_place(target_sinkbasin)
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_countertop.go_to()
+target_mug.place(target_countertop)
+```

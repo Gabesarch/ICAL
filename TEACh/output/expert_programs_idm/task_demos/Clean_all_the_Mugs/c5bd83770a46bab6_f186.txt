@@ -1,0 +1,66 @@
+Dialogue Instruction:
+<Driver> hi
+<Commander> HI! I need you to clean the mugs.
+<Commander> The first one is on the table next to the apple.
+<Driver> where are they?
+<Commander> The next one is on the chair
+<Driver> done
+<Commander> There is one more mug on the counter
+<Commander> next to the brown wooden box by the sink
+<Commander> Go to the sink
+<Commander> next to the toaster
+<Driver> just seeing the ones I've washed
+<Commander> Yes, me too. Can you try the one next to the toaster?
+<Driver> is it complete?
+<Commander> Finished. good job.
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["DiningTable"]}
+"Mug_13": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Chair"]}
+"CounterTop_25": {"label": "CounterTop"}
+"Bottle_39": {"label": "Bottle", "holding": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"SinkBasin_56": {"label": "SinkBasin"}
+"Mug_74": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["DiningTable"]}
+"Faucet_76": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_mug.pickup_and_place(target_sinkbasin)
+target_bottle = InteractionObject("Bottle", object_instance = "Bottle")
+target_bottle.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_bottle.place(target_countertop)
+target_cloth = InteractionObject("Cloth", object_instance = "Cloth")
+target_cloth.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_mug.go_to()
+target_mug.pickup()
+target_faucet.go_to()
+target_mug.pour(target_faucet)
+target_countertop.go_to()
+target_mug.place(target_countertop)
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_countertop.go_to()
+target_mug.place(target_countertop)
+target_watch = InteractionObject("Watch", object_instance = "Watch")
+target_watch.go_to()
+target_watch.open()
+target_mug.pickup_and_place(target_countertop)
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_countertop.go_to()
+target_mug.place(target_countertop)
+target_mug.pickup_and_place(target_countertop)
+```

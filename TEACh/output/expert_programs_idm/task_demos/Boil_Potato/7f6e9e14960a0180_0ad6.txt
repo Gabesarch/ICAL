@@ -1,0 +1,36 @@
+Dialogue Instruction:
+<Driver> Hello
+<Commander> hello!
+<Driver> What am I doing today?
+<Commander> The task is to boil the potato by cooking it in water.
+<Driver> Okay. Where is the potato please
+<Commander> The potato is in what looks like a pan on the same table as the toaster
+<Commander> right next to where you started
+<Commander> it's a white table
+<Commander> with a toaster
+<Commander> finished!!
+<Commander> Thank you!
+
+Initial Object State:
+"Apple_14": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["CounterTop", "Microwave"]}
+"Apple_24": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["DiningTable"]}
+"CounterTop_54": {"label": "CounterTop"}
+"CounterTop_60": {"label": "CounterTop"}
+"Apple_72": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Cabinet", "Plate"]}
+"Microwave_86": {"label": "Microwave", "toggled": False, "open": False}
+"Pot_91": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner"]}
+
+Demonstration Script:
+```python
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.go_to()
+target_microwave.open()
+target_apple = InteractionObject("Apple", object_instance = "Apple")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_apple.pickup_and_place(target_countertop)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = "TomatoSliced")
+target_tomatosliced.pickup()
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.go_to()
+target_tomatosliced.place(target_pot)
+```

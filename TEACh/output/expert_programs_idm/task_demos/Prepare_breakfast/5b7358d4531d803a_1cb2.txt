@@ -1,0 +1,349 @@
+Dialogue Instruction:
+<Driver> Where do I go from here?
+<Commander> grab coffee mug
+<Commander> on the table
+<Commander> clean it in the sink
+<Commander> place in the coffee maker after you dump the water
+<Commander> turn on the coffee maker
+<Commander> we going to make a salad now
+<Commander> grab the lettuce out the fridge
+<Commander> did you turn on the coffee maker
+<Driver> I thought so, but let me try again
+<Commander> oh you did i see it
+<Driver> ok, good
+<Commander> ok lettuce in the fridge
+<Commander> take out then place on empty space on counter
+<Commander> grab tomato off wall rack
+<Commander> then take tomato to the counter next to the lettuce
+<Commander> potato on the same rack at the bottom
+<Commander> grab and place next to tomato and lettuce
+<Commander> in the drawer under the lettuce is a knife
+<Commander> grab and chop all three
+<Driver> I don't see knife
+<Commander> anymore drawer?
+<Commander> under that one
+<Commander> 
+<Commander> there we go
+<Driver> Yes, found it
+<Commander> cool
+<Driver> Now what?
+<Commander> take the slice potato and cook on a pan
+<Commander> only 1 slice
+<Commander> no pan on the stove already
+<Commander> oh no it ain't lol
+<Commander> wash and use
+<Commander> it's a pan in the cabinet
+<Commander> by the door
+<Commander> on the other side of the lettuce it should be a drawer
+<Commander> there is a pan in there
+<Commander> other side
+<Commander> by the door
+<Driver> Where the knife was?
+<Commander> no around the counter
+<Commander> to the other side
+<Commander> by the door
+<Commander> there should be a drawer
+<Commander> at the end
+<Commander> to the left
+<Commander> weird
+<Commander> it's on the table now
+<Commander> with the wine on it
+<Commander> in the back
+<Commander> grab
+<Commander> get in there
+<Driver> Maybe I have to move a chair? lol
+<Commander> no get closer
+<Commander> you can't walk through them
+<Driver> No
+<Commander> no i'm saying
+<Commander> lol
+<Commander> just grab
+<Driver> There had to go on other side
+<Commander> oh ok
+<Commander> clean first
+<Driver> 
+<Commander> 
+<Commander> slide over a little
+<Commander> cook 1 slice of potato
+<Commander> after cooking take back to counter
+<Commander> *back
+<Commander> then go to that wall rack again and grab the bowl on the shelf
+<Commander> or plate can't tell
+<Commander> black plate
+<Commander> move the cup
+<Driver> i cannot put it back down
+<Commander> put it anywhere
+<Commander> take plate back to counter where everything is
+<Commander> and place 1 tomato 1 lettuce and 1 cooked potato on the plate
+<Commander> potato slice is still not cooked yet
+<Driver> It was darker brown
+<Commander> place it on the place
+<Driver> Good?
+<Commander> 
+<Commander> not the one on the plate
+<Driver> What do I need to do with it?
+<Commander> and grab the last slice and switch with the one on the plate
+<Driver> The small slice at the end?
+<Commander> no
+<Commander> other one
+<Commander> the last one
+<Driver> That one?
+<Commander> the one in front of you
+<Commander> right in front of the big lettuce
+<Commander> next to the tomato
+<Driver> I took 2 pieces and set them on counter. I need to grab one of those?
+<Commander> yes
+<Driver> That one?
+<Commander> now cook the potato again or use another pot
+<Driver> The same slice I already cooked?
+<Commander> 
+<Commander> it's not cooked
+<Driver> Ok, I'll try again
+<Commander> may you have to cook it in a different pan
+<Driver> Hmm, I'll try one more time
+<Commander> i see the one i was looking for earlier the cabinet is open
+<Commander> by the door remember
+<Driver> Oh! I'll grab that
+<Commander> try that one
+<Commander> 
+<Driver> 
+<Commander> 
+<Commander> 
+<Commander> 
+<Commander> is it turn on
+<Commander> place in the plate and see
+<Driver> Any luck?
+<Commander> that pot is the cooker
+<Commander> on your right
+<Commander> only option left
+<Commander> the dirty pot
+<Commander> take out egg
+<Driver> oh it looks like a potato
+<Commander> oh that's probably the one to cook
+<Commander> might have to slice it
+<Commander> put one from your potato in that pot
+<Driver> Try cooking again?
+<Commander> yea
+<Commander> 
+<Commander> good
+<Commander> place on plate
+<Driver> Done?
+<Commander> that lettuce over by the door put on plate too
+<Commander> now take to the dining table and we done
+<Commander> and the coffee after that
+<Driver> No coffee in it
+<Commander> good job there is coffee
+<Commander> there is coffee already
+<Driver> 
+<Commander> 
+<Commander> take to table
+<Commander> done right on
+
+Initial Object State:
+"Bowl_0": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Fridge"]}
+"Pan_3": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+"Knife_6": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Plate_10": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Chair"]}
+"WineBottle_11": {"label": "WineBottle", "holding": False, "filled": True, "fillLiquid": None, "supported_by": ["DiningTable", "Pan"]}
+"Cup_12": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Microwave"]}
+"Cup_17": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"Cabinet_20": {"label": "Cabinet", "open": False}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"StoveBurner_22": {"label": "StoveBurner"}
+"CounterTop_23": {"label": "CounterTop"}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"DiningTable_25": {"label": "DiningTable"}
+"StoveBurner_26": {"label": "StoveBurner"}
+"StoveBurner_27": {"label": "StoveBurner"}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"StoveBurner_41": {"label": "StoveBurner"}
+"CounterTop_43": {"label": "CounterTop"}
+"Tomato_45": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Shelf"]}
+"Fridge_52": {"label": "Fridge", "open": False}
+"Cup_54": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Shelf", "Plate"]}
+"WineBottle_57": {"label": "WineBottle", "holding": False, "filled": True, "fillLiquid": None, "supported_by": ["Sink"]}
+"Plate_58": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Shelf"]}
+"Potato_60": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Shelf"]}
+"Pot_61": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Knife_63": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"SinkBasin_64": {"label": "SinkBasin"}
+"PepperShaker_67": {"label": "PepperShaker", "holding": False, "supported_by": ["CounterTop", "Pot"]}
+"Knife_69": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Toaster_76": {"label": "Toaster", "toggled": True}
+"Pan_79": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"CoffeeMachine_82": {"label": "CoffeeMachine", "toggled": True}
+"Mug_85": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"Faucet_86": {"label": "Faucet", "toggled": False}
+"Bowl_92": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Fridge"]}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_mug.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_coffeemachine.go_to()
+target_mug.place(target_coffeemachine)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_peppershaker = InteractionObject("PepperShaker", object_instance = "PepperShaker")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_peppershaker.pickup_and_place(target_countertop)
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_tomato.pickup()
+target_countertop.go_to()
+target_tomato.place(target_countertop)
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.go_to()
+target_tomato.place(target_pot)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.open()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_soapbar = InteractionObject("SoapBar", object_instance = "SoapBar")
+target_soapbar.go_to()
+target_soapbar.slice()
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.go_to()
+target_potato.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_knife.pickup_and_place(target_countertop)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = None, parent_object = "Potato") # Initialize new sliced object from sliced parent
+target_potatosliced.pickup()
+target_countertop.go_to()
+target_potatosliced.place(target_countertop)
+target_pot.pickup_and_place(target_countertop)
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_pot.place(target_diningtable)
+target_winebottle = InteractionObject("WineBottle", object_instance = "WineBottle")
+target_winebottle.pickup_and_place(target_diningtable)
+target_pot.pickup()
+target_sinkbasin.go_to()
+target_pot.place(target_sinkbasin)
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_pan = InteractionObject("Pan", object_instance = "Pan")
+target_pan.pickup_and_place(target_countertop)
+target_potatosliced.pickup()
+target_countertop.go_to()
+target_potatosliced.place(target_countertop)
+target_stoveburner = InteractionObject("StoveBurner", object_instance = "StoveBurner")
+target_pan.pickup_and_place(target_stoveburner)
+target_pan.pickup()
+target_countertop.go_to()
+target_pan.place(target_countertop)
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.pickup_and_place(target_countertop)
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_cup.pickup()
+target_countertop.go_to()
+target_cup.place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup_and_place(target_countertop)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = "LettuceSliced")
+target_lettucesliced.pickup()
+target_plate.go_to()
+target_lettucesliced.place(target_plate)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = "TomatoSliced")
+target_tomatosliced.pickup_and_place(target_countertop)
+target_potatosliced.pickup()
+target_plate.go_to()
+target_potatosliced.place(target_plate)
+target_lettucesliced.pickup_and_place(target_countertop)
+target_lettucesliced.pickup()
+target_countertop.go_to()
+target_lettucesliced.place(target_countertop)
+target_lettucesliced.pickup_and_place(target_countertop)
+target_lettucesliced.pickup()
+target_countertop.go_to()
+target_lettucesliced.place(target_countertop)
+target_lettucesliced.pickup_and_place(target_plate)
+target_plate.pickup()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_potatosliced.pickup_and_place(target_plate)
+target_plate.pickup()
+target_sinkbasin.go_to()
+target_sinkbasin.toggle_off()
+target_pan.pickup_and_place(target_sinkbasin)
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_pan.pickup_and_place(target_stoveburner)
+target_pan.pickup()
+target_stoveburner.go_to()
+target_pan.place(target_stoveburner)
+target_potatosliced.pickup_and_place(target_plate)
+target_pan.pickup()
+target_countertop.go_to()
+target_pan.place(target_countertop)
+target_sinkbasin.go_to()
+target_pan.place(target_sinkbasin)
+target_pan.pickup_and_place(target_stoveburner)
+target_pan.pickup()
+target_countertop.go_to()
+target_pan.place(target_countertop)
+target_potatosliced.pickup_and_place(target_plate)
+target_peppershaker.pickup()
+target_countertop.go_to()
+target_peppershaker.place(target_countertop)
+target_pot.pickup_and_place(target_sinkbasin)
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_pot.go_to()
+target_pot.pickup()
+target_sinkbasin.go_to()
+target_pot.pour(target_sinkbasin)
+target_countertop.go_to()
+target_pot.place(target_countertop)
+target_pot.pickup_and_place(target_countertop)
+target_toaster = InteractionObject("Toaster", object_instance = "Toaster")
+target_toaster.toggle_off()
+target_pot.pickup_and_place(target_countertop)
+target_potatosliced.pickup()
+target_plate.go_to()
+target_potatosliced.place(target_plate)
+target_potatosliced.pickup_and_place(target_plate)
+target_potatosliced.pickup()
+target_plate.go_to()
+target_potatosliced.place(target_plate)
+target_pot.pickup_and_place(target_countertop)
+target_toaster.toggle_off()
+target_pot.pickup_and_place(target_countertop)
+target_potatosliced.pickup()
+target_plate.go_to()
+target_potatosliced.place(target_plate)
+target_potatosliced.pickup_and_place(target_plate)
+target_lettucesliced.pickup()
+target_plate.pickup_and_place(target_diningtable)
+target_mug.pickup()
+target_coffeemachine.go_to()
+target_mug.place(target_coffeemachine)
+target_mug.pickup_and_place(target_diningtable)
+```

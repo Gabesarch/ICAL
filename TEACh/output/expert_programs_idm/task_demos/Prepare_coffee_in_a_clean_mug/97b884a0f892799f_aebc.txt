@@ -1,0 +1,36 @@
+Dialogue Instruction:
+<Driver> hi how can i help
+<Commander> Could you make me a coffee
+<Commander> There should be a mug in the coffee machine
+<Commander> if you could empty it and add coffee
+<Commander> Great work thank you!
+<Driver> was that everything?
+<Commander> Yes that was all
+
+Initial Object State:
+"CoffeeMachine_78": {"label": "CoffeeMachine", "toggled": True}
+"SinkBasin_81": {"label": "SinkBasin"}
+"Mug_97": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop", "CoffeeMachine"]}
+"Faucet_98": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_coffeemachine.go_to()
+target_mug.place(target_coffeemachine)
+```

@@ -1,0 +1,50 @@
+Dialogue Instruction:
+<Commander> hey i have 4 alarm clock that i need you to put on my bed please
+<Driver> on it!
+<Driver> not able to put the cushion down
+<Driver> will keep trying
+<Driver> Is that all the alarm clocks?
+
+Initial Object State:
+"Bowl_0": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Bed"]}
+"Bowl_28": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sofa"]}
+"Pillow_44": {"label": "Pillow", "holding": False, "supported_by": ["Bed"]}
+"Pillow_45": {"label": "Pillow", "holding": False, "supported_by": ["Bed"]}
+"Drawer_51": {"label": "Drawer", "open": False}
+"Drawer_52": {"label": "Drawer", "open": False}
+"Drawer_53": {"label": "Drawer", "open": False}
+"Drawer_55": {"label": "Drawer", "open": False}
+"Drawer_57": {"label": "Drawer", "open": False}
+"Drawer_59": {"label": "Drawer", "open": False}
+"Drawer_60": {"label": "Drawer", "open": False}
+"Drawer_61": {"label": "Drawer", "open": False}
+"Drawer_63": {"label": "Drawer", "open": False}
+"Drawer_65": {"label": "Drawer", "open": False}
+"Drawer_66": {"label": "Drawer", "open": False}
+"Bowl_69": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Floor", "Drawer"]}
+"Chair_70": {"label": "Chair"}
+
+Demonstration Script:
+```python
+target_drawer = InteractionObject("Drawer", object_instance = "Drawer")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_drawer.pickup_and_place(target_diningtable)
+target_pillow = InteractionObject("Pillow", object_instance = "Pillow")
+target_pillow.pickup()
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.pickup_and_place(target_diningtable)
+target_bowl.pickup()
+target_bowl.go_to()
+target_bowl.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_bowl.pickup_and_place(target_countertop)
+target_bowl.pickup()
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_chair.go_to()
+target_bowl.place(target_chair)
+target_bowl.pickup_and_place(target_diningtable)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+```

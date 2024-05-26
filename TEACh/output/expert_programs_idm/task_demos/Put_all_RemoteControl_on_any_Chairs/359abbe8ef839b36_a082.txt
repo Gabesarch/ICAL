@@ -1,0 +1,29 @@
+Dialogue Instruction:
+<Commander> Today could you place all the remote controls onto any of the chairs
+<Commander> there is one on the tv stand
+<Commander> and another on the coffee table
+<Driver> I can't drop this box
+<Commander> are you able to place it on a chair?
+<Commander> that's great thank you
+<Driver> Is there another remote?
+
+Initial Object State:
+"RemoteControl_2": {"label": "RemoteControl", "holding": False, "supported_by": ["Floor", "Box", "CoffeeTable"]}
+"RemoteControl_4": {"label": "RemoteControl", "holding": False, "supported_by": ["Floor", "ArmChair"]}
+"RemoteControl_15": {"label": "RemoteControl", "holding": False, "supported_by": ["TVStand"]}
+"Chair_29": {"label": "Chair"}
+"Chair_31": {"label": "Chair"}
+"Sofa_39": {"label": "Sofa"}
+"Sofa_40": {"label": "Sofa"}
+
+Demonstration Script:
+```python
+target_remotecontrol = InteractionObject("RemoteControl", object_instance = "RemoteControl")
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_remotecontrol.pickup_and_place(target_chair)
+target_remotecontrol.pickup()
+target_chair.go_to()
+target_remotecontrol.place(target_chair)
+target_sofa = InteractionObject("Sofa", object_instance = "Sofa")
+target_remotecontrol.pickup_and_place(target_sofa)
+```

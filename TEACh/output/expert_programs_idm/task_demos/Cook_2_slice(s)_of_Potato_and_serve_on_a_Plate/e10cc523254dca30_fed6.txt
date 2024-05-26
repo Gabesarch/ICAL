@@ -1,0 +1,67 @@
+Dialogue Instruction:
+<Driver> how can I help you?
+<Commander> hello! Could you please cook 2 pieces of potato for me?
+<Driver> sure thing
+<Commander> the potato slices should be put on a clean plate
+<Driver> ok
+<Commander> the plate should be in the right cabinet underneath the sink
+<Driver> all set?
+<Commander> yes, thank you!
+
+Initial Object State:
+"Pan_5": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["CounterTop", "StoveBurner"]}
+"Potato_7": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"Pan_10": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"DiningTable_18": {"label": "DiningTable"}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"CounterTop_25": {"label": "CounterTop"}
+"CounterTop_28": {"label": "CounterTop"}
+"CounterTop_30": {"label": "CounterTop"}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Potato_40": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable", "Pan"]}
+"Plate_41": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Pan_49": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"SinkBasin_51": {"label": "SinkBasin"}
+"Knife_54": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Knife_58": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Faucet_66": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_potato.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_potato.go_to()
+target_potato.slice()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = None, parent_object = "Potato") # Initialize new sliced object from sliced parent
+target_potatosliced.pickup_and_place(target_countertop)
+target_potatosliced.pickup()
+target_countertop.go_to()
+target_potatosliced.place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup_and_place(target_countertop)
+target_pan = InteractionObject("Pan", object_instance = "Pan")
+target_pan.pickup()
+target_countertop.go_to()
+target_pan.place(target_countertop)
+target_pan.pickup_and_place(target_countertop)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.close()
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_plate.pickup_and_place(target_sinkbasin)
+target_faucet.close()
+target_potatosliced.pickup_and_place(target_countertop)
+target_potatosliced.place(target_countertop)
+target_potatosliced.pickup_and_place(target_countertop)
+target_potatosliced.pickup()
+target_countertop.go_to()
+target_potatosliced.place(target_countertop)
+```

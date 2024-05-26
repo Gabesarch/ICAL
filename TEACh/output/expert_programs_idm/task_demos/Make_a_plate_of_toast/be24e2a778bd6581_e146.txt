@@ -1,0 +1,72 @@
+Dialogue Instruction:
+<Driver> Hello. What should I do?
+<Commander> make a slice of bread
+<Driver> Ok.
+<Commander> bread is inside the shelf below toaster
+<Driver> Where is the knife?
+<Driver> I found one in the sink
+<Commander> knife is inside the fridge
+<Commander> anything is fine
+<Driver> Ok. Now what?
+<Commander> toast the slice of bread in the toaster
+<Driver> Now what.
+<Commander> place the toast on the plate which is beside the oven
+<Driver> The one with the salt shaker on it?
+<Commander> mug is on the plate
+<Commander> on the white table left to oven
+<Driver> Ok. The toast is on the plate.
+<Commander> thanks
+<Commander> great job
+
+Initial Object State:
+"Plate_3": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Knife_10": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Bread_15": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Plate_42": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Fridge"]}
+"Bread_47": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Cabinet_54": {"label": "Cabinet", "open": False}
+"Cabinet_55": {"label": "Cabinet", "open": False}
+"Cabinet_57": {"label": "Cabinet", "open": False}
+"Cabinet_58": {"label": "Cabinet", "open": False}
+"Cabinet_59": {"label": "Cabinet", "open": False}
+"Drawer_60": {"label": "Drawer", "open": False}
+"CounterTop_61": {"label": "CounterTop"}
+"Cabinet_62": {"label": "Cabinet", "open": False}
+"Cabinet_64": {"label": "Cabinet", "open": False}
+"Cabinet_66": {"label": "Cabinet", "open": False}
+"Cabinet_67": {"label": "Cabinet", "open": False}
+"Cabinet_68": {"label": "Cabinet", "open": False}
+"Cabinet_69": {"label": "Cabinet", "open": False}
+"Drawer_70": {"label": "Drawer", "open": False}
+"Cabinet_71": {"label": "Cabinet", "open": False}
+"CounterTop_72": {"label": "CounterTop"}
+"Drawer_75": {"label": "Drawer", "open": False}
+"Bread_89": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Knife_96": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Knife_100": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Plate_106": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+
+Demonstration Script:
+```python
+target_drawer = InteractionObject("Drawer", object_instance = "Drawer")
+target_drawer.go_to()
+target_drawer.open()
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.close()
+target_cabinet.go_to()
+target_cabinet.open()
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_bread.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+```

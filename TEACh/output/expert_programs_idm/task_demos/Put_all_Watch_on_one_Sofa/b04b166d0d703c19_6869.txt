@@ -1,0 +1,28 @@
+Dialogue Instruction:
+<Commander> put 2 watches onto single sofa
+<Driver> ok
+<Commander> one is at the centre
+<Commander> inside white box
+<Commander> done
+
+Initial Object State:
+"Watch_1": {"label": "Watch", "holding": False, "supported_by": ["ArmChair"]}
+"Watch_5": {"label": "Watch", "holding": False, "supported_by": ["Box", "CoffeeTable"]}
+"Watch_20": {"label": "Watch", "holding": False, "supported_by": ["Sofa"]}
+"CoffeeTable_24": {"label": "CoffeeTable"}
+
+Demonstration Script:
+```python
+target_watch = InteractionObject("Watch", object_instance = "Watch")
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_watch.pickup_and_place(target_coffeetable)
+target_watch.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_watch.place(target_countertop)
+target_bathtubbasin = InteractionObject("BathtubBasin", object_instance = "BathtubBasin")
+target_bathtubbasin.go_to()
+target_watch.place(target_bathtubbasin)
+target_watch.go_to()
+target_watch.pickup()
+```

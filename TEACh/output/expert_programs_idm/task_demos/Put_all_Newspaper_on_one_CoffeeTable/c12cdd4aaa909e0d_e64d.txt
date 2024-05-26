@@ -1,0 +1,24 @@
+Dialogue Instruction:
+<Driver> What shall I do today?
+<Commander> Today we are collecting newspapers. There is one in front of the television set that must be placed on the coffee table.
+<Driver> where should I place it?
+<Driver> done
+<Driver> what next?
+
+Initial Object State:
+"Newspaper_4": {"label": "Newspaper", "holding": False, "supported_by": ["Sofa"]}
+"Newspaper_12": {"label": "Newspaper", "holding": False, "supported_by": ["TVStand"]}
+"SideTable_27": {"label": "SideTable"}
+"SideTable_30": {"label": "SideTable"}
+"SideTable_31": {"label": "SideTable"}
+
+Demonstration Script:
+```python
+target_newspaper = InteractionObject("Newspaper", object_instance = "Newspaper")
+target_sidetable = InteractionObject("SideTable", object_instance = "SideTable")
+target_newspaper.pickup_and_place(target_sidetable)
+target_book = InteractionObject("Book", object_instance = "Book")
+target_book.pickup()
+target_sidetable.go_to()
+target_book.place(target_sidetable)
+```

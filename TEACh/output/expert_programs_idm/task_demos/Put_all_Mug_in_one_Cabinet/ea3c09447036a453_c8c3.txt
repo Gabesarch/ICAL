@@ -1,0 +1,57 @@
+Dialogue Instruction:
+<Driver> hi
+<Driver> what shall i do
+<Commander> hi, please place the mugs in a cabinet
+<Driver> clean or dirty
+<Commander> don't need to clean them
+<Commander> just place them into a single cabinet
+<Driver> okay
+<Commander> thanks
+<Driver> i think they should be clean
+<Commander> just try putting it in the cabinet and i'll see if it works
+<Commander> maybe it won't let you place it unless it
+<Commander> is cleaned?
+<Commander> that worked!
+<Commander> please place the other mug in that same cabinet
+<Commander> nice work!
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Cabinet_39": {"label": "Cabinet", "open": False}
+"Cabinet_40": {"label": "Cabinet", "open": False}
+"Cabinet_41": {"label": "Cabinet", "open": False}
+"Cabinet_42": {"label": "Cabinet", "open": False}
+"Cabinet_46": {"label": "Cabinet", "open": False}
+"Cabinet_48": {"label": "Cabinet", "open": False}
+"Mug_97": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_cabinet.go_to()
+target_mug.place(target_cabinet)
+target_cabinet.pickup_and_place(target_cabinet)
+target_mug.pickup()
+target_cabinet.go_to()
+target_mug.place(target_cabinet)
+target_mug.pickup_and_place(target_cabinet)
+```

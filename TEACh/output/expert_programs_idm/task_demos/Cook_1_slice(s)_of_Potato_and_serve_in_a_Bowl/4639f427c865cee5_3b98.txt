@@ -1,0 +1,61 @@
+Dialogue Instruction:
+<Driver> what is my task please
+<Commander> Cook one slice of potato
+<Commander> Potato is in the fridge
+<Commander> There's also one on the stove
+<Commander> Knife is in the microwave
+<Driver> done next
+<Commander> Next, clean a bowl
+<Commander> Bowl is in the fridge
+<Driver> where is the bowl
+<Commander> In the fridge
+<Driver> done next?
+<Commander> Place the cooked slice on it
+<Commander> Good job
+
+Initial Object State:
+"Knife_0": {"label": "Knife", "holding": False, "supported_by": ["Microwave"]}
+"Pot_5": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner"]}
+"Potato_9": {"label": "Potato", "holding": False, "sliced": False, "cooked": True, "supported_by": ["StoveBurner", "Pot"]}
+"Pot_13": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner"]}
+"Fridge_61": {"label": "Fridge", "open": False}
+"Potato_65": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"SinkBasin_70": {"label": "SinkBasin"}
+"Pot_71": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner"]}
+"Knife_75": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Knife_85": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"DiningTable_88": {"label": "DiningTable"}
+"Faucet_90": {"label": "Faucet", "toggled": False}
+"Faucet_91": {"label": "Faucet", "toggled": False}
+"Bowl_92": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Fridge"]}
+
+Demonstration Script:
+```python
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_potato.pickup_and_place(target_pot)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.open()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_knife.pickup_and_place(target_sinkbasin)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.open()
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.go_to()
+target_bowl.pickup()
+target_fridge.go_to()
+target_fridge.close()
+target_sinkbasin.go_to()
+target_bowl.place(target_sinkbasin)
+target_bowl.go_to()
+target_bowl.pickup()
+target_sinkbasin.go_to()
+target_bowl.pour(target_sinkbasin)
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_bowl.place(target_diningtable)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.go_to()
+target_potatosliced.pickup()
+```

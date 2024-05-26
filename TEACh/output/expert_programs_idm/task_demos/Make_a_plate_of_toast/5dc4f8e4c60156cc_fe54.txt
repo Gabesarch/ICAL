@@ -1,0 +1,81 @@
+Dialogue Instruction:
+<Commander> Hello! Can you make a piece of toast please?
+<Driver> hi
+<Driver> ok
+<Commander> There is a knife on one of the chairs
+<Commander> The chair with the soap dispenser
+<Commander> The one furthest from you
+<Commander> Do you see it?
+<Commander> Nice!
+<Commander> The loaf of bread is on the shelf under the table
+<Commander> Walk a few steps ahead and then look to your right
+<Commander> Bingo!
+<Driver> done
+<Commander> Nice work. Please toast a slice
+<Driver> what should i do next?
+<Driver> ok
+<Commander> There is a plate in the fridge to serve the slice on
+<Commander> Great.
+<Commander> place 1 slice of toast onto the plate
+<Commander> Great job! Task is complete!
+
+Initial Object State:
+"Knife_0": {"label": "Knife", "holding": False, "supported_by": ["Chair"]}
+"Plate_1": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Knife_3": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Cabinet_19": {"label": "Cabinet", "open": False}
+"CounterTop_24": {"label": "CounterTop"}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Fridge_47": {"label": "Fridge", "open": False}
+"Bread_51": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Shelf"]}
+"Knife_60": {"label": "Knife", "holding": False, "supported_by": ["Chair"]}
+"Toaster_65": {"label": "Toaster", "toggled": True}
+"Plate_69": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Knife_70": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"DiningTable_71": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_knife.place(target_cabinet)
+target_knife.go_to()
+target_knife.pickup()
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_bread.go_to()
+target_bread.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_toaster = InteractionObject("Toaster", object_instance = "Toaster")
+target_toaster.go_to()
+target_knife.place(target_toaster)
+target_fridge.go_to()
+target_fridge.open()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_plate.pickup()
+target_fridge.go_to()
+target_fridge.close()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = None, parent_object = "Bread") # Initialize new sliced object from sliced parent
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_breadsliced.pickup_and_place(target_diningtable)
+```

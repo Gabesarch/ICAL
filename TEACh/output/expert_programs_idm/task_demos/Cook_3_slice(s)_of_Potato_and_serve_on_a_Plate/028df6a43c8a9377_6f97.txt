@@ -1,0 +1,87 @@
+Dialogue Instruction:
+<Commander> hi
+<Driver> hi
+<Commander> let's cook potato in microwave
+<Driver> what's the task
+<Commander> grab a potato from the stool next to dinning table
+<Commander> on your left
+<Driver> ok
+<Commander> place the potato in microwave
+<Commander> microwave is at left to fridge
+<Commander> grab the knife from the fridge and slice the potato
+<Commander> there is a clean plate next to fridge on the table
+<Commander> place 2 slices of potato on the plate
+<Commander> another slice
+<Commander> total 3 slices
+
+Initial Object State:
+"Knife_3": {"label": "Knife", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"Potato_4": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Knife_17": {"label": "Knife", "holding": False, "supported_by": ["Shelf"]}
+"Potato_19": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Plate", "Shelf"]}
+"DiningTable_20": {"label": "DiningTable"}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"CounterTop_39": {"label": "CounterTop"}
+"Cabinet_42": {"label": "Cabinet", "open": False}
+"Cabinet_44": {"label": "Cabinet", "open": False}
+"CounterTop_45": {"label": "CounterTop"}
+"Fridge_61": {"label": "Fridge", "open": False}
+"Knife_79": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Microwave_80": {"label": "Microwave", "toggled": True, "open": False}
+"Potato_85": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Stool"]}
+"Knife_86": {"label": "Knife", "holding": False, "supported_by": ["Microwave"]}
+"DiningTable_96": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.go_to()
+target_potato.pickup()
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_cabinet.go_to()
+target_cabinet.close()
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.go_to()
+target_microwave.open()
+target_potato.pickup_and_place(target_countertop)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.open()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_fridge.go_to()
+target_fridge.close()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.pickup_and_place(target_countertop)
+target_potatosliced.pickup()
+target_countertop.go_to()
+target_potatosliced.place(target_countertop)
+target_potatosliced.pickup_and_place(target_countertop)
+```

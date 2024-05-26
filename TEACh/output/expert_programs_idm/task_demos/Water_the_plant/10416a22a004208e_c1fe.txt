@@ -1,0 +1,27 @@
+Dialogue Instruction:
+<Driver> Good day. How may I assist?
+<Commander> mug is near coffee maker
+<Commander> fill it with water
+<Commander> then water the plant
+<Driver> Plant is watered. Next?
+<Commander> thanks
+
+Initial Object State:
+"Mug_1": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Sink"]}
+"Mug_11": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop", "CoffeeMachine"]}
+"Faucet_22": {"label": "Faucet", "toggled": False}
+"SinkBasin_72": {"label": "SinkBasin"}
+"Mug_88": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Fridge"]}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_mug.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug.go_to()
+target_mug.pickup()
+```

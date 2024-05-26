@@ -1,0 +1,46 @@
+Dialogue Instruction:
+<Driver> Hello. What is my task?
+<Commander> cook 3 slices of potato
+<Driver> Where is the knife?
+<Commander> inside the fridge
+<Commander> plate is next to the oven
+<Driver> Done
+<Commander> great job
+
+Initial Object State:
+"Knife_0": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"PepperShaker_3": {"label": "PepperShaker", "holding": False, "supported_by": ["Drawer"]}
+"CounterTop_21": {"label": "CounterTop"}
+"Fridge_44": {"label": "Fridge", "open": False}
+"PepperShaker_56": {"label": "PepperShaker", "holding": False, "supported_by": ["Floor", "Pan", "Shelf"]}
+"Knife_57": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Plate_66": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_67": {"label": "Knife", "holding": False, "supported_by": ["Microwave"]}
+
+Demonstration Script:
+```python
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_knife.pickup_and_place(target_countertop)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.pickup()
+target_countertop.go_to()
+target_potatosliced.place(target_countertop)
+target_potatosliced.pickup_and_place(target_countertop)
+target_potatosliced.pickup()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_potatosliced.place(target_plate)
+target_peppershaker = InteractionObject("PepperShaker", object_instance = "PepperShaker")
+target_peppershaker.pickup_and_place(target_countertop)
+target_potatosliced.pickup()
+target_plate.go_to()
+target_potatosliced.place(target_plate)
+target_potatosliced.pickup_and_place(target_plate)
+target_potatosliced.pickup()
+target_plate.go_to()
+target_potatosliced.place(target_plate)
+```

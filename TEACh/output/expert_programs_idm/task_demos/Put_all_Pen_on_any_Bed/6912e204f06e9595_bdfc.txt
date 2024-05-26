@@ -1,0 +1,23 @@
+Dialogue Instruction:
+<Commander> hi
+<Driver> what can i do for you today
+<Driver> what is the task to be completed?
+<Commander> you need to put all pens on the bed
+<Commander> the pen is on the top of the shelf
+<Commander> left to bed
+<Driver> done
+<Driver> what can i do next
+<Commander> done
+<Commander> thank you
+
+Initial Object State:
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_sidetable = InteractionObject("SideTable", object_instance = "SideTable")
+target_knife.pickup_and_place(target_sidetable)
+target_knife.pickup()
+target_sidetable.go_to()
+target_knife.place(target_sidetable)
+```

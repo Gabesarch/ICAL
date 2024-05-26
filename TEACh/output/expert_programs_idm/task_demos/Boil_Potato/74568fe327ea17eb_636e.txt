@@ -1,0 +1,37 @@
+Dialogue Instruction:
+<Commander> go get a potato
+<Commander> out the fridge
+<Commander> find a pot and boil the potato
+<Commander> you can use one on the stove
+<Commander> with water in it
+<Commander> finish
+
+Initial Object State:
+"SoapBottle_5": {"label": "SoapBottle", "holding": False, "supported_by": ["CounterTop"]}
+"Pot_7": {"label": "Pot", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner"]}
+"Potato_19": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Potato_23": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Potato_48": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"SoapBottle_66": {"label": "SoapBottle", "holding": False, "supported_by": ["Pot", "StoveBurner"]}
+"CounterTop_81": {"label": "CounterTop"}
+"CounterTop_84": {"label": "CounterTop"}
+"CounterTop_99": {"label": "CounterTop"}
+"Potato_123": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Pot_144": {"label": "Pot", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner"]}
+"SoapBottle_149": {"label": "SoapBottle", "holding": False, "supported_by": ["CounterTop"]}
+"Fridge_154": {"label": "Fridge", "open": False}
+
+Demonstration Script:
+```python
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_potato.pickup_and_place(target_countertop)
+target_soapbottle = InteractionObject("SoapBottle", object_instance = "SoapBottle")
+target_soapbottle.pickup()
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_potato.pickup_and_place(target_pot)
+target_potato.pickup()
+```

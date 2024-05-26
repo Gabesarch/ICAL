@@ -1,0 +1,38 @@
+Dialogue Instruction:
+<Driver> what can i do for you?
+<Commander> hi
+<Commander> put remote controls in single box
+<Commander> 2 remotes are there
+<Driver> the remotes are on the coffee table
+<Commander> both remotes are on the coffee table
+<Driver> would you like me to move them?
+<Commander> place them in single box
+<Driver> ok
+<Driver> where is the box
+<Commander> box is under the tv cabinet
+<Driver> ok
+<Driver> what else can i do for you?
+<Commander> done
+<Commander> good job
+
+Initial Object State:
+"RemoteControl_2": {"label": "RemoteControl", "holding": False, "supported_by": ["Sofa"]}
+"CreditCard_4": {"label": "CreditCard", "holding": False, "supported_by": ["Floor", "Chair"]}
+"CreditCard_6": {"label": "CreditCard", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"CreditCard_12": {"label": "CreditCard", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"RemoteControl_21": {"label": "RemoteControl", "holding": False, "supported_by": ["Sofa"]}
+"Sofa_40": {"label": "Sofa"}
+"SideTable_42": {"label": "SideTable"}
+
+Demonstration Script:
+```python
+target_creditcard = InteractionObject("CreditCard", object_instance = "CreditCard")
+target_sidetable = InteractionObject("SideTable", object_instance = "SideTable")
+target_creditcard.pickup_and_place(target_sidetable)
+target_remotecontrol = InteractionObject("RemoteControl", object_instance = "RemoteControl")
+target_remotecontrol.pickup()
+target_sofa = InteractionObject("Sofa", object_instance = "Sofa")
+target_sofa.go_to()
+target_remotecontrol.place(target_sofa)
+target_remotecontrol.pickup_and_place(target_sofa)
+```

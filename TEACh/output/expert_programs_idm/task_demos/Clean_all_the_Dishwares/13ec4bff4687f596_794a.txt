@@ -1,0 +1,143 @@
+Dialogue Instruction:
+<Driver> hi
+<Driver> what should i do today
+<Commander> clean all dishware
+<Driver> ok
+<Driver> how many?
+<Commander> cabinet next to the oven on the right side
+<Commander> check the cabinet next to the oven
+<Driver> where?
+<Commander> check the cabinet next to the stove
+<Driver> next
+<Commander> next to the stove
+<Commander> that's the only dish
+<Driver> task completed?
+<Commander> no
+<Commander> go to the cabinet next to the stove
+<Commander> grab the dish and clean it
+<Commander> you were at the right spot
+<Commander> go back to the cabinet next to the stove
+<Commander> and grab the dishware
+<Driver> which one
+<Commander> right side of the stove
+<Driver> i can't see
+<Commander> right
+<Commander> not left
+<Commander> yes
+<Commander> grab the dishware
+<Commander> cup
+<Commander> you didn't see it
+<Commander> come on
+<Driver> no
+<Driver> 
+<Commander> right there
+<Commander> clear
+<Commander> can you grab it
+<Driver> i can't
+<Commander> 
+<Commander> i'll finish the task
+
+Initial Object State:
+"Bowl_3": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Cup_4": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Floor", "GarbageCan"]}
+"WineBottle_6": {"label": "WineBottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Plate_9": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Potato_12": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"Cup_22": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Shelf"]}
+"Plate_23": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Potato_24": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"CounterTop_30": {"label": "CounterTop"}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"CounterTop_32": {"label": "CounterTop"}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_43": {"label": "Cabinet", "open": False}
+"Cabinet_45": {"label": "Cabinet", "open": False}
+"Cabinet_46": {"label": "Cabinet", "open": False}
+"Cabinet_47": {"label": "Cabinet", "open": False}
+"Cabinet_48": {"label": "Cabinet", "open": False}
+"Cabinet_51": {"label": "Cabinet", "open": False}
+"Cabinet_54": {"label": "Cabinet", "open": False}
+"CounterTop_55": {"label": "CounterTop"}
+"Potato_62": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Plate", "CounterTop"]}
+"Plate_69": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"WineBottle_75": {"label": "WineBottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["Stool"]}
+"Cup_79": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Bowl_84": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"SinkBasin_85": {"label": "SinkBasin"}
+"DishSponge_91": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Faucet_99": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.close()
+target_cabinet.go_to()
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.close()
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_cabinet.go_to()
+target_cabinet.open()
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_bowl.pickup_and_place(target_sinkbasin)
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_dishsponge = InteractionObject("DishSponge", object_instance = "DishSponge")
+target_dishsponge.pickup_and_place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_bowl.pickup_and_place(target_sinkbasin)
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_bowl.go_to()
+target_bowl.pickup()
+target_sinkbasin.go_to()
+target_bowl.pour(target_sinkbasin)
+target_countertop.go_to()
+target_bowl.place(target_countertop)
+target_cabinet.go_to()
+target_cabinet.open()
+target_bowl.pickup_and_place(target_countertop)
+target_bowl.pickup()
+target_sinkbasin.go_to()
+target_bowl.pour(target_sinkbasin)
+target_countertop.go_to()
+target_bowl.place(target_countertop)
+target_cabinet.go_to()
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.close()
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_cup.pickup_and_place(target_countertop)
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.close()
+target_cabinet.go_to()
+target_cabinet.open()
+target_winebottle = InteractionObject("WineBottle", object_instance = "WineBottle")
+target_winebottle.pickup_and_place(target_cabinet)
+target_plate.pickup()
+target_papertowel = InteractionObject("PaperTowel", object_instance = "PaperTowel")
+target_papertowel.go_to()
+target_papertowel.close()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_cabinet.go_to()
+target_cabinet.close()
+```

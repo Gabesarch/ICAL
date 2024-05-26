@@ -1,0 +1,63 @@
+Dialogue Instruction:
+<Driver> How can I help
+<Commander> I need you to put all the spoons in the sink
+<Driver> Where are the spoons, I only see forks and knives.
+<Commander> there should be one in the big cup in the sink
+<Driver> I can't put anything in the sink
+<Commander> try and remove everything first
+<Driver> And I can't see anything inside the black cup
+<Commander> okay that will do for now
+<Commander> thank you
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CoffeeMachine"]}
+"Spoon_2": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Cup_10": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"Egg_11": {"label": "Egg", "holding": False, "supported_by": ["Shelf"]}
+"Apple_12": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Sink"]}
+"Apple_13": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Floor", "GarbageCan"]}
+"Mug_14": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Shelf"]}
+"Cup_18": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["DiningTable"]}
+"CounterTop_21": {"label": "CounterTop"}
+"Fork_41": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Apple_44": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Egg_47": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"Cup_51": {"label": "Cup", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"Spoon_61": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["SideTable"]}
+"Mug_64": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"Faucet_73": {"label": "Faucet", "toggled": True}
+"Bowl_76": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+
+Demonstration Script:
+```python
+target_fork = InteractionObject("Fork", object_instance = "Fork")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_fork.pickup_and_place(target_countertop)
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_cup.pickup()
+target_countertop.go_to()
+target_cup.place(target_countertop)
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.pickup_and_place(target_countertop)
+target_spoon = InteractionObject("Spoon", object_instance = "Spoon")
+target_spoon.pickup()
+target_countertop.go_to()
+target_spoon.place(target_countertop)
+target_apple = InteractionObject("Apple", object_instance = "Apple")
+target_apple.pickup_and_place(target_countertop)
+target_egg = InteractionObject("Egg", object_instance = "Egg")
+target_egg.pickup()
+target_countertop.go_to()
+target_egg.place(target_countertop)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_ladle = InteractionObject("Ladle", object_instance = "Ladle")
+target_ladle.pickup_and_place(target_countertop)
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.pickup()
+target_countertop.go_to()
+target_bowl.place(target_countertop)
+target_countertop.go_to()
+target_bowl.place(target_countertop)
+```

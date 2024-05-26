@@ -1,0 +1,101 @@
+Dialogue Instruction:
+<Driver> what's first?
+<Commander> boil potato
+<Driver> ok, where is the potato?
+<Driver> or pot?
+<Commander> in a frying pan next to the oven
+<Driver> this one?
+<Commander> no the oven next to the sink
+<Commander> boil it in water
+<Driver> where is the potato?
+<Commander> go back to the spot near the sink
+<Driver> what's next?
+<Commander> pick the brown round object near the knife
+<Commander> that is the potato
+<Driver> next?
+<Commander> you need to boil it so go to the cooker
+<Driver> done
+<Driver> next?
+<Commander> put some water in the pan with the potato
+<Driver> already water in there, what's next?
+<Driver> does it have to be cleaned because the pot don't look clean?
+<Commander> no, just boil the potato by cooking it in water
+<Driver> it in water
+<Driver> with the stove on
+<Driver> what's next?
+<Commander> yes
+<Driver> is that the right potato?
+<Driver> because i see one over by the stove?
+<Commander> there is another potatoes next to the oven
+<Commander> i have just seen it
+<Driver> 
+<Driver> did that work?
+<Commander> yes it did thanks. task complete great work
+
+Initial Object State:
+"Pan_3": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["StoveBurner", "CounterTop", "Plate"]}
+"Potato_7": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop", "Pan"]}
+"StoveBurner_19": {"label": "StoveBurner"}
+"CounterTop_20": {"label": "CounterTop"}
+"CounterTop_25": {"label": "CounterTop"}
+"StoveBurner_36": {"label": "StoveBurner"}
+"StoveBurner_40": {"label": "StoveBurner"}
+"CounterTop_42": {"label": "CounterTop"}
+"StoveBurner_46": {"label": "StoveBurner"}
+"Potato_58": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop", "Plate"]}
+"SinkBasin_63": {"label": "SinkBasin"}
+"Pot_64": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner"]}
+"Pan_66": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"StoveKnob_69": {"label": "StoveKnob", "toggled": True}
+"StoveKnob_70": {"label": "StoveKnob", "toggled": False}
+"StoveKnob_71": {"label": "StoveKnob", "toggled": False}
+"StoveKnob_72": {"label": "StoveKnob", "toggled": False}
+"DiningTable_81": {"label": "DiningTable"}
+"Faucet_83": {"label": "Faucet", "toggled": False}
+"Faucet_84": {"label": "Faucet", "toggled": True}
+"Bowl_85": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+
+Demonstration Script:
+```python
+target_pan = InteractionObject("Pan", object_instance = "Pan")
+target_stoveburner = InteractionObject("StoveBurner", object_instance = "StoveBurner")
+target_pan.pickup_and_place(target_stoveburner)
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_bowl.place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_pan.pickup_and_place(target_countertop)
+target_bowl.pickup()
+target_sinkbasin.go_to()
+target_bowl.place(target_sinkbasin)
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_bowl.pickup_and_place(target_countertop)
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.pickup()
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_bowl.pickup_and_place(target_countertop)
+target_potato.pickup()
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.go_to()
+target_potato.place(target_pot)
+target_bowl.pickup_and_place(target_sinkbasin)
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_bowl.place(target_diningtable)
+target_stoveknob = InteractionObject("StoveKnob", object_instance = "StoveKnob")
+target_stoveknob.go_to()
+target_stoveknob.toggle_off()
+target_pot.pickup_and_place(target_countertop)
+target_potato.pickup()
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_potato.pickup_and_place(target_pot)
+```

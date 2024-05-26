@@ -1,0 +1,28 @@
+Dialogue Instruction:
+<Driver> what do you need me to do?
+<Commander> prepare coffee in a clean mug
+<Driver> do you see a clean mug anywhere?
+<Commander> there is on on the kitchen table
+<Commander> not sure if it's clean or not
+<Driver> ok
+<Commander> all set, thanks!
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Drawer"]}
+"Mug_13": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"SinkBasin_72": {"label": "SinkBasin"}
+"Mug_81": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"DiningTable_82": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_mug.place(target_diningtable)
+```

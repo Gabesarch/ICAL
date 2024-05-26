@@ -1,0 +1,34 @@
+Dialogue Instruction:
+<Driver> what can I help you with?
+<Commander> coffee please
+<Driver> yes sir
+<Driver> where is the mug?
+<Commander> check the bin left of stove
+<Driver> is the mug clean?
+<Commander> yes
+<Driver> all set?
+<Commander> thanks
+
+Initial Object State:
+"CounterTop_12": {"label": "CounterTop"}
+"CounterTop_21": {"label": "CounterTop"}
+"CounterTop_22": {"label": "CounterTop"}
+"CounterTop_39": {"label": "CounterTop"}
+"Pot_70": {"label": "Pot", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+
+Demonstration Script:
+```python
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+None.place(target_countertop)
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.go_to()
+target_pot.pickup()
+target_cellphone = InteractionObject("CellPhone", object_instance = "CellPhone")
+target_cellphone.go_to()
+target_pot.pour(target_cellphone)
+target_countertop.go_to()
+target_pot.place(target_countertop)
+target_countertop.go_to()
+target_pot.place(target_countertop)
+```

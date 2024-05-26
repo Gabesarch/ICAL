@@ -1,0 +1,56 @@
+Dialogue Instruction:
+<Commander> Can you clean a mug and fill it with coffee please?
+<Commander> The mug is in the fridge
+<Driver> The blue machine is the coffee machine, right?
+<Commander> yes that's the one
+<Commander> You might need to empty or clean the mug first
+<Driver> This is very bizarre, I can't interact with it at all
+<Commander> is it already on?
+<Driver> Apparently
+<Commander> maybe switch it off and on again
+<Driver> I can turn it off, but not on
+<Driver> nothing happens
+<Commander> is that a clean and empty mug?
+<Commander> Oh that seems to have filled it
+<Commander> Thank you
+<Driver> I am going to wash it again
+<Commander> It is full, don't worry!
+<Driver> Okay
+
+Initial Object State:
+"Mug_1": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Fridge"]}
+"Fridge_39": {"label": "Fridge", "open": False}
+"SinkBasin_61": {"label": "SinkBasin"}
+"CoffeeMachine_63": {"label": "CoffeeMachine", "toggled": True}
+"Mug_70": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Faucet_71": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_fridge.go_to()
+target_fridge.close()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_coffeemachine.go_to()
+target_mug.place(target_coffeemachine)
+target_coffeemachine.go_to()
+target_coffeemachine.toggle_off()
+target_coffeemachine.go_to()
+target_coffeemachine.toggle_on()
+target_mug.pickup_and_place(target_sinkbasin)
+```

@@ -1,0 +1,91 @@
+Dialogue Instruction:
+<Commander> hi
+<Commander> please make coffee in a clean mug
+<Driver> mug?
+<Commander> there is a clean mug on the cabinet under the toaster
+<Commander> now toast two slices of bread
+<Commander> knife is close to the microwave
+<Commander> slice the lettuce in the fridge
+<Driver> next
+<Commander> place everything on the plate
+<Driver> then
+<Driver> 
+
+Initial Object State:
+"Knife_3": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Cabinet_10": {"label": "Cabinet", "open": False}
+"Cabinet_11": {"label": "Cabinet", "open": False}
+"Cabinet_13": {"label": "Cabinet", "open": False}
+"Cabinet_14": {"label": "Cabinet", "open": False}
+"Cabinet_15": {"label": "Cabinet", "open": False}
+"CounterTop_17": {"label": "CounterTop"}
+"Cabinet_18": {"label": "Cabinet", "open": False}
+"Cabinet_20": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"CounterTop_28": {"label": "CounterTop"}
+"Toaster_37": {"label": "Toaster", "toggled": True}
+"Lettuce_38": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Fridge"]}
+"Potato_47": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"WineBottle_50": {"label": "WineBottle", "holding": False, "filled": True, "fillLiquid": None, "supported_by": ["DiningTable"]}
+"Knife_52": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Knife_56": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Microwave_59": {"label": "Microwave", "toggled": False, "open": False}
+"Plate_62": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Mug_65": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet", "Pan"]}
+"DiningTable_67": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_mug.pickup_and_place(target_countertop)
+target_winebottle = InteractionObject("WineBottle", object_instance = "WineBottle")
+target_winebottle.pickup()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_winebottle.place(target_diningtable)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.go_to()
+target_potato.slice()
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_toaster = InteractionObject("Toaster", object_instance = "Toaster")
+target_breadsliced.pickup_and_place(target_toaster)
+target_cabinet.toggle_off()
+target_breadsliced.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+target_breadsliced.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+target_cabinet.go_to()
+target_cabinet.open()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.pickup_and_place(target_countertop)
+target_knife.pickup()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.go_to()
+target_microwave.open()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_breadsliced.pickup_and_place(target_plate)
+target_breadsliced.pickup()
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+```

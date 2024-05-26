@@ -1,0 +1,44 @@
+Dialogue Instruction:
+<Driver> hello
+<Commander> hi
+<Driver> what shall i do today
+<Commander> prepare coffee
+<Commander> mug is in microwave
+<Commander> done
+<Driver> done
+
+Initial Object State:
+"Plate_14": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Fridge"]}
+"Plate_25": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Shelf"]}
+"CounterTop_49": {"label": "CounterTop"}
+"CounterTop_55": {"label": "CounterTop"}
+"CoffeeMachine_70": {"label": "CoffeeMachine", "toggled": False}
+"Plate_74": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Microwave_90": {"label": "Microwave", "toggled": True, "open": False}
+"SinkBasin_92": {"label": "SinkBasin"}
+"Mug_103": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Microwave"]}
+
+Demonstration Script:
+```python
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.go_to()
+target_microwave.toggle_off()
+target_microwave.go_to()
+target_microwave.open()
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_mug.place(target_countertop)
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_coffeemachine.go_to()
+target_coffeemachine.toggle_on()
+target_coffeemachine.go_to()
+target_coffeemachine.toggle_on()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup_and_place(target_countertop)
+```

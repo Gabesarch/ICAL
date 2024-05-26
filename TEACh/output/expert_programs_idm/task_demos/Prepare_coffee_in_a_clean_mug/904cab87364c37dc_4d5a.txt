@@ -1,0 +1,69 @@
+Dialogue Instruction:
+<Driver> hello what can I do?
+<Commander> prepare coffee
+<Commander> clean mug is near toaster
+<Driver> in the drawers?
+<Commander> inside the cabinet below toaster
+<Commander> another mug is inside the fridge
+<Driver> i cannot see any mug
+<Commander> but you have to clean it
+<Driver> okay
+<Commander> or check the cabinet above toaster for the clean mug
+<Commander> prepare coffee
+<Commander> done, thanks.
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Fork_7": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["GarbageCan"]}
+"Cabinet_16": {"label": "Cabinet", "open": False}
+"Cabinet_17": {"label": "Cabinet", "open": False}
+"Cabinet_18": {"label": "Cabinet", "open": False}
+"Cabinet_19": {"label": "Cabinet", "open": False}
+"Cabinet_20": {"label": "Cabinet", "open": False}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"CounterTop_34": {"label": "CounterTop"}
+"CounterTop_36": {"label": "CounterTop"}
+"CounterTop_38": {"label": "CounterTop"}
+"Cabinet_39": {"label": "Cabinet", "open": False}
+"CounterTop_42": {"label": "CounterTop"}
+"Cabinet_43": {"label": "Cabinet", "open": False}
+"Fork_57": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Fridge_64": {"label": "Fridge", "open": False}
+"SinkBasin_75": {"label": "SinkBasin"}
+"Mug_86": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Fridge"]}
+"Faucet_87": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.open()
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_mug.pickup_and_place(target_countertop)
+target_fork = InteractionObject("Fork", object_instance = "Fork")
+target_fork.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_fork.place(target_sinkbasin)
+target_mug.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug.pickup_and_place(target_countertop)
+```

@@ -1,0 +1,39 @@
+Dialogue Instruction:
+<Driver> hi how can i help today
+<Commander> please could you put the tissue boxes on a coffee table
+<Commander> sorry it's the other table
+<Driver> was that everything
+<Commander> That's everything, thanks
+
+Initial Object State:
+"TissueBox_8": {"label": "TissueBox", "holding": False, "supported_by": ["CoffeeTable"]}
+"TissueBox_12": {"label": "TissueBox", "holding": False, "supported_by": ["Ottoman"]}
+"TissueBox_15": {"label": "TissueBox", "holding": False, "supported_by": ["Chair", "DiningTable"]}
+"TissueBox_23": {"label": "TissueBox", "holding": False, "supported_by": ["SideTable"]}
+"TissueBox_37": {"label": "TissueBox", "holding": False, "supported_by": ["DiningTable"]}
+"CoffeeTable_56": {"label": "CoffeeTable"}
+"Chair_64": {"label": "Chair"}
+"Chair_65": {"label": "Chair"}
+"Chair_66": {"label": "Chair"}
+"Chair_67": {"label": "Chair"}
+"Chair_68": {"label": "Chair"}
+"Chair_69": {"label": "Chair"}
+"Chair_70": {"label": "Chair"}
+
+Demonstration Script:
+```python
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_coffeetable.go_to()
+None.place(target_coffeetable)
+target_statue = InteractionObject("Statue", object_instance = "Statue")
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_statue.pickup_and_place(target_chair)
+target_statue.place(target_coffeetable)
+target_tissuebox = InteractionObject("TissueBox", object_instance = "TissueBox")
+target_tissuebox.pickup_and_place(target_coffeetable)
+target_tissuebox.place(target_coffeetable)
+target_coffeetable.go_to()
+target_tissuebox.place(target_coffeetable)
+target_coffeetable.go_to()
+target_tissuebox.place(target_coffeetable)
+```

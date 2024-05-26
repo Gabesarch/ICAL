@@ -1,0 +1,116 @@
+Dialogue Instruction:
+<Commander> prepare coffee in clean mug
+<Commander> each slice of lettuce, tomato, potato onto a plate
+<Commander> knife is in the fridge
+<Commander> tomato is in the cabinet in front of you
+<Commander> potato is on the stove
+<Commander> place them all onto a plate
+<Commander> done
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop", "CoffeeMachine"]}
+"Tomato_1": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Floor", "GarbageCan"]}
+"Knife_4": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"PepperShaker_5": {"label": "PepperShaker", "holding": False, "supported_by": ["Sink"]}
+"Lettuce_7": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Drawer"]}
+"Knife_8": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Potato_11": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"SoapBottle_12": {"label": "SoapBottle", "holding": False, "supported_by": ["Cabinet", "Plate"]}
+"Lettuce_15": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop", "Microwave"]}
+"PepperShaker_16": {"label": "PepperShaker", "holding": False, "supported_by": ["Cabinet", "Bowl"]}
+"SoapBottle_17": {"label": "SoapBottle", "holding": False, "supported_by": ["Cabinet", "Plate"]}
+"CounterTop_32": {"label": "CounterTop"}
+"CounterTop_33": {"label": "CounterTop"}
+"CounterTop_54": {"label": "CounterTop"}
+"CounterTop_63": {"label": "CounterTop"}
+"Plate_67": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+"SoapBottle_69": {"label": "SoapBottle", "holding": False, "supported_by": ["StoveBurner", "Pan"]}
+"Potato_70": {"label": "Potato", "holding": False, "sliced": False, "cooked": True, "supported_by": ["StoveBurner", "Pan"]}
+"Knife_83": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Lettuce_84": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Sink"]}
+"SinkBasin_88": {"label": "SinkBasin"}
+"Egg_90": {"label": "Egg", "holding": False, "supported_by": ["Fridge"]}
+"PepperShaker_91": {"label": "PepperShaker", "holding": False, "supported_by": ["Drawer"]}
+"Fridge_92": {"label": "Fridge", "open": False}
+"Knife_93": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Tomato_100": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet", "Plate"]}
+"Mug_104": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Faucet_105": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_lettuce.pickup_and_place(target_countertop)
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_countertop.go_to()
+target_mug.place(target_countertop)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup_and_place(target_countertop)
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_tomato.pickup()
+target_countertop.go_to()
+target_tomato.place(target_countertop)
+target_knife.go_to()
+target_knife.pickup()
+target_tomato.go_to()
+target_tomato.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.pickup_and_place(target_countertop)
+target_knife.pickup()
+target_potato.go_to()
+target_potato.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_soapbottle = InteractionObject("SoapBottle", object_instance = "SoapBottle")
+target_soapbottle.pickup_and_place(target_countertop)
+target_soapbottle.pickup()
+target_countertop.go_to()
+target_soapbottle.place(target_countertop)
+target_soapbottle.pickup_and_place(target_countertop)
+target_knife.pickup()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_knife.pickup_and_place(target_countertop)
+target_peppershaker = InteractionObject("PepperShaker", object_instance = "PepperShaker")
+target_peppershaker.pickup()
+target_countertop.go_to()
+target_peppershaker.place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup_and_place(target_sinkbasin)
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_plate.pickup_and_place(target_countertop)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = None, parent_object = "Potato") # Initialize new sliced object from sliced parent
+target_potatosliced.pickup()
+target_countertop.go_to()
+target_potatosliced.place(target_countertop)
+target_potatosliced.pickup_and_place(target_countertop)
+target_egg = InteractionObject("Egg", object_instance = "Egg")
+target_egg.pickup()
+target_countertop.go_to()
+target_egg.place(target_countertop)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = "LettuceSliced")
+target_lettucesliced.pickup_and_place(target_countertop)
+```

@@ -1,0 +1,73 @@
+Dialogue Instruction:
+<Driver> How can i help?
+<Commander> Can you boil a potato for me
+<Driver> of course
+<Commander> You can find one on the chair by the table
+<Commander> and there is a pot on the hob already
+<Commander> you may need to fill it with water
+<Driver> how many potatoes do you want boiled?
+<Commander> Just the one please
+<Commander> You may have to switch on the hob
+<Commander> Oh could you please boil a whole potato, not a slice my apologies
+<Commander> There is another potato in the cupboard above the microwave
+<Driver> i think the potato has been boiled now
+<Driver> the hob was already on
+<Commander> that's great
+<Commander> That's all I needed thank you
+
+Initial Object State:
+"SaltShaker_5": {"label": "SaltShaker", "holding": False, "supported_by": ["Cabinet"]}
+"Pot_6": {"label": "Pot", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner", "Pan"]}
+"Potato_9": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet", "Plate"]}
+"PaperTowelRoll_10": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["Cabinet"]}
+"PaperTowelRoll_13": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["Stool"]}
+"SaltShaker_14": {"label": "SaltShaker", "holding": False, "supported_by": ["Cabinet", "Bowl"]}
+"PaperTowelRoll_16": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["Pot", "StoveBurner"]}
+"Potato_17": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Pot_19": {"label": "Pot", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner"]}
+"Pot_25": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Potato_27": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Stool"]}
+"StoveBurner_33": {"label": "StoveBurner"}
+"CounterTop_34": {"label": "CounterTop"}
+"CounterTop_39": {"label": "CounterTop"}
+"StoveBurner_50": {"label": "StoveBurner"}
+"StoveBurner_54": {"label": "StoveBurner"}
+"CounterTop_56": {"label": "CounterTop"}
+"StoveBurner_60": {"label": "StoveBurner"}
+"PaperTowelRoll_71": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["Sink"]}
+"Potato_72": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"SinkBasin_77": {"label": "SinkBasin"}
+"Pot_78": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner"]}
+"SaltShaker_79": {"label": "SaltShaker", "holding": False, "supported_by": ["Pot", "StoveBurner", "Pan"]}
+"DiningTable_95": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = "TomatoSliced")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_tomatosliced.pickup_and_place(target_diningtable)
+target_papertowelroll = InteractionObject("PaperTowelRoll", object_instance = "PaperTowelRoll")
+target_papertowelroll.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_papertowelroll.place(target_countertop)
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_pot.pickup_and_place(target_sinkbasin)
+target_pot.pickup()
+target_stoveburner = InteractionObject("StoveBurner", object_instance = "StoveBurner")
+target_stoveburner.go_to()
+target_pot.place(target_stoveburner)
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_saltshaker.pickup_and_place(target_countertop)
+target_pot.pickup()
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.pickup_and_place(target_countertop)
+target_pot.pickup()
+target_pot.go_to()
+target_pot.pickup()
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.pickup_and_place(target_diningtable)
+target_watch = InteractionObject("Watch", object_instance = "Watch")
+target_watch.pickup()
+```

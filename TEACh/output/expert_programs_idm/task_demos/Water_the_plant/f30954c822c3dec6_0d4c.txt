@@ -1,0 +1,27 @@
+Dialogue Instruction:
+<Driver> what can i help with?
+<Commander> water my plant please!
+<Driver> sure thing
+<Driver> i found a mug on the table with water in it
+<Commander> Go for it!
+<Driver> done
+<Commander> thank you!
+
+Initial Object State:
+"Bowl_0": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Drawer"]}
+"Plate_7": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Plate_90": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Bowl_105": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Chair"]}
+
+Demonstration Script:
+```python
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_plate.pickup()
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.go_to()
+target_bowl.pickup()
+target_cellphone = InteractionObject("CellPhone", object_instance = "CellPhone")
+target_cellphone.go_to()
+target_bowl.pour(target_cellphone)
+```

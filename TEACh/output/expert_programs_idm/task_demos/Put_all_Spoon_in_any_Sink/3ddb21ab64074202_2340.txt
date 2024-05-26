@@ -1,0 +1,47 @@
+Dialogue Instruction:
+<Driver> what should I do
+<Commander> we shall put all the spoons in the sink
+<Driver> where is a spoon?
+<Commander> inside the woven
+<Commander> oven
+<Commander> the spoon is int the dustbin
+<Commander> good job
+<Commander> put in the sink
+<Driver> any more?
+<Commander> another one is inside the fridge
+<Commander> the last one
+<Commander> in the fridge
+<Driver> ok
+<Commander> we are done now
+<Driver> thanks
+<Commander> thank you
+
+Initial Object State:
+"Spoon_1": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Knife_6": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Spoon_16": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Floor", "GarbageCan"]}
+"Fork_57": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Shelf"]}
+"Fridge_59": {"label": "Fridge", "open": False}
+"Knife_77": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Microwave_78": {"label": "Microwave", "toggled": False, "open": False}
+"SinkBasin_79": {"label": "SinkBasin"}
+"Knife_83": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Spoon_86": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["CounterTop", "Microwave"]}
+
+Demonstration Script:
+```python
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.go_to()
+target_microwave.open()
+target_spoon = InteractionObject("Spoon", object_instance = "Spoon")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_spoon.pickup_and_place(target_sinkbasin)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_fork = InteractionObject("Fork", object_instance = "Fork")
+target_fork.go_to()
+target_fork.pickup()
+```

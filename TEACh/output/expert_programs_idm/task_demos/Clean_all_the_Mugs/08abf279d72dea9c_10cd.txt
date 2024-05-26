@@ -1,0 +1,84 @@
+Dialogue Instruction:
+<Driver> Hello! What shall I be doing today?
+<Commander> Clean two mugs
+<Commander> One mug is to the left of the microwave
+<Commander> There is also another mug in the microwave
+<Commander> good job
+<Driver> I have cleaned 2 mugs
+<Driver> thank you
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop", "Microwave"]}
+"Egg_2": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"DishSponge_3": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Floor", "GarbageCan"]}
+"PepperShaker_5": {"label": "PepperShaker", "holding": False, "supported_by": ["Sink"]}
+"Pan_11": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"PepperShaker_12": {"label": "PepperShaker", "holding": False, "supported_by": ["Fridge"]}
+"DishSponge_14": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"CounterTop_38": {"label": "CounterTop"}
+"CounterTop_39": {"label": "CounterTop"}
+"CounterTop_45": {"label": "CounterTop"}
+"Pan_47": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Plate_59": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"SinkBasin_65": {"label": "SinkBasin"}
+"PepperShaker_69": {"label": "PepperShaker", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"Knife_70": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Microwave_74": {"label": "Microwave", "toggled": True, "open": False}
+"DishSponge_75": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Egg_76": {"label": "Egg", "holding": False, "supported_by": ["CounterTop", "Microwave"]}
+"Knife_78": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Cup_79": {"label": "Cup", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"Mug_80": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Pan", "CounterTop"]}
+"Faucet_83": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_mug.pickup_and_place(target_sinkbasin)
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.toggle_off()
+target_microwave.go_to()
+target_microwave.open()
+target_mug.pickup_and_place(target_sinkbasin)
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_cup.pickup()
+target_sinkbasin.go_to()
+target_cup.place(target_sinkbasin)
+target_peppershaker = InteractionObject("PepperShaker", object_instance = "PepperShaker")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_peppershaker.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup_and_place(target_countertop)
+target_dishsponge = InteractionObject("DishSponge", object_instance = "DishSponge")
+target_dishsponge.pickup()
+target_pan = InteractionObject("Pan", object_instance = "Pan")
+target_pan.go_to()
+target_dishsponge.place(target_pan)
+target_egg = InteractionObject("Egg", object_instance = "Egg")
+target_egg.pickup_and_place(target_pan)
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_mug.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_countertop.go_to()
+target_mug.place(target_countertop)
+```

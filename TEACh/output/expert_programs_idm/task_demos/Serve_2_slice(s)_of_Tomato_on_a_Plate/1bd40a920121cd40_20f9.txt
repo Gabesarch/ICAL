@@ -1,0 +1,43 @@
+Dialogue Instruction:
+<Commander> What should I do today?
+<Driver> you should give me the command
+<Commander> Hello. Today you should make two slices of tomato
+<Commander> The tomato is on the round table
+<Commander> There is a knife on that table too
+<Driver> done
+<Commander> Take the plate on the counter in front of you and put two slices of tomato on it
+<Driver> what else can i do for you
+<Commander> Done
+
+Initial Object State:
+"Knife_4": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Plate_9": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Tomato_12": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Knife_25": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"CounterTop_28": {"label": "CounterTop"}
+"CounterTop_31": {"label": "CounterTop"}
+"Knife_74": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Tomato_87": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Chair"]}
+"Plate_93": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Sink"]}
+"Knife_104": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+
+Demonstration Script:
+```python
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_tomato.go_to()
+target_tomato.pickup()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_tomato.go_to()
+target_tomato.slice()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = None, parent_object = "Tomato") # Initialize new sliced object from sliced parent
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_tomatosliced.pickup_and_place(target_plate)
+target_tomatosliced.pickup()
+target_plate.go_to()
+target_tomatosliced.place(target_plate)
+```

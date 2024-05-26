@@ -1,0 +1,36 @@
+Dialogue Instruction:
+<Driver> Hi what am I doing today
+<Commander> You need to place 2 remote controls into 1 box please.
+<Commander> There is a remote on the little side table next to the arm chair and floor lamp.
+<Commander> Both remotes need to be placed into the same box
+<Driver> I have placed one
+<Commander> Great job.
+<Commander> One more please,
+<Commander> There is a remote on the little side table next to the arm chair and floor lamp.
+<Commander> Go around the back of the 2 armchairs. The table is next to the brown chair.
+<Driver> Okay
+<Commander> Head towards the lamp.
+<Commander> The small table is in front of it.
+<Commander> Move towards your left.
+<Commander> Again
+<Commander> Can you see it there on your left?
+<Commander> Well done
+<Commander> Please place in same box as other.
+<Commander> Great job. Task is complete.
+
+Initial Object State:
+"RemoteControl_0": {"label": "RemoteControl", "holding": False, "supported_by": ["ArmChair"]}
+"RemoteControl_22": {"label": "RemoteControl", "holding": False, "supported_by": ["SideTable"]}
+"Sofa_32": {"label": "Sofa"}
+"DiningTable_41": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_remotecontrol = InteractionObject("RemoteControl", object_instance = "RemoteControl")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_remotecontrol.pickup_and_place(target_diningtable)
+target_remotecontrol.pickup()
+target_sofa = InteractionObject("Sofa", object_instance = "Sofa")
+target_sofa.go_to()
+target_remotecontrol.place(target_sofa)
+```

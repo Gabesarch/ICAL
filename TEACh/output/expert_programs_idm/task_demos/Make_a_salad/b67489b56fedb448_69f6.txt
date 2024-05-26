@@ -1,0 +1,53 @@
+Dialogue Instruction:
+<Driver> how can I help?
+<Commander> can you cut 2 slices of lettuce please
+<Commander> lettuce is by the sink
+<Commander> knife is in the fridge
+<Commander> after this I need 1 slice of tomato
+<Commander> it is on the island opposite to the stove
+<Driver> okay
+<Commander> please put them on a clean plate
+<Commander> which is in the right unit above the sink
+<Driver> done
+<Commander> done
+
+Initial Object State:
+"Lettuce_10": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Knife_14": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"CounterTop_42": {"label": "CounterTop"}
+"CounterTop_44": {"label": "CounterTop"}
+"CounterTop_46": {"label": "CounterTop"}
+"CounterTop_50": {"label": "CounterTop"}
+"Knife_63": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Plate_64": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Lettuce_69": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Knife_85": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.go_to()
+target_lettuce.slice()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_lettuce.go_to()
+target_lettuce.slice()
+target_lettuce.go_to()
+target_lettuce.slice()
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = None, parent_object = "Lettuce") # Initialize new sliced object from sliced parent
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_lettucesliced.pickup_and_place(target_countertop)
+target_lettucesliced.pickup()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_lettucesliced.place(target_plate)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = "TomatoSliced")
+target_tomatosliced.pickup_and_place(target_plate)
+target_tomatosliced.pickup()
+target_plate.go_to()
+target_tomatosliced.place(target_plate)
+```

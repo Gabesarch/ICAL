@@ -1,0 +1,151 @@
+Dialogue Instruction:
+<Commander> Hello
+<Driver> Hi
+<Commander> we need to get a potato
+<Driver> Where is it?
+<Commander> look in the pot beside the stove
+<Commander> sorry
+<Driver> I think this is an apple
+<Driver> Inside the pot with water?
+<Commander> it is on the other side of the stove. near the toaster
+<Driver> I have it
+<Commander> we need 4 slices. please pick up the knife and slice the potato
+<Driver> done
+<Commander> pick up the pan that is on the left side of the stove near the wall
+<Driver> done
+<Commander> place the pan on the front right burner
+<Commander> then put a slice of potato in the pan
+<Commander> try putting the potato in the pot on the back left burner
+<Driver> I can't place the pan
+<Commander> I think i told you wrong. It should probably be put in the pot of water.
+<Driver> 4 slices?
+<Commander> yes please
+<Commander> It may only take on slice at a time.
+<Commander> When you take the slices out of the pot, they should go in a bowl.
+<Driver> placed
+<Driver> what next?
+<Driver> to boil?
+<Commander> yes. Turn on the burner
+<Driver> boiled
+<Commander> Now place all 4 slices in a clean bowl.
+<Driver> Where can we get a bowl?
+<Commander> There is a bowl beside the sink. Try to empty the water out of that bowl.
+<Driver> is it clean now?
+<Driver> 
+<Commander> It should be
+<Commander> Was the bowl not clean?
+<Driver> It is I'm making space to place it
+<Commander> OK Great!
+<Driver> Where do I pace this thing?
+<Driver> place
+<Commander> Just set it down on the counter and place the potato slices in it.
+<Driver> done
+<Driver> Four slices in the bowl
+<Commander> Yay! We are done! Fantastic job!
+<Driver> Great Thank you!!
+<Commander> Thank you!
+
+Initial Object State:
+"Egg_4": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"Plate_6": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Potato_7": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Knife_8": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Apple_10": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Pot", "CounterTop"]}
+"Knife_12": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Pot_14": {"label": "Pot", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner"]}
+"Bowl_15": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Potato_21": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"Knife_28": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Potato_31": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Stool"]}
+"Potato_32": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Plate", "Cabinet"]}
+"Egg_35": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"Apple_37": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Microwave"]}
+"Egg_38": {"label": "Egg", "holding": False, "supported_by": ["Fridge"]}
+"Potato_40": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Apple_41": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Potato_48": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Potato_49": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"Knife_51": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Pot_58": {"label": "Pot", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Egg_61": {"label": "Egg", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"Apple_63": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Egg_67": {"label": "Egg", "holding": False, "supported_by": ["CounterTop"]}
+"Knife_71": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Plate_72": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Egg_74": {"label": "Egg", "holding": False, "supported_by": ["Drawer"]}
+"Knife_76": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Potato_77": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"CounterTop_78": {"label": "CounterTop"}
+"StoveBurner_80": {"label": "StoveBurner"}
+"CounterTop_83": {"label": "CounterTop"}
+"StoveBurner_102": {"label": "StoveBurner"}
+"CounterTop_103": {"label": "CounterTop"}
+"StoveBurner_105": {"label": "StoveBurner"}
+"StoveBurner_106": {"label": "StoveBurner"}
+"Bowl_122": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Pot_124": {"label": "Pot", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Pan", "StoveBurner"]}
+"Knife_127": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"SinkBasin_128": {"label": "SinkBasin"}
+"Apple_130": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Plate", "Cabinet"]}
+"Knife_132": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Potato_133": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Plate_134": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Egg_136": {"label": "Egg", "holding": False, "supported_by": ["Drawer"]}
+
+Demonstration Script:
+```python
+target_apple = InteractionObject("Apple", object_instance = "Apple")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_apple.pickup_and_place(target_countertop)
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.pickup()
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_apple.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_dresser = InteractionObject("Dresser", object_instance = "Dresser")
+target_potatosliced.pickup_and_place(target_dresser)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_stoveburner = InteractionObject("StoveBurner", object_instance = "StoveBurner")
+target_stoveburner.go_to()
+target_plate.place(target_stoveburner)
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_bowl.pickup_and_place(target_sinkbasin)
+target_potato.pickup()
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_egg = InteractionObject("Egg", object_instance = "Egg")
+target_egg.pickup_and_place(target_countertop)
+target_bowl.pickup()
+target_sinkbasin.go_to()
+target_bowl.pour(target_sinkbasin)
+target_countertop.go_to()
+target_bowl.place(target_countertop)
+target_countertop.go_to()
+target_bowl.place(target_countertop)
+target_knife.pickup_and_place(target_countertop)
+target_bowl.pickup()
+target_countertop.go_to()
+target_bowl.place(target_countertop)
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.go_to()
+target_pot.pickup()
+target_sinkbasin.go_to()
+target_pot.pour(target_sinkbasin)
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_pot.place(target_diningtable)
+target_countertop.go_to()
+target_pot.place(target_countertop)
+target_potatosliced.pickup_and_place(target_bowl)
+target_potatosliced.pickup()
+target_bowl.go_to()
+target_potatosliced.place(target_bowl)
+target_potatosliced.pickup_and_place(target_bowl)
+```

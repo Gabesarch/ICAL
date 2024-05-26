@@ -1,0 +1,60 @@
+Dialogue Instruction:
+<Driver> how can I help
+<Commander> three ladles need to be in the same cabinet
+<Commander> there is one on the table near the pan and toaster
+<Commander> there is another one in the sink but it might need to be cleared
+<Driver> are there any more?
+<Commander> the last one should also be in the sink
+<Commander> it is hidden behind the bread
+<Driver> I just need to move some item around
+<Commander> no problem
+<Driver> is that all of them?
+<Commander> that is all. thank you
+
+Initial Object State:
+"Tomato_2": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"Bread_8": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Ladle_10": {"label": "Ladle", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"SoapBottle_12": {"label": "SoapBottle", "holding": False, "supported_by": ["Sink"]}
+"Bread_13": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Tomato_15": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"Ladle_17": {"label": "Ladle", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"CounterTop_30": {"label": "CounterTop"}
+"CounterTop_33": {"label": "CounterTop"}
+"CounterTop_35": {"label": "CounterTop"}
+"SoapBottle_42": {"label": "SoapBottle", "holding": False, "supported_by": ["CounterTop"]}
+"Ladle_44": {"label": "Ladle", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Plate_46": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+"Bread_47": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"SinkBasin_56": {"label": "SinkBasin"}
+"Tomato_65": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"Faucet_71": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_faucet.go_to()
+None.place(target_faucet)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_plate.pickup_and_place(target_sinkbasin)
+target_faucet.toggle_off()
+target_plate.pickup_and_place(target_sinkbasin)
+target_soapbottle = InteractionObject("SoapBottle", object_instance = "SoapBottle")
+target_soapbottle.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_soapbottle.place(target_countertop)
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_tomato.pickup_and_place(target_countertop)
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_bread.pickup()
+target_sinkbasin.go_to()
+target_bread.place(target_sinkbasin)
+target_ladle = InteractionObject("Ladle", object_instance = "Ladle")
+target_ladle.pickup_and_place(target_countertop)
+```

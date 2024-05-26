@@ -1,0 +1,19 @@
+Dialogue Instruction:
+<Driver> what's first?
+<Commander> put all newspapers onto a single sofa
+<Driver> ok
+<Commander> done
+<Driver> cool
+
+Initial Object State:
+"Newspaper_19": {"label": "Newspaper", "holding": False, "supported_by": ["Dresser"]}
+"SideTable_35": {"label": "SideTable"}
+"SideTable_36": {"label": "SideTable"}
+"SideTable_38": {"label": "SideTable"}
+
+Demonstration Script:
+```python
+target_newspaper = InteractionObject("Newspaper", object_instance = "Newspaper")
+target_sidetable = InteractionObject("SideTable", object_instance = "SideTable")
+target_newspaper.pickup_and_place(target_sidetable)
+```

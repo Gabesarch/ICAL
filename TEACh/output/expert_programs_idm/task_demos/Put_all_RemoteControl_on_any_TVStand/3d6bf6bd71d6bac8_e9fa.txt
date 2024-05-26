@@ -1,0 +1,49 @@
+Dialogue Instruction:
+<Driver> Hey, what I am I doing tonight
+<Commander> hello the remote needs to be put on the table stand
+<Driver> okay
+<Driver> Table stand?
+<Commander> the remote is in the shelf where the flower is,
+<Commander> tv stand
+<Driver> done
+<Commander> there's another remote to the right of the tv white stand
+<Driver> What next
+<Driver> Are you still there
+<Commander> the middle of the tv and the vase at the corner
+<Driver> What should I do
+<Commander> open the white shelf at the corner find the remote
+<Driver> done
+<Driver> Anything else
+<Commander> try placing it on a different position same tv stand
+<Driver> Any change
+<Commander> done good work mate
+
+Initial Object State:
+"RemoteControl_0": {"label": "RemoteControl", "holding": False, "supported_by": ["CoffeeTable"]}
+"RemoteControl_3": {"label": "RemoteControl", "holding": False, "supported_by": ["TVStand"]}
+"RemoteControl_15": {"label": "RemoteControl", "holding": False, "supported_by": ["Floor", "Cabinet"]}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Chair_46": {"label": "Chair"}
+
+Demonstration Script:
+```python
+target_remotecontrol = InteractionObject("RemoteControl", object_instance = "RemoteControl")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_remotecontrol.pickup_and_place(target_diningtable)
+target_remotecontrol.pickup()
+target_sidetable = InteractionObject("SideTable", object_instance = "SideTable")
+target_sidetable.go_to()
+target_remotecontrol.place(target_sidetable)
+target_remotecontrol.pickup_and_place(target_sidetable)
+target_book = InteractionObject("Book", object_instance = "Book")
+target_remotecontrol.place(target_book)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_remotecontrol.pickup_and_place(target_chair)
+target_remotecontrol.pickup()
+target_cellphone = InteractionObject("CellPhone", object_instance = "CellPhone")
+target_cellphone.go_to()
+target_remotecontrol.place(target_cellphone)
+```

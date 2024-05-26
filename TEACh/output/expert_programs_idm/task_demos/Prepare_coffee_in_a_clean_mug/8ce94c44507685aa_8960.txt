@@ -1,0 +1,21 @@
+Dialogue Instruction:
+<Driver> hi
+<Commander> Hello, prepare coffee in a mug
+<Commander> Mug is on the round table
+<Commander> God Job
+
+Initial Object State:
+"SinkBasin_94": {"label": "SinkBasin"}
+"Mug_104": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+```

@@ -1,0 +1,17 @@
+Dialogue Instruction:
+<Driver> how can I help?
+<Commander> can I have some coffee
+<Driver> do you see a mug?
+<Commander> yeah there's one in the trash bin
+
+Initial Object State:
+"CounterTop_7": {"label": "CounterTop"}
+"CounterTop_15": {"label": "CounterTop"}
+"Mug_61": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Floor", "GarbageCan"]}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_mug.pickup_and_place(target_countertop)
+```

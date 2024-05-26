@@ -1,0 +1,64 @@
+Dialogue Instruction:
+<Driver> What do you need today?
+<Commander> please make me toast on a clean plate!
+<Driver> of course!
+<Commander> the plate is on the table and the bread is on the counter
+
+Initial Object State:
+"Bowl_1": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"Bread_4": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"PaperTowelRoll_7": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["Sink", "Bowl"]}
+"PaperTowelRoll_13": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["CounterTop"]}
+"Bowl_16": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Chair"]}
+"CounterTop_19": {"label": "CounterTop"}
+"CounterTop_22": {"label": "CounterTop"}
+"Knife_65": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"SoapBottle_67": {"label": "SoapBottle", "holding": False, "supported_by": ["CounterTop"]}
+"Plate_84": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"PaperTowelRoll_86": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["Chair"]}
+"Toaster_90": {"label": "Toaster", "toggled": False}
+"SinkBasin_91": {"label": "SinkBasin"}
+"Knife_95": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Bread_96": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Bowl_99": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Sink"]}
+"Faucet_103": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_plate.pickup_and_place(target_sinkbasin)
+target_papertowelroll = InteractionObject("PaperTowelRoll", object_instance = "PaperTowelRoll")
+target_papertowelroll.pickup()
+target_sinkbasin.go_to()
+target_papertowelroll.place(target_sinkbasin)
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.pickup_and_place(target_sinkbasin)
+target_soapbottle = InteractionObject("SoapBottle", object_instance = "SoapBottle")
+target_soapbottle.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_soapbottle.place(target_countertop)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_plate.go_to()
+target_plate.pickup()
+target_plate.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_bread.go_to()
+target_bread.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = None, parent_object = "Bread") # Initialize new sliced object from sliced parent
+target_toaster = InteractionObject("Toaster", object_instance = "Toaster")
+target_breadsliced.pickup_and_place(target_toaster)
+target_faucet.toggle_off()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_breadsliced.pickup_and_place(target_plate)
+```

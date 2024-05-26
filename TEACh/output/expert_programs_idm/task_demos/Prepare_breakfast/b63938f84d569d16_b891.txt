@@ -1,0 +1,152 @@
+Dialogue Instruction:
+<Driver> hi
+<Driver> what is my first task
+<Commander> start by cleaning a mug
+<Commander> then make coffee
+<Driver> okay
+<Commander> there's a mug on the round table
+<Commander> round
+<Driver> done
+<Driver> what shall i do next
+<Commander> after the coffee slice the bread
+<Driver> where is the knife
+<Commander> next to microwave
+<Driver> sliced
+<Commander> toast two
+<Commander> slices
+<Driver> okay
+<Commander> then slice lettuce and put the two toasted bread slices and the lettuce all on the same plate
+<Driver> okay
+<Driver> where is the lettuce
+<Commander> cupboard above the fridge
+<Commander> put them all on a clean plate
+<Commander> done!
+<Driver> thank you
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"Plate_2": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Fridge"]}
+"Knife_3": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Knife_5": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"SoapBottle_8": {"label": "SoapBottle", "holding": False, "supported_by": ["Chair"]}
+"Tomato_10": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"Lettuce_11": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Tomato_20": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"SoapBottle_21": {"label": "SoapBottle", "holding": False, "supported_by": ["Chair"]}
+"Mug_23": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"CounterTop_25": {"label": "CounterTop"}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Cabinet_39": {"label": "Cabinet", "open": False}
+"Cabinet_40": {"label": "Cabinet", "open": False}
+"Cabinet_41": {"label": "Cabinet", "open": False}
+"Cabinet_42": {"label": "Cabinet", "open": False}
+"Cabinet_43": {"label": "Cabinet", "open": False}
+"Cabinet_44": {"label": "Cabinet", "open": False}
+"Cabinet_45": {"label": "Cabinet", "open": False}
+"Cabinet_46": {"label": "Cabinet", "open": False}
+"Drawer_47": {"label": "Drawer", "open": False}
+"Drawer_48": {"label": "Drawer", "open": False}
+"Drawer_50": {"label": "Drawer", "open": False}
+"CounterTop_51": {"label": "CounterTop"}
+"Drawer_52": {"label": "Drawer", "open": False}
+"Drawer_54": {"label": "Drawer", "open": False}
+"Microwave_64": {"label": "Microwave", "toggled": False, "open": False}
+"Lettuce_69": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Tomato_70": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"SoapBottle_74": {"label": "SoapBottle", "holding": False, "supported_by": ["Sink"]}
+"CoffeeMachine_75": {"label": "CoffeeMachine", "toggled": False}
+"Fridge_77": {"label": "Fridge", "open": False}
+"SinkBasin_78": {"label": "SinkBasin"}
+"Knife_81": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Knife_83": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Plate_84": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Mug_87": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["DiningTable"]}
+"DiningTable_88": {"label": "DiningTable"}
+"Faucet_90": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_mug.pickup_and_place(target_countertop)
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_tomato.pickup()
+target_countertop.go_to()
+target_tomato.place(target_countertop)
+target_soapbottle = InteractionObject("SoapBottle", object_instance = "SoapBottle")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_soapbottle.pickup_and_place(target_sinkbasin)
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_mug.go_to()
+target_mug.pickup()
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_mug.place(target_diningtable)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup_and_place(target_diningtable)
+target_knife.place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.pickup_and_place(target_countertop)
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_coffeemachine.pickup()
+target_countertop.go_to()
+target_coffeemachine.place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_breadsliced.pickup_and_place(target_plate)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.open()
+target_fridge.go_to()
+target_fridge.close()
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.go_to()
+target_microwave.open()
+target_cabinet.go_to()
+target_cabinet.close()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.pickup_and_place(target_diningtable)
+target_knife.pickup()
+target_lettuce.go_to()
+target_lettuce.slice()
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_drawer = InteractionObject("Drawer", object_instance = "Drawer")
+target_drawer.go_to()
+target_drawer.open()
+target_plate.pickup_and_place(target_countertop)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = "TomatoSliced")
+target_tomatosliced.pickup()
+target_diningtable.go_to()
+target_tomatosliced.place(target_diningtable)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = None, parent_object = "Lettuce") # Initialize new sliced object from sliced parent
+target_lettucesliced.pickup_and_place(target_diningtable)
+target_lettucesliced.pickup()
+target_plate.go_to()
+target_lettucesliced.place(target_plate)
+target_lettucesliced.pickup_and_place(target_diningtable)
+target_breadsliced.pickup()
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+target_breadsliced.pickup_and_place(target_plate)
+```

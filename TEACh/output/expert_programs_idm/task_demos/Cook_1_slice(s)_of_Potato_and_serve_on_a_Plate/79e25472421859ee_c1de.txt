@@ -1,0 +1,74 @@
+Dialogue Instruction:
+<Driver> Hi.
+<Commander> hello we are cooking a slice of potato then serving it on a clean plate
+<Driver> ok
+
+Initial Object State:
+"Knife_1": {"label": "Knife", "holding": False, "supported_by": ["Shelf"]}
+"Bowl_4": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Fridge"]}
+"Spatula_7": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Plate_12": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Kettle_13": {"label": "Kettle", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner"]}
+"Potato_15": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Knife_18": {"label": "Knife", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"Spatula_19": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["Shelf"]}
+"CounterTop_29": {"label": "CounterTop"}
+"CounterTop_31": {"label": "CounterTop"}
+"CounterTop_54": {"label": "CounterTop"}
+"Knife_56": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Potato_61": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Shelf"]}
+"Kettle_65": {"label": "Kettle", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Pan_67": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Plate_68": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Spatula_76": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"PaperTowelRoll_77": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["Sink"]}
+"Bowl_83": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"SinkBasin_84": {"label": "SinkBasin"}
+"Knife_88": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Faucet_98": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_potato.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_pan = InteractionObject("Pan", object_instance = "Pan")
+target_potatosliced.pickup_and_place(target_pan)
+target_pan.pickup()
+target_countertop.go_to()
+target_pan.place(target_countertop)
+target_kettle = InteractionObject("Kettle", object_instance = "Kettle")
+target_kettle.pickup_and_place(target_countertop)
+target_pan.pickup()
+target_countertop.go_to()
+target_pan.place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_plate.pickup_and_place(target_sinkbasin)
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.pickup()
+target_countertop.go_to()
+target_bowl.place(target_countertop)
+target_countertop.go_to()
+target_bowl.place(target_countertop)
+target_papertowelroll = InteractionObject("PaperTowelRoll", object_instance = "PaperTowelRoll")
+target_papertowelroll.pickup_and_place(target_countertop)
+target_spatula = InteractionObject("Spatula", object_instance = "Spatula")
+target_spatula.pickup()
+target_countertop.go_to()
+target_spatula.place(target_countertop)
+target_plate.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_plate.pickup_and_place(target_countertop)
+target_potatosliced.pickup()
+target_plate.go_to()
+target_potatosliced.place(target_plate)
+```

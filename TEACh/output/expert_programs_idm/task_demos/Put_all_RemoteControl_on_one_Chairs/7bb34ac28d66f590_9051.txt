@@ -1,0 +1,46 @@
+Dialogue Instruction:
+<Commander> Hi
+<Driver> First task?
+<Commander> put all the remote controls on one chair
+<Commander> check the drawers under the TV
+<Driver> the remotes are in the box i just put on the couch
+<Driver> 2
+<Commander> Put on the chair near the dining table
+<Commander> There is one remote on the dining table chair already
+<Driver> next
+<Driver> next
+<Commander> done thank you
+<Driver> cool
+
+Initial Object State:
+"RemoteControl_0": {"label": "RemoteControl", "holding": False, "supported_by": ["Chair"]}
+"RemoteControl_4": {"label": "RemoteControl", "holding": False, "supported_by": ["Box", "Floor"]}
+"RemoteControl_20": {"label": "RemoteControl", "holding": False, "supported_by": ["Box", "Floor"]}
+"Chair_29": {"label": "Chair"}
+"Sofa_30": {"label": "Sofa"}
+"Chair_32": {"label": "Chair"}
+"Chair_33": {"label": "Chair"}
+"Chair_34": {"label": "Chair"}
+"Chair_35": {"label": "Chair"}
+"Chair_38": {"label": "Chair"}
+
+Demonstration Script:
+```python
+target_soapbar = InteractionObject("SoapBar", object_instance = "SoapBar")
+target_sofa = InteractionObject("Sofa", object_instance = "Sofa")
+target_soapbar.pickup_and_place(target_sofa)
+target_remotecontrol = InteractionObject("RemoteControl", object_instance = "RemoteControl")
+target_remotecontrol.pickup()
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_coffeetable.go_to()
+target_remotecontrol.place(target_coffeetable)
+target_remotecontrol.pickup_and_place(target_coffeetable)
+target_remotecontrol.pickup()
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_chair.go_to()
+target_remotecontrol.place(target_chair)
+target_remotecontrol.pickup_and_place(target_chair)
+target_remotecontrol.pickup()
+target_chair.go_to()
+target_remotecontrol.place(target_chair)
+```

@@ -1,0 +1,21 @@
+Dialogue Instruction:
+<Driver> hi
+<Commander> hi
+<Driver> what can I do?
+<Commander> bring some water and pour it into the plants
+<Commander> that's it
+<Driver> done
+<Commander> done
+<Commander> thanks
+
+Initial Object State:
+"Cup_9": {"label": "Cup", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Stool"]}
+"Cup_16": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"Cup_56": {"label": "Cup", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+
+Demonstration Script:
+```python
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_cup.go_to()
+target_cup.pickup()
+```

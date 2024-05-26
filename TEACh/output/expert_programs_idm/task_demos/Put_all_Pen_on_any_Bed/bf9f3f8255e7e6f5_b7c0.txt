@@ -1,0 +1,15 @@
+Dialogue Instruction:
+<Driver> hi
+<Commander> hi. task today. put all pens on the bed
+<Driver> where can i find pens
+<Commander> the other on the desk
+
+Initial Object State:
+"KeyChain_11": {"label": "KeyChain", "holding": False, "supported_by": ["Desk"]}
+
+Demonstration Script:
+```python
+target_keychain = InteractionObject("KeyChain", object_instance = "KeyChain")
+target_keychain.go_to()
+target_keychain.pickup()
+```

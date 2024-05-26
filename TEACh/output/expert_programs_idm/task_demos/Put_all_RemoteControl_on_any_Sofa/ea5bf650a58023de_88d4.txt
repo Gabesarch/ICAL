@@ -1,0 +1,34 @@
+Dialogue Instruction:
+<Driver> hello how can I help?
+<Commander> put the remote controls on the sofa
+<Commander> one is on the table
+<Commander> and a second one is in the bin
+<Driver> done
+<Driver> anything else I can do?
+<Commander> you have to put it on the sofa not the armchair
+<Driver> ah I see, sorry
+<Driver> done
+
+Initial Object State:
+"RemoteControl_0": {"label": "RemoteControl", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"RemoteControl_18": {"label": "RemoteControl", "holding": False, "supported_by": ["DiningTable"]}
+"Chair_27": {"label": "Chair"}
+"Chair_30": {"label": "Chair"}
+"Chair_31": {"label": "Chair"}
+"Chair_32": {"label": "Chair"}
+"Chair_33": {"label": "Chair"}
+"Chair_36": {"label": "Chair"}
+
+Demonstration Script:
+```python
+target_remotecontrol = InteractionObject("RemoteControl", object_instance = "RemoteControl")
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_remotecontrol.pickup_and_place(target_chair)
+target_remotecontrol.pickup()
+target_chair.go_to()
+target_remotecontrol.place(target_chair)
+target_remotecontrol.pickup_and_place(target_chair)
+target_remotecontrol.pickup()
+target_chair.go_to()
+target_remotecontrol.place(target_chair)
+```

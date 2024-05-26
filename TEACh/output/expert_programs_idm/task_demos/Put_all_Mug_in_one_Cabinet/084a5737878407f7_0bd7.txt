@@ -1,0 +1,22 @@
+Dialogue Instruction:
+<Commander> please place al the mugs in one cabinet
+<Commander> the mugs are in the coffee machine
+<Commander> and in on the shelf of the table
+<Commander> please place them in the same cabinet
+<Commander> that's perfect
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Floor", "Shelf"]}
+"CounterTop_36": {"label": "CounterTop"}
+"CounterTop_42": {"label": "CounterTop"}
+"Mug_90": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop", "CoffeeMachine"]}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_mug.pickup_and_place(target_countertop)
+target_mug.pickup()
+target_countertop.go_to()
+target_mug.place(target_countertop)
+```

@@ -1,0 +1,37 @@
+Dialogue Instruction:
+<Driver> hello
+<Driver> what is task?
+<Commander> put the newspaper on one furniture
+<Commander> in the trash
+<Commander> behind you
+<Commander> yes
+<Driver> done
+<Commander> place somewhere else
+<Commander> on the couch with he other one
+<Driver> done?
+<Commander> great
+
+Initial Object State:
+"Newspaper_0": {"label": "Newspaper", "holding": False, "supported_by": ["Sofa"]}
+"Newspaper_38": {"label": "Newspaper", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"Chair_44": {"label": "Chair"}
+"Chair_45": {"label": "Chair"}
+"DiningTable_46": {"label": "DiningTable"}
+"Chair_56": {"label": "Chair"}
+"Chair_57": {"label": "Chair"}
+"Chair_58": {"label": "Chair"}
+"Chair_59": {"label": "Chair"}
+"Chair_60": {"label": "Chair"}
+"Chair_61": {"label": "Chair"}
+
+Demonstration Script:
+```python
+target_newspaper = InteractionObject("Newspaper", object_instance = "Newspaper")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_newspaper.pickup_and_place(target_diningtable)
+target_cloth = InteractionObject("Cloth", object_instance = "Cloth")
+target_cloth.pickup()
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_chair.go_to()
+target_cloth.place(target_chair)
+```

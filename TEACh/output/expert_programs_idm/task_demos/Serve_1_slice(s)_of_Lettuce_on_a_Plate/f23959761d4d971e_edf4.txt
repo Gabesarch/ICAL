@@ -1,0 +1,59 @@
+Dialogue Instruction:
+<Driver> Hi how can I help
+<Commander> please get the lettuce out of the microwave
+<Driver> Will do
+<Commander> Then use the knife form the fridge to cut it
+<Driver> What would you like me to do next
+<Commander> please place the lettuce slice on a clean plate
+<Commander> plate
+<Commander> there should be a place in the cupboard next to the stove
+<Driver> I managed to find another plate
+<Driver> There is a slice of lettuce on the plate
+<Commander> Thank you. The task is complete
+
+Initial Object State:
+"Pan_2": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Lettuce_3": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Fridge"]}
+"Knife_10": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Lettuce_12": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Microwave"]}
+"Knife_13": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"CounterTop_18": {"label": "CounterTop"}
+"CounterTop_26": {"label": "CounterTop"}
+"Knife_38": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Pot_47": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner", "StoveBurner"]}
+"Fridge_50": {"label": "Fridge", "open": False}
+"Lettuce_60": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["DiningTable"]}
+"Pan_61": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Knife_66": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Microwave_67": {"label": "Microwave", "toggled": True, "open": False}
+
+Demonstration Script:
+```python
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.go_to()
+target_microwave.toggle_off()
+target_microwave.go_to()
+target_microwave.open()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_lettuce.pickup_and_place(target_countertop)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.open()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_fridge.go_to()
+target_fridge.close()
+target_lettuce.go_to()
+target_lettuce.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.pickup_and_place(target_countertop)
+target_pan = InteractionObject("Pan", object_instance = "Pan")
+target_pan.pickup()
+target_countertop.go_to()
+target_pan.place(target_countertop)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = None, parent_object = "Lettuce") # Initialize new sliced object from sliced parent
+target_lettucesliced.pickup_and_place(target_countertop)
+```

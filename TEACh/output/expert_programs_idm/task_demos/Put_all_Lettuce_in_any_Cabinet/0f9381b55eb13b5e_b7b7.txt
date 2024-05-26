@@ -1,0 +1,22 @@
+Dialogue Instruction:
+<Driver> first step?
+<Commander> Put the lettuce in any cabinet.
+<Driver> where is the lettuce?
+<Commander> It is to the right of the sink.
+<Driver> next
+<Commander> All done. Thanks!
+<Driver> cool
+
+Initial Object State:
+"Lettuce_5": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop", "Pan"]}
+"CounterTop_34": {"label": "CounterTop"}
+"CounterTop_35": {"label": "CounterTop"}
+"CounterTop_41": {"label": "CounterTop"}
+"Lettuce_59": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+
+Demonstration Script:
+```python
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_lettuce.pickup_and_place(target_countertop)
+```

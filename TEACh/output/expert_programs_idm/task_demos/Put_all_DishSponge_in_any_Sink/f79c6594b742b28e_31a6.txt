@@ -1,0 +1,31 @@
+Dialogue Instruction:
+<Driver> hi how can i be of assistance
+<Commander> please put all the dish sponges in the sink
+<Commander> there is one on the chair
+<Commander> and also one in the fridge
+<Driver> are there any more
+<Commander> did you get the one in the fridge?
+<Commander> that will do for today
+
+Initial Object State:
+"DishSponge_3": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"DishSponge_19": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"CounterTop_28": {"label": "CounterTop"}
+"CounterTop_39": {"label": "CounterTop"}
+"Fridge_52": {"label": "Fridge", "open": False}
+"DishSponge_72": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Chair"]}
+
+Demonstration Script:
+```python
+target_dishsponge = InteractionObject("DishSponge", object_instance = "DishSponge")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_dishsponge.pickup_and_place(target_countertop)
+target_soapbar = InteractionObject("SoapBar", object_instance = "SoapBar")
+target_soapbar.pickup()
+target_countertop.go_to()
+target_soapbar.place(target_countertop)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_dishsponge.pickup_and_place(target_countertop)
+```

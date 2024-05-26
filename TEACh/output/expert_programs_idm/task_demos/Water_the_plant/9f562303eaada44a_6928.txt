@@ -1,0 +1,19 @@
+Dialogue Instruction:
+<Driver> first task?
+<Commander> water plant please
+<Commander> done thanks
+<Driver> next
+
+Initial Object State:
+"Pot_79": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"HousePlant_101": {"label": "HousePlant", "filled": False, "fillLiquid": None}
+
+Demonstration Script:
+```python
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.go_to()
+target_pot.pickup()
+target_houseplant = InteractionObject("HousePlant", object_instance = "HousePlant")
+target_houseplant.go_to()
+target_pot.pour(target_houseplant)
+```

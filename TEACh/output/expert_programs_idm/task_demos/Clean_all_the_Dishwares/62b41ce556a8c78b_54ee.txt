@@ -1,0 +1,35 @@
+Dialogue Instruction:
+<Driver> what's the first task?
+<Commander> we are going to clean dishware
+<Driver> ok which dish first?
+<Commander> dish on counter next to plant
+<Commander> right of sink
+<Commander> that is all good job
+
+Initial Object State:
+"Lettuce_4": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Sink"]}
+"Lettuce_12": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Sink"]}
+"CounterTop_23": {"label": "CounterTop"}
+"Faucet_25": {"label": "Faucet", "toggled": False}
+"Bowl_34": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Lettuce_52": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Fridge"]}
+"SinkBasin_57": {"label": "SinkBasin"}
+
+Demonstration Script:
+```python
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_bowl.pickup_and_place(target_sinkbasin)
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_lettuce.place(target_countertop)
+target_bowl.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_bowl.go_to()
+target_bowl.pickup()
+```

@@ -1,0 +1,32 @@
+Dialogue Instruction:
+<Driver> what do you need me to do?
+<Commander> water the plant
+<Commander> just need to get water into a container and pour onto plant
+<Driver> ok
+<Commander> done!
+<Driver> sweet
+
+Initial Object State:
+"Cup_1": {"label": "Cup", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Fridge"]}
+"HousePlant_53": {"label": "HousePlant", "filled": False, "fillLiquid": None}
+"SinkBasin_66": {"label": "SinkBasin"}
+"Cup_77": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"Faucet_85": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_cup.pickup_and_place(target_sinkbasin)
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_cup.go_to()
+target_cup.pickup()
+target_houseplant = InteractionObject("HousePlant", object_instance = "HousePlant")
+target_houseplant.go_to()
+target_cup.pour(target_houseplant)
+```

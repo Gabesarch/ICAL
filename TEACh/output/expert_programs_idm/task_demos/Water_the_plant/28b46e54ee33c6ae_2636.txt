@@ -1,0 +1,52 @@
+Dialogue Instruction:
+<Driver> What shall I do today?
+<Commander> water the plant
+<Commander> grab a bowl
+<Commander> clear the sink first
+<Commander> fill the vase
+
+Initial Object State:
+"Apple_7": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Drawer"]}
+"SoapBottle_15": {"label": "SoapBottle", "holding": False, "supported_by": ["Cabinet"]}
+"Bottle_16": {"label": "Bottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["Pan", "CounterTop"]}
+"Plate_17": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Apple_20": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Sink"]}
+"SoapBottle_23": {"label": "SoapBottle", "holding": False, "supported_by": ["Sink"]}
+"Apple_28": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Plate_31": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Bottle_32": {"label": "Bottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Apple_37": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["CounterTop"]}
+"CounterTop_52": {"label": "CounterTop"}
+"CounterTop_53": {"label": "CounterTop"}
+"CounterTop_74": {"label": "CounterTop"}
+"CounterTop_83": {"label": "CounterTop"}
+"Plate_87": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Bottle_88": {"label": "Bottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"SoapBottle_89": {"label": "SoapBottle", "holding": False, "supported_by": ["Plate", "Cabinet"]}
+"SinkBasin_108": {"label": "SinkBasin"}
+"Apple_114": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Drawer"]}
+"Faucet_125": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_bottle = InteractionObject("Bottle", object_instance = "Bottle")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_bottle.pickup_and_place(target_sinkbasin)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_sinkbasin.go_to()
+target_plate.place(target_sinkbasin)
+target_apple = InteractionObject("Apple", object_instance = "Apple")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_apple.pickup_and_place(target_countertop)
+target_soapbottle = InteractionObject("SoapBottle", object_instance = "SoapBottle")
+target_soapbottle.pickup()
+target_countertop.go_to()
+target_soapbottle.place(target_countertop)
+target_bottle.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_bottle.pickup_and_place(target_countertop)
+```

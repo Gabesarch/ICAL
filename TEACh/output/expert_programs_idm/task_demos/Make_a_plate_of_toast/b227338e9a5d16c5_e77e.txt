@@ -1,0 +1,177 @@
+Dialogue Instruction:
+<Driver> my task today
+<Commander> Make a plate of toast. make a slice of toast. the bread needs to be sliced using a knife. The bread needs to be toasted.
+<Driver> where is the bread
+<Commander> the bread is on the counter next to the toaster
+<Driver> where is the knife
+<Commander> check the drawers
+<Driver> which drawer
+<Commander> Is that a knife on the counter? check any drawer for the knife. there may be a knife in the fridge.
+<Commander> You still have the water running and the fire on the stove on.
+<Commander> Check all the drawers for a knife
+<Commander> check the counter for the knife, next to the sink with the running water
+<Commander> check the table for the knife
+<Commander> The knife is on the table
+<Commander> The knife is on the round kitchen table
+<Driver> where is the plate
+<Commander> The plate is already cleaned, you need to get the knife to slice the bread for toasting
+<Driver> done
+<Driver> hello
+<Driver> am done
+<Commander> the toast needs to be on a clean plate
+<Driver> done
+<Commander> The toast needs to be on a clean plate
+<Driver> i just cleaned the plate
+<Commander> Did you put the toast on the clean plate?
+<Driver> yes
+<Commander> I am looking around for any other plates, can you check if the toast is on a clean plate?
+<Driver> on it
+<Commander> So far I do not see any other plates, do you? Maybe there are some in the cabinets or sink?
+<Driver> no plate in the sink
+<Driver> placed toast on the plate in the fridge
+<Driver> does that do
+
+Initial Object State:
+"SaltShaker_2": {"label": "SaltShaker", "holding": False, "supported_by": ["Drawer"]}
+"Apple_4": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Drawer"]}
+"CounterTop_7": {"label": "CounterTop"}
+"Cabinet_8": {"label": "Cabinet", "open": False}
+"Cabinet_9": {"label": "Cabinet", "open": False}
+"Cabinet_10": {"label": "Cabinet", "open": False}
+"Cabinet_11": {"label": "Cabinet", "open": False}
+"Cabinet_12": {"label": "Cabinet", "open": False}
+"Cabinet_13": {"label": "Cabinet", "open": False}
+"Cabinet_14": {"label": "Cabinet", "open": False}
+"Cabinet_15": {"label": "Cabinet", "open": False}
+"Cabinet_16": {"label": "Cabinet", "open": False}
+"Cabinet_17": {"label": "Cabinet", "open": False}
+"Cabinet_18": {"label": "Cabinet", "open": False}
+"Cabinet_19": {"label": "Cabinet", "open": False}
+"Cabinet_20": {"label": "Cabinet", "open": False}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Drawer_29": {"label": "Drawer", "open": False}
+"Drawer_30": {"label": "Drawer", "open": False}
+"Drawer_32": {"label": "Drawer", "open": False}
+"CounterTop_33": {"label": "CounterTop"}
+"Drawer_34": {"label": "Drawer", "open": False}
+"Drawer_36": {"label": "Drawer", "open": False}
+"Egg_40": {"label": "Egg", "holding": False, "supported_by": ["Fridge", "Plate"]}
+"StoveKnob_42": {"label": "StoveKnob", "toggled": False}
+"StoveKnob_43": {"label": "StoveKnob", "toggled": True}
+"StoveKnob_44": {"label": "StoveKnob", "toggled": True}
+"StoveKnob_45": {"label": "StoveKnob", "toggled": True}
+"Bread_47": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Fork_48": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Potato_50": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Apple_54": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Sink"]}
+"Fridge_59": {"label": "Fridge", "open": False}
+"SinkBasin_60": {"label": "SinkBasin"}
+"SaltShaker_62": {"label": "SaltShaker", "holding": False, "supported_by": ["Chair"]}
+"Knife_63": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Knife_65": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Plate_66": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"DiningTable_70": {"label": "DiningTable"}
+"Faucet_72": {"label": "Faucet", "toggled": True}
+"Bowl_73": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["DiningTable"]}
+
+Demonstration Script:
+```python
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_bread.pickup_and_place(target_countertop)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.open()
+target_drawer = InteractionObject("Drawer", object_instance = "Drawer")
+target_drawer.go_to()
+target_drawer.open()
+target_cabinet.go_to()
+target_cabinet.open()
+target_drawer.go_to()
+target_drawer.open()
+target_cabinet.go_to()
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.open()
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.go_to()
+target_potato.slice()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.go_to()
+target_breadsliced.pickup()
+target_cabinet.go_to()
+target_cabinet.open()
+target_breadsliced.go_to()
+target_breadsliced.pickup()
+target_cabinet.go_to()
+target_cabinet.close()
+target_fridge.go_to()
+target_fridge.open()
+target_fridge.go_to()
+target_fridge.close()
+target_diningtable.go_to()
+target_breadsliced.place(target_diningtable)
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_saltshaker.pickup_and_place(target_diningtable)
+target_breadsliced.pickup()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+target_breadsliced.pickup_and_place(target_plate)
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.pickup()
+target_countertop.go_to()
+target_bowl.place(target_countertop)
+target_fork = InteractionObject("Fork", object_instance = "Fork")
+target_fork.pickup_and_place(target_countertop)
+target_apple = InteractionObject("Apple", object_instance = "Apple")
+target_apple.pickup()
+target_countertop.go_to()
+target_apple.place(target_countertop)
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_bowl.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_bowl.go_to()
+target_bowl.pickup()
+target_sinkbasin.go_to()
+target_bowl.pour(target_sinkbasin)
+target_diningtable.go_to()
+target_bowl.place(target_diningtable)
+target_breadsliced.pickup_and_place(target_plate)
+target_cabinet.toggle_on()
+target_stoveknob = InteractionObject("StoveKnob", object_instance = "StoveKnob")
+target_stoveknob.go_to()
+target_stoveknob.toggle_off()
+target_fridge.go_to()
+target_fridge.open()
+target_egg = InteractionObject("Egg", object_instance = "Egg")
+target_egg.pickup_and_place(target_fridge)
+target_plate.pickup()
+target_fridge.go_to()
+target_fridge.close()
+target_diningtable.go_to()
+target_plate.place(target_diningtable)
+target_breadsliced.pickup_and_place(target_plate)
+```

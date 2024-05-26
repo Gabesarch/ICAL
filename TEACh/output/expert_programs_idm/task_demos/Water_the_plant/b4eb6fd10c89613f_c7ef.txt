@@ -1,0 +1,100 @@
+Dialogue Instruction:
+<Commander> go to sink
+<Commander> pick up bowl and fill with water
+<Commander> water the plant
+
+Initial Object State:
+"Tomato_3": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"Knife_5": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"PepperShaker_6": {"label": "PepperShaker", "holding": False, "supported_by": ["Microwave"]}
+"Bowl_7": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Knife_8": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"SaltShaker_9": {"label": "SaltShaker", "holding": False, "supported_by": ["Sink"]}
+"Bread_14": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Plate_15": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"SoapBottle_18": {"label": "SoapBottle", "holding": False, "supported_by": ["DiningTable"]}
+"Tomato_23": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Tomato_26": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Knife_27": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"SaltShaker_28": {"label": "SaltShaker", "holding": False, "supported_by": ["CounterTop"]}
+"Tomato_34": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"SaltShaker_35": {"label": "SaltShaker", "holding": False, "supported_by": ["Fridge"]}
+"Bowl_38": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Knife_39": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"SaltShaker_40": {"label": "SaltShaker", "holding": False, "supported_by": ["CounterTop"]}
+"SoapBottle_44": {"label": "SoapBottle", "holding": False, "supported_by": ["Drawer"]}
+"Bowl_45": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"Bread_46": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"SoapBottle_50": {"label": "SoapBottle", "holding": False, "supported_by": ["Fridge"]}
+"Knife_55": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Bowl_56": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Drawer"]}
+"Bowl_61": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["DiningTable"]}
+"SoapBottle_62": {"label": "SoapBottle", "holding": False, "supported_by": ["Sink"]}
+"Plate_63": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"DiningTable_70": {"label": "DiningTable"}
+"CounterTop_77": {"label": "CounterTop"}
+"CounterTop_80": {"label": "CounterTop"}
+"CounterTop_82": {"label": "CounterTop"}
+"SoapBottle_89": {"label": "SoapBottle", "holding": False, "supported_by": ["Fridge"]}
+"Plate_93": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"Bread_94": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"SinkBasin_103": {"label": "SinkBasin"}
+"SaltShaker_105": {"label": "SaltShaker", "holding": False, "supported_by": ["CounterTop"]}
+"Knife_106": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Bowl_107": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["DiningTable"]}
+"PepperShaker_108": {"label": "PepperShaker", "holding": False, "supported_by": ["Plate", "Sink"]}
+"Knife_110": {"label": "Knife", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"Tomato_112": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["StoveBurner", "Pot"]}
+"Faucet_118": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_bowl.pickup_and_place(target_countertop)
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_bread.pickup()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_bread.place(target_diningtable)
+target_cloth = InteractionObject("Cloth", object_instance = "Cloth")
+target_cloth.go_to()
+target_cloth.pickup()
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_cloth.place(target_sinkbasin)
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_saltshaker.pickup_and_place(target_countertop)
+target_peppershaker = InteractionObject("PepperShaker", object_instance = "PepperShaker")
+target_peppershaker.pickup()
+target_countertop.go_to()
+target_peppershaker.place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup_and_place(target_sinkbasin)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_diningtable.go_to()
+target_plate.place(target_diningtable)
+target_soapbottle = InteractionObject("SoapBottle", object_instance = "SoapBottle")
+target_soapbottle.pickup_and_place(target_countertop)
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_tomato.pickup()
+target_sinkbasin.go_to()
+target_tomato.place(target_sinkbasin)
+target_applesliced = InteractionObject("AppleSliced", object_instance = "AppleSliced")
+target_applesliced.pickup_and_place(target_sinkbasin)
+target_bowl.pickup()
+target_sinkbasin.go_to()
+target_bowl.place(target_sinkbasin)
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_bowl.go_to()
+target_bowl.pickup()
+target_sinkbasin.go_to()
+target_bowl.pour(target_sinkbasin)
+```

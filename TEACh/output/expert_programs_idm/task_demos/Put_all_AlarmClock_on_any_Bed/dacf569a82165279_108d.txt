@@ -1,0 +1,16 @@
+Dialogue Instruction:
+<Driver> how can i help?
+<Commander> could you please put the alarm clocks onto the bed for me
+<Driver> are there any more?
+<Commander> that was everything thank you
+
+Initial Object State:
+
+Demonstration Script:
+```python
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.go_to()
+target_bowl.pickup()
+target_bowl.go_to()
+target_bowl.pickup()
+```

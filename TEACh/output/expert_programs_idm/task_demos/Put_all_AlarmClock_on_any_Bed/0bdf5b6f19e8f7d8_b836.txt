@@ -1,0 +1,21 @@
+Dialogue Instruction:
+<Driver> hello how can i help
+<Commander> hi there can you put my 2 alarm clocks on my bed please
+<Driver> yes I will
+<Driver> where are they?
+<Commander> there is one next to my laptop
+<Commander> the other is on the drawer next to that
+<Driver> done
+
+Initial Object State:
+
+Demonstration Script:
+```python
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_bowl.pickup_and_place(target_diningtable)
+target_tissuebox = InteractionObject("TissueBox", object_instance = "TissueBox")
+target_tissuebox.pickup()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup_and_place(target_diningtable)
+```

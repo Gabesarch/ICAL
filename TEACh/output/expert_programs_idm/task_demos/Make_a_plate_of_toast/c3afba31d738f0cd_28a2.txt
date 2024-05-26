@@ -1,0 +1,56 @@
+Dialogue Instruction:
+<Driver> How can I help
+<Commander> Can you please make a slice of toast?
+<Driver> Sure, where can I find a knife?
+<Commander> The knife is close to the microwave
+<Driver> I have toasted the bread
+<Commander> you can use the plate close to the bread for the toasted slice
+<Driver> Toast is on the plate
+<Commander> That was everything, thank you!
+
+Initial Object State:
+"Knife_5": {"label": "Knife", "holding": False, "supported_by": ["Microwave"]}
+"Knife_6": {"label": "Knife", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"Tomato_9": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Apple_11": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Sink"]}
+"Plate_17": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Apple_23": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Knife_26": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Tomato_28": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Apple_29": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Fridge"]}
+"Knife_32": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Knife_39": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Apple_41": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Tomato_45": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"CounterTop_46": {"label": "CounterTop"}
+"CounterTop_50": {"label": "CounterTop"}
+"Plate_61": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Apple_67": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Plate", "CounterTop"]}
+"Tomato_70": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Knife_77": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Knife_78": {"label": "Knife", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+
+Demonstration Script:
+```python
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+None.place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_tomato.go_to()
+target_tomato.slice()
+target_tomato.go_to()
+target_tomato.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+target_apple = InteractionObject("Apple", object_instance = "Apple")
+target_apple.pickup_and_place(target_countertop)
+```

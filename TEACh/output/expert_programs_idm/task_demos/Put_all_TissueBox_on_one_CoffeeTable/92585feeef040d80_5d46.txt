@@ -1,0 +1,22 @@
+Dialogue Instruction:
+<Driver> how can I help
+<Driver> how
+<Commander> put all tissuebox on one coffee table
+<Commander> good job
+
+Initial Object State:
+"TissueBox_2": {"label": "TissueBox", "holding": False, "supported_by": ["DiningTable"]}
+"TissueBox_6": {"label": "TissueBox", "holding": False, "supported_by": ["CoffeeTable"]}
+"TissueBox_17": {"label": "TissueBox", "holding": False, "supported_by": ["Plate", "DiningTable"]}
+"CoffeeTable_47": {"label": "CoffeeTable"}
+"CoffeeTable_56": {"label": "CoffeeTable"}
+
+Demonstration Script:
+```python
+target_tissuebox = InteractionObject("TissueBox", object_instance = "TissueBox")
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_tissuebox.pickup_and_place(target_coffeetable)
+target_tissuebox.pickup()
+target_coffeetable.go_to()
+target_tissuebox.place(target_coffeetable)
+```

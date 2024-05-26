@@ -1,0 +1,22 @@
+Dialogue Instruction:
+<Driver> Hello what is my task?
+<Commander> put newspaper onto single furniture
+<Commander> newspaper is on the brown table
+<Driver> one newspaper placed.
+<Commander> thanks
+<Driver> next?
+
+Initial Object State:
+"Newspaper_2": {"label": "Newspaper", "holding": False, "supported_by": ["Floor", "ArmChair"]}
+"Box_4": {"label": "Box", "holding": False, "open": True, "supported_by": ["TVStand"]}
+"Newspaper_6": {"label": "Newspaper", "holding": False, "supported_by": ["SideTable"]}
+"SideTable_36": {"label": "SideTable"}
+
+Demonstration Script:
+```python
+target_newspaper = InteractionObject("Newspaper", object_instance = "Newspaper")
+target_box = InteractionObject("Box", object_instance = "Box")
+target_newspaper.pickup_and_place(target_box)
+target_sidetable = InteractionObject("SideTable", object_instance = "SideTable")
+target_newspaper.place(target_sidetable)
+```

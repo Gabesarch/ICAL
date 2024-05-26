@@ -1,0 +1,43 @@
+Dialogue Instruction:
+<Commander> boil a whole potatoes in water
+<Driver> hello
+<Commander> potato
+<Commander> hi
+<Commander> it's in the lower drawer to the left of the cooking stove
+<Driver> the knife?
+<Commander> don't cut. boil it whole
+<Driver> where do I boil it?
+<Commander> in the pot on the stove
+<Commander> awesome. task complete
+
+Initial Object State:
+"Potato_1": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Pot_8": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Pot_12": {"label": "Pot", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Cabinet_13": {"label": "Cabinet", "open": False}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"CounterTop_34": {"label": "CounterTop"}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"CounterTop_41": {"label": "CounterTop"}
+"Cabinet_45": {"label": "Cabinet", "open": False}
+"Pot_49": {"label": "Pot", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner", "StoveBurner", "StoveBurner"]}
+"Potato_77": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+
+Demonstration Script:
+```python
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_potato.pickup_and_place(target_countertop)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.open()
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_potato.pickup_and_place(target_pot)
+target_pot.pickup()
+```

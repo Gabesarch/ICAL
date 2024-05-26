@@ -1,0 +1,104 @@
+Dialogue Instruction:
+<Driver> What should I do today?
+<Commander> 2 handheld items on the coffee table infront of sofa
+<Commander> 2 remotes on the chairs of the table
+<Commander> another item is inside the cabinet below the tv
+<Commander> place them all onto the single sitting sofa chair
+<Commander> credit card, key chain, remote etc
+<Commander> not the pillow
+<Commander> 6 items total
+<Driver> You said below the TV. That was the object below the TV
+<Commander> first try the items on the coffee table infront of sofa
+<Commander> not that statue
+<Commander> take that card
+<Commander> take the remote
+<Commander> place it onto that single sofa chair
+<Commander> not the box
+<Commander> just the card
+<Commander> remove the statue
+<Commander> 1 more remote near the table
+<Commander> on the chair
+<Driver> There is no remote on the wooden chairs
+<Commander> on the extreme corner one to the wall
+<Commander> it is there
+<Commander> the last item is inside the cabinet below the tv
+<Commander> check once
+<Driver> How many more?
+<Commander> just 1
+<Driver> Cabinets below the TV are empty
+<Commander> backside of tv?
+<Commander> keychain or card?
+<Commander> card is there
+<Driver> Done?
+<Commander> done, thanks!!
+
+Initial Object State:
+"Vase_0": {"label": "Vase", "holding": False, "supported_by": ["DiningTable"]}
+"CreditCard_1": {"label": "CreditCard", "holding": False, "supported_by": ["TVStand"]}
+"RemoteControl_2": {"label": "RemoteControl", "holding": False, "supported_by": ["DiningTable"]}
+"KeyChain_3": {"label": "KeyChain", "holding": False, "supported_by": ["Ottoman"]}
+"CreditCard_5": {"label": "CreditCard", "holding": False, "supported_by": ["Ottoman"]}
+"KeyChain_12": {"label": "KeyChain", "holding": False, "supported_by": ["ArmChair"]}
+"Pillow_15": {"label": "Pillow", "holding": False, "supported_by": ["TVStand"]}
+"RemoteControl_16": {"label": "RemoteControl", "holding": False, "supported_by": ["Chair"]}
+"CreditCard_19": {"label": "CreditCard", "holding": False, "supported_by": ["DiningTable"]}
+"Vase_21": {"label": "Vase", "holding": False, "supported_by": ["ArmChair"]}
+"Statue_29": {"label": "Statue", "holding": False, "supported_by": ["Ottoman"]}
+"Chair_30": {"label": "Chair"}
+"DiningTable_31": {"label": "DiningTable"}
+"Statue_32": {"label": "Statue", "holding": False, "supported_by": ["DiningTable"]}
+"Sofa_33": {"label": "Sofa"}
+"Chair_35": {"label": "Chair"}
+"Chair_36": {"label": "Chair"}
+"Chair_37": {"label": "Chair"}
+"Chair_38": {"label": "Chair"}
+"Statue_39": {"label": "Statue", "holding": False, "supported_by": ["Shelf"]}
+"SideTable_40": {"label": "SideTable"}
+
+Demonstration Script:
+```python
+target_vase = InteractionObject("Vase", object_instance = "Vase")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_vase.pickup_and_place(target_diningtable)
+target_pillow = InteractionObject("Pillow", object_instance = "Pillow")
+target_pillow.pickup()
+target_sofa = InteractionObject("Sofa", object_instance = "Sofa")
+target_sofa.go_to()
+target_pillow.place(target_sofa)
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_pillow.pickup_and_place(target_chair)
+target_keychain = InteractionObject("KeyChain", object_instance = "KeyChain")
+target_keychain.pickup()
+target_chair.go_to()
+target_keychain.place(target_chair)
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_keychain.pickup_and_place(target_coffeetable)
+target_statue = InteractionObject("Statue", object_instance = "Statue")
+target_statue.pickup()
+target_creditcard = InteractionObject("CreditCard", object_instance = "CreditCard")
+target_creditcard.pickup_and_place(target_coffeetable)
+target_remotecontrol = InteractionObject("RemoteControl", object_instance = "RemoteControl")
+target_remotecontrol.pickup()
+target_sidetable = InteractionObject("SideTable", object_instance = "SideTable")
+target_sidetable.go_to()
+target_remotecontrol.place(target_sidetable)
+target_remotecontrol.pickup_and_place(target_sidetable)
+target_soapbottle = InteractionObject("SoapBottle", object_instance = "SoapBottle")
+target_soapbottle.pickup()
+target_diningtable.go_to()
+target_soapbottle.place(target_diningtable)
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.pickup_and_place(target_diningtable)
+target_soapbottle.pickup()
+target_diningtable.go_to()
+target_soapbottle.place(target_diningtable)
+target_remotecontrol.pickup_and_place(target_chair)
+target_remotecontrol.pickup()
+target_cloth = InteractionObject("Cloth", object_instance = "Cloth")
+target_cloth.pickup_and_place(target_sidetable)
+target_statue.pickup()
+target_chair.go_to()
+target_statue.place(target_chair)
+target_remotecontrol.pickup_and_place(target_chair)
+target_remotecontrol.place(target_chair)
+```

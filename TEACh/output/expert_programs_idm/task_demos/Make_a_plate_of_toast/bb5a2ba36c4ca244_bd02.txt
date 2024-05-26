@@ -1,0 +1,47 @@
+Dialogue Instruction:
+<Driver> Hi, first task?
+<Commander> Hi. Please make a plate of toast.
+<Driver> how many
+<Commander> Just one.
+<Driver> plate?
+<Commander> There is a clean plate on the chair.
+<Driver> next
+
+Initial Object State:
+"Plate_1": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Chair"]}
+"Knife_4": {"label": "Knife", "holding": False, "supported_by": ["Floor", "Fridge"]}
+"Apple_5": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Plate", "Chair"]}
+"Knife_7": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Apple_16": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Sink"]}
+"Apple_17": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["StoveBurner"]}
+"Knife_18": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Knife_19": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Apple_20": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Drawer"]}
+"Toaster_48": {"label": "Toaster", "toggled": False}
+"Knife_63": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Apple_65": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Drawer"]}
+"Knife_67": {"label": "Knife", "holding": False, "supported_by": ["Chair"]}
+"Plate_73": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+"DiningTable_78": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_knife.pickup_and_place(target_diningtable)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.pickup()
+target_toaster = InteractionObject("Toaster", object_instance = "Toaster")
+target_toaster.go_to()
+target_breadsliced.place(target_toaster)
+target_breadsliced.pickup_and_place(target_diningtable)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_diningtable.go_to()
+target_plate.place(target_diningtable)
+target_apple = InteractionObject("Apple", object_instance = "Apple")
+target_apple.pickup_and_place(target_diningtable)
+target_breadsliced.pickup()
+target_diningtable.go_to()
+target_breadsliced.place(target_diningtable)
+```

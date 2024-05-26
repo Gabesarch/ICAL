@@ -1,0 +1,64 @@
+Dialogue Instruction:
+<Driver> what can i do today
+<Commander> Hi please make a plate of lettuce
+<Driver> help me trace the knife
+<Commander> knife is on brown stool
+<Commander> otherwise on counter
+<Commander> around
+<Driver> done
+<Driver> next
+<Commander> please put one slice of lettuce on plate
+<Commander> Plate is on brown bookshelf
+<Commander> great job. Task done.
+
+Initial Object State:
+"Bowl_0": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"Lettuce_6": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Fridge"]}
+"Knife_7": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Plate_10": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Shelf"]}
+"WineBottle_11": {"label": "WineBottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Lettuce_15": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Chair"]}
+"Bowl_16": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Stool"]}
+"Knife_17": {"label": "Knife", "holding": False, "supported_by": ["Stool"]}
+"WineBottle_18": {"label": "WineBottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["Plate", "Shelf", "Shelf"]}
+"CounterTop_26": {"label": "CounterTop"}
+"DiningTable_28": {"label": "DiningTable"}
+"CounterTop_46": {"label": "CounterTop"}
+"Fridge_55": {"label": "Fridge", "open": False}
+"WineBottle_60": {"label": "WineBottle", "holding": False, "filled": True, "fillLiquid": None, "supported_by": ["Sink"]}
+"Plate_61": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Fridge"]}
+"Knife_66": {"label": "Knife", "holding": False, "supported_by": ["Microwave"]}
+"Lettuce_71": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["DiningTable"]}
+"Knife_72": {"label": "Knife", "holding": False, "supported_by": ["Chair"]}
+"Faucet_89": {"label": "Faucet", "toggled": True}
+"Bowl_95": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+
+Demonstration Script:
+```python
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_lettuce.pickup_and_place(target_diningtable)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_off()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_lettuce.go_to()
+target_lettuce.slice()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_winebottle = InteractionObject("WineBottle", object_instance = "WineBottle")
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_winebottle.pickup_and_place(target_coffeetable)
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.pickup()
+target_countertop.go_to()
+target_bowl.place(target_countertop)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = None, parent_object = "Lettuce") # Initialize new sliced object from sliced parent
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_lettucesliced.pickup_and_place(target_plate)
+```

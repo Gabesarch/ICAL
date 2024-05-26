@@ -1,0 +1,65 @@
+Dialogue Instruction:
+<Driver> hello
+<Commander> hi
+<Commander> today we will be watering the plant
+<Driver> okay where's the water can
+<Commander> check under toaster
+<Commander> in cupboard
+<Driver> can't see it
+<Commander> hmm
+<Commander> can you try using a bowl?
+<Commander> there's a clear thing on the counter by bread and tomato
+<Commander> to your right
+<Commander> it's like a clear container
+<Driver> okay
+<Commander> do you see it?
+<Driver> yeah
+<Commander> please try filling that with water
+<Commander> with water*
+<Commander> can you turn on the sink with it set on the left side like that?
+<Commander> great
+<Driver> where is the plant
+<Commander> on the dining table
+<Driver> okay
+<Driver> which side
+<Commander> you are right next to it
+<Commander> it's a plant you will need to water
+<Commander> turn left
+<Driver> done
+<Commander> good job
+
+Initial Object State:
+"Spoon_1": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"CounterTop_20": {"label": "CounterTop"}
+"CounterTop_40": {"label": "CounterTop"}
+"Kettle_46": {"label": "Kettle", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"SinkBasin_61": {"label": "SinkBasin"}
+"Spoon_78": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"Faucet_83": {"label": "Faucet", "toggled": False}
+"Bowl_89": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+
+Demonstration Script:
+```python
+target_spoon = InteractionObject("Spoon", object_instance = "Spoon")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_spoon.pickup_and_place(target_sinkbasin)
+target_kettle = InteractionObject("Kettle", object_instance = "Kettle")
+target_kettle.pickup()
+target_sinkbasin.go_to()
+target_kettle.place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_kettle.pickup_and_place(target_countertop)
+target_kettle.place(target_countertop)
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.pickup_and_place(target_sinkbasin)
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_bowl.go_to()
+target_bowl.pickup()
+```

@@ -1,0 +1,38 @@
+Dialogue Instruction:
+<Driver> what shall I do today?
+<Commander> The remote controls need to be put onto a table.
+<Driver> where is the remote?
+<Commander> It is on the couch.
+<Driver> done
+<Commander> There is one more on the couch.
+<Driver> done
+<Commander> Bravo!
+
+Initial Object State:
+"RemoteControl_2": {"label": "RemoteControl", "holding": False, "supported_by": ["DiningTable"]}
+"RemoteControl_6": {"label": "RemoteControl", "holding": False, "supported_by": ["Floor", "ArmChair"]}
+"RemoteControl_25": {"label": "RemoteControl", "holding": False, "supported_by": ["Sofa"]}
+"Chair_39": {"label": "Chair"}
+"Chair_40": {"label": "Chair"}
+"Chair_41": {"label": "Chair"}
+"Chair_42": {"label": "Chair"}
+"Chair_46": {"label": "Chair"}
+"CoffeeTable_49": {"label": "CoffeeTable"}
+"Chair_50": {"label": "Chair"}
+"Chair_51": {"label": "Chair"}
+"DiningTable_52": {"label": "DiningTable"}
+"CoffeeTable_58": {"label": "CoffeeTable"}
+
+Demonstration Script:
+```python
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_coffeetable.go_to()
+None.place(target_coffeetable)
+target_remotecontrol = InteractionObject("RemoteControl", object_instance = "RemoteControl")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_remotecontrol.pickup_and_place(target_diningtable)
+target_remotecontrol.pickup()
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_chair.go_to()
+target_remotecontrol.place(target_chair)
+```

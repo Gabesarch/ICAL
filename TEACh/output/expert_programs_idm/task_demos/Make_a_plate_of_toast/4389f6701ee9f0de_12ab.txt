@@ -1,0 +1,39 @@
+Dialogue Instruction:
+<Driver> What should I do today?
+<Commander> Hello.
+<Commander> Today you will make a plate of one slice of toast.
+<Driver> Done
+<Commander> All done. Good job. Thank you.
+
+Initial Object State:
+"Knife_3": {"label": "Knife", "holding": False, "supported_by": ["Floor", "Shelf"]}
+"Knife_11": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"DiningTable_16": {"label": "DiningTable"}
+"CounterTop_35": {"label": "CounterTop"}
+"CounterTop_41": {"label": "CounterTop"}
+"Bread_49": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Shelf"]}
+"Knife_75": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"SinkBasin_78": {"label": "SinkBasin"}
+"Knife_82": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"DiningTable_92": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_knife.pickup_and_place(target_diningtable)
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_bread.pickup()
+target_diningtable.go_to()
+target_bread.place(target_diningtable)
+target_knife.go_to()
+target_knife.pickup()
+target_bread.go_to()
+target_bread.slice()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_knife.place(target_sinkbasin)
+```

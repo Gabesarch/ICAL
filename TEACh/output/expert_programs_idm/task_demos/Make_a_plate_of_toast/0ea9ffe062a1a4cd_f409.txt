@@ -1,0 +1,48 @@
+Dialogue Instruction:
+<Driver> hi what can i do today
+<Driver> hi?
+<Commander> Hello
+<Commander> The task is to make a slice of toast
+<Commander> the bread needs to be sliced using a knife
+<Driver> done next?
+<Commander> The toast needs to be on a clean plate
+<Commander> clean a plate first
+<Driver> done
+<Driver> next
+<Commander> that was the task, thank you very much
+<Commander> 
+<Driver> ok
+
+Initial Object State:
+"Bread_1": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Knife_11": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Knife_18": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"CounterTop_40": {"label": "CounterTop"}
+"CounterTop_42": {"label": "CounterTop"}
+"CounterTop_44": {"label": "CounterTop"}
+"CounterTop_48": {"label": "CounterTop"}
+"Knife_61": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Plate_62": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_83": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Toaster_87": {"label": "Toaster", "toggled": False}
+"Bread_88": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_bread.go_to()
+target_bread.slice()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = None, parent_object = "Bread") # Initialize new sliced object from sliced parent
+target_toaster = InteractionObject("Toaster", object_instance = "Toaster")
+target_breadsliced.pickup_and_place(target_toaster)
+target_breadsliced.pickup()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+```

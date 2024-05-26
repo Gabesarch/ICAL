@@ -1,0 +1,25 @@
+Dialogue Instruction:
+<Driver> what can i help with?
+<Commander> I would like some coffee
+<Driver> sure, where is the coffee mug?
+<Commander> there is a mug in the garbage can
+<Driver> got it
+<Driver> it looks clean
+<Commander> it technically is!
+<Commander> thank you!
+
+Initial Object State:
+"CoffeeMachine_57": {"label": "CoffeeMachine", "toggled": True}
+"Fridge_58": {"label": "Fridge", "open": False}
+
+Demonstration Script:
+```python
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_fridge.go_to()
+target_fridge.close()
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_coffeemachine.go_to()
+None.place(target_coffeemachine)
+```

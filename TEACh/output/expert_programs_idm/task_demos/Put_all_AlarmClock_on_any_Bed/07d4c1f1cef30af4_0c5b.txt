@@ -1,0 +1,13 @@
+Dialogue Instruction:
+<Commander> PLease place the alarm clock on the bed
+<Commander> The alarm clock is in the bin in the corner of the room
+<Commander> Great thank you
+
+Initial Object State:
+
+Demonstration Script:
+```python
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+None.place(target_diningtable)
+```

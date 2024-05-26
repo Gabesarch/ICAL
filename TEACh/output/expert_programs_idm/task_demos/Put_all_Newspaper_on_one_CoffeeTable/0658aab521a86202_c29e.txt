@@ -1,0 +1,38 @@
+Dialogue Instruction:
+<Driver> Hello. What is my task?
+<Driver> Hello. What is my task?
+<Driver> What shall I do today?
+<Commander> Hello. What is my task?
+<Driver> You tell me the task.
+<Driver> I am the robot
+<Commander> Please shut down the computer that's on the table.
+<Driver> It is turned off
+<Driver> I turned it on and off.
+<Driver> Is there anything else?
+<Commander> Yes, please place the laptop on the sofa.
+<Driver> It is on the sofa. What is next?
+<Commander> Put all newspapers on one coffee table.
+<Driver> Done
+<Driver> Next?
+<Driver> Is there anything else?
+
+Initial Object State:
+"Newspaper_4": {"label": "Newspaper", "holding": False, "supported_by": ["Sofa"]}
+"Newspaper_17": {"label": "Newspaper", "holding": False, "supported_by": ["ArmChair"]}
+"CoffeeTable_42": {"label": "CoffeeTable"}
+"Chair_44": {"label": "Chair"}
+
+Demonstration Script:
+```python
+target_bathtubbasin = InteractionObject("BathtubBasin", object_instance = "BathtubBasin")
+target_bathtubbasin.go_to()
+None.place(target_bathtubbasin)
+target_watch = InteractionObject("Watch", object_instance = "Watch")
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_watch.pickup_and_place(target_coffeetable)
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_watch.place(target_chair)
+target_newspaper = InteractionObject("Newspaper", object_instance = "Newspaper")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_newspaper.pickup_and_place(target_diningtable)
+```

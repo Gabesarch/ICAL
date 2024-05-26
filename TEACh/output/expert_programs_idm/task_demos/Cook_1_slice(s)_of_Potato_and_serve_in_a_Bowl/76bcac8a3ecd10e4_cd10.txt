@@ -1,0 +1,73 @@
+Dialogue Instruction:
+<Driver> what do i do today
+<Commander> slice potato
+<Commander> potato on the table
+<Commander> along with knife
+<Driver> sliced
+<Commander> cook in microwave
+<Commander> 1 slice
+<Commander> use bowl by microwave and place cook potato in it
+<Commander> empty water first out the bowl before using it
+<Commander> turn on
+<Commander> no turn on
+<Commander> not cook
+<Commander> turn on
+<Commander> lol
+<Commander> place in bowl
+<Commander> after empty
+<Commander> where you going
+<Driver> where is the bowl
+<Commander> bowl is the other way
+<Commander> i said it's by the microwave
+<Commander> grab an empty
+
+Initial Object State:
+"DishSponge_1": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Chair"]}
+"Knife_3": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"CounterTop_25": {"label": "CounterTop"}
+"CounterTop_26": {"label": "CounterTop"}
+"Knife_43": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Microwave_44": {"label": "Microwave", "toggled": False, "open": False}
+"Potato_61": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Knife_64": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"DishSponge_72": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["CounterTop", "Microwave"]}
+"DiningTable_83": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.go_to()
+target_potato.slice()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.go_to()
+target_microwave.open()
+target_microwave.go_to()
+target_knife.place(target_microwave)
+target_dishsponge = InteractionObject("DishSponge", object_instance = "DishSponge")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_dishsponge.pickup_and_place(target_countertop)
+target_microwave.close()
+target_microwave.go_to()
+target_microwave.open()
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = None, parent_object = "Potato") # Initialize new sliced object from sliced parent
+target_potatosliced.pickup_and_place(target_microwave)
+target_microwave.close()
+target_microwave.go_to()
+target_microwave.toggle_on()
+target_microwave.go_to()
+target_microwave.toggle_off()
+target_microwave.go_to()
+target_microwave.open()
+target_potatosliced.go_to()
+target_potatosliced.pickup()
+target_microwave.go_to()
+target_microwave.close()
+target_microwave.go_to()
+target_potatosliced.place(target_microwave)
+```

@@ -1,0 +1,78 @@
+Dialogue Instruction:
+<Driver> what's first?
+<Commander> let's find the tomato
+<Driver> it's on your search
+<Commander> it's inside the drawer beneath the sink
+<Commander> there's also one on the counter
+<Driver> knife not tomato
+<Commander> knife is close to the oven
+<Commander> you are looking at it straight ahead
+<Driver> next
+<Commander> slice the tomato and locate the plate on the drawer beneath the sink
+<Driver> already did
+<Commander> the tomato needs to be on a clean plate
+<Commander> serve 2 slices
+<Driver> where is the plate
+<Commander> drawers to the right the ones farthest from the ones beneath the sink
+<Driver> how many slices
+<Commander> 2
+<Driver> next
+
+Initial Object State:
+"Spatula_8": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Plate_11": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Spatula_15": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Cabinet_16": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"CounterTop_37": {"label": "CounterTop"}
+"Cabinet_39": {"label": "Cabinet", "open": False}
+"CounterTop_44": {"label": "CounterTop"}
+"Cabinet_48": {"label": "Cabinet", "open": False}
+"Plate_65": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Spatula_68": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"Fridge_70": {"label": "Fridge", "open": False}
+"Knife_72": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Knife_77": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+
+Demonstration Script:
+```python
+target_spatula = InteractionObject("Spatula", object_instance = "Spatula")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_spatula.pickup_and_place(target_countertop)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.open()
+target_fridge.go_to()
+target_fridge.close()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup_and_place(target_countertop)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.close()
+target_cabinet.go_to()
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.close()
+target_dresser = InteractionObject("Dresser", object_instance = "Dresser")
+target_dresser.go_to()
+target_dresser.open()
+target_fridge.go_to()
+target_fridge.close()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup_and_place(target_countertop)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = "TomatoSliced")
+target_tomatosliced.pickup()
+target_plate.go_to()
+target_tomatosliced.place(target_plate)
+target_tomatosliced.pickup_and_place(target_plate)
+target_tomatosliced.pickup()
+target_plate.go_to()
+target_tomatosliced.place(target_plate)
+```

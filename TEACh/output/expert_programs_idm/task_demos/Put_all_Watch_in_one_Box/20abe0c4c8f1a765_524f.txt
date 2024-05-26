@@ -1,0 +1,39 @@
+Dialogue Instruction:
+<Driver> What do I do?
+<Commander> put all watch in one box
+<Driver> Where are they?
+<Commander> in the box
+<Commander> the other is the sofa
+<Driver> I can't set the laptop down anywhere
+<Commander> try the floor
+<Driver> 
+<Driver> it was stuck open
+<Driver> I don't see any watches
+<Driver> there's one
+<Commander> there is one where you removed the laptop
+<Driver> what box do I put them in?
+<Driver> that one?
+<Commander> yes please
+<Commander> great work. now go get the other
+<Commander> done thanks
+
+Initial Object State:
+"Watch_0": {"label": "Watch", "holding": False, "supported_by": ["Box", "CoffeeTable"]}
+"Watch_4": {"label": "Watch", "holding": False, "supported_by": ["Sofa"]}
+"Watch_20": {"label": "Watch", "holding": False, "supported_by": ["Sofa"]}
+"CoffeeTable_37": {"label": "CoffeeTable"}
+
+Demonstration Script:
+```python
+target_desk = InteractionObject("Desk", object_instance = "Desk")
+target_desk.go_to()
+None.place(target_desk)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_watch = InteractionObject("Watch", object_instance = "Watch")
+target_watch.go_to()
+target_watch.pickup()
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_watch.pickup_and_place(target_coffeetable)
+```

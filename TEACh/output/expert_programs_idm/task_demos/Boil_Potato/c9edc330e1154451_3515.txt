@@ -1,0 +1,70 @@
+Dialogue Instruction:
+<Driver> how can i help
+<Commander> could you please boil a potato
+<Commander> the potato should be in the drawer under the kitchen island
+<Driver> would you like me to slice it?
+<Commander> just boiling it will do
+<Driver> is that all?
+<Commander> yes thanks
+
+Initial Object State:
+"Knife_2": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Plate_3": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_6": {"label": "Knife", "holding": False, "supported_by": ["Shelf"]}
+"PepperShaker_7": {"label": "PepperShaker", "holding": False, "supported_by": ["Sink"]}
+"Potato_8": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"WineBottle_15": {"label": "WineBottle", "holding": False, "filled": True, "fillLiquid": None, "supported_by": ["StoveBurner", "Pot"]}
+"Potato_24": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Shelf"]}
+"Plate_26": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Floor", "Shelf"]}
+"Plate_30": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"Potato_32": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Potato_38": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Knife_44": {"label": "Knife", "holding": False, "supported_by": ["Chair"]}
+"WineBottle_49": {"label": "WineBottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner"]}
+"WineBottle_53": {"label": "WineBottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["Floor", "Shelf"]}
+"Plate_54": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Floor", "Shelf"]}
+"StoveBurner_58": {"label": "StoveBurner"}
+"StoveBurner_59": {"label": "StoveBurner"}
+"StoveBurner_60": {"label": "StoveBurner"}
+"CounterTop_62": {"label": "CounterTop"}
+"StoveBurner_71": {"label": "StoveBurner"}
+"WineBottle_87": {"label": "WineBottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Potato_96": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"PepperShaker_97": {"label": "PepperShaker", "holding": False, "supported_by": ["DiningTable"]}
+"Knife_98": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Plate_107": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Floor", "Shelf"]}
+"Knife_108": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Faucet_113": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_potato.pickup_and_place(target_countertop)
+target_winebottle = InteractionObject("WineBottle", object_instance = "WineBottle")
+target_winebottle.pickup()
+target_countertop.go_to()
+target_winebottle.place(target_countertop)
+target_peppershaker = InteractionObject("PepperShaker", object_instance = "PepperShaker")
+target_peppershaker.pickup_and_place(target_countertop)
+target_potato.pickup()
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup_and_place(target_countertop)
+target_knife.pickup()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_plate.pickup()
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_stoveburner = InteractionObject("StoveBurner", object_instance = "StoveBurner")
+target_plate.pickup_and_place(target_stoveburner)
+target_potato.pickup()
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_potato.pickup_and_place(target_countertop)
+```

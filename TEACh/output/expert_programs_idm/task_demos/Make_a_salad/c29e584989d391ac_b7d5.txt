@@ -1,0 +1,98 @@
+Dialogue Instruction:
+<Driver> hi
+<Driver> what should I do?
+<Commander> today we need to make a salad
+<Commander> please cut the lettuce using a knife
+<Driver> what's next?
+<Commander> please cut the potato using the knife
+<Driver> did that
+<Commander> you need to cook the potato slice
+<Commander> place one slice of potato in the microwave
+<Commander> remove the other items from the microwave
+<Commander> place the potato slice and and lettuce on a plate
+<Driver> what's next?
+<Commander> 2 slices of lettuce
+<Commander> done
+<Commander> thank you
+
+Initial Object State:
+"Knife_1": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Lettuce_4": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Spatula_5": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Plate_7": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+"Apple_10": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Stool"]}
+"Cabinet_16": {"label": "Cabinet", "open": False}
+"Cabinet_17": {"label": "Cabinet", "open": False}
+"Cabinet_18": {"label": "Cabinet", "open": False}
+"Cabinet_19": {"label": "Cabinet", "open": False}
+"Cabinet_20": {"label": "Cabinet", "open": False}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"CounterTop_37": {"label": "CounterTop"}
+"CounterTop_38": {"label": "CounterTop"}
+"CounterTop_44": {"label": "CounterTop"}
+"Apple_47": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["CounterTop", "Microwave"]}
+"Plate_58": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Spatula_61": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Lettuce_62": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Fridge"]}
+"Knife_69": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Microwave_73": {"label": "Microwave", "toggled": False, "open": False}
+"Knife_77": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Mug_79": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop", "Microwave"]}
+
+Demonstration Script:
+```python
+target_spatula = InteractionObject("Spatula", object_instance = "Spatula")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_spatula.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.go_to()
+target_lettuce.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.go_to()
+target_potatosliced.pickup()
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.go_to()
+target_microwave.open()
+target_microwave.go_to()
+target_potatosliced.place(target_microwave)
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.pickup_and_place(target_countertop)
+target_apple = InteractionObject("Apple", object_instance = "Apple")
+target_apple.pickup()
+target_countertop.go_to()
+target_apple.place(target_countertop)
+target_potatosliced.pickup_and_place(target_microwave)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.close()
+target_microwave.go_to()
+target_microwave.toggle_off()
+target_microwave.go_to()
+target_microwave.open()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_potatosliced.pickup_and_place(target_plate)
+target_microwave.close()
+target_plate.pickup_and_place(target_countertop)
+target_potatosliced.pickup()
+target_plate.go_to()
+target_potatosliced.place(target_plate)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = None, parent_object = "Lettuce") # Initialize new sliced object from sliced parent
+target_lettucesliced.pickup_and_place(target_countertop)
+```

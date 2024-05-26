@@ -1,0 +1,50 @@
+Dialogue Instruction:
+<Commander> Hello
+<Commander> You ready?
+<Driver> hi
+<Driver> what should i do today?
+<Commander> clean the plate
+<Driver> where can i find a plate
+<Commander> Place in the sink
+<Driver> what should i do next?
+<Driver> 
+<Commander> Completed
+<Commander> Great work
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Fridge"]}
+"Knife_9": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Mug_11": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop", "CoffeeMachine"]}
+"Knife_12": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"CounterTop_21": {"label": "CounterTop"}
+"Faucet_23": {"label": "Faucet", "toggled": True}
+"Knife_31": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Spatula_52": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["Stool"]}
+"SinkBasin_55": {"label": "SinkBasin"}
+"Knife_56": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Plate_57": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Mug_64": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+
+Demonstration Script:
+```python
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_plate.pickup_and_place(target_countertop)
+target_spatula = InteractionObject("Spatula", object_instance = "Spatula")
+target_spatula.pickup()
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_mug.pickup_and_place(target_sinkbasin)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_sinkbasin.go_to()
+target_knife.place(target_sinkbasin)
+target_plate.pickup_and_place(target_sinkbasin)
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_plate.pickup_and_place(target_countertop)
+```

@@ -1,0 +1,185 @@
+Dialogue Instruction:
+<Driver> hello, what should I do today?
+<Commander> Hello. We need to make a plate of toast.
+<Commander> The bread needs to be sliced using a knife.
+<Driver> Where is the bread?
+<Commander> I think in the drawer.
+<Commander> on the shelf next to the fridge
+<Driver> ok, i will check on the shelf for the bread
+<Driver> I have the bread
+<Commander> Great!
+<Driver> Where can I find a knife?
+<Commander> I am not sure. We will have to look around.
+<Driver> I have the knife
+<Driver> I have sliced the bread
+<Commander> Okay. Put it in the toaster.
+<Driver> I have a slice of bread in my hand now.
+<Commander> okay. We need to clean the plate.
+<Commander> Rinse with water in the sink. Then the toast needs to go on the plate.
+<Driver> ok
+<Driver> I have the plate
+<Driver> I have to empty the sink first
+<Commander> ok
+<Driver> I can't seem to put the plate in the sink
+<Commander> ok. It says to rinse with water. Is there another way to rinse with water?
+<Driver> ok, I had to move to the side and now the plate is in the sink
+<Driver> The plate is now clean
+<Commander> ok! Now put toast on the clean plate.
+<Driver> ok
+<Driver> The toast is now on the plate
+<Commander> Alright. Next, cook 2 slices of Potato and serve on a plate.
+<Commander> The potato needs to be sliced using a knife.
+<Driver> ok
+<Commander> The potato is near the microwave.
+<Driver> Where can I find the potato?
+<Driver> ok
+<Driver> I have the potato
+<Commander> Alright let's slice it.
+<Driver> I am now getting the knife
+<Driver> The potato is now sliced
+<Commander> Now we need to cook the slices.
+<Driver> ok
+<Driver> I am turning the stove on now.
+<Driver> The slices are in the pan and stove is on.
+<Commander> Now add to the clean plate.
+<Driver> The potato slices are now on the plate.
+<Commander> Next we need to serve 1 slice of Apple on the plate.
+<Driver> The apple is now sliced.
+<Driver> The apple slice is now on the plate.
+<Commander> Good job! We have finished.
+
+Initial Object State:
+"Spoon_2": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Pan_3": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["Shelf"]}
+"Potato_4": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Knife_8": {"label": "Knife", "holding": False, "supported_by": ["Stool"]}
+"WineBottle_12": {"label": "WineBottle", "holding": False, "filled": True, "fillLiquid": None, "supported_by": ["Sink"]}
+"Plate_13": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Shelf"]}
+"Pan_17": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["StoveBurner", "StoveBurner"]}
+"DiningTable_18": {"label": "DiningTable"}
+"Cabinet_19": {"label": "Cabinet", "open": False}
+"Cabinet_20": {"label": "Cabinet", "open": False}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"CounterTop_37": {"label": "CounterTop"}
+"Cabinet_40": {"label": "Cabinet", "open": False}
+"Cabinet_42": {"label": "Cabinet", "open": False}
+"CounterTop_43": {"label": "CounterTop"}
+"Bread_51": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Floor", "Shelf"]}
+"StoveKnob_52": {"label": "StoveKnob", "toggled": True}
+"StoveKnob_53": {"label": "StoveKnob", "toggled": True}
+"StoveKnob_54": {"label": "StoveKnob", "toggled": True}
+"StoveKnob_55": {"label": "StoveKnob", "toggled": False}
+"Fridge_59": {"label": "Fridge", "open": False}
+"Plate_62": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"WineBottle_70": {"label": "WineBottle", "holding": False, "filled": True, "fillLiquid": None, "supported_by": ["Fridge"]}
+"Toaster_71": {"label": "Toaster", "toggled": True}
+"Knife_77": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"SinkBasin_80": {"label": "SinkBasin"}
+"Potato_83": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Knife_84": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Pan_86": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Spoon_87": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Faucet_89": {"label": "Faucet", "toggled": False}
+"DiningTable_94": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_fridge.go_to()
+target_fridge.close()
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.close()
+target_cabinet.go_to()
+target_cabinet.open()
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_bread.pickup_and_place(target_diningtable)
+target_bread.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_bread.place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_bread.go_to()
+target_bread.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = None, parent_object = "Bread") # Initialize new sliced object from sliced parent
+target_toaster = InteractionObject("Toaster", object_instance = "Toaster")
+target_breadsliced.pickup_and_place(target_toaster)
+target_breadsliced.pickup()
+target_toaster.go_to()
+target_breadsliced.place(target_toaster)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup_and_place(target_countertop)
+target_winebottle = InteractionObject("WineBottle", object_instance = "WineBottle")
+target_winebottle.pickup()
+target_countertop.go_to()
+target_winebottle.place(target_countertop)
+target_plate.pickup_and_place(target_countertop)
+target_plate.place(target_countertop)
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_plate.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_plate.pickup_and_place(target_countertop)
+target_faucet.toggle_on()
+target_plate.pickup_and_place(target_sinkbasin)
+target_faucet.toggle_off()
+target_plate.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_countertop.go_to()
+target_breadsliced.place(target_countertop)
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.pickup_and_place(target_countertop)
+target_knife.pickup()
+target_potato.go_to()
+target_potato.slice()
+target_potato.go_to()
+target_potato.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_stoveknob = InteractionObject("StoveKnob", object_instance = "StoveKnob")
+target_stoveknob.go_to()
+target_stoveknob.toggle_on()
+target_pan = InteractionObject("Pan", object_instance = "Pan")
+target_pan.pickup_and_place(target_countertop)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = None, parent_object = "Potato") # Initialize new sliced object from sliced parent
+target_potatosliced.pickup()
+target_countertop.go_to()
+target_potatosliced.place(target_countertop)
+target_potatosliced.pickup_and_place(target_countertop)
+target_potato.pickup()
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_potatosliced.pickup_and_place(target_countertop)
+target_potato.pickup()
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_spoon = InteractionObject("Spoon", object_instance = "Spoon")
+target_spoon.pickup_and_place(target_countertop)
+target_spoon.place(target_countertop)
+```

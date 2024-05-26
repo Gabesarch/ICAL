@@ -1,0 +1,92 @@
+Dialogue Instruction:
+<Driver> how can i help today
+<Commander> i would like you to prepare a salad for me
+<Commander> could you include tomato and cook a slice of potato for it
+<Driver> how many slices of tomato would you like in it
+<Commander> 2 please
+<Commander> please assemble these on the plate
+<Driver> all done
+<Commander> please put 1 slice of lettuce too
+<Commander> thank you that is everything
+<Driver> anything else today?
+
+Initial Object State:
+"Tomato_1": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Plate", "Cabinet"]}
+"SaltShaker_10": {"label": "SaltShaker", "holding": False, "supported_by": ["CounterTop", "Plate"]}
+"Egg_12": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+"Plate_13": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Knife_18": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Pan_19": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Pan_20": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Tomato_23": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"SaltShaker_25": {"label": "SaltShaker", "holding": False, "supported_by": ["Sink"]}
+"Tomato_26": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Microwave"]}
+"SaltShaker_29": {"label": "SaltShaker", "holding": False, "supported_by": ["Cabinet"]}
+"Tomato_38": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"CounterTop_47": {"label": "CounterTop"}
+"CounterTop_56": {"label": "CounterTop"}
+"CounterTop_57": {"label": "CounterTop"}
+"CounterTop_74": {"label": "CounterTop"}
+"Pan_78": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["StoveBurner", "CounterTop"]}
+"Fridge_79": {"label": "Fridge", "open": False}
+"Knife_80": {"label": "Knife", "holding": False, "supported_by": ["Microwave"]}
+"Plate_86": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Egg_88": {"label": "Egg", "holding": False, "supported_by": ["Stool"]}
+"Potato_90": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"SaltShaker_91": {"label": "SaltShaker", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"Knife_101": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Tomato_107": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Stool_110": {"label": "Stool"}
+"Stool_111": {"label": "Stool"}
+
+Demonstration Script:
+```python
+target_stool = InteractionObject("Stool", object_instance = "Stool")
+target_stool.go_to()
+target_stool.open()
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_potato.pickup_and_place(target_countertop)
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_tomato.pickup()
+target_countertop.go_to()
+target_tomato.place(target_countertop)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.close()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_tomato.go_to()
+target_tomato.slice()
+target_tomato.go_to()
+target_tomato.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_egg = InteractionObject("Egg", object_instance = "Egg")
+target_pan = InteractionObject("Pan", object_instance = "Pan")
+target_egg.pickup_and_place(target_pan)
+target_pan.pickup()
+target_countertop.go_to()
+target_pan.place(target_countertop)
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_saltshaker.pickup_and_place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_pan.pickup_and_place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.pickup()
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+target_applesliced = InteractionObject("AppleSliced", object_instance = "AppleSliced")
+target_applesliced.go_to()
+target_applesliced.pickup()
+target_tomato.go_to()
+target_tomato.slice()
+target_countertop.go_to()
+target_applesliced.place(target_countertop)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = "LettuceSliced")
+target_lettucesliced.pickup_and_place(target_plate)
+```

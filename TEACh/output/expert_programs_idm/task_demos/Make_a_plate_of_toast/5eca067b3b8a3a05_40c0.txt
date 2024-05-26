@@ -1,0 +1,54 @@
+Dialogue Instruction:
+<Driver> hi how can i help
+<Commander> Hi can you make me a plate of toast
+<Commander> Bread is on the table
+<Commander> There is a knife also there and the plate needs cleaning
+<Driver> was that all
+<Commander> Yes thanks
+
+Initial Object State:
+"Knife_4": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Bread_6": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Plate_7": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+"CounterTop_23": {"label": "CounterTop"}
+"CounterTop_29": {"label": "CounterTop"}
+"Plate_36": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"Bread_40": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Knife_46": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"SinkBasin_51": {"label": "SinkBasin"}
+"Knife_54": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"DiningTable_63": {"label": "DiningTable"}
+"Faucet_64": {"label": "Faucet", "toggled": True}
+"DiningTable_65": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_breadsliced.pickup_and_place(target_diningtable)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_plate.place(target_sinkbasin)
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_plate.pickup_and_place(target_diningtable)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_bread.go_to()
+target_bread.slice()
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_knife.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+```

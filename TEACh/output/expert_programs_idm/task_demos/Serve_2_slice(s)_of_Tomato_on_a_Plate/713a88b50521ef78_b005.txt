@@ -1,0 +1,37 @@
+Dialogue Instruction:
+<Driver> Hi what are my directions?
+<Commander> can serve me 2 slices of tomatoes on plate please
+<Driver> done
+<Commander> thank you
+
+Initial Object State:
+"Plate_2": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_4": {"label": "Knife", "holding": False, "supported_by": ["Chair"]}
+"Tomato_6": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Tomato_14": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Knife_15": {"label": "Knife", "holding": False, "supported_by": ["Microwave"]}
+"Plate_16": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Tomato_64": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Knife_75": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Knife_77": {"label": "Knife", "holding": False, "supported_by": ["Chair"]}
+"Plate_78": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"DiningTable_82": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_tomato.go_to()
+target_tomato.slice()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = None, parent_object = "Tomato") # Initialize new sliced object from sliced parent
+target_tomatosliced.pickup_and_place(target_diningtable)
+target_tomatosliced.pickup()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_tomatosliced.place(target_plate)
+```

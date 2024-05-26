@@ -1,0 +1,124 @@
+Dialogue Instruction:
+<Driver> what do i do
+<Driver> hey
+<Commander> hi
+<Commander> let's slice a tomato
+<Commander> the tomato is on the brown shelves
+<Driver> where's the knife
+<Commander> I'm trying to find the knife
+<Commander> it's on the island
+<Commander> the tomato is on the brown shelf by the vase
+<Commander> you got it
+<Driver> done
+<Driver> what next
+<Commander> let's slice a potato
+<Commander> there is a potato on the black stool
+<Driver> are we done
+<Driver> finish the game
+<Commander> no we need to slice and cook the potato first
+<Commander> we only need to cook one slice
+<Commander> the pan is on the island
+<Commander> great job
+<Driver> thank you
+<Commander> let's put the tomato slice on the plate
+<Commander> the plate is in the cabinet to the left of the dishwasher
+<Driver> what next
+<Commander> then put the potato slice on the plate
+<Commander> let's try one more slice of tomato
+<Commander> excellent job
+<Commander> thank you
+
+Initial Object State:
+"Egg_1": {"label": "Egg", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"Tomato_3": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Pan_4": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+"Cup_5": {"label": "Cup", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Shelf"]}
+"Plate_8": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Bread_10": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Potato_13": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Pan_14": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"Cup_17": {"label": "Cup", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"Bread_18": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Shelf"]}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Potato_40": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Stool"]}
+"Vase_41": {"label": "Vase", "holding": False, "supported_by": ["DiningTable"]}
+"Vase_48": {"label": "Vase", "holding": False, "supported_by": ["Fridge"]}
+"Bread_50": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Floor", "Shelf"]}
+"Vase_51": {"label": "Vase", "holding": False, "supported_by": ["Shelf"]}
+"Plate_57": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Vase_59": {"label": "Vase", "holding": False, "supported_by": ["CounterTop"]}
+"Cup_63": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Pan_65": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Knife_66": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Tomato_71": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Shelf"]}
+"Egg_73": {"label": "Egg", "holding": False, "supported_by": ["Cabinet", "Plate"]}
+"Knife_75": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"DiningTable_77": {"label": "DiningTable"}
+"Stool_84": {"label": "Stool"}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_bread.go_to()
+target_bread.slice()
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_tomato.go_to()
+target_tomato.slice()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_cup.pickup_and_place(target_diningtable)
+target_vase = InteractionObject("Vase", object_instance = "Vase")
+target_vase.pickup()
+target_stool = InteractionObject("Stool", object_instance = "Stool")
+target_stool.go_to()
+target_stool.slice()
+target_bread.go_to()
+target_bread.slice()
+target_tomato.go_to()
+target_tomato.slice()
+target_diningtable.go_to()
+target_vase.place(target_diningtable)
+target_knife.go_to()
+target_knife.pickup()
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.go_to()
+target_potato.slice()
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = None, parent_object = "Potato") # Initialize new sliced object from sliced parent
+target_potatosliced.go_to()
+target_potatosliced.pickup()
+target_pan = InteractionObject("Pan", object_instance = "Pan")
+target_pan.go_to()
+target_pan.pickup()
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = None, parent_object = "Tomato") # Initialize new sliced object from sliced parent
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_tomatosliced.pickup_and_place(target_plate)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.open()
+target_plate.pickup_and_place(target_diningtable)
+target_egg = InteractionObject("Egg", object_instance = "Egg")
+target_egg.pickup()
+target_diningtable.go_to()
+target_egg.place(target_diningtable)
+target_tomatosliced.pickup_and_place(target_plate)
+target_tomatosliced.place(target_plate)
+target_tomatosliced.pickup_and_place(target_plate)
+```

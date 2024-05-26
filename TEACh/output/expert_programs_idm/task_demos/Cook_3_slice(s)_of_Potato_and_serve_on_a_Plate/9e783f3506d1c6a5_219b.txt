@@ -1,0 +1,82 @@
+Dialogue Instruction:
+<Driver> How can I help?
+<Commander> Could you please cook 3 slices of potato and serve them on a plate for me?
+<Commander> there is a potato on the table
+<Commander> and a plate
+<Commander> you should also find a knife on the chair next to the plate
+<Commander> if you could cut the potato into three slices
+<Commander> then you should find a pan on the stove already
+<Commander> once cooked if you place them on a clean plate that would be great
+<Driver> Understood
+<Driver> Would you please let me know when they are cooked?
+<Commander> They look cooked to me
+<Driver> Is there anything more I can help with?
+<Commander> that's all thank you
+
+Initial Object State:
+"Bread_4": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Shelf"]}
+"Knife_6": {"label": "Knife", "holding": False, "supported_by": ["Chair"]}
+"Potato_7": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"Plate_9": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Fridge"]}
+"Bread_15": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Plate_16": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Potato_20": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"StoveBurner_24": {"label": "StoveBurner"}
+"CounterTop_25": {"label": "CounterTop"}
+"DiningTable_27": {"label": "DiningTable"}
+"StoveBurner_28": {"label": "StoveBurner"}
+"StoveBurner_29": {"label": "StoveBurner"}
+"StoveBurner_43": {"label": "StoveBurner"}
+"CounterTop_45": {"label": "CounterTop"}
+"Plate_60": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Potato_62": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Knife_65": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Knife_71": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Bread_76": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Chair"]}
+"Pan_81": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["StoveBurner"]}
+
+Demonstration Script:
+```python
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_potato.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_knife.place(target_plate)
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_knife.go_to()
+target_knife.pickup()
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_bread.go_to()
+target_bread.slice()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.pickup_and_place(target_countertop)
+target_potatosliced.pickup()
+target_countertop.go_to()
+target_potatosliced.place(target_countertop)
+target_potatosliced.pickup_and_place(target_countertop)
+target_plate.pickup()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_pan = InteractionObject("Pan", object_instance = "Pan")
+target_potatosliced.pickup_and_place(target_pan)
+target_potatosliced.pickup()
+target_countertop.go_to()
+target_potatosliced.place(target_countertop)
+target_potatosliced.pickup_and_place(target_pan)
+target_potatosliced.pickup()
+target_countertop.go_to()
+target_potatosliced.place(target_countertop)
+target_potatosliced.pickup_and_place(target_pan)
+target_pan.pickup()
+target_stoveburner = InteractionObject("StoveBurner", object_instance = "StoveBurner")
+target_stoveburner.go_to()
+target_pan.place(target_stoveburner)
+target_potatosliced.pickup_and_place(target_countertop)
+```

@@ -1,0 +1,71 @@
+Dialogue Instruction:
+<Driver> what can we do today
+<Commander> cook two slices of potato and serve on a plate please
+<Commander> you are doing great
+<Driver> done
+<Driver> next
+<Commander> we are finished. well done
+
+Initial Object State:
+"Bowl_0": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Pan", "Cabinet"]}
+"Apple_4": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Microwave"]}
+"Knife_5": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"WineBottle_6": {"label": "WineBottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["Chair"]}
+"Apple_12": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Pot", "StoveBurner"]}
+"Bowl_15": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Fridge"]}
+"Knife_16": {"label": "Knife", "holding": False, "supported_by": ["Chair"]}
+"CounterTop_24": {"label": "CounterTop"}
+"CounterTop_35": {"label": "CounterTop"}
+"WineBottle_57": {"label": "WineBottle", "holding": False, "filled": True, "fillLiquid": None, "supported_by": ["Plate", "DiningTable"]}
+"Knife_59": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Apple_61": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Drawer"]}
+"Knife_63": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Microwave_66": {"label": "Microwave", "toggled": False, "open": False}
+"Plate_69": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Mug_72": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Plate", "DiningTable"]}
+"Bowl_73": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Microwave"]}
+"DiningTable_74": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_knife.pickup_and_place(target_diningtable)
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_knife.place(target_microwave)
+target_microwave.go_to()
+target_microwave.open()
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_bowl.pickup_and_place(target_countertop)
+target_apple = InteractionObject("Apple", object_instance = "Apple")
+target_apple.pickup()
+target_countertop.go_to()
+target_apple.place(target_countertop)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.pickup_and_place(target_microwave)
+target_potatosliced.pickup()
+target_microwave.go_to()
+target_potatosliced.place(target_microwave)
+target_microwave.go_to()
+target_microwave.close()
+target_microwave.go_to()
+target_microwave.toggle_on()
+target_microwave.go_to()
+target_microwave.toggle_off()
+target_winebottle = InteractionObject("WineBottle", object_instance = "WineBottle")
+target_winebottle.pickup_and_place(target_diningtable)
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.pickup()
+target_diningtable.go_to()
+target_mug.place(target_diningtable)
+target_microwave.go_to()
+target_microwave.open()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_potatosliced.pickup_and_place(target_plate)
+target_potatosliced.pickup()
+target_microwave.go_to()
+target_microwave.close()
+target_plate.go_to()
+target_potatosliced.place(target_plate)
+```

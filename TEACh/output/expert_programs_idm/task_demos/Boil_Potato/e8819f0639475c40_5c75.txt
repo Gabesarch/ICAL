@@ -1,0 +1,47 @@
+Dialogue Instruction:
+<Driver> Hi! What can I do for you today?
+<Commander> Hello. Let me see what we need to do.
+<Commander> Okay. We need to boil a potato.
+<Driver> Sure.
+<Driver> Where is potato?
+<Commander> Looks like the potato is by the sink
+<Commander> Might have to use the other pan
+<Driver> Done
+<Driver> Next?
+<Driver> Hello?
+<Commander> sorry. that's it for this one.
+<Driver> Great!
+
+Initial Object State:
+"Potato_10": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Pot_11": {"label": "Pot", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner"]}
+"Pot_17": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"DiningTable_23": {"label": "DiningTable"}
+"CounterTop_30": {"label": "CounterTop"}
+"CounterTop_33": {"label": "CounterTop"}
+"CounterTop_35": {"label": "CounterTop"}
+"Pot_43": {"label": "Pot", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner"]}
+"Potato_45": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"SinkBasin_55": {"label": "SinkBasin"}
+
+Demonstration Script:
+```python
+target_egg = InteractionObject("Egg", object_instance = "Egg")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_egg.pickup_and_place(target_diningtable)
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.pickup_and_place(target_countertop)
+target_pot.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_pot.place(target_sinkbasin)
+target_potato.pickup_and_place(target_countertop)
+target_pot.pickup()
+target_sinkbasin.go_to()
+target_pot.place(target_sinkbasin)
+```

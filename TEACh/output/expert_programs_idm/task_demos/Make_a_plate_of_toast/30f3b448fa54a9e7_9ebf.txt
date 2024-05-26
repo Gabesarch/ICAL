@@ -1,0 +1,46 @@
+Dialogue Instruction:
+<Driver> What should I do today?
+<Commander> make a plate of toast
+<Commander> check sink for knife
+<Commander> check sink for knife
+<Driver> How many slices do you need?
+<Commander> plate is on the stool next to countertop
+<Commander> 1 piece
+<Driver> Done
+<Commander> good job
+<Driver> What next?
+
+Initial Object State:
+"SoapBottle_10": {"label": "SoapBottle", "holding": False, "supported_by": ["Plate", "Stool"]}
+"Potato_11": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"CounterTop_24": {"label": "CounterTop"}
+"CounterTop_26": {"label": "CounterTop"}
+"CounterTop_49": {"label": "CounterTop"}
+"Knife_51": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Potato_56": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Toaster_58": {"label": "Toaster", "toggled": True}
+"SoapBottle_59": {"label": "SoapBottle", "holding": False, "supported_by": ["Cabinet"]}
+"Plate_63": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Stool"]}
+"Knife_83": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.go_to()
+target_potato.slice()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_toaster = InteractionObject("Toaster", object_instance = "Toaster")
+target_breadsliced.pickup_and_place(target_toaster)
+target_breadsliced.pickup()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+target_soapbottle = InteractionObject("SoapBottle", object_instance = "SoapBottle")
+target_soapbottle.pickup_and_place(target_countertop)
+```

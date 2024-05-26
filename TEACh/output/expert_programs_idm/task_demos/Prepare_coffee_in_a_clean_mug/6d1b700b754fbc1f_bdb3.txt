@@ -1,0 +1,61 @@
+Dialogue Instruction:
+<Commander> HI there! We are going to start with rinsing the coffee mug.
+<Driver> ok
+<Driver> where is the mug?
+<Commander> It is in the chair at the table.
+<Commander> After rinsing the mug, please place it in the coffee pot on the table.
+<Commander> Turn the coffee pot on
+<Driver> done.
+<Commander> Great job! we are done!
+
+Initial Object State:
+"Mug_1": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"SaltShaker_8": {"label": "SaltShaker", "holding": False, "supported_by": ["Cabinet"]}
+"Spatula_9": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"SaltShaker_23": {"label": "SaltShaker", "holding": False, "supported_by": ["Drawer"]}
+"Mug_25": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Chair"]}
+"SaltShaker_30": {"label": "SaltShaker", "holding": False, "supported_by": ["Sink"]}
+"Spatula_41": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Mug_44": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"Spatula_51": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Mug_59": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"SaltShaker_68": {"label": "SaltShaker", "holding": False, "supported_by": ["Pan", "CounterTop"]}
+"Mug_71": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Fridge"]}
+"Mug_72": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"CounterTop_75": {"label": "CounterTop"}
+"CounterTop_101": {"label": "CounterTop"}
+"Spatula_126": {"label": "Spatula", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"SinkBasin_128": {"label": "SinkBasin"}
+"SaltShaker_130": {"label": "SaltShaker", "holding": False, "supported_by": ["Fridge"]}
+"Mug_137": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"DiningTable_138": {"label": "DiningTable"}
+"Faucet_140": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_mug.pickup_and_place(target_sinkbasin)
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_spatula = InteractionObject("Spatula", object_instance = "Spatula")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_spatula.pickup_and_place(target_countertop)
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_saltshaker.pickup()
+target_countertop.go_to()
+target_saltshaker.place(target_countertop)
+target_mug.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_mug.place(target_diningtable)
+```

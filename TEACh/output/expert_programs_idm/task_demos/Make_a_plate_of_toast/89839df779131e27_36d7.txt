@@ -1,0 +1,60 @@
+Dialogue Instruction:
+<Driver> What should I do?
+<Commander> slice a bread
+<Commander> toast it
+<Driver> Where's the bread?
+<Commander> bread in the cupboard top of the sink
+<Commander> sink upper cupboard
+<Driver> Where's the knife?
+<Commander> plate in the next cupboard
+<Commander> right cupboard
+<Driver> How many slices need to be toasted?
+<Commander> place the toast on a clean plate
+<Commander> place it
+<Driver> Done
+
+Initial Object State:
+"Bread_7": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Plate_9": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Bread_14": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Cabinet_16": {"label": "Cabinet", "open": False}
+"Cabinet_17": {"label": "Cabinet", "open": False}
+"Cabinet_18": {"label": "Cabinet", "open": False}
+"Cabinet_19": {"label": "Cabinet", "open": False}
+"Cabinet_20": {"label": "Cabinet", "open": False}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Plate_39": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"Bread_43": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Fridge_53": {"label": "Fridge", "open": False}
+"DiningTable_66": {"label": "DiningTable"}
+"DiningTable_68": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_bread.pickup_and_place(target_diningtable)
+target_cabinet.open()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_plate.pickup()
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.go_to()
+target_breadsliced.pickup()
+target_breadsliced.go_to()
+target_breadsliced.pickup()
+target_breadsliced.go_to()
+target_breadsliced.pickup()
+target_breadsliced.go_to()
+target_breadsliced.pickup()
+```

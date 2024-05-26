@@ -1,0 +1,33 @@
+Dialogue Instruction:
+<Commander> Please rinse the dirty mug with water
+<Driver> Okay
+<Commander> Please fill the mug with coffee
+<Driver> okay
+<Commander> Thanks
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"SinkBasin_69": {"label": "SinkBasin"}
+"Mug_78": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Microwave"]}
+"DiningTable_79": {"label": "DiningTable"}
+"Faucet_81": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_mug.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_mug.place(target_diningtable)
+target_mug.go_to()
+target_mug.pickup()
+```

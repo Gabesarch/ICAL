@@ -1,0 +1,67 @@
+Dialogue Instruction:
+<Driver> How can I help?
+<Commander> Please slice a piece of lettuce and place it on a plate
+<Commander> the lettuce should be next to the coffee maker
+<Commander> and there is a knife on the white side table
+<Commander> There should be a clean plate in the cabinet above and to the right of the sink
+<Commander> maybe try the one one more to the right
+<Commander> that's the one
+<Commander> please place 1 slice of lettuce on that plate
+<Commander> That's great thank you
+
+Initial Object State:
+"Knife_3": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"SaltShaker_5": {"label": "SaltShaker", "holding": False, "supported_by": ["StoveBurner", "Pan"]}
+"Knife_6": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Bread_7": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Bread_9": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"SaltShaker_10": {"label": "SaltShaker", "holding": False, "supported_by": ["Cabinet", "Plate"]}
+"Knife_12": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Cabinet_15": {"label": "Cabinet", "open": False}
+"Cabinet_16": {"label": "Cabinet", "open": False}
+"Cabinet_17": {"label": "Cabinet", "open": False}
+"Cabinet_18": {"label": "Cabinet", "open": False}
+"Cabinet_19": {"label": "Cabinet", "open": False}
+"Cabinet_20": {"label": "Cabinet", "open": False}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"CounterTop_25": {"label": "CounterTop"}
+"CounterTop_31": {"label": "CounterTop"}
+"Plate_38": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Bread_42": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"Lettuce_44": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Knife_48": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"SaltShaker_54": {"label": "SaltShaker", "holding": False, "supported_by": ["Sink"]}
+"Knife_56": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"DiningTable_65": {"label": "DiningTable"}
+"DiningTable_67": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_lettuce.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_lettuce.go_to()
+target_lettuce.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_bread.pickup_and_place(target_countertop)
+target_cabinet.open()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_plate.pickup_and_place(target_diningtable)
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_saltshaker.pickup()
+target_diningtable.go_to()
+target_saltshaker.place(target_diningtable)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = None, parent_object = "Lettuce") # Initialize new sliced object from sliced parent
+target_lettucesliced.pickup_and_place(target_diningtable)
+```

@@ -1,0 +1,22 @@
+Dialogue Instruction:
+<Commander> hi
+<Commander> please water the plant
+
+Initial Object State:
+"DiningTable_22": {"label": "DiningTable"}
+"SinkBasin_61": {"label": "SinkBasin"}
+"Faucet_83": {"label": "Faucet", "toggled": False}
+"Bowl_89": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+
+Demonstration Script:
+```python
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_bowl.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_bowl.pickup_and_place(target_diningtable)
+```

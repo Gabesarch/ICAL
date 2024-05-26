@@ -1,0 +1,48 @@
+Dialogue Instruction:
+<Driver> hi
+<Commander> Hi. Please water the plant.
+<Driver> what should i do today?
+<Driver> where can i find the bowl
+<Commander> There is a bowl in the trash
+<Driver> done
+
+Initial Object State:
+"Pot_5": {"label": "Pot", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Bowl_8": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Faucet_20": {"label": "Faucet", "toggled": False}
+"CounterTop_36": {"label": "CounterTop"}
+"CounterTop_39": {"label": "CounterTop"}
+"CounterTop_43": {"label": "CounterTop"}
+"Bowl_49": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Floor", "GarbageCan"]}
+"Vase_58": {"label": "Vase", "holding": False, "supported_by": ["Stool"]}
+"Pot_60": {"label": "Pot", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Fridge"]}
+"Vase_67": {"label": "Vase", "holding": False, "supported_by": ["Sink"]}
+"SinkBasin_70": {"label": "SinkBasin"}
+"Vase_82": {"label": "Vase", "holding": False, "supported_by": ["Shelf"]}
+
+Demonstration Script:
+```python
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_pot.pickup_and_place(target_countertop)
+target_pen = InteractionObject("Pen", object_instance = "Pen")
+target_pen.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_pen.place(target_sinkbasin)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.go_to()
+target_potatosliced.pickup()
+target_vase = InteractionObject("Vase", object_instance = "Vase")
+target_vase.pickup_and_place(target_countertop)
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.pickup()
+target_sinkbasin.go_to()
+target_bowl.place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_bowl.pickup_and_place(target_countertop)
+```

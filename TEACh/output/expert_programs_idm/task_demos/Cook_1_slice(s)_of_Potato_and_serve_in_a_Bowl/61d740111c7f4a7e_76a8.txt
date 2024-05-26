@@ -1,0 +1,68 @@
+Dialogue Instruction:
+<Driver> hi
+<Commander> Hi. Please cook one slice of potato.
+<Driver> where can i find the knife
+<Commander> in the fridge
+<Driver> where can i find the potato
+<Commander> In the cabinet above the sink to the right
+<Driver> how many slices to be cooked.
+<Commander> one
+<Driver> done
+<Commander> Please place in the bowl on the table
+<Commander> next to the toaster
+
+Initial Object State:
+"Potato_5": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Knife_6": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Knife_14": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Potato_16": {"label": "Potato", "holding": False, "sliced": False, "cooked": True, "supported_by": ["CounterTop", "Microwave"]}
+"Cabinet_18": {"label": "Cabinet", "open": False}
+"Cabinet_19": {"label": "Cabinet", "open": False}
+"Cabinet_20": {"label": "Cabinet", "open": False}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"CounterTop_28": {"label": "CounterTop"}
+"CounterTop_34": {"label": "CounterTop"}
+"Plate_41": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Knife_51": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Potato_52": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet", "Plate"]}
+"Fridge_55": {"label": "Fridge", "open": False}
+"Knife_59": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+
+Demonstration Script:
+```python
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_fridge.go_to()
+target_fridge.close()
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.pickup_and_place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.pickup_and_place(target_countertop)
+target_watch = InteractionObject("Watch", object_instance = "Watch")
+target_watch.open()
+target_potatosliced.pickup_and_place(target_plate)
+target_potatosliced.pickup()
+target_safe = InteractionObject("Safe", object_instance = "Safe")
+target_safe.go_to()
+target_potatosliced.place(target_safe)
+```

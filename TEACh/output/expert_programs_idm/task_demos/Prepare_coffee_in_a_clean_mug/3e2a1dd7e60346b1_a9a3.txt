@@ -1,0 +1,20 @@
+Dialogue Instruction:
+<Driver> What shall I do today?
+<Commander> find the coffee mug in the coffee maker
+<Commander> then rinse it in the basin
+
+Initial Object State:
+"Faucet_63": {"label": "Faucet", "toggled": False}
+"SinkBasin_103": {"label": "SinkBasin"}
+"Mug_111": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop", "CoffeeMachine"]}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_mug.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+```

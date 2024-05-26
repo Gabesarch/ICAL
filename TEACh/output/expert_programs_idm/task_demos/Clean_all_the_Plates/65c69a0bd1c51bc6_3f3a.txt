@@ -1,0 +1,63 @@
+Dialogue Instruction:
+<Commander> Today you should clean two plates
+<Driver> 
+<Commander> There are plates on the counter where the sink is
+<Commander> Do you see the plates?
+<Commander> One plate next to the bread
+<Commander> The other plate is on the far end of the same counter
+<Commander> Place in the sink
+<Commander> Place in the right sink
+<Commander> That's not the sink
+<Commander> Now wash the other plate
+<Commander> Good job
+
+Initial Object State:
+"Plate_1": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Fork_7": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Plate_15": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"CounterTop_24": {"label": "CounterTop"}
+"Faucet_26": {"label": "Faucet", "toggled": False}
+"StoveKnob_38": {"label": "StoveKnob", "toggled": True}
+"StoveKnob_39": {"label": "StoveKnob", "toggled": True}
+"StoveKnob_40": {"label": "StoveKnob", "toggled": True}
+"StoveKnob_41": {"label": "StoveKnob", "toggled": False}
+"Fork_42": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Pan_50": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Lettuce_53": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Sink"]}
+"SinkBasin_58": {"label": "SinkBasin"}
+"Plate_60": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"DishSponge_64": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+
+Demonstration Script:
+```python
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_plate.pickup_and_place(target_sinkbasin)
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_lettuce.place(target_countertop)
+target_fork = InteractionObject("Fork", object_instance = "Fork")
+target_fork.pickup_and_place(target_countertop)
+target_dishsponge = InteractionObject("DishSponge", object_instance = "DishSponge")
+target_dishsponge.pickup()
+target_countertop.go_to()
+target_dishsponge.place(target_countertop)
+target_plate.pickup_and_place(target_sinkbasin)
+target_pan = InteractionObject("Pan", object_instance = "Pan")
+target_pan.toggle_on()
+target_stoveknob = InteractionObject("StoveKnob", object_instance = "StoveKnob")
+target_stoveknob.go_to()
+target_stoveknob.toggle_off()
+target_plate.pickup_and_place(target_countertop)
+target_plate.pickup()
+target_sinkbasin.go_to()
+target_plate.place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_plate.pickup_and_place(target_countertop)
+```

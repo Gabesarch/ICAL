@@ -1,0 +1,18 @@
+Dialogue Instruction:
+<Commander> hi
+<Commander> we are boiling a potato
+<Driver> What should I do tody?
+<Commander> potato on counter right of sink
+<Commander> cool
+
+Initial Object State:
+"CounterTop_100": {"label": "CounterTop"}
+"CounterTop_106": {"label": "CounterTop"}
+"Potato_146": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+
+Demonstration Script:
+```python
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_potato.pickup_and_place(target_countertop)
+```

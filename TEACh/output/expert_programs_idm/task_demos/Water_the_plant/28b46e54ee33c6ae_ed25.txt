@@ -1,0 +1,51 @@
+Dialogue Instruction:
+<Driver> hello
+<Commander> Hi. Please water the plant.
+<Driver> done
+
+Initial Object State:
+"Bowl_1": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Apple_7": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Drawer"]}
+"SaltShaker_10": {"label": "SaltShaker", "holding": False, "supported_by": ["Plate", "Cabinet"]}
+"Apple_20": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Sink"]}
+"Bowl_22": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Drawer"]}
+"Bowl_26": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Apple_28": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Bowl_34": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"SaltShaker_35": {"label": "SaltShaker", "holding": False, "supported_by": ["Bowl", "CounterTop"]}
+"Apple_37": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["CounterTop"]}
+"CounterTop_52": {"label": "CounterTop"}
+"CounterTop_53": {"label": "CounterTop"}
+"CounterTop_74": {"label": "CounterTop"}
+"CounterTop_83": {"label": "CounterTop"}
+"SinkBasin_108": {"label": "SinkBasin"}
+"SaltShaker_109": {"label": "SaltShaker", "holding": False, "supported_by": ["CounterTop"]}
+"Apple_114": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Drawer"]}
+"Bowl_123": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Drawer"]}
+"Faucet_125": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_saltshaker.pickup_and_place(target_countertop)
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.pickup()
+target_countertop.go_to()
+target_bowl.place(target_countertop)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = "LettuceSliced")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_lettucesliced.pickup_and_place(target_sinkbasin)
+target_apple = InteractionObject("Apple", object_instance = "Apple")
+target_apple.pickup()
+target_countertop.go_to()
+target_apple.place(target_countertop)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_bowl.pickup_and_place(target_sinkbasin)
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_bowl.pickup_and_place(target_countertop)
+```

@@ -1,0 +1,32 @@
+Dialogue Instruction:
+<Driver> what shall I do today?
+<Commander> Kindly wait a minute
+<Driver> ok
+<Commander> Water the plant by bringing some water in a container from the sink and pouring it on the plant
+<Driver> done
+<Commander> great
+<Driver> what next?
+<Commander> 
+<Driver> 
+<Commander> 
+<Driver> finish
+<Driver> 
+<Commander> Yeah, thank you
+
+Initial Object State:
+"DiningTable_22": {"label": "DiningTable"}
+"Pot_58": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"HousePlant_80": {"label": "HousePlant", "filled": False, "fillLiquid": None}
+
+Demonstration Script:
+```python
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.go_to()
+target_pot.pickup()
+target_houseplant = InteractionObject("HousePlant", object_instance = "HousePlant")
+target_houseplant.go_to()
+target_pot.pour(target_houseplant)
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_pot.place(target_diningtable)
+```

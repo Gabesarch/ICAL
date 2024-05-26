@@ -1,0 +1,17 @@
+Dialogue Instruction:
+<Commander> hi
+<Driver> what's my task
+<Commander> you need to put tissue box on coffee table
+<Driver> now?
+<Commander> done
+
+Initial Object State:
+"TissueBox_5": {"label": "TissueBox", "holding": False, "supported_by": ["ArmChair"]}
+"CoffeeTable_39": {"label": "CoffeeTable"}
+
+Demonstration Script:
+```python
+target_tissuebox = InteractionObject("TissueBox", object_instance = "TissueBox")
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_tissuebox.pickup_and_place(target_coffeetable)
+```

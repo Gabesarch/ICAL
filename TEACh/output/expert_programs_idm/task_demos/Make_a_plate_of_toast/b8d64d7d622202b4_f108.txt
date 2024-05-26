@@ -1,0 +1,70 @@
+Dialogue Instruction:
+<Driver> task?
+<Commander> bread next to wash basin
+<Commander> make a slice of toast
+<Commander> knife is in the cabinet below bread
+<Driver> how many slice
+<Commander> place it on plate
+<Driver> next
+<Commander> done
+
+Initial Object State:
+"Plate_5": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_6": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"PaperTowelRoll_8": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["Pan", "CounterTop"]}
+"Potato_19": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"Knife_21": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Plate_29": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Knife_30": {"label": "Knife", "holding": False, "supported_by": ["Stool"]}
+"Potato_37": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Potato_39": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop", "Plate"]}
+"Potato_50": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Stool"]}
+"Potato_52": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Plate_60": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_61": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Knife_72": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Knife_77": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"PaperTowelRoll_82": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["Stool"]}
+"Knife_90": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Knife_105": {"label": "Knife", "holding": False, "supported_by": ["SideTable"]}
+"Potato_106": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"PaperTowelRoll_113": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["CounterTop"]}
+"Knife_114": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Potato_120": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"Knife_121": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"PaperTowelRoll_126": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["Cabinet"]}
+"PaperTowelRoll_134": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["Sink"]}
+"Knife_136": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Potato_137": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Floor", "Drawer"]}
+"PaperTowelRoll_142": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["Sink"]}
+"Knife_143": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"PaperTowelRoll_149": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["CounterTop"]}
+"CounterTop_155": {"label": "CounterTop"}
+"Knife_165": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Potato_167": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"PaperTowelRoll_187": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["SideTable"]}
+"Knife_190": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Plate_191": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.go_to()
+target_potato.slice()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.go_to()
+target_breadsliced.pickup()
+target_papertowelroll = InteractionObject("PaperTowelRoll", object_instance = "PaperTowelRoll")
+target_papertowelroll.pickup_and_place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_breadsliced.pickup_and_place(target_plate)
+```

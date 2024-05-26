@@ -1,0 +1,105 @@
+Dialogue Instruction:
+<Commander> can you see this message?
+<Driver> yes
+<Driver> what should I do?
+<Commander> cook 2 slices of potato and serve in a bowl
+<Driver> where is the potato?
+<Commander> on the second shelf of the white table
+<Driver> I'm having trouble looking under the table
+<Driver> found potato
+<Commander> can you grab it from this position?
+<Driver> potato has been sliced
+<Commander> see if you can cook potato in the pot
+<Driver> ok
+<Driver> both slices cooked
+<Driver> anything else?
+<Commander> both slices need to be in a clean bowl
+<Driver> right
+<Driver> on it
+<Driver> all done
+<Commander> finished
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Shelf"]}
+"Potato_3": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Shelf"]}
+"Bowl_6": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"Bread_14": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Floor", "Shelf"]}
+"DiningTable_22": {"label": "DiningTable"}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Cabinet_39": {"label": "Cabinet", "open": False}
+"Cabinet_40": {"label": "Cabinet", "open": False}
+"CounterTop_41": {"label": "CounterTop"}
+"Cabinet_44": {"label": "Cabinet", "open": False}
+"Cabinet_46": {"label": "Cabinet", "open": False}
+"CounterTop_47": {"label": "CounterTop"}
+"Bread_55": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Shelf"]}
+"StoveKnob_56": {"label": "StoveKnob", "toggled": False}
+"StoveKnob_57": {"label": "StoveKnob", "toggled": True}
+"StoveKnob_58": {"label": "StoveKnob", "toggled": False}
+"StoveKnob_59": {"label": "StoveKnob", "toggled": False}
+"Bowl_77": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Fridge"]}
+"Microwave_82": {"label": "Microwave", "toggled": True, "open": False}
+"SinkBasin_84": {"label": "SinkBasin"}
+"Potato_87": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Stool"]}
+"Mug_95": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner", "Pot"]}
+"DiningTable_98": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_bowl.pickup_and_place(target_diningtable)
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_bread.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_bread.place(target_countertop)
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.pickup_and_place(target_countertop)
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.pickup()
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_potato.go_to()
+target_potato.pickup()
+target_potato.go_to()
+target_potato.slice()
+target_diningtable.go_to()
+target_potato.place(target_diningtable)
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_pen = InteractionObject("Pen", object_instance = "Pen")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_pen.pickup_and_place(target_sinkbasin)
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.close()
+target_potato.go_to()
+target_potato.slice()
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_pen.place(target_cabinet)
+target_stoveknob = InteractionObject("StoveKnob", object_instance = "StoveKnob")
+target_stoveknob.go_to()
+target_stoveknob.toggle_off()
+target_stoveknob.go_to()
+target_stoveknob.toggle_off()
+target_stoveknob.go_to()
+target_stoveknob.toggle_on()
+target_potato.go_to()
+target_potato.pickup()
+```

@@ -1,0 +1,37 @@
+Dialogue Instruction:
+<Driver> What should I do today?
+<Commander> hi
+<Commander> make coffee with the mug in the fridge
+<Commander> no need to clean it
+<Driver> Done
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"SaltShaker_3": {"label": "SaltShaker", "holding": False, "supported_by": ["CounterTop", "Pot"]}
+"Plate_5": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"SaltShaker_9": {"label": "SaltShaker", "holding": False, "supported_by": ["StoveBurner", "Pan"]}
+"SaltShaker_10": {"label": "SaltShaker", "holding": False, "supported_by": ["Cabinet"]}
+"Plate_12": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"Plate_47": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"CoffeeMachine_58": {"label": "CoffeeMachine", "toggled": False}
+"Fridge_71": {"label": "Fridge", "open": False}
+"Mug_72": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Fridge"]}
+
+Demonstration Script:
+```python
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_saltshaker.pickup_and_place(target_plate)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.open()
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_fridge.go_to()
+target_fridge.close()
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_coffeemachine.go_to()
+target_mug.place(target_coffeemachine)
+target_coffeemachine.go_to()
+target_coffeemachine.toggle_on()
+```

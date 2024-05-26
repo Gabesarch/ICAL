@@ -1,0 +1,15 @@
+Dialogue Instruction:
+<Commander> Hi, today I'd like all my alarm clocks placed on my bed please
+<Commander> The first is located on my desk
+<Driver> thank you
+<Commander> The next alarm clock is located on the desk chair
+
+Initial Object State:
+"SideTable_44": {"label": "SideTable"}
+
+Demonstration Script:
+```python
+target_sidetable = InteractionObject("SideTable", object_instance = "SideTable")
+target_sidetable.go_to()
+None.place(target_sidetable)
+```

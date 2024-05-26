@@ -1,0 +1,74 @@
+Dialogue Instruction:
+<Driver> hi
+<Commander> boil potato by cooking in water
+<Commander> potato is in the cupboard above the coffee machine
+<Commander> open cupboard above coffee machine and kettle to get potato
+<Commander> close both cupboards
+<Driver> where is the pot
+<Commander> pot is above the toaster
+<Driver> done
+<Commander> not yet
+<Commander> turn the cooker on
+<Driver> what is remaining
+<Commander> finished
+
+Initial Object State:
+"Pot_5": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Potato_12": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Plate_15": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Pot_22": {"label": "Pot", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner"]}
+"Plate_25": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Cabinet_48": {"label": "Cabinet", "open": False}
+"Cabinet_49": {"label": "Cabinet", "open": False}
+"Cabinet_50": {"label": "Cabinet", "open": False}
+"Cabinet_51": {"label": "Cabinet", "open": False}
+"Cabinet_52": {"label": "Cabinet", "open": False}
+"Cabinet_53": {"label": "Cabinet", "open": False}
+"Cabinet_54": {"label": "Cabinet", "open": False}
+"Cabinet_55": {"label": "Cabinet", "open": False}
+"Cabinet_56": {"label": "Cabinet", "open": False}
+"Cabinet_57": {"label": "Cabinet", "open": False}
+"Cabinet_58": {"label": "Cabinet", "open": False}
+"Cabinet_60": {"label": "Cabinet", "open": False}
+"Cabinet_61": {"label": "Cabinet", "open": False}
+"Cabinet_62": {"label": "Cabinet", "open": False}
+"StoveBurner_64": {"label": "StoveBurner"}
+"Cabinet_65": {"label": "Cabinet", "open": False}
+"CounterTop_66": {"label": "CounterTop"}
+"CounterTop_68": {"label": "CounterTop"}
+"StoveBurner_69": {"label": "StoveBurner"}
+"CounterTop_70": {"label": "CounterTop"}
+"Cabinet_71": {"label": "Cabinet", "open": False}
+"CounterTop_74": {"label": "CounterTop"}
+"Cabinet_75": {"label": "Cabinet", "open": False}
+"StoveBurner_76": {"label": "StoveBurner"}
+"StoveBurner_78": {"label": "StoveBurner"}
+"Plate_88": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Potato_92": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Bowl_103": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Pot_108": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+
+Demonstration Script:
+```python
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.open()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_plate.pickup_and_place(target_countertop)
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.pickup()
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.go_to()
+target_potato.place(target_bowl)
+target_cabinet.go_to()
+target_cabinet.close()
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_stoveburner = InteractionObject("StoveBurner", object_instance = "StoveBurner")
+target_pot.pickup_and_place(target_stoveburner)
+target_potato.pickup()
+target_pot.go_to()
+target_potato.place(target_pot)
+```

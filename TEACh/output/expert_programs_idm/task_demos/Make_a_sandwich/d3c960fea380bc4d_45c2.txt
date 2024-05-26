@@ -1,0 +1,79 @@
+Dialogue Instruction:
+<Commander> hello
+<Driver> hi
+<Driver> what's the task?
+<Commander> Can you please make a lettuce sandwich with toasted bread.
+<Driver> done
+<Commander> Place the 2 pieces of toasted bread and one piece of lettuce on a plate
+<Driver> where is the lettuce?
+<Commander> lettuce is in lower cabinet to left of stove
+<Driver> done
+<Commander> great job task done
+
+Initial Object State:
+"Kettle_7": {"label": "Kettle", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"Bread_9": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Bread_12": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"CounterTop_18": {"label": "CounterTop"}
+"CounterTop_26": {"label": "CounterTop"}
+"Knife_39": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Bread_45": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Plate_47": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Toaster_49": {"label": "Toaster", "toggled": False}
+"Kettle_50": {"label": "Kettle", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop", "Plate"]}
+"Fridge_51": {"label": "Fridge", "open": False}
+"Lettuce_61": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"SaltShaker_65": {"label": "SaltShaker", "holding": False, "supported_by": ["Sink"]}
+"Knife_67": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Faucet_75": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_saltshaker.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_bread.go_to()
+target_bread.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = None, parent_object = "Bread") # Initialize new sliced object from sliced parent
+target_toaster = InteractionObject("Toaster", object_instance = "Toaster")
+target_breadsliced.pickup_and_place(target_toaster)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_off()
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_fridge.go_to()
+target_fridge.close()
+target_breadsliced.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_countertop.go_to()
+target_breadsliced.place(target_countertop)
+target_breadsliced.pickup_and_place(target_toaster)
+target_kettle = InteractionObject("Kettle", object_instance = "Kettle")
+target_kettle.pickup()
+target_countertop.go_to()
+target_kettle.place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_countertop.go_to()
+target_breadsliced.place(target_countertop)
+target_breadsliced.pickup_and_place(target_countertop)
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.pickup()
+target_countertop.go_to()
+target_lettuce.place(target_countertop)
+target_knife.go_to()
+target_knife.pickup()
+target_lettuce.go_to()
+target_lettuce.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = None, parent_object = "Lettuce") # Initialize new sliced object from sliced parent
+target_lettucesliced.pickup_and_place(target_countertop)
+```

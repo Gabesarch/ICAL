@@ -1,0 +1,42 @@
+Dialogue Instruction:
+<Driver> how can i help
+<Commander> We need to put the alarm clock on the bed
+<Driver> where can I find the alarm clock
+<Commander> There will be on next to the lamp on the beside
+<Driver> I found some more alarm clocks and placed them on the bed
+<Driver> are there any more?
+<Commander> The last one is in the right draws below the laptop
+<Commander> the right draws
+<Commander> They are all done
+<Driver> is that everything
+<Commander> Thank you
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Floor", "LaundryHamper"]}
+"Bowl_7": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Bed"]}
+"Mug_10": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Chair"]}
+"Bowl_13": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Chair"]}
+"Mug_17": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Floor", "Box"]}
+"Bowl_21": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Desk"]}
+"Bowl_29": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Bed"]}
+"Bowl_40": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Desk"]}
+"Mug_53": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Shelf"]}
+
+Demonstration Script:
+```python
+target_tissuebox = InteractionObject("TissueBox", object_instance = "TissueBox")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_tissuebox.pickup_and_place(target_countertop)
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.pickup()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_mug.place(target_diningtable)
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.pickup_and_place(target_diningtable)
+target_bowl.pickup()
+target_diningtable.go_to()
+target_bowl.place(target_diningtable)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup_and_place(target_diningtable)
+```

@@ -1,0 +1,123 @@
+Dialogue Instruction:
+<Commander> hello
+<Driver> Hi. What am I doing?
+<Commander> Hi please grab potato in microwave and boil in a pot
+<Driver> Dom you know where the pot is?
+<Commander> fridge
+<Commander> need help?
+<Driver> For some reason I cannot put the pot in the sink. Any ideas?
+<Commander> let's try a bowl in the microwave
+<Driver> ok
+<Commander> there is a bowl to your left lower cabinet
+<Commander> over more
+<Commander> try water and potato in that in micro
+<Driver> Nope. The bowl will not take it either.
+<Commander> 
+<Driver> i've got it
+<Commander> NICE
+<Driver> Is it done?
+<Commander> nice just finished
+
+Initial Object State:
+"Cup_6": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Drawer"]}
+"Fork_9": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Apple_11": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Sink"]}
+"Fork_14": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Cabinet_18": {"label": "Cabinet", "open": False}
+"Cabinet_19": {"label": "Cabinet", "open": False}
+"Cabinet_20": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"CounterTop_26": {"label": "CounterTop"}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"CounterTop_29": {"label": "CounterTop"}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Cabinet_39": {"label": "Cabinet", "open": False}
+"Cabinet_40": {"label": "Cabinet", "open": False}
+"Cabinet_43": {"label": "Cabinet", "open": False}
+"CounterTop_44": {"label": "CounterTop"}
+"Cabinet_45": {"label": "Cabinet", "open": False}
+"Cabinet_46": {"label": "Cabinet", "open": False}
+"Cabinet_48": {"label": "Cabinet", "open": False}
+"Cabinet_49": {"label": "Cabinet", "open": False}
+"Faucet_52": {"label": "Faucet", "toggled": False}
+"Cabinet_53": {"label": "Cabinet", "open": False}
+"Cabinet_54": {"label": "Cabinet", "open": False}
+"Cabinet_57": {"label": "Cabinet", "open": False}
+"Cabinet_58": {"label": "Cabinet", "open": False}
+"Cabinet_60": {"label": "Cabinet", "open": False}
+"Cabinet_61": {"label": "Cabinet", "open": False}
+"Cabinet_62": {"label": "Cabinet", "open": False}
+"Apple_65": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Drawer"]}
+"Potato_68": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Microwave"]}
+"Fork_73": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Bowl_75": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Cup_86": {"label": "Cup", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Pot_89": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Fridge"]}
+"Microwave_90": {"label": "Microwave", "toggled": False, "open": False}
+"SinkBasin_92": {"label": "SinkBasin"}
+"SaltShaker_93": {"label": "SaltShaker", "holding": False, "supported_by": ["CounterTop"]}
+"Fridge_99": {"label": "Fridge", "open": False}
+
+Demonstration Script:
+```python
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.go_to()
+target_microwave.open()
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_potato.pickup_and_place(target_pot)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.open()
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_cup.go_to()
+target_cup.pickup()
+target_fridge.go_to()
+target_fridge.close()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_cup.place(target_countertop)
+target_apple = InteractionObject("Apple", object_instance = "Apple")
+target_apple.pickup_and_place(target_countertop)
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_saltshaker.pickup()
+target_countertop.go_to()
+target_saltshaker.place(target_countertop)
+target_fork = InteractionObject("Fork", object_instance = "Fork")
+target_fork.pickup_and_place(target_countertop)
+target_pot.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_pot.pour(target_sinkbasin)
+target_sinkbasin.go_to()
+target_pot.place(target_sinkbasin)
+target_cup.pickup_and_place(target_countertop)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.close()
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_potato.pickup_and_place(target_countertop)
+target_bowl.pickup()
+target_countertop.go_to()
+target_bowl.place(target_countertop)
+target_potato.pickup_and_place(target_countertop)
+target_bowl.pickup()
+target_sinkbasin.go_to()
+target_bowl.pour(target_sinkbasin)
+target_sinkbasin.go_to()
+target_bowl.place(target_sinkbasin)
+target_potato.pickup_and_place(target_countertop)
+target_pot.pickup()
+target_countertop.go_to()
+target_pot.place(target_countertop)
+target_pot.pickup_and_place(target_countertop)
+```

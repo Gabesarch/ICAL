@@ -1,0 +1,50 @@
+Dialogue Instruction:
+<Driver> what's first?
+<Commander> Hello!
+<Commander> You need to place all the tomatoes into one cabinet.
+<Commander> There is a tomato in the sink.
+<Driver> which cabinet
+<Commander> 
+<Driver> 
+<Driver> 
+<Commander> The cabinet under the sink
+<Commander> the one on the left.
+<Driver> next
+<Driver> 
+<Commander> 
+<Commander> Close cabinet maybe?
+<Driver> 
+<Commander> 
+<Commander> Please close cabinet
+<Commander> There is another tomato in the cabinet under the toaster
+<Driver> 
+<Commander> To the right of the stove
+<Driver> is that it?
+<Commander> Finished.
+
+Initial Object State:
+"Tomato_4": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Tomato_64": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"SinkBasin_66": {"label": "SinkBasin"}
+
+Demonstration Script:
+```python
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_tomato.pickup_and_place(target_cabinet)
+target_cabinet.close()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_tomato.pickup_and_place(target_sinkbasin)
+```

@@ -1,0 +1,30 @@
+Dialogue Instruction:
+<Driver> hello how can I help?
+<Commander> Please make coffee
+<Driver> sure, where can I find some cups please?
+<Commander> you can find a mug close to the coffee machine
+<Driver> I can't turn on the coffee machine
+<Commander> that was everything, thanks
+
+Initial Object State:
+"Mug_1": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Floor", "GarbageCan"]}
+"SinkBasin_59": {"label": "SinkBasin"}
+"CoffeeMachine_61": {"label": "CoffeeMachine", "toggled": True}
+"Mug_68": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Faucet_69": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_mug.pickup_and_place(target_coffeemachine)
+target_mug.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_faucet.go_to()
+target_faucet.toggle_on()
+```

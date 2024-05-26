@@ -1,0 +1,170 @@
+Dialogue Instruction:
+<Driver> my task
+<Commander> Hello, you need to make a salad please.
+<Commander> There is a knife by the sink
+<Commander> The lettuce is in the upper cabinet above the fridge on the right
+<Driver> with what
+<Driver> do i make salad
+<Commander> Lettuce, tomato and potato please
+<Commander> you will need to cook 2 sliced of potato
+<Driver> where are they
+<Commander> The potato is in the fridge you just opened
+<Driver> cook potato in water or what
+<Commander> The knife is by the sink
+<Commander> The lettuce is in the upper cabinet above the fridge on the right
+<Commander> If you cook a potato in water, that is boiling it.
+<Commander> Please cook the potato either in the microwave or on a pan on the stove
+<Commander> You will need to slice the potato
+<Commander> ^potato
+<Driver> sliced
+<Driver> in microwave
+<Commander> perfect, please cook 2 slices of the potato.
+<Driver> or where
+<Commander> You can cook it in the microwave if you desire
+<Commander> There is a clean plate in the cabinet to the right of the microwave
+<Driver> cabinet on top or bottom
+<Driver> of the microwave
+<Commander> The cabinet you just opened
+<Commander> The plate has a pepper shaker on it
+<Commander> Correct
+<Commander> Salt shaker :)
+<Commander> Great job.
+<Driver> that all
+<Commander> Now please retrieve the lettuce that is in the cabinet above the fridge
+<Commander> You need to add 1 slice of lettuce to the plate
+<Commander> As well as 1 slice of tomato
+<Commander> The other one please
+<Commander> Correct
+<Commander> The lettuce
+<Commander> Wonderful
+<Commander> The tomato is located on top of a stool next to the toaster behind you
+<Commander> Nice job
+<Commander> 1 slice of tomato please
+<Commander> Great work. Task complete.
+
+Initial Object State:
+"Plate_3": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Potato_4": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Plate", "Cabinet"]}
+"Apple_6": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Tomato_8": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Apple_11": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Microwave"]}
+"Plate_12": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Potato_15": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"CounterTop_17": {"label": "CounterTop"}
+"CounterTop_22": {"label": "CounterTop"}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Cabinet_39": {"label": "Cabinet", "open": False}
+"CounterTop_42": {"label": "CounterTop"}
+"Cabinet_43": {"label": "Cabinet", "open": False}
+"Cabinet_47": {"label": "Cabinet", "open": False}
+"Fridge_48": {"label": "Fridge", "open": False}
+"Lettuce_49": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Microwave_59": {"label": "Microwave", "toggled": False, "open": False}
+"Tomato_60": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Stool"]}
+"Bowl_61": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Knife_66": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"SinkBasin_67": {"label": "SinkBasin"}
+"Apple_69": {"label": "Apple", "holding": False, "sliced": False, "dirty": False, "cooked": False, "supported_by": ["Floor", "GarbageCan"]}
+"Knife_71": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Potato_72": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Plate_73": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Faucet_81": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_fridge.go_to()
+target_fridge.close()
+target_fridge.go_to()
+target_fridge.open()
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.go_to()
+target_potato.pickup()
+target_fridge.go_to()
+target_fridge.close()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_tomato.go_to()
+target_tomato.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.go_to()
+target_microwave.open()
+target_apple = InteractionObject("Apple", object_instance = "Apple")
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_apple.pickup_and_place(target_cabinet)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_potatosliced.place(target_sinkbasin)
+target_potatosliced.pickup_and_place(target_microwave)
+target_handtowelholder = InteractionObject("HandTowelHolder", object_instance = "HandTowelHolder")
+target_handtowelholder.close()
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_microwave.go_to()
+target_microwave.open()
+target_potatosliced.pickup_and_place(target_countertop)
+target_potatosliced.pickup()
+target_microwave.go_to()
+target_potatosliced.place(target_microwave)
+target_microwave.go_to()
+target_microwave.open()
+target_potato.pickup_and_place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_cabinet.go_to()
+target_cabinet.open()
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_potatosliced.pickup_and_place(target_bowl)
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.open()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.pickup_and_place(target_countertop)
+target_knife.pickup()
+target_lettuce.go_to()
+target_lettuce.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = None, parent_object = "Lettuce") # Initialize new sliced object from sliced parent
+target_lettucesliced.go_to()
+target_lettucesliced.pickup()
+target_potato.go_to()
+target_potato.open()
+target_tomato.pickup_and_place(target_countertop)
+target_knife.pickup()
+target_tomato.go_to()
+target_tomato.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = None, parent_object = "Tomato") # Initialize new sliced object from sliced parent
+target_tomatosliced.pickup_and_place(target_countertop)
+```

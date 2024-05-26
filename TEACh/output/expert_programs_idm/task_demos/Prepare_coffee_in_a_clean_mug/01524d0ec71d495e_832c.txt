@@ -1,0 +1,31 @@
+Dialogue Instruction:
+<Driver> what's first
+<Commander> hi, let's make coffee
+<Driver> mug?
+<Commander> first rinse the mug
+<Driver> where
+<Driver> 
+<Commander> top cabinet on your right
+<Commander> it's cleaned
+<Commander> keep the mug under coffee maker
+<Commander> good job
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Drawer"]}
+"Kettle_9": {"label": "Kettle", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"Kettle_79": {"label": "Kettle", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner"]}
+"SinkBasin_87": {"label": "SinkBasin"}
+"Mug_103": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_mug.pickup_and_place(target_sinkbasin)
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_kettle = InteractionObject("Kettle", object_instance = "Kettle")
+target_kettle.go_to()
+target_kettle.pickup()
+```

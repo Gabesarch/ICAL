@@ -1,0 +1,48 @@
+Dialogue Instruction:
+<Driver> What shall I do today?
+<Commander> make potato slices
+<Commander> sorry tomato slices
+<Driver> where is tomato and knife?
+<Commander> check on the brown shelf
+<Driver> next?
+<Commander> put 2 slices on a clean plate
+<Commander> plate is on the brown shelf
+<Driver> next?
+<Commander> done
+
+Initial Object State:
+"Tomato_1": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Stool"]}
+"Knife_13": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"CounterTop_45": {"label": "CounterTop"}
+"CounterTop_48": {"label": "CounterTop"}
+"CounterTop_52": {"label": "CounterTop"}
+"Knife_57": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Fridge_71": {"label": "Fridge", "open": False}
+"Plate_72": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Shelf"]}
+"Knife_84": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Tomato_94": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Shelf"]}
+
+Demonstration Script:
+```python
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_fridge.go_to()
+target_fridge.close()
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_tomato.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_tomato.go_to()
+target_tomato.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_plate.pickup_and_place(target_diningtable)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = None, parent_object = "Tomato") # Initialize new sliced object from sliced parent
+target_tomatosliced.pickup()
+target_plate.go_to()
+target_tomatosliced.place(target_plate)
+```

@@ -1,0 +1,36 @@
+Dialogue Instruction:
+<Driver> hello what should I do?
+<Commander> boil the potato
+<Commander> you have to put it in water
+<Commander> on the stove
+<Commander> in a pan
+<Driver> okay
+<Commander> you could maybe use the microwave too
+
+Initial Object State:
+"Pot_9": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"Pot_17": {"label": "Pot", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner"]}
+"CounterTop_40": {"label": "CounterTop"}
+"CounterTop_46": {"label": "CounterTop"}
+"CellPhone_66": {"label": "CellPhone", "holding": False, "supported_by": ["DiningTable"]}
+"Pot_68": {"label": "Pot", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Bowl_76": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Potato_86": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+
+Demonstration Script:
+```python
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_potatosliced.pickup_and_place(target_countertop)
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.pickup()
+target_countertop.go_to()
+target_bowl.place(target_countertop)
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_cellphone = InteractionObject("CellPhone", object_instance = "CellPhone")
+target_potato.pickup_and_place(target_cellphone)
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.pickup()
+target_countertop.go_to()
+target_pot.place(target_countertop)
+```

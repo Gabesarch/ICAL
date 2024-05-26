@@ -1,0 +1,25 @@
+Dialogue Instruction:
+<Driver> hi
+<Driver> what is the task?
+<Commander> Clean all the Mugs
+<Commander> on the counter
+<Commander> next to you
+<Commander> turn around
+<Commander> 
+<Commander> rinse mug
+
+Initial Object State:
+"Faucet_25": {"label": "Faucet", "toggled": False}
+"SinkBasin_75": {"label": "SinkBasin"}
+"Mug_91": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_mug.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_mug.go_to()
+target_mug.pickup()
+```

@@ -1,0 +1,39 @@
+Dialogue Instruction:
+<Driver> What tasks should I do today
+<Commander> You ned to serve 2 slices of tomato onto a clean plate.
+<Driver> Where is the knife?
+<Commander> The knife is on the table
+<Commander> the plate is on the chair
+<Driver> I have placed two slices of tomato on the plate
+<Commander> Well done, task is complete.
+<Commander> Thank you
+
+Initial Object State:
+"Plate_8": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Chair"]}
+"Tomato_12": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Tomato_17": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Shelf"]}
+"Plate_18": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"DiningTable_30": {"label": "DiningTable"}
+"Tomato_50": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"Plate_63": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Fridge"]}
+"Knife_68": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Knife_74": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+
+Demonstration Script:
+```python
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_tomato.pickup_and_place(target_diningtable)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_tomato.go_to()
+target_tomato.slice()
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = None, parent_object = "Tomato") # Initialize new sliced object from sliced parent
+target_tomatosliced.pickup_and_place(target_diningtable)
+target_tomatosliced.pickup()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_tomatosliced.place(target_plate)
+```

@@ -1,0 +1,31 @@
+Dialogue Instruction:
+<Driver> how may i help?
+<Commander> please could you prepare a coffee in a clean mug
+<Driver> I can of course
+<Driver> coffee is made
+<Commander> brilliant thanks
+
+Initial Object State:
+"CoffeeMachine_49": {"label": "CoffeeMachine", "toggled": True}
+"SinkBasin_62": {"label": "SinkBasin"}
+"Mug_79": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop", "Pan"]}
+"Faucet_82": {"label": "Faucet", "toggled": False}
+"Faucet_83": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_mug.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_coffeemachine.go_to()
+target_coffeemachine.toggle_on()
+```

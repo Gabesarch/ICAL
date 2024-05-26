@@ -1,0 +1,50 @@
+Dialogue Instruction:
+<Driver> how can I help
+<Commander> make me some toast
+<Driver> ok
+<Driver> knife?
+<Commander> the sink
+<Driver> all set?
+<Commander> yes
+
+Initial Object State:
+"Bread_6": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"Knife_7": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Plate_14": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Bread_26": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Plate_38": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Bread_44": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Plate_47": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Plate_70": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Plate_75": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"CounterTop_115": {"label": "CounterTop"}
+"CounterTop_122": {"label": "CounterTop"}
+"Plate_143": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"CoffeeMachine_147": {"label": "CoffeeMachine", "toggled": True}
+"Knife_150": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Knife_155": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Bread_156": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Toaster_160": {"label": "Toaster", "toggled": True}
+
+Demonstration Script:
+```python
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_coffeemachine.go_to()
+target_coffeemachine.toggle_off()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_bread.go_to()
+target_bread.slice()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = None, parent_object = "Bread") # Initialize new sliced object from sliced parent
+target_toaster = InteractionObject("Toaster", object_instance = "Toaster")
+target_breadsliced.pickup_and_place(target_toaster)
+target_breadsliced.pickup()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+```

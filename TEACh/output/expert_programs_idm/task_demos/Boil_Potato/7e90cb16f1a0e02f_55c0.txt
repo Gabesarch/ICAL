@@ -1,0 +1,64 @@
+Dialogue Instruction:
+<Driver> hi
+<Driver> what should I do today?
+<Commander> hi
+<Commander> let's boil the potato on the table
+<Commander> you can put it in the bowl with water and microwave it
+<Driver> where's the bowl?
+<Commander> same table as the potato
+<Driver> sorry
+<Driver> didn't think that would be hard
+<Commander> drop this pan
+<Driver> ok
+
+Initial Object State:
+"Bowl_7": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Fridge"]}
+"CounterTop_15": {"label": "CounterTop"}
+"CounterTop_16": {"label": "CounterTop"}
+"CounterTop_31": {"label": "CounterTop"}
+"Fork_37": {"label": "Fork", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Bowl_38": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"Plate_43": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Pot_45": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["DiningTable"]}
+"SinkBasin_53": {"label": "SinkBasin"}
+"Potato_63": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Faucet_70": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_potato.pickup_and_place(target_pot)
+target_pot.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_pot.place(target_countertop)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_fork = InteractionObject("Fork", object_instance = "Fork")
+target_fork.pickup_and_place(target_countertop)
+target_pot.pickup()
+target_countertop.go_to()
+target_pot.place(target_countertop)
+target_potato.pickup_and_place(target_countertop)
+target_pot.pickup()
+target_countertop.go_to()
+target_pot.place(target_countertop)
+target_cellphone = InteractionObject("CellPhone", object_instance = "CellPhone")
+target_potato.pickup_and_place(target_cellphone)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_plate.place(target_sinkbasin)
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_potato.pickup_and_place(target_sinkbasin)
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.pickup()
+target_countertop.go_to()
+target_bowl.place(target_countertop)
+```

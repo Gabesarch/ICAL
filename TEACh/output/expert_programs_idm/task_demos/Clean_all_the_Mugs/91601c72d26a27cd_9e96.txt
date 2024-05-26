@@ -1,0 +1,18 @@
+Dialogue Instruction:
+<Driver> Hello
+<Commander> hello
+<Driver> What's the task for today?
+<Commander> just need to clean the mug
+<Driver> where is the mug
+<Commander> near the stove
+
+Initial Object State:
+"SinkBasin_63": {"label": "SinkBasin"}
+"Mug_84": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_mug.pickup_and_place(target_sinkbasin)
+```

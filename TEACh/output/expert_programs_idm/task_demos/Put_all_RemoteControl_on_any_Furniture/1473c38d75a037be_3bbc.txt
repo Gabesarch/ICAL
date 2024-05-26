@@ -1,0 +1,31 @@
+Dialogue Instruction:
+<Commander> Put all remote control on any Furniture
+<Driver> Hello. My first task please )
+<Driver> OK
+<Commander> there is a remote in the trash
+<Commander> good job
+
+Initial Object State:
+"Plate_0": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"RemoteControl_2": {"label": "RemoteControl", "holding": False, "supported_by": ["DiningTable"]}
+"RemoteControl_6": {"label": "RemoteControl", "holding": False, "supported_by": ["CoffeeTable"]}
+"Plate_8": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Sofa"]}
+"RemoteControl_15": {"label": "RemoteControl", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"Plate_19": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Sofa"]}
+"Sofa_37": {"label": "Sofa"}
+"DiningTable_41": {"label": "DiningTable"}
+"Sofa_42": {"label": "Sofa"}
+
+Demonstration Script:
+```python
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+None.place(target_plate)
+target_remotecontrol = InteractionObject("RemoteControl", object_instance = "RemoteControl")
+target_sofa = InteractionObject("Sofa", object_instance = "Sofa")
+target_remotecontrol.pickup_and_place(target_sofa)
+target_remotecontrol.pickup()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_remotecontrol.place(target_diningtable)
+```

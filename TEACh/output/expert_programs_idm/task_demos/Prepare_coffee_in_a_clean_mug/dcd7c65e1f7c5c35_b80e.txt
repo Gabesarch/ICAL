@@ -1,0 +1,20 @@
+Dialogue Instruction:
+<Driver> Hello. What should I do today?
+<Commander> We need to make coffee
+<Commander> Grab the coffee mug in front of you
+<Driver> Ok
+<Commander> Head to the coffee machine
+<Commander> THe coffee machine is on the table
+<Commander> Finished!
+
+Initial Object State:
+"CounterTop_93": {"label": "CounterTop"}
+"CounterTop_96": {"label": "CounterTop"}
+"CounterTop_98": {"label": "CounterTop"}
+
+Demonstration Script:
+```python
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+None.place(target_countertop)
+```

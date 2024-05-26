@@ -1,0 +1,75 @@
+Dialogue Instruction:
+<Driver> directions please
+<Commander> today we need to make a plate of toast
+<Commander> the bread is on the counter
+<Commander> by the lettuce
+<Commander> there should be a knife
+<Commander> in the drawer under the toaster
+<Commander> the toaster is by the fridge
+<Commander> open the drawer under the toaster
+<Commander> the knife should be in there
+<Commander> do you see it?
+<Driver> no knife
+<Commander> there should also be a knife in the fridge
+<Commander> let's check there
+<Commander> in the freezer
+<Commander> there are 3 loaves of bread
+<Commander> choose any and slice 1 please
+<Commander> then take a slice of bread
+<Commander> and toast it
+<Commander> you will need to put the knife down first
+<Driver> having trouble with knife
+<Commander> put back in fridge or on counter
+<Commander> we will need the plate from the fridge
+<Commander> please take and place on the counter
+<Commander> the toasted slice of bread
+<Commander> goes on the plate
+<Commander> thank you for your help today
+<Driver> thank you
+<Commander> we are done for now
+
+Initial Object State:
+"Knife_1": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Cabinet_18": {"label": "Cabinet", "open": False}
+"Cabinet_19": {"label": "Cabinet", "open": False}
+"Cabinet_20": {"label": "Cabinet", "open": False}
+"Cabinet_21": {"label": "Cabinet", "open": False}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"CounterTop_39": {"label": "CounterTop"}
+"CounterTop_40": {"label": "CounterTop"}
+"CounterTop_46": {"label": "CounterTop"}
+"Toaster_65": {"label": "Toaster", "toggled": True}
+"Knife_71": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Knife_79": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+
+Demonstration Script:
+```python
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_knife.pickup_and_place(target_countertop)
+target_toaster = InteractionObject("Toaster", object_instance = "Toaster")
+target_knife.place(target_toaster)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_countertop.go_to()
+target_breadsliced.place(target_countertop)
+```

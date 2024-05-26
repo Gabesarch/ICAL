@@ -1,0 +1,23 @@
+Dialogue Instruction:
+<Driver> how can i help you?
+<Commander> can you put the alarm on my bed please
+<Commander> it is on the set of drawers by the window
+<Driver> it is on the bed
+<Commander> yes please
+<Driver> done
+<Commander> the alarm is on the left side of the set of drawers
+<Driver> done
+<Commander> done
+
+Initial Object State:
+"SideTable_31": {"label": "SideTable"}
+
+Demonstration Script:
+```python
+target_sidetable = InteractionObject("SideTable", object_instance = "SideTable")
+target_sidetable.go_to()
+None.place(target_sidetable)
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_coffeetable.go_to()
+None.place(target_coffeetable)
+```

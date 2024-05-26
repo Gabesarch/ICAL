@@ -1,0 +1,59 @@
+Dialogue Instruction:
+<Driver> what first
+<Commander> Find mug
+<Commander> mug is beside toaster
+<Driver> got it
+<Commander> place it in coffee maker
+<Driver> 
+<Commander> 
+<Driver> 
+<Commander> We need to rinse with water first
+<Driver> next
+<Commander> 
+<Commander> Done
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Spoon_2": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Stool"]}
+"Bowl_19": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Mug_28": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Spoon_30": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Bowl_77": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Bowl_83": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Mug_87": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Bowl_93": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Bowl_115": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Bowl_124": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Bowl_128": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Spoon_134": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Mug_135": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Mug_136": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Plate", "CounterTop"]}
+"Spoon_138": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Bowl_174": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"SinkBasin_192": {"label": "SinkBasin"}
+"Spoon_198": {"label": "Spoon", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"Mug_201": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Plate", "CounterTop"]}
+"Faucet_204": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_mug.pickup_and_place(target_sinkbasin)
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_spoon = InteractionObject("Spoon", object_instance = "Spoon")
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_spoon.pickup_and_place(target_bowl)
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug.go_to()
+target_mug.pickup()
+```

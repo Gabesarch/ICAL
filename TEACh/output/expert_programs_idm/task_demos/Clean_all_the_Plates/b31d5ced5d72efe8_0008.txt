@@ -1,0 +1,83 @@
+Dialogue Instruction:
+<Driver> What shall I do today?
+<Commander> hi
+<Commander> please wash the plate on the counter
+<Commander> with the shaker on top
+<Driver> next?
+<Commander> done
+
+Initial Object State:
+"DishSponge_1": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"PepperShaker_2": {"label": "PepperShaker", "holding": False, "supported_by": ["CounterTop", "Plate"]}
+"Knife_10": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"PepperShaker_12": {"label": "PepperShaker", "holding": False, "supported_by": ["Cabinet"]}
+"Knife_14": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"DishSponge_15": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"CounterTop_19": {"label": "CounterTop"}
+"CounterTop_22": {"label": "CounterTop"}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Cabinet_39": {"label": "Cabinet", "open": False}
+"Cabinet_40": {"label": "Cabinet", "open": False}
+"Cabinet_41": {"label": "Cabinet", "open": False}
+"Cabinet_42": {"label": "Cabinet", "open": False}
+"Cabinet_43": {"label": "Cabinet", "open": False}
+"Cabinet_44": {"label": "Cabinet", "open": False}
+"Cabinet_45": {"label": "Cabinet", "open": False}
+"Cabinet_46": {"label": "Cabinet", "open": False}
+"Cabinet_47": {"label": "Cabinet", "open": False}
+"Cabinet_48": {"label": "Cabinet", "open": False}
+"Cabinet_49": {"label": "Cabinet", "open": False}
+"Cabinet_50": {"label": "Cabinet", "open": False}
+"Cabinet_51": {"label": "Cabinet", "open": False}
+"Cabinet_52": {"label": "Cabinet", "open": False}
+"Cabinet_53": {"label": "Cabinet", "open": False}
+"Cabinet_54": {"label": "Cabinet", "open": False}
+"Cabinet_55": {"label": "Cabinet", "open": False}
+"Cabinet_56": {"label": "Cabinet", "open": False}
+"Cabinet_57": {"label": "Cabinet", "open": False}
+"Cabinet_58": {"label": "Cabinet", "open": False}
+"Cabinet_59": {"label": "Cabinet", "open": False}
+"Cabinet_60": {"label": "Cabinet", "open": False}
+"Cabinet_61": {"label": "Cabinet", "open": False}
+"Knife_65": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Plate_84": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"SinkBasin_91": {"label": "SinkBasin"}
+"PepperShaker_94": {"label": "PepperShaker", "holding": False, "supported_by": ["Microwave"]}
+"Knife_95": {"label": "Knife", "holding": False, "supported_by": ["Chair"]}
+"DishSponge_98": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Pot", "CounterTop"]}
+"Mug_101": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"Faucet_103": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_peppershaker = InteractionObject("PepperShaker", object_instance = "PepperShaker")
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_peppershaker.pickup_and_place(target_cabinet)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_plate.place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_mug.pickup_and_place(target_countertop)
+target_dishsponge = InteractionObject("DishSponge", object_instance = "DishSponge")
+target_dishsponge.pickup()
+target_countertop.go_to()
+target_dishsponge.place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup_and_place(target_countertop)
+target_dishsponge.pickup()
+target_countertop.go_to()
+target_dishsponge.place(target_countertop)
+target_plate.pickup_and_place(target_sinkbasin)
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+```

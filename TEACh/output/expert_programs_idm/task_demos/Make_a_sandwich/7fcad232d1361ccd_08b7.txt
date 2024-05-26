@@ -1,0 +1,64 @@
+Dialogue Instruction:
+<Driver> What shall I do today?
+<Commander> Hello you need to make a sandwich
+<Commander> you need to toast 2 pieces of bread
+<Commander> There is a knife in the microwave
+<Commander> 
+<Commander> Great. Next please slice the lettuce thereon your left
+<Commander> Great. There is a plate in the upper cabinet above the sink
+<Commander> No tomato in this sandwich please :)
+<Driver> Okay
+<Commander> Place 2 slices of toast and 1 slice of lettuce on the plate please
+<Commander> Try to grab a smaller piece of lettuce
+<Driver> Done
+<Commander> Great work! Done. Thank you.
+
+Initial Object State:
+"Bread_6": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Bread_11": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"CounterTop_13": {"label": "CounterTop"}
+"CounterTop_31": {"label": "CounterTop"}
+"Plate_45": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Bread_48": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Knife_50": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Knife_54": {"label": "Knife", "holding": False, "supported_by": ["Microwave"]}
+"DiningTable_69": {"label": "DiningTable"}
+"DiningTable_70": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_bread.go_to()
+target_bread.slice()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = None, parent_object = "Bread") # Initialize new sliced object from sliced parent
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_breadsliced.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_countertop.go_to()
+target_breadsliced.place(target_countertop)
+target_breadsliced.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_countertop.go_to()
+target_breadsliced.place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_breadsliced.pickup_and_place(target_plate)
+target_knife.pickup()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_breadsliced.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_countertop.go_to()
+target_breadsliced.place(target_countertop)
+target_breadsliced.pickup_and_place(target_countertop)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = "LettuceSliced")
+target_lettucesliced.pickup()
+target_countertop.go_to()
+target_lettucesliced.place(target_countertop)
+target_lettucesliced.pickup_and_place(target_countertop)
+```

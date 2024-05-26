@@ -1,0 +1,18 @@
+Dialogue Instruction:
+<Driver> how can i help today?
+<Commander> i'd like my plant watered
+<Driver> sure
+<Driver> found a pot with water
+<Driver> should be done
+<Commander> thanks
+
+Initial Object State:
+"Pot_32": {"label": "Pot", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"SinkBasin_57": {"label": "SinkBasin"}
+
+Demonstration Script:
+```python
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_pot.pickup_and_place(target_sinkbasin)
+```

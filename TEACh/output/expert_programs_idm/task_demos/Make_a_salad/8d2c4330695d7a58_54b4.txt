@@ -1,0 +1,174 @@
+Dialogue Instruction:
+<Commander> Hi we are making a salad
+<Driver> hi, what should i do today?
+<Commander> Lettuce is on the top shelf next to the microwave
+<Commander> slice it with a knife
+<Driver> done.
+<Driver> what should i do next?
+<Commander> Slice tomato
+<Commander> Tomato is on the shelf above coffee maker
+<Commander> there
+<Driver> sliced potato, what should i do next?
+<Commander> 2 slices of potato. potato is on the table next to the window behind the counter
+<Commander> next
+<Commander> there
+<Commander> on the table
+<Commander> cook two slices of the potato
+<Driver> done, what should i do next?
+<Commander> Go for the plate on the table you got the potato
+<Commander> place the one slice lettuce, one tomato slice and 2 slice potato on it
+<Commander> slice
+<Driver> on a plate or ?
+<Commander> yes plate
+<Commander> plate is on the table by the window
+<Commander> behind counter
+<Driver> where can i find a plate>?
+<Commander> on that white table
+<Driver> done
+<Commander> done
+<Commander> Awesome!
+<Driver> thank you
+
+Initial Object State:
+"Bowl_2": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"Cup_4": {"label": "Cup", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Drawer"]}
+"Knife_6": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Lettuce_9": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Potato_15": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Knife_19": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Pan_21": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+"Pan_22": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["Drawer"]}
+"Potato_23": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"Cup_28": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["DiningTable"]}
+"Bowl_29": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["DiningTable"]}
+"Bowl_31": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Fridge"]}
+"Cup_33": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Knife_34": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Lettuce_37": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Potato_40": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Pan_43": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Bowl_44": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Pan_47": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["StoveBurner", "CounterTop"]}
+"Knife_49": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Bowl_50": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Knife_56": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Pan_57": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["CounterTop", "StoveBurner"]}
+"Knife_64": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Bowl_65": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Drawer"]}
+"Knife_70": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Potato_75": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"CounterTop_78": {"label": "CounterTop"}
+"CounterTop_81": {"label": "CounterTop"}
+"Cabinet_94": {"label": "Cabinet", "open": False}
+"Cabinet_95": {"label": "Cabinet", "open": False}
+"Cabinet_96": {"label": "Cabinet", "open": False}
+"Cabinet_97": {"label": "Cabinet", "open": False}
+"Cabinet_98": {"label": "Cabinet", "open": False}
+"Cabinet_99": {"label": "Cabinet", "open": False}
+"Cabinet_100": {"label": "Cabinet", "open": False}
+"Cabinet_101": {"label": "Cabinet", "open": False}
+"Cabinet_102": {"label": "Cabinet", "open": False}
+"Cabinet_103": {"label": "Cabinet", "open": False}
+"Cabinet_104": {"label": "Cabinet", "open": False}
+"Cabinet_105": {"label": "Cabinet", "open": False}
+"Cabinet_106": {"label": "Cabinet", "open": False}
+"Cabinet_107": {"label": "Cabinet", "open": False}
+"Cabinet_108": {"label": "Cabinet", "open": False}
+"Cabinet_109": {"label": "Cabinet", "open": False}
+"Cabinet_110": {"label": "Cabinet", "open": False}
+"Cabinet_111": {"label": "Cabinet", "open": False}
+"Cabinet_112": {"label": "Cabinet", "open": False}
+"Cabinet_113": {"label": "Cabinet", "open": False}
+"Cabinet_114": {"label": "Cabinet", "open": False}
+"Cabinet_115": {"label": "Cabinet", "open": False}
+"Cabinet_116": {"label": "Cabinet", "open": False}
+"Cabinet_117": {"label": "Cabinet", "open": False}
+"Cabinet_118": {"label": "Cabinet", "open": False}
+"Cabinet_119": {"label": "Cabinet", "open": False}
+"Cabinet_120": {"label": "Cabinet", "open": False}
+"Pan_122": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_124": {"label": "Knife", "holding": False, "supported_by": ["Chair"]}
+"Microwave_128": {"label": "Microwave", "toggled": True, "open": False}
+"Potato_135": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Plate_143": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Lettuce_148": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["DiningTable"]}
+"Knife_154": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Cup_156": {"label": "Cup", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Drawer"]}
+"Bowl_158": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.go_to()
+target_lettuce.slice()
+target_pan = InteractionObject("Pan", object_instance = "Pan")
+target_pan.go_to()
+target_knife.place(target_pan)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_cup.pickup_and_place(target_countertop)
+target_knife.pickup()
+target_lettuce.go_to()
+target_lettuce.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.pickup_and_place(target_countertop)
+target_knife.pickup()
+target_cabinet.go_to()
+target_cabinet.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.go_to()
+target_potatosliced.pickup()
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.go_to()
+target_microwave.open()
+target_microwave.pickup_and_place(target_microwave)
+target_microwave.pickup()
+target_countertop.go_to()
+target_microwave.place(target_countertop)
+target_potatosliced.go_to()
+target_potatosliced.pickup()
+target_microwave.go_to()
+target_microwave.open()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_potatosliced.place(target_plate)
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.go_to()
+target_bowl.pickup()
+target_cup.go_to()
+target_cup.pickup()
+target_cup.pickup_and_place(target_microwave)
+target_cup.pickup()
+target_countertop.go_to()
+target_cup.place(target_countertop)
+target_potatosliced.go_to()
+target_potatosliced.pickup()
+target_bowl.go_to()
+target_bowl.pickup()
+target_cup.go_to()
+target_cup.pickup()
+target_potatosliced.pickup_and_place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.pickup()
+target_plate.pickup_and_place(target_countertop)
+target_potatosliced.pickup()
+target_plate.go_to()
+target_potatosliced.place(target_plate)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = "TomatoSliced")
+target_tomatosliced.pickup_and_place(target_plate)
+target_potatosliced.pickup()
+target_plate.go_to()
+target_potatosliced.place(target_plate)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = None, parent_object = "Lettuce") # Initialize new sliced object from sliced parent
+target_lettucesliced.pickup_and_place(target_plate)
+```

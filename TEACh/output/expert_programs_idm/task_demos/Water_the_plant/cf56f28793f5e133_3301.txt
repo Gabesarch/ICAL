@@ -1,0 +1,79 @@
+Dialogue Instruction:
+<Driver> How can I help?
+<Commander> Let's water the plant
+<Commander> you can use any container and fill it with water
+<Commander> then just pour it on the plant please
+<Driver> Sure thing
+<Driver> Will that do?
+<Commander> Okay! Thank you! All done
+
+Initial Object State:
+"DishSponge_2": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Stool"]}
+"Lettuce_4": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Drawer"]}
+"SaltShaker_6": {"label": "SaltShaker", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"Bowl_7": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"WineBottle_12": {"label": "WineBottle", "holding": False, "filled": True, "fillLiquid": None, "supported_by": ["Sink"]}
+"Tomato_15": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"DishSponge_21": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Lettuce_22": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Sink"]}
+"SaltShaker_24": {"label": "SaltShaker", "holding": False, "supported_by": ["Microwave"]}
+"DishSponge_31": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"WineBottle_32": {"label": "WineBottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Tomato_40": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"CounterTop_47": {"label": "CounterTop"}
+"CounterTop_49": {"label": "CounterTop"}
+"CounterTop_72": {"label": "CounterTop"}
+"Knife_74": {"label": "Knife", "holding": False, "supported_by": ["Microwave"]}
+"HousePlant_80": {"label": "HousePlant", "filled": False, "fillLiquid": None}
+"Tomato_87": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"WineBottle_92": {"label": "WineBottle", "holding": False, "filled": True, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Bowl_101": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Stool"]}
+"SinkBasin_102": {"label": "SinkBasin"}
+"SaltShaker_103": {"label": "SaltShaker", "holding": False, "supported_by": ["Fridge"]}
+"Lettuce_105": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Knife_106": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"DishSponge_108": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Faucet_116": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_bowl.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_off()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_lettuce.pickup_and_place(target_countertop)
+target_faucet.toggle_off()
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_tomato.pickup_and_place(target_countertop)
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_saltshaker.pickup()
+target_countertop.go_to()
+target_saltshaker.place(target_countertop)
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_winebottle = InteractionObject("WineBottle", object_instance = "WineBottle")
+target_winebottle.pickup_and_place(target_countertop)
+target_dishsponge = InteractionObject("DishSponge", object_instance = "DishSponge")
+target_dishsponge.pickup()
+target_countertop.go_to()
+target_dishsponge.place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup_and_place(target_countertop)
+target_bowl.pickup()
+target_sinkbasin.go_to()
+target_bowl.place(target_sinkbasin)
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_bowl.go_to()
+target_bowl.pickup()
+target_houseplant = InteractionObject("HousePlant", object_instance = "HousePlant")
+target_houseplant.go_to()
+target_bowl.pour(target_houseplant)
+```

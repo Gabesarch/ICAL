@@ -1,0 +1,37 @@
+Dialogue Instruction:
+<Driver> Hi, first task?
+<Commander> clean mug and prepare coffee
+<Driver> ok
+<Driver> mug?
+<Commander> mug is on the brown table at the corner left to wash basin
+<Driver> next
+<Commander> done
+<Driver> cool
+
+Initial Object State:
+"CoffeeMachine_21": {"label": "CoffeeMachine", "toggled": False}
+"SinkBasin_41": {"label": "SinkBasin"}
+"Mug_52": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["SideTable"]}
+"DiningTable_53": {"label": "DiningTable"}
+"DiningTable_54": {"label": "DiningTable"}
+"DiningTable_63": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+None.place(target_diningtable)
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_mug.pickup_and_place(target_sinkbasin)
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_coffeemachine.go_to()
+target_mug.place(target_coffeemachine)
+```

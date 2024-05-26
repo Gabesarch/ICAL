@@ -1,0 +1,14 @@
+Dialogue Instruction:
+<Driver> How may I assist you today?
+<Commander> can you put my alarm clock on my bed for me please
+
+Initial Object State:
+"AlarmClock_2": {"label": "AlarmClock", "holding": False, "supported_by": ["Bed"]}
+"AlarmClock_26": {"label": "AlarmClock", "holding": False, "supported_by": ["Desk"]}
+
+Demonstration Script:
+```python
+target_alarmclock = InteractionObject("AlarmClock", object_instance = "AlarmClock")
+target_alarmclock.go_to()
+target_alarmclock.pickup()
+```

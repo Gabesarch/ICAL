@@ -1,0 +1,47 @@
+Dialogue Instruction:
+<Driver> what would you like me to do?
+<Commander> we need to place the remotes on the armchair
+<Driver> where is the remote?
+<Commander> there is one in the box on the shelf
+<Commander> place the remote on armchair
+<Commander> you might need to set the box down and pick up the remote to put on the armchair?
+<Driver> I am unable to pickup the remote
+<Commander> can you place the box on the chair?
+<Commander> or maybe can you set the box on the floor and remove the remote?
+<Commander> or remove the pen from the chair to place the box?
+<Commander> (but two remotes will need to fit on the chair)
+<Commander> good job!
+<Driver> Thank you. What next?
+<Commander> the other remote needs to go on the chair
+<Commander> can you place the box on another surface to remove the remote from it?
+<Commander> nice work. finished!
+
+Initial Object State:
+"RemoteControl_0": {"label": "RemoteControl", "holding": False, "supported_by": ["Floor", "CoffeeTable"]}
+"Newspaper_4": {"label": "Newspaper", "holding": False, "supported_by": ["Drawer"]}
+"Newspaper_6": {"label": "Newspaper", "holding": False, "supported_by": ["Box", "TVStand"]}
+"Box_8": {"label": "Box", "holding": False, "open": True, "supported_by": ["TVStand"]}
+"Newspaper_10": {"label": "Newspaper", "holding": False, "supported_by": ["Floor", "CoffeeTable"]}
+"RemoteControl_20": {"label": "RemoteControl", "holding": False, "supported_by": ["Box", "TVStand"]}
+"Chair_28": {"label": "Chair"}
+"Chair_38": {"label": "Chair"}
+"SideTable_40": {"label": "SideTable"}
+
+Demonstration Script:
+```python
+target_box = InteractionObject("Box", object_instance = "Box")
+target_box.go_to()
+target_box.open()
+target_dresser = InteractionObject("Dresser", object_instance = "Dresser")
+target_dresser.go_to()
+None.place(target_dresser)
+target_remotecontrol = InteractionObject("RemoteControl", object_instance = "RemoteControl")
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_remotecontrol.pickup_and_place(target_chair)
+target_newspaper = InteractionObject("Newspaper", object_instance = "Newspaper")
+target_newspaper.pickup()
+target_sidetable = InteractionObject("SideTable", object_instance = "SideTable")
+target_sidetable.go_to()
+target_newspaper.place(target_sidetable)
+target_remotecontrol.pickup_and_place(target_chair)
+```

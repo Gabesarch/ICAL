@@ -1,0 +1,24 @@
+Dialogue Instruction:
+<Driver> Hi what are my directions?
+<Commander> can you get a mug and make coffee please
+<Driver> Sure
+<Commander> the mug is under the table in teh middle of the room
+<Commander> done
+
+Initial Object State:
+"Mug_1": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Mug_33": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Chair"]}
+"CoffeeMachine_132": {"label": "CoffeeMachine", "toggled": True}
+"Mug_147": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_coffeemachine.go_to()
+target_coffeemachine.toggle_on()
+target_coffeemachine.go_to()
+target_mug.place(target_coffeemachine)
+```

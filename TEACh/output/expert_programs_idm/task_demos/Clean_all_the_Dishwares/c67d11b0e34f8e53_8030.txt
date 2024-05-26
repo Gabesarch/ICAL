@@ -1,0 +1,108 @@
+Dialogue Instruction:
+<Driver> what do i do
+<Commander> go and wash the dishes in the sink
+<Commander> easy task
+<Commander> all the dishes in the sink rinse with water
+<Driver> is that it?
+<Commander> behind you is a dish grab and wash
+<Commander> on the counter
+<Commander> i think it's a white bowl
+<Commander> plate
+<Driver> found it
+<Commander> yes
+<Commander> and after that one the last dish is the bowl above the plate you just grab
+<Commander> place plate in sink then turn on water
+<Driver> won't let me put in sink
+<Commander> move over a little so your robot can place it
+<Commander> move around to place it
+<Commander> no
+<Commander> other bowl
+<Commander> next to the lettuce
+<Commander> you need to be in the right position to place in the sink or it won't let you
+<Commander> you can't be lined up directly in front of the sink and place it
+<Commander> slide to the right a little until it let you
+<Driver> thanks, that was the problem
+<Commander> one more dish
+<Commander> no prob
+<Commander> plate
+<Driver> it was on the counter in front of me but now it is gone
+<Commander> left
+<Driver> i see it
+<Commander> good job
+<Driver> thanks
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"Bowl_1": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Plate_8": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Plate_10": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Chair"]}
+"CounterTop_13": {"label": "CounterTop"}
+"CounterTop_17": {"label": "CounterTop"}
+"Plate_28": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Chair"]}
+"SaltShaker_35": {"label": "SaltShaker", "holding": False, "supported_by": ["Chair"]}
+"Pan_36": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Potato_42": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"SinkBasin_43": {"label": "SinkBasin"}
+"Microwave_53": {"label": "Microwave", "toggled": False, "open": False}
+"Pot_54": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner", "CounterTop"]}
+"Bowl_60": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Mug_61": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Faucet_63": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_saltshaker.pickup_and_place(target_sinkbasin)
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_mug.pickup_and_place(target_sinkbasin)
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.close()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_plate.pickup()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_sinkbasin.go_to()
+target_plate.place(target_sinkbasin)
+target_plate.pickup_and_place(target_sinkbasin)
+target_microwave.close()
+target_pan = InteractionObject("Pan", object_instance = "Pan")
+target_pan.pickup_and_place(target_countertop)
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.pickup()
+target_sinkbasin.go_to()
+target_pot.place(target_sinkbasin)
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.go_to()
+target_bowl.pickup()
+target_sinkbasin.go_to()
+target_bowl.pour(target_sinkbasin)
+target_countertop.go_to()
+target_bowl.place(target_countertop)
+target_plate.pickup_and_place(target_sinkbasin)
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_plate.pickup_and_place(target_countertop)
+```

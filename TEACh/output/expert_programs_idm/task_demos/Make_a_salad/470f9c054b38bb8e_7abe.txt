@@ -1,0 +1,79 @@
+Dialogue Instruction:
+<Driver> hi
+<Commander> Hello.
+<Driver> what should I do?
+<Commander> We need to make a salad.
+<Commander> fist we have to slice the lettuce
+<Commander> lettuce is on the shelf next to the fridge.
+<Driver> done
+<Commander> Okay.
+<Commander> Next need to cook 2 slices of potato
+<Commander> the potato is on the table next to the window
+<Driver> done
+<Commander> Okay.
+<Commander> Now all the items need to put on a clean plate
+<Commander> the clean plate is on the lower shelf by the fridge
+<Driver> do we need tomato?
+<Commander> Nope. We are all done here.
+
+Initial Object State:
+"Knife_6": {"label": "Knife", "holding": False, "supported_by": ["Floor", "Shelf"]}
+"WineBottle_10": {"label": "WineBottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner", "Pan"]}
+"Lettuce_12": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["DiningTable"]}
+"CellPhone_13": {"label": "CellPhone", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"Plate_14": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Floor", "Shelf"]}
+"CellPhone_17": {"label": "CellPhone", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"WineBottle_18": {"label": "WineBottle", "holding": False, "filled": True, "fillLiquid": None, "supported_by": ["DiningTable"]}
+"Knife_23": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Lettuce_24": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["DiningTable"]}
+"DiningTable_26": {"label": "DiningTable"}
+"CounterTop_45": {"label": "CounterTop"}
+"CounterTop_51": {"label": "CounterTop"}
+"StoveKnob_60": {"label": "StoveKnob", "toggled": False}
+"StoveKnob_61": {"label": "StoveKnob", "toggled": False}
+"StoveKnob_62": {"label": "StoveKnob", "toggled": False}
+"StoveKnob_63": {"label": "StoveKnob", "toggled": True}
+"Plate_70": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Floor", "Shelf"]}
+"CellPhone_71": {"label": "CellPhone", "holding": False, "supported_by": ["Sink"]}
+"Lettuce_72": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Microwave"]}
+"WineBottle_78": {"label": "WineBottle", "holding": False, "filled": False, "fillLiquid": None, "supported_by": ["Fridge"]}
+"Bowl_81": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop"]}
+"Knife_85": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Knife_92": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"DiningTable_102": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.go_to()
+target_lettuce.slice()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_potatosliced.pickup_and_place(target_countertop)
+target_winebottle = InteractionObject("WineBottle", object_instance = "WineBottle")
+target_winebottle.pickup()
+target_countertop.go_to()
+target_winebottle.place(target_countertop)
+target_potatosliced.pickup_and_place(target_countertop)
+target_stoveknob = InteractionObject("StoveKnob", object_instance = "StoveKnob")
+target_stoveknob.toggle_on()
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.pickup_and_place(target_diningtable)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = None, parent_object = "Lettuce") # Initialize new sliced object from sliced parent
+target_lettucesliced.pickup()
+target_diningtable.go_to()
+target_lettucesliced.place(target_diningtable)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup_and_place(target_countertop)
+target_potatosliced.pickup()
+target_cellphone = InteractionObject("CellPhone", object_instance = "CellPhone")
+target_cellphone.go_to()
+target_potatosliced.place(target_cellphone)
+target_potatosliced.pickup_and_place(target_countertop)
+```

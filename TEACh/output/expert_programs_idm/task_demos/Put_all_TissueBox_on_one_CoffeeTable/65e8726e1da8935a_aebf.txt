@@ -1,0 +1,27 @@
+Dialogue Instruction:
+<Driver> What do I do first?
+<Commander> Grab a tissue box and put it onto a single coffee table
+<Driver> Next?
+<Commander> There's another tissue box in the trash can by the sliding door on the far right.
+<Commander> Ah. The recycle bin.
+<Commander> Place it on the coffee table as well.
+<Driver> Put it on the table?
+<Driver> Ok
+<Driver> done?
+<Commander> Done! Thank you.
+
+Initial Object State:
+"TissueBox_1": {"label": "TissueBox", "holding": False, "supported_by": ["DiningTable"]}
+"TissueBox_13": {"label": "TissueBox", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"CoffeeTable_43": {"label": "CoffeeTable"}
+"CoffeeTable_52": {"label": "CoffeeTable"}
+
+Demonstration Script:
+```python
+target_tissuebox = InteractionObject("TissueBox", object_instance = "TissueBox")
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_tissuebox.pickup_and_place(target_coffeetable)
+target_tissuebox.pickup()
+target_coffeetable.go_to()
+target_tissuebox.place(target_coffeetable)
+```

@@ -1,0 +1,26 @@
+Dialogue Instruction:
+<Driver> hi how can i help
+<Commander> can you prepare a coffee for me
+<Commander> there should be a mug on the chair
+<Driver> done
+<Commander> Great
+
+Initial Object State:
+"Mug_1": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Shelf"]}
+"Bread_12": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Mug_28": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Microwave"]}
+"Mug_39": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Chair"]}
+"CoffeeMachine_73": {"label": "CoffeeMachine", "toggled": False}
+"Bread_82": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Floor", "Shelf"]}
+"Mug_104": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Fridge"]}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_bread.pickup_and_place(target_coffeemachine)
+target_coffeemachine.toggle_on()
+```

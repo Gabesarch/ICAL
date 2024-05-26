@@ -1,0 +1,70 @@
+Dialogue Instruction:
+<Driver> hi, what can i do for you?
+<Commander> can I have three cooked potato slices in a bowl
+<Driver> sure
+<Driver> where can i find a potato?
+<Commander> next to the coffeemaker
+<Driver> got it
+<Driver> where is the knife?
+<Commander> knife is behind the sink next to the microwave
+<Driver> thanks
+<Driver> where can i find a bowl?
+<Commander> bowl is in the fridge
+<Driver> all set?
+
+Initial Object State:
+"Potato_4": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Egg_8": {"label": "Egg", "holding": False, "supported_by": ["Drawer"]}
+"Potato_9": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["StoveBurner", "Pan"]}
+"Egg_11": {"label": "Egg", "holding": False, "supported_by": ["CounterTop", "Microwave"]}
+"CounterTop_27": {"label": "CounterTop"}
+"CounterTop_33": {"label": "CounterTop"}
+"Egg_35": {"label": "Egg", "holding": False, "supported_by": ["CounterTop", "Microwave"]}
+"Plate_40": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Knife_50": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Potato_51": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Floor", "Fridge", "Bowl"]}
+"Fridge_54": {"label": "Fridge", "open": False}
+"Knife_58": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Microwave_59": {"label": "Microwave", "toggled": True, "open": False}
+"Faucet_68": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_potato.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_egg = InteractionObject("Egg", object_instance = "Egg")
+target_egg.pickup_and_place(target_countertop)
+target_egg.pickup()
+target_countertop.go_to()
+target_egg.place(target_countertop)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_potatosliced.pickup_and_place(target_microwave)
+target_potatosliced.pickup()
+target_microwave.go_to()
+target_potatosliced.place(target_microwave)
+target_potatosliced.pickup_and_place(target_microwave)
+target_potatosliced.place(target_microwave)
+target_microwave.go_to()
+target_microwave.toggle_off()
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup_and_place(target_countertop)
+target_potato.pickup()
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_microwave.go_to()
+target_microwave.open()
+target_faucet.go_to()
+target_faucet.toggle_off()
+```

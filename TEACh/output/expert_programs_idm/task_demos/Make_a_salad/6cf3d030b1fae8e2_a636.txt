@@ -1,0 +1,72 @@
+Dialogue Instruction:
+<Driver> hi, what should I do today?
+<Driver> Commander?
+<Commander> sorry we are making a salad
+<Commander> knife is in fridge
+<Driver> can you help me find lettuce?
+<Commander> lettuce back of table
+<Commander> need 2 slices
+<Commander> plate is on end past toaster
+<Commander> put 2 slices lettuce 1 slice tomato on plate
+<Driver> ok
+<Commander> great job finished
+<Driver> thanks
+
+Initial Object State:
+"Bowl_1": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Chair"]}
+"Lettuce_5": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["DiningTable"]}
+"Plate_6": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Fridge"]}
+"Bowl_17": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["DiningTable"]}
+"CounterTop_21": {"label": "CounterTop"}
+"CounterTop_24": {"label": "CounterTop"}
+"Knife_67": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Fridge_68": {"label": "Fridge", "open": False}
+"Plate_86": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Lettuce_91": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Drawer"]}
+"SinkBasin_93": {"label": "SinkBasin"}
+"Knife_97": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Bowl_101": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Faucet_105": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_bowl.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_bowl.go_to()
+target_bowl.pickup()
+target_sinkbasin.go_to()
+target_bowl.pour(target_sinkbasin)
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_bowl.place(target_countertop)
+target_bowl.pickup_and_place(target_countertop)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.open()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup_and_place(target_countertop)
+target_fridge.close()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.pickup_and_place(target_countertop)
+target_knife.pickup()
+target_lettuce.go_to()
+target_lettuce.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_pen = InteractionObject("Pen", object_instance = "Pen")
+target_pen.pickup_and_place(target_countertop)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = None, parent_object = "Lettuce") # Initialize new sliced object from sliced parent
+target_lettucesliced.pickup()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.go_to()
+target_lettucesliced.place(target_plate)
+target_lettucesliced.pickup_and_place(target_plate)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = "TomatoSliced")
+target_tomatosliced.pickup()
+target_plate.go_to()
+target_tomatosliced.place(target_plate)
+```

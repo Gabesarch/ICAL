@@ -1,0 +1,33 @@
+Dialogue Instruction:
+<Driver> how can I help
+<Commander> please place all newspapers onto one single bit of furniture. The first newspaper can be found on the dining room table
+<Commander> the last one is on a chair near the lamp
+<Driver> which piece of furniture
+<Driver> is that okay?
+<Commander> in the corner of the room is a lamp on a silver table. The last newspaper is on the char next to it
+<Commander> place that one with the others and it will be completed
+<Commander> That is all. Thank you
+
+Initial Object State:
+"Newspaper_3": {"label": "Newspaper", "holding": False, "supported_by": ["Chair"]}
+"Newspaper_11": {"label": "Newspaper", "holding": False, "supported_by": ["Sofa"]}
+"Newspaper_28": {"label": "Newspaper", "holding": False, "supported_by": ["DiningTable"]}
+"Chair_45": {"label": "Chair"}
+"Chair_46": {"label": "Chair"}
+"Chair_47": {"label": "Chair"}
+"Chair_48": {"label": "Chair"}
+"Chair_52": {"label": "Chair"}
+"Chair_56": {"label": "Chair"}
+"Chair_57": {"label": "Chair"}
+
+Demonstration Script:
+```python
+target_newspaper = InteractionObject("Newspaper", object_instance = "Newspaper")
+target_newspaper.go_to()
+target_newspaper.pickup()
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_newspaper.pickup_and_place(target_chair)
+target_newspaper.pickup()
+target_chair.go_to()
+target_newspaper.place(target_chair)
+```

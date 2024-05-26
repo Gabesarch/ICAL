@@ -1,0 +1,111 @@
+Dialogue Instruction:
+<Driver> how can i help
+<Commander> Could you make me a salad
+<Driver> what would you like in your salad
+<Commander> Lettuce, Cooked potato slice on a clean plate please
+<Commander> There should be a knife in the fridge
+<Commander> And some lettuce in the sink
+<Commander> You should also find a clean plate in the fridge too
+<Commander> There is also a potato in the sink, if you could slice two slices and cook them both in a pan that would be great
+<Commander> There is a pan for the slices of potato in the drawer below and to the left of the stove top
+<Commander> Feel free to use the pan that is already on the stove too
+<Commander> The potato is in the sink, could you slice two slices and cook them for me please
+<Commander> Please add them to the plate
+<Driver> all done
+<Commander> Great work thank you
+
+Initial Object State:
+"Potato_4": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Tomato_5": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Knife_7": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Knife_11": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Pan_14": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["Fridge"]}
+"Plate_15": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_24": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Potato_31": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"Knife_33": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Pan_36": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["Drawer"]}
+"Tomato_42": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Tomato_48": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Floor", "GarbageCan"]}
+"Knife_49": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Pan_53": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["StoveBurner", "StoveBurner", "CounterTop", "StoveBurner"]}
+"Knife_54": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Tomato_57": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Plate_66": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_68": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Plate_71": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Cabinet_73": {"label": "Cabinet", "open": False}
+"Cabinet_81": {"label": "Cabinet", "open": False}
+"Cabinet_82": {"label": "Cabinet", "open": False}
+"Cabinet_83": {"label": "Cabinet", "open": False}
+"Cabinet_84": {"label": "Cabinet", "open": False}
+"Cabinet_87": {"label": "Cabinet", "open": False}
+"Cabinet_93": {"label": "Cabinet", "open": False}
+"CounterTop_94": {"label": "CounterTop"}
+"Cabinet_96": {"label": "Cabinet", "open": False}
+"CounterTop_101": {"label": "CounterTop"}
+"Cabinet_105": {"label": "Cabinet", "open": False}
+"Plate_122": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Fridge"]}
+"Pan_123": {"label": "Pan", "holding": False, "dirty": True, "supported_by": ["Drawer"]}
+"Lettuce_124": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Sink"]}
+"Knife_129": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Knife_134": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Tomato_136": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Potato_137": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_tomato.go_to()
+target_tomato.slice()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.pickup_and_place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_knife.go_to()
+target_knife.pickup()
+target_lettuce.go_to()
+target_lettuce.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = None, parent_object = "Lettuce") # Initialize new sliced object from sliced parent
+target_lettucesliced.pickup_and_place(target_plate)
+target_lettucesliced.pickup()
+target_plate.go_to()
+target_lettucesliced.place(target_plate)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = None, parent_object = "Tomato") # Initialize new sliced object from sliced parent
+target_tomatosliced.pickup_and_place(target_countertop)
+target_plate.pickup()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.pickup_and_place(target_countertop)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.close()
+target_pan = InteractionObject("Pan", object_instance = "Pan")
+target_pan.pickup_and_place(target_countertop)
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.pickup()
+target_countertop.go_to()
+target_potato.place(target_countertop)
+target_knife.go_to()
+target_knife.pickup()
+target_tomato.go_to()
+target_tomato.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_potatosliced.pickup_and_place(target_pan)
+target_tomatosliced.toggle_on()
+target_pan.go_to()
+target_potatosliced.place(target_pan)
+target_plate.go_to()
+target_potatosliced.place(target_plate)
+```

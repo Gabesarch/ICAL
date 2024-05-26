@@ -1,0 +1,48 @@
+Dialogue Instruction:
+<Driver> hello, task please
+<Commander> we need to clean dirty mugs
+<Driver> location of first?
+<Commander> in the waste basket
+<Commander> left
+<Commander> and down
+<Commander> wash in the sink please
+<Driver> next
+<Commander> cabinet by the fridge
+<Commander> bottom right
+<Commander> another mug
+<Driver> this
+<Driver> 
+<Commander> that was weird
+<Commander> we are now done
+<Commander> lol
+<Driver> weird
+<Commander> thank you
+<Driver> works for me
+
+Initial Object State:
+"Pot_2": {"label": "Pot", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"SaltShaker_4": {"label": "SaltShaker", "holding": False, "supported_by": ["CounterTop", "Plate"]}
+"Pot_14": {"label": "Pot", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+"CounterTop_16": {"label": "CounterTop"}
+"CounterTop_25": {"label": "CounterTop"}
+"CounterTop_26": {"label": "CounterTop"}
+"CounterTop_43": {"label": "CounterTop"}
+"SaltShaker_60": {"label": "SaltShaker", "holding": False, "supported_by": ["CounterTop"]}
+"Lettuce_62": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Sink"]}
+"Pot_74": {"label": "Pot", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["StoveBurner"]}
+
+Demonstration Script:
+```python
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+None.place(target_countertop)
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.pickup_and_place(target_countertop)
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_saltshaker.pickup()
+target_countertop.go_to()
+target_saltshaker.place(target_countertop)
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_pot.go_to()
+target_pot.pickup()
+```

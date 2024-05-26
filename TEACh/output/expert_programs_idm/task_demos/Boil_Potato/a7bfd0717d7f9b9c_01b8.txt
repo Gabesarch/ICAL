@@ -1,0 +1,49 @@
+Dialogue Instruction:
+<Driver> hi
+<Commander> potato is beside coffee maker
+<Driver> what shall do today
+<Commander> pot is on the stove
+<Commander> wash it
+<Commander> and boil potato in it
+<Commander> fill with water and then boil potato in it.
+<Driver> is this a pot
+<Commander> yes
+<Driver> next
+<Driver> what shall i do next
+<Commander> thanks
+
+Initial Object State:
+"Potato_4": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"CounterTop_26": {"label": "CounterTop"}
+"StoveBurner_27": {"label": "StoveBurner"}
+"StoveBurner_29": {"label": "StoveBurner"}
+"StoveBurner_30": {"label": "StoveBurner"}
+"StoveBurner_31": {"label": "StoveBurner"}
+"CounterTop_32": {"label": "CounterTop"}
+"Potato_50": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Plate", "Cabinet"]}
+"Cup_52": {"label": "Cup", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner", "Pan"]}
+"SinkBasin_54": {"label": "SinkBasin"}
+"Pot_63": {"label": "Pot", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["StoveBurner"]}
+
+Demonstration Script:
+```python
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_pot = InteractionObject("Pot", object_instance = "Pot")
+target_potato.pickup_and_place(target_pot)
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_cup.pickup()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_cup.place(target_countertop)
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_pot.pickup_and_place(target_sinkbasin)
+target_pot.pickup()
+target_countertop.go_to()
+target_pot.place(target_countertop)
+target_stoveburner = InteractionObject("StoveBurner", object_instance = "StoveBurner")
+target_pot.pickup_and_place(target_stoveburner)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.pickup()
+target_countertop.go_to()
+target_breadsliced.place(target_countertop)
+```

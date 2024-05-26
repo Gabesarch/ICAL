@@ -1,0 +1,61 @@
+Dialogue Instruction:
+<Driver> 
+<Commander> Hello.
+<Driver> Commander?
+<Driver> What is my task
+<Commander> Please slice the tomato on the table.
+<Commander> The knife is on the table as well.
+<Driver> can you cut... oh
+<Driver> I found another knife
+<Commander> Yes. Thant knife will work.
+<Driver> 
+<Driver> 
+<Driver> That's a fork
+<Commander> The knife is on the back side of the table.
+<Commander> Next to the salt shaker.
+<Driver> The knife has to cut the tomato?
+<Commander> yes.
+<Driver> Now what
+<Driver> what
+<Commander> Please place 2 slices on a plate.
+<Driver> I am holding a. oh.
+<Driver> 
+<Driver> 
+<Commander> The plate is on the counter to the right of the coffee maker.
+<Driver> That's where I was going
+<Commander> The coffee maker is to the right of the sink.
+<Commander> Yes
+<Driver> Could cut this tomato
+<Driver> I have placed the slices
+<Commander> All tasks are complete. Thank You.
+<Driver> 
+
+Initial Object State:
+"Tomato_1": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["DiningTable"]}
+"Knife_4": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Knife_10": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Knife_15": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"CounterTop_29": {"label": "CounterTop"}
+"CounterTop_30": {"label": "CounterTop"}
+"Knife_47": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"Plate_52": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_68": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Tomato_75": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop", "Plate"]}
+"Faucet_85": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_plate.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = "TomatoSliced")
+target_tomatosliced.pickup_and_place(target_plate)
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_tomato.pickup()
+target_tomatosliced.pickup_and_place(target_plate)
+```

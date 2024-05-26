@@ -1,0 +1,92 @@
+Dialogue Instruction:
+<Driver> Hello! What may I do for you today?
+<Commander> hi
+<Commander> today you need to slice a tomato
+<Driver> Will do!
+<Commander> knife is next to sink
+<Driver> Thank you. tomato is sliced
+<Commander> grab a plate, it is in the bottom cabinet under the coffee maker
+<Commander> place 2 slices of tomato on the plate
+<Driver> I think I have to put the plate back, move the things on top while it's in the cabinet and then put food on top. I keep trying to take off the things on top now and I can't do that, nor can I put down the tray as it is.
+<Commander> ok
+<Commander> just bring the tomato slices to it
+<Commander> put plate back in the cabinet
+<Commander> put plate back in the cabinet,\.
+<Driver> how many slices of tomato?
+<Commander> 2
+
+Initial Object State:
+"Knife_3": {"label": "Knife", "holding": False, "supported_by": ["Microwave"]}
+"Knife_5": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Tomato_7": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"Tomato_11": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Stool"]}
+"Knife_14": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"CounterTop_16": {"label": "CounterTop"}
+"CounterTop_21": {"label": "CounterTop"}
+"Cabinet_22": {"label": "Cabinet", "open": False}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"CounterTop_41": {"label": "CounterTop"}
+"Cabinet_42": {"label": "Cabinet", "open": False}
+"Cabinet_46": {"label": "Cabinet", "open": False}
+"Tomato_59": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Knife_65": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"SinkBasin_66": {"label": "SinkBasin"}
+"Knife_70": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Plate_72": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"DishSponge_73": {"label": "DishSponge", "holding": False, "dirty": False, "supported_by": ["Cabinet", "Plate"]}
+"Cup_75": {"label": "Cup", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet", "Plate"]}
+
+Demonstration Script:
+```python
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_tomato.pickup_and_place(target_countertop)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_cup = InteractionObject("Cup", object_instance = "Cup")
+target_cup.go_to()
+target_cup.pickup()
+target_alarmclock = InteractionObject("AlarmClock", object_instance = "AlarmClock")
+target_alarmclock.go_to()
+target_alarmclock.close()
+target_cabinet.go_to()
+target_cup.place(target_cabinet)
+target_cup.pickup_and_place(target_countertop)
+target_dishsponge = InteractionObject("DishSponge", object_instance = "DishSponge")
+target_dishsponge.pickup()
+target_countertop.go_to()
+target_dishsponge.place(target_countertop)
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_dishsponge.place(target_sinkbasin)
+target_knife.pickup_and_place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_sinkbasin.go_to()
+target_plate.place(target_sinkbasin)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = "TomatoSliced")
+target_tomatosliced.pickup_and_place(target_countertop)
+target_tomatosliced.pickup()
+target_countertop.go_to()
+target_tomatosliced.place(target_countertop)
+```

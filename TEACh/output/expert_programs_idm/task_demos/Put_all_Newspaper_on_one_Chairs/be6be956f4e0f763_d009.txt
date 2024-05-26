@@ -1,0 +1,33 @@
+Dialogue Instruction:
+<Driver> What should I do today?
+<Commander> place all the newspapers onto a single chair
+<Commander> there is one inside that box
+<Commander> another one on the table
+<Driver> I have placed two
+<Driver> What next?
+<Commander> get the one inside the box too
+<Commander> done
+
+Initial Object State:
+"Newspaper_2": {"label": "Newspaper", "holding": False, "supported_by": ["Floor", "CoffeeTable"]}
+"Newspaper_5": {"label": "Newspaper", "holding": False, "supported_by": ["Floor", "Shelf"]}
+"Newspaper_8": {"label": "Newspaper", "holding": False, "supported_by": ["Box", "TVStand"]}
+"Chair_26": {"label": "Chair"}
+"CoffeeTable_27": {"label": "CoffeeTable"}
+"Chair_36": {"label": "Chair"}
+"Sofa_37": {"label": "Sofa"}
+
+Demonstration Script:
+```python
+target_newspaper = InteractionObject("Newspaper", object_instance = "Newspaper")
+target_sofa = InteractionObject("Sofa", object_instance = "Sofa")
+target_newspaper.pickup_and_place(target_sofa)
+target_newspaper.pickup()
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_coffeetable.go_to()
+target_newspaper.place(target_coffeetable)
+target_coffeetable.go_to()
+target_newspaper.place(target_coffeetable)
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_newspaper.pickup_and_place(target_chair)
+```

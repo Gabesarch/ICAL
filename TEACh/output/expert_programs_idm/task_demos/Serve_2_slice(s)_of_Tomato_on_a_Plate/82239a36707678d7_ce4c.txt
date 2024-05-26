@@ -1,0 +1,66 @@
+Dialogue Instruction:
+<Commander> We need to serve 2 slices of tomato
+<Driver> ok
+<Commander> knife is in sink
+<Commander> behind bread
+<Commander> plate is dirty
+<Commander> clean the plate
+<Commander> We need to place tomato slices on plate
+<Commander> 2 slices
+<Driver> Done
+<Commander> Done
+
+Initial Object State:
+"Knife_2": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Egg_7": {"label": "Egg", "holding": False, "supported_by": ["Stool"]}
+"Plate_9": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Bread_11": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Knife_12": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Knife_17": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Egg_18": {"label": "Egg", "holding": False, "supported_by": ["Fridge"]}
+"Plate_19": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Microwave"]}
+"CounterTop_27": {"label": "CounterTop"}
+"CounterTop_29": {"label": "CounterTop"}
+"CounterTop_52": {"label": "CounterTop"}
+"Knife_54": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Bread_56": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Sink"]}
+"Plate_66": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"Egg_70": {"label": "Egg", "holding": False, "supported_by": ["Cabinet"]}
+"SinkBasin_82": {"label": "SinkBasin"}
+"Knife_86": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Faucet_96": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_bread.pickup_and_place(target_sinkbasin)
+target_egg = InteractionObject("Egg", object_instance = "Egg")
+target_egg.pickup()
+target_sinkbasin.go_to()
+target_egg.place(target_sinkbasin)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_bread.go_to()
+target_bread.slice()
+target_sinkbasin.go_to()
+target_knife.place(target_sinkbasin)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = "TomatoSliced")
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_tomatosliced.pickup_and_place(target_plate)
+target_tomatosliced.pickup()
+target_plate.go_to()
+target_tomatosliced.place(target_plate)
+target_plate.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_plate.pickup_and_place(target_countertop)
+target_tomatosliced.pickup()
+target_plate.go_to()
+target_tomatosliced.place(target_plate)
+target_tomatosliced.pickup_and_place(target_plate)
+```

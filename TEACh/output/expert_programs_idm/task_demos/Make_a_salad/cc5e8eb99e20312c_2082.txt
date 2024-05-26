@@ -1,0 +1,80 @@
+Dialogue Instruction:
+<Driver> hi
+<Driver> what is my task
+<Commander> Hi. Please make a salad. You can start by cutting the tomato
+<Driver> done
+<Driver> next
+<Commander> Next a potato needs sliced and cooked
+<Driver> where is potato
+<Commander> In the trash
+<Driver> yum
+<Commander> haha
+<Commander> We will need two slices
+<Driver> good?
+<Commander> A slice of tomato
+<Driver> done
+
+Initial Object State:
+"Knife_2": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Bread_9": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Fridge"]}
+"Lettuce_10": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Plate_11": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Sink"]}
+"Bowl_12": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"Potato_14": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Drawer"]}
+"Knife_15": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Bread_17": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Lettuce_18": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Fridge"]}
+"Bowl_19": {"label": "Bowl", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Fridge"]}
+"Knife_20": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Plate_21": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"Knife_25": {"label": "Knife", "holding": False, "supported_by": ["Microwave"]}
+"CounterTop_34": {"label": "CounterTop"}
+"CounterTop_37": {"label": "CounterTop"}
+"CounterTop_52": {"label": "CounterTop"}
+"Knife_74": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Potato_76": {"label": "Potato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Floor", "GarbageCan"]}
+"Bowl_83": {"label": "Bowl", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Fridge"]}
+"Plate_84": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Fridge"]}
+"Lettuce_85": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["CounterTop"]}
+"Bread_86": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Microwave_98": {"label": "Microwave", "toggled": True, "open": False}
+"Knife_104": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_applesliced = InteractionObject("AppleSliced", object_instance = "AppleSliced")
+target_applesliced.go_to()
+target_applesliced.slice()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.go_to()
+target_lettuce.slice()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_potato = InteractionObject("Potato", object_instance = "Potato")
+target_potato.pickup_and_place(target_countertop)
+target_potato.place(target_countertop)
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.go_to()
+target_microwave.open()
+target_potato.pickup_and_place(target_countertop)
+target_knife.pickup()
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_bread.go_to()
+target_bread.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_potatosliced.pickup_and_place(target_bowl)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = None, parent_object = "Lettuce") # Initialize new sliced object from sliced parent
+target_lettucesliced.pickup()
+target_countertop.go_to()
+target_lettucesliced.place(target_countertop)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = "TomatoSliced")
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_tomatosliced.pickup_and_place(target_plate)
+```

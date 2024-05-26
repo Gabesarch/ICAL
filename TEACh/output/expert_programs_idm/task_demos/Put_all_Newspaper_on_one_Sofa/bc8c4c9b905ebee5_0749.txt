@@ -1,0 +1,31 @@
+Dialogue Instruction:
+<Driver> Hi!
+<Driver> What should I do today?
+<Commander> find newspaper
+<Commander> one is on bottom shelf under red vase
+<Commander> to the right
+<Commander> put on sofa
+<Commander> another newspaper on table by gold statue
+<Driver> Okay what next?
+<Commander> to the left
+<Commander> put on sofa
+<Commander> that is all finished
+
+Initial Object State:
+"Newspaper_2": {"label": "Newspaper", "holding": False, "supported_by": ["DiningTable"]}
+"Newspaper_4": {"label": "Newspaper", "holding": False, "supported_by": ["Shelf"]}
+"Newspaper_48": {"label": "Newspaper", "holding": False, "supported_by": ["Floor", "Sofa"]}
+"CoffeeTable_65": {"label": "CoffeeTable"}
+"Sofa_69": {"label": "Sofa"}
+"CoffeeTable_75": {"label": "CoffeeTable"}
+
+Demonstration Script:
+```python
+target_newspaper = InteractionObject("Newspaper", object_instance = "Newspaper")
+target_sofa = InteractionObject("Sofa", object_instance = "Sofa")
+target_newspaper.pickup_and_place(target_sofa)
+target_newspaper.pickup()
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_coffeetable.go_to()
+target_newspaper.place(target_coffeetable)
+```

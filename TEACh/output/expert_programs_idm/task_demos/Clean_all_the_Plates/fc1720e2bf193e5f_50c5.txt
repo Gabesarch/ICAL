@@ -1,0 +1,68 @@
+Dialogue Instruction:
+<Commander> clean the plate in the fridge
+<Commander> rinse with water
+<Driver> okay
+<Commander> rinse with water
+<Commander> hello
+<Driver> am holding a plate already
+<Driver> and am headed to the sink please
+<Commander> ok
+<Driver> the plate is clean
+<Driver> what else can I do?
+<Commander> that's it
+<Commander> rinse the plate
+<Driver> the plate is already rinsed.
+<Commander> 
+<Driver> 
+<Commander> another plate
+<Commander> top cabinet
+<Commander> near sink
+<Commander> top of the sink
+<Driver> 
+<Commander> open the cabinet
+<Commander> yes
+<Commander> must be another plate in that cabinet
+<Commander> left
+<Commander> open the left cabinet
+<Driver> okay
+<Commander> just to the sink
+<Commander> yes
+<Commander> clean that plate
+
+Initial Object State:
+"Plate_10": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+"Plate_16": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["CounterTop"]}
+"CounterTop_45": {"label": "CounterTop"}
+"CounterTop_46": {"label": "CounterTop"}
+"CounterTop_52": {"label": "CounterTop"}
+"Plate_66": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Fridge"]}
+"SinkBasin_72": {"label": "SinkBasin"}
+"SaltShaker_73": {"label": "SaltShaker", "holding": False, "supported_by": ["Plate", "Cabinet"]}
+"Fridge_79": {"label": "Fridge", "open": False}
+"Faucet_90": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_plate.pickup_and_place(target_countertop)
+target_plate.pickup()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_plate.pickup_and_place(target_countertop)
+target_plate.pickup()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_saltshaker = InteractionObject("SaltShaker", object_instance = "SaltShaker")
+target_saltshaker.pickup_and_place(target_countertop)
+target_plate.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_plate.place(target_sinkbasin)
+```

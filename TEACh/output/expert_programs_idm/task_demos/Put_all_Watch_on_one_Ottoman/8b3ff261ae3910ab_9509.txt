@@ -1,0 +1,39 @@
+Dialogue Instruction:
+<Commander> could you put the watch onto the single ottoman
+<Commander> the watch should be on the table
+<Driver> where is the watch?
+<Commander> on the plate
+<Driver> done
+<Driver> is there anything else you need?
+<Commander> that's everything thanks
+
+Initial Object State:
+"Watch_1": {"label": "Watch", "holding": False, "supported_by": ["Plate", "Chair", "DiningTable"]}
+"Watch_35": {"label": "Watch", "holding": False, "supported_by": ["Ottoman"]}
+"Plate_37": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Chair", "DiningTable"]}
+"Chair_49": {"label": "Chair"}
+"Chair_50": {"label": "Chair"}
+"Chair_51": {"label": "Chair"}
+"Chair_52": {"label": "Chair"}
+"Chair_53": {"label": "Chair"}
+"Chair_54": {"label": "Chair"}
+"Chair_55": {"label": "Chair"}
+"DiningTable_56": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+None.place(target_diningtable)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_plate.pickup_and_place(target_countertop)
+target_plate.pickup()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_plate.pickup_and_place(target_countertop)
+target_watch = InteractionObject("Watch", object_instance = "Watch")
+target_watch.pickup()
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_watch.pickup_and_place(target_chair)
+```

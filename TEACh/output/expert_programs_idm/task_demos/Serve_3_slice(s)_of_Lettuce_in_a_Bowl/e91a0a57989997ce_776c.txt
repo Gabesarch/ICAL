@@ -1,0 +1,95 @@
+Dialogue Instruction:
+<Commander> can you please slice a lettuce and place 3 pieces of it into a clean bowl
+<Commander> there is a lettuce and a knife on the table
+<Commander> and a bowl in a lower corner cupboard
+<Commander> below the tomato
+<Commander> apple sorry
+<Commander> you might need to empty the bowl
+<Commander> please place 3 pieces if possible
+<Commander> that's great
+
+Initial Object State:
+"Lettuce_5": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Fridge"]}
+"Knife_13": {"label": "Knife", "holding": False, "supported_by": ["Chair"]}
+"Lettuce_17": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["DiningTable"]}
+"Knife_20": {"label": "Knife", "holding": False, "supported_by": ["DiningTable"]}
+"DiningTable_29": {"label": "DiningTable"}
+"Cabinet_44": {"label": "Cabinet", "open": False}
+"Cabinet_45": {"label": "Cabinet", "open": False}
+"Cabinet_46": {"label": "Cabinet", "open": False}
+"Cabinet_47": {"label": "Cabinet", "open": False}
+"Cabinet_48": {"label": "Cabinet", "open": False}
+"Cabinet_49": {"label": "Cabinet", "open": False}
+"Cabinet_50": {"label": "Cabinet", "open": False}
+"Cabinet_51": {"label": "Cabinet", "open": False}
+"Cabinet_52": {"label": "Cabinet", "open": False}
+"Cabinet_53": {"label": "Cabinet", "open": False}
+"Cabinet_54": {"label": "Cabinet", "open": False}
+"Cabinet_55": {"label": "Cabinet", "open": False}
+"Cabinet_56": {"label": "Cabinet", "open": False}
+"Cabinet_57": {"label": "Cabinet", "open": False}
+"Cabinet_58": {"label": "Cabinet", "open": False}
+"Cabinet_59": {"label": "Cabinet", "open": False}
+"Cabinet_60": {"label": "Cabinet", "open": False}
+"Cabinet_61": {"label": "Cabinet", "open": False}
+"Cabinet_62": {"label": "Cabinet", "open": False}
+"Cabinet_63": {"label": "Cabinet", "open": False}
+"Cabinet_64": {"label": "Cabinet", "open": False}
+"Cabinet_65": {"label": "Cabinet", "open": False}
+"Cabinet_66": {"label": "Cabinet", "open": False}
+"Cabinet_67": {"label": "Cabinet", "open": False}
+"Cabinet_68": {"label": "Cabinet", "open": False}
+"Cabinet_69": {"label": "Cabinet", "open": False}
+"Cabinet_70": {"label": "Cabinet", "open": False}
+"Knife_74": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Plate_93": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+"Lettuce_98": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["DiningTable"]}
+"SinkBasin_100": {"label": "SinkBasin"}
+"Knife_104": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Bowl_108": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Cabinet"]}
+
+Demonstration Script:
+```python
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_lettuce.pickup_and_place(target_diningtable)
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.pickup()
+target_lettuce.go_to()
+target_lettuce.slice()
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.open()
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_bowl.go_to()
+target_bowl.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_bowl.pour(target_sinkbasin)
+target_diningtable.go_to()
+target_bowl.place(target_diningtable)
+target_lettucesliced = InteractionObject("LettuceSliced", object_instance = None, parent_object = "Lettuce") # Initialize new sliced object from sliced parent
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_lettucesliced.pickup_and_place(target_plate)
+target_lettucesliced.pickup()
+target_plate.go_to()
+target_lettucesliced.place(target_plate)
+target_lettucesliced.pickup_and_place(target_diningtable)
+target_lettucesliced.pickup()
+target_diningtable.go_to()
+target_lettucesliced.place(target_diningtable)
+target_lettucesliced.pickup_and_place(target_diningtable)
+target_lettucesliced.pickup()
+target_diningtable.go_to()
+target_lettucesliced.place(target_diningtable)
+target_lettucesliced.pickup_and_place(target_diningtable)
+target_lettucesliced.pickup()
+target_diningtable.go_to()
+target_lettucesliced.place(target_diningtable)
+```

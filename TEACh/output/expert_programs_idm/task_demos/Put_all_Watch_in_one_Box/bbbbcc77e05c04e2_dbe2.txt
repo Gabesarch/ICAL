@@ -1,0 +1,38 @@
+Dialogue Instruction:
+<Commander> Hello.
+<Driver> What shall I do today?
+<Commander> Today, you are putting all the watches (3) in one box, please.
+<Driver> where are they?
+<Commander> You can find one on the table to the right of the TV.
+<Commander> is *right
+<Commander> There is another watch in the box on the couch
+<Driver> where is the other one?
+<Commander> Have you found the one that is in the box on the couch?
+<Driver> i have placed those 2 on the couch
+<Driver> where is the third one?
+<Commander> Okay.
+<Driver> done
+<Commander> Okay, you got all of them now. Thank you. Good job.
+
+Initial Object State:
+"KeyChain_1": {"label": "KeyChain", "holding": False, "supported_by": ["Box", "DiningTable"]}
+"Watch_2": {"label": "Watch", "holding": False, "supported_by": ["SideTable"]}
+"KeyChain_5": {"label": "KeyChain", "holding": False, "supported_by": ["ArmChair"]}
+"Watch_6": {"label": "Watch", "holding": False, "supported_by": ["Dresser"]}
+"Watch_12": {"label": "Watch", "holding": False, "supported_by": ["ArmChair"]}
+"KeyChain_18": {"label": "KeyChain", "holding": False, "supported_by": ["Dresser"]}
+"Sofa_32": {"label": "Sofa"}
+
+Demonstration Script:
+```python
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_sofa = InteractionObject("Sofa", object_instance = "Sofa")
+target_breadsliced.pickup_and_place(target_sofa)
+target_keychain = InteractionObject("KeyChain", object_instance = "KeyChain")
+target_keychain.pickup()
+target_sofa.go_to()
+target_keychain.place(target_sofa)
+target_watch = InteractionObject("Watch", object_instance = "Watch")
+target_watch.go_to()
+target_watch.pickup()
+```

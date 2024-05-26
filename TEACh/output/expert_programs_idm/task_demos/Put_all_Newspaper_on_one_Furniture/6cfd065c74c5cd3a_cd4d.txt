@@ -1,0 +1,31 @@
+Dialogue Instruction:
+<Driver> hello
+<Driver> What should I do today?
+<Commander> put newspaper on the single furniture
+<Driver> there?
+<Commander> no
+<Driver> which one?
+<Commander> the one near the window
+<Driver> with the TV?
+<Driver> or the plant?
+<Commander> the plant
+<Driver> there?
+
+Initial Object State:
+"Newspaper_1": {"label": "Newspaper", "holding": False, "supported_by": ["Dresser"]}
+"Dresser_8": {"label": "Dresser"}
+"Newspaper_16": {"label": "Newspaper", "holding": False, "supported_by": ["Ottoman"]}
+"Sofa_36": {"label": "Sofa"}
+"Dresser_38": {"label": "Dresser"}
+
+Demonstration Script:
+```python
+target_newspaper = InteractionObject("Newspaper", object_instance = "Newspaper")
+target_sofa = InteractionObject("Sofa", object_instance = "Sofa")
+target_newspaper.pickup_and_place(target_sofa)
+target_newspaper.pickup()
+target_dresser = InteractionObject("Dresser", object_instance = "Dresser")
+target_dresser.go_to()
+target_newspaper.place(target_dresser)
+target_newspaper.pickup_and_place(target_dresser)
+```

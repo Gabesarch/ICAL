@@ -1,0 +1,120 @@
+Dialogue Instruction:
+<Driver> what can I do today
+<Commander> hi we will be making a sandwich. please slice the bread
+<Driver> where is the bread please
+<Commander> the bread is in the right cupboard above the refrigerator
+<Commander> the refrigerator is black in the corner
+<Commander> upper right cupboard
+<Driver> done next
+<Commander> toast two slices of the bread please
+<Commander> next please slice the lettuce
+<Driver> where is the lettuce please
+<Commander> the lettuce is in the cupboard above the bread (left of microwave)
+<Commander> oops
+<Commander> it's in the cupboard above the bread that's next to the toaster
+<Commander> sorry about that
+<Driver> ok
+<Driver> done next?
+<Commander> good! lastly, place the 2 slices of toast and 2 slices of lettuce on the plate that is in the cupboard under toaster
+<Commander> can you set on stove
+<Commander> 
+<Commander> 
+<Driver> not really
+<Commander> or set it on the floor, remove item from stool, then place plate on stool
+<Driver> done
+<Driver> next
+<Commander> good job!
+
+Initial Object State:
+"Plate_3": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+"Knife_5": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Knife_8": {"label": "Knife", "holding": False, "supported_by": ["Microwave"]}
+"Bread_11": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"Lettuce_13": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Plate_15": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"CounterTop_17": {"label": "CounterTop"}
+"CounterTop_22": {"label": "CounterTop"}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_25": {"label": "Cabinet", "open": False}
+"Cabinet_26": {"label": "Cabinet", "open": False}
+"Cabinet_27": {"label": "Cabinet", "open": False}
+"Cabinet_28": {"label": "Cabinet", "open": False}
+"Cabinet_29": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_32": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Cabinet_34": {"label": "Cabinet", "open": False}
+"Cabinet_35": {"label": "Cabinet", "open": False}
+"Cabinet_36": {"label": "Cabinet", "open": False}
+"Cabinet_37": {"label": "Cabinet", "open": False}
+"Cabinet_38": {"label": "Cabinet", "open": False}
+"Cabinet_39": {"label": "Cabinet", "open": False}
+"CounterTop_42": {"label": "CounterTop"}
+"Cabinet_43": {"label": "Cabinet", "open": False}
+"Cabinet_47": {"label": "Cabinet", "open": False}
+"Lettuce_49": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Cabinet"]}
+"Bread_56": {"label": "Bread", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Cabinet"]}
+"GarbageCan_58": {"label": "GarbageCan"}
+"Knife_66": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Knife_71": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"Plate_73": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["Cabinet"]}
+"Egg_75": {"label": "Egg", "holding": False, "supported_by": ["Sink"]}
+
+Demonstration Script:
+```python
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.toggle_off()
+target_cabinet.go_to()
+target_cabinet.open()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_cabinet.go_to()
+target_cabinet.close()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_bread = InteractionObject("Bread", object_instance = "Bread")
+target_bread.pickup_and_place(target_countertop)
+target_knife.pickup()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_breadsliced = InteractionObject("BreadSliced", object_instance = "BreadSliced")
+target_breadsliced.pickup_and_place(target_countertop)
+target_breadsliced.pickup()
+target_countertop.go_to()
+target_breadsliced.place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_breadsliced.pickup_and_place(target_plate)
+target_breadsliced.pickup()
+target_countertop.go_to()
+target_breadsliced.place(target_countertop)
+target_breadsliced.pickup_and_place(target_countertop)
+target_cabinet.open()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.pickup_and_place(target_countertop)
+target_knife.pickup()
+target_egg = InteractionObject("Egg", object_instance = "Egg")
+target_egg.go_to()
+target_egg.slice()
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_cabinet.go_to()
+target_cabinet.open()
+target_plate.go_to()
+target_plate.pickup()
+target_garbagecan = InteractionObject("GarbageCan", object_instance = "GarbageCan")
+target_garbagecan.pickup_and_place(target_cabinet)
+target_garbagecan.pickup()
+target_cabinet.go_to()
+target_garbagecan.place(target_cabinet)
+target_countertop.go_to()
+target_garbagecan.place(target_countertop)
+target_breadsliced.pickup_and_place(target_plate)
+target_breadsliced.pickup()
+target_plate.go_to()
+target_breadsliced.place(target_plate)
+```

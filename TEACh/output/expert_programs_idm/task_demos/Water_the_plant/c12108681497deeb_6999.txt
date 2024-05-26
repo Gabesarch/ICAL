@@ -1,0 +1,27 @@
+Dialogue Instruction:
+<Driver> hi, how can i help?
+<Commander> water my plant please
+<Driver> sure
+<Driver> is there a cup?
+<Commander> check to the left of stove
+<Commander> left
+<Commander> it should be next to the kettle
+<Driver> i found a mug with water in it
+<Commander> ok
+<Commander> thanks
+<Driver> i watered the plant
+
+Initial Object State:
+"Mug_1": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["Microwave"]}
+"Mug_91": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Faucet_96": {"label": "Faucet", "toggled": True}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_off()
+```

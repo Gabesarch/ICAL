@@ -1,0 +1,116 @@
+Dialogue Instruction:
+<Driver> What should I do today?
+<Commander> Hello!
+<Commander> You need to place 8 small handheld objects onto one sofa.
+<Commander> There is a remote control on the bottom shelf next to a red vase that is one
+<Commander> Great job. :)
+<Commander> 6 more items please :)
+<Commander> There is something on the small black table
+<Commander> behind the laptop
+<Commander> There is something in the trash bin
+<Commander> You are doing great :)
+<Commander> 2 more items
+<Driver> How many more?
+<Commander> There are items inside the box on the floor. You need 2 more items
+<Commander> Well done!
+<Commander> Last item are keys that are on the shelf above the red vase
+<Commander> Turn around please
+<Commander> Above that red vase
+<Commander> Perfect!
+<Commander> Well done. Task is complete:)
+
+Initial Object State:
+"RemoteControl_1": {"label": "RemoteControl", "holding": False, "supported_by": ["DiningTable"]}
+"CreditCard_2": {"label": "CreditCard", "holding": False, "supported_by": ["Cabinet"]}
+"Newspaper_3": {"label": "Newspaper", "holding": False, "supported_by": ["Floor", "CoffeeTable"]}
+"KeyChain_4": {"label": "KeyChain", "holding": False, "supported_by": ["Floor", "ArmChair"]}
+"CreditCard_5": {"label": "CreditCard", "holding": False, "supported_by": ["Floor", "GarbageCan"]}
+"KeyChain_6": {"label": "KeyChain", "holding": False, "supported_by": ["Cabinet"]}
+"Chair_8": {"label": "Chair"}
+"Cabinet_9": {"label": "Cabinet", "open": False}
+"Chair_10": {"label": "Chair"}
+"Box_11": {"label": "Box", "holding": False, "open": True, "supported_by": ["Shelf"]}
+"Chair_12": {"label": "Chair"}
+"Cabinet_15": {"label": "Cabinet", "open": False}
+"Drawer_17": {"label": "Drawer", "open": False}
+"Cabinet_18": {"label": "Cabinet", "open": False}
+"Cabinet_19": {"label": "Cabinet", "open": False}
+"Drawer_20": {"label": "Drawer", "open": False}
+"Drawer_24": {"label": "Drawer", "open": False}
+"Drawer_26": {"label": "Drawer", "open": False}
+"Drawer_29": {"label": "Drawer", "open": False}
+"Drawer_30": {"label": "Drawer", "open": False}
+"Cabinet_31": {"label": "Cabinet", "open": False}
+"Cabinet_33": {"label": "Cabinet", "open": False}
+"Chair_34": {"label": "Chair"}
+"Drawer_37": {"label": "Drawer", "open": False}
+"Chair_38": {"label": "Chair"}
+"Cabinet_39": {"label": "Cabinet", "open": False}
+"Cabinet_40": {"label": "Cabinet", "open": False}
+"Chair_41": {"label": "Chair"}
+"KeyChain_43": {"label": "KeyChain", "holding": False, "supported_by": ["Box", "Shelf"]}
+"Vase_44": {"label": "Vase", "holding": False, "supported_by": ["Shelf"]}
+"Vase_48": {"label": "Vase", "holding": False, "supported_by": ["Shelf"]}
+"Vase_49": {"label": "Vase", "holding": False, "supported_by": ["Cabinet"]}
+"Newspaper_50": {"label": "Newspaper", "holding": False, "supported_by": ["DiningTable"]}
+"CreditCard_51": {"label": "CreditCard", "holding": False, "supported_by": ["Floor", "CoffeeTable"]}
+"RemoteControl_52": {"label": "RemoteControl", "holding": False, "supported_by": ["Shelf"]}
+"Vase_56": {"label": "Vase", "holding": False, "supported_by": ["Shelf"]}
+"Vase_58": {"label": "Vase", "holding": False, "supported_by": ["Shelf"]}
+"Vase_60": {"label": "Vase", "holding": False, "supported_by": ["Shelf"]}
+"CoffeeTable_67": {"label": "CoffeeTable"}
+"Sofa_71": {"label": "Sofa"}
+"Chair_75": {"label": "Chair"}
+"Chair_76": {"label": "Chair"}
+"CoffeeTable_77": {"label": "CoffeeTable"}
+
+Demonstration Script:
+```python
+target_remotecontrol = InteractionObject("RemoteControl", object_instance = "RemoteControl")
+target_chair = InteractionObject("Chair", object_instance = "Chair")
+target_remotecontrol.pickup_and_place(target_chair)
+target_newspaper = InteractionObject("Newspaper", object_instance = "Newspaper")
+target_newspaper.pickup()
+target_sofa = InteractionObject("Sofa", object_instance = "Sofa")
+target_sofa.go_to()
+target_newspaper.place(target_sofa)
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_newspaper.pickup_and_place(target_countertop)
+target_keychain = InteractionObject("KeyChain", object_instance = "KeyChain")
+target_keychain.pickup()
+target_box = InteractionObject("Box", object_instance = "Box")
+target_box.go_to()
+target_keychain.place(target_box)
+target_box.go_to()
+target_keychain.place(target_box)
+target_coffeetable = InteractionObject("CoffeeTable", object_instance = "CoffeeTable")
+target_remotecontrol.pickup_and_place(target_coffeetable)
+target_vase = InteractionObject("Vase", object_instance = "Vase")
+target_vase.pickup()
+target_coffeetable.go_to()
+target_vase.place(target_coffeetable)
+target_vase.go_to()
+target_vase.pickup()
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_creditcard = InteractionObject("CreditCard", object_instance = "CreditCard")
+target_creditcard.pickup_and_place(target_coffeetable)
+target_drawer = InteractionObject("Drawer", object_instance = "Drawer")
+target_drawer.open()
+target_drawer.go_to()
+target_drawer.open()
+target_cabinet.go_to()
+target_cabinet.open()
+target_sofa.go_to()
+target_creditcard.place(target_sofa)
+target_sidetable = InteractionObject("SideTable", object_instance = "SideTable")
+target_creditcard.pickup_and_place(target_sidetable)
+target_dresser = InteractionObject("Dresser", object_instance = "Dresser")
+target_creditcard.place(target_dresser)
+target_keychain.go_to()
+target_keychain.pickup()
+target_papertowel = InteractionObject("PaperTowel", object_instance = "PaperTowel")
+target_creditcard.pickup_and_place(target_papertowel)
+target_cabinet.open()
+```

@@ -1,0 +1,103 @@
+Dialogue Instruction:
+<Driver> what do i do today
+<Commander> Please prepare 2 mugs of coffee
+<Commander> The mugs are in the fridge
+<Commander> Please check in the shelf above the fridge
+<Commander> Please clean the mugs before use
+<Driver> done next?
+<Commander> serve a slice of apple
+<Commander> in a bowl
+<Commander> 2 quantities
+<Commander> apple is in the drawer below the coffee maker
+<Driver> where is the apple
+<Commander> sorry the bowl is in that drawer
+<Driver> no apple there
+<Driver> where is the apple and knife
+<Commander> Apple is on the kitchen island
+<Commander> next to the bowl
+<Driver> and the knife
+<Commander> All done
+<Driver> done next
+<Commander> Thank you
+
+Initial Object State:
+"Mug_0": {"label": "Mug", "holding": False, "dirty": False, "filled": False, "fillLiquid": None, "supported_by": ["Cabinet"]}
+"CellPhone_2": {"label": "CellPhone", "holding": False, "supported_by": ["CounterTop", "Pan"]}
+"Cabinet_23": {"label": "Cabinet", "open": False}
+"Cabinet_24": {"label": "Cabinet", "open": False}
+"Cabinet_30": {"label": "Cabinet", "open": False}
+"CounterTop_31": {"label": "CounterTop"}
+"CounterTop_32": {"label": "CounterTop"}
+"Cabinet_41": {"label": "Cabinet", "open": False}
+"Cabinet_43": {"label": "Cabinet", "open": False}
+"Cabinet_44": {"label": "Cabinet", "open": False}
+"Cabinet_45": {"label": "Cabinet", "open": False}
+"Cabinet_46": {"label": "Cabinet", "open": False}
+"Cabinet_47": {"label": "Cabinet", "open": False}
+"Cabinet_48": {"label": "Cabinet", "open": False}
+"Cabinet_49": {"label": "Cabinet", "open": False}
+"Cabinet_50": {"label": "Cabinet", "open": False}
+"Cabinet_51": {"label": "Cabinet", "open": False}
+"CounterTop_53": {"label": "CounterTop"}
+"CounterTop_62": {"label": "CounterTop"}
+"Knife_82": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"CoffeeMachine_84": {"label": "CoffeeMachine", "toggled": False}
+"SinkBasin_87": {"label": "SinkBasin"}
+"Fridge_91": {"label": "Fridge", "open": False}
+"Knife_92": {"label": "Knife", "holding": False, "supported_by": ["CounterTop", "Microwave"]}
+"CellPhone_96": {"label": "CellPhone", "holding": False, "supported_by": ["Sink"]}
+"Microwave_101": {"label": "Microwave", "toggled": True, "open": False}
+"Mug_103": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop", "CoffeeMachine"]}
+
+Demonstration Script:
+```python
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_mug.go_to()
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_sinkbasin.go_to()
+target_mug.pour(target_sinkbasin)
+target_cellphone = InteractionObject("CellPhone", object_instance = "CellPhone")
+target_cellphone.go_to()
+target_mug.pour(target_cellphone)
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_mug.pickup_and_place(target_sinkbasin)
+target_mug.pickup()
+target_sinkbasin.go_to()
+target_mug.place(target_sinkbasin)
+target_coffeemachine = InteractionObject("CoffeeMachine", object_instance = "CoffeeMachine")
+target_coffeemachine.go_to()
+target_coffeemachine.toggle_on()
+target_fridge.go_to()
+target_fridge.open()
+target_fridge.go_to()
+target_fridge.close()
+target_cabinet = InteractionObject("Cabinet", object_instance = "Cabinet")
+target_cabinet.go_to()
+target_cabinet.open()
+target_cabinet.go_to()
+target_cabinet.close()
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.go_to()
+target_microwave.open()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_cabinet.go_to()
+target_cabinet.close()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_knife.place(target_countertop)
+```

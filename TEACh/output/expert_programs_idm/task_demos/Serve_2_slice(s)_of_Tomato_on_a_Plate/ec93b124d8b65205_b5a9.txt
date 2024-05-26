@@ -1,0 +1,71 @@
+Dialogue Instruction:
+<Driver> what can i do today
+<Commander> Hello
+<Commander> Make a slice of tomato
+<Driver> where can i get a knife
+<Commander> in the fridge
+<Driver> done
+<Commander> clean a PLATE
+<Driver> next
+<Commander> plate
+<Commander> beside the fridge
+<Commander> Place two slices of tomato
+<Commander> Great work
+<Driver> done
+
+Initial Object State:
+"Tomato_0": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"PaperTowelRoll_3": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["CounterTop"]}
+"Bowl_10": {"label": "Bowl", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Knife_12": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Tomato_14": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["Stool"]}
+"Knife_15": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"PaperTowelRoll_20": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["CounterTop"]}
+"CounterTop_22": {"label": "CounterTop"}
+"CounterTop_31": {"label": "CounterTop"}
+"CounterTop_32": {"label": "CounterTop"}
+"CounterTop_49": {"label": "CounterTop"}
+"Knife_55": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Bowl_57": {"label": "Bowl", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Plate_61": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["CounterTop"]}
+"PaperTowelRoll_74": {"label": "PaperTowelRoll", "holding": False, "supported_by": ["Sink"]}
+"Knife_76": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Tomato_82": {"label": "Tomato", "holding": False, "sliced": False, "cooked": False, "supported_by": ["CounterTop"]}
+"Mug_84": {"label": "Mug", "holding": False, "dirty": True, "filled": True, "fillLiquid": "water", "supported_by": ["Sink"]}
+"Faucet_87": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_tomato = InteractionObject("Tomato", object_instance = "Tomato")
+target_tomato.go_to()
+target_tomato.slice()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_knife.place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup_and_place(target_countertop)
+target_papertowelroll = InteractionObject("PaperTowelRoll", object_instance = "PaperTowelRoll")
+target_papertowelroll.pickup()
+target_countertop.go_to()
+target_papertowelroll.place(target_countertop)
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.pickup_and_place(target_countertop)
+target_plate.pickup()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.go_to()
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_knife.pickup_and_place(target_countertop)
+target_mug.pickup()
+target_countertop.go_to()
+target_mug.place(target_countertop)
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = None, parent_object = "Tomato") # Initialize new sliced object from sliced parent
+target_bowl = InteractionObject("Bowl", object_instance = "Bowl")
+target_tomatosliced.pickup_and_place(target_bowl)
+```

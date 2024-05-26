@@ -1,0 +1,60 @@
+Dialogue Instruction:
+<Driver> how can i help
+<Commander> please can you cook 2 slices of potato and serve them on a clean plate
+<Driver> where can i find a plate?
+<Commander> in the cupboard above the sink
+<Driver> all done
+<Commander> thank you
+
+Initial Object State:
+"Mug_1": {"label": "Mug", "holding": False, "dirty": False, "filled": True, "fillLiquid": "water", "supported_by": ["CounterTop"]}
+"Lettuce_6": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["DiningTable"]}
+"Lettuce_11": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Drawer"]}
+"Mug_12": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["Pan", "DiningTable"]}
+"Plate_37": {"label": "Plate", "holding": False, "dirty": False, "supported_by": ["Cabinet"]}
+"Lettuce_43": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["DiningTable"]}
+"Knife_47": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Fridge_51": {"label": "Fridge", "open": False}
+"Knife_55": {"label": "Knife", "holding": False, "supported_by": ["Drawer"]}
+"Microwave_56": {"label": "Microwave", "toggled": False, "open": False}
+"Pan_59": {"label": "Pan", "holding": False, "dirty": False, "supported_by": ["DiningTable"]}
+"Mug_63": {"label": "Mug", "holding": False, "dirty": True, "filled": False, "fillLiquid": None, "supported_by": ["CounterTop", "CoffeeMachine"]}
+"DiningTable_64": {"label": "DiningTable"}
+"DiningTable_66": {"label": "DiningTable"}
+
+Demonstration Script:
+```python
+target_fridge = InteractionObject("Fridge", object_instance = "Fridge")
+target_fridge.go_to()
+target_fridge.open()
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_knife.go_to()
+target_knife.pickup()
+target_fridge.go_to()
+target_fridge.close()
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.go_to()
+target_lettuce.slice()
+target_diningtable = InteractionObject("DiningTable", object_instance = "DiningTable")
+target_diningtable.go_to()
+target_knife.place(target_diningtable)
+target_mug = InteractionObject("Mug", object_instance = "Mug")
+target_mug.pickup_and_place(target_diningtable)
+target_pan = InteractionObject("Pan", object_instance = "Pan")
+target_pan.pickup()
+target_pan.go_to()
+target_pan.place(target_pan)
+target_knife.go_to()
+target_knife.pickup()
+target_microwave = InteractionObject("Microwave", object_instance = "Microwave")
+target_microwave.go_to()
+target_microwave.open()
+target_microwave.go_to()
+target_microwave.open()
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup_and_place(target_diningtable)
+target_potatosliced = InteractionObject("PotatoSliced", object_instance = "PotatoSliced")
+target_potatosliced.pickup()
+target_plate.go_to()
+target_potatosliced.place(target_plate)
+```

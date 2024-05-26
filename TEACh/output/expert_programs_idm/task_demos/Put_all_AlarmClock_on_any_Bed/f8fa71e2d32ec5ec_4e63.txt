@@ -1,0 +1,28 @@
+Dialogue Instruction:
+<Commander> I need you to put all my alarm clocks on the bed
+<Driver> How many alarm clocks are there
+<Commander> there should be three
+<Driver> What is next?
+<Commander> I think we'll stop for now
+
+Initial Object State:
+"Desk_37": {"label": "Desk"}
+
+Demonstration Script:
+```python
+target_soapbottle = InteractionObject("SoapBottle", object_instance = "SoapBottle")
+target_soapbottle.go_to()
+target_soapbottle.pickup()
+target_desk = InteractionObject("Desk", object_instance = "Desk")
+target_desk.go_to()
+target_desk.close()
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_countertop.go_to()
+target_soapbottle.place(target_countertop)
+target_vase = InteractionObject("Vase", object_instance = "Vase")
+target_vase.pickup_and_place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_countertop.go_to()
+target_plate.place(target_countertop)
+```

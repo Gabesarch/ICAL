@@ -1,0 +1,45 @@
+Dialogue Instruction:
+<Driver> What shall I do today?
+<Commander> make 2 slice tomato
+<Commander> clean plate
+<Commander> tomato slice need to be on clean plate
+<Commander> finish
+<Driver> Done
+
+Initial Object State:
+"Knife_7": {"label": "Knife", "holding": False, "supported_by": ["CounterTop"]}
+"Knife_11": {"label": "Knife", "holding": False, "supported_by": ["Sink"]}
+"CounterTop_18": {"label": "CounterTop"}
+"CounterTop_19": {"label": "CounterTop"}
+"CounterTop_34": {"label": "CounterTop"}
+"Knife_38": {"label": "Knife", "holding": False, "supported_by": ["Fridge"]}
+"Plate_46": {"label": "Plate", "holding": False, "dirty": True, "supported_by": ["DiningTable"]}
+"Lettuce_55": {"label": "Lettuce", "holding": False, "sliced": False, "supported_by": ["Sink"]}
+"SinkBasin_56": {"label": "SinkBasin"}
+"Knife_61": {"label": "Knife", "holding": False, "supported_by": ["Cabinet"]}
+"Faucet_73": {"label": "Faucet", "toggled": False}
+
+Demonstration Script:
+```python
+target_knife = InteractionObject("Knife", object_instance = "Knife")
+target_countertop = InteractionObject("CounterTop", object_instance = "CounterTop")
+target_knife.pickup_and_place(target_countertop)
+target_plate = InteractionObject("Plate", object_instance = "Plate")
+target_plate.pickup()
+target_sinkbasin = InteractionObject("SinkBasin", object_instance = "SinkBasin")
+target_sinkbasin.go_to()
+target_plate.place(target_sinkbasin)
+target_lettuce = InteractionObject("Lettuce", object_instance = "Lettuce")
+target_lettuce.pickup_and_place(target_sinkbasin)
+target_lettuce.place(target_sinkbasin)
+target_plate.pickup_and_place(target_sinkbasin)
+target_faucet = InteractionObject("Faucet", object_instance = "Faucet")
+target_faucet.toggle_on()
+target_faucet.go_to()
+target_faucet.toggle_off()
+target_tomatosliced = InteractionObject("TomatoSliced", object_instance = "TomatoSliced")
+target_tomatosliced.pickup_and_place(target_sinkbasin)
+target_tomatosliced.pickup()
+target_sinkbasin.go_to()
+target_tomatosliced.place(target_sinkbasin)
+```
