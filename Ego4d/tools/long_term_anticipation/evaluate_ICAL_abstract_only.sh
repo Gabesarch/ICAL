@@ -46,5 +46,5 @@ run eval_gpt4v\
   SKIP_IF_EXISTS True \
   IN_TRY_EXCEPT True \
   ONLY_DO_FORECASTING True \
-  EXAMPLE_PATH "ego4d_forecasting/models/prompts/examples_ICAL_abstraction_phase/forecasting/examples.json" \
+  EXAMPLE_PATH "ego4d_forecasting/models/prompts/learned_examples/examples_ICAL_abstraction_phase/forecasting/examples.json" \
   EXPERIMENT_NAME "run_200eps_evalICAL" 

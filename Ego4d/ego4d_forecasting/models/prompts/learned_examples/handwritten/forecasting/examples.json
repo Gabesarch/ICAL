@@ -3,11 +3,11 @@
         "1. put_(place,_leave,_drop) screw_(bolt,_nail,_screw)\n2. take_(pick,_grab,_get) drill_(drill,_driller)\n3. take_(pick,_grab,_get) wood_(fiber,_firewood,_floorboard,_log,_lumber,_plank,_plywood,_timber,_wood,_woodcraft,_woodwork)\n4. put_(place,_leave,_drop) drill_(drill,_driller)\n5. take_(pick,_grab,_get) screw_(bolt,_nail,_screw)\n6. put_(place,_leave,_drop) wood_(fiber,_firewood,_floorboard,_log,_lumber,_plank,_plywood,_timber,_wood,_woodcraft,_woodwork)\n7. take_(pick,_grab,_get) drill_(drill,_driller)\n8. put_(place,_leave,_drop) drill_(drill,_driller)\n9. take_(pick,_grab,_get) hammer_(hammer,_mallet)\n10. put_(place,_leave,_drop) screw_(bolt,_nail,_screw)\n11. put_(place,_leave,_drop) screw_(bolt,_nail,_screw)\n12. put_(place,_leave,_drop) screw_(bolt,_nail,_screw)\n13. put_(place,_leave,_drop) screw_(bolt,_nail,_screw)\n14. take_(pick,_grab,_get) wood_(fiber,_firewood,_floorboard,_log,_lumber,_plank,_plywood,_timber,_wood,_woodcraft,_woodwork)\n15. take_(pick,_grab,_get) drill_(drill,_driller)\n16. put_(place,_leave,_drop) drill_(drill,_driller)\n17. take_(pick,_grab,_get) screw_(bolt,_nail,_screw)\n18. move_(transfer,_pass,_exchange) wood_(fiber,_firewood,_floorboard,_log,_lumber,_plank,_plywood,_timber,_wood,_woodcraft,_woodwork)\n19. put_(place,_leave,_drop) screw_(bolt,_nail,_screw)\n20. put_(place,_leave,_drop) screw_(bolt,_nail,_screw)",
         "1. put_(place,_leave,_drop) screw_(bolt,_nail,_screw)",
         [
-            "ego4d_forecasting/models/prompts/examples/forecasting/images_SoM/7ae9bb83-d1ce-4beb-a746-92e33a69a555_3/0.png",
-            "ego4d_forecasting/models/prompts/examples/forecasting/images_SoM/7ae9bb83-d1ce-4beb-a746-92e33a69a555_3/1.png",
-            "ego4d_forecasting/models/prompts/examples/forecasting/images_SoM/7ae9bb83-d1ce-4beb-a746-92e33a69a555_3/2.png"
+            "ego4d_forecasting/models/prompts/learned_examples/handwritten/handwritten/forecasting/images_SoM/7ae9bb83-d1ce-4beb-a746-92e33a69a555_3/0.png",
+            "ego4d_forecasting/models/prompts/learned_examples/handwritten/forecasting/images_SoM/7ae9bb83-d1ce-4beb-a746-92e33a69a555_3/1.png",
+            "ego4d_forecasting/models/prompts/learned_examples/handwritten/forecasting/images_SoM/7ae9bb83-d1ce-4beb-a746-92e33a69a555_3/2.png"
         ],
-        "ego4d_forecasting/models/prompts/examples/forecasting/embeddings_image/7ae9bb83-d1ce-4beb-a746-92e33a69a555_3.npy",
+        "ego4d_forecasting/models/prompts/learned_examples/handwritten/forecasting/embeddings_image/7ae9bb83-d1ce-4beb-a746-92e33a69a555_3.npy",
         "The user in this video is putting screws in a black piece of wood.",
         "ID [7] Black piece of wood\nID [3] Right arm of user\nID [4] Left arm of user\nID [9] Ladder",
         "The individual is holding a black piece of wood (ID 7) and has a screw that they are holding on the wood (ID 3). The individual is likely screwing together wood pieces which would require action sequences involving screws, wood, and a drill. ",
@@ -18,11 +18,11 @@
         "1. clean_(sweep,_scrub,_mop,_dust) flour\n2. apply_(spread,_smear) dough\n3. mold dough\n4. open drawer\n5. take_(pick,_grab,_get) knife_(knife,_machete)\n6. touch dough\n7. put_(place,_leave,_drop) knife_(knife,_machete)\n8. mold dough\n9. take_(pick,_grab,_get) knife_(knife,_machete)\n10. move_(transfer,_pass,_exchange) dough\n11. mix dough\n12. cut_(trim,_slice,_chop) dough\n13. put_(place,_leave,_drop) knife_(knife,_machete)\n14. move_(transfer,_pass,_exchange) dough\n15. mold dough\n16. move_(transfer,_pass,_exchange) dough\n17. mold dough\n18. move_(transfer,_pass,_exchange) bowl\n19. mold dough\n20. take_(pick,_grab,_get) container_(box,_can,_carton,_case,_casing,_container,_crate,_holder,_jar,_jerrycan,_keg,_pack,_package,_packaging,_packet,_storage,_tank,_tin)",
         "1. mold dough",
         [
-            "ego4d_forecasting/models/prompts/examples/forecasting/images_SoM/8cc25698-9f3a-4dd2-a3bc-a0187f221477_5/0.png",
-            "ego4d_forecasting/models/prompts/examples/forecasting/images_SoM/8cc25698-9f3a-4dd2-a3bc-a0187f221477_5/1.png",
-            "ego4d_forecasting/models/prompts/examples/forecasting/images_SoM/8cc25698-9f3a-4dd2-a3bc-a0187f221477_5/2.png"
+            "ego4d_forecasting/models/prompts/learned_examples/handwritten/forecasting/images_SoM/8cc25698-9f3a-4dd2-a3bc-a0187f221477_5/0.png",
+            "ego4d_forecasting/models/prompts/learned_examples/handwritten/forecasting/images_SoM/8cc25698-9f3a-4dd2-a3bc-a0187f221477_5/1.png",
+            "ego4d_forecasting/models/prompts/learned_examples/handwritten/forecasting/images_SoM/8cc25698-9f3a-4dd2-a3bc-a0187f221477_5/2.png"
         ],
-        "ego4d_forecasting/models/prompts/examples/forecasting/embeddings_image/8cc25698-9f3a-4dd2-a3bc-a0187f221477_5.npy",
+        "ego4d_forecasting/models/prompts/learned_examples/handwritten/forecasting/embeddings_image/8cc25698-9f3a-4dd2-a3bc-a0187f221477_5.npy",
         "The user in this video is shaping, molding, and kneading dough on a kitchen countertop. ",
         "ID [10] Dough that is being molded and kneaded\nID [2] Right hand molding the dough\nID [4] Left hand molding the dough\nID [5] Orange bowl\nID [1,7,9,40] Kitchen countertop\nID [13,22] Pile of flour",
         "The video sequence provided shows the individual molding and kneading dough (ID 7) with their arms/hands (IDs 2 & 4). The individual is making something out the dough, which will involve steps like molding the dough, cleaning flour, cutting the dough with a knife, and so on.",
@@ -33,11 +33,11 @@
         "1. clean_(sweep,_scrub,_mop,_dust) floor_(floor,_ground)\n2. hold_(support,_grip,_grasp) door\n3. hold_(support,_grip,_grasp) dustpan\n4. hold_(support,_grip,_grasp) broom_(broom,_broomstick)\n5. hold_(support,_grip,_grasp) dustpan\n6. put_(place,_leave,_drop) soil_(dirt,_mud,_soil)\n7. clean_(sweep,_scrub,_mop,_dust) floor_(floor,_ground)\n8. put_(place,_leave,_drop) soil_(dirt,_mud,_soil)\n9. hold_(support,_grip,_grasp) dustpan\n10. hold_(support,_grip,_grasp) broom_(broom,_broomstick)\n11. open door\n12. hold_(support,_grip,_grasp) broom_(broom,_broomstick)\n13. put_(place,_leave,_drop) dustpan\n14. hold_(support,_grip,_grasp) broom_(broom,_broomstick)\n15. clean_(sweep,_scrub,_mop,_dust) floor_(floor,_ground)\n16. clean_(sweep,_scrub,_mop,_dust) floor_(floor,_ground)\n17. put_(place,_leave,_drop) soil_(dirt,_mud,_soil)\n18. hold_(support,_grip,_grasp) broom_(broom,_broomstick)\n19. put_(place,_leave,_drop) soil_(dirt,_mud,_soil)\n20. clean_(sweep,_scrub,_mop,_dust) floor_(floor,_ground)",
         "1. hold_(support,_grip,_grasp) broom_(broom,_broomstick)",
         [
-            "ego4d_forecasting/models/prompts/examples/forecasting/images_SoM/b9f101f3-b778-4737-80db-73e4bd95590e_2/0.png",
-            "ego4d_forecasting/models/prompts/examples/forecasting/images_SoM/b9f101f3-b778-4737-80db-73e4bd95590e_2/1.png",
-            "ego4d_forecasting/models/prompts/examples/forecasting/images_SoM/b9f101f3-b778-4737-80db-73e4bd95590e_2/2.png"
+            "ego4d_forecasting/models/prompts/learned_examples/handwritten/forecasting/images_SoM/b9f101f3-b778-4737-80db-73e4bd95590e_2/0.png",
+            "ego4d_forecasting/models/prompts/learned_examples/handwritten/forecasting/images_SoM/b9f101f3-b778-4737-80db-73e4bd95590e_2/1.png",
+            "ego4d_forecasting/models/prompts/learned_examples/handwritten/forecasting/images_SoM/b9f101f3-b778-4737-80db-73e4bd95590e_2/2.png"
         ],
-        "ego4d_forecasting/models/prompts/examples/forecasting/embeddings_image/b9f101f3-b778-4737-80db-73e4bd95590e_2.npy",
+        "ego4d_forecasting/models/prompts/learned_examples/handwritten/forecasting/embeddings_image/b9f101f3-b778-4737-80db-73e4bd95590e_2.npy",
         "The user in this video is sweeping up dirt from the floor with a broom.",
         "ID [11,12,14] Broom for cleaning the floor\nID [6,42,40] Dust pan\nID [22] Left hand holding the dust pan\nID [6] Pile of dirt in the dust pan",
         "The video sequence provided involves the wearer of the camera holding a broom (11, 12 & 14). The dirt seems to have been already partly swept into a pile in the dust bin (ID 6), so the individual is likely to continue to sweep the dirt into a dustpan, and then continue to sweep the floor to get anything missed.",

@@ -1,0 +1,6 @@
+As a helpful assistant whose job it is to find the closest word from a word list to the given word. Output a single element from the list provided that is closest to the given word.
+
+List of outputs: 
+{LIST}
+
+What is the closest list element to "{WORD}"? Output only a single word from the list provided. Do not output any other text other than the single list element.
