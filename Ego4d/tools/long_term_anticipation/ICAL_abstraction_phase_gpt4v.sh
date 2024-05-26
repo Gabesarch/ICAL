@@ -27,7 +27,7 @@ function run(){
 
 WORK_DIR=$1
 
-EGO4D_DATA=/media/gsarch/HDD14TB/datasets/ego4d
+EGO4D_DATA=EGO4D_DATA_PATH_HERE
 EGO4D_ANNOTS=$EGO4D_DATA/data/long_term_anticipation/annotations/
 EGO4D_VIDEOS=$EGO4D_DATA/data/long_term_anticipation/clips/
 CLUSTER_ARGS="NUM_GPUS 1 TRAIN.BATCH_SIZE 1 TEST.BATCH_SIZE 1"
@@ -42,7 +42,7 @@ run eval_gpt4v\
     DO_ABSTRACTION True \
     EXAMPLE_FOLDER_NAME "examples_ICAL_abstraction_phase" \
     MAX_EPISODES 100 \
-    EXAMPLE_PATH "ego4d_forecasting/models/prompts/examples/forecasting/examples.json" \
+    EXAMPLE_PATH "ego4d_forecasting/models/prompts/learned_examples/handwritten/forecasting/examples.json" \
     ALPHA_INSTRUCTION 0.4 \
     ALPHA_IMAGE 0.4 \
     ALPHA_STATE 0.2 \

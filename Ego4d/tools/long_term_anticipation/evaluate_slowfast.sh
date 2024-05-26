@@ -7,7 +7,7 @@ function run(){
   CONFIG=$2
   shift 2;
 
-  python -m scripts.run_lta_gpt4v \
+  python -m scripts.run_lta_orig \
     --job_name $NAME \
     --working_directory ${WORK_DIR} \
     --cfg $CONFIG \
@@ -32,17 +32,17 @@ EGO4D_ANNOTS=$EGO4D_DATA/data/long_term_anticipation/annotations/
 EGO4D_VIDEOS=$EGO4D_DATA/data/long_term_anticipation/clips/
 CLUSTER_ARGS="NUM_GPUS 1 TRAIN.BATCH_SIZE 1 TEST.BATCH_SIZE 1"
 
-run eval_gpt4v\
-  configs/Ego4dLTA/GPT4V.yaml \
-  FORECASTING.NUM_INPUT_CLIPS 4 \
-  TEST.EVAL_VAL True \
-  TEST.ICAL_TEST True \
-  DATA.NUM_FRAMES 12 \
-  DATA_LOADER.NUM_WORKERS 0 \
-  MAX_EPISODES 200 \
-  SKIP_IF_EXISTS True \
-  IN_TRY_EXCEPT True \
-  ONLY_DO_FORECASTING True \
-  FORECASTING.NUM_SEQUENCES_TO_PREDICT 5 \
-  EXAMPLE_PATH "ego4d_forecasting/models/prompts/examples/forecasting/examples.json" \
-  EXPERIMENT_NAME "eval_handwritten_00"
+LOAD=$EGO4D_DATA/pretrained_models/v2/lta_models/v2/lta_models/lta_slowfast_trf_v2.ckpt
+run eval_slowfast_trf\
+    configs/Ego4dLTA/MULTISLOWFAST_8x8_R101.yaml \
+    FORECASTING.AGGREGATOR TransformerAggregator \
+    FORECASTING.DECODER MultiHeadDecoder \
+    FORECASTING.NUM_INPUT_CLIPS 4 \
+    DATA_LOADER.NUM_WORKERS 0 \
+    FORECASTING.NUM_SEQUENCES_TO_PREDICT 5 \
+    SKIP_IF_EXISTS True \
+    MAX_EPISODES 200 \
+    TEST.EVAL_VAL True \
+    TEST.ICAL_TEST True \
+    CHECKPOINT_FILE_PATH $LOAD \
+    EXPERIMENT_NAME "eval_validseen_newsplit_1clip_slowfast_8x8_R101_05"

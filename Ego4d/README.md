@@ -78,5 +78,10 @@ bash tools/long_term_anticipation/evaluate_ICAL_abstract_only.sh output/
 
 See [this file](https://github.com/Gabesarch/ICAL/blob/main/Ego4d/scripts/run_lta_gpt4v.py) for the main run file for ICAL.
 
+To run the few-shot evaluation using handwritten examples, run:
+```
+bash tools/long_term_anticipation/evaluate_few_shot.sh output/
+```
+
 ## Acknowledgements
 This code builds on [Ego4d Action Anticipation](https://github.com/EGO4D/forecasting).

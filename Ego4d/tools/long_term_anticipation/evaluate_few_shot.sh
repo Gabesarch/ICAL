@@ -1,6 +1,5 @@
-#!/bin/sh
-export AZURE_OPENAI_KEY="YOUR_KEY_HERE"
-export AZURE_OPENAI_ENDPOINT="YOUR_ENDPOINT_HERE"
+# export AZURE_OPENAI_KEY="YOUR_KEY_HERE"
+# export AZURE_OPENAI_ENDPOINT="YOUR_ENDPOINT_HERE"
 
 function run(){
     
@@ -26,9 +25,10 @@ function run(){
 
 #-----------------------------------------------------------------------------------------------#
 
-WORK_DIR=output/
+WORK_DIR=$1
 
 EGO4D_DATA=EGO4D_DATA_PATH_HERE
+EGO4D_DATA=/media/gsarch/HDD14TB/datasets/ego4d
 EGO4D_ANNOTS=$EGO4D_DATA/data/long_term_anticipation/annotations/
 EGO4D_VIDEOS=$EGO4D_DATA/data/long_term_anticipation/clips/
 CLUSTER_ARGS="NUM_GPUS 1 TRAIN.BATCH_SIZE 1 TEST.BATCH_SIZE 1"
@@ -41,11 +41,10 @@ run eval_gpt4v\
   DATA.NUM_FRAMES 12 \
   DATA_LOADER.NUM_WORKERS 0 \
   MAX_EPISODES 200 \
-  DO_ICAL_PROMPT True \
-  FORECASTING.NUM_SEQUENCES_TO_PREDICT 5 \
   ONLY_DO_FORECASTING True \
-  EXAMPLE_PATH "ego4d_forecasting/models/prompts/learned_examples/examples_ICAL_abstraction_phase/forecasting/examples.json" \
-  EXPERIMENT_NAME "run_200eps_evalICAL" 
+  FORECASTING.NUM_SEQUENCES_TO_PREDICT 5 \
+  EXAMPLE_PATH "ego4d_forecasting/models/prompts/learned_examples/handwritten/forecasting/examples.json" \
+  EXPERIMENT_NAME "eval_handwritten_00"
 
   # Add this to avoid opanai errors
   # IN_TRY_EXCEPT True \
