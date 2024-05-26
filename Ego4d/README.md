@@ -53,6 +53,14 @@ cd ..
 python -c "from ego4d_forecasting.models.head_helper import ResNetRoIHead"
 ```
 
+### Download Model Checkpoints
+To download the requirements and models for [Track-Anything-with-DEVA](https://github.com/hkchengrex/Tracking-Anything-with-DEVA/tree/main) that is used for set of marks image annotations, run the following:
+```
+cd Tracking-Anything-with-DEVA
+pip install -e .
+bash scripts/download_models.sh
+```
+
 ## Dataset
 Please follow the Ego4d Action Anticipation to download the videos and annotations.
 
