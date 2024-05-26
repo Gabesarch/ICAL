@@ -3,7 +3,7 @@ export AZURE_OPENAI_KEY="YOUR_KEY_HERE"
 export AZURE_OPENAI_ENDPOINT="YOUR_ENDPOINT_HERE"
 export RESULTS_DIR="output"
 python run_eval.py \
-  --instruction_path agent/prompts/jsons/p_multimodal_retrievalaugmented_humangpt4v_abstractions.json \
+  --instruction_path learned_examples/human_demos_with_abstractions/planning_examples.json \
   --test_start_idx 0 \
   --test_end_idx 1 \
   --result_dir $RESULTS_DIR \

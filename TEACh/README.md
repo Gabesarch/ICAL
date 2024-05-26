@@ -1,5 +1,5 @@
 <h1 align="center">
-    Code for embodied LLM project
+    Code for running ICAL on TEACh
 </h1>
 
 ### Contents

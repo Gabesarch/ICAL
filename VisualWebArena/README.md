@@ -71,23 +71,6 @@ sh scripts/run_final_eval.sh
 ### ICAL scripts
 We provide our scripts for the VLM abstraction and human-in-the-loop in `ICAL_scripts`.
 
-## Citation
-If you find our environment or our models useful, please consider citing ICAL as well as VisualWebArena:
-```
-@article{sarch2024ical,
-  title={},
-  author={},
-  journal={},
-  year={2024}
-}
-@article{koh2024visualwebarena,
-  title={VisualWebArena: Evaluating Multimodal Agents on Realistic Visual Web Tasks},
-  author={Koh, Jing Yu and Lo, Robert and Jang, Lawrence and Duvvur, Vikram and Lim, Ming Chong and Huang, Po-Yu and Neubig, Graham and Zhou, Shuyan and Salakhutdinov, Ruslan and Fried, Daniel},
-  journal={arXiv preprint arXiv:2401.13649},
-  year={2024}
-}
-```
-
 ## Acknowledgements
 
 This code builds on [VisualWebArena](https://github.com/web-arena-x/visualwebarena). Be sure to check them out!
