@@ -68,6 +68,12 @@ To run the evaluation, replace the paths in `scripts/run_final_eval.sh` with you
 sh scripts/run_final_eval.sh
 ```
 
+## Running the Human-in-the-Loop Feature
+To run the human-in-the-loop ICAL agent and to collect human correctable trajectories, replace the paths in `scripts/human_in_the_loop.sh` with your local paths. Then run the script:
+```bash
+sh scripts/human_in_the_loop.sh
+```
+
 ### ICAL scripts
 We provide our scripts for the VLM abstraction and human-in-the-loop in `ICAL_scripts`.
 
