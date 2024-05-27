@@ -352,8 +352,8 @@ def test(
     example_json_file = f"data/memory_human_in_the_loop/{args.experiment_name}/planning_examples.json"
 
     if args.evalMode=="human_in_the_loop":
-        feedback_memory_save_root = f"data/memory_human_in_the_loop_feedback/{args.experiment_name}"
-        feedback_example_json_file = f"data/memory_human_in_the_loop_feedback/{args.experiment_name}/planning_examples.json"
+        feedback_memory_save_root = f"learned_examples/memory_human_in_the_loop_feedback/{args.experiment_name}"
+        feedback_example_json_file = f"learned_examples/memory_human_in_the_loop_feedback/{args.experiment_name}/planning_examples.json"
         args.feedback_jsons.append(args.feedback_instruction_path)
         if args.continually_add_saved_examples:
             args.feedback_jsons.append(feedback_example_json_file)
@@ -424,9 +424,10 @@ def test(
 
     seen = set()
     for json_file in args.instruction_jsons:
-        with open(os.path.join(os.path.split(json_file)[0], 'seen.json')) as json_file:
-            seen_ = json.load(json_file)
-        seen.update(seen_["seen"])
+        if os.path.exists(os.path.join(os.path.split(json_file)[0])):
+            with open(os.path.join(os.path.split(json_file)[0], 'seen.json')) as json_file:
+                seen_ = json.load(json_file)
+            seen.update(seen_["seen"])
 
     data_dict = {"config":[], "success":[], "num_human_feedbacks":[], "seen":[]}
     
@@ -471,23 +472,31 @@ def test(
                 for image_path in image_paths:
                     # Load image either from the web or from a local path.
                     if image_path.startswith("http"):
+                        import requests
                         from PIL import Image
-                        response = requests.get(image_path)
-                        input_image = Image.open(BytesIO(response.content))
-                        # input_image = Image.open(requests.get(image_path, stream=True).raw)
-                        print(f"Input Image: {image_path}")
+                        from io import BytesIO
+                        try:
+                            response = requests.get(image_path)
+                            response.raise_for_status()  # ensure the link works
+                            input_image = Image.open(BytesIO(response.content))
+                            os.makedirs(f'output/{config_file}', exist_ok=True)
+                            input_image.save(f'output/{config_file}/input_image{inputCount}.png')
+                            inputCount += 1
+                            images.append(input_image)
+                        except requests.exceptions.RequestException as e:
+                            logger.error(f"Request failed: {e}")
+                        except PIL.UnidentifiedImageError as e:
+                            logger.error(f"Cannot identify image file from the URL: {image_path}")
+                        except Exception as e:
+                            logger.error(f"Unhandled error: {e}")
                     else:
                         from PIL import Image
                         input_image = Image.open(image_path)
-                    # if not os.path.exists(directory):
-                    #     os.makedirs(directory)
-                    #     print(f"Directory '{directory}' created successfully.")
-                    os.makedirs(f'output/{config_file}', exist_ok=True)
-                    input_image.save(f'output/{config_file}/input_image{inputCount}.png')
-                    inputCount += 1
-                    images.append(input_image)
-            
-            # trajInputImages[config_file] = images
+                        os.makedirs(f'output/{config_file}', exist_ok=True)
+                        input_image.save(f'output/{config_file}/input_image{inputCount}.png')
+                        inputCount += 1
+                        images.append(input_image)
+
 
             logger.info(f"[Config file]: {config_file}")
             logger.info(f"[Intent]: {intent}")
@@ -697,23 +706,10 @@ def test(
                 draw.text((40, 40), f"{action_str}", fill=(0, 0, 0), font=font)
                 font = ImageFont.truetype("/usr/share/fonts/truetype/freefont/FreeMono.ttf", 24)
                 draw.text((40, 80), f"{intent}", fill=(0, 0, 0), font=font)
-                # import matplotlib.pyplot as plt
-                # tag = 'gpt4v'
-                # plt.figure(1, (24,24)); plt.clf()
-                # plt.rcParams['figure.dpi']=500
-                # plt.rcParams['savefig.dpi']=500
-                # plt.imshow(im)
-                # plt.savefig(f'output/{tag}/image{count}.png') 
-                # if action_str[:4]=='type':
-                #     st()
-
                 if args.save_examples_memory:
                     image_dir = f'experiments/{args.experiment_name}/{config_file}/images'
                     os.makedirs(image_dir, exist_ok=True)
                     im.save(os.path.join(image_dir, f'{count}.png'))
-
-                # name = f'time_step_image/{config_file}'
-                # wandb.log({name: wandb.Image(im)})
 
                 time_step_dict["config"].append(config_file)
                 time_step_dict["time_step"].append(count)
@@ -728,9 +724,6 @@ def test(
                         time_step_dict["action"][idx],
                         ])
                 wandb.log({f"time_step_action/{config_file}": tbl})
-
-                # if count >= 1:
-                #     break
 
                 obs, _, terminated, _, info = env.step(action)
                 state_info = {"observation": obs, "info": info}
@@ -773,14 +766,9 @@ def test(
                     data_dict["num_human_feedbacks"][idx],
                     data_dict["seen"][idx],
                     ])
-            # tbl.add_data(*list(data_dict.values()))
             wandb.log({f"metrics_summary/metrics": tbl})
 
             metrics_dict[config_file] = {"config":config_file, "success":score, "seen":seen_episode}
-
-            # os.makedirs(f'experiments/{args.experiment_name}/{config_file}/metrics/metrics.json', exist_ok=True)
-            # with open(f'experiments/{args.experiment_name}/{config_file}/metrics/metrics.json', "w") as outfile: 
-            #     json.dump(metrics_dict[config_file], outfile, indent=4, sort_keys=True)
 
             file_num += 1
 
