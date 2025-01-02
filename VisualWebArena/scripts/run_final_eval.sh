@@ -9,9 +9,9 @@ python run_eval.py \
   --instruction_jsons learned_examples/merged_classifieds_shopping_reddit_V2/planning_examples.json \
   --result_dir $RESULTS_DIR \
   --test_config_base_dir=config_files/test_classifieds \
-  --model gpt-4-vision-preview \
+  --model gpt-4o \
   --temperature 0.2 \
-  --top_p 0.1 \
+  --top_p 0.9 \
   --action_set_tag som \
   --save_trace_enabled \
   --wandb_directory . \
@@ -22,4 +22,4 @@ python run_eval.py \
   --save_examples_memory \
   --skip_if_exists \
   --topk 5 \
-  --experiment_name final_run_expertdemos_hiltdemos_NEW_topk5_oneperepisode_COMBINED_00
+  --experiment_name run_ICAL_agent
