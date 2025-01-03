@@ -412,6 +412,7 @@ def test(
                         agent.prompt_constructor if isinstance(agent, PromptAgent) else None
                     ),
                 )
+                logger.info(f"Action selected: {action_str}")
                 render_helper.render(action, state_info, meta_data, args.render_screenshot)
 
                 # Helper to get the line from the textual state for the chosen element
@@ -747,7 +748,7 @@ if __name__ == "__main__":
     if args.skip_if_finished:
         test_file_list = get_unfinished(test_file_list, args.result_dir)
 
-    print(f"Total {len(test_file_list)} tasks left")
+    logger.info(f"Total {len(test_file_list)} tasks left")
 
     # Render settings
     args.render = False

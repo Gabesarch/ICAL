@@ -286,10 +286,6 @@ class MultimodalCoTPromptConstructor(CoTPromptConstructor):
         self.prompt_log = {
             "current_prompt":[],
             "intro":[],
-            # "current_observation":[],
-            # "current_intent":[],
-            # "current_prev_actions":[],
-            # "knowledge":[],
         }
         for idx in range(3):
             self.prompt_log[f"example{idx}_input"] = []
@@ -801,6 +797,7 @@ class MultimodalCoTPromptConstructorMemoryAugmented(CoTPromptConstructor):
         sims = self.w_obs * sim_obs + self.w_act * sim_act + self.w_task * sim_task + self.w_vis * sim_vis
         sims_argsort = torch.argsort(sims, descending=True)
         if remove_same_episode:
+            # remove the same episode examples
             sims_argsort_ = copy.deepcopy(list(sims_argsort.cpu().numpy()))
             sims_argsort_topk = []
             while len(sims_argsort_topk)<topk and len(sims_argsort_)>0:
@@ -810,8 +807,9 @@ class MultimodalCoTPromptConstructorMemoryAugmented(CoTPromptConstructor):
                 if type(im_file)==list:
                     im_file = im_file[0]
                 config_file = os.path.split(os.path.split(im_file)[0])[-1]
-                for idx_remove in self.same_episode_dict[config_file]:
-                    sims_argsort_.remove(idx_remove)
+                if config_file in self.same_episode_dict:
+                    for idx_remove in self.same_episode_dict[config_file]:
+                        sims_argsort_.remove(idx_remove)
         else:
             sims_argsort_topk = sims_argsort[:topk]
         examples_selected = []
@@ -864,8 +862,7 @@ class MultimodalCoTPromptConstructorMemoryAugmented(CoTPromptConstructor):
                     if not self.ablate_image_context:
                         message.append(
                             {
-                                "role": "system",
-                                "name": "example_user",
+                                "role": "user",
                                 "content": [
                                     {"type": "text", "text": x},
                                     {
@@ -885,8 +882,7 @@ class MultimodalCoTPromptConstructorMemoryAugmented(CoTPromptConstructor):
                         # remove image
                         message.append(
                             {
-                                "role": "system",
-                                "name": "example_user",
+                                "role": "user",
                                 "content": [
                                     {"type": "text", "text": x},
                                 ],
@@ -894,8 +890,7 @@ class MultimodalCoTPromptConstructorMemoryAugmented(CoTPromptConstructor):
                         )
                     message.append(
                         {
-                            "role": "system",
-                            "name": "example_assistant",
+                            "role": "assistant",
                             "content": [{"type": "text", "text": y}],
                         }
                     )

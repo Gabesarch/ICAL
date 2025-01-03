@@ -12,9 +12,10 @@ import aiolimiter
 import openai
 from openai import AsyncOpenAI, OpenAI
 
-import ipdb
-st = ipdb.set_trace
 import numpy as np
+import logging
+logger = logging.getLogger("logger")
+logger.setLevel(logging.INFO)
 
 use_azure = True
 if use_azure:
@@ -79,7 +80,7 @@ def retry_with_exponential_backoff(  # type: ignore
                 # Check if max retries has been reached
                 if num_retries > max_retries:
                     raise Exception(
-                        f"Maximum number of retries ({max_retries}) exceeded."
+                        f"Maximum number of retries ({max_retries}) exceeded with error {e}."
                     )
 
                 # Increment the delay
@@ -178,16 +179,16 @@ def generate_from_openai_completion(
     stop_token: str | None = None,
 ) -> str:
     if use_azure:
-        print(f"Running {model}...")
+        print(f"Running {engine}...")
         response = client.chat.completions.create(
-            model="gpt-4-vision-preview",
+            model=engine,
             messages=messages,
             max_tokens=max_tokens,
             temperature=temperature,
-            # top_p=top_p,
+            top_p=top_p,
             stop=[stop_token],
         )
-        print(response.choices[0].message.content)
+        logger.info(response.choices[0].message.content)
     else:
         if "OPENAI_API_KEY" not in os.environ:
             raise ValueError(
@@ -292,16 +293,16 @@ def generate_from_openai_chat_completion(
     stop_token: str | None = None,
 ) -> str:
     if use_azure:
-        print(f"Running {model}...")
+        logger.info(f"Running {model}...")
         response = client.chat.completions.create(
             model=model,
             messages=messages,
             max_tokens=max_tokens,
             temperature=temperature,
-            # top_p=top_p,
+            top_p=top_p,
         )
         answer: str = response.choices[0].message.content
-        print(response.choices[0].message.content)
+        logger.info(response.choices[0].message.content)
     else:
         if "OPENAI_API_KEY" not in os.environ:
             raise ValueError(

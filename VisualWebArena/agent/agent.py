@@ -25,8 +25,6 @@ from llms import (
 )
 from llms.tokenizers import Tokenizer
 
-import ipdb
-st = ipdb.set_trace
 import os
 
 
@@ -120,9 +118,7 @@ class PromptAgent(Agent):
         self.captioning_fn = captioning_fn
 
         # Check if the model is multimodal.
-        if lm_config.model in [
-            "gpt-4-vision-preview", "gemini",
-        ] and type(prompt_constructor) in [
+        if type(prompt_constructor) in [
             MultimodalCoTPromptConstructor, 
             MultimodalCoTPromptConstructorMemoryAugmented,
             MultimodalCoTPromptConstructorMemoryAugmentedFULLTRAJECTORY,
@@ -193,20 +189,7 @@ class PromptAgent(Agent):
             _, _, files = next(os.walk(root_prompt))
             file_count = len(files)
         while True:
-            #ipdb.set_trace()
             response = call_llm(lm_config, prompt)
-
-            if self.log and self.multimodal_inputs:
-                text_to_log = ''
-                for k in prompt_log.keys():
-                    text_to_log += '*' * 20
-                    text_to_log += f' {k} '
-                    text_to_log += '*' * 20
-                    text_to_log += f'\n\n{prompt_log[k]}\n\n'
-                text_to_log += f'\n\n******************** RESPONSE ********************\n\n{response}'
-                file_path = os.path.join(root_prompt, f'{file_count}.txt')
-                with open(file_path, 'w') as f:
-                    f.write(text_to_log)
 
             force_prefix = self.prompt_constructor.instruction[
                 "meta_data"
@@ -282,16 +265,17 @@ class PromptAgent(Agent):
                 humanFeedback,
                 prev_action,
             )
+            if len(prompt)==2:
+                prompt, prompt_log = prompt
+            else:
+                self.log = False
         else:
             assert(False)
-            # prompt = self.prompt_constructor.construct(
-            #     trajectory, intent, meta_data
-            # )
         lm_config = self.lm_config
         n = 0
         while True:
-            #ipdb.set_trace()
             response = call_llm(lm_config, prompt)
+            
             force_prefix = self.prompt_constructor.instruction[
                 "meta_data"
             ].get("force_prefix", "")

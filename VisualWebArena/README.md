@@ -25,11 +25,6 @@ playwright install
 pip install -e .
 ```
 
-You can also run the unit tests to ensure that VisualWebArena is installed correctly:
-```
-pytest -x
-```
-
 ## Setup
 1. Setup the standalone environments.
 Please check out [this page](environment_docker/README.md) for details.
@@ -42,6 +37,11 @@ export SHOPPING="<your_shopping_site_domain>:7770"
 export REDDIT="<your_reddit_domain>:9999"
 export WIKIPEDIA="<your_wikipedia_domain>:8888"
 export HOMEPAGE="<your_homepage_domain>:4399"
+```
+
+You can also run the unit tests to ensure that VisualWebArena is installed correctly:
+```
+pytest -x
 ```
 
 3. Generate config files for each test example:

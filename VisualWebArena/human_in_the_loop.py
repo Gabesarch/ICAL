@@ -5,6 +5,8 @@ from typing import List, Tuple, Union, Dict
 from browser_env.actions import action2str
 from browser_env import Action, Trajectory
 from agent import PromptAgent
+import argparse
+from PIL import Image
 
 def handle_human_in_the_loop(
     agent: PromptAgent,
@@ -44,20 +46,18 @@ def handle_human_in_the_loop(
     num_human_feedbacks = 0
 
     # Display the image to the user for feedback
-    image = np.float32(trajectory[-1]["observation"]["image"][:, :, :3])
-    image = image.astype(np.uint8)
-    plt.figure(figsize=(12, 12))
-    plt.imshow(image)
-    plt.title(f"Step {count}: Agent's Current Action: {action2str(action, args.action_set_tag)}")
-    plt.show()
+    last_observation = trajectory[-1]["observation"]["image"]
+    image = Image.fromarray(np.uint8(trajectory[-1]["observation"]["image"][:, :, :3]))
+    image.show(title=f"Step {count}: Agent's Current Action: {action2str(action, args.action_set_tag)}")
+    image.save("image.png")
 
     while not human_satisfaction:
         # Ask the user for feedback
         print("Agent ACTION: ", action2str(action, args.action_set_tag))
-        print("Was this action suboptimal? (yes/no)")
+        print("Was this action optimal? (yes/no)")
         human_reaction = input("Your feedback: ").strip().lower()
 
-        if human_reaction == "no":
+        if human_reaction == "yes":
             # User is satisfied with the current action
             print("Thank you! Proceeding with the current action.")
             human_satisfaction = True
