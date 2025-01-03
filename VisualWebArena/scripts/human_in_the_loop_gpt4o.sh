@@ -1,7 +1,9 @@
 #!/bin/sh
-export AZURE_OPENAI_KEY="YOUR_KEY_HERE"
-export AZURE_OPENAI_ENDPOINT="YOUR_ENDPOINT_HERE"
+export AZURE_OPENAI_KEY="YOUR_AZURE_OPENAI_KEY"
+export AZURE_OPENAI_ENDPOINT="YOUR_AZURE_OPENAI_ENDPOINT"
 export RESULTS_DIR="output"
+mkdir -p ./.auth
+python browser_env/auto_login.py
 python run_eval.py \
   --instruction_path learned_examples/human_demos_with_abstractions/planning_examples.json \
   --result_dir $RESULTS_DIR \

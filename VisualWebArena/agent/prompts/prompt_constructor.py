@@ -12,8 +12,6 @@ from llms import lm_config
 from llms.tokenizers import Tokenizer
 from llms.utils import APIInput
 
-import ipdb
-st = ipdb.set_trace
 import numpy as np
 import scipy
 import os
@@ -298,6 +296,8 @@ class MultimodalCoTPromptConstructor(CoTPromptConstructor):
         page_screenshot_img: Image.Image,
         images: list[Image.Image],
         meta_data: dict[str, Any] = {},
+        humanFeedback: str = None,
+        prev_action: str = None,
     ) -> APIInput:
         intro = self.instruction["intro"]
         examples = self.instruction["examples"]
@@ -316,13 +316,40 @@ class MultimodalCoTPromptConstructor(CoTPromptConstructor):
 
         page = state_info["info"]["page"]
         url = page.url
-        previous_action_str = meta_data["action_history"][-1]
+
+        def format_action_history(
+            action_history
+        ):
+            if len(action_history)==1:
+                return 'None'
+            else:
+                action_text = ''
+                count = 1
+                for action in action_history[1:]:
+                    action_text += f'\n{count}. {action}'
+                    count += 1
+                return action_text
+        
+        previous_action_str = format_action_history(meta_data["action_history"])
+        
         current = template.format(
             objective=intent,
             url=self.map_url_to_real(url),
             observation=obs,
             previous_action=previous_action_str,
         )
+
+        if humanFeedback is not None:
+            from browser_env.helper_functions import get_action_description
+            wrong_action_str = get_action_description(
+                prev_action, 
+                state_info["info"]["observation_metadata"],
+                action_set_tag="som",
+                prompt_constructor=self
+            )
+            wrong_action_str = wrong_action_str.split(' where')[0].replace('[A] ', '')
+            feedback_text = f"\n\nFAILED PREVIOUS ACTION: {wrong_action_str}\n\nHUMAN FEEDBACK: {humanFeedback}"
+            current = current.split('\n\nIMAGE:')[0] + feedback_text + '\n\nIMAGE:'
 
         assert all([f"{{k}}" not in current for k in keywords])
 
@@ -419,6 +446,46 @@ class MultimodalCoTPromptConstructor(CoTPromptConstructor):
                 raise ValueError(
                     f"GPT-4V models do not support mode {self.lm_config.mode}"
                 )
+        elif "vllm" in self.lm_config.provider:
+            if self.lm_config.mode == "chat":
+                message = [
+                    {
+                        "role": "system",
+                        "content": [{"type": "text", "text": intro}],
+                    }
+                ]
+                for (x, y, z) in examples:
+                    raise NotImplementedError("QWEN2VL does not currently support examples")
+                    message.append(
+                        {
+                            "role": "user",
+                            "content": [
+                                {"type": "text", "text": x},
+                            ],
+                        }
+                    )
+                    message.append(
+                        {
+                            "role": "assistant",
+                            "content": [{"type": "text", "text": y}],
+                        }
+                    )
+                # Encode images and page_screenshot_img as base64 strings.
+                current_prompt = current
+                content = [
+                    {
+                        "type": "image_url",
+                        "image_url": {"url": pil_to_b64(page_screenshot_img)},
+                    },
+                ]
+
+                content = [{"type": "text", "text": current_prompt}] + content
+                message.append({"role": "user", "content": content})
+
+                self.prompt_log["current_prompt"] = current_prompt
+                self.prompt_log["intro"] = intro
+
+                return message, self.prompt_log
         elif "google" in self.lm_config.provider:
             if self.lm_config.mode == "completion":
                 message = [
@@ -607,6 +674,8 @@ class MultimodalCoTPromptConstructorMemoryAugmented(CoTPromptConstructor):
         page_screenshot_img: Image.Image,
         images: list[Image.Image],
         meta_data: dict[str, Any] = {},
+        humanFeedback: str = None,
+        prev_action = None,
     ) -> APIInput:
         intro = self.instruction["intro"]
         template = self.instruction["template"]

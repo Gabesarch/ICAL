@@ -65,13 +65,29 @@ export OPENAI_API_KEY=your_key
 ## Running the ICAL evaluation
 To run the evaluation, replace the paths in `scripts/run_final_eval.sh` with your local paths. Then run the script:
 ```bash
-sh scripts/run_final_eval.sh
+sh scripts/run_ical_gpt4o_vwa.sh
 ```
 
 ## Running the Human-in-the-Loop Feature
 To run the human-in-the-loop ICAL agent and to collect human correctable trajectories, replace the paths in `scripts/human_in_the_loop.sh` with your local paths. Then run the script:
 ```bash
-sh scripts/human_in_the_loop.sh
+sh scripts/human_in_the_loop_gpt4o.sh
+```
+
+## Running with qwen2vl
+1. Install vLLM:
+```bash
+pip install https://vllm-wheels.s3.us-west-2.amazonaws.com/nightly/vllm-1.0.0.dev-cp38-abi3-manylinux1_x86_64.whl
+```
+
+2. Run the vLLM server and load your QWEN2VL model:
+```bash
+sh scripts/vllm/run_vllm.sh <path_to_qwen2vl_model>
+```
+
+3. Run the evaluation:
+```bash
+sh scripts/run_ical_qwen2vl_vwa.sh
 ```
 
 ### ICAL scripts

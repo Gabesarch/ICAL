@@ -1,0 +1,18 @@
+{
+  "intro": "You are a helpful assistant.",
+  "examples": [],
+  "template": "OBJECTIVE: {objective}\n\nOBSERVATION:\n{observation}\n\nPREVIOUS ACTIONS: {previous_action}\n\nIMAGE:\n",
+  "meta_data": {
+    "observation": "image_som",
+    "action_type": "som",
+    "keywords": [
+      "url",
+      "objective",
+      "observation",
+      "previous_action"
+    ],
+    "prompt_constructor": "MultimodalCoTPromptConstructor",
+    "answer_phrase": "In summary, the next action I will perform is",
+    "action_splitter": "```"
+  }
+}

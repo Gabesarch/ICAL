@@ -263,7 +263,7 @@ def test(
     seen = set()
     for json_file in args.instruction_jsons:
         folder = os.path.split(json_file)[0]
-        if os.path.exists(os.path.join(folder)):
+        if os.path.exists(os.path.join(folder, "seen.json")):
             with open(os.path.join(folder, "seen.json")) as seen_file:
                 seen_data = json.load(seen_file)
             seen.update(seen_data["seen"])

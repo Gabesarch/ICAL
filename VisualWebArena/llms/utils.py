@@ -7,6 +7,7 @@ from llms import (
     generate_from_huggingface_completion,
     generate_from_openai_chat_completion,
     generate_from_openai_completion,
+    generate_from_vllm_chat_completion,
     lm_config,
 )
 
@@ -20,7 +21,7 @@ def call_llm(
     response: str
     if lm_config.provider == "openai":
         if lm_config.mode == "chat":
-            assert isinstance(prompt, list)
+            assert isinstance(prompt, list)            
             response = generate_from_openai_chat_completion(
                 messages=prompt,
                 model=lm_config.model,
@@ -44,6 +45,17 @@ def call_llm(
             raise ValueError(
                 f"OpenAI models do not support mode {lm_config.mode}"
             )
+    elif lm_config.provider == "vllm":
+        assert isinstance(prompt, list)            
+        response = generate_from_vllm_chat_completion(
+            messages=prompt,
+            model=lm_config.model,
+            temperature=lm_config.gen_config["temperature"],
+            top_p=lm_config.gen_config["top_p"],
+            max_tokens=lm_config.gen_config["max_tokens"],
+            num_outputs=1,
+            return_response=True,
+        )
     elif lm_config.provider == "huggingface":
         assert isinstance(prompt, str)
         response = generate_from_huggingface_completion(

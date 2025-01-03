@@ -35,6 +35,11 @@ else:
     aclient = AsyncOpenAI(api_key=os.environ["OPENAI_API_KEY"])
 from tqdm.asyncio import tqdm_asyncio
 
+vllm_client = OpenAI(
+    api_key="ical",
+    base_url="http://localhost:8000/v1",
+)
+
 
 def run_embedding_model(
     prompt,
@@ -281,6 +286,27 @@ async def agenerate_from_openai_chat_completion(
     responses = await tqdm_asyncio.gather(*async_responses)
     return [x["choices"][0]["message"]["content"] for x in responses]
 
+@retry_with_exponential_backoff
+def generate_from_vllm_chat_completion(
+    messages: list[dict[str, str]],
+    model: str,
+    temperature: float,
+    max_tokens: int,
+    top_p: float,
+    num_outputs: int = 1,
+    return_response: bool = False,
+):
+    response = vllm_client.chat.completions.create(
+        model=model,
+        messages=messages,
+        temperature=temperature,
+        max_tokens=max_tokens,
+        top_p=top_p,
+        n=num_outputs,
+    )
+    answer: str = response.choices[0].message.content
+
+    return answer
 
 @retry_with_exponential_backoff
 def generate_from_openai_chat_completion(

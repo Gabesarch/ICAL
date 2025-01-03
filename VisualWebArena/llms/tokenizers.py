@@ -8,6 +8,8 @@ class Tokenizer(object):
     def __init__(self, provider: str, model_name: str) -> None:
         if provider == "openai":
             self.tokenizer = tiktoken.encoding_for_model(model_name)
+        elif provider == "vllm":
+            self.tokenizer = None
         elif provider == "huggingface":
             self.tokenizer = LlamaTokenizer.from_pretrained(model_name)
             # turn off adding special tokens automatically

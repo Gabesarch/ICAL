@@ -67,14 +67,24 @@ def handle_human_in_the_loop(
             human_feedback = input("Your feedback: ").strip()
 
             # Update the agent with the feedback
-            new_action = agent.next_action_humanFeedback(
-                trajectory=trajectory,
-                intent=intent,
-                images=images,
-                meta_data=meta_data,
-                humanFeedback=human_feedback,
-                prev_action=action,
-            )
+            if args.model == "qwen2vl":
+                new_action = agent.next_action(
+                    trajectory=trajectory,
+                    intent=intent,
+                    images=images,
+                    meta_data=meta_data,
+                    humanFeedback=human_feedback,
+                    prev_action=action,
+                )
+            else:
+                new_action = agent.next_action_humanFeedback(
+                    trajectory=trajectory,
+                    intent=intent,
+                    images=images,
+                    meta_data=meta_data,
+                    humanFeedback=human_feedback,
+                    prev_action=action,
+                )
 
             # Log feedback details
             feedback_tuple = (count, intent, trajectory[-1]["observation"]["text"], action, human_feedback, new_action)

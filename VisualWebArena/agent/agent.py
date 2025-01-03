@@ -140,6 +140,8 @@ class PromptAgent(Agent):
         meta_data: dict[str, Any], 
         images: Optional[list[Image.Image]] = None,
         config_file=None,
+        humanFeedback: str = None,
+        prev_action = None,
     ) -> Action:
         # Create page screenshot image for multimodal models.
         if self.multimodal_inputs:
@@ -168,7 +170,13 @@ class PromptAgent(Agent):
 
         if self.multimodal_inputs:
             prompt = self.prompt_constructor.construct(
-                trajectory, intent, page_screenshot_img, images, meta_data
+                trajectory, 
+                intent, 
+                page_screenshot_img, 
+                images, 
+                meta_data, 
+                humanFeedback,
+                prev_action,
             )
             if len(prompt)==2:
                 prompt, prompt_log = prompt
