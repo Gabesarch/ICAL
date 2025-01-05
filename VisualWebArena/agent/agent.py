@@ -135,7 +135,7 @@ class PromptAgent(Agent):
     @beartype
     def next_action(
         self, 
-        trajectory: Trajectory, 
+        trajectory, 
         intent: str, 
         meta_data: dict[str, Any], 
         images: Optional[list[Image.Image]] = None,

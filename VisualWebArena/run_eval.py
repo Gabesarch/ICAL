@@ -214,12 +214,16 @@ def test(
     }
 
     # Prepare captioning if needed
+    print(args.captioning_model)
     if args.observation_type in ["accessibility_tree_with_captioner", "image_som"]:
-        device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-        dtype = torch.float16 if torch.cuda.is_available() else torch.float32
-        caption_image_fn = image_utils.get_captioning_fn(
-            device, dtype, args.captioning_model
-        )
+        if args.captioning_model == "None":
+            caption_image_fn = None
+        else:
+            device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+            dtype = torch.float16 if torch.cuda.is_available() else torch.float32
+            caption_image_fn = image_utils.get_captioning_fn(
+                device, dtype, args.captioning_model
+            )
     else:
         caption_image_fn = None
 
@@ -227,17 +231,20 @@ def test(
     if caption_image_fn and args.eval_captioning_model == args.captioning_model:
         eval_caption_image_fn = caption_image_fn
     else:
-        device_for_eval = args.eval_captioning_model_device
-        dtype_for_eval = (
-            torch.float16
-            if (torch.cuda.is_available() and device_for_eval == "cuda")
-            else torch.float32
-        )
-        eval_caption_image_fn = image_utils.get_captioning_fn(
-            device_for_eval,
-            dtype_for_eval,
-            args.eval_captioning_model,
-        )
+        if args.eval_captioning_model == "None":
+            eval_caption_image_fn = None
+        else:
+            device_for_eval = args.eval_captioning_model_device
+            dtype_for_eval = (
+                torch.float16
+                if (torch.cuda.is_available() and device_for_eval == "cuda")
+                else torch.float32
+            )
+            eval_caption_image_fn = image_utils.get_captioning_fn(
+                device_for_eval,
+                dtype_for_eval,
+                args.eval_captioning_model,
+            )
 
     # Construct the agent with (possibly) a captioning function
     agent = construct_agent(
@@ -453,8 +460,8 @@ def test(
                 rendered_im = Image.fromarray(obs["image"][:, :, :3])
                 draw = ImageDraw.Draw(rendered_im)
                 # Example fonts; adjust if needed
-                font_large = ImageFont.truetype("/usr/share/fonts/truetype/freefont/FreeMono.ttf", 48)
-                font_small = ImageFont.truetype("/usr/share/fonts/truetype/freefont/FreeMono.ttf", 24)
+                font_large = ImageFont.load_default()
+                font_small = ImageFont.load_default()
 
                 draw.text((40, 40), action_str, fill=(0, 0, 0), font=font_large)
                 draw.text((40, 80), intent, fill=(0, 0, 0), font=font_small)

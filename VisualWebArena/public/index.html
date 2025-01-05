@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Agent Visualization (Sync + Optional Feedback)</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 40px;
+            background-color: #f8f9fa;
+        }
+
+        h1 {
+            margin-bottom: 0.5rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .controls input[type="text"] {
+            width: 250px;
+            padding: 5px;
+        }
+
+        .controls label {
+            display: inline-block;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .button-group {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .info {
+            margin-top: 1rem;
+            background: #efefef;
+            padding: 0.75rem;
+            border-radius: 5px;
+            min-height: 1.5rem;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+        }
+
+        #screenshot {
+            max-width: 100%;
+            border: 1px solid #ccc;
+            margin-top: 1rem;
+            border-radius: 4px;
+        }
+
+        .feedback-section {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .feedback-section input {
+            width: 300px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Agent Visualization (Optional Human Feedback)</h1>
+        <div class="controls">
+            <div>
+                <label for="configFile">Config file</label><br />
+                <input id="configFile" type="text" value="config_files/test_classifieds/1.json" />
+            </div>
+            <div>
+                <label for="userIntent">User Intent</label><br />
+                <input id="userIntent" type="text" value="Find me the cheapest red Toyota..." />
+            </div>
+            <div>
+                <label>Enable Feedback?</label><br />
+                <input id="humanFeedbackCheckbox" type="checkbox" />
+            </div>
+            <div>
+                <label>Model Selection</label><br />
+                <select id="modelSelect">
+                    <option value="gpt4o">gpt4o</option>
+                    <option value="qwen2vl">qwen2vl</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button onclick="startAgent()">Start Agent</button>
+            <button onclick="stopAgent()">Stop Agent</button>
+        </div>
+
+        <hr />
+        
+        <h3>Action Control</h3>
+        <div class="button-group">
+            <button onclick="proposeAction()">Step Agent</button>
+            <button onclick="commitAction()">Take Action</button>
+        </div>
+        
+        <div class="feedback-section">
+            <label for="feedbackInput">Feedback for Proposed Action:</label>
+            <input id="feedbackInput" type="text" />
+            <button onclick="sendFeedback()">Apply Feedback</button>
+        </div>
+
+        <div class="info" id="infoBox">No actions yet.</div>
+        <img id="screenshot" src="" alt="Screenshot" />
+        
+    </div>
+
+    <script>
+        async function startAgent() {
+            const configFile = document.getElementById("configFile").value;
+            const userIntent = document.getElementById("userIntent").value;
+            const hfEnabled = document.getElementById("humanFeedbackCheckbox").checked;
+
+            const resp = await fetch("/start", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    config_file: configFile,
+                    user_intent: userIntent,
+                    human_feedback_enabled: hfEnabled,
+                }),
+            });
+            const data = await resp.json();
+            const { screenshot_base64, ...dataWithoutScreenshot } = data;
+            document.getElementById("infoBox").innerText = JSON.stringify(dataWithoutScreenshot, null, 2);
+
+            if (data.screenshot_base64) {
+                document.getElementById("screenshot").src =
+                    "data:image/png;base64," + data.screenshot_base64;
+            }
+        }
+
+        async function stopAgent() {
+            const resp = await fetch("/stop");
+            const data = await resp.json();
+            document.getElementById("infoBox").innerText = JSON.stringify(data, null, 2);
+            document.getElementById("screenshot").src = "";
+        }
+
+        async function proposeAction() {
+            const resp = await fetch("/propose");
+            const data = await resp.json();
+
+            document.getElementById("infoBox").innerText =
+                "Proposed Action: " + data.action;
+
+            // If feedback is disabled, data.screenshot_base64 might be present
+            if (data.screenshot_base64) {
+                document.getElementById("screenshot").src =
+                    "data:image/png;base64," + data.screenshot_base64;
+            }
+        }
+
+        async function sendFeedback() {
+            const feedbackVal = document.getElementById("feedbackInput").value;
+            if (!feedbackVal) {
+                alert("Enter feedback text first!");
+                return;
+            }
+            const resp = await fetch("/feedback", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ feedback: feedbackVal }),
+            });
+            const data = await resp.json();
+            document.getElementById("infoBox").innerText =
+                "Revised Action: " + data.action;
+        }
+
+        async function commitAction() {
+            const resp = await fetch("/commit");
+            const data = await resp.json();
+
+            document.getElementById("infoBox").innerText =
+                "Committed Action: " + data.action;
+
+            if (data.screenshot_base64) {
+                document.getElementById("screenshot").src =
+                    "data:image/png;base64," + data.screenshot_base64;
+            }
+        }
+    </script>
+</body>
+
+</html>

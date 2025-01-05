@@ -90,6 +90,13 @@ sh scripts/vllm/run_vllm.sh <path_to_qwen2vl_model>
 sh scripts/run_ical_qwen2vl_vwa.sh
 ```
 
+### Running the GUI for human-in-the-loop and agent visualization
+We provide a GUI that allows you to specify a config file, user intent, and model, and then step the agent and take actions, with optional human-in-the-loop. First, run the FastAPI server:
+```bash
+python run_gui.py
+```
+Then, open `http://127.0.0.1:8000/public/index.html` in your browser.
+
 ### ICAL scripts
 We provide our scripts for the VLM abstraction and human-in-the-loop in `ICAL_scripts`.
 
