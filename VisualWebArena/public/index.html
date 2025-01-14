@@ -76,20 +76,24 @@
             width: 300px;
             padding: 5px;
         }
+
+        .hidden {
+            display: none !important;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>Agent Visualization (Optional Human Feedback)</h1>
+        <h1>ICAL Human-in-the-Loop</h1>
         <div class="controls">
             <div>
-                <label for="configFile">Config file</label><br />
-                <input id="configFile" type="text" value="config_files/test_classifieds/1.json" />
+                <label for="configFile">Start URL</label><br />
+                <input id="configFile" type="text" value="https://www.ikea.com/us/en/" />
             </div>
             <div>
                 <label for="userIntent">User Intent</label><br />
-                <input id="userIntent" type="text" value="Find me the cheapest red Toyota..." />
+                <input id="userIntent" type="text" value="Buy me a lamp under $100" />
             </div>
             <div>
                 <label>Enable Feedback?</label><br />
@@ -98,8 +102,8 @@
             <div>
                 <label>Model Selection</label><br />
                 <select id="modelSelect">
-                    <option value="gpt4o">gpt4o</option>
-                    <option value="qwen2vl">qwen2vl</option>
+                    <option value="gpt4o">ICAL gpt4o</option>
+                    <option value="qwen2vl">ICAL finetuned qwen2vl</option>
                 </select>
             </div>
         </div>
@@ -110,22 +114,32 @@
         </div>
 
         <hr />
+
+        <div id="actionControl" class="hidden">
+            <h3>Action Control (Human Feedback Enabled)</h3>
+            <div class="button-group">
+                <button onclick="proposeAction()">Propose Action</button>
+                <button onclick="commitAction()">Commit Action</button>
+            </div>
         
-        <h3>Action Control</h3>
-        <div class="button-group">
-            <button onclick="proposeAction()">Step Agent</button>
-            <button onclick="commitAction()">Take Action</button>
+            <div class="feedback-section">
+                <label for="feedbackInput">Feedback for Proposed Action:</label>
+                <input id="feedbackInput" type="text" placeholder="Enter your feedback here..." />
+                <button onclick="sendFeedback()">Apply Feedback</button>
+            </div>
         </div>
-        
-        <div class="feedback-section">
-            <label for="feedbackInput">Feedback for Proposed Action:</label>
-            <input id="feedbackInput" type="text" />
-            <button onclick="sendFeedback()">Apply Feedback</button>
+
+        <div id="autoActionControl" class="hidden">
+            <h3>Action Control (Feedback Disabled)</h3>
+            <div class="button-group">
+                <button onclick="proposeAction()">Take Next Action</button>
+            </div>
         </div>
 
         <div class="info" id="infoBox">No actions yet.</div>
         <img id="screenshot" src="" alt="Screenshot" />
-        
+        <div class="info" id="actionOutputBox">No action output yet.</div>
+
     </div>
 
     <script>
@@ -133,6 +147,7 @@
             const configFile = document.getElementById("configFile").value;
             const userIntent = document.getElementById("userIntent").value;
             const hfEnabled = document.getElementById("humanFeedbackCheckbox").checked;
+            const model = document.getElementById("modelSelect").value;
 
             const resp = await fetch("/start", {
                 method: "POST",
@@ -141,6 +156,7 @@
                     config_file: configFile,
                     user_intent: userIntent,
                     human_feedback_enabled: hfEnabled,
+                    model: model,
                 }),
             });
             const data = await resp.json();
@@ -150,6 +166,17 @@
             if (data.screenshot_base64) {
                 document.getElementById("screenshot").src =
                     "data:image/png;base64," + data.screenshot_base64;
+            }
+
+            // Show/hide the "Action Control" section based on feedback setting
+            const actionCtrl = document.getElementById("actionControl");
+            const autoActionCtrl = document.getElementById("autoActionControl");
+            if (hfEnabled) {
+                actionCtrl.classList.remove("hidden");
+                autoActionCtrl.classList.add("hidden");
+            } else {
+                actionCtrl.classList.add("hidden");
+                autoActionCtrl.classList.remove("hidden");
             }
         }
 
@@ -166,6 +193,9 @@
 
             document.getElementById("infoBox").innerText =
                 "Proposed Action: " + data.action;
+
+            document.getElementById("actionOutputBox").innerText =
+                "Action Output:\n\n" + data.action_output;
 
             // If feedback is disabled, data.screenshot_base64 might be present
             if (data.screenshot_base64) {
@@ -188,6 +218,9 @@
             const data = await resp.json();
             document.getElementById("infoBox").innerText =
                 "Revised Action: " + data.action;
+
+            document.getElementById("actionOutputBox").innerText =
+                "Action Output: " + data.action_output;
         }
 
         async function commitAction() {
@@ -196,6 +229,9 @@
 
             document.getElementById("infoBox").innerText =
                 "Committed Action: " + data.action;
+
+            document.getElementById("actionOutputBox").innerText =
+                "Model Output:\n\n" + data.action_output;
 
             if (data.screenshot_base64) {
                 document.getElementById("screenshot").src =

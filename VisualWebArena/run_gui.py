@@ -4,7 +4,6 @@ import uvicorn
 from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Optional
-
 from real_time_agent_runner import RealTimeAgentRunner
 
 app = FastAPI()
@@ -37,17 +36,14 @@ def start_agent(req: StartRequest):
 
 @app.get("/propose")
 def propose_action():
-    """
-    1. If feedback is enabled, propose action only (no step).
-    2. If feedback is disabled, step the environment automatically.
-    """
     global runner
     if not runner:
         return {"action": "No runner available", "screenshot_base64": ""}
-    action_str, screenshot_b64 = runner.propose_action()
+    action_str, screenshot_b64, action_output = runner.propose_action()
     return {
         "action": action_str,
-        "screenshot_base64": screenshot_b64
+        "screenshot_base64": screenshot_b64,
+        "action_output": action_output
     }
 
 @app.post("/feedback")
@@ -58,8 +54,8 @@ def feedback_agent(req: FeedbackRequest):
     global runner
     if not runner:
         return {"action": "No runner available"}
-    revised_str = runner.apply_feedback(req.feedback)
-    return {"action": revised_str}
+    revised_str, action_output = runner.apply_feedback(req.feedback)
+    return {"action": revised_str, "action_output": action_output}
 
 @app.get("/commit")
 def commit_action():
@@ -69,10 +65,11 @@ def commit_action():
     global runner
     if not runner:
         return {"action": "No runner available", "screenshot_base64": ""}
-    action_str, screenshot_b64 = runner.commit_action()
+    action_str, screenshot_b64, action_output = runner.commit_action()
     return {
         "action": action_str,
-        "screenshot_base64": screenshot_b64
+        "screenshot_base64": screenshot_b64,
+        "action_output": action_output
     }
 
 @app.get("/stop")
