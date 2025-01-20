@@ -8,6 +8,7 @@
 <li><a href="#install"> Install </a></li>
 <li><a href="#setup"> Setup </a></li>
 <li><a href="#running-the-ical-evaluation"> Running the ICAL evaluation </a></li>
+<li><a href="#running-the-human-in-the-loop-gui"> Running the human-in-the-loop GUI </a></li>
 <li><a href="#citation"> Citation </a></li>
 </ul>
 </div>
@@ -90,7 +91,7 @@ sh scripts/vllm/run_vllm.sh <path_to_qwen2vl_model>
 sh scripts/run_ical_qwen2vl_vwa.sh
 ```
 
-### Running the GUI for human-in-the-loop and agent visualization
+## Running the human in the loop GUI
 We provide a GUI that allows you to specify a config file, user intent, and model, and then step the agent and take actions, with optional human-in-the-loop. First, run the FastAPI server:
 ```bash
 python run_gui.py
@@ -103,3 +104,13 @@ We provide our scripts for the VLM abstraction and human-in-the-loop in `ICAL_sc
 ## Acknowledgements
 
 This code builds on [VisualWebArena](https://github.com/web-arena-x/visualwebarena). Be sure to check them out!
+
+## Citation
+```
+@inproceedings{sarch2024vlm,
+  title={VLM Agents Generate Their Own Memories: Distilling Experience into Embodied Programs of Thought},
+  author={Sarch, Gabriel Herbert and Jang, Lawrence and Tarr, Michael J and Cohen, William W and Marino, Kenneth and Fragkiadaki, Katerina},
+  booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},
+  year={2024}
+}
+```
