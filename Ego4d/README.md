@@ -85,3 +85,13 @@ bash tools/long_term_anticipation/evaluate_few_shot.sh output/
 
 ## Acknowledgements
 This code builds on [Ego4d Action Anticipation](https://github.com/EGO4D/forecasting).
+
+## Citation
+```
+@inproceedings{sarch2024vlm,
+  title={VLM Agents Generate Their Own Memories: Distilling Experience into Embodied Programs of Thought},
+  author={Sarch, Gabriel Herbert and Jang, Lawrence and Tarr, Michael J and Cohen, William W and Marino, Kenneth and Fragkiadaki, Katerina},
+  booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},
+  year={2024}
+}
+```
