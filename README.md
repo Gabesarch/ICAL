@@ -1,5 +1,7 @@
 # ICAL: Continual Learning of Multimodal Agents by Transforming Trajectories into Actionable Insights
 
+## NeurIPS 2024 Spotlight
+
 ## Overview
 This repository contains the code and resources for the paper titled: "ICAL: Continual Learning of Multimodal Agents by Transforming Trajectories into Actionable Insights." This repository is organized into three main directories, each representing a different domain evaluated in our work: Ego4D, VisualWebArena, and TEACh.
 
