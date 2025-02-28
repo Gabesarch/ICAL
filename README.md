@@ -1,4 +1,4 @@
-# ICAL: Continual Learning of Multimodal Agents by Transforming Trajectories into Actionable Insights
+# VLM Agents Generate Their Own Memories: Distilling Experience into Embodied Programs of Thought
 
 ## NeurIPS 2024 Spotlight
 
