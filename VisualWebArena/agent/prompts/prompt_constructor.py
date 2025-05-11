@@ -455,7 +455,6 @@ class MultimodalCoTPromptConstructor(CoTPromptConstructor):
                     }
                 ]
                 for (x, y, z) in examples:
-                    raise NotImplementedError("QWEN2VL does not currently support examples")
                     message.append(
                         {
                             "role": "user",
